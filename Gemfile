@@ -33,6 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rubocop', '~> 1.5', require: false
   gem "rubocop-rails", "~> 2.8", require: false
+  gem "rubocop-rspec", "~> 2.0", require: false
 end
 
 group :development do
