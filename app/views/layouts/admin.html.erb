@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="<%= current_locale %>">
+
+<head>
+  <title><%= yield :title %></title>
+  <meta name="description" content="<%= yield :description %>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="icon" href="/favicon.png">
+
+  <%= stylesheet_pack_tag 'admin/styles/main', media: 'all' %>
+  <%= javascript_pack_tag 'admin/main', defer: true %>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar is-dark">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="<%= admin_root_path %>">
+          <img src="/logo.png" alt="logo">
+          &nbsp;
+          Pandemic CMS
+        </a>
+        <div class="navbar-burger burger" data-target="main-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="navbar-menu" id="main-menu">
+        <% if admin_user_signed_in? %>
+        <div class="navbar-start">
+          <a class="navbar-item<%= controller_name == 'media' ? ' is-active' : '' %>" href="<%= admin_media_path %>">
+            <i class="fas fa-image"></i>
+            &nbsp;
+            <%= _('Media') %>
+          </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="javascript:void(0)">
+              <i class="fas fa-file"></i>
+              &nbsp;
+              <%= _('Posts') %>
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="javascript:void(0)">
+                <i class="fas fa-th"></i>
+                &nbsp;
+                <%= _('Categories') %>
+              </a>
+              <a class="navbar-item" href="javascript:void(0)">
+                <i class="fas fa-file"></i>
+                &nbsp;
+                <%= _('Posts') %>
+              </a>
+              <a class="navbar-item" href="javascript:void(0)">
+                <i class="fas fa-tag"></i>
+                &nbsp;
+                <%= _('Tags') %>
+              </a>
+            </div>
+          </div>
+          <a class="navbar-item" href="javascript:void(0)">
+            <i class="fas fa-sticky-note"></i>
+            &nbsp;
+            <%= _('Pages') %>
+          </a>
+          <% if current_admin_user&.supervisor? %>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="javascript:void(0)">
+              <i class="fas fa-cog"></i>
+              &nbsp;
+              <%= _('Settings') %>
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="javascript:void(0)">
+                <i class="fas fa-cog"></i>
+                &nbsp;
+                <%= _('Settings') %>
+              </a>
+              <a class="navbar-item" href="javascript:void(0)">
+                <i class="fas fa-users"></i>
+                &nbsp;
+                <%= _('Users') %>
+              </a>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
+        <div class="navbar-end">
+          <% if admin_user_signed_in? %>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="javascript:void(0)">
+              <i class="fas fa-user"></i>
+              &nbsp;
+              <%= current_admin_user.username %>
+            </a>
+            <div class="navbar-dropdown is-right">
+              <a class="navbar-item" href="javascript:void(0)">
+                <i class="fas fa-user"></i>
+                &nbsp;
+                <%= _('My Profile') %>
+              </a>
+              <a class="navbar-item" href="javascript:void(0)">
+                <i class="fas fa-lock"></i>
+                &nbsp;
+                <%= _('Change Password') %>
+              </a>
+              <hr class="navbar-divider" />
+              <%= form_with(url: destroy_admin_user_session_path, method: :delete) do |f| %>
+              <a class="navbar-item" href="javascript:void(0)" onclick="this.parentElement.submit()">
+                <i class="fas fa-unlock"></i>
+                &nbsp;
+                <%= _('Sign Out') %>
+              </a>
+              <% end %>
+            </div>
+          </div>
+          <% end %>
+          <% if current_client.languages.size > 1 %>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="javascript:void(0)">
+              <span class="flag-icon flag-icon-<%= current_language.flag %>"></span>
+              &nbsp;
+              <%= current_language.name %>
+            </a>
+            <div class="navbar-dropdown is-right">
+              <% current_client.languages.each do |language| %>
+              <a class="navbar-item" href="<%= url_for(locale: language.locale) %>">
+                <span class="flag-icon flag-icon-<%= language.flag %>"></span>
+                &nbsp;
+                <%= language.name %>
+              </a>
+              <% end %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container is-fluid"><%= yield %></main>
+  <footer>
+    <% if Time.now.year > 2020 %>
+    Pandemic CMS &copy; 2020 - <%= Time.now.year %>
+    <% else %>
+    Pandemic CMS &copy; 2020
+    <% end %>
+  </footer>
+
+  <% if alert %>
+  <p class="flash-error"><%= alert %></p>
+  <% end %>
+  <% if notice %>
+  <p class="flash-success"><%= notice %></p>
+  <% end %>
+</body>
+
+</html>

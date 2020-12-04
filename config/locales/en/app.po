@@ -1,0 +1,590 @@
+# English translations for app package.
+# Copyright (C) 2020 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: app 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2020-12-09 22:39+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+
+msgid "%{count} Category"
+msgid_plural "%{count} Categories"
+msgstr[0] "%{count} Category"
+msgstr[1] "%{count} Categories"
+
+msgid "%{count} Medium"
+msgid_plural "%{count} Media"
+msgstr[0] "%{count} Medium"
+msgstr[1] "%{count} Media"
+
+msgid "%{count} Page"
+msgid_plural "%{count} Pages"
+msgstr[0] "%{count} Page"
+msgstr[1] "%{count} Pages"
+
+msgid "%{count} Post"
+msgid_plural "%{count} Posts"
+msgstr[0] "%{count} Post"
+msgstr[1] "%{count} Posts"
+
+msgid "..."
+msgstr "..."
+
+msgid "Admin dashboard of %{client}"
+msgstr "Admin dashboard of %{client}"
+
+msgid "Admin user"
+msgstr "Admin user"
+
+msgid "AdminUser|Confirmation sent at"
+msgstr "Confirmation Sent At"
+
+msgid "AdminUser|Confirmation token"
+msgstr "Confirmation Token"
+
+msgid "AdminUser|Confirmed at"
+msgstr "Confirmed At"
+
+msgid "AdminUser|Current sign in at"
+msgstr "Current Sign In At"
+
+msgid "AdminUser|Current sign in ip"
+msgstr "Current Sign In IP"
+
+msgid "AdminUser|Email"
+msgstr "Email"
+
+msgid "AdminUser|Encrypted password"
+msgstr "Password"
+
+msgid "AdminUser|Failed attempts"
+msgstr "Failed Attempts"
+
+msgid "AdminUser|Last sign in at"
+msgstr "Last Sign In At"
+
+msgid "AdminUser|Last sign in ip"
+msgstr "Last Sign In IP"
+
+msgid "AdminUser|Locked at"
+msgstr "Locked At"
+
+msgid "AdminUser|Password"
+msgstr "Password"
+
+msgid "AdminUser|Password changed at"
+msgstr "Password Changed At"
+
+msgid "AdminUser|Reset password sent at"
+msgstr "Reset Password Sent At"
+
+msgid "AdminUser|Reset password token"
+msgstr "Reset Password Token"
+
+msgid "AdminUser|Sign in count"
+msgstr "Sign In Count"
+
+msgid "AdminUser|Unconfirmed email"
+msgstr "Unconfirmed Email"
+
+msgid "AdminUser|Username"
+msgstr "Username"
+
+msgid "An error occurred. Please try again later."
+msgstr "An error occurred. Please try again later."
+
+msgid "Are you sure you want to delete this medium ?"
+msgstr "Are you sure you want to delete this medium ?"
+
+msgid "Categories"
+msgstr "Categories"
+
+msgid "Category Drafts"
+msgstr "Category Drafts"
+
+msgid "Change Password"
+msgstr "Change Password"
+
+msgid "Change my password"
+msgstr "Change my password"
+
+msgid "Click the link below to unlock your account:"
+msgstr "Click the link below to unlock your account:"
+
+msgid "Confirm my account"
+msgstr "Confirm my account"
+
+msgid "Confirm new Password"
+msgstr "Confirm new Password"
+
+msgid "Confirm your new password"
+msgstr "Confirm your new password"
+
+msgid "Copy Link"
+msgstr "Copy Link"
+
+msgid "Created At"
+msgstr "Created At"
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Dashboard | %{client}"
+msgstr "Dashboard | %{client}"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Delete Confirmation"
+msgstr "Delete Confirmation"
+
+msgid "Didn't receive confirmation instructions ?"
+msgstr "Didn't receive confirmation instructions ?"
+
+msgid "Didn't receive unlock instructions ?"
+msgstr "Didn't receive unlock instructions ?"
+
+msgid "First Page"
+msgstr "First Page"
+
+msgid "Forgot Password ?"
+msgstr "Forgot Password ?"
+
+msgid "Forgot Password | %{client}"
+msgstr "Forgot Password | %{client}"
+
+msgid "Forgot your password ?"
+msgstr "Forgot your password ?"
+
+msgid "Hello %{email}!"
+msgstr "Hello %{email}!"
+
+msgid "If you didn't request this, please ignore this email."
+msgstr "If you didn't request this, please ignore this email."
+
+msgid "Kind Regards,"
+msgstr "Kind Regards,"
+
+msgid "Last Page"
+msgstr "Last Page"
+
+msgid "Log in"
+msgstr "Log in"
+
+msgid "Media"
+msgstr "Media"
+
+msgid "Media of %{client}"
+msgstr "Media of %{client}"
+
+msgid "Media | %{client}"
+msgstr "Media | %{client}"
+
+msgid "My Profile"
+msgstr "My Profile"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "New Password"
+msgstr "New Password"
+
+msgid "Next Page"
+msgstr "Next Page"
+
+msgid "No"
+msgstr "No"
+
+msgid "No media were found."
+msgstr "No media were found."
+
+msgid "Old password"
+msgstr "Old password"
+
+msgid "OldPassword|Encrypted password"
+msgstr "Password"
+
+msgid "OldPassword|Password archivable type"
+msgstr "Password Archivable Type"
+
+msgid "OldPassword|Password salt"
+msgstr "Password Salt"
+
+msgid "Page Drafts"
+msgstr "Page Drafts"
+
+msgid "Pages"
+msgstr "Pages"
+
+msgid "Post Drafts"
+msgstr "Post Drafts"
+
+msgid "Posts"
+msgstr "Posts"
+
+msgid "Previous Page"
+msgstr "Previous Page"
+
+msgid "Request instructions to reset password in %{client}"
+msgstr "Request instructions to reset password in %{client}"
+
+msgid "Resend Confirmation Instructions"
+msgstr "Resend Confirmation Instructions"
+
+msgid "Resend Confirmation Instructions | %{client}"
+msgstr "Resend Confirmation Instructions | %{client}"
+
+msgid "Resend confirmation instruction for %{client}"
+msgstr "Resend confirmation instruction for %{client}"
+
+msgid "Resend confirmation instructions"
+msgstr "Resend confirmation instructions"
+
+msgid "Reset Password"
+msgstr "Reset Password"
+
+msgid "Reset Password | %{client}"
+msgstr "Reset Password | %{client}"
+
+msgid "Reset your password in %{client}"
+msgstr "Reset your password in %{client}"
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Search..."
+msgstr "Search..."
+
+msgid "Send me reset password instructions"
+msgstr "Send me reset password instructions"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "Sign In"
+msgstr "Sign In"
+
+msgid "Sign In | %{client}"
+msgstr "Sign In | %{client}"
+
+msgid "Sign Out"
+msgstr "Sign Out"
+
+msgid "Sign in"
+msgstr "Sign in"
+
+msgid "Sign in to %{client}"
+msgstr "Sign in to %{client}"
+
+msgid "Sign up"
+msgstr "Sign up"
+
+msgid "Someone has requested a link to change your password. You can do this through the link below."
+msgstr "Someone has requested a link to change your password. You can do this through the link below."
+
+msgid "Tags"
+msgstr "Tags"
+
+msgid "The administration of %{client}"
+msgstr "The administration of %{client}"
+
+msgid "The link was successfully copied"
+msgstr "The link was successfully copied"
+
+msgid "The medium was successfully created."
+msgstr "The medium was successfully created."
+
+msgid "The medium was successfully deleted."
+msgstr "The medium was successfully deleted."
+
+msgid "Unlock my account"
+msgstr "Unlock my account"
+
+msgid "Updated At"
+msgstr "Updated At"
+
+msgid "Upload"
+msgstr "Upload"
+
+msgid "Users"
+msgstr "Users"
+
+msgid "We're contacting you to notify you that your email has been changed to %{email}"
+msgstr "We're contacting you to notify you that your email has been changed to %{email}"
+
+msgid "We're contacting you to notify you that your email is being changed to %{email}"
+msgstr "We're contacting you to notify you that your email is being changed to %{email}"
+
+msgid "We're contacting you to notify you that your password has been changed."
+msgstr "We're contacting you to notify you that your password has been changed."
+
+msgid "Welcome %{email}!"
+msgstr "Welcome %{email}!"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "You can confirm your account email through the link below:"
+msgstr "You can confirm your account email through the link below:"
+
+msgid "You have no category drafts."
+msgstr "You have no category drafts."
+
+msgid "You have no page drafts."
+msgstr "You have no page drafts."
+
+msgid "You have no post drafts."
+msgstr "You have no post drafts."
+
+msgid "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+msgstr "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+
+msgid "Your email address"
+msgstr "Your email address"
+
+msgid "Your new password"
+msgstr "Your new password"
+
+msgid "Your password"
+msgstr "Your password"
+
+msgid "Your password won't change until you access the link above and create a new one."
+msgstr "Your password won't change until you access the link above and create a new one."
+
+msgid "activerecord.attributes.admin_user.email"
+msgstr "Email"
+
+msgid "activerecord.attributes.admin_user.password"
+msgstr "Password"
+
+msgid "activerecord.attributes.admin_user.username"
+msgstr "Username"
+
+msgid "activerecord.errors.models.admin_user.attributes.client_id.blank"
+msgstr "The client id is required."
+
+msgid "activerecord.errors.models.admin_user.attributes.email.blank"
+msgstr "The email is required."
+
+msgid "activerecord.errors.models.admin_user.attributes.email.invalid"
+msgstr "The email format is invalid."
+
+msgid "activerecord.errors.models.admin_user.attributes.email.taken"
+msgstr "The email is already used."
+
+msgid "activerecord.errors.models.admin_user.attributes.email.too_long"
+msgstr "The email may contain up to %{count} characters."
+
+msgid "activerecord.errors.models.admin_user.attributes.password.blank"
+msgstr "The password is required."
+
+msgid "activerecord.errors.models.admin_user.attributes.password.invalid"
+msgstr "The password must contain at least 1 upper case character, 1 lower case, 1 digit and 1 symbol."
+
+msgid "activerecord.errors.models.admin_user.attributes.password.too_long"
+msgstr "The password may contain up to %{count} characters."
+
+msgid "activerecord.errors.models.admin_user.attributes.password_confirmation.confirmation"
+msgstr "Password confirmation must match the password."
+
+msgid "activerecord.errors.models.admin_user.attributes.username.blank"
+msgstr "The username is required."
+
+msgid "activerecord.errors.models.admin_user.attributes.username.invalid"
+msgstr "The username must contain only letters, digits, dashes and dots."
+
+msgid "activerecord.errors.models.admin_user.attributes.username.taken"
+msgstr "The username is already used."
+
+msgid "activerecord.errors.models.admin_user.attributes.username.too_long"
+msgstr "The username may contain up to %{count} characters."
+
+msgid "devise.confirmations.confirmed"
+msgstr "Your email address has been successfully confirmed."
+
+msgid "devise.confirmations.send_instructions"
+msgstr "You will receive an email with instructions for how to confirm your email address in a few minutes."
+
+msgid "devise.confirmations.send_paranoid_instructions"
+msgstr "If your email address exists in our system, you will receive an email with instructions for how to confirm your email address in a few minutes."
+
+msgid "devise.failure.already_authenticated"
+msgstr "You are already signed in."
+
+msgid "devise.failure.expired"
+msgstr "Your account has expired due to inactivity. Please contact the site administrator."
+
+msgid "devise.failure.inactive"
+msgstr "Your account is not activated yet."
+
+msgid "devise.failure.invalid"
+msgstr "The email or password is invalid."
+
+msgid "devise.failure.last_attempt"
+msgstr "You have one more attempt before your account is locked."
+
+msgid "devise.failure.locked"
+msgstr "Your account is locked."
+
+msgid "devise.failure.not_found_in_database"
+msgstr "The email or password is invalid."
+
+msgid "devise.failure.session_limited"
+msgstr "Your login credentials were used in another browser. Please sign in again to continue in this browser."
+
+msgid "devise.failure.timeout"
+msgstr "Your session expired. Please sign in again to continue."
+
+msgid "devise.failure.unauthenticated"
+msgstr "You need to sign in before continuing."
+
+msgid "devise.failure.unconfirmed"
+msgstr "You have to confirm your email address before continuing."
+
+msgid "devise.invalid_captcha"
+msgstr "The captcha input was invalid."
+
+msgid "devise.invalid_security_question"
+msgstr "The security question answer was invalid."
+
+msgid "devise.mailer.confirmation_instructions.subject"
+msgstr "Confirmation instructions"
+
+msgid "devise.mailer.email_changed.subject"
+msgstr "Email changed"
+
+msgid "devise.mailer.password_change.subject"
+msgstr "Password changed"
+
+msgid "devise.mailer.reset_password_instructions.subject"
+msgstr "Reset password instructions"
+
+msgid "devise.mailer.unlock_instructions.subject"
+msgstr "Unlock instructions"
+
+msgid "devise.omniauth_callbacks.failure"
+msgstr "Could not authenticate you from %{kind} because \"%{reason}\""
+
+msgid "devise.omniauth_callbacks.success"
+msgstr "Successfully authenticated from %{kind} account."
+
+msgid "devise.paranoid_verify.code_required"
+msgstr "Please enter the code our support team provided"
+
+msgid "devise.password_expired.change_required"
+msgstr "Your password is expired. Please renew your password."
+
+msgid "devise.password_expired.updated"
+msgstr "Your new password is saved."
+
+msgid "devise.passwords.no_token"
+msgstr "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+
+msgid "devise.passwords.send_instructions"
+msgstr "You will receive an email with instructions on how to reset your password in a few minutes."
+
+msgid "devise.passwords.send_paranoid_instructions"
+msgstr "If your email address exists in our system, you will receive a password recovery link at your email address in a few minutes."
+
+msgid "devise.passwords.updated"
+msgstr "Your password has been changed successfully. You are now signed in."
+
+msgid "devise.passwords.updated_not_active"
+msgstr "Your password has been changed successfully."
+
+msgid "devise.registrations.destroyed"
+msgstr "Bye! Your account has been successfully cancelled. We hope to see you again soon."
+
+msgid "devise.registrations.signed_up"
+msgstr "Welcome! You have signed up successfully."
+
+msgid "devise.registrations.signed_up_but_inactive"
+msgstr "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
+
+msgid "devise.registrations.signed_up_but_locked"
+msgstr "You have signed up successfully. However, we could not sign you in because your account is locked."
+
+msgid "devise.registrations.signed_up_but_unconfirmed"
+msgstr "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
+
+msgid "devise.registrations.update_needs_confirmation"
+msgstr "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address."
+
+msgid "devise.registrations.updated"
+msgstr "Your account has been updated successfully."
+
+msgid "devise.registrations.updated_but_not_signed_in"
+msgstr "Your account has been updated successfully, but since your password was changed, you need to sign in again"
+
+msgid "devise.sessions.already_signed_out"
+msgstr "Signed out successfully."
+
+msgid "devise.sessions.signed_in"
+msgstr "Signed in successfully."
+
+msgid "devise.sessions.signed_out"
+msgstr "Signed out successfully."
+
+msgid "devise.unlocks.send_instructions"
+msgstr "You will receive an email with instructions for how to unlock your account in a few minutes."
+
+msgid "devise.unlocks.send_paranoid_instructions"
+msgstr "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
+
+msgid "devise.unlocks.unlocked"
+msgstr "Your account has been unlocked successfully. Please sign in to continue."
+
+msgid "errors.messages.already_confirmed"
+msgstr "Your email was already confirmed, please try signing in"
+
+msgid "errors.messages.confirmation_period_expired"
+msgstr "Your email needs to be confirmed within %{period}, please request a new one"
+
+msgid "errors.messages.equal_to_current_password"
+msgstr "Your new password must be different than the current password."
+
+msgid "errors.messages.expired"
+msgstr "Your token has expired, please request a new one"
+
+msgid "errors.messages.not_found"
+msgstr "Your account was not found"
+
+msgid "errors.messages.not_locked"
+msgstr "Your account was not locked"
+
+msgid "errors.messages.password_complexity.digit.one"
+msgstr "The password must contain at least one digit."
+
+msgid "errors.messages.password_complexity.digit.other"
+msgstr "The password must contain at least %{count} numerals."
+
+msgid "errors.messages.password_complexity.lower.one"
+msgstr "The password must contain at least one lower-case letter."
+
+msgid "errors.messages.password_complexity.lower.other"
+msgstr "The password must contain at least %{count} lower-case letters."
+
+msgid "errors.messages.password_complexity.symbol.one"
+msgstr "The password must contain at least one symbol."
+
+msgid "errors.messages.password_complexity.symbol.other"
+msgstr "The password must contain at least %{count} symbols."
+
+msgid "errors.messages.password_complexity.upper.one"
+msgstr "The password must contain at least one upper-case letter."
+
+msgid "errors.messages.password_complexity.upper.other"
+msgstr "The password must contain at least %{count} upper-case letters."
+
+msgid "errors.messages.taken_in_past"
+msgstr "You have already used this password in the past. Please choose a new one."

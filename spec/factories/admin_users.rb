@@ -1,0 +1,17 @@
+# frozen_string_literal: true
+
+FactoryBot.define do
+  factory :admin_user do
+    sequence(:username) { |n| "username-#{n}" }
+    sequence(:email) { |n| "user#{n}@test.com" }
+    password { 'T3stPa$$' }
+
+    association :client
+
+    after(:create) { |admin_user, _| admin_user.confirm }
+
+    trait :supervisor do
+      after(:create) { |admin_user, _| admin_user.supervisor! }
+    end
+  end
+end

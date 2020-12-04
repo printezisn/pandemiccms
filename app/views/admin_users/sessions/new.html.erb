@@ -1,0 +1,54 @@
+<%
+    content_for :title, _('Sign In | %{client}') % { client: current_client.name }
+    content_for :description, _('Sign in to %{client}') % { client: current_client.name }
+%>
+
+<article class="small-form">
+  <header>
+    <h1 class="title is-3 bb-grey-1"><%= _('Sign In') %></h1>
+  </header>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= f.hidden_field :client_id, value: current_client[:id] %>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <%= f.label :email, class: 'label required-label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <%= f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: _('Your email address'), class: 'input', required: true %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <%= f.label :password, class: 'label required-label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <%= f.password_field :password, autocomplete: 'current-password', placeholder: _('Your password'), class: 'input', required: true %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal"></div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <%= f.submit _('Sign in'), class: 'button is-link' %>
+          <br />
+          <br />
+          <%= render "admin_users/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+</article>

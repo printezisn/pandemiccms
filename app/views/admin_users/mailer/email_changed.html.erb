@@ -1,0 +1,9 @@
+<p><%= _('Hello %{email}!') % { email: @email } %></p>
+
+<% if @resource.try(:unconfirmed_email?) %>
+<p><%= _("We're contacting you to notify you that your email is being changed to %{email}") % { email: @resource.unconfirmed_email } %></p>
+<% else %>
+<p><%= _("We're contacting you to notify you that your email has been changed to %{email}") % { email: @resource.email } %></p>
+<% end %>
+
+<p><%= _('Kind Regards,') %><br /><%= _('The administration of %{client}') % { client: @resource.client.name } %></p>
