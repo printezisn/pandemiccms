@@ -63,3 +63,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'devise', '~> 4.7'
 gem 'mysql2', '~> 0.5.3'
+
+gem 'devise-security', '~> 0.14.3'
