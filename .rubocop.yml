@@ -4,3 +4,6 @@ require:
 
 AllCops:
   NewCops: enable
+
+Metrics/BlockLength:
+  Enabled: false
