@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_05_100624) do
+ActiveRecord::Schema.define(version: 2020_12_05_111706) do
 
   create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 2020_12_05_100624) do
     t.index ["confirmation_token"], name: "index_admin_users_on_confirmation_token", unique: true
     t.index ["password_changed_at"], name: "index_admin_users_on_password_changed_at"
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "old_passwords", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "encrypted_password", null: false
+    t.string "password_archivable_type", null: false
+    t.integer "password_archivable_id", null: false
+    t.string "password_salt"
+    t.datetime "created_at"
+    t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable"
   end
 
 end
