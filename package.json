@@ -2,6 +2,7 @@
   "name": "pandemiccms",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/webpacker": "4.3.0",
     "bulma": "^0.9.1"
