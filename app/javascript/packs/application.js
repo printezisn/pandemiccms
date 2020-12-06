@@ -7,8 +7,17 @@ const initNavbars = () => {
   });
 };
 
+const initNotifications = () => {
+  [...document.querySelectorAll('.notification > .delete')].forEach((el) => {
+    el.addEventListener('click', () => {
+      el.parentElement.remove();
+    });
+  });
+};
+
 const init = () => {
   initNavbars();
+  initNotifications();
 };
 
 if (document.readyState === 'complete') {

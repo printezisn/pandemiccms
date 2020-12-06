@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title><%= yield :title %> Pandemic CMS</title>
+    <title><%= yield :title %></title>
     <meta name="description" content="<%= yield :description %>" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <%= csrf_meta_tags %>
@@ -81,7 +81,7 @@
                             &nbsp;
                             Username
                         </a>
-                        <div class="navbar-dropdown">
+                        <div class="navbar-dropdown is-right">
                             <a class="navbar-item" href="#">
                                 <i class="fas fa-user"></i>
                                 &nbsp;
@@ -103,8 +103,23 @@
             </div>
         </nav>
     </header>
+    <main class="container is-fluid">
+        <% if alert %>
+        <p class="notification is-danger">
+            <button class="delete"></button>
+            <%= alert %>
+        </p>
+        <% end %>
 
-    <%= yield %>
+        <%= yield %>
+    </main>
+    <footer>
+        <% if Time.now.year > 2020 %>
+        Pandemic CMS 2020 - <%= Time.now.year %>
+        <% else %>
+        Pandemic CMS 2020
+        <% end %>
+    </footer>
 </body>
 
 </html>
