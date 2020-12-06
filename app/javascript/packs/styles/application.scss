@@ -1,1 +1,12 @@
+@import "./variables";
 @import "~bulma/bulma";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.fa-disease {
+  color: $red;
+}
