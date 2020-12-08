@@ -110,6 +110,12 @@
             <%= alert %>
         </p>
         <% end %>
+        <% if notice %>
+        <p class="notification is-success">
+            <button class="delete"></button>
+            <%= notice %>
+        </p>
+        <% end %>
 
         <%= yield %>
     </main>
