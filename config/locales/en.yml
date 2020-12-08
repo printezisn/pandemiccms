@@ -54,3 +54,5 @@ en:
               invalid: "The password must contain at least 1 upper case character, 1 lower case, 1 digit and 1 symbol."
               too_long: "The password may contain up to %{count} characters."
               blank: "The password is required."
+            password_confirmation:
+              confirmation: "Password confirmation must match the password."

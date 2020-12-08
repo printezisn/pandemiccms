@@ -66,4 +66,10 @@ RSpec.describe AdminUser, type: :model do
       .is_at_most(128)
       .with_message('The password may contain up to 128 characters.')
   end
+
+  # Password confirmation
+  it do
+    expect(model).to validate_confirmation_of(:password)
+      .with_message('Password confirmation must match the password.')
+  end
 end
