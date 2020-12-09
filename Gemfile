@@ -64,3 +64,5 @@ gem 'devise', '~> 4.7'
 gem 'mysql2', '~> 0.5.3'
 
 gem 'devise-security', '~> 0.14.3'
+
+gem 'gettext_i18n_rails', '~> 1.8'
