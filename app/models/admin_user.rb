@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'uri'
-require_relative './validators/email_validator'
 
 # Admin user model
 class AdminUser < ApplicationRecord
