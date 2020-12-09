@@ -6,5 +6,7 @@ FactoryBot.define do
     sequence(:email) { |n| "user#{n}@test.com" }
     sequence(:client_id) { |n| "client-#{n}" }
     password { 'T3stPa$$' }
+
+    after(:create) { |admin_user, _| admin_user.confirm }
   end
 end
