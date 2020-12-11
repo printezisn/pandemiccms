@@ -1,35 +1,35 @@
 <%
-    content_for :title, 'Reset Password | Pandemic CMS'
-    content_for :description, 'Reset your password in Pandemic CMS'
+    content_for :title, _('Reset Password | %{client}') % { client: 'Pandemic CMS' }
+    content_for :description, _('Reset your password in %{client}') % { client: 'Pandemic CMS' }
 %>
 
 <article class="small-form">
     <header>
-        <h1 class="title is-3">Reset Password</h1>
+        <h1 class="title is-3"><%= _('Reset Password') %></h1>
     </header>
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "admin_users/shared/error_messages", resource: resource %>
     <%= f.hidden_field :reset_password_token %>
     <div class="field is-horizontal">
         <div class="field-label is-normal">
-            <%= f.label :password, 'New Password', class: 'label required-label' %>
+            <%= f.label :password, _('New Password'), class: 'label required-label' %>
         </div>
         <div class="field-body">
             <div class="field">
                 <div class="control">
-                    <%= f.password_field :password, autofocus: true, autocomplete: 'new-password', placeholder: 'Your new password', class: 'input', required: true %>
+                    <%= f.password_field :password, autofocus: true, autocomplete: 'new-password', placeholder: _('Your new password'), class: 'input', required: true %>
                 </div>
             </div>
         </div>
     </div>
     <div class="field is-horizontal">
         <div class="field-label is-normal">
-            <%= f.label :password_confirmation, 'Confirm new Password', class: 'label required-label' %>
+            <%= f.label :password_confirmation, _('Confirm new Password'), class: 'label required-label' %>
         </div>
         <div class="field-body">
             <div class="field">
                 <div class="control">
-                    <%= f.password_field :password_confirmation, autocomplete: 'new-password', placeholder: 'Confirm your new password', class: 'input', required: true %>
+                    <%= f.password_field :password_confirmation, autocomplete: 'new-password', placeholder: _('Confirm your new password'), class: 'input', required: true %>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
         <div class="field-body">
             <div class="field">
                 <div class="control">
-                    <%= f.submit 'Change my password', class: 'button is-link' %>
+                    <%= f.submit _('Change my password'), class: 'button is-link' %>
                     <br />
                     <br />
                     <%= render "admin_users/shared/links" %>
