@@ -1,0 +1,18 @@
+# frozen_string_literal: true
+
+_('AdminUser|Password')
+_('activerecord.attributes.admin_user.email')
+_('activerecord.attributes.admin_user.username')
+_('activerecord.attributes.admin_user.password')
+_('activerecord.errors.models.admin_user.attributes.username.blank')
+_('activerecord.errors.models.admin_user.attributes.username.invalid')
+_('activerecord.errors.models.admin_user.attributes.username.too_long')
+_('activerecord.errors.models.admin_user.attributes.username.taken')
+_('activerecord.errors.models.admin_user.attributes.email.blank')
+_('activerecord.errors.models.admin_user.attributes.email.invalid')
+_('activerecord.errors.models.admin_user.attributes.email.too_long')
+_('activerecord.errors.models.admin_user.attributes.email.taken')
+_('activerecord.errors.models.admin_user.attributes.password.blank')
+_('activerecord.errors.models.admin_user.attributes.password.invalid')
+_('activerecord.errors.models.admin_user.attributes.password.too_long')
+_('activerecord.errors.models.admin_user.attributes.password_confirmation.confirmation')
