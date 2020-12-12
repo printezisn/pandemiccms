@@ -8,5 +8,9 @@ FactoryBot.define do
     password { 'T3stPa$$' }
 
     after(:create) { |admin_user, _| admin_user.confirm }
+
+    trait :supervisor do
+      roles { [AdminUser::SUPERVISOR_ROLE] }
+    end
   end
 end

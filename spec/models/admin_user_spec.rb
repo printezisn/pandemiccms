@@ -5,6 +5,9 @@ require 'rails_helper'
 RSpec.describe AdminUser, type: :model do
   subject(:model) { FactoryBot.build(:admin_user) }
 
+  # Roles
+  it { is_expected.to serialize(:roles) }
+
   # Username
   it { is_expected.to validate_presence_of(:username).with_message('The username is required.') }
   it { is_expected.to allow_value('test.-usER0').for(:username) }
@@ -91,5 +94,17 @@ RSpec.describe AdminUser, type: :model do
     end
 
     it { expect(model.client).to eq(client) }
+  end
+
+  describe '#supervisor?' do
+    context 'when the user does not have an admin role' do
+      it { is_expected.not_to be_supervisor }
+    end
+
+    context 'when the user has an admin role' do
+      subject(:model) { FactoryBot.build(:admin_user, :supervisor) }
+
+      it { is_expected.to be_supervisor }
+    end
   end
 end

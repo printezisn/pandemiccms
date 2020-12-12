@@ -4,11 +4,15 @@ require 'uri'
 
 # Admin user model
 class AdminUser < ApplicationRecord
+  SUPERVISOR_ROLE = 'supervisor'
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :confirmable, :lockable, :timeoutable,
          :trackable, :recoverable, :password_expirable, :password_archivable,
          :session_limitable
+
+  serialize :roles, Array
 
   validates :email, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP },
@@ -29,5 +33,9 @@ class AdminUser < ApplicationRecord
 
   def client
     @client ||= Rails.configuration.tenants[client_id.to_sym]
+  end
+
+  def supervisor?
+    roles.include?(SUPERVISOR_ROLE)
   end
 end
