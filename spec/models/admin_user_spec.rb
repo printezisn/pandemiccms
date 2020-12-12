@@ -79,6 +79,10 @@ RSpec.describe AdminUser, type: :model do
         id: 'local',
         name: 'Pandemic CMS',
         release_year: 2020,
+        default_url_options: {
+          host: 'localhost',
+          port: 3000
+        },
         locales: ['en'],
         domains: ['localhost', 'example.com']
       }

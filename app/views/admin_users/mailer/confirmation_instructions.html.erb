@@ -2,6 +2,6 @@
 
 <p><%= _('You can confirm your account email through the link below:') %></p>
 
-<p><%= link_to _('Confirm my account'), confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to _('Confirm my account'), confirmation_url(@resource, @resource.client[:default_url_options].merge(confirmation_token: @token, locale: I18n.locale)) %></p>
 
 <p><%= _('Kind Regards,') %><br /><%= _('The administration of %{client}') % { client: @resource.client[:name] } %></p>

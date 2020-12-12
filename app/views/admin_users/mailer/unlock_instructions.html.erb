@@ -4,6 +4,6 @@
 
 <p><%= _('Click the link below to unlock your account:') %></p>
 
-<p><%= link_to _('Unlock my account'), unlock_url(@resource, unlock_token: @token) %></p>
+<p><%= link_to _('Unlock my account'), unlock_url(@resource, @resource.client[:default_url_options].merge(unlock_token: @token, locale: I18n.locale)) %></p>
 
 <p><%= _('Kind Regards,') %><br /><%= _('The administration of %{client}') % { client: @resource.client[:name] } %></p>
