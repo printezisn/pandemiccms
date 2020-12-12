@@ -300,7 +300,7 @@ msgid "devise.failure.inactive"
 msgstr "Your account is not activated yet."
 
 msgid "devise.failure.invalid"
-msgstr "Invalid email or password."
+msgstr "The email or password is invalid."
 
 msgid "devise.failure.last_attempt"
 msgstr "You have one more attempt before your account is locked."
@@ -309,7 +309,7 @@ msgid "devise.failure.locked"
 msgstr "Your account is locked."
 
 msgid "devise.failure.not_found_in_database"
-msgstr "Invalid email or password."
+msgstr "The email or password is invalid."
 
 msgid "devise.failure.session_limited"
 msgstr "Your login credentials were used in another browser. Please sign in again to continue in this browser."
@@ -435,28 +435,28 @@ msgid "errors.messages.not_locked"
 msgstr "Your account was not locked"
 
 msgid "errors.messages.password_complexity.digit.one"
-msgstr "The password must contain at least one digit"
+msgstr "The password must contain at least one digit."
 
 msgid "errors.messages.password_complexity.digit.other"
-msgstr "The password must contain at least %{count} numerals"
+msgstr "The password must contain at least %{count} numerals."
 
 msgid "errors.messages.password_complexity.lower.one"
-msgstr "The password must contain at least one lower-case letter"
+msgstr "The password must contain at least one lower-case letter."
 
 msgid "errors.messages.password_complexity.lower.other"
-msgstr "The password must contain at least %{count} lower-case letters"
+msgstr "The password must contain at least %{count} lower-case letters."
 
 msgid "errors.messages.password_complexity.symbol.one"
-msgstr "The password must contain at least one punctuation mark or symbol"
+msgstr "The password must contain at least one symbol."
 
 msgid "errors.messages.password_complexity.symbol.other"
-msgstr "The password must contain at least %{count} puncutation marks or symbols"
+msgstr "The password must contain at least %{count} symbols."
 
 msgid "errors.messages.password_complexity.upper.one"
-msgstr "The password must contain at least one upper-case letter"
+msgstr "The password must contain at least one upper-case letter."
 
 msgid "errors.messages.password_complexity.upper.other"
-msgstr "The password must contain at least %{count} upper-case letters"
+msgstr "The password must contain at least %{count} upper-case letters."
 
 msgid "errors.messages.taken_in_past"
-msgstr "This password was used previously. Please choose a new one."
+msgstr "You have already used this password in the past. Please choose a new one."

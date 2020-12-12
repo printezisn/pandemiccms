@@ -1,0 +1,462 @@
+# Greek, Modern (1453-) translations for app package.
+# Copyright (C) 2020 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: app 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2020-12-12 09:50+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Greek, Modern (1453-)\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+
+msgid "Admin user"
+msgstr "Admin Χρήστης"
+
+msgid "AdminUser|Confirmation sent at"
+msgstr "Επιβεβαίωση Στάλθηκε"
+
+msgid "AdminUser|Confirmation token"
+msgstr "Σύνδεσμος Επιβεβαίωσης"
+
+msgid "AdminUser|Confirmed at"
+msgstr "Επιβεβαιώθηκε"
+
+msgid "AdminUser|Current sign in at"
+msgstr "Τωρινή Σύνδεση"
+
+msgid "AdminUser|Current sign in ip"
+msgstr "IP Τωρινής Σύνδεσης"
+
+msgid "AdminUser|Email"
+msgstr "Email"
+
+msgid "AdminUser|Encrypted password"
+msgstr "Κωδικός"
+
+msgid "AdminUser|Failed attempts"
+msgstr "Αποτυχημένες Προσπάθειες"
+
+msgid "AdminUser|Last sign in at"
+msgstr "Τελευταία Σύνδεση"
+
+msgid "AdminUser|Last sign in ip"
+msgstr "IP Τελευταίας Σύνδεσης"
+
+msgid "AdminUser|Locked at"
+msgstr "Κλειδώθηκε"
+
+msgid "AdminUser|Password"
+msgstr "Κωδικός"
+
+msgid "AdminUser|Password changed at"
+msgstr "Αλλαγή Κωδικού"
+
+msgid "AdminUser|Reset password sent at"
+msgstr "Επαναφορά Κωδικού Στάλθηκε"
+
+msgid "AdminUser|Reset password token"
+msgstr "Σύνδεσμος Επαναφοράς Κωδικού"
+
+msgid "AdminUser|Sign in count"
+msgstr "Σύνολο Συνδέσεων"
+
+msgid "AdminUser|Unconfirmed email"
+msgstr "Μη Επιβεβαιωμένο Email"
+
+msgid "AdminUser|Username"
+msgstr "Όνομα Χρήστη"
+
+msgid "Categories"
+msgstr "Κατηγορίες"
+
+msgid "Change Password"
+msgstr "Αλλαγή Κωδικού"
+
+msgid "Change my password"
+msgstr "Αλλαγή του κωδικού μου"
+
+msgid "Click the link below to unlock your account:"
+msgstr "Πατήστε στο σύνδεσμο για να ξεκλειδώσετε το λογαριασμό σας:"
+
+msgid "Confirm my account"
+msgstr "Επιβεβαίωση του λογαριασμού μου"
+
+msgid "Confirm new Password"
+msgstr "Επιβεβαίωση νέου κωδικού"
+
+msgid "Confirm your new password"
+msgstr "Επιβεβαιώστε το νέο σας κωδικό"
+
+msgid "Didn't receive confirmation instructions ?"
+msgstr "Δε λάβατε οδηγίες επιβεβαίωσης ?"
+
+msgid "Didn't receive unlock instructions ?"
+msgstr "Δε λάβατε οδηγίες ξεκλειδώματος"
+
+msgid "Forgot Password ?"
+msgstr "Ξεχάσατε τον κωδικό σας ?"
+
+msgid "Forgot Password | %{client}"
+msgstr "Ξέχασα τον Κωδικό | %{client}"
+
+msgid "Forgot your password ?"
+msgstr "Ξεχάσατε τον κωδικό σας ?"
+
+msgid "Hello %{email}!"
+msgstr "Γειά σας %{email}!"
+
+msgid "If you didn't request this, please ignore this email."
+msgstr "Αν δε το ζητήσατε, παρακαλούμε αγνοήστε το email."
+
+msgid "Kind Regards,"
+msgstr "Φιλικά,"
+
+msgid "Log in"
+msgstr "Σύνδεση"
+
+msgid "Media"
+msgstr "Αρχεία"
+
+msgid "My Profile"
+msgstr "Το Προφίλ Μου"
+
+msgid "New Password"
+msgstr "Νέος Κωδικός"
+
+msgid "Old password"
+msgstr "Παλιός Κωδικός"
+
+msgid "OldPassword|Encrypted password"
+msgstr "Κωδικός"
+
+msgid "OldPassword|Password archivable type"
+msgstr "Τύπος Αρχειοποίησης Κωδικού"
+
+msgid "OldPassword|Password salt"
+msgstr "Πρόσθετο Κωδικού"
+
+msgid "Pages"
+msgstr "Σελίδες"
+
+msgid "Posts"
+msgstr "Άρθρα"
+
+msgid "Request instructions to reset password in %{client}"
+msgstr "Ζητήστε οδηγίες για επαναφορά κωδικού στο %{client}"
+
+msgid "Resend Confirmation Instructions"
+msgstr "Επαναποστολή Οδηγιών Επιβεβαίωσης"
+
+msgid "Resend Confirmation Instructions | %{client}"
+msgstr "Επαναποστολή Οδηγιών Επιβεβαίωσης | %{client}"
+
+msgid "Resend confirmation instruction for %{client}"
+msgstr "Επαναποστολή Οδηγιών Επιβεβαίωσης στο %{client}"
+
+msgid "Resend confirmation instructions"
+msgstr "Επαναποστολή οδηγιών επιβεβαίωσης"
+
+msgid "Reset Password"
+msgstr "Επαναφορά Κωδικού"
+
+msgid "Reset Password | %{client}"
+msgstr "Επαναφορά Κωδικού | %{client}"
+
+msgid "Reset your password in %{client}"
+msgstr "Επαναφέρετε τον κωδικό σας στο %{client}"
+
+msgid "Send me reset password instructions"
+msgstr "Αποστολή οδηγιών επαναφοράς κωδικού"
+
+msgid "Sign In"
+msgstr "Σύνδεση"
+
+msgid "Sign In | %{client}"
+msgstr "Σύνδεση | %{client}"
+
+msgid "Sign Out"
+msgstr "Αποσύνδεση"
+
+msgid "Sign in"
+msgstr "Σύνδεση"
+
+msgid "Sign in to %{client}"
+msgstr "Σύνδεση στο %{client}"
+
+msgid "Sign up"
+msgstr "Εγγραφή"
+
+msgid "Someone has requested a link to change your password. You can do this through the link below."
+msgstr "Κάποιος ζήτησε σύνδεσμο για αλλαγή του κωδικού σας. Μπορείτε να το κάνετε μέσω του παρακάτω συνδέσμου"
+
+msgid "The administration of %{client}"
+msgstr "Η διαχείριση του %{client}"
+
+msgid "Unlock my account"
+msgstr "Ξεκλείδωμα του λογαριασμού μου"
+
+msgid "Users"
+msgstr "Χρήστες"
+
+msgid "We're contacting you to notify you that your email has been changed to %{email}"
+msgstr "Επικοινωνούμε μαζί σας για να σας γνωστοποιήσουμε ότι το email σας έχει αλλάξει σε %{email}"
+
+msgid "We're contacting you to notify you that your email is being changed to %{email}"
+msgstr "Επικοινωνούμε μαζί σας για να σας γνωστοποιήσουμε ότι το email σας αλλάζει σε %{email}"
+
+msgid "We're contacting you to notify you that your password has been changed."
+msgstr "Επικοινωνούμε μαζί σας για να σας γνωστοποιήσουμε ότι ο κωδικός σας έχει αλλάξει."
+
+msgid "Welcome %{email}!"
+msgstr "Καλώς ορίσατε %{email}!"
+
+msgid "You can confirm your account email through the link below:"
+msgstr "Μπορείτε να επιβεβαιώσετε το email του λογαριασμού σας μέσω του παρακάτω συνδέσμου:"
+
+msgid "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+msgstr "Ο λογαριασμός σας έχει κλειδωθεί λόγω υπερβολικού αριθμού αποτυχημένων προσπαθειών σύνδεσης."
+
+msgid "Your email address"
+msgstr "Το email σας"
+
+msgid "Your new password"
+msgstr "Ο νέος κωδικός σας"
+
+msgid "Your password"
+msgstr "Ο κωδικός σας"
+
+msgid "Your password won't change until you access the link above and create a new one."
+msgstr "Ο κωδικός σας δε θα αλλάξει μέχρι να ακολουθήσετε τον παραπάνω σύνδεσμο και να δημιουργήσετε έναν καινούργιο."
+
+msgid "activerecord.attributes.admin_user.email"
+msgstr "Email"
+
+msgid "activerecord.attributes.admin_user.password"
+msgstr "Κωδικός"
+
+msgid "activerecord.attributes.admin_user.username"
+msgstr "Όνομα Χρήστη"
+
+msgid "activerecord.errors.models.admin_user.attributes.email.blank"
+msgstr "Το email είναι υποχρεωτικό."
+
+msgid "activerecord.errors.models.admin_user.attributes.email.invalid"
+msgstr "Το email δεν είναι έγκυρο."
+
+msgid "activerecord.errors.models.admin_user.attributes.email.taken"
+msgstr "Το email χρησιμοποιείται ήδη."
+
+msgid "activerecord.errors.models.admin_user.attributes.email.too_long"
+msgstr "Το email μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.admin_user.attributes.password.blank"
+msgstr "Ο κωδικός είναι υποχρεωτικός."
+
+msgid "activerecord.errors.models.admin_user.attributes.password.invalid"
+msgstr "Ο κωδικός πρέπει να περιέχει τουλάχιστον 1 μικρό χαρακτήρα, 1 κεφαλαίο, 1 ψηφίο κι 1 σύμβολο."
+
+msgid "activerecord.errors.models.admin_user.attributes.password.too_long"
+msgstr "Ο κωδικός μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.admin_user.attributes.password_confirmation.confirmation"
+msgstr "Η επιβεβαίωση κωδικού πρέπει να είναι ίδια με τον κωδικό."
+
+msgid "activerecord.errors.models.admin_user.attributes.username.blank"
+msgstr "Το όνομα χρήστη είναι υποχρεωτικό."
+
+msgid "activerecord.errors.models.admin_user.attributes.username.invalid"
+msgstr "Το όνομα χρήστη πρέπει να περιέχει μόνο γράμματα, ψηφία, παύλες και κάτω παύλες."
+
+msgid "activerecord.errors.models.admin_user.attributes.username.taken"
+msgstr "Το όνομα χρήστη χρησιμοποιείται ήδη."
+
+msgid "activerecord.errors.models.admin_user.attributes.username.too_long"
+msgstr "Το όνομα χρήστη μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "devise.confirmations.confirmed"
+msgstr "Η διεύθυνση email επιβεβαιώθηκε με επιτυχία."
+
+msgid "devise.confirmations.send_instructions"
+msgstr "Θα λάβετε email με οδηγίες για το πως να επιβεβαιώσετε τη διεύθυνση email σας σε μερικά λεπτά."
+
+msgid "devise.confirmations.send_paranoid_instructions"
+msgstr "Αν η διεύθυνση email σας υπάρχει στο σύστημα μας, θα λάβετε email με οδηγίες για το πως να επιβεβαιώσετε τη διεύθυνση email σας σε μερικά λεπτά."
+
+msgid "devise.failure.already_authenticated"
+msgstr "Είστε ήδη συνδεδεμένος/η"
+
+msgid "devise.failure.expired"
+msgstr "Ο λογαριασμός σας έχει λήξει λόγω μη χρήσης. Παρακαλούμε επικοινωνήστε με τον διαχειριστή του site."
+
+msgid "devise.failure.inactive"
+msgstr "Ο λογαριασμός σας δεν έχει ενεργοποιηθεί ακόμα."
+
+msgid "devise.failure.invalid"
+msgstr "Το email ή ο κωδικός είναι λανθασμένα."
+
+msgid "devise.failure.last_attempt"
+msgstr "Έχετε ακόμα μια προσπάθεια πριν κλειδωθεί ο λογαριασμός σας."
+
+msgid "devise.failure.locked"
+msgstr "Ο λογαριασμός σας έχει κλειδωθεί."
+
+msgid "devise.failure.not_found_in_database"
+msgstr "Το email ή ο κωδικός είναι λανθασμένα."
+
+msgid "devise.failure.session_limited"
+msgstr "Τα στοιχεία σύνδεσης σας χρησιμοποιήθηκαν σε άλλο browser. Παρακαλούμε συνδεθείτε ξανά για να συνεχίσετε σε αυτό το browser."
+
+msgid "devise.failure.timeout"
+msgstr "Το session σας έχει λήξει. Παρακαλούμε συνδεθείτε ξανά για να συνεχίσετε."
+
+msgid "devise.failure.unauthenticated"
+msgstr "Πρέπει να συνδεθείτε πριν συνεχίσετε."
+
+msgid "devise.failure.unconfirmed"
+msgstr "Πρέπει να επιβεβαιώσετε τη διεύθυνση email σας πριν συνεχίσετε."
+
+msgid "devise.invalid_captcha"
+msgstr "Η τιμή captcha ήταν λανθασμένη."
+
+msgid "devise.invalid_security_question"
+msgstr "Η απάντηση στην ερώτηση ασφαλείας ήταν λανθασμένη."
+
+msgid "devise.mailer.confirmation_instructions.subject"
+msgstr "Οδηγίες επιβεβαίωσης"
+
+msgid "devise.mailer.email_changed.subject"
+msgstr "Το email άλλαξε"
+
+msgid "devise.mailer.password_change.subject"
+msgstr "Ο κωδικός άλλαξε"
+
+msgid "devise.mailer.reset_password_instructions.subject"
+msgstr "Οδηγίες επαναφοράς κωδικού"
+
+msgid "devise.mailer.unlock_instructions.subject"
+msgstr "Οδηγίες ξεκλειδώματος"
+
+msgid "devise.omniauth_callbacks.failure"
+msgstr "Could not authenticate you from %{kind} because \"%{reason}\""
+
+msgid "devise.omniauth_callbacks.success"
+msgstr "Successfully authenticated from %{kind} account."
+
+msgid "devise.paranoid_verify.code_required"
+msgstr "Παρακαλούμε εισάγετε τον κωδικό που σας έδωσε η ομάδα υποστήριξης μας"
+
+msgid "devise.password_expired.change_required"
+msgstr "Ο κωδικός σας έχει λήξει. Παρακαλούμε ανανεώστε τον κωδικό σας."
+
+msgid "devise.password_expired.updated"
+msgstr "Ο νέος κωδικός σας έχει αποθηκευτεί."
+
+msgid "devise.passwords.no_token"
+msgstr "Δε μπορείτε να έχετε πρόσβαση σε αυτή τη σελίδα αν δεν έρχεστε απο σελίδα επαναφοράς κωδικού. Αν όντως έρχεστε απο σελίδα επαναφοράς κωδικού, τότε επιβεβαιώστε ότι χρησιμοποιείτε ολόκληρο το σύνδεσμο που έχει δωθεί."
+
+msgid "devise.passwords.send_instructions"
+msgstr "Θα λάβετε email με οδηγίες για το πως να επαναφέρετε τον κωδικό σας σε μερικά λεπτά."
+
+msgid "devise.passwords.send_paranoid_instructions"
+msgstr "Αν η διεύθυνση email σας υπάρχει στο σύστημα μας, θα λάβετε ένα σύνδεσμο ανάκτησης κωδικού στη διεύθυνση email σας σε μερικά λεπτά."
+
+msgid "devise.passwords.updated"
+msgstr "Ο κωδικός σας έχει αλλάξει επιτυχώς. Είστε συνδεδεμένος/η."
+
+msgid "devise.passwords.updated_not_active"
+msgstr "Ο κωδικός σας έχει αλλάξει επιτυχώς."
+
+msgid "devise.registrations.destroyed"
+msgstr "Αντίο! Ο λογαριασμός σας έχει ακυρωθεί επιτυχώς. Ελπίζουμε να σας δούμε ξανά σύντομα."
+
+msgid "devise.registrations.signed_up"
+msgstr "Καλώς ορίσατε! Έχει εγγραφεί επιτυχώς."
+
+msgid "devise.registrations.signed_up_but_inactive"
+msgstr "Έχετε εγγραφεί επιτυχώς. Όμως, δε μπορέσαμε να σας συνδέσουμε γιατί ο λογαριασμός σας δεν έχει ενεργοποιηθεί ακόμα."
+
+msgid "devise.registrations.signed_up_but_locked"
+msgstr "Έχετε εγγραφεί επιτυχώς. Όμως, δε μπορέσαμε να σας συνδέσουμε γιατί ο λογαριασμός σας είναι κλειδωμένος."
+
+msgid "devise.registrations.signed_up_but_unconfirmed"
+msgstr "Ένα μήνυμα με ένα σύνδεσμο επιβεβαίωσης έχει σταλεί στη διεύθυνση email σας. Παρακαλούμε ακολουθήστε το σύνδεσμο για να ενεργοποιήσετε το λογαριασμό σας."
+
+msgid "devise.registrations.update_needs_confirmation"
+msgstr "Ο λογαριασμός σας ανανεώθηκε με επιτυχία, αλλά πρέπει να επιβεβαιώσουμε τη διεύθυνση email σας. Παρακαλούμε δείτε το email σας και ακολουθήστε το σύνδεσμο επιβεβαίωσης για να επιβεβαιώσετε τη νέα διεύθυνση email σας."
+
+msgid "devise.registrations.updated"
+msgstr "Ο λογαριασμός έχει ανανεωθεί με επιτυχία."
+
+msgid "devise.registrations.updated_but_not_signed_in"
+msgstr "Ο λογαριασμός έχει ανανεωθεί με επιτυχία, αλλά επειδή έχει αλλάξει ο κωδικός σας, πρέπει να συνδεθείτε ξανά"
+
+msgid "devise.sessions.already_signed_out"
+msgstr "Αποσυνδεθήκατε με επιτυχία."
+
+msgid "devise.sessions.signed_in"
+msgstr "Συνθεθήκατε με επιτυχία."
+
+msgid "devise.sessions.signed_out"
+msgstr "Αποσυνδεθήκατε με επιτυχία."
+
+msgid "devise.unlocks.send_instructions"
+msgstr "Θα λάβετε email με οδηγίες για το πως να ξεκλειδώσετε το λογαριασμό σας σε μερικά λεπτά."
+
+msgid "devise.unlocks.send_paranoid_instructions"
+msgstr "Αν ο λογαριασμός σας υπάρχει, θα λάβετε email με οδηγίες για το πως να τον ενεργοποιήσετε σε μερικά λεπτά."
+
+msgid "devise.unlocks.unlocked"
+msgstr "Ο λογαριασμός σας έχει ξεκλειδωθεί με επιτυχία. Παρακαλούμε συνδεθείτε ξανά για να συνεχίσετε."
+
+msgid "errors.messages.already_confirmed"
+msgstr "Το email σας έχει επιβεβαιωθεί, παρακαλούμε δοκιμάστε να συνδεθείτε"
+
+msgid "errors.messages.confirmation_period_expired"
+msgstr "Το email σας πρέπει να επιβεβαιωθεί μέσα σε %{period}, παρακαλούμε κάντε αίτηση ξανά."
+
+msgid "errors.messages.equal_to_current_password"
+msgstr "Ο νεός σας κωδικός πρέπει να είναι διαφορετικός απο τον τωρινό κωδικό."
+
+msgid "errors.messages.expired"
+msgstr "Ο σύνδεσμος έχει λήξει, παρακαλούμε κάντε αίτηση ξανά"
+
+msgid "errors.messages.not_found"
+msgstr "Ο λογαριασμός δε βρέθηκε"
+
+msgid "errors.messages.not_locked"
+msgstr "Ο λογαριασμός δεν ήταν κλειδωμένος"
+
+msgid "errors.messages.password_complexity.digit.one"
+msgstr "Ο κωδικός πρέπει να περιέχει τουλάχιστον 1 ψηφίο"
+
+msgid "errors.messages.password_complexity.digit.other"
+msgstr "Ο κωδικός πρέπει να περιέχει τουλάχιστον %{count} ψηφία"
+
+msgid "errors.messages.password_complexity.lower.one"
+msgstr "Ο κωδικός πρέπει να περιέχει τουλάχιστον 1 μικρό χαρακτήρα."
+
+msgid "errors.messages.password_complexity.lower.other"
+msgstr "Ο κωδικός πρέπει να περιέχει τουλάχιστον %{count} μικρούς χαρακτήρες."
+
+msgid "errors.messages.password_complexity.symbol.one"
+msgstr "Ο κωδικός πρέπει να περιέχει τουλάχιστον 1 σύμβολο."
+
+msgid "errors.messages.password_complexity.symbol.other"
+msgstr "Ο κωδικός πρέπει να περιέχει τουλάχιστον %{count} σύμβολα."
+
+msgid "errors.messages.password_complexity.upper.one"
+msgstr "Ο κωδικός πρέπει να περιέχει τουλάχιστον 1 κεφαλαίο χαρακτήρα."
+
+msgid "errors.messages.password_complexity.upper.other"
+msgstr "Ο κωδικός πρέπει να περιέχει τουλάχιστον %{count} χαρακτήρες."
+
+msgid "errors.messages.taken_in_past"
+msgstr "Έχετε χρησιμοποιήσει ξανά αυτό τον κωδικό στο παρελθόν. Παρακαλούμε επιλέξτε κάποιο νέο."
