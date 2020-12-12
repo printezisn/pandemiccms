@@ -73,6 +73,8 @@ RSpec.describe AdminUser, type: :model do
       .with_message('Password confirmation must match the password.')
   end
 
+  it { is_expected.to validate_presence_of(:client_id).with_message('The client id is required.') }
+
   describe '#client' do
     let(:client) do
       {

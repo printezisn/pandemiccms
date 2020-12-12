@@ -245,6 +245,9 @@ msgstr "Password"
 msgid "activerecord.attributes.admin_user.username"
 msgstr "Username"
 
+msgid "activerecord.errors.models.admin_user.attributes.client_id.blank"
+msgstr "The client id is required."
+
 msgid "activerecord.errors.models.admin_user.attributes.email.blank"
 msgstr "The email is required."
 

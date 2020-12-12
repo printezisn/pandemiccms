@@ -195,7 +195,7 @@ msgid "Sign up"
 msgstr "Εγγραφή"
 
 msgid "Someone has requested a link to change your password. You can do this through the link below."
-msgstr "Κάποιος ζήτησε σύνδεσμο για αλλαγή του κωδικού σας. Μπορείτε να το κάνετε μέσω του παρακάτω συνδέσμου"
+msgstr "Κάποιος ζήτησε σύνδεσμο για αλλαγή του κωδικού σας. Μπορείτε να το κάνετε μέσω του παρακάτω συνδέσμου."
 
 msgid "The administration of %{client}"
 msgstr "Η διαχείριση του %{client}"
@@ -244,6 +244,9 @@ msgstr "Κωδικός"
 
 msgid "activerecord.attributes.admin_user.username"
 msgstr "Όνομα Χρήστη"
+
+msgid "activerecord.errors.models.admin_user.attributes.client_id.blank"
+msgstr "Το id πελάτη είναι υποχρεωτικό."
 
 msgid "activerecord.errors.models.admin_user.attributes.email.blank"
 msgstr "Το email είναι υποχρεωτικό."

@@ -245,6 +245,9 @@ msgstr "Κωδικός"
 msgid "activerecord.attributes.admin_user.username"
 msgstr "Όνομα Χρήστη"
 
+msgid "activerecord.errors.models.admin_user.attributes.client_id.blank"
+msgstr "Το id πελάτη είναι υποχρεωτικό."
+
 msgid "activerecord.errors.models.admin_user.attributes.email.blank"
 msgstr "Το email είναι υποχρεωτικό."
 
