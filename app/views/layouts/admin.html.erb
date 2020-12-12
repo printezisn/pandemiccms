@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="icon" href="/tenants/<%= current_client[:id] %>/favicon.ico">
 
-    <%= stylesheet_pack_tag 'styles/admin', media: 'all' %>
-    <%= javascript_pack_tag 'admin', defer: true %>
+    <%= stylesheet_pack_tag 'admin/styles/main', media: 'all' %>
+    <%= javascript_pack_tag 'admin/main', defer: true %>
 </head>
 
 <body>
@@ -17,9 +18,7 @@
         <nav class="navbar is-dark">
             <div class="navbar-brand">
                 <a class="navbar-item" href="/">
-                    <i class="fas fa-disease"></i>
-                    &nbsp;
-                    Pandemic CMS
+                    <%= render partial: "shared/tenants/#{current_client[:id]}/admin_logo" %>
                 </a>
                 <div class="navbar-burger burger" data-target="main-menu">
                     <span></span>
@@ -101,10 +100,10 @@
         <%= yield %>
     </main>
     <footer>
-        <% if Time.now.year > 2020 %>
-        Pandemic CMS 2020 - <%= Time.now.year %>
+        <% if Time.now.year > current_client[:release_year] %>
+        <%= current_client[:name] %> &copy; <%= current_client[:release_year] %> - <%= Time.now.year %>
         <% else %>
-        Pandemic CMS 2020
+        <%= current_client[:name] %> &copy; <%= current_client[:release_year] %>
         <% end %>
     </footer>
 </body>

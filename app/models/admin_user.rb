@@ -25,4 +25,8 @@ class AdminUser < ApplicationRecord
                        length: { maximum: 128 },
                        confirmation: { case_sensitive: false },
                        if: -> { password.present? }
+
+  def client
+    @client ||= Rails.configuration.tenants[client_id.to_sym]
+  end
 end

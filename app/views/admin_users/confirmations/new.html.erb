@@ -1,6 +1,6 @@
 <%
-    content_for :title, _('Resend Confirmation Instructions | %{client}') % { client: 'Pandemic CMS' }
-    content_for :description, _('Resend confirmation instruction for %{client}') % { client: 'Pandemic CMS' }
+    content_for :title, _('Resend Confirmation Instructions | %{client}') % { client: current_client[:name] }
+    content_for :description, _('Resend confirmation instruction for %{client}') % { client: current_client[:name] }
 %>
 
 <article class="small-form">
@@ -10,7 +10,7 @@
     <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
     <%= render "admin_users/shared/error_messages", resource: resource %>
 
-    <%= f.hidden_field :client_id, value: current_client_id %>
+    <%= f.hidden_field :client_id, value: current_client[:id] %>
     <div class="field is-horizontal">
         <div class="field-label is-normal">
             <%= f.label :email, class: 'label required-label' %>

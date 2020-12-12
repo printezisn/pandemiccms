@@ -72,4 +72,17 @@ RSpec.describe AdminUser, type: :model do
     expect(model).to validate_confirmation_of(:password)
       .with_message('Password confirmation must match the password.')
   end
+
+  describe '#client' do
+    let(:client) do
+      {
+        id: 'local',
+        name: 'Pandemic CMS',
+        release_year: 2020,
+        domains: ['localhost', 'example.com']
+      }
+    end
+
+    it { expect(model.client).to eq(client) }
+  end
 end

@@ -1,11 +1,23 @@
-default: &default
+# default: &default
 
 development:
-  <<: *default
-  "localhost": "local"
+  # <<: *default
+  local:
+    id: "local"
+    name: "Pandemic CMS"
+    release_year: 2020
+    domains:
+      - "localhost"
 
 test:
-  <<: *default
+  # <<: *default
+  local:
+    id: "local"
+    name: "Pandemic CMS"
+    release_year: 2020
+    domains:
+      - "localhost"
+      - "example.com"
 
 production:
-  <<: *default
+  # <<: *default

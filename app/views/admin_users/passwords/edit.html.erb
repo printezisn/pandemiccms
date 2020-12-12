@@ -1,6 +1,6 @@
 <%
-    content_for :title, _('Reset Password | %{client}') % { client: 'Pandemic CMS' }
-    content_for :description, _('Reset your password in %{client}') % { client: 'Pandemic CMS' }
+    content_for :title, _('Reset Password | %{client}') % { client: current_client[:name] }
+    content_for :description, _('Reset your password in %{client}') % { client: current_client[:name] }
 %>
 
 <article class="small-form">

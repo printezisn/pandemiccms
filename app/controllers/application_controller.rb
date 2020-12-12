@@ -4,12 +4,12 @@
 class ApplicationController < ActionController::Base
   before_action :set_gettext_locale
 
-  helper_method :current_client_id
+  helper_method :current_client
 
   layout :layout
 
-  def current_client_id
-    @current_client_id ||= Rails.configuration.tenants[request.domain]
+  def current_client
+    @current_client ||= Rails.configuration.tenants.values.detect { |tenant| tenant[:domains].include?(request.domain) }
   end
 
   def layout
