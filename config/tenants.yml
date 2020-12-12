@@ -6,6 +6,9 @@ development:
     id: "local"
     name: "Pandemic CMS"
     release_year: 2020
+    locales:
+      - "en"
+      - "el"
     domains:
       - "localhost"
 
@@ -15,6 +18,8 @@ test:
     id: "local"
     name: "Pandemic CMS"
     release_year: 2020
+    locales:
+      - "en"
     domains:
       - "localhost"
       - "example.com"
