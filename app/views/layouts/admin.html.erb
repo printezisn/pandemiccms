@@ -27,6 +27,7 @@
                 </div>
             </div>
             <div class="navbar-menu" id="main-menu">
+                <% if admin_user_signed_in? %>
                 <div class="navbar-start">
                     <a class="navbar-item" href="#">
                         <i class="fas fa-image"></i>
@@ -54,7 +55,9 @@
                         <%= _('Users') %>
                     </a>
                 </div>
+                <% end %>
                 <div class="navbar-end">
+                    <% if admin_user_signed_in? %>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link" href="#">
                             <i class="fas fa-user"></i>
@@ -72,13 +75,16 @@
                                 &nbsp;
                                 <%= _('Change Password') %>
                             </a>
-                            <a class="navbar-item" href="#">
+                            <%= form_with(url: destroy_admin_user_session_path, method: :delete) do |f| %>
+                            <a class="navbar-item" href="javascript:void(0)" onclick="this.parentElement.submit()">
                                 <i class="fas fa-unlock"></i>
                                 &nbsp;
                                 <%= _('Sign Out') %>
                             </a>
+                            <% end %>
                         </div>
                     </div>
+                    <% end %>
                 </div>
             </div>
         </nav>
