@@ -79,6 +79,7 @@ RSpec.describe AdminUser, type: :model do
         id: 'local',
         name: 'Pandemic CMS',
         release_year: 2020,
+        locales: ['en'],
         domains: ['localhost', 'example.com']
       }
     end
