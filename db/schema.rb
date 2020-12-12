@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_05_111706) do
+ActiveRecord::Schema.define(version: 2020_12_12_175958) do
 
   create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "username", default: "", null: false
-    t.string "client_id"
+    t.string "client_id", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_12_05_111706) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["client_id", "email"], name: "index_admin_users_on_client_id_and_email"
     t.index ["client_id", "username"], name: "index_admin_users_on_client_id_and_username", unique: true
+    t.index ["client_id"], name: "index_admin_users_on_client_id"
     t.index ["confirmation_token"], name: "index_admin_users_on_confirmation_token", unique: true
     t.index ["password_changed_at"], name: "index_admin_users_on_password_changed_at"
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
