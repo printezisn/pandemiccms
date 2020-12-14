@@ -49,11 +49,13 @@
                         &nbsp;
                         <%= _('Pages') %>
                     </a>
+                    <% if current_admin_user&.supervisor? %>
                     <a class="navbar-item" href="#">
                         <i class="fas fa-users"></i>
                         &nbsp;
                         <%= _('Users') %>
                     </a>
+                    <% end %>
                 </div>
                 <% end %>
                 <div class="navbar-end">
