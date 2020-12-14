@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar is-dark">
             <div class="navbar-brand">
-                <a class="navbar-item" href="/">
+                <a class="navbar-item" href="<%= admin_root_path %>">
                     <%= render partial: "shared/tenants/#{current_client[:id]}/admin_logo" %>
                 </a>
                 <div class="navbar-burger burger" data-target="main-menu">
@@ -61,7 +61,7 @@
                 <div class="navbar-end">
                     <% if admin_user_signed_in? %>
                     <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link" href="#">
+                        <a class="navbar-link" href="javascript:void(0)">
                             <i class="fas fa-user"></i>
                             &nbsp;
                             Username
@@ -82,6 +82,24 @@
                                 <i class="fas fa-unlock"></i>
                                 &nbsp;
                                 <%= _('Sign Out') %>
+                            </a>
+                            <% end %>
+                        </div>
+                    </div>
+                    <% end %>
+                    <% if current_client[:locales].size > 1 %>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" href="javascript:void(0)">
+                            <span><%= current_client[:locales][current_locale.to_sym][:code].html_safe %></span>
+                            &nbsp;
+                            <%= current_client[:locales][current_locale.to_sym][:name] %>
+                        </a>
+                        <div class="navbar-dropdown is-right">
+                            <% current_client[:locales].except(current_locale.to_sym).each do |key, options| %>
+                            <a class="navbar-item" href="<%= url_for(locale: key) %>">
+                                <span><%= options[:code].html_safe %></span>
+                                &nbsp;
+                                <%= options[:name] %>
                             </a>
                             <% end %>
                         </div>

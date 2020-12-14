@@ -10,8 +10,12 @@ development:
       host: "localhost"
       port: 3000
     locales:
-      - "en"
-      - "el"
+      en:
+        name: "English"
+        code: "🇬🇧"
+      el:
+        name: "Ελληνικά"
+        code: "🇬🇷"
     domains:
       - "localhost"
 
@@ -25,7 +29,9 @@ test:
       host: "localhost"
       port: 3000
     locales:
-      - "en"
+      en:
+        name: "English"
+        code: "🇬🇧"
     domains:
       - "localhost"
       - "example.com"

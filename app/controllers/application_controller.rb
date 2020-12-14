@@ -20,8 +20,8 @@ class ApplicationController < ActionController::Base
 
   def current_locale
     @current_locale ||= begin
-      current_client[:locales].detect { |l| l == params[:locale] } ||
-        current_client[:locales].first ||
+      current_client[:locales].keys.detect { |l| l.to_s == params[:locale] } ||
+        current_client[:locales].keys.first&.to_s ||
         I18n.default_locale
     end
   end

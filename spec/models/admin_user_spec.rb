@@ -88,7 +88,12 @@ RSpec.describe AdminUser, type: :model do
           host: 'localhost',
           port: 3000
         },
-        locales: ['en'],
+        locales: {
+          en: {
+            name: 'English',
+            code: '🇬🇧'
+          }
+        },
         domains: ['localhost', 'example.com']
       }
     end
