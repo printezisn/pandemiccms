@@ -18,6 +18,6 @@ module Pandemiccms
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-    config.tenants = config_for(:tenants)
+    config.tenants = config_for(:tenants).with_indifferent_access
   end
 end

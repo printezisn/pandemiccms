@@ -32,7 +32,7 @@ class AdminUser < ApplicationRecord
   validates :client_id, presence: true
 
   def client
-    @client ||= Rails.configuration.tenants[client_id.to_sym]
+    @client ||= Rails.configuration.tenants[client_id]
   end
 
   def supervisor?

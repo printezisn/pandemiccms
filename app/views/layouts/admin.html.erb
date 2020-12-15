@@ -90,12 +90,12 @@
                     <% if current_client[:locales].size > 1 %>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link" href="javascript:void(0)">
-                            <span><%= current_client[:locales][current_locale.to_sym][:code].html_safe %></span>
+                            <span><%= current_client[:locales][current_locale][:code].html_safe %></span>
                             &nbsp;
-                            <%= current_client[:locales][current_locale.to_sym][:name] %>
+                            <%= current_client[:locales][current_locale][:name] %>
                         </a>
                         <div class="navbar-dropdown is-right">
-                            <% current_client[:locales].except(current_locale.to_sym).each do |key, options| %>
+                            <% current_client[:locales].except(current_locale).each do |key, options| %>
                             <a class="navbar-item" href="<%= url_for(locale: key) %>">
                                 <span><%= options[:code].html_safe %></span>
                                 &nbsp;

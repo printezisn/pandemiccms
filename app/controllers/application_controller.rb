@@ -19,11 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_locale
-    @current_locale ||= begin
-      current_client[:locales].keys.detect { |l| l.to_s == params[:locale] } ||
-        current_client[:locales].keys.first&.to_s ||
-        I18n.default_locale
-    end
+    @current_locale ||= fetch_current_locale
   end
 
   def layout
@@ -32,5 +28,13 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     { locale: current_locale }
+  end
+
+  private
+
+  def fetch_current_locale
+    return params[:locale].to_sym if params[:locale] && current_client[:locales].key?(params[:locale])
+
+    current_client[:locales].keys.first || I18n.default_locale
   end
 end
