@@ -81,20 +81,20 @@ RSpec.describe AdminUser, type: :model do
   describe '#client' do
     let(:client) do
       {
-        id: 'local',
-        name: 'Pandemic CMS',
-        release_year: 2020,
-        default_url_options: {
-          host: 'localhost',
-          port: 3000
+        'id' => 'local',
+        'name' => 'Pandemic CMS',
+        'release_year' => 2020,
+        'default_url_options' => {
+          'host' => 'localhost',
+          'port' => 3000
         },
-        locales: {
-          en: {
-            name: 'English',
-            code: '🇬🇧'
+        'locales' => {
+          'en' => {
+            'name' => 'English',
+            'code' => '🇬🇧'
           }
         },
-        domains: ['localhost', 'example.com']
+        'domains' => ['localhost', 'example.com']
       }
     end
 

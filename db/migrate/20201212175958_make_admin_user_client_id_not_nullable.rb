@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Migration to make the client_id field in admin_users not nullable
-class MakeAdminUserClientIdNotNullable < ActiveRecord::Migration[6.0]
+class MakeAdminUserClientIdNotNullable < ActiveRecord::Migration[6.1]
   def up
     change_table :admin_users, bulk: true do |t|
       t.change :client_id, :string, null: false

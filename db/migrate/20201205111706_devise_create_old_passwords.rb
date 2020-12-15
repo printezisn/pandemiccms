@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Migration to create old passwords table
-class DeviseCreateOldPasswords < ActiveRecord::Migration[6.0]
+class DeviseCreateOldPasswords < ActiveRecord::Migration[6.1]
   def change
     create_table :old_passwords do |t|
       t.string :encrypted_password, null: false
