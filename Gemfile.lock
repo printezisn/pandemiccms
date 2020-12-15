@@ -199,7 +199,7 @@ GEM
       rspec-mocks (~> 3.9)
       rspec-support (~> 3.9)
     rspec-support (3.10.0)
-    rubocop (1.5.2)
+    rubocop (1.6.1)
       parallel (~> 1.10)
       parser (>= 2.7.1.5)
       rainbow (>= 2.2.2, < 4.0)
@@ -213,10 +213,10 @@ GEM
     rubocop-performance (1.9.1)
       rubocop (>= 0.90.0, < 2.0)
       rubocop-ast (>= 0.4.0)
-    rubocop-rails (2.8.1)
+    rubocop-rails (2.9.0)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
-      rubocop (>= 0.87.0)
+      rubocop (>= 0.90.0, < 2.0)
     rubocop-rspec (2.0.1)
       rubocop (~> 1.0)
       rubocop-ast (>= 1.1.0)
@@ -313,7 +313,7 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 2.7.0p0
+   ruby 2.7.2p137
 
 BUNDLED WITH
    2.1.4
