@@ -1,15 +1,15 @@
 default: &default
   adapter: mysql2
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV['MYSQL_HOST'] %>
+  username: <%= ENV['MYSQL_USER'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+  database: pandemiccms
   timeout: 5000
   encoding: utf8
 
 development:
   <<: *default
-  database: pandemiccms
-  username: root
-  password: 1234
-  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -20,4 +20,3 @@ test:
 
 production:
   <<: *default
-  database: pandemiccms
