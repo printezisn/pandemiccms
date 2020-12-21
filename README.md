@@ -110,3 +110,4 @@ user.confirm
    - `locales`: The available languages for the tenant. Each locale entry contains the language name and flag.
 1. Create a logo and favicon for the tenant and place them under the `public/tenants/<tenant_id>` directory.
 1. Create an `_admin_logo.html.erb` file under the `app/views/shared/<tenant_id>/` directory. It contains the admin banner for the tenant.
+1. Create an `_admin_footer.html.erb` file under the `app/views/shared/<tenant_id>/` directory. It contains the admin footer for the tenant.

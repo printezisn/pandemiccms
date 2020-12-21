@@ -1,0 +1,5 @@
+<% if Time.now.year > 2020 %>
+<%= current_client[:name] %> &copy; 2020 - <%= Time.now.year %>
+<% else %>
+<%= current_client[:name] %> &copy; 2020
+<% end %>

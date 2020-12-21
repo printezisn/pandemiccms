@@ -125,13 +125,7 @@
 
         <%= yield %>
     </main>
-    <footer>
-        <% if Time.now.year > current_client[:release_year] %>
-        <%= current_client[:name] %> &copy; <%= current_client[:release_year] %> - <%= Time.now.year %>
-        <% else %>
-        <%= current_client[:name] %> &copy; <%= current_client[:release_year] %>
-        <% end %>
-    </footer>
+    <footer><%= render partial: "shared/tenants/#{current_client[:id]}/admin_footer" %></footer>
 </body>
 
 </html>
