@@ -79,10 +79,17 @@ Please note that you need to do the same for the other environments too.
 Open the rails console with `bundle exec rails c` and create the first local admin user with the following statements:
 
 ```
-user = AdminUser.new(email: '<email>', username: '<username>', password: '<password>', client_id: 'local')
+user = AdminUser.new(
+  email: '<email>',
+  username: '<username>',
+  password: '<password>',
+  client_id: 'local',
+  roles: [AdminUser::SUPERVISOR_ROLE])
 user.save!
 user.confirm
 ```
+
+This user is a supervisor and can manage other users too.
 
 ## How to run
 
