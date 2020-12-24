@@ -17,6 +17,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
+msgid "%{count} Category"
+msgid_plural "%{count} Categories"
+msgstr[0] "%{count} Category"
+msgstr[1] "%{count} Categories"
+
+msgid "%{count} Medium"
+msgid_plural "%{count} Media"
+msgstr[0] "%{count} Medium"
+msgstr[1] "%{count} Media"
+
+msgid "%{count} Page"
+msgid_plural "%{count} Pages"
+msgstr[0] "%{count} Page"
+msgstr[1] "%{count} Pages"
+
+msgid "%{count} Post"
+msgid_plural "%{count} Posts"
+msgstr[0] "%{count} Post"
+msgstr[1] "%{count} Posts"
+
+msgid "Admin dashboard of %{client}"
+msgstr "Admin dashboard of %{client}"
+
 msgid "Admin user"
 msgstr "Admin user"
 
@@ -77,6 +100,9 @@ msgstr "Username"
 msgid "Categories"
 msgstr "Categories"
 
+msgid "Category Drafts"
+msgstr "Category Drafts"
+
 msgid "Change Password"
 msgstr "Change Password"
 
@@ -94,6 +120,15 @@ msgstr "Confirm new Password"
 
 msgid "Confirm your new password"
 msgstr "Confirm your new password"
+
+msgid "Created At"
+msgstr "Created At"
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Dashboard | %{client}"
+msgstr "Dashboard | %{client}"
 
 msgid "Didn't receive confirmation instructions ?"
 msgstr "Didn't receive confirmation instructions ?"
@@ -128,6 +163,9 @@ msgstr "Media"
 msgid "My Profile"
 msgstr "My Profile"
 
+msgid "Name"
+msgstr "Name"
+
 msgid "New Password"
 msgstr "New Password"
 
@@ -143,8 +181,14 @@ msgstr "Password Archivable Type"
 msgid "OldPassword|Password salt"
 msgstr "Password Salt"
 
+msgid "Page Drafts"
+msgstr "Page Drafts"
+
 msgid "Pages"
 msgstr "Pages"
+
+msgid "Post Drafts"
+msgstr "Post Drafts"
 
 msgid "Posts"
 msgstr "Posts"
@@ -203,6 +247,9 @@ msgstr "The administration of %{client}"
 msgid "Unlock my account"
 msgstr "Unlock my account"
 
+msgid "Updated At"
+msgstr "Updated At"
+
 msgid "Users"
 msgstr "Users"
 
@@ -220,6 +267,15 @@ msgstr "Welcome %{email}!"
 
 msgid "You can confirm your account email through the link below:"
 msgstr "You can confirm your account email through the link below:"
+
+msgid "You have no category drafts."
+msgstr "You have no category drafts."
+
+msgid "You have no page drafts."
+msgstr "You have no page drafts."
+
+msgid "You have no post drafts."
+msgstr "You have no post drafts."
 
 msgid "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
 msgstr "Your account has been locked due to an excessive number of unsuccessful sign in attempts."

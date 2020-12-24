@@ -17,6 +17,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
+msgid "%{count} Category"
+msgid_plural "%{count} Categories"
+msgstr[0] "%{count} Κατηγορία"
+msgstr[1] "%{count} Κατηγορίες"
+
+msgid "%{count} Medium"
+msgid_plural "%{count} Media"
+msgstr[0] "%{count} Αρχείο"
+msgstr[1] "%{count} Αρχεία"
+
+msgid "%{count} Page"
+msgid_plural "%{count} Pages"
+msgstr[0] "%{count} Σελίδα"
+msgstr[1] "%{count} Σελίδες"
+
+msgid "%{count} Post"
+msgid_plural "%{count} Posts"
+msgstr[0] "%{count} Άρθρο"
+msgstr[1] "%{count} Άρθρα"
+
+msgid "Admin dashboard of %{client}"
+msgstr "Ταμπλό διαχείρισης στο %{client}"
+
 msgid "Admin user"
 msgstr "Admin Χρήστης"
 
@@ -77,6 +100,9 @@ msgstr "Όνομα Χρήστη"
 msgid "Categories"
 msgstr "Κατηγορίες"
 
+msgid "Category Drafts"
+msgstr "Προσχέδια Κατηγοριών"
+
 msgid "Change Password"
 msgstr "Αλλαγή Κωδικού"
 
@@ -94,6 +120,15 @@ msgstr "Επιβεβαίωση νέου κωδικού"
 
 msgid "Confirm your new password"
 msgstr "Επιβεβαιώστε το νέο σας κωδικό"
+
+msgid "Created At"
+msgstr "Δημιουργήθηκε Στις"
+
+msgid "Dashboard"
+msgstr "Ταμπλό"
+
+msgid "Dashboard | %{client}"
+msgstr "Ταμπλό | %{client}"
 
 msgid "Didn't receive confirmation instructions ?"
 msgstr "Δε λάβατε οδηγίες επιβεβαίωσης ?"
@@ -128,6 +163,9 @@ msgstr "Αρχεία"
 msgid "My Profile"
 msgstr "Το Προφίλ Μου"
 
+msgid "Name"
+msgstr "Όνομα"
+
 msgid "New Password"
 msgstr "Νέος Κωδικός"
 
@@ -143,8 +181,14 @@ msgstr "Τύπος Αρχειοποίησης Κωδικού"
 msgid "OldPassword|Password salt"
 msgstr "Πρόσθετο Κωδικού"
 
+msgid "Page Drafts"
+msgstr "Προσχέδια Σελίδων"
+
 msgid "Pages"
 msgstr "Σελίδες"
+
+msgid "Post Drafts"
+msgstr "Προσχέδια Άρθρων"
 
 msgid "Posts"
 msgstr "Άρθρα"
@@ -203,6 +247,9 @@ msgstr "Η διαχείριση του %{client}"
 msgid "Unlock my account"
 msgstr "Ξεκλείδωμα του λογαριασμού μου"
 
+msgid "Updated At"
+msgstr "Ανανεώθηκε Στις"
+
 msgid "Users"
 msgstr "Χρήστες"
 
@@ -220,6 +267,15 @@ msgstr "Καλώς ορίσατε %{email}!"
 
 msgid "You can confirm your account email through the link below:"
 msgstr "Μπορείτε να επιβεβαιώσετε το email του λογαριασμού σας μέσω του παρακάτω συνδέσμου:"
+
+msgid "You have no category drafts."
+msgstr "Δεν έχετε προσχέδια κατηγοριών."
+
+msgid "You have no page drafts."
+msgstr "Δεν έχετε προσχέδια σελίδων."
+
+msgid "You have no post drafts."
+msgstr "Δεν έχετε προσχέδια άρθρων."
 
 msgid "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
 msgstr "Ο λογαριασμός σας έχει κλειδωθεί λόγω υπερβολικού αριθμού αποτυχημένων προσπαθειών σύνδεσης."

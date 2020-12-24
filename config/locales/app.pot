@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-12 20:22+0200\n"
-"PO-Revision-Date: 2020-12-12 20:22+0200\n"
+"POT-Creation-Date: 2020-12-24 17:50+0200\n"
+"PO-Revision-Date: 2020-12-24 17:50+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -17,6 +17,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "%{count} Category"
+msgid_plural "%{count} Categories"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%{count} Medium"
+msgid_plural "%{count} Media"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%{count} Page"
+msgid_plural "%{count} Pages"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%{count} Post"
+msgid_plural "%{count} Posts"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Admin dashboard of %{client}"
+msgstr ""
 
 msgid "Admin user"
 msgstr ""
@@ -78,6 +101,9 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
+msgid "Category Drafts"
+msgstr ""
+
 msgid "Change Password"
 msgstr ""
 
@@ -94,6 +120,15 @@ msgid "Confirm new Password"
 msgstr ""
 
 msgid "Confirm your new password"
+msgstr ""
+
+msgid "Created At"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Dashboard | %{client}"
 msgstr ""
 
 msgid "Didn't receive confirmation instructions ?"
@@ -129,6 +164,9 @@ msgstr ""
 msgid "My Profile"
 msgstr ""
 
+msgid "Name"
+msgstr ""
+
 msgid "New Password"
 msgstr ""
 
@@ -144,7 +182,13 @@ msgstr ""
 msgid "OldPassword|Password salt"
 msgstr ""
 
+msgid "Page Drafts"
+msgstr ""
+
 msgid "Pages"
+msgstr ""
+
+msgid "Post Drafts"
 msgstr ""
 
 msgid "Posts"
@@ -204,6 +248,9 @@ msgstr ""
 msgid "Unlock my account"
 msgstr ""
 
+msgid "Updated At"
+msgstr ""
+
 msgid "Users"
 msgstr ""
 
@@ -220,6 +267,15 @@ msgid "Welcome %{email}!"
 msgstr ""
 
 msgid "You can confirm your account email through the link below:"
+msgstr ""
+
+msgid "You have no category drafts."
+msgstr ""
+
+msgid "You have no page drafts."
+msgstr ""
+
+msgid "You have no post drafts."
 msgstr ""
 
 msgid "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
