@@ -1,7 +1,4 @@
-# default: &default
-
 development:
-  # <<: *default
   local:
     id: "local"
     name: "Pandemic CMS"
@@ -19,7 +16,6 @@ development:
       - "localhost"
 
 test:
-  # <<: *default
   local:
     id: "local"
     name: "Pandemic CMS"
@@ -35,4 +31,18 @@ test:
       - "example.com"
 
 production:
-  # <<: *default
+  local:
+    id: "local"
+    name: "Pandemic CMS"
+    default_url_options:
+      host: "raspberrypi.local"
+      port: 80
+    locales:
+      en:
+        name: "English"
+        code: "🇬🇧"
+      el:
+        name: "Ελληνικά"
+        code: "🇬🇷"
+    domains:
+      - "raspberrypi.local"
