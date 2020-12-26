@@ -106,6 +106,10 @@ This user is a supervisor and can manage other users too.
 
 `bundle exec rails s`
 
+## How to deploy
+
+You must first tweak the capistrano-related files to work for your infrastructure. Then, you can deploy with `bundle exec cap production deploy`.
+
 ## Configuration
 
 ### Add a new tenant
