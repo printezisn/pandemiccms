@@ -17,3 +17,7 @@ Metrics/MethodLength:
 
 Layout/LineLength:
   Max: 150
+
+Rails/CreateTableWithTimestamps:
+  Exclude:
+    - "db/migrate/20201226150556_create_active_storage_tables.active_storage.rb"
