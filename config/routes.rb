@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     devise_for :admin_users
 
     namespace :admin do
+      resources :media, only: %i[index create destroy]
+
       root 'dashboard#index'
     end
 
