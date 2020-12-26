@@ -2,7 +2,7 @@
 
 module Admin
   # Admin dashboard controller
-  class DashboardController < Admin::BaseController
+  class DashboardController < BaseController
     def index; end
   end
 end
