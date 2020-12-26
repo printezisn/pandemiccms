@@ -72,3 +72,5 @@ gem 'devise-security', '~> 0.14.3'
 gem 'gettext_i18n_rails', '~> 1.8'
 
 gem 'gettext', '~> 3.3'
+
+gem 'kaminari', '~> 1.2'
