@@ -48,4 +48,10 @@ namespace :deploy do
       end
     end
   end
+
+  after :published, :restart_apache do
+    on roles(:web), wait: 10 do
+      execute 'sudo systemctl restart apache2.service'
+    end
+  end
 end
