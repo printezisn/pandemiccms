@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-24 17:50+0200\n"
-"PO-Revision-Date: 2020-12-24 17:50+0200\n"
+"POT-Creation-Date: 2020-12-27 20:11+0200\n"
+"PO-Revision-Date: 2020-12-27 20:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -37,6 +37,9 @@ msgid "%{count} Post"
 msgid_plural "%{count} Posts"
 msgstr[0] ""
 msgstr[1] ""
+
+msgid "..."
+msgstr ""
 
 msgid "Admin dashboard of %{client}"
 msgstr ""
@@ -98,6 +101,12 @@ msgstr ""
 msgid "AdminUser|Username"
 msgstr ""
 
+msgid "An error occurred. Please try again later."
+msgstr ""
+
+msgid "Are you sure you want to delete this medium ?"
+msgstr ""
+
 msgid "Categories"
 msgstr ""
 
@@ -122,6 +131,9 @@ msgstr ""
 msgid "Confirm your new password"
 msgstr ""
 
+msgid "Copy Link"
+msgstr ""
+
 msgid "Created At"
 msgstr ""
 
@@ -131,10 +143,19 @@ msgstr ""
 msgid "Dashboard | %{client}"
 msgstr ""
 
+msgid "Delete"
+msgstr ""
+
+msgid "Delete Confirmation"
+msgstr ""
+
 msgid "Didn't receive confirmation instructions ?"
 msgstr ""
 
 msgid "Didn't receive unlock instructions ?"
+msgstr ""
+
+msgid "First Page"
 msgstr ""
 
 msgid "Forgot Password ?"
@@ -155,10 +176,19 @@ msgstr ""
 msgid "Kind Regards,"
 msgstr ""
 
+msgid "Last Page"
+msgstr ""
+
 msgid "Log in"
 msgstr ""
 
 msgid "Media"
+msgstr ""
+
+msgid "Media of %{client}"
+msgstr ""
+
+msgid "Media | %{client}"
 msgstr ""
 
 msgid "My Profile"
@@ -168,6 +198,15 @@ msgid "Name"
 msgstr ""
 
 msgid "New Password"
+msgstr ""
+
+msgid "Next Page"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "No media were found."
 msgstr ""
 
 msgid "Old password"
@@ -194,6 +233,9 @@ msgstr ""
 msgid "Posts"
 msgstr ""
 
+msgid "Previous Page"
+msgstr ""
+
 msgid "Request instructions to reset password in %{client}"
 msgstr ""
 
@@ -216,6 +258,12 @@ msgid "Reset Password | %{client}"
 msgstr ""
 
 msgid "Reset your password in %{client}"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Search..."
 msgstr ""
 
 msgid "Send me reset password instructions"
@@ -245,10 +293,22 @@ msgstr ""
 msgid "The administration of %{client}"
 msgstr ""
 
+msgid "The link was successfully copied"
+msgstr ""
+
+msgid "The medium was successfully created."
+msgstr ""
+
+msgid "The medium was successfully deleted."
+msgstr ""
+
 msgid "Unlock my account"
 msgstr ""
 
 msgid "Updated At"
+msgstr ""
+
+msgid "Upload"
 msgstr ""
 
 msgid "Users"
@@ -264,6 +324,9 @@ msgid "We're contacting you to notify you that your password has been changed."
 msgstr ""
 
 msgid "Welcome %{email}!"
+msgstr ""
+
+msgid "Yes"
 msgstr ""
 
 msgid "You can confirm your account email through the link below:"

@@ -37,6 +37,9 @@ msgid_plural "%{count} Posts"
 msgstr[0] "%{count} Άρθρο"
 msgstr[1] "%{count} Άρθρα"
 
+msgid "..."
+msgstr "..."
+
 msgid "Admin dashboard of %{client}"
 msgstr "Ταμπλό διαχείρισης στο %{client}"
 
@@ -97,6 +100,12 @@ msgstr "Μη Επιβεβαιωμένο Email"
 msgid "AdminUser|Username"
 msgstr "Όνομα Χρήστη"
 
+msgid "An error occurred. Please try again later."
+msgstr "Παρουσιάστηκε κάποιο σφάλμα. Παρακαλούμε προσπαθήστε ξανά αργότερα."
+
+msgid "Are you sure you want to delete this medium ?"
+msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτό το αρχείο ?"
+
 msgid "Categories"
 msgstr "Κατηγορίες"
 
@@ -121,6 +130,9 @@ msgstr "Επιβεβαίωση νέου κωδικού"
 msgid "Confirm your new password"
 msgstr "Επιβεβαιώστε το νέο σας κωδικό"
 
+msgid "Copy Link"
+msgstr "Αντιγραφή Συνδέσμου"
+
 msgid "Created At"
 msgstr "Δημιουργήθηκε Στις"
 
@@ -130,11 +142,20 @@ msgstr "Ταμπλό"
 msgid "Dashboard | %{client}"
 msgstr "Ταμπλό | %{client}"
 
+msgid "Delete"
+msgstr "Διαγραφή"
+
+msgid "Delete Confirmation"
+msgstr "Επιβεβαίωση Διαγραφής"
+
 msgid "Didn't receive confirmation instructions ?"
 msgstr "Δε λάβατε οδηγίες επιβεβαίωσης ?"
 
 msgid "Didn't receive unlock instructions ?"
 msgstr "Δε λάβατε οδηγίες ξεκλειδώματος"
+
+msgid "First Page"
+msgstr "Πρώτη Σελίδα"
 
 msgid "Forgot Password ?"
 msgstr "Ξεχάσατε τον κωδικό σας ?"
@@ -154,11 +175,20 @@ msgstr "Αν δε το ζητήσατε, παρακαλούμε αγνοήστε
 msgid "Kind Regards,"
 msgstr "Φιλικά,"
 
+msgid "Last Page"
+msgstr "Τελευταία Σελίδα"
+
 msgid "Log in"
 msgstr "Σύνδεση"
 
 msgid "Media"
 msgstr "Αρχεία"
+
+msgid "Media of %{client}"
+msgstr "Αρχεία του %{client}"
+
+msgid "Media | %{client}"
+msgstr "Αρχεία | %{client}"
 
 msgid "My Profile"
 msgstr "Το Προφίλ Μου"
@@ -168,6 +198,15 @@ msgstr "Όνομα"
 
 msgid "New Password"
 msgstr "Νέος Κωδικός"
+
+msgid "Next Page"
+msgstr "Επόμενη Σελίδα"
+
+msgid "No"
+msgstr "Όχι"
+
+msgid "No media were found."
+msgstr "Δε βρέθηκαν αρχεία."
 
 msgid "Old password"
 msgstr "Παλιός Κωδικός"
@@ -193,6 +232,9 @@ msgstr "Προσχέδια Άρθρων"
 msgid "Posts"
 msgstr "Άρθρα"
 
+msgid "Previous Page"
+msgstr "Προηγούμενη Σελίδα"
+
 msgid "Request instructions to reset password in %{client}"
 msgstr "Ζητήστε οδηγίες για επαναφορά κωδικού στο %{client}"
 
@@ -216,6 +258,12 @@ msgstr "Επαναφορά Κωδικού | %{client}"
 
 msgid "Reset your password in %{client}"
 msgstr "Επαναφέρετε τον κωδικό σας στο %{client}"
+
+msgid "Search"
+msgstr "Αναζήτηση"
+
+msgid "Search..."
+msgstr "Αναζήτηση..."
 
 msgid "Send me reset password instructions"
 msgstr "Αποστολή οδηγιών επαναφοράς κωδικού"
@@ -244,11 +292,23 @@ msgstr "Κάποιος ζήτησε σύνδεσμο για αλλαγή του 
 msgid "The administration of %{client}"
 msgstr "Η διαχείριση του %{client}"
 
+msgid "The link was successfully copied"
+msgstr "Ο σύνδεσμος αντιγράφτηκε με επιτυχία"
+
+msgid "The medium was successfully created."
+msgstr "Το αρχείο δημιουργήθηκε με επιτυχία."
+
+msgid "The medium was successfully deleted."
+msgstr "Το αρχείο διαγράφτηκε με επιτυχία."
+
 msgid "Unlock my account"
 msgstr "Ξεκλείδωμα του λογαριασμού μου"
 
 msgid "Updated At"
 msgstr "Ανανεώθηκε Στις"
+
+msgid "Upload"
+msgstr "Ανέβασμα"
 
 msgid "Users"
 msgstr "Χρήστες"
@@ -264,6 +324,9 @@ msgstr "Επικοινωνούμε μαζί σας για να σας γνωστ
 
 msgid "Welcome %{email}!"
 msgstr "Καλώς ορίσατε %{email}!"
+
+msgid "Yes"
+msgstr "Ναι"
 
 msgid "You can confirm your account email through the link below:"
 msgstr "Μπορείτε να επιβεβαιώσετε το email του λογαριασμού σας μέσω του παρακάτω συνδέσμου:"

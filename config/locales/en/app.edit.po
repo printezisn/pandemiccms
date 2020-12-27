@@ -37,6 +37,9 @@ msgid_plural "%{count} Posts"
 msgstr[0] "%{count} Post"
 msgstr[1] "%{count} Posts"
 
+msgid "..."
+msgstr "..."
+
 msgid "Admin dashboard of %{client}"
 msgstr "Admin dashboard of %{client}"
 
@@ -97,6 +100,12 @@ msgstr "Unconfirmed Email"
 msgid "AdminUser|Username"
 msgstr "Username"
 
+msgid "An error occurred. Please try again later."
+msgstr "An error occurred. Please try again later."
+
+msgid "Are you sure you want to delete this medium ?"
+msgstr "Are you sure you want to delete this medium ?"
+
 msgid "Categories"
 msgstr "Categories"
 
@@ -121,6 +130,9 @@ msgstr "Confirm new Password"
 msgid "Confirm your new password"
 msgstr "Confirm your new password"
 
+msgid "Copy Link"
+msgstr "Copy Link"
+
 msgid "Created At"
 msgstr "Created At"
 
@@ -130,11 +142,20 @@ msgstr "Dashboard"
 msgid "Dashboard | %{client}"
 msgstr "Dashboard | %{client}"
 
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Delete Confirmation"
+msgstr "Delete Confirmation"
+
 msgid "Didn't receive confirmation instructions ?"
 msgstr "Didn't receive confirmation instructions ?"
 
 msgid "Didn't receive unlock instructions ?"
 msgstr "Didn't receive unlock instructions ?"
+
+msgid "First Page"
+msgstr "First Page"
 
 msgid "Forgot Password ?"
 msgstr "Forgot Password ?"
@@ -154,11 +175,20 @@ msgstr "If you didn't request this, please ignore this email."
 msgid "Kind Regards,"
 msgstr "Kind Regards,"
 
+msgid "Last Page"
+msgstr "Last Page"
+
 msgid "Log in"
 msgstr "Log in"
 
 msgid "Media"
 msgstr "Media"
+
+msgid "Media of %{client}"
+msgstr "Media of %{client}"
+
+msgid "Media | %{client}"
+msgstr "Media | %{client}"
 
 msgid "My Profile"
 msgstr "My Profile"
@@ -168,6 +198,15 @@ msgstr "Name"
 
 msgid "New Password"
 msgstr "New Password"
+
+msgid "Next Page"
+msgstr "Next Page"
+
+msgid "No"
+msgstr "No"
+
+msgid "No media were found."
+msgstr "No media were found."
 
 msgid "Old password"
 msgstr "Old password"
@@ -193,6 +232,9 @@ msgstr "Post Drafts"
 msgid "Posts"
 msgstr "Posts"
 
+msgid "Previous Page"
+msgstr "Previous Page"
+
 msgid "Request instructions to reset password in %{client}"
 msgstr "Request instructions to reset password in %{client}"
 
@@ -216,6 +258,12 @@ msgstr "Reset Password | %{client}"
 
 msgid "Reset your password in %{client}"
 msgstr "Reset your password in %{client}"
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Search..."
+msgstr "Search..."
 
 msgid "Send me reset password instructions"
 msgstr "Send me reset password instructions"
@@ -244,11 +292,23 @@ msgstr "Someone has requested a link to change your password. You can do this th
 msgid "The administration of %{client}"
 msgstr "The administration of %{client}"
 
+msgid "The link was successfully copied"
+msgstr "The link was successfully copied"
+
+msgid "The medium was successfully created."
+msgstr "The medium was successfully created."
+
+msgid "The medium was successfully deleted."
+msgstr "The medium was successfully deleted."
+
 msgid "Unlock my account"
 msgstr "Unlock my account"
 
 msgid "Updated At"
 msgstr "Updated At"
+
+msgid "Upload"
+msgstr "Upload"
 
 msgid "Users"
 msgstr "Users"
@@ -264,6 +324,9 @@ msgstr "We're contacting you to notify you that your password has been changed."
 
 msgid "Welcome %{email}!"
 msgstr "Welcome %{email}!"
+
+msgid "Yes"
+msgstr "Yes"
 
 msgid "You can confirm your account email through the link below:"
 msgstr "You can confirm your account email through the link below:"
