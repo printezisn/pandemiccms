@@ -46,12 +46,32 @@ const initCopyLinkButtons = () => {
   });
 };
 
+const initModalOpeners = () => {
+  [...document.querySelectorAll('[data-modal-open]')].forEach((el) => {
+    el.addEventListener('click', () => {
+      document.getElementById(el.getAttribute('data-modal-open')).classList.add('is-active');
+    });
+  });
+};
+
+const initModals = () => {
+  [...document.getElementsByClassName('modal')].forEach((modal) => {
+    [...modal.getElementsByClassName('cancel')].forEach((el) => {
+      el.addEventListener('click', () => {
+        modal.classList.remove('is-active');
+      });
+    });
+  });
+};
+
 const init = () => {
   initNavbars();
   initNotifications();
   initFlashErrors();
   initFlashSuccesses();
   initCopyLinkButtons();
+  initModalOpeners();
+  initModals();
 };
 
 if (document.readyState === 'complete') {
