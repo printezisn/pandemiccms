@@ -2,6 +2,10 @@
 
 # Medium model
 class Medium < ApplicationRecord
+  TEXT_SEARCHABLE_FIELDS = %i[name].freeze
+
+  include SimpleTextSearchable
+
   has_one_attached :file
 
   validates :client_id, presence: true
