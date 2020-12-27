@@ -3,6 +3,7 @@
 # Base application controller
 class ApplicationController < ActionController::Base
   before_action :set_locale
+  before_action :set_time_zone
 
   helper_method :current_client
   helper_method :current_locale
@@ -12,6 +13,10 @@ class ApplicationController < ActionController::Base
   def set_locale
     FastGettext.set_locale(current_locale)
     I18n.locale = current_locale
+  end
+
+  def set_time_zone
+    Time.zone = current_client[:time_zone]
   end
 
   def current_client

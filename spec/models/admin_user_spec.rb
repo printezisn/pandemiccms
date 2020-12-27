@@ -93,6 +93,7 @@ RSpec.describe AdminUser, type: :model do
             'code' => '🇬🇧'
           }
         },
+        'time_zone' => 'Athens',
         'domains' => ['localhost', 'example.com']
       }
     end

@@ -12,6 +12,7 @@ development:
       el:
         name: "Ελληνικά"
         code: "🇬🇷"
+    time_zone: "Athens"
     domains:
       - "localhost"
 
@@ -26,6 +27,7 @@ test:
       en:
         name: "English"
         code: "🇬🇧"
+    time_zone: "Athens"
     domains:
       - "localhost"
       - "example.com"
@@ -44,5 +46,6 @@ production:
       el:
         name: "Ελληνικά"
         code: "🇬🇷"
+    time_zone: "Athens"
     domains:
       - "raspberrypi.local"
