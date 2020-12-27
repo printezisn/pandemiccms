@@ -64,6 +64,23 @@ const initModals = () => {
   });
 };
 
+const initAutoSubmitInputs = () => {
+  [...document.getElementsByClassName('auto-submit')].forEach((el) => {
+    el.addEventListener('change', () => {
+      let current = el;
+
+      while (current.parentElement) {
+        if (current.parentElement.tagName === 'FORM') {
+          current.parentElement.submit();
+          break;
+        }
+
+        current = current.parentElement;
+      }
+    });
+  });
+};
+
 const init = () => {
   initNavbars();
   initNotifications();
@@ -72,6 +89,7 @@ const init = () => {
   initCopyLinkButtons();
   initModalOpeners();
   initModals();
+  initAutoSubmitInputs();
 };
 
 if (document.readyState === 'complete') {
