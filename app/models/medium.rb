@@ -2,9 +2,11 @@
 
 # Medium model
 class Medium < ApplicationRecord
+  SORTABLE_FIELDS = %i[created_at name].freeze
   TEXT_SEARCHABLE_FIELDS = %i[name].freeze
 
   include SimpleTextSearchable
+  include BoundSortable
 
   has_one_attached :file
 

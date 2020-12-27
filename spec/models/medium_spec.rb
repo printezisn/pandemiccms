@@ -1,10 +1,16 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require_relative 'concerns/simple_text_searchable_spec'
 
 RSpec.describe Medium, type: :model do
   subject(:model) { FactoryBot.build(:medium) }
+
+  let(:file) do
+    {
+      io: File.open(Rails.root.join('spec/fixtures/test.png')),
+      filename: 'test.png'
+    }
+  end
 
   it { is_expected.to validate_presence_of(:client_id) }
 
@@ -15,7 +21,7 @@ RSpec.describe Medium, type: :model do
 
     context 'when a file is attached' do
       before do
-        model.file.attach(io: File.open(Rails.root.join('spec/fixtures/test.png')), filename: 'test.png')
+        model.file.attach(file)
       end
 
       it { is_expected.to be_valid }
@@ -26,15 +32,13 @@ RSpec.describe Medium, type: :model do
     end
   end
 
-  describe 'SimpleTextSearchable' do
-    subject(:model) do
-      model = FactoryBot.build(:medium)
-      model.file.attach(io: File.open(Rails.root.join('spec/fixtures/test.png')), filename: 'test.png')
+  describe 'concerns' do
+    before do
+      model.file.attach(file)
       model.save!
-
-      model
     end
 
     it_behaves_like 'SimpleTextSearchable'
+    it_behaves_like 'BoundSortable'
   end
 end
