@@ -29,11 +29,29 @@ const initFlashSuccesses = () => {
   });
 };
 
+const initCopyLinkButtons = () => {
+  [...document.getElementsByClassName('copy-link')].forEach((el) => {
+    el.addEventListener('click', () => {
+      const textarea = document.createElement('textarea');
+      textarea.style.display = 'hidden';
+      textarea.value = el.getAttribute('data-link');
+
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+
+      toastr.success(el.getAttribute('data-success-message'));
+    });
+  });
+};
+
 const init = () => {
   initNavbars();
   initNotifications();
   initFlashErrors();
   initFlashSuccesses();
+  initCopyLinkButtons();
 };
 
 if (document.readyState === 'complete') {

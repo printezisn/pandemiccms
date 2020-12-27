@@ -60,7 +60,7 @@
                 </td>
                 <td><%= medium.created_at %></td>
                 <td>
-                    <button type="button" class="button is-small mb-1">
+                    <button type="button" class="copy-link button is-small mb-1" data-link="<%= rails_blob_url(medium.file) %>" data-success-message="<%= _('The link was successfully copied') %>">
                         <i class="fas fa-copy"></i>
                         &nbsp;
                         <%= _('Copy Link') %>
