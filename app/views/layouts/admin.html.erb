@@ -109,23 +109,15 @@
             </div>
         </nav>
     </header>
-    <main class="container is-fluid">
-        <% if alert %>
-        <p class="notification is-danger">
-            <button type="button" class="delete"></button>
-            <%= alert %>
-        </p>
-        <% end %>
-        <% if notice %>
-        <p class="notification is-success">
-            <button type="button" class="delete"></button>
-            <%= notice %>
-        </p>
-        <% end %>
-
-        <%= yield %>
-    </main>
+    <main class="container is-fluid"><%= yield %></main>
     <footer><%= render partial: "shared/tenants/#{current_client[:id]}/admin_footer" %></footer>
+
+    <% if alert %>
+    <p class="flash-error"><%= alert %></p>
+    <% end %>
+    <% if notice %>
+    <p class="flash-success"><%= notice %></p>
+    <% end %>
 </body>
 
 </html>
