@@ -1,0 +1,19 @@
+<% if params[:sort_by] == field && params[:dir] == 'asc' %>
+<a href="<%= url_for(request.query_parameters.merge(sort_by: field, dir: 'desc')) %>">
+    <%= title %>
+    &nbsp;
+    <i class="fas fa-sort-up"></i>
+</a>
+<% elsif params[:sort_by] == field %>
+<a href="<%= url_for(request.query_parameters.merge(sort_by: field, dir: 'asc')) %>">
+    <%= title %>
+    &nbsp;
+    <i class="fas fa-sort-down"></i>
+</a>
+<% else %>
+<a href="<%= url_for(request.query_parameters.merge(sort_by: field, dir: 'asc')) %>">
+    <%= title %>
+    &nbsp;
+    <i class="fas fa-sort"></i>
+</a>
+<% end %>

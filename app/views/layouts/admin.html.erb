@@ -29,7 +29,7 @@
             <div class="navbar-menu" id="main-menu">
                 <% if admin_user_signed_in? %>
                 <div class="navbar-start">
-                    <a class="navbar-item" href="#">
+                    <a class="navbar-item<%= controller_name == 'media' ? ' is-active' : '' %>" href="<%= admin_media_path %>">
                         <i class="fas fa-image"></i>
                         &nbsp;
                         <%= _('Media') %>

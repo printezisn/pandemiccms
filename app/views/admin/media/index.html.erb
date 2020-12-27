@@ -1,0 +1,79 @@
+<%
+    content_for :title, _('Media | %{client}') % { client: current_client[:name] }
+    content_for :description, _('Media of %{client}') % { client: current_client[:name] }
+%>
+
+<article>
+    <header>
+        <h1 class="title is-3">
+            <i class="fas fa-image"></i>
+            &nbsp;
+            <%= _('Media') %>
+        </h1>
+    </header>
+    <div class="columns">
+        <div class="column">
+            <%= form_with(method: :get) do |t| %>
+            <div class="field has-addons">
+                <div class="control is-expanded">
+                    <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />
+                </div>
+                <div class="control">
+                    <button type="submit" class="button is-success">
+                        <i class="fas fa-search"></i>
+                        &nbsp;
+                        <%= _('Search') %>
+                    </button>
+                </div>
+            </div>
+            <% end %>
+        </div>
+        <div class="column has-text-right-tablet">
+            <%= form_with(url: admin_media_path, method: :post, class: 'upload-button-form') do |f| %>
+            <%= f.file_field 'medium[file]', title: '', class: 'auto-submit' %>
+            <button type="button" class="button is-success">
+                <i class="fas fa-upload"></i>
+                &nbsp;
+                <%= _('Upload') %>
+            </button>
+            <% end %>
+        </div>
+    </div>
+    <table class="smart-table table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <thead>
+            <tr>
+                <th><%= render partial: 'admin/shared/table_header', locals: { field: 'name', title: _('Name') } %></th>
+                <th><%= render partial: 'admin/shared/table_header', locals: { field: 'created_at', title: _('Created At') } %></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if @media.none? %>
+            <tr>
+                <td colspan="3"><%= _('No media were found.') %></td>
+            </tr>
+            <% else %>
+            <% @media.each do |medium| %>
+            <tr>
+                <td>
+                    <a href="<%= url_for(medium.file) %>" rel="noopener" target="_blank"><%= medium.name %></a>
+                </td>
+                <td><%= medium.created_at %></td>
+                <td>
+                    <button type="button" class="button is-small mb-1">
+                        <i class="fas fa-copy"></i>
+                        &nbsp;
+                        <%= _('Copy Link') %>
+                    </button>
+                    <button type="button" class="button is-danger is-small mb-1">
+                        <i class="fas fa-trash"></i>
+                        &nbsp;
+                        <%= _('Delete') %>
+                    </button>
+                </td>
+            </tr>
+            <% end %>
+            <% end %>
+        </tbody>
+    </table>
+</article>
