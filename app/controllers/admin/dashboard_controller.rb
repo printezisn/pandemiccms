@@ -3,6 +3,8 @@
 module Admin
   # Admin dashboard controller
   class DashboardController < BaseController
-    def index; end
+    def index
+      @media_count = Medium.where(client_id: current_client[:id]).count
+    end
   end
 end

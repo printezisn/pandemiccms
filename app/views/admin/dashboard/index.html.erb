@@ -39,7 +39,7 @@
             <article class="message is-danger">
                 <div class="message-body">
                     <header>
-                        <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Medium', '%{count} Media', 0) % { count: 0 } %></h2>
+                        <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Medium', '%{count} Media', @media_count) % { count: @media_count } %></h2>
                     </header>
                 </div>
             </article>
