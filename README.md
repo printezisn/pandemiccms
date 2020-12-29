@@ -52,11 +52,17 @@ You need to have the following installed to run the project:
 
 **2. Add configuration**:
 
-Copy the `.env.sample` file to `.env`, open it and fill the environment variables with the desired configuration:
+Add configuration by running `EDITOR=<editor> rails credentials:edit`. The credentials file contains configuration for MySQL/MariaDB and must have the following structure:
 
-- `MYSQL_HOST`: The database host address.
-- `MYSQL_USER`: The user to log in the database.
-- `MYSQL_PASSWORD`: The password to log in the database.
+```
+secret_key_base: <secret_key_base>
+mysql:
+  host: <host>
+  username: <username>
+  password: <password>
+```
+
+If you need to generate a new value for `secret_key_base`, you can do it by running `rails secret`. Also, you can generate different configuration for production by running `EDITOR=<editor> rails credentials:edit --environment production`. This will generate a new `production.key` file whose value needs to be stored on the server in a secure way (e.g. environment variable).
 
 **3. Create the database**:
 
