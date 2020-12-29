@@ -1,9 +1,9 @@
 default: &default
   adapter: mysql2
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: <%= ENV['MYSQL_HOST'] %>
-  username: <%= ENV['MYSQL_USER'] %>
-  password: <%= ENV['MYSQL_PASSWORD'] %>
+  host: <%= Rails.application.credentials[:mysql][:host] %>
+  username: <%= Rails.application.credentials[:mysql][:username] %>
+  password: <%= Rails.application.credentials[:mysql][:password] %>
   database: pandemiccms
   timeout: 5000
   encoding: utf8
