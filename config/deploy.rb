@@ -23,7 +23,7 @@ set :deploy_to, '/home/pi/pandemiccms'
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, 'config/master.key'
+# append :linked_files, []
 
 # Default value for linked_dirs is []
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
@@ -41,14 +41,6 @@ set :keep_releases, 5
 # set :ssh_options, verify_host_key: :secure
 
 namespace :deploy do
-  namespace :check do
-    before :linked_files, :set_master_key do
-      on roles(:app), in: :sequence, wait: 10 do
-        upload! 'config/master.key', "#{shared_path}/config/master.key" unless test("[ -f #{shared_path}/config/master.key ]")
-      end
-    end
-  end
-
   after :published, :restart_apache do
     on roles(:web), wait: 10 do
       execute 'sudo systemctl restart apache2.service'
