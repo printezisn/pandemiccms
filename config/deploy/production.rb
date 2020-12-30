@@ -56,4 +56,4 @@
 #     # password: "please use keys"
 #   }
 
-server 'raspberrypi.local', user: 'pi', roles: %w[app db web]
+server 'raspberrypi.local', user: 'deploy', roles: %w[app db web]

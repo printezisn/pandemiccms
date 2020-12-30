@@ -10,7 +10,7 @@ set :repo_url, 'git@github.com:printezisn/pandemiccms.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/pi/pandemiccms'
+set :deploy_to, '/home/deploy/pandemiccms'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
