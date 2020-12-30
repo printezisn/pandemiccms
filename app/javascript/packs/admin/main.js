@@ -1,7 +1,8 @@
 import toastr from 'toastr';
+import { initSmartTable, initSmartTableSearchForm } from './components/smart_table';
 
-const initNavbars = () => {
-  [...document.getElementsByClassName('navbar-burger')].forEach((el) => {
+const initNavbars = (root) => {
+  [...root.getElementsByClassName('navbar-burger')].forEach((el) => {
     const target = document.getElementById(el.getAttribute('data-target'));
     el.addEventListener('click', () => {
       target.classList.toggle('is-active');
@@ -9,28 +10,28 @@ const initNavbars = () => {
   });
 };
 
-const initNotifications = () => {
-  [...document.querySelectorAll('.notification > .delete')].forEach((el) => {
+const initNotifications = (root) => {
+  [...root.querySelectorAll('.notification > .delete')].forEach((el) => {
     el.addEventListener('click', () => {
       el.parentElement.remove();
     });
   });
 };
 
-const initFlashErrors = () => {
-  [...document.getElementsByClassName('flash-error')].forEach((el) => {
+const initFlashErrors = (root) => {
+  [...root.getElementsByClassName('flash-error')].forEach((el) => {
     toastr.error(el.innerHTML);
   });
 };
 
-const initFlashSuccesses = () => {
-  [...document.getElementsByClassName('flash-success')].forEach((el) => {
+const initFlashSuccesses = (root) => {
+  [...root.getElementsByClassName('flash-success')].forEach((el) => {
     toastr.success(el.innerHTML);
   });
 };
 
-const initCopyLinkButtons = () => {
-  [...document.getElementsByClassName('copy-link')].forEach((el) => {
+const initCopyLinkButtons = (root) => {
+  [...root.getElementsByClassName('copy-link')].forEach((el) => {
     el.addEventListener('click', () => {
       const textarea = document.createElement('textarea');
       textarea.style.display = 'hidden';
@@ -46,16 +47,16 @@ const initCopyLinkButtons = () => {
   });
 };
 
-const initModalOpeners = () => {
-  [...document.querySelectorAll('[data-modal-open]')].forEach((el) => {
+const initModalOpeners = (root) => {
+  [...root.querySelectorAll('[data-modal-open]')].forEach((el) => {
     el.addEventListener('click', () => {
       document.getElementById(el.getAttribute('data-modal-open')).classList.add('is-active');
     });
   });
 };
 
-const initModals = () => {
-  [...document.getElementsByClassName('modal')].forEach((modal) => {
+const initModals = (root) => {
+  [...root.getElementsByClassName('modal')].forEach((modal) => {
     [...modal.getElementsByClassName('cancel')].forEach((el) => {
       el.addEventListener('click', () => {
         modal.classList.remove('is-active');
@@ -64,8 +65,8 @@ const initModals = () => {
   });
 };
 
-const initAutoSubmitInputs = () => {
-  [...document.getElementsByClassName('auto-submit')].forEach((el) => {
+const initAutoSubmitInputs = (root) => {
+  [...root.getElementsByClassName('auto-submit')].forEach((el) => {
     el.addEventListener('change', () => {
       let current = el;
 
@@ -81,15 +82,43 @@ const initAutoSubmitInputs = () => {
   });
 };
 
+const initSmartTableSearchForms = (root) => {
+  [...root.getElementsByClassName('smart-table-search')].forEach((el) => {
+    initSmartTableSearchForm(el);
+  });
+};
+
+const initSmartTables = (root) => {
+  [...root.getElementsByClassName('smart-table')].forEach((el) => {
+    initSmartTable(el, () => {
+      initModalOpeners(el);
+      initModals(el);
+      initCopyLinkButtons(el);
+      initAutoSubmitInputs(el);
+      initSmartTableSearchForms(el);
+    });
+  });
+};
+
+const initHistory = () => {
+  window.addEventListener('popstate', () => {
+    window.location.reload();
+  });
+};
+
 const init = () => {
-  initNavbars();
-  initNotifications();
-  initFlashErrors();
-  initFlashSuccesses();
-  initCopyLinkButtons();
-  initModalOpeners();
-  initModals();
-  initAutoSubmitInputs();
+  initNavbars(document);
+  initNotifications(document);
+  initFlashErrors(document);
+  initFlashSuccesses(document);
+  initCopyLinkButtons(document);
+  initModalOpeners(document);
+  initModals(document);
+  initAutoSubmitInputs(document);
+  initSmartTables(document);
+  initSmartTableSearchForms(document);
+
+  initHistory();
 };
 
 if (document.readyState === 'complete') {

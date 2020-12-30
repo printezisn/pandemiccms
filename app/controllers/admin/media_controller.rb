@@ -15,6 +15,7 @@ module Admin
                      .bound_sort(params[:sort_by], params[:dir])
                      .page(params[:page].to_i)
                      .per(PAGE_SIZE)
+      render :_media_table, layout: nil if request.xhr?
     end
 
     # POST /admin/media
