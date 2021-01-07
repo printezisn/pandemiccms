@@ -8,6 +8,7 @@ RSpec.describe Tag, type: :model do
   subject(:model) { FactoryBot.build(:tag) }
 
   it { is_expected.to belong_to(:client) }
+  it { is_expected.to have_many(:tag_taggables).dependent(:destroy) }
 
   it { is_expected.to validate_presence_of(:name).with_message('The name is required.') }
   it { is_expected.to validate_length_of(:name).is_at_most(255).with_message('The name may contain up to 255 characters.') }
