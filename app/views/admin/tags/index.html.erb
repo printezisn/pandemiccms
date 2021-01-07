@@ -1,0 +1,17 @@
+<%
+    content_for :title, _('Tags | %{client}') % { client: current_client.name }
+    content_for :description, _('Tags of %{client}') % { client: current_client.name }
+%>
+
+<article>
+  <header>
+    <h1 class="title is-3">
+      <i class="fas fa-tag"></i>
+      &nbsp;
+      <%= _('Tags') %>
+    </h1>
+  </header>
+  <div class="smart-table" id="tags-smart-table" data-use-history="true">
+    <%= render partial: 'admin/tags/tags_table' %>
+  </div>
+</article>

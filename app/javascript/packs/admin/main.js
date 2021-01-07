@@ -1,5 +1,6 @@
 import toastr from 'toastr';
 import { initSmartTable, initSmartTableSearchForm } from './components/smart_table';
+import initTabs from './components/tab';
 
 const initNavbars = (root) => {
   [...root.getElementsByClassName('navbar-burger')].forEach((el) => {
@@ -100,6 +101,10 @@ const initSmartTables = (root) => {
   });
 };
 
+const initTabWrappers = (root) => {
+  [...root.getElementsByClassName('tabs')].forEach((el) => initTabs(el));
+};
+
 const initHistory = () => {
   window.addEventListener('popstate', () => {
     window.location.reload();
@@ -117,6 +122,7 @@ const init = () => {
   initAutoSubmitInputs(document);
   initSmartTables(document);
   initSmartTableSearchForms(document);
+  initTabWrappers(document);
 
   initHistory();
 };

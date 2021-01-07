@@ -8,7 +8,7 @@
     <h1 class="title is-3 bb-grey-1"><%= _('Reset Password') %></h1>
   </header>
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "admin_users/shared/error_messages", resource: resource %>
+  <%= render "admin/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
   <div class="field is-horizontal">
     <div class="field-label is-normal">
