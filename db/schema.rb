@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_112110) do
+ActiveRecord::Schema.define(version: 2021_01_07_113205) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -137,6 +137,21 @@ ActiveRecord::Schema.define(version: 2021_01_07_112110) do
     t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable"
   end
 
+  create_table "tags", charset: "utf8", force: :cascade do |t|
+    t.bigint "client_id", null: false
+    t.string "name", null: false
+    t.string "slug"
+    t.text "description"
+    t.string "template"
+    t.integer "posts_count", default: 0, null: false
+    t.integer "pages_count", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id", "name"], name: "index_tags_on_client_id_and_name", unique: true
+    t.index ["client_id", "posts_count"], name: "index_tags_on_client_id_and_posts_count"
+    t.index ["client_id"], name: "index_tags_on_client_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "admin_user_roles", "admin_users"
@@ -145,4 +160,5 @@ ActiveRecord::Schema.define(version: 2021_01_07_112110) do
   add_foreign_key "client_languages", "clients"
   add_foreign_key "client_languages", "languages"
   add_foreign_key "media", "clients"
+  add_foreign_key "tags", "clients"
 end
