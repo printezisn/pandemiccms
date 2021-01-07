@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_113205) do
+ActiveRecord::Schema.define(version: 2021_01_07_123303) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -137,6 +137,17 @@ ActiveRecord::Schema.define(version: 2021_01_07_113205) do
     t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable"
   end
 
+  create_table "tag_taggables", charset: "utf8", force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.string "taggable_type", null: false
+    t.bigint "taggable_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tag_id", "taggable_id", "taggable_type"], name: "index_tag_taggables_on_tag_id_and_taggable_id_and_taggable_type", unique: true
+    t.index ["tag_id"], name: "index_tag_taggables_on_tag_id"
+    t.index ["taggable_type", "taggable_id"], name: "index_tag_taggables_on_taggable"
+  end
+
   create_table "tags", charset: "utf8", force: :cascade do |t|
     t.bigint "client_id", null: false
     t.string "name", null: false
@@ -160,5 +171,6 @@ ActiveRecord::Schema.define(version: 2021_01_07_113205) do
   add_foreign_key "client_languages", "clients"
   add_foreign_key "client_languages", "languages"
   add_foreign_key "media", "clients"
+  add_foreign_key "tag_taggables", "tags"
   add_foreign_key "tags", "clients"
 end
