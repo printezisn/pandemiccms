@@ -74,3 +74,5 @@ gem 'gettext_i18n_rails', '~> 1.8'
 gem 'gettext', '~> 3.3'
 
 gem 'kaminari', '~> 1.2'
+
+gem 'babosa', '~> 1.0'

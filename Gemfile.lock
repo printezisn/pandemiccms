@@ -65,6 +65,7 @@ GEM
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
     ast (2.4.1)
+    babosa (1.0.4)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.5.1)
@@ -319,6 +320,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  babosa (~> 1.0)
   bootsnap (>= 1.4.2)
   byebug
   capistrano (~> 3.14)
