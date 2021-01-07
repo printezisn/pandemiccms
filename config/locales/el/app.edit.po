@@ -370,6 +370,18 @@ msgstr "Κωδικός"
 msgid "activerecord.attributes.admin_user.username"
 msgstr "Όνομα Χρήστη"
 
+msgid "activerecord.attributes.tag.description"
+msgstr "Περιγραφή"
+
+msgid "activerecord.attributes.tag.name"
+msgstr "Όνομα"
+
+msgid "activerecord.attributes.tag.slug"
+msgstr "Slug"
+
+msgid "activerecord.attributes.tag.template"
+msgstr "Πρότυπο"
+
 msgid "activerecord.errors.models.admin_user.attributes.client_id.blank"
 msgstr "Το id πελάτη είναι υποχρεωτικό."
 
@@ -408,6 +420,18 @@ msgstr "Το όνομα χρήστη χρησιμοποιείται ήδη."
 
 msgid "activerecord.errors.models.admin_user.attributes.username.too_long"
 msgstr "Το όνομα χρήστη μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.tag.attributes.name.blank"
+msgstr "Το όνομα είναι υποχρεωτικό."
+
+msgid "activerecord.errors.models.tag.attributes.name.taken"
+msgstr "Το όνομα χρησιμοποιείται ήδη."
+
+msgid "activerecord.errors.models.tag.attributes.name.too_long"
+msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.tag.attributes.slug.too_long"
+msgstr "Το slug μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
 
 msgid "devise.confirmations.confirmed"
 msgstr "Η διεύθυνση email επιβεβαιώθηκε με επιτυχία."

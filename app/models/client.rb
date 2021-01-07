@@ -7,6 +7,7 @@ class Client < ApplicationRecord
   has_many :client_domains, inverse_of: :client, dependent: :destroy
   has_many :admin_users, inverse_of: :client, dependent: :destroy
   has_many :media, inverse_of: :client, dependent: :destroy
+  has_many :tags, inverse_of: :client, dependent: :destroy
 
   def default_url_options
     {

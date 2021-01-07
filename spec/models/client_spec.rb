@@ -10,6 +10,7 @@ RSpec.describe Client, type: :model do
   it { is_expected.to have_many(:languages).through(:client_languages) }
   it { is_expected.to have_many(:admin_users).dependent(:destroy) }
   it { is_expected.to have_many(:media).dependent(:destroy) }
+  it { is_expected.to have_many(:tags).dependent(:destroy) }
 
   describe '#default_url_options' do
     let(:client_domain) { model.client_domains.first }
