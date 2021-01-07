@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
       resources :media, only: %i[index create destroy]
+      resources :tags
 
       root 'dashboard#index'
     end
