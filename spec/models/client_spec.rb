@@ -12,6 +12,7 @@ RSpec.describe Client, type: :model do
   it { is_expected.to have_many(:media).dependent(:destroy) }
   it { is_expected.to have_many(:tags).dependent(:destroy) }
   it { is_expected.to have_many(:posts).dependent(:destroy) }
+  it { is_expected.to have_many(:pages).dependent(:destroy) }
 
   describe '#default_url_options' do
     let(:client_domain) { model.client_domains.first }
