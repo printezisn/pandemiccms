@@ -99,6 +99,18 @@
       <div class="field-body">
         <div class="field">
           <div class="control">
+            <a class="button" href="<%= admin_tags_path %>">
+              <i class="fas fa-long-arrow-alt-left"></i>
+              &nbsp;
+              <%= _('Back') %>
+            </a>
+            <% if current_client.show_tag_page %>
+            <a class="button is-primary mb-1" rel="noopener" target="_blank" href="<%= tag_path(id: @tag.id, slug: @tag.displayed_slug(current_language&.transliterations)) %>">
+              <i class="fas fa-external-link-alt"></i>
+              &nbsp;
+              <%= _('Preview') %>
+            </a>
+            <% end %>
             <a class="button is-success mb-1" href="<%= edit_admin_tag_path(@tag) %>">
               <i class="fas fa-edit"></i>
               &nbsp;
@@ -109,11 +121,6 @@
               &nbsp;
               <%= _('Delete') %>
             </button>
-            <a class="button" href="<%= admin_tags_path %>">
-              <i class="fas fa-long-arrow-alt-left"></i>
-              &nbsp;
-              <%= _('Back') %>
-            </a>
             <%= form_with(url: admin_tag_path(@tag), method: :delete, id: 'delete-tag-modal', class: 'modal') do %>
             <div class="modal-background cancel"></div>
             <div class="modal-card">

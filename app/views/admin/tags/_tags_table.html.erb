@@ -48,6 +48,13 @@
       <td><%= tag.created_at %></td>
       <td><%= tag.updated_at %></td>
       <td>
+        <% if current_client.show_tag_page %>
+        <a class="button is-primary is-small mb-1" rel="noopener" target="_blank" href="<%= tag_path(id: tag.id, slug: tag.displayed_slug(current_language&.transliterations)) %>">
+          <i class="fas fa-external-link-alt"></i>
+          &nbsp;
+          <%= _('Preview') %>
+        </a>
+        <% end %>
         <a class="button is-link is-small mb-1" href="<%= admin_tag_path(tag) %>">
           <i class="fas fa-eye"></i>
           &nbsp;
