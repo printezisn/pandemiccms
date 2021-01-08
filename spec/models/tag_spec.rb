@@ -3,6 +3,7 @@
 require 'rails_helper'
 require './spec/models/concerns/simple_text_searchable_spec'
 require './spec/models/concerns/bound_sortable_spec'
+require './spec/models/concerns/sluggable_spec'
 
 RSpec.describe Tag, type: :model do
   subject(:model) { FactoryBot.build(:tag) }
@@ -20,5 +21,6 @@ RSpec.describe Tag, type: :model do
 
     it_behaves_like 'SimpleTextSearchable'
     it_behaves_like 'BoundSortable'
+    it_behaves_like 'Sluggable'
   end
 end

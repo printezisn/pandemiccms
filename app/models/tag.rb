@@ -7,6 +7,7 @@ class Tag < ApplicationRecord
 
   include SimpleTextSearchable
   include BoundSortable
+  include Sluggable
 
   belongs_to :client, inverse_of: :tags
 
