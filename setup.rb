@@ -6,7 +6,7 @@ ActiveRecord::Base.transaction do
   if Language.none?
     puts 'Creating languages...'
     Language.create!(locale: 'en', name: 'English', flag: 'gb-eng')
-    Language.create!(locale: 'el', name: 'Ελληνικά', flag: 'gr')
+    Language.create!(locale: 'el', name: 'Ελληνικά', flag: 'gr', transliteration: 'greek')
   end
 
   client = Client.new
