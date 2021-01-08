@@ -11,6 +11,8 @@ Rails.application.routes.draw do
       root 'dashboard#index'
     end
 
+    get 't/:id/:slug', to: 'tags#show', as: 'tag'
+
     root 'pages#index'
   end
 end
