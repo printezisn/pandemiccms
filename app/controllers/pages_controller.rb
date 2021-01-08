@@ -2,5 +2,7 @@
 
 # Pages controller
 class PagesController < ApplicationController
-  def index; end
+  def index
+    render "templates/#{current_client.template}/pages/index"
+  end
 end
