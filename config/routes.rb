@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       resources :media, only: %i[index create destroy]
       resources :tags
 
+      get 'tags/:id/posts', to: 'tags#posts', as: :tag_posts
+      get 'tags/:id/pages', to: 'tags#pages', as: :tag_pages
+
       root 'dashboard#index'
     end
 

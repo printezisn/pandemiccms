@@ -35,5 +35,13 @@ RSpec.describe Admin::TagsController, type: :routing do
     it 'routes to #destroy' do
       expect(delete: '/admin/tags/1').to route_to('admin/tags#destroy', id: '1')
     end
+
+    it 'routes to #posts' do
+      expect(get: '/admin/tags/1/posts').to route_to('admin/tags#posts', id: '1')
+    end
+
+    it 'routes to #pages' do
+      expect(get: '/admin/tags/1/pages').to route_to('admin/tags#pages', id: '1')
+    end
   end
 end
