@@ -6,6 +6,7 @@ module Admin
     PAGE_SIZE = 10
 
     before_action :fetch_tag, only: %i[show edit update destroy]
+    before_action :fetch_templates, only: %i[new edit create update]
 
     # GET /tags
     # GET /tags.json
@@ -65,6 +66,11 @@ module Admin
 
     def fetch_tag
       @tag = Tag.find_by!(id: params[:id], client_id: current_client.id)
+    end
+
+    def fetch_templates
+      path = Rails.root.join("app/views/templates/#{current_client.template}/tags/templates/*.html.erb")
+      @templates = Dir[path].map { |f| File.basename(f, '.html.erb') }.sort
     end
 
     def tag_params
