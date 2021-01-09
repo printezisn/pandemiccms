@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-07 13:54+0200\n"
-"PO-Revision-Date: 2021-01-07 13:54+0200\n"
+"POT-Creation-Date: 2021-01-09 23:04+0200\n"
+"PO-Revision-Date: 2021-01-09 23:04+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -28,6 +28,11 @@ msgid_plural "%{count} Media"
 msgstr[0] ""
 msgstr[1] ""
 
+msgid "%{count} Menu"
+msgid_plural "%{count} Menus"
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "%{count} Page"
 msgid_plural "%{count} Pages"
 msgstr[0] ""
@@ -35,6 +40,16 @@ msgstr[1] ""
 
 msgid "%{count} Post"
 msgid_plural "%{count} Posts"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%{count} Tag"
+msgid_plural "%{count} Tags"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%{count} User"
+msgid_plural "%{count} Users"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -107,10 +122,16 @@ msgstr ""
 msgid "Are you sure you want to delete this medium ?"
 msgstr ""
 
-msgid "Categories"
+msgid "Are you sure you want to delete this tag ?"
 msgstr ""
 
-msgid "Category Drafts"
+msgid "Back"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Categories"
 msgstr ""
 
 msgid "Change Password"
@@ -134,6 +155,18 @@ msgstr ""
 msgid "Copy Link"
 msgstr ""
 
+msgid "Create"
+msgstr ""
+
+msgid "Create Tag"
+msgstr ""
+
+msgid "Create Tag | %{client}"
+msgstr ""
+
+msgid "Create new tag for %{client}"
+msgstr ""
+
 msgid "Created At"
 msgstr ""
 
@@ -149,10 +182,34 @@ msgstr ""
 msgid "Delete Confirmation"
 msgstr ""
 
+msgid "Description:"
+msgstr ""
+
+msgid "Details"
+msgstr ""
+
+msgid "Details for a tag of %{client}"
+msgstr ""
+
 msgid "Didn't receive confirmation instructions ?"
 msgstr ""
 
 msgid "Didn't receive unlock instructions ?"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit Tag"
+msgstr ""
+
+msgid "Edit Tag | %{client}"
+msgstr ""
+
+msgid "Edit a tag of %{client}"
+msgstr ""
+
+msgid "Emails"
 msgstr ""
 
 msgid "First Page"
@@ -191,10 +248,16 @@ msgstr ""
 msgid "Media | %{client}"
 msgstr ""
 
+msgid "Menus"
+msgstr ""
+
 msgid "My Profile"
 msgstr ""
 
 msgid "Name"
+msgstr ""
+
+msgid "Name:"
 msgstr ""
 
 msgid "New Password"
@@ -207,6 +270,15 @@ msgid "No"
 msgstr ""
 
 msgid "No media were found."
+msgstr ""
+
+msgid "No pages were found."
+msgstr ""
+
+msgid "No posts were found."
+msgstr ""
+
+msgid "No tags were found."
 msgstr ""
 
 msgid "Old password"
@@ -231,6 +303,9 @@ msgid "Post Drafts"
 msgstr ""
 
 msgid "Posts"
+msgstr ""
+
+msgid "Preview"
 msgstr ""
 
 msgid "Previous Page"
@@ -290,10 +365,49 @@ msgstr ""
 msgid "Sign up"
 msgstr ""
 
+msgid "Slug:"
+msgstr ""
+
 msgid "Someone has requested a link to change your password. You can do this through the link below."
 msgstr ""
 
+msgid "Submit"
+msgstr ""
+
+msgid "Tag Details"
+msgstr ""
+
+msgid "Tag Details | %{client}"
+msgstr ""
+
 msgid "Tags"
+msgstr ""
+
+msgid "Tags of %{client}"
+msgstr ""
+
+msgid "Tags | %{client}"
+msgstr ""
+
+msgid "Tag|Description"
+msgstr ""
+
+msgid "Tag|Name"
+msgstr ""
+
+msgid "Tag|Pages count"
+msgstr ""
+
+msgid "Tag|Posts count"
+msgstr ""
+
+msgid "Tag|Slug"
+msgstr ""
+
+msgid "Tag|Template"
+msgstr ""
+
+msgid "Template:"
 msgstr ""
 
 msgid "The administration of %{client}"
@@ -308,6 +422,27 @@ msgstr ""
 msgid "The medium was successfully deleted."
 msgstr ""
 
+msgid "The tag was successfully created."
+msgstr ""
+
+msgid "The tag was successfully deleted."
+msgstr ""
+
+msgid "The tag was successfully updated."
+msgstr ""
+
+msgid "Total Pages"
+msgstr ""
+
+msgid "Total Pages:"
+msgstr ""
+
+msgid "Total Posts"
+msgstr ""
+
+msgid "Total Posts:"
+msgstr ""
+
 msgid "Unlock my account"
 msgstr ""
 
@@ -318,6 +453,9 @@ msgid "Upload"
 msgstr ""
 
 msgid "Users"
+msgstr ""
+
+msgid "View"
 msgstr ""
 
 msgid "We're contacting you to notify you that your email has been changed to %{email}"
@@ -336,9 +474,6 @@ msgid "Yes"
 msgstr ""
 
 msgid "You can confirm your account email through the link below:"
-msgstr ""
-
-msgid "You have no category drafts."
 msgstr ""
 
 msgid "You have no page drafts."

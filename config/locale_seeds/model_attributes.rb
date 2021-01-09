@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# DO NOT MODIFY! AUTOMATICALLY GENERATED FILE!
 _('Admin user')
 _('AdminUser|Confirmation sent at')
 _('AdminUser|Confirmation token')
@@ -23,4 +22,9 @@ _('Old password')
 _('OldPassword|Encrypted password')
 _('OldPassword|Password archivable type')
 _('OldPassword|Password salt')
-# DO NOT MODIFY! AUTOMATICALLY GENERATED FILE!
+_('Tag|Description')
+_('Tag|Name')
+_('Tag|Pages count')
+_('Tag|Posts count')
+_('Tag|Slug')
+_('Tag|Template')

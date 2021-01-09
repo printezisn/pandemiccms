@@ -27,6 +27,11 @@ msgid_plural "%{count} Media"
 msgstr[0] "%{count} Medium"
 msgstr[1] "%{count} Media"
 
+msgid "%{count} Menu"
+msgid_plural "%{count} Menus"
+msgstr[0] "%{count} Menu"
+msgstr[1] "%{count} Menus"
+
 msgid "%{count} Page"
 msgid_plural "%{count} Pages"
 msgstr[0] "%{count} Page"
@@ -36,6 +41,16 @@ msgid "%{count} Post"
 msgid_plural "%{count} Posts"
 msgstr[0] "%{count} Post"
 msgstr[1] "%{count} Posts"
+
+msgid "%{count} Tag"
+msgid_plural "%{count} Tags"
+msgstr[0] "%{count} Tag"
+msgstr[1] "%{count} Tags"
+
+msgid "%{count} User"
+msgid_plural "%{count} Users"
+msgstr[0] "%{count} User"
+msgstr[1] "%{count} Users"
 
 msgid "..."
 msgstr "..."
@@ -106,11 +121,17 @@ msgstr "An error occurred. Please try again later."
 msgid "Are you sure you want to delete this medium ?"
 msgstr "Are you sure you want to delete this medium ?"
 
+msgid "Are you sure you want to delete this tag ?"
+msgstr "Are you sure you want to delete this tag ?"
+
+msgid "Back"
+msgstr "Back"
+
+msgid "Cancel"
+msgstr "Cancel"
+
 msgid "Categories"
 msgstr "Categories"
-
-msgid "Category Drafts"
-msgstr "Category Drafts"
 
 msgid "Change Password"
 msgstr "Change Password"
@@ -133,6 +154,18 @@ msgstr "Confirm your new password"
 msgid "Copy Link"
 msgstr "Copy Link"
 
+msgid "Create"
+msgstr "Create"
+
+msgid "Create Tag"
+msgstr "Create Tag"
+
+msgid "Create Tag | %{client}"
+msgstr "Create Tag | %{client}"
+
+msgid "Create new tag for %{client}"
+msgstr "Create new tag for %{client}"
+
 msgid "Created At"
 msgstr "Created At"
 
@@ -148,11 +181,35 @@ msgstr "Delete"
 msgid "Delete Confirmation"
 msgstr "Delete Confirmation"
 
+msgid "Description:"
+msgstr "Description:"
+
+msgid "Details"
+msgstr "Details"
+
+msgid "Details for a tag of %{client}"
+msgstr "Details for a tag of %{client}"
+
 msgid "Didn't receive confirmation instructions ?"
 msgstr "Didn't receive confirmation instructions ?"
 
 msgid "Didn't receive unlock instructions ?"
 msgstr "Didn't receive unlock instructions ?"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Edit Tag"
+msgstr "Edit Tag"
+
+msgid "Edit Tag | %{client}"
+msgstr "Edit Tag | %{client}"
+
+msgid "Edit a tag of %{client}"
+msgstr "Edit a tag of %{client}"
+
+msgid "Emails"
+msgstr "Emails"
 
 msgid "First Page"
 msgstr "First Page"
@@ -190,11 +247,17 @@ msgstr "Media of %{client}"
 msgid "Media | %{client}"
 msgstr "Media | %{client}"
 
+msgid "Menus"
+msgstr "Menus"
+
 msgid "My Profile"
 msgstr "My Profile"
 
 msgid "Name"
 msgstr "Name"
+
+msgid "Name:"
+msgstr "Name:"
 
 msgid "New Password"
 msgstr "New Password"
@@ -207,6 +270,15 @@ msgstr "No"
 
 msgid "No media were found."
 msgstr "No media were found."
+
+msgid "No pages were found."
+msgstr "No pages were found."
+
+msgid "No posts were found."
+msgstr "No posts were found."
+
+msgid "No tags were found."
+msgstr "No tags were found."
 
 msgid "Old password"
 msgstr "Old password"
@@ -231,6 +303,9 @@ msgstr "Post Drafts"
 
 msgid "Posts"
 msgstr "Posts"
+
+msgid "Preview"
+msgstr "Preview"
 
 msgid "Previous Page"
 msgstr "Previous Page"
@@ -289,11 +364,50 @@ msgstr "Sign in to %{client}"
 msgid "Sign up"
 msgstr "Sign up"
 
+msgid "Slug:"
+msgstr "Slug:"
+
 msgid "Someone has requested a link to change your password. You can do this through the link below."
 msgstr "Someone has requested a link to change your password. You can do this through the link below."
 
+msgid "Submit"
+msgstr "Submit"
+
+msgid "Tag Details"
+msgstr "Tag Details"
+
+msgid "Tag Details | %{client}"
+msgstr "Tag Details | %{client}"
+
 msgid "Tags"
 msgstr "Tags"
+
+msgid "Tags of %{client}"
+msgstr "Tags of %{client}"
+
+msgid "Tags | %{client}"
+msgstr "Tags | %{client}"
+
+msgid "Tag|Description"
+msgstr "Description"
+
+msgid "Tag|Name"
+msgstr "Name"
+
+msgid "Tag|Pages count"
+msgstr "Total Pages"
+
+msgid "Tag|Posts count"
+msgstr "Total Posts"
+
+msgid "Tag|Slug"
+msgstr "Slug"
+
+msgid "Tag|Template"
+msgstr "Template"
+
+msgid "Template:"
+msgstr "Template:"
 
 msgid "The administration of %{client}"
 msgstr "The administration of %{client}"
@@ -307,6 +421,27 @@ msgstr "The medium was successfully created."
 msgid "The medium was successfully deleted."
 msgstr "The medium was successfully deleted."
 
+msgid "The tag was successfully created."
+msgstr "The tag was successfully created."
+
+msgid "The tag was successfully deleted."
+msgstr "The tag was successfully deleted."
+
+msgid "The tag was successfully updated."
+msgstr "The tag was successfully created."
+
+msgid "Total Pages"
+msgstr "Total Pages"
+
+msgid "Total Pages:"
+msgstr "Total Pages:"
+
+msgid "Total Posts"
+msgstr "Total Posts"
+
+msgid "Total Posts:"
+msgstr "Total Posts:"
+
 msgid "Unlock my account"
 msgstr "Unlock my account"
 
@@ -318,6 +453,9 @@ msgstr "Upload"
 
 msgid "Users"
 msgstr "Users"
+
+msgid "View"
+msgstr "View"
 
 msgid "We're contacting you to notify you that your email has been changed to %{email}"
 msgstr "We're contacting you to notify you that your email has been changed to %{email}"
@@ -336,9 +474,6 @@ msgstr "Yes"
 
 msgid "You can confirm your account email through the link below:"
 msgstr "You can confirm your account email through the link below:"
-
-msgid "You have no category drafts."
-msgstr "You have no category drafts."
 
 msgid "You have no page drafts."
 msgstr "You have no page drafts."
