@@ -216,4 +216,54 @@ RSpec.describe '/admin/tags', type: :request do
       end
     end
   end
+
+  describe 'GET /posts' do
+    before do
+      model.save!
+      FactoryBot.create(:post, tags: [model])
+    end
+
+    context 'when the admin user is not signed in' do
+      it 'redirects to the sign in page' do
+        get admin_tag_posts_path(model)
+
+        expect(response).to redirect_to(new_admin_user_session_path)
+      end
+    end
+
+    context 'when the admin user is signed in' do
+      before { sign_in admin_user }
+
+      it 'returns a successful response' do
+        get admin_tag_posts_path(model)
+
+        expect(response).to be_successful
+      end
+    end
+  end
+
+  describe 'GET /pages' do
+    before do
+      model.save!
+      FactoryBot.create(:page, tags: [model])
+    end
+
+    context 'when the admin user is not signed in' do
+      it 'redirects to the sign in page' do
+        get admin_tag_pages_path(model)
+
+        expect(response).to redirect_to(new_admin_user_session_path)
+      end
+    end
+
+    context 'when the admin user is signed in' do
+      before { sign_in admin_user }
+
+      it 'returns a successful response' do
+        get admin_tag_pages_path(model)
+
+        expect(response).to be_successful
+      end
+    end
+  end
 end

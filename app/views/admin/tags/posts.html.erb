@@ -1,0 +1,49 @@
+<div class="columns">
+  <div class="column is-half">
+    <%= form_with(method: :get, html: { class: 'smart-table-search', 'data-target' => 'posts-smart-table' }) do |t| %>
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />
+      </div>
+      <div class="control">
+        <button type="submit" class="button is-success">
+          <i class="fas fa-search"></i>
+          &nbsp;
+          <%= _('Search') %>
+        </button>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th><%= render partial: 'admin/shared/table_header', locals: { field: 'name', title: _('Name') } %></th>
+      <th><%= render partial: 'admin/shared/table_header', locals: { field: 'updated_at', title: _('Updated At') } %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @posts.none? %>
+    <tr>
+      <td colspan="6"><%= _('No posts were found.') %></td>
+    </tr>
+    <% else %>
+    <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.name %></td>
+      <td><%= post.updated_at %></td>
+      <td>
+        <a class="button is-link is-small" href="javascript:void(0)">
+          <i class="fas fa-eye"></i>
+          &nbsp;
+          <%= _('View') %>
+        </a>
+      </td>
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @posts %>

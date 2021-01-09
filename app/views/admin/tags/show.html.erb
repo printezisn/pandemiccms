@@ -142,6 +142,10 @@
       </div>
     </div>
   </div>
-  <div id="posts-tab" style="display: none">Posts</div>
-  <div id="pages-tab" style="display: none">Pages</div>
+  <div id="posts-tab" style="display: none">
+    <div class="smart-table" id="posts-smart-table" data-autoload="<%= admin_tag_posts_path(@tag) %>"></div>
+  </div>
+  <div id="pages-tab" style="display: none">
+    <div class="smart-table" id="pages-smart-table" data-autoload="<%= admin_tag_pages_path(@tag) %>"></div>
+  </div>
 </article>

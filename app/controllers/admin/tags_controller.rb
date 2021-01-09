@@ -5,7 +5,7 @@ module Admin
   class TagsController < BaseController
     PAGE_SIZE = 10
 
-    before_action :fetch_tag, only: %i[show edit update destroy]
+    before_action :fetch_tag, only: %i[show edit update destroy posts pages]
     before_action :fetch_templates, only: %i[new edit create update]
 
     # GET /tags
@@ -60,6 +60,28 @@ module Admin
       @tag.destroy
 
       redirect_to admin_tags_path, notice: _('The tag was successfully deleted.')
+    end
+
+    # GET /tags/1/posts
+    def posts
+      @posts = Post.joins(:tag_taggables)
+                   .where(client_id: current_client.id, tag_taggables: { tag_id: @tag.id })
+                   .simple_text_search(params[:search])
+                   .bound_sort(params[:sort_by], params[:dir])
+                   .page(params[:page].to_i)
+                   .per(PAGE_SIZE)
+      render 'posts', layout: nil
+    end
+
+    # GET /tags/1/pages
+    def pages
+      @pages = Page.joins(:tag_taggables)
+                   .where(client_id: current_client.id, tag_taggables: { tag_id: @tag.id })
+                   .simple_text_search(params[:search])
+                   .bound_sort(params[:sort_by], params[:dir])
+                   .page(params[:page].to_i)
+                   .per(PAGE_SIZE)
+      render 'pages', layout: nil
     end
 
     private

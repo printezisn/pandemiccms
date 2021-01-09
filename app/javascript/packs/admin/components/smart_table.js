@@ -53,6 +53,15 @@ export const initSmartTable = (table, refreshCallback) => {
   });
 
   initLinks(tableEl);
+
+  if (tableEl.getAttribute('data-autoload')) {
+    tableEl.dispatchEvent(new CustomEvent('refresh', {
+      detail: {
+        url: tableEl.getAttribute('data-autoload'),
+        updateHistory: true,
+      },
+    }));
+  }
 };
 
 export const initSmartTableSearchForm = (form) => {
