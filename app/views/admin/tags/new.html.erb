@@ -3,76 +3,78 @@
     content_for :description, _('Create new tag for %{client}') % { client: current_client.name }
 %>
 
-<article class="small-form">
-  <header>
-    <h1 class="title is-3 bb-grey-1">
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
       <i class="fas fa-tag"></i>
       &nbsp;
       <%= _('Create Tag') %>
     </h1>
   </header>
-  <%= render "admin/shared/error_messages", resource: @tag %>
-  <%= form_with(model: @tag, url: admin_tags_path, method: :post) do |f| %>
-  <div class="field is-horizontal">
-    <div class="field-label is-normal">
-      <%= f.label :name, class: 'label required-label' %>
-    </div>
-    <div class="field-body">
-      <div class="field">
-        <div class="control">
-          <%= f.text_field :name, class: 'input', required: true %>
-        </div>
+  <div class="card-content">
+    <%= render "admin/shared/error_messages", resource: @tag %>
+    <%= form_with(model: @tag, url: admin_tags_path, method: :post) do |f| %>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :name, class: 'label required-label' %>
       </div>
-    </div>
-  </div>
-  <div class="field is-horizontal">
-    <div class="field-label is-normal">
-      <%= f.label :slug, class: 'label' %>
-    </div>
-    <div class="field-body">
-      <div class="field">
-        <div class="control">
-          <%= f.text_field :slug, class: 'input' %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="field is-horizontal">
-    <div class="field-label is-normal">
-      <%= f.label :description, class: 'label' %>
-    </div>
-    <div class="field-body">
-      <div class="field">
-        <div class="control">
-          <%= f.text_area :description, class: 'textarea', rows: 5 %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="field is-horizontal">
-    <div class="field-label is-normal">
-      <%= f.label :template, class: 'label' %>
-    </div>
-    <div class="field-body">
-      <div class="field">
-        <div class="control">
-          <div class="select">
-            <%= f.select :template, @templates %>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :name, class: 'input', required: true %>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="field is-horizontal">
-    <div class="field-label is-normal"></div>
-    <div class="field-body">
-      <div class="field">
-        <div class="control">
-          <%= f.submit _('Submit'), class: 'button is-success mb-1' %>
-          <a class="button" href="<%= admin_tags_path %>"><%= _('Cancel') %></a>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :slug, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :slug, class: 'input' %>
+          </div>
         </div>
       </div>
     </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :description, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_area :description, class: 'textarea', rows: 5 %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :template, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <div class="select">
+              <%= f.select :template, @templates %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success mb-1' %>
+            <a class="button" href="<%= admin_tags_path %>"><%= _('Cancel') %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </article>

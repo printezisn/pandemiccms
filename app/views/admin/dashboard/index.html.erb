@@ -73,51 +73,29 @@
     </div>
   </div>
 
-  <article class="mb-5">
-    <header>
-      <h2 class="title is-5 mb-3">
+  <article class="card">
+    <header class="card-header">
+      <h2 class="card-header-title">
         <%= _('Post Drafts') %>
+        &nbsp;
         <i class="fas fa-check has-text-success"></i>
       </h2>
     </header>
-    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-      <thead>
-        <tr>
-          <th><%= _('Name') %></th>
-          <th><%= _('Created At') %></th>
-          <th><%= _('Updated At') %></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colspan="4"><%= _('You have no post drafts.') %></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="card-content">
+      <%= _('You have no post drafts.') %>
+    </div>
   </article>
 
-  <article class="mb-5">
-    <header>
-      <h2 class="title is-5 mb-3">
+  <article class="card mt-5">
+    <header class="card-header">
+      <h2 class="card-header-title">
         <%= _('Page Drafts') %>
+        &nbsp;
         <i class="fas fa-check has-text-success"></i>
       </h2>
     </header>
-    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-      <thead>
-        <tr>
-          <th><%= _('Name') %></th>
-          <th><%= _('Created At') %></th>
-          <th><%= _('Updated At') %></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colspan="4"><%= _('You have no page drafts.') %></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="card-content">
+      <%= _('You have no page drafts.') %>
+    </div>
   </article>
 </article>

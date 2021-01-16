@@ -29,7 +29,6 @@
         </div>
       </div>
       <div class="navbar-menu" id="main-menu">
-        <% if admin_user_signed_in? %>
         <div class="navbar-start">
           <a class="navbar-item<%= controller_name == 'media' ? ' is-active' : '' %>" href="<%= admin_media_path %>">
             <i class="fas fa-image"></i>
@@ -37,7 +36,7 @@
             <%= _('Media') %>
           </a>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="javascript:void(0)">
+            <a class="navbar-link<%= %w[posts categories tags].include?(controller_name) ? ' is-active' : '' %>" href="javascript:void(0)">
               <i class="fas fa-file"></i>
               &nbsp;
               <%= _('Posts') %>
@@ -106,7 +105,6 @@
           </div>
           <% end %>
         </div>
-        <% end %>
         <div class="navbar-end">
           <% if admin_user_signed_in? %>
           <div class="navbar-item has-dropdown is-hoverable">
@@ -160,20 +158,7 @@
     </nav>
   </header>
   <main class="container is-fluid"><%= yield %></main>
-  <footer>
-    <% if Time.now.year > 2020 %>
-    Pandemic CMS &copy; 2020 - <%= Time.now.year %>
-    <% else %>
-    Pandemic CMS &copy; 2020
-    <% end %>
-  </footer>
-
-  <% if alert %>
-  <p class="flash-error"><%= alert %></p>
-  <% end %>
-  <% if notice %>
-  <p class="flash-success"><%= notice %></p>
-  <% end %>
+  <%= render partial: 'layouts/shared/admin_footer' %>
 </body>
 
 </html>

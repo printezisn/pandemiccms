@@ -1,0 +1,17 @@
+.table {
+  word-break: break-all;
+
+  thead th {
+    border-width: 0 0 1px;
+
+    a {
+      display: block;
+      text-align: left;
+    }
+  }
+
+  .actions-cell {
+    width: 1px;
+    white-space: nowrap;
+  }
+}

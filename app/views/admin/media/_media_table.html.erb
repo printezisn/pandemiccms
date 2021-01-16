@@ -1,82 +1,94 @@
 <div class="columns">
-    <div class="column">
-        <%= form_with(method: :get, html: { class: 'smart-table-search', 'data-target' => 'media-smart-table' }) do |t| %>
-        <div class="field has-addons">
-            <div class="control is-expanded">
-                <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />
+  <div class="column">
+    <%= form_with(method: :get, html: { class: 'smart-table-search', 'data-target' => 'media-smart-table' }) do |t| %>
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />
+      </div>
+      <div class="control">
+        <button type="submit" class="button is-success">
+          <i class="fas fa-search"></i>
+          &nbsp;
+          <%= _('Search') %>
+        </button>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="column has-text-right-tablet">
+    <%= form_with(url: admin_media_path, method: :post, class: 'upload-button-form') do |f| %>
+    <%= f.file_field 'medium[file]', title: '', class: 'auto-submit' %>
+    <button type="button" class="button is-success">
+      <i class="fas fa-upload"></i>
+      &nbsp;
+      <%= _('Upload') %>
+    </button>
+    <% end %>
+  </div>
+</div>
+<table class="table is-striped is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th><%= render partial: 'admin/shared/table_header', locals: { field: 'name', title: _('Name') } %></th>
+      <th class="is-hidden-touch"><%= render partial: 'admin/shared/table_header', locals: { field: 'created_at', title: _('Created At') } %></th>
+      <th class="actions-cell"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @media.none? %>
+    <tr>
+      <td colspan="3"><%= _('No media were found.') %></td>
+    </tr>
+    <% else %>
+    <% @media.each do |medium| %>
+    <tr>
+      <td>
+        <a href="<%= url_for(medium.file) %>" rel="noopener" target="_blank"><%= medium.name %></a>
+      </td>
+      <td class="is-hidden-touch"><%= medium.created_at %></td>
+      <td class="actions-cell">
+        <div class="dropdown is-togglable is-right">
+          <div class="dropdown-trigger">
+            <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" title="<%= _('Actions') %>">
+              <i class="fas fa-ellipsis-v"></i>
+            </a>
+          </div>
+          <div class="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a class="dropdown-item copy-link" data-link="<%= rails_blob_url(medium.file) %>" data-success-message="<%= _('The link was successfully copied') %>">
+                <i class="fas fa-copy"></i>
+                &nbsp;
+                <%= _('Copy') %>
+              </a>
+              <hr class="dropdown-divider" />
+              <a href="javascript:void(0)" class="dropdown-item" data-modal-open="delete-medium-modal<%= medium.id %>">
+                <i class="fas fa-trash"></i>
+                &nbsp;
+                <%= _('Delete') %>
+              </a>
             </div>
-            <div class="control">
-                <button type="submit" class="button is-success">
-                    <i class="fas fa-search"></i>
-                    &nbsp;
-                    <%= _('Search') %>
-                </button>
-            </div>
+          </div>
+        </div>
+        <%= form_with(url: admin_medium_path(medium), method: :delete, id: "delete-medium-modal#{medium.id}", class: 'modal') do %>
+        <div class="modal-background cancel"></div>
+        <div class="modal-card">
+          <div class="modal-card-head">
+            <p class="modal-card-title"><%= _('Delete Confirmation') %></p>
+            <button type="button" class="delete cancel" aria-label="close"></button>
+          </div>
+          <div class="modal-card-body">
+            <p><%= _('Are you sure you want to delete this medium ?') %></p>
+          </div>
+          <div class="modal-card-foot">
+            <button type="button" class="button cancel"><%= _('No') %></button>
+            <button type="submit" class="button is-success"><%= _('Yes') %></button>
+          </div>
         </div>
         <% end %>
-    </div>
-    <div class="column has-text-right-tablet">
-        <%= form_with(url: admin_media_path, method: :post, class: 'upload-button-form') do |f| %>
-        <%= f.file_field 'medium[file]', title: '', class: 'auto-submit' %>
-        <button type="button" class="button is-success">
-            <i class="fas fa-upload"></i>
-            &nbsp;
-            <%= _('Upload') %>
-        </button>
-        <% end %>
-    </div>
-</div>
-<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-    <thead>
-        <tr>
-            <th><%= render partial: 'admin/shared/table_header', locals: { field: 'name', title: _('Name') } %></th>
-            <th><%= render partial: 'admin/shared/table_header', locals: { field: 'created_at', title: _('Created At') } %></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <% if @media.none? %>
-        <tr>
-            <td colspan="3"><%= _('No media were found.') %></td>
-        </tr>
-        <% else %>
-        <% @media.each do |medium| %>
-        <tr>
-            <td>
-                <a href="<%= url_for(medium.file) %>" rel="noopener" target="_blank"><%= medium.name %></a>
-            </td>
-            <td><%= medium.created_at %></td>
-            <td>
-                <button type="button" class="copy-link button is-small mb-1" data-link="<%= rails_blob_url(medium.file) %>" data-success-message="<%= _('The link was successfully copied') %>">
-                    <i class="fas fa-copy"></i>
-                    &nbsp;
-                    <%= _('Copy Link') %>
-                </button>
-                <button type="button" class="button is-danger is-small mb-1" data-modal-open="delete-medium-modal<%= medium.id %>">
-                    <i class="fas fa-trash"></i>
-                    &nbsp;
-                    <%= _('Delete') %>
-                </button>
-                <%= form_with(url: admin_medium_path(medium), method: :delete, id: "delete-medium-modal#{medium.id}", class: 'modal') do %>
-                <div class="modal-background cancel"></div>
-                <div class="modal-card">
-                    <div class="modal-card-head">
-                        <p class="modal-card-title"><%= _('Delete Confirmation') %></p>
-                        <button type="button" class="delete cancel" aria-label="close"></button>
-                    </div>
-                    <div class="modal-card-body">
-                        <p><%= _('Are you sure you want to delete this medium ?') %></p>
-                    </div>
-                    <div class="modal-card-foot">
-                        <button type="button" class="button cancel"><%= _('No') %></button>
-                        <button type="submit" class="button is-success"><%= _('Yes') %></button>
-                    </div>
-                </div>
-                <% end %>
-            </td>
-        </tr>
-        <% end %>
-        <% end %>
-    </tbody>
+      </td>
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
 </table>
 <%= paginate @media %>

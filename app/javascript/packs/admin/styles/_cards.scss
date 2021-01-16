@@ -1,5 +1,10 @@
 .card {
   box-shadow: none;
   border: solid 1px $grey-lighter;
-  padding: 1.5rem;
+  overflow: initial;
+
+  > .card-header {
+    box-shadow: none;
+    border-bottom: solid 1px $grey-lighter;
+  }
 }

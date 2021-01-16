@@ -1,0 +1,14 @@
+<footer>
+  <% if Time.now.year > 2020 %>
+  Pandemic CMS &copy; 2020 - <%= Time.now.year %>
+  <% else %>
+  Pandemic CMS &copy; 2020
+  <% end %>
+</footer>
+
+<% if alert %>
+<p class="flash-error"><%= alert %></p>
+<% end %>
+<% if notice %>
+<p class="flash-success"><%= notice %></p>
+<% end %>

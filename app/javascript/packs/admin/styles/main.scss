@@ -4,45 +4,27 @@
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~toastr";
 @import "~flag-icon-css/sass/flag-icon.scss";
+@import "./cards";
+@import "./labels";
+@import "./page_footer";
+@import "./notifications";
+@import "./tables";
+
+html {
+  overflow-y: auto;
+}
+
+html,
+body {
+  background: $white-ter;
+}
 
 .navbar-brand {
   font-weight: bold;
 }
 
-.small-form {
-  max-width: 1000px;
-  margin: auto;
-}
-
 main {
-  padding: 32px;
-}
-
-h1 {
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-body > footer {
-  text-align: center;
-  padding-top: 50px;
-}
-
-.required-label::after {
-  color: $red;
-  content: " *";
-}
-
-.bb-grey-1 {
-  border-bottom: solid 1px $grey-lighter;
-}
-
-.smart-table {
-  th {
-    a {
-      display: block;
-    }
-  }
+  padding-top: 32px;
 }
 
 .upload-button-form {
@@ -59,17 +41,4 @@ body > footer {
     width: 100%;
     opacity: 0;
   }
-}
-
-.flash-error,
-.flash-success {
-  display: none;
-}
-
-.toast-error {
-  background-color: $red;
-}
-
-.toast-success {
-  background-color: $green;
 }

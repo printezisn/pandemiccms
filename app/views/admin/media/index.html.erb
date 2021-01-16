@@ -3,15 +3,17 @@
     content_for :description, _('Media of %{client}') % { client: current_client.name }
 %>
 
-<article>
-  <header>
-    <h1 class="title is-3">
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
       <i class="fas fa-image"></i>
       &nbsp;
       <%= _('Media') %>
     </h1>
   </header>
-  <div class="smart-table" id="media-smart-table" data-use-history="true">
-    <%= render partial: 'admin/media/media_table' %>
+  <div class="card-content">
+    <div class="smart-table" id="media-smart-table" data-use-history="true">
+      <%= render partial: 'admin/media/media_table' %>
+    </div>
   </div>
 </article>

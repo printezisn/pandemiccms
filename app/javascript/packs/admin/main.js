@@ -1,9 +1,9 @@
-import { initAll } from './components/initializers';
+import initComponents from './components/initializer';
 
 if (document.readyState === 'complete') {
-  initAll();
+  initComponents();
 } else {
   document.addEventListener('DOMContentLoaded', () => {
-    initAll();
+    initComponents();
   });
 }

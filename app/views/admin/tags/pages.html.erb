@@ -1,26 +1,21 @@
-<div class="columns">
-  <div class="column is-half">
-    <%= form_with(method: :get, html: { class: 'smart-table-search', 'data-target' => 'pages-smart-table' }) do |t| %>
-    <div class="field has-addons">
-      <div class="control is-expanded">
-        <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />
-      </div>
-      <div class="control">
-        <button type="submit" class="button is-success">
-          <i class="fas fa-search"></i>
-          &nbsp;
-          <%= _('Search') %>
-        </button>
-      </div>
-    </div>
-    <% end %>
+<%= form_with(method: :get, html: { class: 'smart-table-search', 'data-target' => 'pages-smart-table' }) do |t| %>
+<div class="field has-addons">
+  <div class="control is-expanded">
+    <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />
+  </div>
+  <div class="control">
+    <button type="submit" class="button is-success">
+      <i class="fas fa-search"></i>
+      &nbsp;
+      <%= _('Search') %>
+    </button>
   </div>
 </div>
-<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+<% end %>
+<table class="table is-striped is-hoverable is-fullwidth mt-2">
   <thead>
     <tr>
       <th><%= render partial: 'admin/shared/table_header', locals: { field: 'name', title: _('Name') } %></th>
-      <th><%= render partial: 'admin/shared/table_header', locals: { field: 'updated_at', title: _('Updated At') } %></th>
       <th></th>
     </tr>
   </thead>
@@ -33,7 +28,6 @@
     <% @pages.each do |page| %>
     <tr>
       <td><%= page.name %></td>
-      <td><%= page.updated_at %></td>
       <td>
         <a class="button is-link is-small" href="javascript:void(0)">
           <i class="fas fa-eye"></i>

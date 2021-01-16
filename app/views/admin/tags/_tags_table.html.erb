@@ -23,15 +23,15 @@
     </a>
   </div>
 </div>
-<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+<table class="table is-striped is-hoverable is-fullwidth">
   <thead>
     <tr>
       <th><%= render partial: 'admin/shared/table_header', locals: { field: 'name', title: _('Name') } %></th>
-      <th><%= render partial: 'admin/shared/table_header', locals: { field: 'posts_count', title: _('Total Posts') } %></th>
-      <th><%= render partial: 'admin/shared/table_header', locals: { field: 'pages_count', title: _('Total Pages') } %></th>
-      <th><%= render partial: 'admin/shared/table_header', locals: { field: 'created_at', title: _('Created At') } %></th>
-      <th><%= render partial: 'admin/shared/table_header', locals: { field: 'updated_at', title: _('Updated At') } %></th>
-      <th></th>
+      <th class="is-hidden-mobile"><%= render partial: 'admin/shared/table_header', locals: { field: 'posts_count', title: _('Total Posts') } %></th>
+      <th class="is-hidden-mobile"><%= render partial: 'admin/shared/table_header', locals: { field: 'pages_count', title: _('Total Pages') } %></th>
+      <th class="is-hidden-touch"><%= render partial: 'admin/shared/table_header', locals: { field: 'created_at', title: _('Created At') } %></th>
+      <th class="is-hidden-touch"><%= render partial: 'admin/shared/table_header', locals: { field: 'updated_at', title: _('Updated At') } %></th>
+      <th class="actions-cell"></th>
     </tr>
   </thead>
   <tbody>
@@ -42,34 +42,43 @@
     <% else %>
     <% @tags.each do |tag| %>
     <tr>
-      <td><%= tag.name %></td>
-      <td><%= tag.posts_count %></td>
-      <td><%= tag.pages_count %></td>
-      <td><%= tag.created_at %></td>
-      <td><%= tag.updated_at %></td>
       <td>
-        <% if current_client.show_tag_page %>
-        <a class="button is-primary is-small mb-1" rel="noopener" target="_blank" href="<%= tag_path(id: tag.id, slug: tag.displayed_slug(current_language&.transliterations)) %>">
-          <i class="fas fa-external-link-alt"></i>
-          &nbsp;
-          <%= _('Preview') %>
-        </a>
-        <% end %>
-        <a class="button is-link is-small mb-1" href="<%= admin_tag_path(tag) %>">
-          <i class="fas fa-eye"></i>
-          &nbsp;
-          <%= _('View') %>
-        </a>
-        <a class="button is-success is-small mb-1" href="<%= edit_admin_tag_path(tag) %>">
-          <i class="fas fa-edit"></i>
-          &nbsp;
-          <%= _('Edit') %>
-        </a>
-        <button type="button" class="button is-danger is-small mb-1" data-modal-open="delete-tag-modal<%= tag.id %>">
-          <i class="fas fa-trash"></i>
-          &nbsp;
-          <%= _('Delete') %>
-        </button>
+        <a href="<%= admin_tag_path(tag) %>"><%= tag.name %></a>
+      </td>
+      <td class="is-hidden-mobile"><%= tag.posts_count %></td>
+      <td class="is-hidden-mobile"><%= tag.pages_count %></td>
+      <td class="is-hidden-touch"><%= tag.created_at %></td>
+      <td class="is-hidden-touch"><%= tag.updated_at %></td>
+      <td class="actions-cell">
+        <div class="dropdown is-togglable is-right">
+          <div class="dropdown-trigger">
+            <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" title="<%= _('Actions') %>">
+              <i class="fas fa-ellipsis-v"></i>
+            </a>
+          </div>
+          <div class="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <% if current_client.show_tag_page %>
+              <a class="dropdown-item" rel="noopener" target="_blank" href="<%= tag_path(id: tag.id, slug: tag.displayed_slug(current_language&.transliterations)) %>">
+                <i class="fas fa-external-link-alt"></i>
+                &nbsp;
+                <%= _('Preview') %>
+              </a>
+              <% end %>
+              <a class="dropdown-item" href="<%= edit_admin_tag_path(tag) %>">
+                <i class="fas fa-pen"></i>
+                &nbsp;
+                <%= _('Edit') %>
+              </a>
+              <hr class="dropdown-divider" />
+              <a href="javascript:void(0)" class="dropdown-item" data-modal-open="delete-tag-modal<%= tag.id %>">
+                <i class="fas fa-trash"></i>
+                &nbsp;
+                <%= _('Delete') %>
+              </a>
+            </div>
+          </div>
+        </div>
         <%= form_with(url: admin_tag_path(tag), method: :delete, id: "delete-tag-modal#{tag.id}", class: 'modal') do %>
         <div class="modal-background cancel"></div>
         <div class="modal-card">

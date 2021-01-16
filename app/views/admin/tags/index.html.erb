@@ -3,15 +3,17 @@
     content_for :description, _('Tags of %{client}') % { client: current_client.name }
 %>
 
-<article>
-  <header>
-    <h1 class="title is-3">
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
       <i class="fas fa-tag"></i>
       &nbsp;
       <%= _('Tags') %>
     </h1>
   </header>
-  <div class="smart-table" id="tags-smart-table" data-use-history="true">
-    <%= render partial: 'admin/tags/tags_table' %>
+  <div class="card-content">
+    <div class="smart-table" id="tags-smart-table" data-use-history="true">
+      <%= render partial: 'admin/tags/tags_table' %>
+    </div>
   </div>
 </article>
