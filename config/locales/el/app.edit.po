@@ -55,6 +55,9 @@ msgstr[1] "%{count} Χρήστες"
 msgid "..."
 msgstr "..."
 
+msgid "Actions"
+msgstr "Ενέργειες"
+
 msgid "Admin dashboard of %{client}"
 msgstr "Ταμπλό διαχείρισης στο %{client}"
 
@@ -151,8 +154,8 @@ msgstr "Επιβεβαίωση νέου κωδικού"
 msgid "Confirm your new password"
 msgstr "Επιβεβαιώστε το νέο σας κωδικό"
 
-msgid "Copy Link"
-msgstr "Αντιγραφή Συνδέσμου"
+msgid "Copy"
+msgstr "Αντιγραφή"
 
 msgid "Create"
 msgstr "Δημιουργία"
@@ -181,11 +184,8 @@ msgstr "Διαγραφή"
 msgid "Delete Confirmation"
 msgstr "Επιβεβαίωση Διαγραφής"
 
-msgid "Description:"
-msgstr "Περιγραφή:"
-
-msgid "Details"
-msgstr "Λεπτομέρειες"
+msgid "Description"
+msgstr "Περιγραφή"
 
 msgid "Details for a tag of %{client}"
 msgstr "Λεπτομέρειες για την ετικέτα του %{client}"
@@ -255,9 +255,6 @@ msgstr "Το Προφίλ Μου"
 
 msgid "Name"
 msgstr "Όνομα"
-
-msgid "Name:"
-msgstr "Όνομα:"
 
 msgid "New Password"
 msgstr "Νέος Κωδικός"
@@ -364,8 +361,8 @@ msgstr "Σύνδεση στο %{client}"
 msgid "Sign up"
 msgstr "Εγγραφή"
 
-msgid "Slug:"
-msgstr "Slug:"
+msgid "Slug"
+msgstr "Slug"
 
 msgid "Someone has requested a link to change your password. You can do this through the link below."
 msgstr "Κάποιος ζήτησε σύνδεσμο για αλλαγή του κωδικού σας. Μπορείτε να το κάνετε μέσω του παρακάτω συνδέσμου."
@@ -406,8 +403,8 @@ msgstr "Slug"
 msgid "Tag|Template"
 msgstr "Πρότυπο"
 
-msgid "Template:"
-msgstr "Πρότυπο:"
+msgid "Template"
+msgstr "Πρότυπο"
 
 msgid "The administration of %{client}"
 msgstr "Η διαχείριση του %{client}"
@@ -433,14 +430,8 @@ msgstr "Η ετικέτα δημιουργήθηκε με επιτυχία."
 msgid "Total Pages"
 msgstr "Συνολικές Σελίδες"
 
-msgid "Total Pages:"
-msgstr "Συνολικές Σελίδες:"
-
 msgid "Total Posts"
 msgstr "Συνολικά Άρθρα"
-
-msgid "Total Posts:"
-msgstr "Συνολικά Άρθρα:"
 
 msgid "Unlock my account"
 msgstr "Ξεκλείδωμα του λογαριασμού μου"

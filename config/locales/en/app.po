@@ -55,6 +55,9 @@ msgstr[1] "%{count} Users"
 msgid "..."
 msgstr "..."
 
+msgid "Actions"
+msgstr "Actions"
+
 msgid "Admin dashboard of %{client}"
 msgstr "Admin dashboard of %{client}"
 
@@ -151,8 +154,8 @@ msgstr "Confirm new Password"
 msgid "Confirm your new password"
 msgstr "Confirm your new password"
 
-msgid "Copy Link"
-msgstr "Copy Link"
+msgid "Copy"
+msgstr "Copy"
 
 msgid "Create"
 msgstr "Create"
@@ -181,11 +184,8 @@ msgstr "Delete"
 msgid "Delete Confirmation"
 msgstr "Delete Confirmation"
 
-msgid "Description:"
-msgstr "Description:"
-
-msgid "Details"
-msgstr "Details"
+msgid "Description"
+msgstr "Description"
 
 msgid "Details for a tag of %{client}"
 msgstr "Details for a tag of %{client}"
@@ -255,9 +255,6 @@ msgstr "My Profile"
 
 msgid "Name"
 msgstr "Name"
-
-msgid "Name:"
-msgstr "Name:"
 
 msgid "New Password"
 msgstr "New Password"
@@ -364,8 +361,8 @@ msgstr "Sign in to %{client}"
 msgid "Sign up"
 msgstr "Sign up"
 
-msgid "Slug:"
-msgstr "Slug:"
+msgid "Slug"
+msgstr "Slug"
 
 msgid "Someone has requested a link to change your password. You can do this through the link below."
 msgstr "Someone has requested a link to change your password. You can do this through the link below."
@@ -406,8 +403,8 @@ msgstr "Slug"
 msgid "Tag|Template"
 msgstr "Template"
 
-msgid "Template:"
-msgstr "Template:"
+msgid "Template"
+msgstr "Template"
 
 msgid "The administration of %{client}"
 msgstr "The administration of %{client}"
@@ -433,14 +430,8 @@ msgstr "The tag was successfully created."
 msgid "Total Pages"
 msgstr "Total Pages"
 
-msgid "Total Pages:"
-msgstr "Total Pages:"
-
 msgid "Total Posts"
 msgstr "Total Posts"
-
-msgid "Total Posts:"
-msgstr "Total Posts:"
 
 msgid "Unlock my account"
 msgstr "Unlock my account"
