@@ -1,0 +1,47 @@
+@import "./variables";
+@import "~bulma/bulma";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~toastr";
+@import "../../admin/styles/cards";
+@import "../../admin/styles/labels";
+@import "../../admin/styles/page_footer";
+@import "../../admin/styles/notifications";
+
+html {
+  overflow-y: auto;
+}
+
+html,
+body {
+  background: $white-ter;
+}
+
+body {
+  margin: auto;
+  padding-top: 3rem;
+  max-width: 370px;
+
+  > header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.button.is-fullwidth {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  white-space: initial;
+  height: auto;
+}
+
+article aside {
+  padding-top: 0.75rem;
+
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+}

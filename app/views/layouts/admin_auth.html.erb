@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="<%= current_locale %>">
+
+<head>
+  <title><%= yield :title %></title>
+  <meta name="description" content="<%= yield :description %>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="icon" href="/favicon.png">
+
+  <%= stylesheet_pack_tag 'admin_auth/styles/main', media: 'all' %>
+  <%= javascript_pack_tag 'admin_auth/main', defer: true %>
+</head>
+
+<body>
+  <header class="title is-3">
+    <img src="/logo.png" alt="logo" />
+    <span>&nbsp; Pandemic CMS</span>
+  </header>
+  <main><%= yield %></main>
+  <footer>
+    <% if Time.now.year > 2020 %>
+    Pandemic CMS &copy; 2020 - <%= Time.now.year %>
+    <% else %>
+    Pandemic CMS &copy; 2020
+    <% end %>
+  </footer>
+
+  <% if alert %>
+  <p class="flash-error"><%= alert %></p>
+  <% end %>
+  <% if notice %>
+  <p class="flash-success"><%= notice %></p>
+  <% end %>
+</body>
+
+</html>

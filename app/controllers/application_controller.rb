@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   def layout
-    devise_controller? ? 'admin' : 'application'
+    devise_controller? ? 'admin_auth' : 'application'
   end
 
   def default_url_options

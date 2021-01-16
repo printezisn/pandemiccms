@@ -1,0 +1,12 @@
+.flash-error,
+.flash-success {
+  display: none;
+}
+
+.toast-error {
+  background-color: $red;
+}
+
+.toast-success {
+  background-color: $green;
+}

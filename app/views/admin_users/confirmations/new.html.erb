@@ -3,39 +3,28 @@
     content_for :description, _('Resend confirmation instruction for %{client}') % { client: current_client.name }
 %>
 
-<article class="small-form">
-  <header>
-    <h1 class="title is-3 bb-grey-1"><%= _('Resend Confirmation Instructions') %></h1>
+<article class="card">
+  <header class="sr-only">
+    <h1><%= _('Resend Confirmation Instructions') %></h1>
   </header>
-  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }, class: 'card-content') do |f| %>
   <%= render "admin/shared/error_messages", resource: resource %>
 
   <%= f.hidden_field :client_id, value: current_client[:id] %>
-  <div class="field is-horizontal">
-    <div class="field-label is-normal">
-      <%= f.label :email, class: 'label required-label' %>
-    </div>
-    <div class="field-body">
-      <div class="field">
-        <div class="control">
-          <%= f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: _('Your email address'), class: 'input',
-                                              required: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-        </div>
-      </div>
+  <div class="field">
+    <%= f.label :email, class: 'label required-label' %>
+    <div class="control">
+      <%= f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: _('Your email address'), class: 'input',
+                                required: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
     </div>
   </div>
-  <div class="field is-horizontal">
-    <div class="field-label is-normal"></div>
-    <div class="field-body">
-      <div class="field">
-        <div class="control">
-          <%= f.submit _('Resend confirmation instructions'), class: 'button is-link' %>
-          <br />
-          <br />
-          <%= render "admin_users/shared/links" %>
-        </div>
-      </div>
+  <div class="field">
+    <div class="control">
+      <%= f.submit _('Resend confirmation instructions'), class: 'button is-success is-fullwidth' %>
     </div>
   </div>
+
+  <%= render "admin_users/shared/links" %>
+
   <%end %>
 </article>
