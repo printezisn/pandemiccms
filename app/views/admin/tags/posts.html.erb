@@ -4,10 +4,8 @@
     <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />
   </div>
   <div class="control">
-    <button type="submit" class="button is-success">
+    <button type="submit" class="button is-success" title="<%= _('Search') %>">
       <i class="fas fa-search"></i>
-      &nbsp;
-      <%= _('Search') %>
     </button>
   </div>
 </div>
@@ -16,13 +14,12 @@
   <thead>
     <tr>
       <th><%= render partial: 'admin/shared/table_header', locals: { field: 'name', title: _('Name') } %></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
     <% if @posts.none? %>
     <tr>
-      <td colspan="6"><%= _('No posts were found.') %></td>
+      <td><%= _('No posts were found.') %></td>
     </tr>
     <% else %>
     <% @posts.each do |post| %>
