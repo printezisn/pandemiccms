@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_08_132830) do
+ActiveRecord::Schema.define(version: 2021_01_18_200636) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -178,6 +178,17 @@ ActiveRecord::Schema.define(version: 2021_01_08_132830) do
     t.index ["client_id", "name"], name: "index_tags_on_client_id_and_name", unique: true
     t.index ["client_id", "posts_count"], name: "index_tags_on_client_id_and_posts_count"
     t.index ["client_id"], name: "index_tags_on_client_id"
+  end
+
+  create_table "translations", charset: "utf8", force: :cascade do |t|
+    t.string "translatable_type", null: false
+    t.bigint "translatable_id", null: false
+    t.string "locale", null: false
+    t.text "fields"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["translatable_id", "translatable_type", "locale"], name: "index_translations_on_translatable_and_locale", unique: true
+    t.index ["translatable_type", "translatable_id"], name: "index_translations_on_translatable"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
