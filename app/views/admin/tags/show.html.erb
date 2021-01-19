@@ -157,7 +157,7 @@
         </h2>
       </div>
       <div class="card-content">
-        <div class="smart-table" id="posts-smart-table" data-autoload="<%= admin_tag_posts_path(@tag) %>"></div>
+        <div class="smart-table" id="posts-smart-table" data-autoload="<%= admin_tag_posts_path(@tag, compact: true) %>"></div>
       </div>
     </article>
   </div>
@@ -171,7 +171,7 @@
         </h2>
       </div>
       <div class="card-content">
-        <div class="smart-table" id="pages-smart-table" data-autoload="<%= admin_tag_pages_path(@tag) %>"></div>
+        <div class="smart-table" id="pages-smart-table" data-autoload="<%= admin_tag_pages_path(@tag, compact: true) %>"></div>
       </div>
     </article>
   </div>

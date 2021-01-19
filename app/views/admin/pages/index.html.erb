@@ -1,0 +1,19 @@
+<%
+    content_for :title, _('Pages | %{client}') % { client: current_client.name }
+    content_for :description, _('Pages of %{client}') % { client: current_client.name }
+%>
+
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-sticky-note"></i>
+      &nbsp;
+      <%= _('Pages') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="smart-table" id="pages-smart-table" data-use-history="true">
+      <%= render partial: 'admin/pages/pages_table' %>
+    </div>
+  </div>
+</article>

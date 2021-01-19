@@ -36,12 +36,12 @@ RSpec.describe Admin::TagsController, type: :routing do
       expect(delete: '/admin/tags/1').to route_to('admin/tags#destroy', id: '1')
     end
 
-    it 'routes to #posts' do
-      expect(get: '/admin/tags/1/posts').to route_to('admin/tags#posts', id: '1')
+    it 'routes to posts #index' do
+      expect(get: '/admin/tags/1/posts').to route_to('admin/posts#index', tag_id: '1')
     end
 
-    it 'routes to #pages' do
-      expect(get: '/admin/tags/1/pages').to route_to('admin/tags#pages', id: '1')
+    it 'routes to pages #index' do
+      expect(get: '/admin/tags/1/pages').to route_to('admin/pages#index', tag_id: '1')
     end
   end
 end
