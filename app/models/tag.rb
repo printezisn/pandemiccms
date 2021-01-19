@@ -4,10 +4,12 @@
 class Tag < ApplicationRecord
   SORTABLE_FIELDS = %i[created_at name posts_count pages_count].freeze
   TEXT_SEARCHABLE_FIELDS = %i[name].freeze
+  TRANSLATABLE_FIELDS = %w[name slug description].freeze
 
   include SimpleTextSearchable
   include BoundSortable
   include Sluggable
+  include Translatable
 
   belongs_to :client, inverse_of: :tags
 

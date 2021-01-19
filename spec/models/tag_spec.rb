@@ -4,6 +4,7 @@ require 'rails_helper'
 require './spec/models/concerns/simple_text_searchable_spec'
 require './spec/models/concerns/bound_sortable_spec'
 require './spec/models/concerns/sluggable_spec'
+require './spec/models/concerns/translatable_spec'
 
 RSpec.describe Tag, type: :model do
   subject(:model) { FactoryBot.build(:tag) }
@@ -17,10 +18,13 @@ RSpec.describe Tag, type: :model do
   it { is_expected.to validate_length_of(:slug).is_at_most(255).with_message('The slug may contain up to 255 characters.') }
 
   describe 'concerns' do
+    let(:translation) { FactoryBot.build(:tag) }
+
     before { model.save! }
 
     it_behaves_like 'SimpleTextSearchable'
     it_behaves_like 'BoundSortable'
     it_behaves_like 'Sluggable'
+    it_behaves_like 'Translatable'
   end
 end
