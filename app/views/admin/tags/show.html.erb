@@ -32,6 +32,13 @@
                 <%= _('Preview') %>
               </a>
               <% end %>
+              <% if current_client.languages.size > 1 %>
+              <a class="dropdown-item" href="<%= translate_admin_tag_path(@tag) %>">
+                <i class="fas fa-globe"></i>
+                &nbsp;
+                <%= _('Translate') %>
+              </a>
+              <% end %>
               <a class="dropdown-item" href="<%= edit_admin_tag_path(@tag) %>">
                 <i class="fas fa-pen"></i>
                 &nbsp;

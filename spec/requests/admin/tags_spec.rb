@@ -266,4 +266,72 @@ RSpec.describe '/admin/tags', type: :request do
       end
     end
   end
+
+  describe 'GET /translate' do
+    before { model.save! }
+
+    context 'when the admin user is not signed in' do
+      it 'redirects to the sign in page' do
+        get translate_admin_tag_path(model)
+
+        expect(response).to redirect_to(new_admin_user_session_path)
+      end
+    end
+
+    context 'when the admin user is signed in' do
+      before { sign_in admin_user }
+
+      it 'returns a successful response' do
+        get translate_admin_tag_path(model)
+
+        expect(response).to be_successful
+      end
+    end
+  end
+
+  describe 'POST /translate' do
+    let(:translation_params) do
+      {
+        'name' => 'Translated Name',
+        'slug' => 'translated-slug',
+        'description' => 'Translated description'
+      }
+    end
+
+    before { model.save! }
+
+    context 'when the admin user is not signed in' do
+      it 'redirects to the sign in page' do
+        post translate_admin_tag_path(model)
+
+        expect(response).to redirect_to(new_admin_user_session_path)
+      end
+    end
+
+    context 'with valid parameters' do
+      before { sign_in admin_user }
+
+      it 'translates the requested tag' do
+        post translate_admin_tag_path(model), params: { translation_locale: 'en', tag: translation_params }
+
+        expect(model.reload.translate(:en).attributes.slice(*translation_params.keys)).to eq(translation_params)
+      end
+
+      it 'redirects to the tag' do
+        post translate_admin_tag_path(model), params: { translation_locale: 'en', tag: translation_params }
+
+        expect(response).to redirect_to(translate_admin_tag_path(id: model.id, locale: 'en', translation_locale: 'en'))
+      end
+    end
+
+    context 'with invalid parameters' do
+      before { sign_in admin_user }
+
+      it 'returns a successful response' do
+        post translate_admin_tag_path(model), params: { tag: { name: '' } }
+
+        expect(response).to be_successful
+      end
+    end
+  end
 end

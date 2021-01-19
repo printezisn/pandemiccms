@@ -1,0 +1,22 @@
+<% if current_client.languages.size > 1 %>
+<div class="dropdown is-togglable is-right">
+  <div class="dropdown-trigger card-header-icon">
+    <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu">
+      <span class="flag-icon flag-icon-<%= translation_language.flag %>"></span>
+      <%= translation_language.name %>
+      <i class="fas fa-angle-down" aria-hidden="true"></i>
+    </a>
+  </div>
+  <div class="dropdown-menu" role="menu">
+    <nav class="dropdown-content">
+      <% current_client.languages.each do |language| %>
+      <a class="dropdown-item" href="<%= url_for(translation_locale: language.locale) %>">
+        <span class="flag-icon flag-icon-<%= language.flag %>"></span>
+        &nbsp;
+        <%= language.name %>
+      </a>
+      <% end %>
+    </nav>
+  </div>
+</div>
+<% end %>

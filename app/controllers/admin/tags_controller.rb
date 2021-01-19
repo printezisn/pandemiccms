@@ -5,7 +5,8 @@ module Admin
   class TagsController < BaseController
     PAGE_SIZE = 10
 
-    before_action :fetch_tag, only: %i[show edit update destroy]
+    before_action :fetch_tag, only: %i[show edit update destroy translate save_translation]
+    before_action :fetch_translation, only: %i[translate save_translation]
     before_action :fetch_templates, only: %i[new edit create update]
 
     # GET /tags
@@ -62,10 +63,31 @@ module Admin
       redirect_to admin_tags_path, notice: _('The tag was successfully deleted.')
     end
 
+    # GET /tags/1/translate
+    def translate; end
+
+    # POST /tags/1/save_translation
+    def save_translation
+      @tag.assign_attributes(translation_params)
+
+      if @tag.save_translation(translation_locale)
+        redirect_to translate_admin_tag_path(@tag, translation_locale: translation_locale),
+                    notice: _('The tag was successfully translated.')
+      else
+        @translation.assign_attributes(translation_params)
+
+        render :translate
+      end
+    end
+
     private
 
     def fetch_tag
       @tag = Tag.find_by!(id: params[:id], client_id: current_client.id)
+    end
+
+    def fetch_translation
+      @translation = @tag.translate(translation_locale)
     end
 
     def fetch_templates
@@ -75,6 +97,10 @@ module Admin
 
     def tag_params
       params.require(:tag).permit(:name, :slug, :description, :template)
+    end
+
+    def translation_params
+      params.require(:tag).permit(Tag::TRANSLATABLE_FIELDS)
     end
   end
 end

@@ -43,5 +43,13 @@ RSpec.describe Admin::TagsController, type: :routing do
     it 'routes to pages #index' do
       expect(get: '/admin/tags/1/pages').to route_to('admin/pages#index', tag_id: '1')
     end
+
+    it 'routes to #translate' do
+      expect(get: '/admin/tags/1/translate').to route_to('admin/tags#translate', id: '1')
+    end
+
+    it 'routes to #save_translation' do
+      expect(post: '/admin/tags/1/translate').to route_to('admin/tags#save_translation', id: '1')
+    end
   end
 end

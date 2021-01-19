@@ -1,0 +1,83 @@
+<%
+    content_for :title, _('Translate Tag | %{client}') % { client: current_client.name }
+    content_for :description, _('Translate a tag of %{client}') % { client: current_client.name }
+%>
+
+<a class="button" href="<%= admin_tag_path(@tag) %>">
+  <i class="fas fa-long-arrow-alt-left"></i>
+  &nbsp;
+  <%= _('Back') %>
+</a>
+<div class="columns is-multiline is-mobile mt-1">
+  <div class="column is-full-mobile is-full-tablet is-half-desktop">
+    <article class="card">
+      <header class="card-header">
+        <h1 class="card-header-title">
+          <i class="fas fa-tag"></i>
+          &nbsp;
+          <%= _('Original Tag') %>
+        </h1>
+      </header>
+      <div class="card-content">
+        <div class="field">
+          <span class="label"><%= _('Name') %></span>
+          <div class="control">
+            <input type="text" class="input" value="<%= @tag.name %>" readonly />
+          </div>
+        </div>
+        <div class="field">
+          <span class="label"><%= _('Slug') %></span>
+          <div class="control">
+            <input type="text" class="input" value="<%= @tag.slug %>" readonly />
+          </div>
+        </div>
+        <div class="field">
+          <span class="label"><%= _('Description') %></span>
+          <div class="control">
+            <textarea rows="5" class="textarea" readonly><%= @tag.description %></textarea>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="column is-full-mobile is-full-tablet is-half-desktop">
+    <article class="card">
+      <header class="card-header">
+        <h1 class="card-header-title">
+          <i class="fas fa-tag"></i>
+          &nbsp;
+          <%= _('Translation') %>
+        </h1>
+        <%= render partial: 'admin/shared/languages_dropdown' %>
+      </header>
+      <div class="card-content">
+        <%= render "admin/shared/error_messages", resource: @tag %>
+        <%= form_with(model: @translation, url: translate_admin_tag_path(@tag, translation_locale: translation_locale), method: :post) do |f| %>
+        <div class="field">
+          <%= f.label :name, class: 'label required-label' %>
+          <div class="control">
+            <%= f.text_field :name, class: 'input', required: true %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :slug, class: 'label' %>
+          <div class="control">
+            <%= f.text_field :slug, class: 'input' %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :description, class: 'label' %>
+          <div class="control">
+            <%= f.text_area :description, class: 'textarea', rows: 5 %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success' %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </article>
+  </div>
+</div>

@@ -9,6 +9,11 @@ Rails.application.routes.draw do
       resources :tags do
         resources :posts, only: :index
         resources :pages, only: :index
+
+        member do
+          get :translate
+          post :translate, to: 'tags#save_translation'
+        end
       end
 
       root 'dashboard#index'
