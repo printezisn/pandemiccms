@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-17 00:59+0200\n"
-"PO-Revision-Date: 2021-01-17 00:59+0200\n"
+"POT-Creation-Date: 2021-01-20 00:56+0200\n"
+"PO-Revision-Date: 2021-01-20 00:56+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -290,16 +290,31 @@ msgstr ""
 msgid "OldPassword|Password salt"
 msgstr ""
 
+msgid "Original Tag"
+msgstr ""
+
 msgid "Page Drafts"
 msgstr ""
 
 msgid "Pages"
 msgstr ""
 
+msgid "Pages of %{client}"
+msgstr ""
+
+msgid "Pages | %{client}"
+msgstr ""
+
 msgid "Post Drafts"
 msgstr ""
 
 msgid "Posts"
+msgstr ""
+
+msgid "Posts of %{client}"
+msgstr ""
+
+msgid "Posts | %{client}"
 msgstr ""
 
 msgid "Preview"
@@ -425,6 +440,9 @@ msgstr ""
 msgid "The tag was successfully deleted."
 msgstr ""
 
+msgid "The tag was successfully translated."
+msgstr ""
+
 msgid "The tag was successfully updated."
 msgstr ""
 
@@ -432,6 +450,18 @@ msgid "Total Pages"
 msgstr ""
 
 msgid "Total Posts"
+msgstr ""
+
+msgid "Translate"
+msgstr ""
+
+msgid "Translate Tag | %{client}"
+msgstr ""
+
+msgid "Translate a tag of %{client}"
+msgstr ""
+
+msgid "Translation"
 msgstr ""
 
 msgid "Unlock my account"
@@ -444,9 +474,6 @@ msgid "Upload"
 msgstr ""
 
 msgid "Users"
-msgstr ""
-
-msgid "View"
 msgstr ""
 
 msgid "We're contacting you to notify you that your email has been changed to %{email}"

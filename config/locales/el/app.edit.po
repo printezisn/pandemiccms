@@ -289,17 +289,32 @@ msgstr "Τύπος Αρχειοποίησης Κωδικού"
 msgid "OldPassword|Password salt"
 msgstr "Πρόσθετο Κωδικού"
 
+msgid "Original Tag"
+msgstr "Αυθεντική Ετικέτα"
+
 msgid "Page Drafts"
 msgstr "Προσχέδια Σελίδων"
 
 msgid "Pages"
 msgstr "Σελίδες"
 
+msgid "Pages of %{client}"
+msgstr "Σελίδες του %{client}"
+
+msgid "Pages | %{client}"
+msgstr "Σελίδες | %{client}"
+
 msgid "Post Drafts"
 msgstr "Προσχέδια Άρθρων"
 
 msgid "Posts"
 msgstr "Άρθρα"
+
+msgid "Posts of %{client}"
+msgstr "Άρθρα του %{client}"
+
+msgid "Posts | %{client}"
+msgstr "Άρθρα | %{client}"
 
 msgid "Preview"
 msgstr "Προεσκόπιση"
@@ -424,6 +439,9 @@ msgstr "Η ετικέτα δημιουργήθηκε με επιτυχία."
 msgid "The tag was successfully deleted."
 msgstr "Η ετικέτα διαγράφτηκε με επιτυχία."
 
+msgid "The tag was successfully translated."
+msgstr "Η ετικέτα μεταφράστηκε με επιτυχία."
+
 msgid "The tag was successfully updated."
 msgstr "Η ετικέτα δημιουργήθηκε με επιτυχία."
 
@@ -432,6 +450,18 @@ msgstr "Συνολικές Σελίδες"
 
 msgid "Total Posts"
 msgstr "Συνολικά Άρθρα"
+
+msgid "Translate"
+msgstr "Μετάφραση"
+
+msgid "Translate Tag | %{client}"
+msgstr "Μετάφραση Ετικέτας | %{client}"
+
+msgid "Translate a tag of %{client}"
+msgstr "Μετάφραση ετικέτας του %{client}"
+
+msgid "Translation"
+msgstr "Μετάφραση"
 
 msgid "Unlock my account"
 msgstr "Ξεκλείδωμα του λογαριασμού μου"
@@ -444,9 +474,6 @@ msgstr "Ανέβασμα"
 
 msgid "Users"
 msgstr "Χρήστες"
-
-msgid "View"
-msgstr "Προβολή"
 
 msgid "We're contacting you to notify you that your email has been changed to %{email}"
 msgstr "Επικοινωνούμε μαζί σας για να σας γνωστοποιήσουμε ότι το email σας έχει αλλάξει σε %{email}"

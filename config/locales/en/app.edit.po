@@ -289,17 +289,32 @@ msgstr "Password Archivable Type"
 msgid "OldPassword|Password salt"
 msgstr "Password Salt"
 
+msgid "Original Tag"
+msgstr "Original Tag"
+
 msgid "Page Drafts"
 msgstr "Page Drafts"
 
 msgid "Pages"
 msgstr "Pages"
 
+msgid "Pages of %{client}"
+msgstr "Pages of %{client}"
+
+msgid "Pages | %{client}"
+msgstr "Pages | %{client}"
+
 msgid "Post Drafts"
 msgstr "Post Drafts"
 
 msgid "Posts"
 msgstr "Posts"
+
+msgid "Posts of %{client}"
+msgstr "Posts of %{client}"
+
+msgid "Posts | %{client}"
+msgstr "Posts | %{client}"
 
 msgid "Preview"
 msgstr "Preview"
@@ -424,6 +439,9 @@ msgstr "The tag was successfully created."
 msgid "The tag was successfully deleted."
 msgstr "The tag was successfully deleted."
 
+msgid "The tag was successfully translated."
+msgstr "The tag was successfully translated."
+
 msgid "The tag was successfully updated."
 msgstr "The tag was successfully created."
 
@@ -432,6 +450,18 @@ msgstr "Total Pages"
 
 msgid "Total Posts"
 msgstr "Total Posts"
+
+msgid "Translate"
+msgstr "Translate"
+
+msgid "Translate Tag | %{client}"
+msgstr "Translate Tag | %{client}"
+
+msgid "Translate a tag of %{client}"
+msgstr "Translate a tag of %{client}"
+
+msgid "Translation"
+msgstr "Translation"
 
 msgid "Unlock my account"
 msgstr "Unlock my account"
@@ -444,9 +474,6 @@ msgstr "Upload"
 
 msgid "Users"
 msgstr "Users"
-
-msgid "View"
-msgstr "View"
 
 msgid "We're contacting you to notify you that your email has been changed to %{email}"
 msgstr "We're contacting you to notify you that your email has been changed to %{email}"
