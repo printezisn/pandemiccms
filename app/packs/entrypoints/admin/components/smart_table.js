@@ -1,5 +1,5 @@
 const initLinks = (table) => {
-  [...table.querySelectorAll('th a, .pagination a')].forEach((el) => {
+  Array.from(table.querySelectorAll('th a, .pagination a')).forEach((el) => {
     el.addEventListener('click', (e) => {
       e.preventDefault();
       table.dispatchEvent(new CustomEvent('refresh', {
@@ -68,7 +68,7 @@ export const initSmartTableSearchForm = (form) => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const queryString = [...form.querySelectorAll('input, textarea, select')]
+    const queryString = Array.from(form.querySelectorAll('input, textarea, select'))
       .map((input) => `${input.name}=${encodeURIComponent(input.value)}`)
       .join('&');
     const url = `${form.getAttribute('action')}?${queryString}`;

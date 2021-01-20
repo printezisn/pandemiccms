@@ -1,5 +1,5 @@
 const initDropdown = (dropdown) => {
-  [...dropdown.querySelectorAll('.dropdown-trigger')].forEach((button) => {
+  Array.from(dropdown.querySelectorAll('.dropdown-trigger')).forEach((button) => {
     button.addEventListener('click', () => {
       dropdown.classList.toggle('is-active');
       dropdown.setAttribute('data-was-clicked', 'true');

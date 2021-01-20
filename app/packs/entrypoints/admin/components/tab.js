@@ -1,5 +1,5 @@
 const initTabs = (tabs) => {
-  const toggles = [...tabs.querySelectorAll('[data-toggle]')];
+  const toggles = Array.from(tabs.querySelectorAll('[data-toggle]'));
   const contents = {};
 
   toggles.forEach((toggle) => {

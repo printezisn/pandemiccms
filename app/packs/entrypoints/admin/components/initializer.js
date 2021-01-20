@@ -4,7 +4,7 @@ import initTabs from './tab';
 import initDropdown from './dropdown';
 
 const initNavbars = (root) => {
-  [...root.getElementsByClassName('navbar-burger')].forEach((el) => {
+  Array.from(root.getElementsByClassName('navbar-burger')).forEach((el) => {
     const target = document.getElementById(el.getAttribute('data-target'));
     el.addEventListener('click', () => {
       target.classList.toggle('is-active');
@@ -13,7 +13,7 @@ const initNavbars = (root) => {
 };
 
 const initNotifications = (root) => {
-  [...root.querySelectorAll('.notification > .delete')].forEach((el) => {
+  Array.from(root.querySelectorAll('.notification > .delete')).forEach((el) => {
     el.addEventListener('click', () => {
       el.parentElement.remove();
     });
@@ -21,19 +21,19 @@ const initNotifications = (root) => {
 };
 
 const initFlashErrors = (root) => {
-  [...root.getElementsByClassName('flash-error')].forEach((el) => {
+  Array.from(root.getElementsByClassName('flash-error')).forEach((el) => {
     toastr.error(el.innerHTML);
   });
 };
 
 const initFlashSuccesses = (root) => {
-  [...root.getElementsByClassName('flash-success')].forEach((el) => {
+  Array.from(root.getElementsByClassName('flash-success')).forEach((el) => {
     toastr.success(el.innerHTML);
   });
 };
 
 const initCopyLinkButtons = (root) => {
-  [...root.getElementsByClassName('copy-link')].forEach((el) => {
+  Array.from(root.getElementsByClassName('copy-link')).forEach((el) => {
     el.addEventListener('click', () => {
       const textarea = document.createElement('textarea');
       textarea.style.display = 'hidden';
@@ -50,7 +50,7 @@ const initCopyLinkButtons = (root) => {
 };
 
 const initModalOpeners = (root) => {
-  [...root.querySelectorAll('[data-modal-open]')].forEach((el) => {
+  Array.from(root.querySelectorAll('[data-modal-open]')).forEach((el) => {
     el.addEventListener('click', () => {
       document.getElementById(el.getAttribute('data-modal-open')).classList.add('is-active');
     });
@@ -58,8 +58,8 @@ const initModalOpeners = (root) => {
 };
 
 const initModals = (root) => {
-  [...root.getElementsByClassName('modal')].forEach((modal) => {
-    [...modal.getElementsByClassName('cancel')].forEach((el) => {
+  Array.from(root.getElementsByClassName('modal')).forEach((modal) => {
+    Array.from(modal.getElementsByClassName('cancel')).forEach((el) => {
       el.addEventListener('click', () => {
         modal.classList.remove('is-active');
       });
@@ -68,7 +68,7 @@ const initModals = (root) => {
 };
 
 const initAutoSubmitInputs = (root) => {
-  [...root.getElementsByClassName('auto-submit')].forEach((el) => {
+  Array.from(root.getElementsByClassName('auto-submit')).forEach((el) => {
     el.addEventListener('change', () => {
       let current = el;
 
@@ -85,19 +85,19 @@ const initAutoSubmitInputs = (root) => {
 };
 
 const initDropdowns = (root) => {
-  [...root.querySelectorAll('.dropdown.is-togglable')].forEach((el) => {
+  Array.from(root.querySelectorAll('.dropdown.is-togglable')).forEach((el) => {
     initDropdown(el);
   });
 };
 
 const initSmartTableSearchForms = (root) => {
-  [...root.getElementsByClassName('smart-table-search')].forEach((el) => {
+  Array.from(root.getElementsByClassName('smart-table-search')).forEach((el) => {
     initSmartTableSearchForm(el);
   });
 };
 
 const initSmartTables = (root) => {
-  [...root.getElementsByClassName('smart-table')].forEach((el) => {
+  Array.from(root.getElementsByClassName('smart-table')).forEach((el) => {
     initSmartTable(el, () => {
       initModalOpeners(el);
       initModals(el);
@@ -110,7 +110,7 @@ const initSmartTables = (root) => {
 };
 
 const initTabWrappers = (root) => {
-  [...root.getElementsByClassName('tabs')].forEach((el) => initTabs(el));
+  Array.from(root.getElementsByClassName('tabs')).forEach((el) => initTabs(el));
 };
 
 const initHistory = () => {

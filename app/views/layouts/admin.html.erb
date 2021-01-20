@@ -9,8 +9,8 @@
   <%= csp_meta_tag %>
   <link rel="icon" href="/favicon.png">
 
-  <%= stylesheet_pack_tag 'admin/styles/main', media: 'all' %>
-  <%= javascript_pack_tag 'admin/main', defer: true %>
+  <%= stylesheet_packs_with_chunks_tag 'admin/styles/main', media: 'all' %>
+  <%= javascript_packs_with_chunks_tag 'admin/main', defer: true %>
 </head>
 
 <body>
