@@ -29,7 +29,7 @@ set :deploy_to, '/home/deploy/pandemiccms'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'storage', 'public/system', 'public/uploads'
 
 # Default value for default_env is {}
-set :default_env, { path: '$HOME/.nvm/versions/node/v15.5.0/bin:$PATH', node_env: 'production' }
+set :default_env, { path: '$HOME/.nvm/versions/node/v15.6.0/bin:$PATH', node_env: 'production' }
 
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
