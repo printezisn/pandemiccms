@@ -20,10 +20,10 @@ module Translatable
   def translate(locale, use_defaults: false)
     model = dup
     translation = translations.find_by(locale: locale.to_s)
-    return model unless translation
 
     self.class::TRANSLATABLE_FIELDS.each do |field|
-      model[field] = translation.fields[field] if translation.fields[field].present? || !use_defaults
+      field_translation = translation&.fields.try(:[], field)
+      model[field] = field_translation if field_translation.present? || !use_defaults
     end
 
     model
