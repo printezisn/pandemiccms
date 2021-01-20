@@ -8,5 +8,9 @@
   > .card-header {
     box-shadow: none;
     border-bottom: solid 1px $grey-lighter;
+
+    .dropdown-menu {
+      top: calc(100% - 0.75rem);
+    }
   }
 }
