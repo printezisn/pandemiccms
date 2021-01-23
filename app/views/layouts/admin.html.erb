@@ -135,7 +135,7 @@
             </div>
           </div>
           <% end %>
-          <% if current_client.languages.size > 1 %>
+          <% if current_client.enabled_languages.size > 1 %>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link" href="javascript:void(0)">
               <span class="flag-icon flag-icon-<%= current_language.flag %>"></span>
@@ -143,7 +143,7 @@
               <%= current_language.name %>
             </a>
             <div class="navbar-dropdown is-right">
-              <% current_client.languages.each do |language| %>
+              <% current_client.enabled_languages.each do |language| %>
               <a class="navbar-item" href="<%= url_for(locale: language.locale) %>">
                 <span class="flag-icon flag-icon-<%= language.flag %>"></span>
                 &nbsp;

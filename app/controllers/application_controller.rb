@@ -52,8 +52,7 @@ class ApplicationController < ActionController::Base
   end
 
   def fetch_current_language
-    current_client.languages.detect { |l| l.locale == params[:locale] } ||
-      current_client.client_languages.detect(&:default?)&.language ||
-      current_client.languages.first
+    current_client.enabled_languages.detect { |l| l.locale == params[:locale] } ||
+      current_client.default_language
   end
 end

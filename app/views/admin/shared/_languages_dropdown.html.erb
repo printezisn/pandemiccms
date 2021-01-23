@@ -1,4 +1,4 @@
-<% if current_client.languages.size > 1 %>
+<% if current_client.enabled_languages.size > 1 %>
 <div class="dropdown is-togglable is-right">
   <div class="dropdown-trigger card-header-icon">
     <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu">
@@ -9,7 +9,7 @@
   </div>
   <div class="dropdown-menu" role="menu">
     <nav class="dropdown-content">
-      <% current_client.languages.each do |language| %>
+      <% current_client.enabled_languages.each do |language| %>
       <a class="dropdown-item" href="<%= url_for(translation_locale: language.locale) %>">
         <span class="flag-icon flag-icon-<%= language.flag %>"></span>
         &nbsp;

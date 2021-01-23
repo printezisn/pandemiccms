@@ -18,9 +18,8 @@ module Admin
 
     def translation_language
       @translation_language ||=
-        current_client.languages.detect { |l| l.locale == params[:translation_locale] } ||
-        current_client.client_languages.detect(&:default?)&.language ||
-        current_client.languages.first
+        current_client.enabled_languages.detect { |l| l.locale == params[:translation_locale] } ||
+        current_client.default_language
     end
   end
 end

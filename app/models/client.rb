@@ -12,9 +12,23 @@ class Client < ApplicationRecord
   has_many :pages, inverse_of: :client, dependent: :destroy
 
   def default_url_options
-    {
+    @default_url_options ||= {
       host: client_domains.first.domain,
       port: client_domains.first.port
     }
+  end
+
+  def enabled_client_languages
+    @enabled_client_languages ||= client_languages.includes(:language).where(enabled: true)
+  end
+
+  def enabled_languages
+    @enabled_languages ||= enabled_client_languages.map(&:language)
+  end
+
+  def default_language
+    @default_language ||=
+      enabled_client_languages.detect(&:default?)&.language ||
+      enabled_client_languages.first&.language
   end
 end
