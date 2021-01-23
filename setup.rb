@@ -23,9 +23,19 @@ ActiveRecord::Base.transaction do
   end
   print 'Template: '
   client.template = gets.chomp.strip
-  print 'Languages (e.g. en,el): '
+  print 'Show search page (y/n): '
+  client.show_search_page = gets.chomp.strip.casecmp('y').zero?
+  print 'Show category page (y/n): '
+  client.show_category_page = gets.chomp.strip.casecmp('y').zero?
+  print 'Show tag page (y/n): '
+  client.show_tag_page = gets.chomp.strip.casecmp('y').zero?
+  print 'Available languages (e.g. en,el): '
   gets.chomp.split(',').each do |locale|
     client.languages << Language.find_by(locale: locale.strip)
+  end
+  print 'Enabled languages (e.g. en,el): '
+  gets.chomp.split(',').each do |locale|
+    client.client_languages.detect { |l| l.language.locale == locale }.update!(enabled: true)
   end
   print 'Default language (e.g. en): '
   default_locale = gets.chomp.strip
