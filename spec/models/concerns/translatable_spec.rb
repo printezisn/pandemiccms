@@ -16,7 +16,6 @@ RSpec.shared_examples 'Translatable' do
 
     it 'does not affect the model' do
       model.save_translation(:en)
-      model.reload
 
       expect(translatable_fields(model)).not_to eq(translatable_fields(translation))
     end
@@ -26,7 +25,6 @@ RSpec.shared_examples 'Translatable' do
     before do
       model.assign_attributes(translatable_fields(translation))
       model.save_translation(:en)
-      model.reload
     end
 
     it 'translates fields' do

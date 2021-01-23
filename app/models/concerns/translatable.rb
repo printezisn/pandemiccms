@@ -11,10 +11,18 @@ module Translatable
   def save_translation(locale)
     return false unless valid?
 
-    translation = translations.find_or_initialize_by(locale: locale.to_s)
-    translation.fields = attributes.slice(*self.class::TRANSLATABLE_FIELDS)
+    !!ActiveRecord::Base.transaction do
+      translation = translations.find_or_initialize_by(locale: locale.to_s)
+      translation.fields = attributes.slice(*self.class::TRANSLATABLE_FIELDS)
 
-    translation.save
+      return unless translation.save
+
+      updater_id = self.updater_id
+      reload
+      raise ActiveRecord::Rollback unless update(updater_id: updater_id)
+
+      true
+    end
   end
 
   def translate(locale, use_defaults: false)
