@@ -16,6 +16,10 @@ Rails.application.routes.draw do
         end
       end
 
+      get 'client/edit', to: 'clients#edit', as: :client_edit
+      put 'client/edit', to: 'clients#update'
+      patch 'client/edit', to: 'clients#update'
+
       root 'dashboard#index'
     end
 

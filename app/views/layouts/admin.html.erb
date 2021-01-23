@@ -11,6 +11,7 @@
 
   <%= stylesheet_packs_with_chunks_tag 'admin/styles/main', media: 'all' %>
   <%= javascript_packs_with_chunks_tag 'admin/main', defer: true %>
+  <%= yield :scripts %>
 </head>
 
 <body>
@@ -80,13 +81,13 @@
           </div>
           <% if current_admin_user&.supervisor? %>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="javascript:void(0)">
+            <a class="navbar-link<%= %w[clients].include?(controller_name) ? ' is-active' : '' %>" href="javascript:void(0)">
               <i class="fas fa-cog"></i>
               &nbsp;
               <%= _('Settings') %>
             </a>
             <div class="navbar-dropdown">
-              <a class="navbar-item" href="javascript:void(0)">
+              <a class="navbar-item<%= controller_name == 'clients' ? ' is-active' : '' %>" href="<%= admin_client_edit_path %>">
                 <i class="fas fa-cog"></i>
                 &nbsp;
                 <%= _('Settings') %>

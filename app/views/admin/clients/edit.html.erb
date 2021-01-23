@@ -1,0 +1,149 @@
+<%
+    content_for :title, _('Settings | %{client}') % { client: @client.name }
+    content_for :description, _('Edit the settings of %{client}') % { client: @client.name }
+%>
+
+<% content_for :scripts do %>
+<%= javascript_pack_tag 'admin/pages/clients/edit', defer: true %>
+<% end %>
+
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-cog"></i>
+      &nbsp;
+      <%= _('Settings') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <%= render "admin/shared/error_messages", resource: @client %>
+    <%= form_with(model: @client, url: admin_client_edit_path(@client), method: :patch) do |f| %>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :name, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :name, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <%= f.label :show_search_page, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <label class="radio">
+              <%= f.radio_button :show_search_page, true %>
+              <%= _('Yes') %>
+            </label>
+            <label class="radio">
+              <%= f.radio_button :show_search_page, false %>
+              <%= _('No') %>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <%= f.label :show_category_page, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <label class="radio">
+              <%= f.radio_button :show_category_page, true %>
+              <%= _('Yes') %>
+            </label>
+            <label class="radio">
+              <%= f.radio_button :show_category_page, false %>
+              <%= _('No') %>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <%= f.label :show_tag_page, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <label class="radio">
+              <%= f.radio_button :show_tag_page, true %>
+              <%= _('Yes') %>
+            </label>
+            <label class="radio">
+              <%= f.radio_button :show_tag_page, false %>
+              <%= _('No') %>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <label class="label"><%= _('Enabled Languages') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <ul>
+              <% @languages.each do |client_language| %>
+              <li>
+                <label class="checkbox">
+                  <input type="checkbox" name="language_ids[]" value="<%= client_language.id %>" <%= client_language.enabled? ? 'checked' : '' %> />
+                  &nbsp;
+                  <span class="flag-icon flag-icon-<%= client_language.language.flag %>"></span>
+                  <%= client_language.language.name %>
+                </label>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="default-languages" class="field is-horizontal <%= @languages.select(&:enabled?).size > 1 ? '' : 'is-hidden' %>">
+      <div class="field-label">
+        <label class="label"><%= _('Default Language') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <ul>
+              <% @languages.each do |client_language| %>
+              <li id="default-language-<%= client_language.id %>" class="<%= client_language.enabled? ? '' : 'is-hidden' %>">
+                <label class="radio">
+                  <input type="radio" name="default_language_id" value="<%= client_language.id %>" <%= client_language.default? ? 'checked' : '' %> />
+                  &nbsp;
+                  <span class="flag-icon flag-icon-<%= client_language.language.flag %>"></span>
+                  <%= client_language.language.name %>
+                </label>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success mb-1' %>
+            <a class="button" href="<%= admin_root_path %>"><%= _('Cancel') %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</article>

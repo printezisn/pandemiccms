@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-23 14:20+0200\n"
-"PO-Revision-Date: 2021-01-23 14:20+0200\n"
+"POT-Creation-Date: 2021-01-23 23:22+0200\n"
+"PO-Revision-Date: 2021-01-23 23:22+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -194,6 +194,9 @@ msgstr ""
 msgid "Dashboard | %{client}"
 msgstr ""
 
+msgid "Default Language"
+msgstr ""
+
 msgid "Delete"
 msgstr ""
 
@@ -224,7 +227,13 @@ msgstr ""
 msgid "Edit a tag of %{client}"
 msgstr ""
 
+msgid "Edit the settings of %{client}"
+msgstr ""
+
 msgid "Emails"
+msgstr ""
+
+msgid "Enabled Languages"
 msgstr ""
 
 msgid "First Page"
@@ -374,6 +383,9 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
+msgid "Settings | %{client}"
+msgstr ""
+
 msgid "Sign In"
 msgstr ""
 
@@ -447,6 +459,9 @@ msgid "The medium was successfully created."
 msgstr ""
 
 msgid "The medium was successfully deleted."
+msgstr ""
+
+msgid "The settings were successfully updated."
 msgstr ""
 
 msgid "The tag was successfully created."

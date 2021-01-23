@@ -25,3 +25,12 @@ Rails/CreateTableWithTimestamps:
 Rails/SkipsModelValidations:
   Exclude:
     - "app/models/tag_taggable.rb"
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false

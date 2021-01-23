@@ -193,6 +193,9 @@ msgstr "Ταμπλό"
 msgid "Dashboard | %{client}"
 msgstr "Ταμπλό | %{client}"
 
+msgid "Default Language"
+msgstr "Προεπιλεγμένη Γλώσσα"
+
 msgid "Delete"
 msgstr "Διαγραφή"
 
@@ -223,8 +226,14 @@ msgstr "Επεξεργασία Ετικέτας | %{client}"
 msgid "Edit a tag of %{client}"
 msgstr "Επεξεργασία ετικέτας του %{client}"
 
+msgid "Edit the settings of %{client}"
+msgstr "Επεξεργασία ρυθμίσεων του %{client}"
+
 msgid "Emails"
 msgstr "Emails"
+
+msgid "Enabled Languages"
+msgstr "Ενεργοποιημένες Γλώσσες"
 
 msgid "First Page"
 msgstr "Πρώτη Σελίδα"
@@ -373,6 +382,9 @@ msgstr "Αποστολή οδηγιών επαναφοράς κωδικού"
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
+msgid "Settings | %{client}"
+msgstr "Ρυθμίσεις | %{client}"
+
 msgid "Sign In"
 msgstr "Σύνδεση"
 
@@ -447,6 +459,9 @@ msgstr "Το αρχείο δημιουργήθηκε με επιτυχία."
 
 msgid "The medium was successfully deleted."
 msgstr "Το αρχείο διαγράφτηκε με επιτυχία."
+
+msgid "The settings were successfully updated."
+msgstr "Οι ρυθμίσεις ανανεώθηκαν με επιτυχία."
 
 msgid "The tag was successfully created."
 msgstr "Η ετικέτα δημιουργήθηκε με επιτυχία."

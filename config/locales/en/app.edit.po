@@ -193,6 +193,9 @@ msgstr "Dashboard"
 msgid "Dashboard | %{client}"
 msgstr "Dashboard | %{client}"
 
+msgid "Default Language"
+msgstr "Default Language"
+
 msgid "Delete"
 msgstr "Delete"
 
@@ -223,8 +226,14 @@ msgstr "Edit Tag | %{client}"
 msgid "Edit a tag of %{client}"
 msgstr "Edit a tag of %{client}"
 
+msgid "Edit the settings of %{client}"
+msgstr "Edit the settings of %{client}"
+
 msgid "Emails"
 msgstr "Emails"
+
+msgid "Enabled Languages"
+msgstr "Enabled Languages"
 
 msgid "First Page"
 msgstr "First Page"
@@ -373,6 +382,9 @@ msgstr "Send me reset password instructions"
 msgid "Settings"
 msgstr "Settings"
 
+msgid "Settings | %{client}"
+msgstr "Settings | %{client}"
+
 msgid "Sign In"
 msgstr "Sign In"
 
@@ -447,6 +459,9 @@ msgstr "The medium was successfully created."
 
 msgid "The medium was successfully deleted."
 msgstr "The medium was successfully deleted."
+
+msgid "The settings were successfully updated."
+msgstr "The settings were successfully updated."
 
 msgid "The tag was successfully created."
 msgstr "The tag was successfully created."
