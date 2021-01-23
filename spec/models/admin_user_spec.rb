@@ -9,6 +9,10 @@ RSpec.describe AdminUser, type: :model do
 
   it { is_expected.to have_many(:admin_user_roles).dependent(:destroy) }
 
+  it { is_expected.to have_many(:created_tags).class_name('Tag').dependent(:destroy) }
+
+  it { is_expected.to have_many(:updated_tags).class_name('Tag').dependent(:destroy) }
+
   # Username
   it { is_expected.to validate_presence_of(:username).with_message('The username is required.') }
   it { is_expected.to allow_value('test.-usER0').for(:username) }
