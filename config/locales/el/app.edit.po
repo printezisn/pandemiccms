@@ -145,6 +145,18 @@ msgstr "Αλλαγή του κωδικού μου"
 msgid "Click the link below to unlock your account:"
 msgstr "Πατήστε στο σύνδεσμο για να ξεκλειδώσετε το λογαριασμό σας:"
 
+msgid "Client|Name"
+msgstr "Όνομα"
+
+msgid "Client|Show category page"
+msgstr "Προβολή Σελίδας Κατηγορίας"
+
+msgid "Client|Show search page"
+msgstr "Προβολή Σελίδας Αναζήτησης"
+
+msgid "Client|Show tag page"
+msgstr "Προβολή Σελίδας Ετικέτας"
+
 msgid "Confirm my account"
 msgstr "Επιβεβαίωση του λογαριασμού μου"
 
@@ -579,6 +591,12 @@ msgstr "Το όνομα χρήστη χρησιμοποιείται ήδη."
 
 msgid "activerecord.errors.models.admin_user.attributes.username.too_long"
 msgstr "Το όνομα χρήστη μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.client.attributes.name.blank"
+msgstr "Το όνομα είναι υποχρεωτικό."
+
+msgid "activerecord.errors.models.client.attributes.name.too_long"
+msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
 
 msgid "activerecord.errors.models.tag.attributes.name.blank"
 msgstr "Το όνομα είναι υποχρεωτικό."

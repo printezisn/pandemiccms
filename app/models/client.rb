@@ -11,6 +11,8 @@ class Client < ApplicationRecord
   has_many :posts, inverse_of: :client, dependent: :destroy
   has_many :pages, inverse_of: :client, dependent: :destroy
 
+  validates :name, presence: true, length: { maximum: 255 }
+
   def default_url_options
     @default_url_options ||= {
       host: client_domains.first.domain,

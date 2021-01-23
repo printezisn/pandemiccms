@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-23 11:34+0200\n"
-"PO-Revision-Date: 2021-01-23 11:34+0200\n"
+"POT-Creation-Date: 2021-01-23 14:20+0200\n"
+"PO-Revision-Date: 2021-01-23 14:20+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -144,6 +144,18 @@ msgid "Change my password"
 msgstr ""
 
 msgid "Click the link below to unlock your account:"
+msgstr ""
+
+msgid "Client|Name"
+msgstr ""
+
+msgid "Client|Show category page"
+msgstr ""
+
+msgid "Client|Show search page"
+msgstr ""
+
+msgid "Client|Show tag page"
 msgstr ""
 
 msgid "Confirm my account"
@@ -579,6 +591,12 @@ msgid "activerecord.errors.models.admin_user.attributes.username.taken"
 msgstr ""
 
 msgid "activerecord.errors.models.admin_user.attributes.username.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.client.attributes.name.blank"
+msgstr ""
+
+msgid "activerecord.errors.models.client.attributes.name.too_long"
 msgstr ""
 
 msgid "activerecord.errors.models.tag.attributes.name.blank"
