@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-20 00:56+0200\n"
-"PO-Revision-Date: 2021-01-20 00:56+0200\n"
+"POT-Creation-Date: 2021-01-23 11:34+0200\n"
+"PO-Revision-Date: 2021-01-23 11:34+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -171,6 +171,9 @@ msgid "Create new tag for %{client}"
 msgstr ""
 
 msgid "Created At"
+msgstr ""
+
+msgid "Created By"
 msgstr ""
 
 msgid "Dashboard"
@@ -468,6 +471,9 @@ msgid "Unlock my account"
 msgstr ""
 
 msgid "Updated At"
+msgstr ""
+
+msgid "Updated By"
 msgstr ""
 
 msgid "Upload"

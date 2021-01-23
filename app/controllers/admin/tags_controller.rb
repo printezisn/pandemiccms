@@ -37,6 +37,8 @@ module Admin
     def create
       @tag = Tag.new(tag_params)
       @tag.client_id = current_client.id
+      @tag.creator_id = current_admin_user.id
+      @tag.updater_id = current_admin_user.id
 
       if @tag.save
         redirect_to admin_tag_path(@tag), notice: _('The tag was successfully created.')
@@ -48,7 +50,7 @@ module Admin
     # PATCH/PUT /tags/1
     # PATCH/PUT /tags/1.json
     def update
-      if @tag.update(tag_params)
+      if @tag.update(tag_params.merge(updater_id: current_admin_user.id))
         redirect_to admin_tag_path(@tag), notice: _('The tag was successfully updated.')
       else
         render :edit

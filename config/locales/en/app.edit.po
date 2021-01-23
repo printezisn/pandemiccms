@@ -172,6 +172,9 @@ msgstr "Create new tag for %{client}"
 msgid "Created At"
 msgstr "Created At"
 
+msgid "Created By"
+msgstr "Created By"
+
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -468,6 +471,9 @@ msgstr "Unlock my account"
 
 msgid "Updated At"
 msgstr "Updated At"
+
+msgid "Updated By"
+msgstr "Updated By"
 
 msgid "Upload"
 msgstr "Upload"

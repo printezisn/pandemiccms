@@ -1,0 +1,5 @@
+<% if current_admin_user.supervisor? %>
+<a href="javascript:void(0)"><%= admin_user.username %></a>
+<% else %>
+<%= admin_user.username %>
+<% end %>

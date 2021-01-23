@@ -172,6 +172,9 @@ msgstr "Δημιουργία νέας ετικέτας για το %{client}"
 msgid "Created At"
 msgstr "Δημιουργήθηκε Στις"
 
+msgid "Created By"
+msgstr "Δημιουργήθηκε Από"
+
 msgid "Dashboard"
 msgstr "Ταμπλό"
 
@@ -468,6 +471,9 @@ msgstr "Ξεκλείδωμα του λογαριασμού μου"
 
 msgid "Updated At"
 msgstr "Ανανεώθηκε Στις"
+
+msgid "Updated By"
+msgstr "Ανανεώθηκε Από"
 
 msgid "Upload"
 msgstr "Ανέβασμα"
