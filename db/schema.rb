@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_23_090318) do
+ActiveRecord::Schema.define(version: 2021_01_23_105035) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 2021_01_23_090318) do
     t.boolean "default", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "enabled"
     t.index ["client_id", "language_id"], name: "index_client_languages_on_client_id_and_language_id", unique: true
     t.index ["client_id"], name: "index_client_languages_on_client_id"
     t.index ["language_id"], name: "index_client_languages_on_language_id"
