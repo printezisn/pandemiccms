@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-  <link rel="icon" href="/favicon.png">
+  <link rel="icon" href="<%= current_client.image.attached? ? rails_representation_url(current_client.image.variant(resize_to_limit: [32, 32])) : '/favicon.png' %>">
 
   <%= stylesheet_packs_with_chunks_tag 'admin/styles/main', media: 'all' %>
   <%= javascript_packs_with_chunks_tag 'admin/main', defer: true %>
@@ -19,7 +19,7 @@
     <nav class="navbar is-dark">
       <div class="navbar-brand">
         <a class="navbar-item" href="<%= admin_root_path %>">
-          <img src="/logo.png" alt="logo">
+          <img src="<%= current_client.image.attached? ? rails_representation_url(current_client.image.variant(resize_to_limit: [32, 32])) : '/logo.png' %>" alt="logo">
           &nbsp;
           Pandemic CMS
         </a>
