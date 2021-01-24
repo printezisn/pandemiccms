@@ -1,8 +1,8 @@
 import toastr from 'toastr';
-import { initSmartTable, initSmartTableSearchForm } from './smart_table';
+import { initSmartTable, initSmartTableSearchForm } from './smart-table';
 import initTabs from './tab';
 import initDropdown from './dropdown';
-import initImageUploader from './image_uploader';
+import initImageUploader from './image-uploader';
 
 const initNavbars = (root) => {
   Array.from(root.getElementsByClassName('navbar-burger')).forEach((el) => {
