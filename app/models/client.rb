@@ -2,6 +2,8 @@
 
 # Client model
 class Client < ApplicationRecord
+  include Imageable
+
   has_many :client_languages, inverse_of: :client, dependent: :destroy
   has_many :languages, through: :client_languages
   has_many :client_domains, inverse_of: :client, dependent: :destroy
