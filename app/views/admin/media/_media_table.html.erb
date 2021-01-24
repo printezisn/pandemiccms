@@ -15,12 +15,19 @@
   </div>
   <div class="column has-text-right-tablet">
     <%= form_with(url: admin_media_path, method: :post, class: 'upload-button-form') do |f| %>
-    <%= f.file_field 'medium[file]', title: '', class: 'auto-submit' %>
-    <button type="button" class="button is-success">
-      <i class="fas fa-upload"></i>
-      &nbsp;
-      <%= _('Upload') %>
-    </button>
+    <div class="file is-success">
+      <label class="file-label">
+        <%= f.file_field 'medium[file]', title: '', class: 'auto-submit' %>
+        <span class="file-cta">
+          <span class="file-icon">
+            <i class="fas fa-upload"></i>
+          </span>
+          <span class="file-label">
+            <%=  _('Upload') %>
+          </span>
+        </span>
+      </label>
+    </div>
     <% end %>
   </div>
 </div>
