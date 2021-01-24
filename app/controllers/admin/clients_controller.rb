@@ -50,7 +50,7 @@ module Admin
     end
 
     def client_params
-      params.require(:client).permit(:name, :show_search_page, :show_category_page, :show_tag_page)
+      params.require(:client).permit(:image, :should_remove_image, :name, :show_search_page, :show_category_page, :show_tag_page)
     end
   end
 end

@@ -42,3 +42,17 @@ main {
     opacity: 0;
   }
 }
+
+.image-uploader {
+  &.without-image {
+    .show-on-image {
+      display: none;
+    }
+  }
+
+  &.with-image {
+    .hide-on-image {
+      display: none;
+    }
+  }
+}

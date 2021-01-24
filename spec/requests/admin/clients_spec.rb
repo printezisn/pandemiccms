@@ -43,6 +43,7 @@ RSpec.describe '/admin/clients', type: :request do
     let(:params) do
       {
         client: {
+          image: Rack::Test::UploadedFile.new(File.open(Rails.root.join('spec/fixtures/test.png'))),
           name: 'Test Client Name',
           show_search_page: true,
           show_category_page: true,
@@ -86,6 +87,7 @@ RSpec.describe '/admin/clients', type: :request do
 
           client.reload
 
+          expect(client.image).to be_attached
           expect(client.name).to eq(params[:client][:name])
           expect(client.show_search_page).to eq(params[:client][:show_search_page])
           expect(client.show_category_page).to eq(params[:client][:show_category_page])

@@ -1,0 +1,23 @@
+<div class="control image-uploader<%= model.image.attached? ? ' with-image' : ' without-image' %>">
+  <img src="<%= model.image.attached? ? rails_blob_path(model.image) : '' %>" class="show-on-image" width="128" height="128" alt="image" />
+  <br class="show-on-image" />
+  <button type="button" class="button is-danger show-on-image">
+    <i class="fas fa-trash"></i>
+    &nbsp;
+    <%= _('Remove') %>
+  </button>
+  <%= f.hidden_field :should_remove_image %>
+  <div class="file hide-on-image">
+    <label class="file-label">
+      <%= f.file_field :image, class: 'file-input', accept: 'image/gif, image/jpeg, image/png' %>
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fas fa-upload"></i>
+        </span>
+        <span class="file-label">
+          <%= _('Choose an image...') %>
+        </span>
+      </span>
+    </label>
+  </div>
+</div>

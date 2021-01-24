@@ -142,8 +142,14 @@ msgstr "Change Password"
 msgid "Change my password"
 msgstr "Change my password"
 
+msgid "Choose an image..."
+msgstr "Choose an image..."
+
 msgid "Click the link below to unlock your account:"
 msgstr "Click the link below to unlock your account:"
+
+msgid "Client|Image"
+msgstr "Image"
 
 msgid "Client|Name"
 msgstr "Name"
@@ -345,6 +351,9 @@ msgstr "Preview"
 
 msgid "Previous Page"
 msgstr "Previous Page"
+
+msgid "Remove"
+msgstr "Remove"
 
 msgid "Request instructions to reset password in %{client}"
 msgstr "Request instructions to reset password in %{client}"

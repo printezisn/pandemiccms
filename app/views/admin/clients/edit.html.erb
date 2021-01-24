@@ -20,6 +20,16 @@
     <%= form_with(model: @client, url: admin_client_edit_path(@client), method: :patch) do |f| %>
     <div class="field is-horizontal">
       <div class="field-label is-normal">
+        <%= f.label :image, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <%= render partial: 'admin/shared/image_uploader', locals: { model: @client, f: f } %>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
         <%= f.label :name, class: 'label required-label' %>
       </div>
       <div class="field-body">

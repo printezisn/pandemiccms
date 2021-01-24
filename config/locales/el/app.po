@@ -142,8 +142,14 @@ msgstr "Αλλαγή Κωδικού"
 msgid "Change my password"
 msgstr "Αλλαγή του κωδικού μου"
 
+msgid "Choose an image..."
+msgstr "Επιλέξτε εικόνα..."
+
 msgid "Click the link below to unlock your account:"
 msgstr "Πατήστε στο σύνδεσμο για να ξεκλειδώσετε το λογαριασμό σας:"
+
+msgid "Client|Image"
+msgstr "Εικόνα"
 
 msgid "Client|Name"
 msgstr "Όνομα"
@@ -345,6 +351,9 @@ msgstr "Προεσκόπιση"
 
 msgid "Previous Page"
 msgstr "Προηγούμενη Σελίδα"
+
+msgid "Remove"
+msgstr "Αφαίρεση"
 
 msgid "Request instructions to reset password in %{client}"
 msgstr "Ζητήστε οδηγίες για επαναφορά κωδικού στο %{client}"

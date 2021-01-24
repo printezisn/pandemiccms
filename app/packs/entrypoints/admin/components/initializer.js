@@ -2,6 +2,7 @@ import toastr from 'toastr';
 import { initSmartTable, initSmartTableSearchForm } from './smart_table';
 import initTabs from './tab';
 import initDropdown from './dropdown';
+import initImageUploader from './image_uploader';
 
 const initNavbars = (root) => {
   Array.from(root.getElementsByClassName('navbar-burger')).forEach((el) => {
@@ -113,6 +114,10 @@ const initTabWrappers = (root) => {
   Array.from(root.getElementsByClassName('tabs')).forEach((el) => initTabs(el));
 };
 
+const initImageUploaders = (root) => {
+  Array.from(root.getElementsByClassName('image-uploader')).forEach((el) => initImageUploader(el));
+};
+
 const initHistory = () => {
   window.addEventListener('popstate', () => {
     window.location.reload();
@@ -132,6 +137,7 @@ const initAll = () => {
   initSmartTables(document);
   initSmartTableSearchForms(document);
   initTabWrappers(document);
+  initImageUploaders(document);
 
   initHistory();
 };
