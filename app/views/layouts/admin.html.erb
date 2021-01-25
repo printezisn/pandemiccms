@@ -21,7 +21,7 @@
         <a class="navbar-item" href="<%= admin_root_path %>">
           <img src="<%= current_client.image.attached? ? rails_representation_url(current_client.image.variant(resize_to_limit: [32, 32])) : '/logo.png' %>" alt="logo">
           &nbsp;
-          Pandemic CMS
+          <%= current_client.name %>
         </a>
         <div class="navbar-burger burger" data-target="main-menu">
           <span></span>

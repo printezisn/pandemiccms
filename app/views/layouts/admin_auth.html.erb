@@ -16,7 +16,7 @@
 <body>
   <header class="title is-3">
     <img src="<%= current_client.image.attached? ? rails_representation_url(current_client.image.variant(resize_to_limit: [32, 32])) : '/logo.png' %>" alt="logo" />
-    <span>&nbsp; Pandemic CMS</span>
+    <span>&nbsp; <%= current_client.name %></span>
   </header>
   <main><%= yield %></main>
   <%= render partial: 'layouts/shared/admin_footer' %>

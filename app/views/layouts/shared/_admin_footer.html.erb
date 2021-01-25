@@ -1,9 +1,5 @@
 <footer>
-  <% if Time.now.year > 2020 %>
-  Pandemic CMS &copy; 2020 - <%= Time.now.year %>
-  <% else %>
-  Pandemic CMS &copy; 2020
-  <% end %>
+  <%= current_client.name %> &copy; 2020
 </footer>
 
 <% if alert %>
