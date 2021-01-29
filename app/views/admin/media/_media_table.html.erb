@@ -15,9 +15,9 @@
   </div>
   <div class="column has-text-right-tablet">
     <%= form_with(url: admin_media_path, method: :post, class: 'upload-button-form') do |f| %>
-    <div class="file is-success">
+    <div class="file is-success is-inline-block">
       <label class="file-label">
-        <%= f.file_field 'medium[file]', title: '', class: 'auto-submit' %>
+        <%= f.file_field 'medium[file]', title: '', class: 'auto-submit file-input' %>
         <span class="file-cta">
           <span class="file-icon">
             <i class="fas fa-upload"></i>
