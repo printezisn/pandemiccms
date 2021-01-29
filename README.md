@@ -109,6 +109,10 @@ Afterwards, you'll be able to sign in with the supervisor user which you created
 
 `bundle exec rails s`
 
+or with docker compose:
+
+`docker-compose up`
+
 ## How to deploy
 
 You must first tweak the capistrano-related files to work for your infrastructure. Then, you can deploy with `bundle exec cap production deploy`.
