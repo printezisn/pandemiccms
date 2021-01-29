@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  mariadb:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_USER: pandemiccms
+      MYSQL_PASSWORD: 1234
+      MYSQL_DATABASE: pandemiccms
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./docker/mariadb/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+volumes:
+  mariadb_data:
