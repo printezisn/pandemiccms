@@ -235,6 +235,18 @@ msgstr "Επεξεργασία ετικέτας του %{client}"
 msgid "Edit the settings of %{client}"
 msgstr "Επεξεργασία ρυθμίσεων του %{client}"
 
+msgid "Email Change"
+msgstr "Αλλαγή Email"
+
+msgid "EmailTemplate|Body"
+msgstr "Κείμενο"
+
+msgid "EmailTemplate|Subject"
+msgstr "Θέμα"
+
+msgid "EmailTemplate|Type"
+msgstr "Τύπος"
+
 msgid "Emails"
 msgstr "Emails"
 
@@ -334,6 +346,9 @@ msgstr "Σελίδες του %{client}"
 msgid "Pages | %{client}"
 msgstr "Σελίδες | %{client}"
 
+msgid "Password Change"
+msgstr "Αλλαγή Email"
+
 msgid "Post Drafts"
 msgstr "Προσχέδια Άρθρων"
 
@@ -372,6 +387,9 @@ msgstr "Επαναποστολή οδηγιών επιβεβαίωσης"
 
 msgid "Reset Password"
 msgstr "Επαναφορά Κωδικού"
+
+msgid "Reset Password Instructions"
+msgstr "Οδηγίες Επαναφοράς Κωδικού"
 
 msgid "Reset Password | %{client}"
 msgstr "Επαναφορά Κωδικού | %{client}"
@@ -621,6 +639,15 @@ msgstr "Το όνομα είναι υποχρεωτικό."
 
 msgid "activerecord.errors.models.client.attributes.name.too_long"
 msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.email_template.attributes.body.blank"
+msgstr "Το κείμενο είναι υποχρεωτικό."
+
+msgid "activerecord.errors.models.email_template.attributes.subject.blank"
+msgstr "Το θέμα είναι υποχρεωτικό."
+
+msgid "activerecord.errors.models.email_template.attributes.subject.too_long"
+msgstr "Το θέμα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
 
 msgid "activerecord.errors.models.tag.attributes.name.blank"
 msgstr "Το όνομα είναι υποχρεωτικό."

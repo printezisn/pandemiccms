@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-24 20:43+0200\n"
-"PO-Revision-Date: 2021-01-24 20:43+0200\n"
+"POT-Creation-Date: 2021-02-07 16:16+0200\n"
+"PO-Revision-Date: 2021-02-07 16:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -236,6 +236,18 @@ msgstr ""
 msgid "Edit the settings of %{client}"
 msgstr ""
 
+msgid "Email Change"
+msgstr ""
+
+msgid "EmailTemplate|Body"
+msgstr ""
+
+msgid "EmailTemplate|Subject"
+msgstr ""
+
+msgid "EmailTemplate|Type"
+msgstr ""
+
 msgid "Emails"
 msgstr ""
 
@@ -335,6 +347,9 @@ msgstr ""
 msgid "Pages | %{client}"
 msgstr ""
 
+msgid "Password Change"
+msgstr ""
+
 msgid "Post Drafts"
 msgstr ""
 
@@ -372,6 +387,9 @@ msgid "Resend confirmation instructions"
 msgstr ""
 
 msgid "Reset Password"
+msgstr ""
+
+msgid "Reset Password Instructions"
 msgstr ""
 
 msgid "Reset Password | %{client}"
@@ -621,6 +639,15 @@ msgid "activerecord.errors.models.client.attributes.name.blank"
 msgstr ""
 
 msgid "activerecord.errors.models.client.attributes.name.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.email_template.attributes.body.blank"
+msgstr ""
+
+msgid "activerecord.errors.models.email_template.attributes.subject.blank"
+msgstr ""
+
+msgid "activerecord.errors.models.email_template.attributes.subject.too_long"
 msgstr ""
 
 msgid "activerecord.errors.models.tag.attributes.name.blank"

@@ -12,6 +12,7 @@ class Client < ApplicationRecord
   has_many :tags, inverse_of: :client, dependent: :destroy
   has_many :posts, inverse_of: :client, dependent: :destroy
   has_many :pages, inverse_of: :client, dependent: :destroy
+  has_many :email_templates, inverse_of: :client, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
 
