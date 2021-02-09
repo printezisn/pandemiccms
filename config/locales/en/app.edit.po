@@ -214,6 +214,9 @@ msgstr "Description"
 msgid "Details for a tag of %{client}"
 msgstr "Details for a tag of %{client}"
 
+msgid "Details for an email template of %{client}"
+msgstr "Details for an email template of %{client}"
+
 msgid "Didn't receive confirmation instructions ?"
 msgstr "Didn't receive confirmation instructions ?"
 
@@ -222,6 +225,12 @@ msgstr "Didn't receive unlock instructions ?"
 
 msgid "Edit"
 msgstr "Edit"
+
+msgid "Edit Email Template"
+msgstr "Edit Email Template"
+
+msgid "Edit Email Template | %{client}"
+msgstr "Edit Email Template | %{client}"
 
 msgid "Edit Tag"
 msgstr "Edit Tag"
@@ -232,11 +241,29 @@ msgstr "Edit Tag | %{client}"
 msgid "Edit a tag of %{client}"
 msgstr "Edit a tag of %{client}"
 
+msgid "Edit an email template of %{client}"
+msgstr "Edit an email template of %{client}"
+
 msgid "Edit the settings of %{client}"
 msgstr "Edit the settings of %{client}"
 
 msgid "Email Change"
 msgstr "Email Change"
+
+msgid "Email Template Details"
+msgstr "Email Template Details"
+
+msgid "Email Template Details | %{client}"
+msgstr "Email Template Details | %{client}"
+
+msgid "Email Templates"
+msgstr "Email Templates"
+
+msgid "Email Templates | %{client}"
+msgstr "Email Templates | %{client}"
+
+msgid "Email templates of %{client}"
+msgstr "Email templates of %{client}"
 
 msgid "EmailTemplate|Body"
 msgstr "Body"
@@ -246,9 +273,6 @@ msgstr "Subject"
 
 msgid "EmailTemplate|Type"
 msgstr "Type"
-
-msgid "Emails"
-msgstr "Emails"
 
 msgid "Enabled Languages"
 msgstr "Enabled Languages"
@@ -307,6 +331,9 @@ msgstr "Next Page"
 msgid "No"
 msgstr "No"
 
+msgid "No email templates were found."
+msgstr "No email templates were found."
+
 msgid "No media were found."
 msgstr "No media were found."
 
@@ -330,6 +357,9 @@ msgstr "Password Archivable Type"
 
 msgid "OldPassword|Password salt"
 msgstr "Password Salt"
+
+msgid "Original Email Template"
+msgstr "Original Email Template"
 
 msgid "Original Tag"
 msgstr "Original Tag"
@@ -436,6 +466,9 @@ msgstr "Slug"
 msgid "Someone has requested a link to change your password. You can do this through the link below."
 msgstr "Someone has requested a link to change your password. You can do this through the link below."
 
+msgid "Subject"
+msgstr "Subject"
+
 msgid "Submit"
 msgstr "Submit"
 
@@ -478,6 +511,12 @@ msgstr "Template"
 msgid "The administration of %{client}"
 msgstr "The administration of %{client}"
 
+msgid "The email template was successfully translated."
+msgstr "The email template was successfully translated."
+
+msgid "The email template was successfully updated."
+msgstr "The email template was successfully created."
+
 msgid "The link was successfully copied"
 msgstr "The link was successfully copied"
 
@@ -511,11 +550,17 @@ msgstr "Total Posts"
 msgid "Translate"
 msgstr "Translate"
 
+msgid "Translate Email Template | %{client}"
+msgstr "Translate Email Template | %{client}"
+
 msgid "Translate Tag | %{client}"
 msgstr "Translate Tag | %{client}"
 
 msgid "Translate a tag of %{client}"
 msgstr "Translate a tag of %{client}"
+
+msgid "Translate an email template of %{client}"
+msgstr "Translate an email template of %{client}"
 
 msgid "Translation"
 msgstr "Translation"

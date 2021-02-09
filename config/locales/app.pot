@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-07 16:16+0200\n"
-"PO-Revision-Date: 2021-02-07 16:16+0200\n"
+"POT-Creation-Date: 2021-02-09 22:00+0200\n"
+"PO-Revision-Date: 2021-02-09 22:00+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -215,6 +215,9 @@ msgstr ""
 msgid "Details for a tag of %{client}"
 msgstr ""
 
+msgid "Details for an email template of %{client}"
+msgstr ""
+
 msgid "Didn't receive confirmation instructions ?"
 msgstr ""
 
@@ -222,6 +225,12 @@ msgid "Didn't receive unlock instructions ?"
 msgstr ""
 
 msgid "Edit"
+msgstr ""
+
+msgid "Edit Email Template"
+msgstr ""
+
+msgid "Edit Email Template | %{client}"
 msgstr ""
 
 msgid "Edit Tag"
@@ -233,10 +242,28 @@ msgstr ""
 msgid "Edit a tag of %{client}"
 msgstr ""
 
+msgid "Edit an email template of %{client}"
+msgstr ""
+
 msgid "Edit the settings of %{client}"
 msgstr ""
 
 msgid "Email Change"
+msgstr ""
+
+msgid "Email Template Details"
+msgstr ""
+
+msgid "Email Template Details | %{client}"
+msgstr ""
+
+msgid "Email Templates"
+msgstr ""
+
+msgid "Email Templates | %{client}"
+msgstr ""
+
+msgid "Email templates of %{client}"
 msgstr ""
 
 msgid "EmailTemplate|Body"
@@ -246,9 +273,6 @@ msgid "EmailTemplate|Subject"
 msgstr ""
 
 msgid "EmailTemplate|Type"
-msgstr ""
-
-msgid "Emails"
 msgstr ""
 
 msgid "Enabled Languages"
@@ -308,6 +332,9 @@ msgstr ""
 msgid "No"
 msgstr ""
 
+msgid "No email templates were found."
+msgstr ""
+
 msgid "No media were found."
 msgstr ""
 
@@ -330,6 +357,9 @@ msgid "OldPassword|Password archivable type"
 msgstr ""
 
 msgid "OldPassword|Password salt"
+msgstr ""
+
+msgid "Original Email Template"
 msgstr ""
 
 msgid "Original Tag"
@@ -437,6 +467,9 @@ msgstr ""
 msgid "Someone has requested a link to change your password. You can do this through the link below."
 msgstr ""
 
+msgid "Subject"
+msgstr ""
+
 msgid "Submit"
 msgstr ""
 
@@ -479,6 +512,12 @@ msgstr ""
 msgid "The administration of %{client}"
 msgstr ""
 
+msgid "The email template was successfully translated."
+msgstr ""
+
+msgid "The email template was successfully updated."
+msgstr ""
+
 msgid "The link was successfully copied"
 msgstr ""
 
@@ -512,10 +551,16 @@ msgstr ""
 msgid "Translate"
 msgstr ""
 
+msgid "Translate Email Template | %{client}"
+msgstr ""
+
 msgid "Translate Tag | %{client}"
 msgstr ""
 
 msgid "Translate a tag of %{client}"
+msgstr ""
+
+msgid "Translate an email template of %{client}"
 msgstr ""
 
 msgid "Translation"

@@ -214,6 +214,9 @@ msgstr "Περιγραφή"
 msgid "Details for a tag of %{client}"
 msgstr "Λεπτομέρειες για την ετικέτα του %{client}"
 
+msgid "Details for an email template of %{client}"
+msgstr "Λεπτομέρειες για το πρότυπο email του %{client}"
+
 msgid "Didn't receive confirmation instructions ?"
 msgstr "Δε λάβατε οδηγίες επιβεβαίωσης ?"
 
@@ -222,6 +225,12 @@ msgstr "Δε λάβατε οδηγίες ξεκλειδώματος"
 
 msgid "Edit"
 msgstr "Επεξεργασία"
+
+msgid "Edit Email Template"
+msgstr "Επεξεργασία Προτύπου Email"
+
+msgid "Edit Email Template | %{client}"
+msgstr "Επεξεργασία Προτύπου Email | %{client}"
 
 msgid "Edit Tag"
 msgstr "Επεξεργασία Ετικέτας"
@@ -232,11 +241,29 @@ msgstr "Επεξεργασία Ετικέτας | %{client}"
 msgid "Edit a tag of %{client}"
 msgstr "Επεξεργασία ετικέτας του %{client}"
 
+msgid "Edit an email template of %{client}"
+msgstr "Επεξεργασία προτύπου email του %{client}"
+
 msgid "Edit the settings of %{client}"
 msgstr "Επεξεργασία ρυθμίσεων του %{client}"
 
 msgid "Email Change"
 msgstr "Αλλαγή Email"
+
+msgid "Email Template Details"
+msgstr "Λεπτομέρειες Προτύπου Email"
+
+msgid "Email Template Details | %{client}"
+msgstr "Λεπτομέρειες Προτύπου Email | %{client}"
+
+msgid "Email Templates"
+msgstr "Πρότυπα Email"
+
+msgid "Email Templates | %{client}"
+msgstr "Πρότυπα Email | %{client}"
+
+msgid "Email templates of %{client}"
+msgstr "Πρότυπα email του %{client}"
 
 msgid "EmailTemplate|Body"
 msgstr "Κείμενο"
@@ -246,9 +273,6 @@ msgstr "Θέμα"
 
 msgid "EmailTemplate|Type"
 msgstr "Τύπος"
-
-msgid "Emails"
-msgstr "Emails"
 
 msgid "Enabled Languages"
 msgstr "Ενεργοποιημένες Γλώσσες"
@@ -307,6 +331,9 @@ msgstr "Επόμενη Σελίδα"
 msgid "No"
 msgstr "Όχι"
 
+msgid "No email templates were found."
+msgstr "Δε βρέθηκαν πρότυπα email."
+
 msgid "No media were found."
 msgstr "Δε βρέθηκαν αρχεία."
 
@@ -331,6 +358,9 @@ msgstr "Τύπος Αρχειοποίησης Κωδικού"
 msgid "OldPassword|Password salt"
 msgstr "Πρόσθετο Κωδικού"
 
+msgid "Original Email Template"
+msgstr "Αυθεντικό Πρότυπο Email"
+
 msgid "Original Tag"
 msgstr "Αυθεντική Ετικέτα"
 
@@ -347,7 +377,7 @@ msgid "Pages | %{client}"
 msgstr "Σελίδες | %{client}"
 
 msgid "Password Change"
-msgstr "Αλλαγή Email"
+msgstr "Αλλαγή Κωδικού"
 
 msgid "Post Drafts"
 msgstr "Προσχέδια Άρθρων"
@@ -436,6 +466,9 @@ msgstr "Slug"
 msgid "Someone has requested a link to change your password. You can do this through the link below."
 msgstr "Κάποιος ζήτησε σύνδεσμο για αλλαγή του κωδικού σας. Μπορείτε να το κάνετε μέσω του παρακάτω συνδέσμου."
 
+msgid "Subject"
+msgstr "Θέμα"
+
 msgid "Submit"
 msgstr "Κατάθεση"
 
@@ -478,6 +511,12 @@ msgstr "Πρότυπο"
 msgid "The administration of %{client}"
 msgstr "Η διαχείριση του %{client}"
 
+msgid "The email template was successfully translated."
+msgstr "Το πρότυπο email μεταφράστηκε με επιτυχία."
+
+msgid "The email template was successfully updated."
+msgstr "Το πρότυπο email δημιουργήθηκε με επιτυχία."
+
 msgid "The link was successfully copied"
 msgstr "Ο σύνδεσμος αντιγράφτηκε με επιτυχία"
 
@@ -511,11 +550,17 @@ msgstr "Συνολικά Άρθρα"
 msgid "Translate"
 msgstr "Μετάφραση"
 
+msgid "Translate Email Template | %{client}"
+msgstr "Μετάφραση Προτύπου Email | %{client}"
+
 msgid "Translate Tag | %{client}"
 msgstr "Μετάφραση Ετικέτας | %{client}"
 
 msgid "Translate a tag of %{client}"
 msgstr "Μετάφραση ετικέτας του %{client}"
+
+msgid "Translate an email template of %{client}"
+msgstr "Μετάφραση προτύπου email του %{client}"
 
 msgid "Translation"
 msgstr "Μετάφραση"
