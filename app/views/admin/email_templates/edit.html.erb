@@ -1,0 +1,64 @@
+<%
+    content_for :title, _('Edit Email Template | %{client}') % { client: current_client.name }
+    content_for :description, _('Edit an email template of %{client}') % { client: current_client.name }
+%>
+
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-envelope"></i>
+      &nbsp;
+      <%= _('Edit Email Template') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <%= render "admin/shared/error_messages", resource: @email_template %>
+    <%= form_with(model: @email_template.becomes(EmailTemplate), as: :email_template, url: admin_email_template_path(@email_template), method: :patch) do |f| %>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Name') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @email_template.type_name %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :subject, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :subject, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :body, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_area :body, class: 'textarea', required: true, rows: 5 %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success mb-1' %>
+            <a class="button" href="<%= admin_email_template_path(@email_template) %>"><%= _('Cancel') %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</article>

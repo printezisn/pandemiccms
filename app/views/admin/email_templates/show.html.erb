@@ -1,0 +1,99 @@
+<%
+    content_for :title, _('Email Template Details | %{client}') % { client: current_client.name }
+    content_for :description, _('Details for an email template of %{client}') % { client: current_client.name }
+%>
+
+<a class="button" href="<%= admin_email_templates_path %>">
+  <i class="fas fa-long-arrow-alt-left"></i>
+  &nbsp;
+  <%= _('Back') %>
+</a>
+<div class="dropdown is-togglable">
+  <div class="dropdown-trigger">
+    <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" class="button">
+      <%= _('Actions') %>
+      &nbsp;
+      <i class="fas fa-angle-down"></i>
+    </a>
+  </div>
+  <div class="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <% if current_client.enabled_languages.size > 1 %>
+      <a class="dropdown-item" href="<%= translate_admin_email_template_path(@email_template) %>">
+        <i class="fas fa-globe"></i>
+        &nbsp;
+        <%= _('Translate') %>
+      </a>
+      <% end %>
+      <a class="dropdown-item" href="<%= edit_admin_email_template_path(@email_template) %>">
+        <i class="fas fa-pen"></i>
+        &nbsp;
+        <%= _('Edit') %>
+      </a>
+    </div>
+  </div>
+</div>
+<article class="card mt-3">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-envelope"></i>
+      &nbsp;
+      <%= _('Email Template Details') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Name') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @email_template.type_name %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Subject') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @email_template.subject %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Created At') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @email_template.created_at %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Updated At') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @email_template.updated_at %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="card mt-3">
+  <div class="card-header">
+    <h2 class="card-header-title">
+      <i class="fas fa-file"></i>
+      &nbsp;
+      <%= _('EmailTemplate|Body') %>
+    </h2>
+  </div>
+  <div class="card-content">
+    <%= @email_template.body&.html_safe %>
+  </div>
+</article>
+</div>
