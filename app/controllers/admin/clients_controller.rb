@@ -2,8 +2,7 @@
 
 module Admin
   # Clients controller
-  class ClientsController < BaseController
-    before_action :require_supervisor
+  class ClientsController < BaseSupervisorController
     before_action :fetch_client
     before_action :fetch_languages
 
@@ -36,10 +35,6 @@ module Admin
     end
 
     private
-
-    def require_supervisor
-      redirect_to admin_root_path unless current_admin_user.supervisor?
-    end
 
     def fetch_client
       @client = Client.find(current_client.id)

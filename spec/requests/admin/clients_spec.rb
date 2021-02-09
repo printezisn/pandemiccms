@@ -21,7 +21,7 @@ RSpec.describe '/admin/clients', type: :request do
     context 'when the admin user is not a supervisor' do
       before { sign_in admin_user }
 
-      it 'redirects to the sign in page' do
+      it 'redirects to the admin dashboard page' do
         get admin_client_edit_path
 
         expect(response).to redirect_to(admin_root_path(locale: 'en'))
@@ -65,7 +65,7 @@ RSpec.describe '/admin/clients', type: :request do
     context 'when the admin user is not a supervisor' do
       before { sign_in admin_user }
 
-      it 'redirects to the sign in page' do
+      it 'redirects to the admin dashboard page' do
         patch admin_client_edit_path, params: params
 
         expect(response).to redirect_to(admin_root_path(locale: 'en'))
