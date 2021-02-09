@@ -15,6 +15,12 @@ Rails.application.routes.draw do
           post :translate, to: 'tags#save_translation'
         end
       end
+      resources :email_templates, only: %i[index show edit update] do
+        member do
+          get :translate
+          post :translate, to: 'email_templates#save_translation'
+        end
+      end
 
       get 'client/edit', to: 'clients#edit', as: :client_edit
       put 'client/edit', to: 'clients#update'
