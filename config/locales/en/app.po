@@ -55,6 +55,9 @@ msgstr[1] "%{count} Users"
 msgid "..."
 msgstr "..."
 
+msgid "Account Confirmation"
+msgstr "Account Confirmation"
+
 msgid "Actions"
 msgstr "Actions"
 

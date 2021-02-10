@@ -55,6 +55,9 @@ msgstr[1] "%{count} Χρήστες"
 msgid "..."
 msgstr "..."
 
+msgid "Account Confirmation"
+msgstr "Επιβεβαίωση Λογαριασμού"
+
 msgid "Actions"
 msgstr "Ενέργειες"
 
