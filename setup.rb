@@ -43,6 +43,11 @@ ActiveRecord::Base.transaction do
 
   client.save!
 
+  EmailTemplateType::AccountConfirmation.create!(client: client)
+  EmailTemplateType::ResetPasswordInstructions.create!(client: client)
+  EmailTemplateType::PasswordChange.create!(client: client)
+  EmailTemplateType::EmailChange.create!(client: client)
+
   admin_user = AdminUser.new(client_id: client.id)
 
   puts
