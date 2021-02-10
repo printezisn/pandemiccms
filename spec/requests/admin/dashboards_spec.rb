@@ -1,25 +1,25 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require './spec/requests/admin/shared/access_spec'
 
 RSpec.describe 'Admin::Dashboard', type: :request do
   let!(:admin_user) { FactoryBot.create(:admin_user) }
+  let(:signed_in_user) { admin_user }
+
+  before do
+    sign_in signed_in_user if signed_in_user
+  end
 
   describe 'GET /admin' do
-    context 'when the admin user is not authenticated' do
-      it 'redirects to the sign in page' do
-        get admin_root_path
-        expect(response).to redirect_to(new_admin_user_session_path)
-      end
-    end
+    let(:request) { get admin_root_path }
 
-    context 'when the admin user is authenticated' do
-      before { sign_in admin_user }
+    it_behaves_like 'admin user page'
 
-      it 'is successful' do
-        get admin_root_path
-        expect(response).to have_http_status(:ok)
-      end
+    it 'is successful' do
+      request
+
+      expect(response).to be_successful
     end
   end
 end
