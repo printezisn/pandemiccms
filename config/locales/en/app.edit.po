@@ -511,6 +511,9 @@ msgstr "Template"
 msgid "Template"
 msgstr "Template"
 
+msgid "The account confirmation token."
+msgstr "The account confirmation token."
+
 msgid "The administration of %{client}"
 msgstr "The administration of %{client}"
 
@@ -529,6 +532,9 @@ msgstr "The medium was successfully created."
 msgid "The medium was successfully deleted."
 msgstr "The medium was successfully deleted."
 
+msgid "The reset password token."
+msgstr "The reset password token."
+
 msgid "The settings were successfully updated."
 msgstr "The settings were successfully updated."
 
@@ -543,6 +549,18 @@ msgstr "The tag was successfully translated."
 
 msgid "The tag was successfully updated."
 msgstr "The tag was successfully created."
+
+msgid "The user's email address."
+msgstr "The user's email address."
+
+msgid "The user's full name."
+msgstr "The user's full name."
+
+msgid "The user's name."
+msgstr "The user's name."
+
+msgid "The user's unconfirmed email address."
+msgstr "The user's unconfirmed email address."
 
 msgid "Total Pages"
 msgstr "Total Pages"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-10 13:44+0200\n"
-"PO-Revision-Date: 2021-02-10 13:44+0200\n"
+"POT-Creation-Date: 2021-02-11 22:28+0200\n"
+"PO-Revision-Date: 2021-02-11 22:28+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -512,6 +512,9 @@ msgstr ""
 msgid "Template"
 msgstr ""
 
+msgid "The account confirmation token."
+msgstr ""
+
 msgid "The administration of %{client}"
 msgstr ""
 
@@ -530,6 +533,9 @@ msgstr ""
 msgid "The medium was successfully deleted."
 msgstr ""
 
+msgid "The reset password token."
+msgstr ""
+
 msgid "The settings were successfully updated."
 msgstr ""
 
@@ -543,6 +549,18 @@ msgid "The tag was successfully translated."
 msgstr ""
 
 msgid "The tag was successfully updated."
+msgstr ""
+
+msgid "The user's email address."
+msgstr ""
+
+msgid "The user's full name."
+msgstr ""
+
+msgid "The user's name."
+msgstr ""
+
+msgid "The user's unconfirmed email address."
 msgstr ""
 
 msgid "Total Pages"

@@ -10,5 +10,16 @@ RSpec.describe EmailTemplateType::EmailChange, type: :model do
     it { expect(model.type_name).to eq('Email Change') }
   end
 
+  describe '#parameters' do
+    it 'returns the available parameters with description' do
+      expect(model.parameters).to eq({
+                                       '{user.fullname}' => 'The user\'s full name.',
+                                       '{user.username}' => 'The user\'s name.',
+                                       '{user.email}' => 'The user\'s email address.',
+                                       '{user.unconfirmed_email}' => 'The user\'s unconfirmed email address.'
+                                     })
+    end
+  end
+
   it_behaves_like 'EmailTemplate'
 end

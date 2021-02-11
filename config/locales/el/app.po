@@ -511,6 +511,9 @@ msgstr "Πρότυπο"
 msgid "Template"
 msgstr "Πρότυπο"
 
+msgid "The account confirmation token."
+msgstr "Ο κωδικός επιβεβαίωσης λογαριασμού."
+
 msgid "The administration of %{client}"
 msgstr "Η διαχείριση του %{client}"
 
@@ -529,6 +532,9 @@ msgstr "Το αρχείο δημιουργήθηκε με επιτυχία."
 msgid "The medium was successfully deleted."
 msgstr "Το αρχείο διαγράφτηκε με επιτυχία."
 
+msgid "The reset password token."
+msgstr "Ο κωδικός επαναφοράς κωδικού."
+
 msgid "The settings were successfully updated."
 msgstr "Οι ρυθμίσεις ανανεώθηκαν με επιτυχία."
 
@@ -543,6 +549,18 @@ msgstr "Η ετικέτα μεταφράστηκε με επιτυχία."
 
 msgid "The tag was successfully updated."
 msgstr "Η ετικέτα δημιουργήθηκε με επιτυχία."
+
+msgid "The user's email address."
+msgstr "Η διεύθυνση email του χρήστη."
+
+msgid "The user's full name."
+msgstr "Το πλήρες όνομα του χρήστη."
+
+msgid "The user's name."
+msgstr "Το όνομα χρήστη."
+
+msgid "The user's unconfirmed email address."
+msgstr "Η μη επιβεβαιωμένη διεύθυνση email του χρήστη."
 
 msgid "Total Pages"
 msgstr "Συνολικές Σελίδες"

@@ -6,5 +6,13 @@ module EmailTemplateType
     def type_name
       _('Password Change')
     end
+
+    def parameters
+      {
+        '{user.fullname}' => _('The user\'s full name.'),
+        '{user.username}' => _('The user\'s name.'),
+        '{user.email}' => _('The user\'s email address.')
+      }
+    end
   end
 end
