@@ -118,6 +118,14 @@ const initImageUploaders = (root) => {
   Array.from(root.getElementsByClassName('image-uploader')).forEach((el) => initImageUploader(el));
 };
 
+const initRichEditors = (root) => {
+  Array.from(root.getElementsByClassName('rich-editor')).forEach((el) => {
+    import(/* webpackChunkName: 'rich-editor' */ './rich-editor').then(({ default: initRichEditor }) => {
+      initRichEditor(el);
+    });
+  });
+};
+
 const initHistory = () => {
   window.addEventListener('popstate', () => {
     window.location.reload();
@@ -138,6 +146,7 @@ const initAll = () => {
   initSmartTableSearchForms(document);
   initTabWrappers(document);
   initImageUploaders(document);
+  initRichEditors(document);
 
   initHistory();
 };

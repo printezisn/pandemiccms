@@ -28,7 +28,7 @@
         <div class="field">
           <span class="label"><%= _('EmailTemplate|Body') %></span>
           <div class="control">
-            <textarea rows="5" class="textarea" readonly><%= @email_template.body %></textarea>
+            <textarea id="original-email-template-body" rows="5" class="textarea rich-editor" readonly><%= @email_template.body %></textarea>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
         <div class="field">
           <%= f.label :body, class: 'label required-label' %>
           <div class="control">
-            <%= f.text_area :body, class: 'textarea', required: true, rows: 5 %>
+            <%= f.text_area :body, class: 'textarea rich-editor', required: true, rows: 5 %>
           </div>
         </div>
         <div class="field">
