@@ -3,7 +3,12 @@ import 'tinymce/icons/default';
 import 'tinymce/themes/silver';
 
 require.context(
-  '!file-loader?name=[path][name].[ext]&context=node_modules/tinymce&outputPath=js!tinymce',
+  '!file-loader?name=[path][name].[ext]&context=node_modules/tinymce&outputPath=js!tinymce/skins',
+  true,
+  /.*/,
+);
+require.context(
+  '!file-loader?name=[path][name].[ext]&context=node_modules/tinymce&outputPath=js!tinymce/plugins',
   true,
   /.*/,
 );
