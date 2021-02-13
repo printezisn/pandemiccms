@@ -9,7 +9,7 @@ module Admin
     # GET /email_templates
     # GET /email_templates.json
     def index
-      @email_templates = EmailTemplate.where(client_id: current_client.id)
+      @email_templates = EmailTemplate.where(client_id: current_client.id).sort_by(&:type_name)
     end
 
     # GET /email_templates/1
