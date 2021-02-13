@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_07_120759) do
+ActiveRecord::Schema.define(version: 2021_02_13_092744) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 2021_02_07_120759) do
     t.boolean "show_search_page", default: true, null: false
     t.boolean "show_tag_page", default: true, null: false
     t.boolean "show_category_page", default: true, null: false
+    t.string "email"
   end
 
   create_table "email_templates", charset: "utf8mb4", force: :cascade do |t|
