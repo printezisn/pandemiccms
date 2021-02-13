@@ -14,6 +14,8 @@ ActiveRecord::Base.transaction do
   puts 'Enter details about the client:'
   print 'Name: '
   client.name = gets.chomp.strip
+  print 'Email: '
+  client.email = gets.chomp.strip
   print 'Time zone: '
   client.time_zone = gets.chomp.strip
   print 'Domains and ports (e.g. localhost:3000,mysite.com:80): '
