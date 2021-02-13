@@ -91,6 +91,12 @@ msgstr "Κωδικός"
 msgid "AdminUser|Failed attempts"
 msgstr "Αποτυχημένες Προσπάθειες"
 
+msgid "AdminUser|First name"
+msgstr "Όνομα"
+
+msgid "AdminUser|Last name"
+msgstr "Επώνυμο"
+
 msgid "AdminUser|Last sign in at"
 msgstr "Τελευταία Σύνδεση"
 
@@ -99,6 +105,9 @@ msgstr "IP Τελευταίας Σύνδεσης"
 
 msgid "AdminUser|Locked at"
 msgstr "Κλειδώθηκε"
+
+msgid "AdminUser|Middle name"
+msgstr "Μεσαίο Όνομα"
 
 msgid "AdminUser|Password"
 msgstr "Κωδικός"
@@ -684,6 +693,15 @@ msgstr "Το email χρησιμοποιείται ήδη."
 
 msgid "activerecord.errors.models.admin_user.attributes.email.too_long"
 msgstr "Το email μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.admin_user.attributes.first_name.too_long"
+msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.admin_user.attributes.last_name.too_long"
+msgstr "Το μεσαίο όνομα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.admin_user.attributes.middle_name.too_long"
+msgstr "Το επώνυμο μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
 
 msgid "activerecord.errors.models.admin_user.attributes.password.blank"
 msgstr "Ο κωδικός είναι υποχρεωτικός."

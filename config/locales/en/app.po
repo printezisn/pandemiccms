@@ -91,6 +91,12 @@ msgstr "Password"
 msgid "AdminUser|Failed attempts"
 msgstr "Failed Attempts"
 
+msgid "AdminUser|First name"
+msgstr "First Name"
+
+msgid "AdminUser|Last name"
+msgstr "Last Name"
+
 msgid "AdminUser|Last sign in at"
 msgstr "Last Sign In At"
 
@@ -99,6 +105,9 @@ msgstr "Last Sign In IP"
 
 msgid "AdminUser|Locked at"
 msgstr "Locked At"
+
+msgid "AdminUser|Middle name"
+msgstr "Middle Name"
 
 msgid "AdminUser|Password"
 msgstr "Password"
@@ -684,6 +693,15 @@ msgstr "The email is already used."
 
 msgid "activerecord.errors.models.admin_user.attributes.email.too_long"
 msgstr "The email may contain up to %{count} characters."
+
+msgid "activerecord.errors.models.admin_user.attributes.first_name.too_long"
+msgstr "The first name may contain up to %{count} characters."
+
+msgid "activerecord.errors.models.admin_user.attributes.last_name.too_long"
+msgstr "The last name may contain up to %{count} characters."
+
+msgid "activerecord.errors.models.admin_user.attributes.middle_name.too_long"
+msgstr "The middle name may contain up to %{count} characters."
 
 msgid "activerecord.errors.models.admin_user.attributes.password.blank"
 msgstr "The password is required."

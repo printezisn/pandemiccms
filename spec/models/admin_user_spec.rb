@@ -81,6 +81,27 @@ RSpec.describe AdminUser, type: :model do
       .with_message('Password confirmation must match the password.')
   end
 
+  # First name
+  it { is_expected.to validate_length_of(:first_name).is_at_most(255).with_message('The first name may contain up to 255 characters.') }
+
+  # Middle name
+  it { is_expected.to validate_length_of(:middle_name).is_at_most(255).with_message('The middle name may contain up to 255 characters.') }
+
+  # Last name
+  it { is_expected.to validate_length_of(:last_name).is_at_most(255).with_message('The last name may contain up to 255 characters.') }
+
+  describe '#full_name' do
+    context 'with middle name' do
+      it { expect(model.full_name).to eq("#{model.first_name} #{model.middle_name} #{model.last_name}") }
+    end
+
+    context 'without middle name' do
+      subject(:model) { FactoryBot.build(:admin_user, middle_name: '') }
+
+      it { expect(model.full_name).to eq("#{model.first_name} #{model.last_name}") }
+    end
+  end
+
   describe '#supervisor?' do
     context 'when the user does not have a supervisor role' do
       it { is_expected.not_to be_supervisor }

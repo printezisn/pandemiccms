@@ -31,6 +31,13 @@ class AdminUser < ApplicationRecord
                        length: { maximum: 128 },
                        confirmation: { case_sensitive: false },
                        if: -> { password.present? }
+  validates :first_name, length: { maximum: 255 }
+  validates :middle_name, length: { maximum: 255 }
+  validates :last_name, length: { maximum: 255 }
+
+  def full_name
+    "#{first_name} #{middle_name} #{last_name}".squeeze(' ')
+  end
 
   def supervisor?
     admin_user_roles.any?(&:supervisor?)

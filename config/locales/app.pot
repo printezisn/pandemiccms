@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-13 11:35+0200\n"
-"PO-Revision-Date: 2021-02-13 11:35+0200\n"
+"POT-Creation-Date: 2021-02-13 12:41+0200\n"
+"PO-Revision-Date: 2021-02-13 12:41+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -92,6 +92,12 @@ msgstr ""
 msgid "AdminUser|Failed attempts"
 msgstr ""
 
+msgid "AdminUser|First name"
+msgstr ""
+
+msgid "AdminUser|Last name"
+msgstr ""
+
 msgid "AdminUser|Last sign in at"
 msgstr ""
 
@@ -99,6 +105,9 @@ msgid "AdminUser|Last sign in ip"
 msgstr ""
 
 msgid "AdminUser|Locked at"
+msgstr ""
+
+msgid "AdminUser|Middle name"
 msgstr ""
 
 msgid "AdminUser|Password"
@@ -684,6 +693,15 @@ msgid "activerecord.errors.models.admin_user.attributes.email.taken"
 msgstr ""
 
 msgid "activerecord.errors.models.admin_user.attributes.email.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.admin_user.attributes.first_name.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.admin_user.attributes.last_name.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.admin_user.attributes.middle_name.too_long"
 msgstr ""
 
 msgid "activerecord.errors.models.admin_user.attributes.password.blank"
