@@ -19,6 +19,10 @@ RSpec.describe Client, type: :model do
 
   it { is_expected.to validate_presence_of(:name).with_message('The name is required.') }
 
+  it { is_expected.to validate_length_of(:email).is_at_most(255).with_message('The email may contain up to 255 characters.') }
+  it { is_expected.to allow_value('test@test.com').for(:email) }
+  it { is_expected.not_to allow_value('test').for(:email).with_message('The email format is invalid.') }
+
   describe '#default_url_options' do
     let(:client_domain) { model.client_domains.first }
 

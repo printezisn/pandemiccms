@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
+require 'uri'
+
 # Client model
 class Client < ApplicationRecord
+  DEFAULT_EMAIL = 'admin@pandemiccms.com'
+
   include Imageable
 
   has_many :client_languages, inverse_of: :client, dependent: :destroy
@@ -15,6 +19,8 @@ class Client < ApplicationRecord
   has_many :email_templates, inverse_of: :client, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
+  validates :email, length: { maximum: 255 }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, if: -> { email.present? }
 
   def default_url_options
     @default_url_options ||= {

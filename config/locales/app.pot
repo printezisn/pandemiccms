@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-13 10:33+0200\n"
-"PO-Revision-Date: 2021-02-13 10:33+0200\n"
+"POT-Creation-Date: 2021-02-13 11:35+0200\n"
+"PO-Revision-Date: 2021-02-13 11:35+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -150,6 +150,9 @@ msgid "Choose an image..."
 msgstr ""
 
 msgid "Click the link below to unlock your account:"
+msgstr ""
+
+msgid "Client|Email"
 msgstr ""
 
 msgid "Client|Image"
@@ -705,6 +708,12 @@ msgid "activerecord.errors.models.admin_user.attributes.username.taken"
 msgstr ""
 
 msgid "activerecord.errors.models.admin_user.attributes.username.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.client.attributes.email.invalid"
+msgstr ""
+
+msgid "activerecord.errors.models.client.attributes.email.too_long"
 msgstr ""
 
 msgid "activerecord.errors.models.client.attributes.name.blank"

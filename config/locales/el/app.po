@@ -151,6 +151,9 @@ msgstr "Επιλέξτε εικόνα..."
 msgid "Click the link below to unlock your account:"
 msgstr "Πατήστε στο σύνδεσμο για να ξεκλειδώσετε το λογαριασμό σας:"
 
+msgid "Client|Email"
+msgstr "Email"
+
 msgid "Client|Image"
 msgstr "Εικόνα"
 
@@ -705,6 +708,12 @@ msgstr "Το όνομα χρήστη χρησιμοποιείται ήδη."
 
 msgid "activerecord.errors.models.admin_user.attributes.username.too_long"
 msgstr "Το όνομα χρήστη μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.client.attributes.email.invalid"
+msgstr "Το email δεν είναι έγκυρο."
+
+msgid "activerecord.errors.models.client.attributes.email.too_long"
+msgstr "Το email μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
 
 msgid "activerecord.errors.models.client.attributes.name.blank"
 msgstr "Το όνομα είναι υποχρεωτικό."
