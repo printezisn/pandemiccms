@@ -12,7 +12,7 @@ module EmailTemplateType
         '{user.fullname}' => _('The user\'s full name.'),
         '{user.username}' => _('The user\'s name.'),
         '{user.email}' => _('The user\'s email address.'),
-        '{user.reset_password_token}' => _('The reset password token.')
+        '{user.reset_password_link}' => _('The reset password link.')
       }
     end
   end

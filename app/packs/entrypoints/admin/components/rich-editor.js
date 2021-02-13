@@ -11,6 +11,7 @@ require.context(
 const initRichEditor = (editor) => {
   tinymce.init({
     selector: `#${editor.id}`,
+    convert_urls: false,
     plugins: [
       'advlist autolink lists link image charmap print preview anchor',
       'searchreplace visualblocks code fullscreen',

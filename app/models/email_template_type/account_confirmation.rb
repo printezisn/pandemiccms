@@ -12,7 +12,7 @@ module EmailTemplateType
         '{user.fullname}' => _('The user\'s full name.'),
         '{user.username}' => _('The user\'s name.'),
         '{user.email}' => _('The user\'s email address.'),
-        '{user.confirmation_token}' => _('The account confirmation token.')
+        '{user.confirmation_link}' => _('The account confirmation link.')
       }
     end
   end

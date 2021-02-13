@@ -16,7 +16,7 @@ RSpec.describe EmailTemplateType::ResetPasswordInstructions, type: :model do
                                        '{user.fullname}' => 'The user\'s full name.',
                                        '{user.username}' => 'The user\'s name.',
                                        '{user.email}' => 'The user\'s email address.',
-                                       '{user.reset_password_token}' => 'The reset password token.'
+                                       '{user.reset_password_link}' => 'The reset password link.'
                                      })
     end
   end

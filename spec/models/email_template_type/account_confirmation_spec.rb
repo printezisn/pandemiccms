@@ -16,7 +16,7 @@ RSpec.describe EmailTemplateType::AccountConfirmation, type: :model do
                                        '{user.fullname}' => 'The user\'s full name.',
                                        '{user.username}' => 'The user\'s name.',
                                        '{user.email}' => 'The user\'s email address.',
-                                       '{user.confirmation_token}' => 'The account confirmation token.'
+                                       '{user.confirmation_link}' => 'The account confirmation link.'
                                      })
     end
   end

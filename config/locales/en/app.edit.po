@@ -529,8 +529,8 @@ msgstr "Template"
 msgid "Template"
 msgstr "Template"
 
-msgid "The account confirmation token."
-msgstr "The account confirmation token."
+msgid "The account confirmation link."
+msgstr "The account confirmation link."
 
 msgid "The administration of %{client}"
 msgstr "The administration of %{client}"
@@ -550,8 +550,8 @@ msgstr "The medium was successfully created."
 msgid "The medium was successfully deleted."
 msgstr "The medium was successfully deleted."
 
-msgid "The reset password token."
-msgstr "The reset password token."
+msgid "The reset password link."
+msgstr "The reset password link."
 
 msgid "The settings were successfully updated."
 msgstr "The settings were successfully updated."
