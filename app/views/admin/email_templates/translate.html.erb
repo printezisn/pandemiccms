@@ -20,6 +20,12 @@
       </header>
       <div class="card-content">
         <div class="field">
+          <span class="label"><%= _('Name') %></span>
+          <div class="control">
+            <%= @translation.type_name %>
+          </div>
+        </div>
+        <div class="field">
           <span class="label"><%= _('Subject') %></span>
           <div class="control">
             <input type="text" class="input" value="<%= @email_template.subject %>" readonly />
@@ -48,6 +54,13 @@
         <%= render "admin/shared/error_messages", resource: @email_template %>
         <%= form_with(model: @translation.becomes(EmailTemplate), url: translate_admin_email_template_path(@email_template, translation_locale: translation_locale), method: :post) do |f| %>
         <div class="field">
+          <span class="label"><%= _('Name') %></span>
+          <div class="control">
+            <%= @translation.type_name %>
+            (<a href="javascript:void(0)" data-modal-open="parameters-modal"><%= _('parameters') %></a>)
+          </div>
+        </div>
+        <div class="field">
           <%= f.label :subject, class: 'label required-label' %>
           <div class="control">
             <%= f.text_field :subject, class: 'input', required: true %>
@@ -66,6 +79,7 @@
         </div>
         <% end %>
       </div>
+      <%= render partial: 'parameters_modal', locals: { parameters: @email_template.parameters } %>
     </article>
   </div>
 </div>

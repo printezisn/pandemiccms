@@ -20,7 +20,10 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control"><%= @email_template.type_name %></div>
+          <div class="control">
+            <%= @email_template.type_name %>
+            (<a href="javascript:void(0)" data-modal-open="parameters-modal"><%= _('parameters') %></a>)
+          </div>
         </div>
       </div>
     </div>
@@ -61,4 +64,5 @@
     </div>
     <% end %>
   </div>
+  <%= render partial: 'parameters_modal', locals: { parameters: @email_template.parameters } %>
 </article>

@@ -166,6 +166,9 @@ msgstr "Show Search Page"
 msgid "Client|Show tag page"
 msgstr "Show Tag Page"
 
+msgid "Close"
+msgstr "Close"
+
 msgid "Confirm my account"
 msgstr "Confirm my account"
 
@@ -378,6 +381,9 @@ msgstr "Pages of %{client}"
 
 msgid "Pages | %{client}"
 msgstr "Pages | %{client}"
+
+msgid "Parameters"
+msgstr "Parameters"
 
 msgid "Password Change"
 msgstr "Password Change"
@@ -906,3 +912,6 @@ msgstr "The password must contain at least %{count} upper-case letters."
 
 msgid "errors.messages.taken_in_past"
 msgstr "You have already used this password in the past. Please choose a new one."
+
+msgid "parameters"
+msgstr "parameters"

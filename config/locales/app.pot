@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-11 22:28+0200\n"
-"PO-Revision-Date: 2021-02-11 22:28+0200\n"
+"POT-Creation-Date: 2021-02-13 10:33+0200\n"
+"PO-Revision-Date: 2021-02-13 10:33+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -165,6 +165,9 @@ msgid "Client|Show search page"
 msgstr ""
 
 msgid "Client|Show tag page"
+msgstr ""
+
+msgid "Close"
 msgstr ""
 
 msgid "Confirm my account"
@@ -378,6 +381,9 @@ msgid "Pages of %{client}"
 msgstr ""
 
 msgid "Pages | %{client}"
+msgstr ""
+
+msgid "Parameters"
 msgstr ""
 
 msgid "Password Change"
@@ -906,4 +912,7 @@ msgid "errors.messages.password_complexity.upper.other"
 msgstr ""
 
 msgid "errors.messages.taken_in_past"
+msgstr ""
+
+msgid "parameters"
 msgstr ""

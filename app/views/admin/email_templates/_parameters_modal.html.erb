@@ -1,0 +1,21 @@
+<aside id="parameters-modal" class="modal">
+  <div class="modal-background cancel"></div>
+  <div class="modal-card">
+    <div class="modal-card-head">
+      <p class="modal-card-title"><%= _('Parameters') %></p>
+      <button type="button" class="delete cancel" aria-label="close"></button>
+    </div>
+    <div class="modal-card-body">
+      <ul>
+        <% parameters.each do |name, description| %>
+        <li>
+          <strong><%= name %></strong>:
+          <%= description %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="modal-card-foot">
+      <button type="button" class="button cancel"><%= _('Close') %></button>
+    </div>
+</aside>
