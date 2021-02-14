@@ -14,5 +14,9 @@ module EmailTemplateType
         '{user.email}' => _('The user\'s email address.')
       }
     end
+
+    def send_test_email(admin_user)
+      AuthMailer.password_change(admin_user).deliver
+    end
   end
 end

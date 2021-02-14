@@ -150,4 +150,20 @@ RSpec.describe '/admin/email_templates', type: :request do
       end
     end
   end
+
+  describe 'POST /test' do
+    let(:request) { post test_admin_email_template_path(model) }
+
+    it_behaves_like 'supervisor page'
+
+    it 'sends a test email' do
+      expect { request }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    end
+
+    it 'redirects to the email template' do
+      request
+
+      expect(response).to redirect_to(admin_email_template_path(id: model.id, locale: 'en'))
+    end
+  end
 end

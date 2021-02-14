@@ -55,6 +55,9 @@ msgstr[1] "%{count} Users"
 msgid "..."
 msgstr "..."
 
+msgid "A test email was successfully sent to your email address."
+msgstr "A test email was successfully sent to your email address."
+
 msgid "Account Confirmation"
 msgstr "Account Confirmation"
 
@@ -528,6 +531,9 @@ msgstr "Template"
 
 msgid "Template"
 msgstr "Template"
+
+msgid "Test Email"
+msgstr "Test Email"
 
 msgid "The account confirmation link."
 msgstr "The account confirmation link."

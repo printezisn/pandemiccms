@@ -55,6 +55,9 @@ msgstr[1] "%{count} Χρήστες"
 msgid "..."
 msgstr "..."
 
+msgid "A test email was successfully sent to your email address."
+msgstr "Ένα δοκιμαστικό email απεστάλη με επιτυχία στη διεύθυνση email σας."
+
 msgid "Account Confirmation"
 msgstr "Επιβεβαίωση Λογαριασμού"
 
@@ -528,6 +531,9 @@ msgstr "Πρότυπο"
 
 msgid "Template"
 msgstr "Πρότυπο"
+
+msgid "Test Email"
+msgstr "Δοκιμαστικό Email"
 
 msgid "The account confirmation link."
 msgstr "Ο σύνδεσμος επιβεβαίωσης λογαριασμού."

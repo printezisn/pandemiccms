@@ -31,5 +31,9 @@ RSpec.describe Admin::EmailTemplatesController, type: :routing do
     it 'routes to #save_translation' do
       expect(post: '/admin/email_templates/1/translate').to route_to('admin/email_templates#save_translation', id: '1')
     end
+
+    it 'routes to #test' do
+      expect(post: '/admin/email_templates/1/test').to route_to('admin/email_templates#test', id: '1')
+    end
   end
 end

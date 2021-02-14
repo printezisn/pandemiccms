@@ -19,6 +19,7 @@ Rails.application.routes.draw do
         member do
           get :translate
           post :translate, to: 'email_templates#save_translation'
+          post :test
         end
       end
 

@@ -23,6 +23,14 @@ RSpec.shared_examples 'EmailTemplate' do
     end
   end
 
+  describe '#send_test_email' do
+    let!(:admin_user) { FactoryBot.create(:admin_user) }
+
+    it 'sends test email' do
+      expect { model.send_test_email(admin_user) }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    end
+  end
+
   describe 'concerns' do
     let(:translation) { FactoryBot.build(:email_template, type: described_class.name) }
 

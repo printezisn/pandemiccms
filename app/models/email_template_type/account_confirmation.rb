@@ -15,5 +15,9 @@ module EmailTemplateType
         '{user.confirmation_link}' => _('The account confirmation link.')
       }
     end
+
+    def send_test_email(admin_user)
+      AuthMailer.confirmation_instructions(admin_user, '1234').deliver
+    end
   end
 end

@@ -3,7 +3,7 @@
 module Admin
   # Admin email templates controller
   class EmailTemplatesController < BaseSupervisorController
-    before_action :fetch_email_template, only: %i[show edit update translate save_translation]
+    before_action :fetch_email_template, only: %i[show edit update translate save_translation test]
     before_action :fetch_translation, only: %i[translate save_translation]
 
     # GET /email_templates
@@ -44,6 +44,13 @@ module Admin
 
         render :translate
       end
+    end
+
+    # POST /email_templates/1/test
+    def test
+      @email_template.send_test_email(current_admin_user)
+
+      redirect_to admin_email_template_path(@email_template), notice: _('A test email was successfully sent to your email address.')
     end
 
     private

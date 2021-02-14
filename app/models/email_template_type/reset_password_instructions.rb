@@ -15,5 +15,9 @@ module EmailTemplateType
         '{user.reset_password_link}' => _('The reset password link.')
       }
     end
+
+    def send_test_email(admin_user)
+      AuthMailer.reset_password_instructions(admin_user, '1234').deliver
+    end
   end
 end

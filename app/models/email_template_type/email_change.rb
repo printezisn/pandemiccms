@@ -15,5 +15,9 @@ module EmailTemplateType
         '{user.unconfirmed_email}' => _('The user\'s unconfirmed email address.')
       }
     end
+
+    def send_test_email(admin_user)
+      AuthMailer.email_changed(admin_user).deliver
+    end
   end
 end

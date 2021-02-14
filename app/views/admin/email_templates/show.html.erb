@@ -25,6 +25,13 @@
         <%= _('Translate') %>
       </a>
       <% end %>
+      <%= form_with(url: test_admin_email_template_path(@email_template), method: :post) do |f| %>
+      <a class="dropdown-item" href="javascript:void(0)" onclick="this.parentElement.submit()">
+        <i class="fas fa-paper-plane"></i>
+        &nbsp;
+        <%= _('Test Email') %>
+      </a>
+      <% end %>
       <a class="dropdown-item" href="<%= edit_admin_email_template_path(@email_template) %>">
         <i class="fas fa-pen"></i>
         &nbsp;
