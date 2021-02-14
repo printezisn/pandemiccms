@@ -271,6 +271,9 @@ msgstr "Επεξεργασία ρυθμίσεων του %{client}"
 msgid "Email Change"
 msgstr "Αλλαγή Email"
 
+msgid "Email Template"
+msgstr "Πρότυπο Email"
+
 msgid "Email Template Details"
 msgstr "Λεπτομέρειες Προτύπου Email"
 
@@ -378,12 +381,6 @@ msgstr "Τύπος Αρχειοποίησης Κωδικού"
 
 msgid "OldPassword|Password salt"
 msgstr "Πρόσθετο Κωδικού"
-
-msgid "Original Email Template"
-msgstr "Αυθεντικό Πρότυπο Email"
-
-msgid "Original Tag"
-msgstr "Αυθεντική Ετικέτα"
 
 msgid "Page Drafts"
 msgstr "Προσχέδια Σελίδων"
@@ -495,6 +492,9 @@ msgstr "Θέμα"
 
 msgid "Submit"
 msgstr "Υποβολή"
+
+msgid "Tag"
+msgstr "Ετικέτα"
 
 msgid "Tag Details"
 msgstr "Λεπτομέρειες Ετικέτας"

@@ -271,6 +271,9 @@ msgstr "Edit the settings of %{client}"
 msgid "Email Change"
 msgstr "Email Change"
 
+msgid "Email Template"
+msgstr "Email Template"
+
 msgid "Email Template Details"
 msgstr "Email Template Details"
 
@@ -378,12 +381,6 @@ msgstr "Password Archivable Type"
 
 msgid "OldPassword|Password salt"
 msgstr "Password Salt"
-
-msgid "Original Email Template"
-msgstr "Original Email Template"
-
-msgid "Original Tag"
-msgstr "Original Tag"
 
 msgid "Page Drafts"
 msgstr "Page Drafts"
@@ -495,6 +492,9 @@ msgstr "Subject"
 
 msgid "Submit"
 msgstr "Submit"
+
+msgid "Tag"
+msgstr "Tag"
 
 msgid "Tag Details"
 msgstr "Tag Details"
