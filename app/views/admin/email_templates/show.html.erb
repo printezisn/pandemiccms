@@ -26,7 +26,7 @@
       </a>
       <% end %>
       <%= form_with(url: test_admin_email_template_path(@email_template), method: :post) do |f| %>
-      <a class="dropdown-item" href="javascript:void(0)" onclick="this.parentElement.submit()">
+      <a class="dropdown-item submit-parent-form" href="javascript:void(0)">
         <i class="fas fa-paper-plane"></i>
         &nbsp;
         <%= _('Test Email') %>

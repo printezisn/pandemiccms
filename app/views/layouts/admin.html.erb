@@ -127,7 +127,7 @@
               </a>
               <hr class="navbar-divider" />
               <%= form_with(url: destroy_admin_user_session_path, method: :delete) do |f| %>
-              <a class="navbar-item" href="javascript:void(0)" onclick="this.parentElement.submit()">
+              <a class="navbar-item submit-parent-form" href="javascript:void(0)">
                 <i class="fas fa-unlock"></i>
                 &nbsp;
                 <%= _('Sign Out') %>

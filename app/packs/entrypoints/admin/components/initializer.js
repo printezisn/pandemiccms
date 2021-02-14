@@ -126,6 +126,14 @@ const initRichEditors = (root) => {
   });
 };
 
+const initParentFormSubmits = (root) => {
+  Array.from(root.getElementsByClassName('submit-parent-form')).forEach((el) => {
+    el.addEventListener('click', () => {
+      el.parentElement.submit();
+    });
+  });
+};
+
 const initHistory = () => {
   window.addEventListener('popstate', () => {
     window.location.reload();
@@ -147,6 +155,7 @@ const initAll = () => {
   initTabWrappers(document);
   initImageUploaders(document);
   initRichEditors(document);
+  initParentFormSubmits(document);
 
   initHistory();
 };
