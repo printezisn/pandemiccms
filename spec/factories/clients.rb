@@ -3,6 +3,7 @@
 FactoryBot.define do
   factory :client do
     name { 'test_client' }
+    email { 'test_client@email.com' }
     time_zone { 'UTC' }
     template { 'sample' }
     initialize_with { Client.find_or_create_by(name: name, time_zone: time_zone, template: template) }
