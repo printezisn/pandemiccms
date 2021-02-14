@@ -15,10 +15,15 @@ A CMS, created in the pandemic, which can do the following for you:
   - Menus
   - Media
   - Settings
+  - Email Templates
   - Users
 
-- Support multiple tenants/sites in the same instance.
+- Support multiple clients/sites in the same instance.
 - Support multiple languages.
+
+It's designed to be simple and easily extensible, with no magic tricks, so that it can be used as a base for various kinds of projects.
+
+**This is still a work in progress.**
 
 ## Stack
 
@@ -49,6 +54,7 @@ You need to have the following installed to run the project:
 - Ruby
 - NodeJS
 - MySQL (or MariaDB)
+- ImageMagick
 
 ## How to prepare
 
@@ -59,7 +65,11 @@ You need to have the following installed to run the project:
 
 **2. Add configuration**:
 
-Add configuration by running `EDITOR=<editor> rails credentials:edit`. The credentials file contains configuration for MySQL/MariaDB and must have the following structure:
+Add configuration by running `EDITOR=<editor> rails credentials:edit`. The credentials file contains configuration for the following services:
+- MySQL/MariaDB
+- SMTP mail server
+
+and it has the following structure:
 
 ```
 secret_key_base: <secret_key_base>
@@ -67,6 +77,9 @@ mysql:
   host: <host>
   username: <username>
   password: <password>
+smtp:
+  host: <host>
+  port: <port>
 ```
 
 If you need to generate a new value for `secret_key_base`, you can do it by running `rails secret`.
