@@ -91,14 +91,26 @@ RSpec.describe AdminUser, type: :model do
   it { is_expected.to validate_length_of(:last_name).is_at_most(255).with_message('The last name may contain up to 255 characters.') }
 
   describe '#full_name' do
-    context 'with middle name' do
+    context 'with first, middle and last name' do
       it { expect(model.full_name).to eq("#{model.first_name} #{model.middle_name} #{model.last_name}") }
     end
 
-    context 'without middle name' do
+    context 'with first and last name' do
       subject(:model) { FactoryBot.build(:admin_user, middle_name: '') }
 
       it { expect(model.full_name).to eq("#{model.first_name} #{model.last_name}") }
+    end
+
+    context 'with first name only' do
+      subject(:model) { FactoryBot.build(:admin_user, middle_name: '', last_name: '') }
+
+      it { expect(model.full_name).to eq(model.first_name) }
+    end
+
+    context 'without any name' do
+      subject(:model) { FactoryBot.build(:admin_user, first_name: '', middle_name: '', last_name: '') }
+
+      it { expect(model.full_name).to eq(model.username) }
     end
   end
 

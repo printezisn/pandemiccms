@@ -36,7 +36,7 @@ class AdminUser < ApplicationRecord
   validates :last_name, length: { maximum: 255 }
 
   def full_name
-    "#{first_name} #{middle_name} #{last_name}".squeeze(' ')
+    "#{first_name} #{middle_name} #{last_name}".strip.squeeze(' ').presence || username
   end
 
   def supervisor?
