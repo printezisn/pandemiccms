@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :check_client_existence
   before_action :set_locale
   before_action :set_time_zone
+  before_action :set_date_time_formats
 
   helper_method :current_client
   helper_method :current_language
@@ -35,6 +36,11 @@ class ApplicationController < ActionController::Base
 
   def current_locale
     @current_locale ||= current_language&.locale || I18n.default_locale
+  end
+
+  def set_date_time_formats
+    Date::DATE_FORMATS[:default] = _('date.formats.default')
+    Time::DATE_FORMATS[:default] = _('time.formats.default')
   end
 
   def layout
