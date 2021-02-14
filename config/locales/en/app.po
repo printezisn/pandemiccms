@@ -167,7 +167,7 @@ msgid "Client|Email"
 msgstr "Email"
 
 msgid "Client|Image"
-msgstr "Image"
+msgstr "Logo"
 
 msgid "Client|Name"
 msgstr "Name"

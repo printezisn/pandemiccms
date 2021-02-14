@@ -167,7 +167,7 @@ msgid "Client|Email"
 msgstr "Email"
 
 msgid "Client|Image"
-msgstr "Εικόνα"
+msgstr "Λογότυπο"
 
 msgid "Client|Name"
 msgstr "Όνομα"
@@ -494,7 +494,7 @@ msgid "Subject"
 msgstr "Θέμα"
 
 msgid "Submit"
-msgstr "Κατάθεση"
+msgstr "Υποβολή"
 
 msgid "Tag Details"
 msgstr "Λεπτομέρειες Ετικέτας"
