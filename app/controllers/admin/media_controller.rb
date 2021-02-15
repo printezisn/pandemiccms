@@ -10,7 +10,8 @@ module Admin
     # GET /admin/media
     # GET /admin/media.json
     def index
-      @media = Medium.where(client_id: current_client.id)
+      @media = Medium.includes(file_attachment: :blob)
+                     .where(client_id: current_client.id)
                      .simple_text_search(params[:search])
                      .bound_sort(params[:sort_by], params[:dir])
                      .page(params[:page].to_i)

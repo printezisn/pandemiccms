@@ -8,6 +8,8 @@ module SimpleTextSearchable
     text_searchable_fields = self::TEXT_SEARCHABLE_FIELDS
 
     scope :simple_text_search, lambda { |term|
+      return if term.blank?
+
       where_condition = nil
 
       text_searchable_fields.each do |field|
