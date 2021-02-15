@@ -21,6 +21,7 @@ class Client < ApplicationRecord
   validates :name, presence: true, length: { maximum: 255 }
   validates :email, length: { maximum: 255 }
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, if: -> { email.present? }
+  validate :valid_time_zone
 
   def default_url_options
     @default_url_options ||= {
@@ -41,5 +42,11 @@ class Client < ApplicationRecord
     @default_language ||=
       enabled_client_languages.detect(&:default?)&.language ||
       enabled_client_languages.first&.language
+  end
+
+  private
+
+  def valid_time_zone
+    errors.add(:time_zone, :invalid) unless ActiveSupport::TimeZone[time_zone.to_s]
   end
 end

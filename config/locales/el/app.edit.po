@@ -181,6 +181,9 @@ msgstr "Προβολή Σελίδας Αναζήτησης"
 msgid "Client|Show tag page"
 msgstr "Προβολή Σελίδας Ετικέτας"
 
+msgid "Client|Time zone"
+msgstr "Ζώνη Ώρας"
+
 msgid "Close"
 msgstr "Κλείσιμο"
 
@@ -744,6 +747,9 @@ msgstr "Το όνομα είναι υποχρεωτικό."
 
 msgid "activerecord.errors.models.client.attributes.name.too_long"
 msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.client.attributes.time_zone.invalid"
+msgstr "Η ζώνη ώρας δεν είναι έγκυρη."
 
 msgid "activerecord.errors.models.email_template.attributes.body.blank"
 msgstr "Το κείμενο είναι υποχρεωτικό."

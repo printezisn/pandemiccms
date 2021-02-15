@@ -34,6 +34,8 @@ RSpec.describe '/admin/clients', type: :request do
         client: {
           image: Rack::Test::UploadedFile.new(File.open(Rails.root.join('spec/fixtures/test.png'))),
           name: 'Test Client Name',
+          time_zone: 'Athens',
+          email: 'testnew@email.com',
           show_search_page: true,
           show_category_page: true,
           show_tag_page: true
@@ -75,6 +77,8 @@ RSpec.describe '/admin/clients', type: :request do
           client: {
             image: Rack::Test::UploadedFile.new(File.open(Rails.root.join('spec/fixtures/test.png'))),
             name: '',
+            time_zone: 'Athens',
+            email: 'testnew@email.com',
             show_search_page: true,
             show_category_page: true,
             show_tag_page: true

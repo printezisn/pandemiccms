@@ -23,6 +23,20 @@ RSpec.describe Client, type: :model do
   it { is_expected.to allow_value('test@test.com').for(:email) }
   it { is_expected.not_to allow_value('test').for(:email).with_message('The email format is invalid.') }
 
+  describe '#valid_time_zone' do
+    context 'when invalid time zone' do
+      before { model.time_zone = 'invalid' }
+
+      it { is_expected.to be_invalid }
+    end
+
+    context 'when valid time zone' do
+      before { model.time_zone = 'UTC' }
+
+      it { is_expected.to be_valid }
+    end
+  end
+
   describe '#default_url_options' do
     let(:client_domain) { model.client_domains.first }
 

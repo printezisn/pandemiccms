@@ -53,6 +53,20 @@
       </div>
     </div>
     <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :time_zone, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <div class="select">
+              <%= f.time_zone_select :time_zone %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
       <div class="field-label">
         <%= f.label :show_search_page, class: 'label' %>
       </div>
