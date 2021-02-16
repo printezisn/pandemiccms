@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_13_103512) do
+ActiveRecord::Schema.define(version: 2021_02_16_180158) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2021_02_13_103512) do
     t.string "middle_name"
     t.string "last_name"
     t.text "description"
+    t.integer "status", limit: 1, default: 0
     t.index ["client_id", "email"], name: "index_admin_users_on_client_id_and_email"
     t.index ["client_id", "username"], name: "index_admin_users_on_client_id_and_username", unique: true
     t.index ["client_id"], name: "index_admin_users_on_client_id"
