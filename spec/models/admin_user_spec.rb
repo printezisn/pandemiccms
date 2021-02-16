@@ -13,6 +13,8 @@ RSpec.describe AdminUser, type: :model do
 
   it { is_expected.to have_many(:updated_tags).class_name('Tag').dependent(:destroy) }
 
+  it { is_expected.to define_enum_for(:status).with_values(active: 0, inactive: 1) }
+
   # Username
   it { is_expected.to validate_presence_of(:username).with_message('The username is required.') }
   it { is_expected.to allow_value('test.-usER0').for(:username) }

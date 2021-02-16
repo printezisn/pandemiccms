@@ -16,6 +16,11 @@ class AdminUser < ApplicationRecord
          :trackable, :recoverable, :password_expirable, :password_archivable,
          :session_limitable
 
+  enum status: {
+    active: 0,
+    inactive: 1
+  }
+
   validates :email, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP },
                     length: { maximum: 255 },
