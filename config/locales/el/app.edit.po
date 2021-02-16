@@ -589,12 +589,6 @@ msgstr "Το όνομα χρήστη."
 msgid "The user's unconfirmed email address."
 msgstr "Η μη επιβεβαιωμένη διεύθυνση email του χρήστη."
 
-msgid "Total Pages"
-msgstr "Συνολικές Σελίδες"
-
-msgid "Total Posts"
-msgstr "Συνολικά Άρθρα"
-
 msgid "Translate"
 msgstr "Μετάφραση"
 

@@ -2,7 +2,7 @@
 
 # Tag model
 class Tag < ApplicationRecord
-  SORTABLE_FIELDS = %i[created_at name posts_count pages_count].freeze
+  SORTABLE_FIELDS = %i[created_at name].freeze
   TEXT_SEARCHABLE_FIELDS = %i[name].freeze
   TRANSLATABLE_FIELDS = %w[name slug description].freeze
 

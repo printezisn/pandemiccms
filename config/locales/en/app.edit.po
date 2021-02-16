@@ -589,12 +589,6 @@ msgstr "The user's name."
 msgid "The user's unconfirmed email address."
 msgstr "The user's unconfirmed email address."
 
-msgid "Total Pages"
-msgstr "Total Pages"
-
-msgid "Total Posts"
-msgstr "Total Posts"
-
 msgid "Translate"
 msgstr "Translate"
 
