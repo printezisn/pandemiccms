@@ -4,6 +4,13 @@ require 'uri'
 
 # Admin user model
 class AdminUser < ApplicationRecord
+  SORTABLE_FIELDS = %i[created_at username email].freeze
+  TEXT_SEARCHABLE_FIELDS = %i[username email].freeze
+
+  include SimpleTextSearchable
+  include BoundSortable
+  include Imageable
+
   belongs_to :client, inverse_of: :admin_users
 
   has_many :admin_user_roles, inverse_of: :admin_user, dependent: :destroy

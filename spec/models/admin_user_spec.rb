@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require './spec/models/concerns/simple_text_searchable_spec'
+require './spec/models/concerns/bound_sortable_spec'
+require './spec/models/concerns/imageable_spec'
 
 RSpec.describe AdminUser, type: :model do
   subject(:model) { FactoryBot.build(:admin_user) }
@@ -140,5 +143,13 @@ RSpec.describe AdminUser, type: :model do
 
       it { is_expected.not_to be_active_for_authentication }
     end
+  end
+
+  describe 'concerns' do
+    before { model.save! }
+
+    it_behaves_like 'SimpleTextSearchable'
+    it_behaves_like 'BoundSortable'
+    it_behaves_like 'Imageable'
   end
 end
