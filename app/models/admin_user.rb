@@ -51,4 +51,8 @@ class AdminUser < ApplicationRecord
   def supervisor!
     admin_user_roles.create!(role: :supervisor) unless supervisor?
   end
+
+  def active_for_authentication?
+    super && active?
+  end
 end

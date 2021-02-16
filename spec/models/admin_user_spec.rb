@@ -127,4 +127,18 @@ RSpec.describe AdminUser, type: :model do
       it { is_expected.to be_supervisor }
     end
   end
+
+  describe '#active_for_authentication?' do
+    context 'when the user is active' do
+      subject(:model) { FactoryBot.create(:admin_user) }
+
+      it { is_expected.to be_active_for_authentication }
+    end
+
+    context 'when the user is inactive' do
+      subject(:model) { FactoryBot.create(:admin_user, status: :inactive) }
+
+      it { is_expected.not_to be_active_for_authentication }
+    end
+  end
 end
