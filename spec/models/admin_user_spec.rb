@@ -4,6 +4,7 @@ require 'rails_helper'
 require './spec/models/concerns/simple_text_searchable_spec'
 require './spec/models/concerns/bound_sortable_spec'
 require './spec/models/concerns/imageable_spec'
+require './spec/models/concerns/translatable_spec'
 
 RSpec.describe AdminUser, type: :model do
   subject(:model) { FactoryBot.build(:admin_user) }
@@ -189,10 +190,13 @@ RSpec.describe AdminUser, type: :model do
   end
 
   describe 'concerns' do
+    let(:translation) { FactoryBot.build(:admin_user) }
+
     before { model.save! }
 
     it_behaves_like 'SimpleTextSearchable'
     it_behaves_like 'BoundSortable'
     it_behaves_like 'Imageable'
+    it_behaves_like 'Translatable'
   end
 end

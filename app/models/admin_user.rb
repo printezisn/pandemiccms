@@ -6,10 +6,12 @@ require 'uri'
 class AdminUser < ApplicationRecord
   SORTABLE_FIELDS = %i[created_at username email].freeze
   TEXT_SEARCHABLE_FIELDS = %i[username email].freeze
+  TRANSLATABLE_FIELDS = %w[first_name middle_name last_name description].freeze
 
   include SimpleTextSearchable
   include BoundSortable
   include Imageable
+  include Translatable
 
   belongs_to :client, inverse_of: :admin_users
 
