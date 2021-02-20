@@ -28,6 +28,10 @@ class AdminUser < ApplicationRecord
     inactive: 1
   }
 
+  attr_accessor :should_set_roles
+
+  attribute :role, :string
+
   validates :email, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP },
                     length: { maximum: 255 },
@@ -47,6 +51,8 @@ class AdminUser < ApplicationRecord
   validates :middle_name, length: { maximum: 255 }
   validates :last_name, length: { maximum: 255 }
 
+  after_save :set_roles, if: :should_set_roles
+
   def full_name
     "#{first_name} #{middle_name} #{last_name}".strip.squeeze(' ').presence || username
   end
@@ -59,7 +65,25 @@ class AdminUser < ApplicationRecord
     admin_user_roles.create!(role: :supervisor) unless supervisor?
   end
 
+  def regular?
+    admin_user_roles.empty?
+  end
+
+  def regular!
+    admin_user_roles.destroy_all
+  end
+
   def active_for_authentication?
     super && active?
+  end
+
+  private
+
+  def set_roles
+    if role&.to_sym == :supervisor
+      supervisor!
+    else
+      regular!
+    end
   end
 end

@@ -131,6 +131,30 @@ RSpec.describe AdminUser, type: :model do
     end
   end
 
+  describe '#supervisor!' do
+    subject(:model) { FactoryBot.create(:admin_user) }
+
+    it { expect { model.supervisor! }.to change(model, :supervisor?).from(false).to(true) }
+  end
+
+  describe '#regular?' do
+    context 'when the user does not have a supervisor role' do
+      it { is_expected.to be_regular }
+    end
+
+    context 'when the user has a supervisor role' do
+      subject(:model) { FactoryBot.create(:admin_user, :supervisor) }
+
+      it { is_expected.not_to be_regular }
+    end
+  end
+
+  describe '#regular!' do
+    subject(:model) { FactoryBot.create(:admin_user, :supervisor) }
+
+    it { expect { model.regular! }.to change(model, :regular?).from(false).to(true) }
+  end
+
   describe '#active_for_authentication?' do
     context 'when the user is active' do
       subject(:model) { FactoryBot.create(:admin_user) }
@@ -142,6 +166,25 @@ RSpec.describe AdminUser, type: :model do
       subject(:model) { FactoryBot.create(:admin_user, status: :inactive) }
 
       it { is_expected.not_to be_active_for_authentication }
+    end
+  end
+
+  describe '#set_roles' do
+    context 'when a new role is set' do
+      before do
+        model.role = :supervisor
+        model.should_set_roles = true
+      end
+
+      it { expect { model.save! }.to change(model, :supervisor?).from(false).to(true) }
+    end
+
+    context 'when no roles is set' do
+      subject(:model) { FactoryBot.create(:admin_user, :supervisor) }
+
+      before { model.should_set_roles = true }
+
+      it { expect { model.save! }.to change(model, :supervisor?).from(true).to(false) }
     end
   end
 
