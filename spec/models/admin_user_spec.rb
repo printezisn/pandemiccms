@@ -138,22 +138,22 @@ RSpec.describe AdminUser, type: :model do
     it { expect { model.supervisor! }.to change(model, :supervisor?).from(false).to(true) }
   end
 
-  describe '#regular?' do
+  describe '#author?' do
     context 'when the user does not have a supervisor role' do
-      it { is_expected.to be_regular }
+      it { is_expected.to be_author }
     end
 
     context 'when the user has a supervisor role' do
       subject(:model) { FactoryBot.create(:admin_user, :supervisor) }
 
-      it { is_expected.not_to be_regular }
+      it { is_expected.not_to be_author }
     end
   end
 
-  describe '#regular!' do
+  describe '#author!' do
     subject(:model) { FactoryBot.create(:admin_user, :supervisor) }
 
-    it { expect { model.regular! }.to change(model, :regular?).from(false).to(true) }
+    it { expect { model.author! }.to change(model, :author?).from(false).to(true) }
   end
 
   describe '#active_for_authentication?' do

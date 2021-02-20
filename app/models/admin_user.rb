@@ -4,7 +4,7 @@ require 'uri'
 
 # Admin user model
 class AdminUser < ApplicationRecord
-  SORTABLE_FIELDS = %i[created_at username email].freeze
+  SORTABLE_FIELDS = %i[username email].freeze
   TEXT_SEARCHABLE_FIELDS = %i[username email].freeze
   TRANSLATABLE_FIELDS = %w[first_name middle_name last_name description].freeze
 
@@ -67,11 +67,11 @@ class AdminUser < ApplicationRecord
     admin_user_roles.create!(role: :supervisor) unless supervisor?
   end
 
-  def regular?
+  def author?
     admin_user_roles.empty?
   end
 
-  def regular!
+  def author!
     admin_user_roles.destroy_all
   end
 
@@ -85,7 +85,7 @@ class AdminUser < ApplicationRecord
     if role&.to_sym == :supervisor
       supervisor!
     else
-      regular!
+      author!
     end
   end
 end
