@@ -91,6 +91,9 @@ msgstr "Confirmation Token"
 msgid "AdminUser|Confirmed at"
 msgstr "Confirmed At"
 
+msgid "AdminUser|Current password"
+msgstr "Current Password"
+
 msgid "AdminUser|Current sign in at"
 msgstr "Current Sign In At"
 
@@ -184,8 +187,14 @@ msgstr "Categories"
 msgid "Change Password"
 msgstr "Change Password"
 
+msgid "Change Password | %{client}"
+msgstr "Change Password | %{client}"
+
 msgid "Change my password"
 msgstr "Change my password"
+
+msgid "Change the password of the current user of %{client}"
+msgstr "Change the password of the current user of %{client}"
 
 msgid "Choose an image..."
 msgstr "Choose an image..."
@@ -811,6 +820,9 @@ msgstr "Your new password"
 msgid "Your password"
 msgstr "Your password"
 
+msgid "Your password was successfully changed."
+msgstr "Your password was successfully changed."
+
 msgid "Your password won't change until you access the link above and create a new one."
 msgstr "Your password won't change until you access the link above and create a new one."
 
@@ -843,6 +855,9 @@ msgstr "Template"
 
 msgid "activerecord.errors.models.admin_user.attributes.client_id.blank"
 msgstr "The client id is required."
+
+msgid "activerecord.errors.models.admin_user.attributes.current_password.invalid"
+msgstr "The current password in invalid."
 
 msgid "activerecord.errors.models.admin_user.attributes.email.blank"
 msgstr "The email is required."

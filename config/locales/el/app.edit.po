@@ -91,6 +91,9 @@ msgstr "Σύνδεσμος Επιβεβαίωσης"
 msgid "AdminUser|Confirmed at"
 msgstr "Επιβεβαιώθηκε"
 
+msgid "AdminUser|Current password"
+msgstr "Τωρινός Κωδικός"
+
 msgid "AdminUser|Current sign in at"
 msgstr "Τωρινή Σύνδεση"
 
@@ -184,8 +187,14 @@ msgstr "Κατηγορίες"
 msgid "Change Password"
 msgstr "Αλλαγή Κωδικού"
 
+msgid "Change Password | %{client}"
+msgstr "Αλλαγή Κωδικού | %{client}"
+
 msgid "Change my password"
 msgstr "Αλλαγή του κωδικού μου"
+
+msgid "Change the password of the current user of %{client}"
+msgstr "Αλλαγή του κωδικού του τωρινού χρήστη του %{client}"
 
 msgid "Choose an image..."
 msgstr "Επιλέξτε εικόνα..."
@@ -811,6 +820,9 @@ msgstr "Ο νέος κωδικός σας"
 msgid "Your password"
 msgstr "Ο κωδικός σας"
 
+msgid "Your password was successfully changed."
+msgstr "Ο κωδικός σας άλλαξε με επιτυχία."
+
 msgid "Your password won't change until you access the link above and create a new one."
 msgstr "Ο κωδικός σας δε θα αλλάξει μέχρι να ακολουθήσετε τον παραπάνω σύνδεσμο και να δημιουργήσετε έναν καινούργιο."
 
@@ -843,6 +855,9 @@ msgstr "Πρότυπο"
 
 msgid "activerecord.errors.models.admin_user.attributes.client_id.blank"
 msgstr "Το id πελάτη είναι υποχρεωτικό."
+
+msgid "activerecord.errors.models.admin_user.attributes.current_password.invalid"
+msgstr "Ο τωρινός κωδικός είναι λανθασμένος."
 
 msgid "activerecord.errors.models.admin_user.attributes.email.blank"
 msgstr "Το email είναι υποχρεωτικό."

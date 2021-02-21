@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-21 15:30+0200\n"
-"PO-Revision-Date: 2021-02-21 15:30+0200\n"
+"POT-Creation-Date: 2021-02-21 22:09+0200\n"
+"PO-Revision-Date: 2021-02-21 22:09+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -90,6 +90,9 @@ msgid "AdminUser|Confirmation token"
 msgstr ""
 
 msgid "AdminUser|Confirmed at"
+msgstr ""
+
+msgid "AdminUser|Current password"
 msgstr ""
 
 msgid "AdminUser|Current sign in at"
@@ -185,7 +188,13 @@ msgstr ""
 msgid "Change Password"
 msgstr ""
 
+msgid "Change Password | %{client}"
+msgstr ""
+
 msgid "Change my password"
+msgstr ""
+
+msgid "Change the password of the current user of %{client}"
 msgstr ""
 
 msgid "Choose an image..."
@@ -812,6 +821,9 @@ msgstr ""
 msgid "Your password"
 msgstr ""
 
+msgid "Your password was successfully changed."
+msgstr ""
+
 msgid "Your password won't change until you access the link above and create a new one."
 msgstr ""
 
@@ -843,6 +855,9 @@ msgid "activerecord.attributes.tag.template"
 msgstr ""
 
 msgid "activerecord.errors.models.admin_user.attributes.client_id.blank"
+msgstr ""
+
+msgid "activerecord.errors.models.admin_user.attributes.current_password.invalid"
 msgstr ""
 
 msgid "activerecord.errors.models.admin_user.attributes.email.blank"
