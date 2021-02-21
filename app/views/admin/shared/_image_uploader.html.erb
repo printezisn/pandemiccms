@@ -1,5 +1,5 @@
-<div class="control image-uploader<%= model.image.attached? ? ' with-image' : ' without-image' %>">
-  <img src="<%= model.image.attached? ? rails_blob_path(model.image) : '' %>" class="show-on-image" width="128" height="128" alt="image" />
+<div class="control image-uploader<%= model.image.attached? && model.image.persisted? ? ' with-image' : ' without-image' %>">
+  <img src="<%= model.image.attached? && model.image.persisted? ? rails_blob_path(model.image) : '' %>" class="show-on-image" width="128" height="128" alt="image" />
   <br class="show-on-image" />
   <button type="button" class="button is-danger show-on-image">
     <i class="fas fa-trash"></i>

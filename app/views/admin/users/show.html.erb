@@ -1,0 +1,253 @@
+<%
+    content_for :title, _('User Details | %{client}') % { client: current_client.name }
+    content_for :description, _('Details for a user of %{client}') % { client: current_client.name }
+%>
+
+<a class="button" href="<%= admin_users_path %>">
+  <i class="fas fa-long-arrow-alt-left"></i>
+  &nbsp;
+  <%= _('Back') %>
+</a>
+<div class="dropdown is-togglable">
+  <div class="dropdown-trigger">
+    <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" class="button">
+      <%= _('Actions') %>
+      &nbsp;
+      <i class="fas fa-angle-down"></i>
+    </a>
+  </div>
+  <div class="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <% if current_client.enabled_languages.size > 1 %>
+      <a class="dropdown-item" href="<%= translate_admin_user_path(@user) %>">
+        <i class="fas fa-globe"></i>
+        &nbsp;
+        <%= _('Translate') %>
+      </a>
+      <% end %>
+      <a class="dropdown-item" href="<%= edit_admin_user_path(@user) %>">
+        <i class="fas fa-pen"></i>
+        &nbsp;
+        <%= _('Edit') %>
+      </a>
+      <hr class="dropdown-divider" />
+      <a href="javascript:void(0)" class="dropdown-item" data-modal-open="toggle-user-status-modal<%= @user.id %>">
+        <% if @user.active? %>
+        <i class="fas fa-lock"></i>
+        &nbsp;
+        <%= _('Deactivate') %>
+        <% else %>
+        <i class="fas fa-unlock-alt"></i>
+        &nbsp;
+        <%= _('Activate') %>
+        <% end %>
+      </a>
+      <%= render partial: 'admin/users/toggle_user_status_modal', locals: { user: @user } %>
+    </div>
+  </div>
+</div>
+<div class="columns is-multiline is-mobile mt-3">
+  <div class="column is-full-mobile is-full-tablet is-half-desktop">
+    <article class="card">
+      <header class="card-header">
+        <h1 class="card-header-title">
+          <i class="fas fa-users"></i>
+          &nbsp;
+          <%= _('Profile') %>
+        </h1>
+      </header>
+      <div class="card-content half-horizontal-form">
+        <div class="has-text-centered">
+          <% if @user.image.attached? %>
+          <img src="<%= rails_representation_url(@user.image.variant(resize_to_limit: [128, 128])) %>" width="128" height="128" alt="image" />
+          <% else %>
+          <i class="fas fa-8x fa-user-circle"></i>
+          <% end %>
+        </div>
+        <div class="field is-horizontal mt-5">
+          <div class="field-label">
+            <span class="label"><%= _('First Name') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @user.first_name %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Middle Name') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @user.middle_name %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Last Name') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @user.last_name %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Description') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @user.description %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Role') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @user.supervisor? ? _('Supervisor') : _('Author') %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="column is-full-mobile is-full-tablet is-half-desktop">
+    <article class="card">
+      <header class="card-header">
+        <h1 class="card-header-title">
+          <i class="fas fa-users"></i>
+          &nbsp;
+          <%= _('Account Details') %>
+        </h1>
+      </header>
+      <div class="card-content half-horizontal-form">
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Username') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @user.username %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Email') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @user.email %></div>
+            </div>
+          </div>
+        </div>
+        <% if @user.unconfirmed_email.present? %>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Unconfirmed Email') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @user.unconfirmed_email %></div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Status') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @user.active? ? _('Active') : _('Inactive') %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Confirmed At') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @user.confirmed_at %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Last Sign In At') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @user.last_sign_in_at %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Last Sign In IP') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @user.last_sign_in_ip %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Created At') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @user.created_at %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Updated At') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @user.updated_at %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="column is-full-mobile is-full-tablet is-half-desktop">
+    <article class="card">
+      <div class="card-header">
+        <h2 class="card-header-title">
+          <i class="fas fa-file"></i>
+          &nbsp;
+          <%= _('Posts') %>
+        </h2>
+      </div>
+      <div class="card-content">
+        <div class="smart-table" id="posts-smart-table" data-autoload="<%= admin_user_posts_path(@user, compact: true) %>"></div>
+      </div>
+    </article>
+  </div>
+  <div class="column is-full-mobile is-full-tablet is-half-desktop">
+    <article class="card">
+      <div class="card-header">
+        <h2 class="card-header-title">
+          <i class="fas fa-sticky-note"></i>
+          &nbsp;
+          <%= _('Pages') %>
+        </h2>
+      </div>
+      <div class="card-content">
+        <div class="smart-table" id="pages-smart-table" data-autoload="<%= admin_user_pages_path(@user, compact: true) %>"></div>
+      </div>
+    </article>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<%= form_with(url: user.active? ? deactivate_admin_user_path(user) : activate_admin_user_path(user),
+              method: :post,
+              id: "toggle-user-status-modal#{user.id}",
+              class: 'modal') do %>
+<div class="modal-background cancel"></div>
+<div class="modal-card">
+  <div class="modal-card-head">
+    <p class="modal-card-title"><%= user.active? ? _('Deactivate Confirmation') : _('Activate Confirmation') %></p>
+    <button type="button" class="delete cancel" aria-label="close"></button>
+  </div>
+  <div class="modal-card-body">
+    <p><%= user.active? ? _('Are you sure you want to deactivate this user ?') : _('Are you sure you want to activate this user ?') %></p>
+  </div>
+  <div class="modal-card-foot">
+    <button type="button" class="button cancel"><%= _('No') %></button>
+    <button type="submit" class="button is-success"><%= _('Yes') %></button>
+  </div>
+</div>
+<% end %>

@@ -13,4 +13,12 @@
       top: calc(100% - 0.75rem);
     }
   }
+
+  @media screen and (min-width: 769px), print {
+    .half-horizontal-form {
+      .field-label {
+        flex-grow: 2;
+      }
+    }
+  }
 }

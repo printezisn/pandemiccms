@@ -1,0 +1,151 @@
+<%
+    content_for :title, _('Create User | %{client}') % { client: current_client.name }
+    content_for :description, _('Create new user for %{client}') % { client: current_client.name }
+%>
+
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-users"></i>
+      &nbsp;
+      <%= _('Create User') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <%= render "admin/shared/error_messages", resource: @user %>
+    <%= form_with(model: @user, url: admin_users_path, method: :post) do |f| %>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :username, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :username, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :email, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.email_field :email, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :password, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.password_field :password, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :password_confirmation, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.password_field :password_confirmation, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :image, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <%= render partial: 'admin/shared/image_uploader', locals: { model: @user, f: f } %>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :first_name, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :first_name, class: 'input' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :middle_name, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :middle_name, class: 'input' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :last_name, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :last_name, class: 'input' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :description, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_area :description, class: 'textarea', rows: 5 %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :role, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <div class="select">
+              <%= f.select :role, @roles, include_blank: _('Author') %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success mb-1' %>
+            <a class="button" href="<%= admin_users_path %>"><%= _('Cancel') %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</article>
