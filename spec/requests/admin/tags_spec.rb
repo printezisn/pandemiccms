@@ -223,7 +223,7 @@ RSpec.describe '/admin/tags', type: :request do
     it_behaves_like 'admin user page'
 
     it 'returns a successful response' do
-      get translate_admin_tag_path(model)
+      request
 
       expect(response).to be_successful
     end
@@ -253,7 +253,7 @@ RSpec.describe '/admin/tags', type: :request do
         expect(model.reload.translate(:en).attributes.slice(*translation_params.keys)).to eq(translation_params)
       end
 
-      it 'redirects to the tag' do
+      it 'redirects to the tag translation' do
         request
 
         expect(response).to redirect_to(translate_admin_tag_path(id: model.id, locale: 'en', translation_locale: 'en'))

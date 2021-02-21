@@ -4,7 +4,7 @@ require 'rails_helper'
 require './spec/requests/admin/shared/access_spec'
 
 RSpec.describe '/admin/users', type: :request do
-  let(:admin_user) { FactoryBot.create(:admin_user) }
+  let!(:admin_user) { FactoryBot.create(:admin_user) }
   let!(:supervisor) { FactoryBot.create(:admin_user, :supervisor) }
 
   let(:signed_in_user) { supervisor }
@@ -15,8 +15,6 @@ RSpec.describe '/admin/users', type: :request do
 
   describe 'GET /index' do
     let(:request) { get admin_users_path }
-
-    before { admin_user.save! }
 
     it_behaves_like 'supervisor page'
 
@@ -29,8 +27,6 @@ RSpec.describe '/admin/users', type: :request do
 
   describe 'GET /show' do
     let(:request) { get admin_user_path(admin_user) }
-
-    before { admin_user.save! }
 
     it_behaves_like 'supervisor page'
 
@@ -55,8 +51,6 @@ RSpec.describe '/admin/users', type: :request do
 
   describe 'GET /edit' do
     let(:request) { get edit_admin_user_path(admin_user) }
-
-    before { admin_user.save! }
 
     it_behaves_like 'supervisor page'
 
@@ -83,8 +77,6 @@ RSpec.describe '/admin/users', type: :request do
     end
 
     let(:request) { post admin_users_path, params: { admin_user: user_params } }
-
-    before { admin_user }
 
     it_behaves_like 'supervisor page'
 
@@ -219,7 +211,7 @@ RSpec.describe '/admin/users', type: :request do
     it_behaves_like 'supervisor page'
 
     it 'returns a successful response' do
-      get translate_admin_user_path(admin_user)
+      request
 
       expect(response).to be_successful
     end
@@ -248,7 +240,7 @@ RSpec.describe '/admin/users', type: :request do
         expect(admin_user.reload.translate(:en).attributes.slice(*translation_params.keys)).to eq(translation_params)
       end
 
-      it 'redirects to the user' do
+      it 'redirects to the user translation' do
         request
 
         expect(response).to redirect_to(translate_admin_user_path(id: admin_user.id, locale: 'en', translation_locale: 'en'))

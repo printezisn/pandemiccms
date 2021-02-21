@@ -128,7 +128,7 @@ RSpec.describe '/admin/email_templates', type: :request do
         expect(model.reload.translate(:en).attributes.slice(*translation_params.keys)).to eq(translation_params)
       end
 
-      it 'redirects to the email template' do
+      it 'redirects to the email template translation' do
         request
 
         expect(response).to redirect_to(translate_admin_email_template_path(id: model.id, locale: 'en', translation_locale: 'en'))

@@ -69,7 +69,7 @@ module Admin
     # GET /users/1/translate
     def translate; end
 
-    # POST /users/1/save_translation
+    # POST /users/1/translate
     def save_translation
       @user.assign_attributes(translation_params)
 
