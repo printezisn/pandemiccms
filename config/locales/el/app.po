@@ -61,8 +61,20 @@ msgstr "Ένα δοκιμαστικό email απεστάλη με επιτυχί
 msgid "Account Confirmation"
 msgstr "Επιβεβαίωση Λογαριασμού"
 
+msgid "Account Details"
+msgstr "Λεπτομέρειες Λογαριασμού"
+
 msgid "Actions"
 msgstr "Ενέργειες"
+
+msgid "Activate"
+msgstr "Ενεργοποίηση"
+
+msgid "Activate Confirmation"
+msgstr "Επιβεβαίωση Ενεργοποίησης"
+
+msgid "Active"
+msgstr "Ενεργός"
 
 msgid "Admin dashboard of %{client}"
 msgstr "Ταμπλό διαχείρισης στο %{client}"
@@ -97,6 +109,9 @@ msgstr "Αποτυχημένες Προσπάθειες"
 msgid "AdminUser|First name"
 msgstr "Όνομα"
 
+msgid "AdminUser|Image"
+msgstr "Εικόνα"
+
 msgid "AdminUser|Last name"
 msgstr "Επώνυμο"
 
@@ -118,11 +133,17 @@ msgstr "Κωδικός"
 msgid "AdminUser|Password changed at"
 msgstr "Αλλαγή Κωδικού"
 
+msgid "AdminUser|Password confirmation"
+msgstr "Επιβεβαίωση Κωδικού"
+
 msgid "AdminUser|Reset password sent at"
 msgstr "Επαναφορά Κωδικού Στάλθηκε"
 
 msgid "AdminUser|Reset password token"
 msgstr "Σύνδεσμος Επαναφοράς Κωδικού"
+
+msgid "AdminUser|Role"
+msgstr "Ρόλος"
 
 msgid "AdminUser|Sign in count"
 msgstr "Σύνολο Συνδέσεων"
@@ -136,11 +157,20 @@ msgstr "Όνομα Χρήστη"
 msgid "An error occurred. Please try again later."
 msgstr "Παρουσιάστηκε κάποιο σφάλμα. Παρακαλούμε προσπαθήστε ξανά αργότερα."
 
+msgid "Are you sure you want to activate this user ?"
+msgstr "Είστε σίγουρος/η ότι θέλετε να ενεργοποιήσετε αυτό το χρήστη ?"
+
+msgid "Are you sure you want to deactivate this user ?"
+msgstr "Είστε σίγουρος/η ότι θέλετε να απενεργοποιήσετε αυτό το χρήστη ?"
+
 msgid "Are you sure you want to delete this medium ?"
 msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτό το αρχείο ?"
 
 msgid "Are you sure you want to delete this tag ?"
 msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτή την ετικέτα ?"
+
+msgid "Author"
+msgstr "Συντάκτης"
 
 msgid "Back"
 msgstr "Πίσω"
@@ -196,6 +226,9 @@ msgstr "Επιβεβαίωση νέου κωδικού"
 msgid "Confirm your new password"
 msgstr "Επιβεβαιώστε το νέο σας κωδικό"
 
+msgid "Confirmed At"
+msgstr "Επιβεβαιώθηκε Στις"
+
 msgid "Copy"
 msgstr "Αντιγραφή"
 
@@ -208,8 +241,17 @@ msgstr "Δημιουργία Ετικέτας"
 msgid "Create Tag | %{client}"
 msgstr "Δημιουργία Ετικέτας | %{client}"
 
+msgid "Create User"
+msgstr "Δημιουργία Χρήστη"
+
+msgid "Create User | %{client}"
+msgstr "Δημιουργία Χρήστη | %{client}"
+
 msgid "Create new tag for %{client}"
 msgstr "Δημιουργία νέας ετικέτας για το %{client}"
+
+msgid "Create new user for %{client}"
+msgstr "Δημιουργία νέου χρήστη για το %{client}"
 
 msgid "Created At"
 msgstr "Δημιουργήθηκε Στις"
@@ -222,6 +264,12 @@ msgstr "Ταμπλό"
 
 msgid "Dashboard | %{client}"
 msgstr "Ταμπλό | %{client}"
+
+msgid "Deactivate"
+msgstr "Απενεργοποίηση"
+
+msgid "Deactivate Confirmation"
+msgstr "Επιβεβαίωση Απενεργοποίησης"
 
 msgid "Default Language"
 msgstr "Προεπιλεγμένη Γλώσσα"
@@ -237,6 +285,9 @@ msgstr "Περιγραφή"
 
 msgid "Details for a tag of %{client}"
 msgstr "Λεπτομέρειες για την ετικέτα του %{client}"
+
+msgid "Details for a user of %{client}"
+msgstr "Λεπτομέρειες για τον χρήστη του %{client}"
 
 msgid "Details for an email template of %{client}"
 msgstr "Λεπτομέρειες για το πρότυπο email του %{client}"
@@ -262,14 +313,26 @@ msgstr "Επεξεργασία Ετικέτας"
 msgid "Edit Tag | %{client}"
 msgstr "Επεξεργασία Ετικέτας | %{client}"
 
+msgid "Edit User"
+msgstr "Επεξεργασία Χρήστη"
+
+msgid "Edit User | %{client}"
+msgstr "Επεξεργασία Χρήστη | %{client}"
+
 msgid "Edit a tag of %{client}"
 msgstr "Επεξεργασία ετικέτας του %{client}"
+
+msgid "Edit a user of %{client}"
+msgstr "Επεξεργασία χρήστη του %{client}"
 
 msgid "Edit an email template of %{client}"
 msgstr "Επεξεργασία προτύπου email του %{client}"
 
 msgid "Edit the settings of %{client}"
 msgstr "Επεξεργασία ρυθμίσεων του %{client}"
+
+msgid "Email"
+msgstr "Email"
 
 msgid "Email Change"
 msgstr "Αλλαγή Email"
@@ -304,6 +367,9 @@ msgstr "Τύπος"
 msgid "Enabled Languages"
 msgstr "Ενεργοποιημένες Γλώσσες"
 
+msgid "First Name"
+msgstr "Όνομα"
+
 msgid "First Page"
 msgstr "Πρώτη Σελίδα"
 
@@ -322,11 +388,23 @@ msgstr "Γειά σας %{email}!"
 msgid "If you didn't request this, please ignore this email."
 msgstr "Αν δε το ζητήσατε, παρακαλούμε αγνοήστε το email."
 
+msgid "Inactive"
+msgstr "Ανενεργός"
+
 msgid "Kind Regards,"
 msgstr "Φιλικά,"
 
+msgid "Last Name"
+msgstr "Επώνυμο"
+
 msgid "Last Page"
 msgstr "Τελευταία Σελίδα"
+
+msgid "Last Sign In At"
+msgstr "Τελευταία Σύνδεση Στις"
+
+msgid "Last Sign In IP"
+msgstr "IP Τελευταίας Σύνδεσης"
 
 msgid "Log in"
 msgstr "Σύνδεση"
@@ -342,6 +420,9 @@ msgstr "Αρχεία | %{client}"
 
 msgid "Menus"
 msgstr "Μενού"
+
+msgid "Middle Name"
+msgstr "Μεσαίο Όνομα"
 
 msgid "My Profile"
 msgstr "Το Προφίλ Μου"
@@ -421,6 +502,9 @@ msgstr "Προεσκόπιση"
 msgid "Previous Page"
 msgstr "Προηγούμενη Σελίδα"
 
+msgid "Profile"
+msgstr "Προφίλ"
+
 msgid "Remove"
 msgstr "Αφαίρεση"
 
@@ -450,6 +534,9 @@ msgstr "Επαναφορά Κωδικού | %{client}"
 
 msgid "Reset your password in %{client}"
 msgstr "Επαναφέρετε τον κωδικό σας στο %{client}"
+
+msgid "Role"
+msgstr "Ρόλος"
 
 msgid "Search"
 msgstr "Αναζήτηση"
@@ -490,11 +577,17 @@ msgstr "Slug"
 msgid "Someone has requested a link to change your password. You can do this through the link below."
 msgstr "Κάποιος ζήτησε σύνδεσμο για αλλαγή του κωδικού σας. Μπορείτε να το κάνετε μέσω του παρακάτω συνδέσμου."
 
+msgid "Status"
+msgstr "Κατάσταση"
+
 msgid "Subject"
 msgstr "Θέμα"
 
 msgid "Submit"
 msgstr "Υποβολή"
+
+msgid "Supervisor"
+msgstr "Επόπτης"
 
 msgid "Tag"
 msgstr "Ετικέτα"
@@ -577,6 +670,21 @@ msgstr "Η ετικέτα μεταφράστηκε με επιτυχία."
 msgid "The tag was successfully updated."
 msgstr "Η ετικέτα δημιουργήθηκε με επιτυχία."
 
+msgid "The user was successfully activated."
+msgstr "Ο χρήστης ενεργοποιήθηκε με επιτυχία."
+
+msgid "The user was successfully created."
+msgstr "Ο χρήστης δημιουργήθηκε με επιτυχία."
+
+msgid "The user was successfully deactivated."
+msgstr "Ο χρήστης απενεργοποιήθηκε με επιτυχία."
+
+msgid "The user was successfully translated."
+msgstr "Ο χρήστης μεταφράστηκε με επιτυχία."
+
+msgid "The user was successfully updated."
+msgstr "Ο χρήστης ανανεώθηκε με επιτυχία."
+
 msgid "The user's email address."
 msgstr "Η διεύθυνση email του χρήστη."
 
@@ -598,14 +706,23 @@ msgstr "Μετάφραση Προτύπου Email | %{client}"
 msgid "Translate Tag | %{client}"
 msgstr "Μετάφραση Ετικέτας | %{client}"
 
+msgid "Translate User | %{client}"
+msgstr "Μετάφραση Χρήστη | %{client}"
+
 msgid "Translate a tag of %{client}"
 msgstr "Μετάφραση ετικέτας του %{client}"
+
+msgid "Translate a user of %{client}"
+msgstr "Μετάφραση χρήστη του %{client}"
 
 msgid "Translate an email template of %{client}"
 msgstr "Μετάφραση προτύπου email του %{client}"
 
 msgid "Translation"
 msgstr "Μετάφραση"
+
+msgid "Unconfirmed Email"
+msgstr "Μη Επιβεβαιωμένο Email"
 
 msgid "Unlock my account"
 msgstr "Ξεκλείδωμα του λογαριασμού μου"
@@ -619,8 +736,23 @@ msgstr "Ανανεώθηκε Από"
 msgid "Upload"
 msgstr "Ανέβασμα"
 
+msgid "User"
+msgstr "Χρήστης"
+
+msgid "User Details | %{client}"
+msgstr "Λεπτομέρειες Χρήστη | %{client}"
+
+msgid "Username"
+msgstr "Όνομα Χρήστη"
+
 msgid "Users"
 msgstr "Χρήστες"
+
+msgid "Users of %{client}"
+msgstr "Χρήστες του %{client}"
+
+msgid "Users | %{client}"
+msgstr "Χρήστες | %{client}"
 
 msgid "We're contacting you to notify you that your email has been changed to %{email}"
 msgstr "Επικοινωνούμε μαζί σας για να σας γνωστοποιήσουμε ότι το email σας έχει αλλάξει σε %{email}"

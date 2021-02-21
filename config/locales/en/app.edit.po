@@ -61,8 +61,20 @@ msgstr "A test email was successfully sent to your email address."
 msgid "Account Confirmation"
 msgstr "Account Confirmation"
 
+msgid "Account Details"
+msgstr "Account Details"
+
 msgid "Actions"
 msgstr "Actions"
+
+msgid "Activate"
+msgstr "Activate"
+
+msgid "Activate Confirmation"
+msgstr "Activate Confirmation"
+
+msgid "Active"
+msgstr "Active"
 
 msgid "Admin dashboard of %{client}"
 msgstr "Admin dashboard of %{client}"
@@ -97,6 +109,9 @@ msgstr "Failed Attempts"
 msgid "AdminUser|First name"
 msgstr "First Name"
 
+msgid "AdminUser|Image"
+msgstr "Image"
+
 msgid "AdminUser|Last name"
 msgstr "Last Name"
 
@@ -118,11 +133,17 @@ msgstr "Password"
 msgid "AdminUser|Password changed at"
 msgstr "Password Changed At"
 
+msgid "AdminUser|Password confirmation"
+msgstr "Password Confirmation"
+
 msgid "AdminUser|Reset password sent at"
 msgstr "Reset Password Sent At"
 
 msgid "AdminUser|Reset password token"
 msgstr "Reset Password Token"
+
+msgid "AdminUser|Role"
+msgstr "Role"
 
 msgid "AdminUser|Sign in count"
 msgstr "Sign In Count"
@@ -136,11 +157,20 @@ msgstr "Username"
 msgid "An error occurred. Please try again later."
 msgstr "An error occurred. Please try again later."
 
+msgid "Are you sure you want to activate this user ?"
+msgstr "Are you sure you want to activate this user ?"
+
+msgid "Are you sure you want to deactivate this user ?"
+msgstr "Are you sure you want to deactivate this user ?"
+
 msgid "Are you sure you want to delete this medium ?"
 msgstr "Are you sure you want to delete this medium ?"
 
 msgid "Are you sure you want to delete this tag ?"
 msgstr "Are you sure you want to delete this tag ?"
+
+msgid "Author"
+msgstr "Author"
 
 msgid "Back"
 msgstr "Back"
@@ -196,6 +226,9 @@ msgstr "Confirm new Password"
 msgid "Confirm your new password"
 msgstr "Confirm your new password"
 
+msgid "Confirmed At"
+msgstr "Confirmed At"
+
 msgid "Copy"
 msgstr "Copy"
 
@@ -208,8 +241,17 @@ msgstr "Create Tag"
 msgid "Create Tag | %{client}"
 msgstr "Create Tag | %{client}"
 
+msgid "Create User"
+msgstr "Create User"
+
+msgid "Create User | %{client}"
+msgstr "Create User | %{client}"
+
 msgid "Create new tag for %{client}"
 msgstr "Create new tag for %{client}"
+
+msgid "Create new user for %{client}"
+msgstr "Create new user for %{client}"
 
 msgid "Created At"
 msgstr "Created At"
@@ -222,6 +264,12 @@ msgstr "Dashboard"
 
 msgid "Dashboard | %{client}"
 msgstr "Dashboard | %{client}"
+
+msgid "Deactivate"
+msgstr "Deactivate"
+
+msgid "Deactivate Confirmation"
+msgstr "Deactivate Confirmation"
 
 msgid "Default Language"
 msgstr "Default Language"
@@ -237,6 +285,9 @@ msgstr "Description"
 
 msgid "Details for a tag of %{client}"
 msgstr "Details for a tag of %{client}"
+
+msgid "Details for a user of %{client}"
+msgstr "Details for a user of %{client}"
 
 msgid "Details for an email template of %{client}"
 msgstr "Details for an email template of %{client}"
@@ -262,14 +313,26 @@ msgstr "Edit Tag"
 msgid "Edit Tag | %{client}"
 msgstr "Edit Tag | %{client}"
 
+msgid "Edit User"
+msgstr "Edit User"
+
+msgid "Edit User | %{client}"
+msgstr "Edit User | %{client}"
+
 msgid "Edit a tag of %{client}"
 msgstr "Edit a tag of %{client}"
+
+msgid "Edit a user of %{client}"
+msgstr "Edit a user of %{client}"
 
 msgid "Edit an email template of %{client}"
 msgstr "Edit an email template of %{client}"
 
 msgid "Edit the settings of %{client}"
 msgstr "Edit the settings of %{client}"
+
+msgid "Email"
+msgstr "Email"
 
 msgid "Email Change"
 msgstr "Email Change"
@@ -304,6 +367,9 @@ msgstr "Type"
 msgid "Enabled Languages"
 msgstr "Enabled Languages"
 
+msgid "First Name"
+msgstr "First Name"
+
 msgid "First Page"
 msgstr "First Page"
 
@@ -322,11 +388,23 @@ msgstr "Hello %{email}!"
 msgid "If you didn't request this, please ignore this email."
 msgstr "If you didn't request this, please ignore this email."
 
+msgid "Inactive"
+msgstr "Inactive"
+
 msgid "Kind Regards,"
 msgstr "Kind Regards,"
 
+msgid "Last Name"
+msgstr "Last Name"
+
 msgid "Last Page"
 msgstr "Last Page"
+
+msgid "Last Sign In At"
+msgstr "Last Sign In At"
+
+msgid "Last Sign In IP"
+msgstr "Last Sign In IP"
 
 msgid "Log in"
 msgstr "Log in"
@@ -342,6 +420,9 @@ msgstr "Media | %{client}"
 
 msgid "Menus"
 msgstr "Menus"
+
+msgid "Middle Name"
+msgstr "Middle Name"
 
 msgid "My Profile"
 msgstr "My Profile"
@@ -421,6 +502,9 @@ msgstr "Preview"
 msgid "Previous Page"
 msgstr "Previous Page"
 
+msgid "Profile"
+msgstr "Profile"
+
 msgid "Remove"
 msgstr "Remove"
 
@@ -450,6 +534,9 @@ msgstr "Reset Password | %{client}"
 
 msgid "Reset your password in %{client}"
 msgstr "Reset your password in %{client}"
+
+msgid "Role"
+msgstr "Role"
 
 msgid "Search"
 msgstr "Search"
@@ -490,11 +577,17 @@ msgstr "Slug"
 msgid "Someone has requested a link to change your password. You can do this through the link below."
 msgstr "Someone has requested a link to change your password. You can do this through the link below."
 
+msgid "Status"
+msgstr "Status"
+
 msgid "Subject"
 msgstr "Subject"
 
 msgid "Submit"
 msgstr "Submit"
+
+msgid "Supervisor"
+msgstr "Supervisor"
 
 msgid "Tag"
 msgstr "Tag"
@@ -577,6 +670,21 @@ msgstr "The tag was successfully translated."
 msgid "The tag was successfully updated."
 msgstr "The tag was successfully created."
 
+msgid "The user was successfully activated."
+msgstr "The user was successfully activated."
+
+msgid "The user was successfully created."
+msgstr "The user was successfully created."
+
+msgid "The user was successfully deactivated."
+msgstr "The user was successfully deactivated."
+
+msgid "The user was successfully translated."
+msgstr "The user was successfully translated."
+
+msgid "The user was successfully updated."
+msgstr "The user was successfully updated."
+
 msgid "The user's email address."
 msgstr "The user's email address."
 
@@ -598,14 +706,23 @@ msgstr "Translate Email Template | %{client}"
 msgid "Translate Tag | %{client}"
 msgstr "Translate Tag | %{client}"
 
+msgid "Translate User | %{client}"
+msgstr "Translate User | %{client}"
+
 msgid "Translate a tag of %{client}"
 msgstr "Translate a tag of %{client}"
+
+msgid "Translate a user of %{client}"
+msgstr "Translate a user of %{client}"
 
 msgid "Translate an email template of %{client}"
 msgstr "Translate an email template of %{client}"
 
 msgid "Translation"
 msgstr "Translation"
+
+msgid "Unconfirmed Email"
+msgstr "Unconfirmed Email"
 
 msgid "Unlock my account"
 msgstr "Unlock my account"
@@ -619,8 +736,23 @@ msgstr "Updated By"
 msgid "Upload"
 msgstr "Upload"
 
+msgid "User"
+msgstr "Userss"
+
+msgid "User Details | %{client}"
+msgstr "User Details | %{client}"
+
+msgid "Username"
+msgstr "Username"
+
 msgid "Users"
 msgstr "Users"
+
+msgid "Users of %{client}"
+msgstr "Users of %{client}"
+
+msgid "Users | %{client}"
+msgstr "Users | %{client}"
 
 msgid "We're contacting you to notify you that your email has been changed to %{email}"
 msgstr "We're contacting you to notify you that your email has been changed to %{email}"
