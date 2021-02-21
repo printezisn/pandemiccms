@@ -22,6 +22,17 @@ Rails.application.routes.draw do
           post :test
         end
       end
+      resources :users, except: :destroy do
+        resources :posts, only: :index
+        resources :pages, only: :index
+
+        member do
+          post :activate
+          post :deactivate
+          get :translate
+          post :translate, to: 'users#save_translation'
+        end
+      end
 
       get 'client/edit', to: 'clients#edit', as: :client_edit
       put 'client/edit', to: 'clients#update'
