@@ -1,0 +1,66 @@
+<%
+    content_for :title, _('Change Password | %{client}') % { client: current_client.name }
+    content_for :description, _('Change the password of the current user of %{client}') % { client: current_client.name }
+%>
+
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-key"></i>
+      &nbsp;
+      <%= _('Change Password') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <%= render "admin/shared/error_messages", resource: @user %>
+    <%= form_with(model: @user, url: admin_password_edit_path, method: :patch) do |f| %>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :current_password, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.password_field :current_password, class: 'input', required: true, autocomplete: 'current-password' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :password, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.password_field :password, class: 'input', required: true, autocomplete: 'new-password' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :password_confirmation, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.password_field :password_confirmation, class: 'input', required: true, autocomplete: 'new-password' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success mb-1' %>
+            <a class="button" href="<%= admin_root_path %>"><%= _('Cancel') %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</article>

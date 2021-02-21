@@ -31,13 +31,13 @@
       </div>
       <div class="navbar-menu" id="main-menu">
         <div class="navbar-start">
-          <a class="navbar-item<%= controller_name == 'media' ? ' is-active' : '' %>" href="<%= admin_media_path %>">
+          <a class="navbar-item<%= ' is-active' if controller_name == 'media' %>" href="<%= admin_media_path %>">
             <i class="fas fa-image"></i>
             &nbsp;
             <%= _('Media') %>
           </a>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link<%= %w[posts categories tags].include?(controller_name) ? ' is-active' : '' %>" href="javascript:void(0)">
+            <a class="navbar-link<%= ' is-active' if %w[posts categories tags].include?(controller_name) %>" href="javascript:void(0)">
               <i class="fas fa-file"></i>
               &nbsp;
               <%= _('Posts') %>
@@ -53,7 +53,7 @@
                 &nbsp;
                 <%= _('Categories') %>
               </a>
-              <a class="navbar-item<%= controller_name == 'tags' ? ' is-active' : '' %>" href="<%= admin_tags_path %>">
+              <a class="navbar-item<%= ' is-active' if controller_name == 'tags' %>" href="<%= admin_tags_path %>">
                 <i class="fas fa-tag"></i>
                 &nbsp;
                 <%= _('Tags') %>
@@ -81,23 +81,23 @@
           </div>
           <% if current_admin_user&.supervisor? %>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link<%= %w[clients email_templates users].include?(controller_name) ? ' is-active' : '' %>" href="javascript:void(0)">
+            <a class="navbar-link<%= ' is-active' if %w[clients email_templates users].include?(controller_name) %>" href="javascript:void(0)">
               <i class="fas fa-cog"></i>
               &nbsp;
               <%= _('Settings') %>
             </a>
             <div class="navbar-dropdown">
-              <a class="navbar-item<%= controller_name == 'clients' ? ' is-active' : '' %>" href="<%= admin_client_edit_path %>">
+              <a class="navbar-item<%= ' is-active' if controller_name == 'clients' %>" href="<%= admin_client_edit_path %>">
                 <i class="fas fa-cog"></i>
                 &nbsp;
                 <%= _('Settings') %>
               </a>
-              <a class="navbar-item<%= controller_name == 'email_templates' ? ' is-active' : '' %>" href="<%= admin_email_templates_path %>">
+              <a class="navbar-item<%= ' is-active' if controller_name == 'email_templates' %>" href="<%= admin_email_templates_path %>">
                 <i class="fas fa-envelope"></i>
                 &nbsp;
                 <%= _('Email Templates') %>
               </a>
-              <a class="navbar-item<%= controller_name == 'users' ? ' is-active' : '' %>" href="<%= admin_users_path %>">
+              <a class="navbar-item<%= ' is-active' if controller_name == 'users' %>" href="<%= admin_users_path %>">
                 <i class="fas fa-users"></i>
                 &nbsp;
                 <%= _('Users') %>
@@ -124,7 +124,7 @@
                 &nbsp;
                 <%= _('My Profile') %>
               </a>
-              <a class="navbar-item" href="javascript:void(0)">
+              <a class="navbar-item<%= ' is-active' if controller_name == 'password' %>" href="<%= admin_password_edit_path %>">
                 <i class="fas fa-key"></i>
                 &nbsp;
                 <%= _('Change Password') %>
