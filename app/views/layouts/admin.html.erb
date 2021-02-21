@@ -109,7 +109,7 @@
         <div class="navbar-end">
           <% if admin_user_signed_in? %>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="javascript:void(0)">
+            <a class="navbar-link<%= ' is-active' if %w[profile password].include?(controller_name) %>" href="javascript:void(0)">
               <% if current_admin_user.image.attached? %>
               <img src="<%= rails_representation_url(current_admin_user.image.variant(resize_to_limit: [32, 32])) %>" alt="<%= current_admin_user.username %>" width="32" height="32" />
               <% else %>
@@ -119,7 +119,7 @@
               <%= current_admin_user.username %>
             </a>
             <div class="navbar-dropdown is-right">
-              <a class="navbar-item" href="javascript:void(0)">
+              <a class="navbar-item<%= ' is-active' if controller_name == 'profile' %>" href="<%= admin_profile_path %>">
                 <i class="fas fa-user"></i>
                 &nbsp;
                 <%= _('My Profile') %>

@@ -1,0 +1,120 @@
+<%
+    content_for :title, _('My Profile | %{client}') % { client: current_client.name }
+    content_for :description, _('The profile of the current user of %{client}') % { client: current_client.name }
+%>
+
+<a class="button" href="<%= admin_root_path %>">
+  <i class="fas fa-long-arrow-alt-left"></i>
+  &nbsp;
+  <%= _('Back') %>
+</a>
+<div class="dropdown is-togglable">
+  <div class="dropdown-trigger">
+    <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" class="button">
+      <%= _('Actions') %>
+      &nbsp;
+      <i class="fas fa-angle-down"></i>
+    </a>
+  </div>
+  <div class="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <% if current_client.enabled_languages.size > 1 %>
+      <a class="dropdown-item" href="<%= admin_profile_translate_path(@user) %>">
+        <i class="fas fa-globe"></i>
+        &nbsp;
+        <%= _('Translate') %>
+      </a>
+      <% end %>
+      <a class="dropdown-item" href="<%= admin_profile_edit_path(@user) %>">
+        <i class="fas fa-pen"></i>
+        &nbsp;
+        <%= _('Edit') %>
+      </a>
+    </div>
+  </div>
+</div>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-user"></i>
+      &nbsp;
+      <%= _('My Profile') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <% if @user.image.attached? %>
+            <img src="<%= rails_representation_url(@user.image.variant(resize_to_limit: [256, 256])) %>" width="256" height="256" alt="image" />
+            <% else %>
+            <i class="fas fa-8x fa-user-circle"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Username') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @user.username %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Email') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @user.email %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('First Name') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @user.first_name %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Middle Name') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @user.middle_name %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Last Name') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @user.last_name %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Description') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @user.description %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

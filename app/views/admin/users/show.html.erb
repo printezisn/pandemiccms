@@ -57,14 +57,21 @@
         </h1>
       </header>
       <div class="card-content half-horizontal-form">
-        <div class="has-text-centered">
-          <% if @user.image.attached? %>
-          <img src="<%= rails_representation_url(@user.image.variant(resize_to_limit: [256, 256])) %>" width="256" height="256" alt="image" />
-          <% else %>
-          <i class="fas fa-8x fa-user-circle"></i>
-          <% end %>
+        <div class="field is-horizontal">
+          <div class="field-label"></div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <% if @user.image.attached? %>
+                <img src="<%= rails_representation_url(@user.image.variant(resize_to_limit: [256, 256])) %>" width="256" height="256" alt="image" />
+                <% else %>
+                <i class="fas fa-8x fa-user-circle"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="field is-horizontal mt-5">
+        <div class="field is-horizontal">
           <div class="field-label">
             <span class="label"><%= _('First Name') %></span>
           </div>
