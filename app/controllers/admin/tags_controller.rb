@@ -68,9 +68,10 @@ module Admin
     # GET /tags/1/translate
     def translate; end
 
-    # POST /tags/1/save_translation
+    # POST /tags/1/translate
     def save_translation
       @tag.assign_attributes(translation_params)
+      @tag.updater_id = current_admin_user.id
 
       if @tag.save_translation(translation_locale)
         redirect_to translate_admin_tag_path(@tag, translation_locale: translation_locale),

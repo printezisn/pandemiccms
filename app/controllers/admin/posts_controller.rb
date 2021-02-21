@@ -7,9 +7,11 @@ module Admin
 
     # GET /posts
     # GET /tag/:tag_id/posts
+    # GET /user/:user_id/posts
     def index
       @posts = Post.where(client_id: current_client.id)
       @posts = @posts.joins(:tag_taggables).where(tag_taggables: { tag_id: params[:tag_id] }) if params[:tag_id].present?
+      # @posts = @posts.where(creator_id: params[:user_id]) if params[:user_id].present?
 
       @posts = @posts.simple_text_search(params[:search])
                      .bound_sort(params[:sort_by], params[:dir])

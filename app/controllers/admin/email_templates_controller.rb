@@ -32,7 +32,7 @@ module Admin
     # GET /email_templates/1/translate
     def translate; end
 
-    # POST /email_templates/1/save_translation
+    # POST /email_templates/1/translate
     def save_translation
       @email_template.assign_attributes(translation_params)
 
