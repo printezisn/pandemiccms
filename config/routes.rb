@@ -45,6 +45,10 @@ Rails.application.routes.draw do
       get 'profile/translate', to: 'profile#translate'
       post 'profile/translate', to: 'profile#save_translation'
 
+      get 'password/edit', to: 'password#edit', as: :password_edit
+      put 'password/edit', to: 'password#update'
+      patch 'password/edit', to: 'password#update'
+
       root 'dashboard#index'
     end
 
