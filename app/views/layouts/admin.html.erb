@@ -110,7 +110,11 @@
           <% if admin_user_signed_in? %>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link" href="javascript:void(0)">
+              <% if current_admin_user.image.attached? %>
+              <img src="<%= rails_representation_url(current_admin_user.image.variant(resize_to_limit: [32, 32])) %>" alt="<%= current_admin_user.username %>" width="32" height="32" />
+              <% else %>
               <i class="fas fa-user"></i>
+              <% end %>
               &nbsp;
               <%= current_admin_user.username %>
             </a>
