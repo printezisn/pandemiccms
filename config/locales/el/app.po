@@ -307,6 +307,12 @@ msgstr "Επεξεργασία Προτύπου Email"
 msgid "Edit Email Template | %{client}"
 msgstr "Επεξεργασία Προτύπου Email | %{client}"
 
+msgid "Edit Profile"
+msgstr "Επεξεργασία Προφίλ"
+
+msgid "Edit Profile | %{client}"
+msgstr "Επεξεργασία Προφίλ | %{client}"
+
 msgid "Edit Tag"
 msgstr "Επεξεργασία Ετικέτας"
 
@@ -327,6 +333,9 @@ msgstr "Επεξεργασία χρήστη του %{client}"
 
 msgid "Edit an email template of %{client}"
 msgstr "Επεξεργασία προτύπου email του %{client}"
+
+msgid "Edit the profile of the current user of %{client}"
+msgstr "Επεξεργασία του προφίλ του τωρινού χρήστη του %{client}"
 
 msgid "Edit the settings of %{client}"
 msgstr "Επεξεργασία ρυθμίσεων του %{client}"
@@ -426,6 +435,9 @@ msgstr "Μεσαίο Όνομα"
 
 msgid "My Profile"
 msgstr "Το Προφίλ Μου"
+
+msgid "My Profile | %{client}"
+msgstr "Το Προφίλ Μου | %{client}"
 
 msgid "Name"
 msgstr "Όνομα"
@@ -652,6 +664,9 @@ msgstr "Το αρχείο δημιουργήθηκε με επιτυχία."
 msgid "The medium was successfully deleted."
 msgstr "Το αρχείο διαγράφτηκε με επιτυχία."
 
+msgid "The profile of the current user of %{client}"
+msgstr "Το προφίλ του τωρινού χρήστη του %{client}"
+
 msgid "The reset password link."
 msgstr "Ο σύνδεσμος επαναφοράς κωδικού."
 
@@ -703,6 +718,9 @@ msgstr "Μετάφραση"
 msgid "Translate Email Template | %{client}"
 msgstr "Μετάφραση Προτύπου Email | %{client}"
 
+msgid "Translate Profile | %{client}"
+msgstr "Μετάφραση Προφίλ | %{client}"
+
 msgid "Translate Tag | %{client}"
 msgstr "Μετάφραση Ετικέτας | %{client}"
 
@@ -717,6 +735,9 @@ msgstr "Μετάφραση χρήστη του %{client}"
 
 msgid "Translate an email template of %{client}"
 msgstr "Μετάφραση προτύπου email του %{client}"
+
+msgid "Translate the profile of the current user of %{client}"
+msgstr "Μετάφραση του προφίλ του τωρινού χρήστη του %{client}"
 
 msgid "Translation"
 msgstr "Μετάφραση"
@@ -792,6 +813,12 @@ msgstr "Ο κωδικός σας"
 
 msgid "Your password won't change until you access the link above and create a new one."
 msgstr "Ο κωδικός σας δε θα αλλάξει μέχρι να ακολουθήσετε τον παραπάνω σύνδεσμο και να δημιουργήσετε έναν καινούργιο."
+
+msgid "Your profile was successfully translated."
+msgstr "Το προφίλ σας μεταφράστηκε με επιτυχία."
+
+msgid "Your profile was successfully updated."
+msgstr "Το προφίλ σας ανανεώθηκε με επιτυχία."
 
 msgid "activerecord.attributes.admin_user.email"
 msgstr "Email"

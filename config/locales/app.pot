@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-21 10:07+0200\n"
-"PO-Revision-Date: 2021-02-21 10:07+0200\n"
+"POT-Creation-Date: 2021-02-21 15:30+0200\n"
+"PO-Revision-Date: 2021-02-21 15:30+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -308,6 +308,12 @@ msgstr ""
 msgid "Edit Email Template | %{client}"
 msgstr ""
 
+msgid "Edit Profile"
+msgstr ""
+
+msgid "Edit Profile | %{client}"
+msgstr ""
+
 msgid "Edit Tag"
 msgstr ""
 
@@ -327,6 +333,9 @@ msgid "Edit a user of %{client}"
 msgstr ""
 
 msgid "Edit an email template of %{client}"
+msgstr ""
+
+msgid "Edit the profile of the current user of %{client}"
 msgstr ""
 
 msgid "Edit the settings of %{client}"
@@ -426,6 +435,9 @@ msgid "Middle Name"
 msgstr ""
 
 msgid "My Profile"
+msgstr ""
+
+msgid "My Profile | %{client}"
 msgstr ""
 
 msgid "Name"
@@ -653,6 +665,9 @@ msgstr ""
 msgid "The medium was successfully deleted."
 msgstr ""
 
+msgid "The profile of the current user of %{client}"
+msgstr ""
+
 msgid "The reset password link."
 msgstr ""
 
@@ -704,6 +719,9 @@ msgstr ""
 msgid "Translate Email Template | %{client}"
 msgstr ""
 
+msgid "Translate Profile | %{client}"
+msgstr ""
+
 msgid "Translate Tag | %{client}"
 msgstr ""
 
@@ -717,6 +735,9 @@ msgid "Translate a user of %{client}"
 msgstr ""
 
 msgid "Translate an email template of %{client}"
+msgstr ""
+
+msgid "Translate the profile of the current user of %{client}"
 msgstr ""
 
 msgid "Translation"
@@ -792,6 +813,12 @@ msgid "Your password"
 msgstr ""
 
 msgid "Your password won't change until you access the link above and create a new one."
+msgstr ""
+
+msgid "Your profile was successfully translated."
+msgstr ""
+
+msgid "Your profile was successfully updated."
 msgstr ""
 
 msgid "activerecord.attributes.admin_user.email"

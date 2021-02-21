@@ -307,6 +307,12 @@ msgstr "Edit Email Template"
 msgid "Edit Email Template | %{client}"
 msgstr "Edit Email Template | %{client}"
 
+msgid "Edit Profile"
+msgstr "Edit Profile"
+
+msgid "Edit Profile | %{client}"
+msgstr "Edit Profile | %{client}"
+
 msgid "Edit Tag"
 msgstr "Edit Tag"
 
@@ -327,6 +333,9 @@ msgstr "Edit a user of %{client}"
 
 msgid "Edit an email template of %{client}"
 msgstr "Edit an email template of %{client}"
+
+msgid "Edit the profile of the current user of %{client}"
+msgstr "Edit the profile of the current user of %{client}"
 
 msgid "Edit the settings of %{client}"
 msgstr "Edit the settings of %{client}"
@@ -426,6 +435,9 @@ msgstr "Middle Name"
 
 msgid "My Profile"
 msgstr "My Profile"
+
+msgid "My Profile | %{client}"
+msgstr "My Profile | %{client}"
 
 msgid "Name"
 msgstr "Name"
@@ -652,6 +664,9 @@ msgstr "The medium was successfully created."
 msgid "The medium was successfully deleted."
 msgstr "The medium was successfully deleted."
 
+msgid "The profile of the current user of %{client}"
+msgstr "The profile of the current user of %{client}"
+
 msgid "The reset password link."
 msgstr "The reset password link."
 
@@ -703,6 +718,9 @@ msgstr "Translate"
 msgid "Translate Email Template | %{client}"
 msgstr "Translate Email Template | %{client}"
 
+msgid "Translate Profile | %{client}"
+msgstr "Translate Profile | %{client}"
+
 msgid "Translate Tag | %{client}"
 msgstr "Translate Tag | %{client}"
 
@@ -717,6 +735,9 @@ msgstr "Translate a user of %{client}"
 
 msgid "Translate an email template of %{client}"
 msgstr "Translate an email template of %{client}"
+
+msgid "Translate the profile of the current user of %{client}"
+msgstr "Translate the profile of the current user of %{client}"
 
 msgid "Translation"
 msgstr "Translation"
@@ -792,6 +813,12 @@ msgstr "Your password"
 
 msgid "Your password won't change until you access the link above and create a new one."
 msgstr "Your password won't change until you access the link above and create a new one."
+
+msgid "Your profile was successfully translated."
+msgstr "Your profile was successfully translated."
+
+msgid "Your profile was successfully updated."
+msgstr "Your profile was successfully created."
 
 msgid "activerecord.attributes.admin_user.email"
 msgstr "Email"
