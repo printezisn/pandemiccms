@@ -38,6 +38,13 @@ Rails.application.routes.draw do
       put 'client/edit', to: 'clients#update'
       patch 'client/edit', to: 'clients#update'
 
+      get 'profile', to: 'profile#index'
+      get 'profile/edit', to: 'profile#edit', as: :profile_edit
+      put 'profile/edit', to: 'profile#update'
+      patch 'profile/edit', to: 'profile#update'
+      get 'profile/translate', to: 'profile#translate'
+      post 'profile/translate', to: 'profile#save_translation'
+
       root 'dashboard#index'
     end
 
