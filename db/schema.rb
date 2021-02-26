@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_184950) do
+ActiveRecord::Schema.define(version: 2021_02_26_190324) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -81,6 +81,24 @@ ActiveRecord::Schema.define(version: 2021_02_26_184950) do
     t.index ["confirmation_token"], name: "index_admin_users_on_confirmation_token", unique: true
     t.index ["password_changed_at"], name: "index_admin_users_on_password_changed_at"
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "categories", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "client_id", null: false
+    t.string "name", null: false
+    t.string "slug"
+    t.text "description"
+    t.string "template"
+    t.integer "posts_count", default: 0, null: false
+    t.bigint "parent_id"
+    t.text "hierarchy_path"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id", "name"], name: "index_categories_on_client_id_and_name", unique: true
+    t.index ["client_id", "posts_count"], name: "index_categories_on_client_id_and_posts_count"
+    t.index ["client_id"], name: "index_categories_on_client_id"
+    t.index ["hierarchy_path"], name: "index_categories_on_hierarchy_path", length: 768
+    t.index ["parent_id"], name: "index_categories_on_parent_id"
   end
 
   create_table "client_domains", charset: "utf8mb4", force: :cascade do |t|
@@ -212,6 +230,8 @@ ActiveRecord::Schema.define(version: 2021_02_26_184950) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "admin_user_roles", "admin_users"
   add_foreign_key "admin_users", "clients"
+  add_foreign_key "categories", "categories", column: "parent_id"
+  add_foreign_key "categories", "clients"
   add_foreign_key "client_domains", "clients"
   add_foreign_key "client_languages", "clients"
   add_foreign_key "client_languages", "languages"
