@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_183834) do
+ActiveRecord::Schema.define(version: 2021_02_26_184950) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -192,13 +192,9 @@ ActiveRecord::Schema.define(version: 2021_02_26_183834) do
     t.integer "posts_count", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "creator_id", null: false
-    t.bigint "updater_id", null: false
     t.index ["client_id", "name"], name: "index_tags_on_client_id_and_name", unique: true
     t.index ["client_id", "posts_count"], name: "index_tags_on_client_id_and_posts_count"
     t.index ["client_id"], name: "index_tags_on_client_id"
-    t.index ["creator_id"], name: "index_tags_on_creator_id"
-    t.index ["updater_id"], name: "index_tags_on_updater_id"
   end
 
   create_table "translations", charset: "utf8mb4", force: :cascade do |t|
@@ -224,7 +220,5 @@ ActiveRecord::Schema.define(version: 2021_02_26_183834) do
   add_foreign_key "pages", "clients"
   add_foreign_key "posts", "clients"
   add_foreign_key "tag_taggables", "tags"
-  add_foreign_key "tags", "admin_users", column: "creator_id"
-  add_foreign_key "tags", "admin_users", column: "updater_id"
   add_foreign_key "tags", "clients"
 end
