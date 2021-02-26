@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_190324) do
+ActiveRecord::Schema.define(version: 2021_02_26_220002) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -99,6 +99,17 @@ ActiveRecord::Schema.define(version: 2021_02_26_190324) do
     t.index ["client_id"], name: "index_categories_on_client_id"
     t.index ["hierarchy_path"], name: "index_categories_on_hierarchy_path", length: 768
     t.index ["parent_id"], name: "index_categories_on_parent_id"
+  end
+
+  create_table "category_categorizables", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.string "categorizable_type", null: false
+    t.bigint "categorizable_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["categorizable_type", "categorizable_id"], name: "index_category_categorizables_on_categorizable"
+    t.index ["category_id", "categorizable_id", "categorizable_type"], name: "index_category_categorizable_on_category_and_categorizable", unique: true
+    t.index ["category_id"], name: "index_category_categorizables_on_category_id"
   end
 
   create_table "client_domains", charset: "utf8mb4", force: :cascade do |t|
@@ -232,6 +243,7 @@ ActiveRecord::Schema.define(version: 2021_02_26_190324) do
   add_foreign_key "admin_users", "clients"
   add_foreign_key "categories", "categories", column: "parent_id"
   add_foreign_key "categories", "clients"
+  add_foreign_key "category_categorizables", "categories"
   add_foreign_key "client_domains", "clients"
   add_foreign_key "client_languages", "clients"
   add_foreign_key "client_languages", "languages"
