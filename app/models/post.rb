@@ -12,4 +12,6 @@ class Post < ApplicationRecord
 
   has_many :tag_taggables, as: :taggable, dependent: :destroy
   has_many :tags, through: :tag_taggables
+  has_many :category_categorizables, as: :categorizable, dependent: :destroy
+  has_many :categories, through: :category_categorizables
 end

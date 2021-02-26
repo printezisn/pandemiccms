@@ -14,6 +14,7 @@ RSpec.describe Category, type: :model do
   it { is_expected.to belong_to(:client) }
   it { is_expected.to belong_to(:parent).class_name('Category').optional(true) }
   it { is_expected.to have_many(:children).class_name('Category').with_foreign_key(:parent_id).dependent(:destroy) }
+  it { is_expected.to have_many(:category_categorizables).dependent(:destroy) }
 
   it { is_expected.to validate_presence_of(:name).with_message('The name is required.') }
   it { is_expected.to validate_length_of(:name).is_at_most(255).with_message('The name may contain up to 255 characters.') }

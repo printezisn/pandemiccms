@@ -16,6 +16,7 @@ class Category < ApplicationRecord
   belongs_to :client, inverse_of: :categories
   belongs_to :parent, inverse_of: :children, class_name: 'Category', optional: true
   has_many :children, inverse_of: :parent, class_name: 'Category', foreign_key: :parent_id, dependent: :destroy
+  has_many :category_categorizables, inverse_of: :category, dependent: :destroy
 
   validates :name, presence: true,
                    length: { maximum: 255 },
