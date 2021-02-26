@@ -16,8 +16,6 @@ class AdminUser < ApplicationRecord
   belongs_to :client, inverse_of: :admin_users
 
   has_many :admin_user_roles, inverse_of: :admin_user, dependent: :destroy
-  has_many :created_tags, class_name: 'Tag', inverse_of: :creator, foreign_key: :creator_id, dependent: :destroy
-  has_many :updated_tags, class_name: 'Tag', inverse_of: :updater, foreign_key: :updater_id, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

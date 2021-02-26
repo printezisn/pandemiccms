@@ -37,8 +37,6 @@ module Admin
     def create
       @tag = Tag.new(tag_params)
       @tag.client_id = current_client.id
-      @tag.creator_id = current_admin_user.id
-      @tag.updater_id = current_admin_user.id
 
       if @tag.save
         redirect_to admin_tag_path(@tag), notice: _('The tag was successfully created.')
@@ -50,7 +48,7 @@ module Admin
     # PATCH/PUT /tags/1
     # PATCH/PUT /tags/1.json
     def update
-      if @tag.update(tag_params.merge(updater_id: current_admin_user.id))
+      if @tag.update(tag_params)
         redirect_to admin_tag_path(@tag), notice: _('The tag was successfully updated.')
       else
         render :edit
@@ -71,7 +69,6 @@ module Admin
     # POST /tags/1/translate
     def save_translation
       @tag.assign_attributes(translation_params)
-      @tag.updater_id = current_admin_user.id
 
       if @tag.save_translation(translation_locale)
         redirect_to translate_admin_tag_path(@tag, translation_locale: translation_locale),

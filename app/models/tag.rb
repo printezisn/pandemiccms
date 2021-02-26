@@ -12,8 +12,6 @@ class Tag < ApplicationRecord
   include Translatable
 
   belongs_to :client, inverse_of: :tags
-  belongs_to :creator, class_name: 'AdminUser', inverse_of: :created_tags
-  belongs_to :updater, class_name: 'AdminUser', inverse_of: :updated_tags
 
   has_many :tag_taggables, inverse_of: :tag, dependent: :destroy
 

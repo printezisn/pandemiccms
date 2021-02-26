@@ -10,8 +10,6 @@ RSpec.describe Tag, type: :model do
   subject(:model) { FactoryBot.build(:tag) }
 
   it { is_expected.to belong_to(:client) }
-  it { is_expected.to belong_to(:creator).class_name('AdminUser') }
-  it { is_expected.to belong_to(:updater).class_name('AdminUser') }
   it { is_expected.to have_many(:tag_taggables).dependent(:destroy) }
 
   it { is_expected.to validate_presence_of(:name).with_message('The name is required.') }

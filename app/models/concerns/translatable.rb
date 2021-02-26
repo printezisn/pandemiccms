@@ -17,13 +17,7 @@ module Translatable
 
       return unless translation.save
 
-      if respond_to?(:updater_id)
-        updater_id = self.updater_id
-        reload
-        raise ActiveRecord::Rollback unless update(updater_id: updater_id)
-      else
-        reload
-      end
+      reload
 
       true
     end
