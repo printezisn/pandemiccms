@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-21 22:09+0200\n"
-"PO-Revision-Date: 2021-02-21 22:09+0200\n"
+"POT-Creation-Date: 2021-02-27 22:19+0200\n"
+"PO-Revision-Date: 2021-02-27 22:19+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -185,6 +185,24 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
+msgid "Category|Description"
+msgstr ""
+
+msgid "Category|Image"
+msgstr ""
+
+msgid "Category|Name"
+msgstr ""
+
+msgid "Category|Parent"
+msgstr ""
+
+msgid "Category|Slug"
+msgstr ""
+
+msgid "Category|Template"
+msgstr ""
+
 msgid "Change Password"
 msgstr ""
 
@@ -264,9 +282,6 @@ msgid "Create new user for %{client}"
 msgstr ""
 
 msgid "Created At"
-msgstr ""
-
-msgid "Created By"
 msgstr ""
 
 msgid "Dashboard"
@@ -455,6 +470,9 @@ msgstr ""
 msgid "New Password"
 msgstr ""
 
+msgid "New Subcategory"
+msgstr ""
+
 msgid "Next Page"
 msgstr ""
 
@@ -471,6 +489,9 @@ msgid "No pages were found."
 msgstr ""
 
 msgid "No posts were found."
+msgstr ""
+
+msgid "No subcategories were found."
 msgstr ""
 
 msgid "No tags were found."
@@ -602,6 +623,9 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
+msgid "Subcategories"
+msgstr ""
+
 msgid "Subject"
 msgstr ""
 
@@ -633,12 +657,6 @@ msgid "Tag|Description"
 msgstr ""
 
 msgid "Tag|Name"
-msgstr ""
-
-msgid "Tag|Pages count"
-msgstr ""
-
-msgid "Tag|Posts count"
 msgstr ""
 
 msgid "Tag|Slug"
@@ -759,9 +777,6 @@ msgid "Unlock my account"
 msgstr ""
 
 msgid "Updated At"
-msgstr ""
-
-msgid "Updated By"
 msgstr ""
 
 msgid "Upload"
@@ -903,6 +918,24 @@ msgid "activerecord.errors.models.admin_user.attributes.username.taken"
 msgstr ""
 
 msgid "activerecord.errors.models.admin_user.attributes.username.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.category.attributes.name.blank"
+msgstr ""
+
+msgid "activerecord.errors.models.category.attributes.name.taken"
+msgstr ""
+
+msgid "activerecord.errors.models.category.attributes.name.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.category.attributes.parent_id.blank"
+msgstr ""
+
+msgid "activerecord.errors.models.category.attributes.parent_id.circle"
+msgstr ""
+
+msgid "activerecord.errors.models.category.attributes.slug.too_long"
 msgstr ""
 
 msgid "activerecord.errors.models.client.attributes.email.invalid"
