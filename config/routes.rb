@@ -15,6 +15,15 @@ Rails.application.routes.draw do
           post :translate, to: 'tags#save_translation'
         end
       end
+      resources :categories do
+        resources :posts, only: :index
+
+        member do
+          get :children
+          get :translate
+          post :translate, to: 'categories#save_translation'
+        end
+      end
       resources :email_templates, only: %i[index show edit update] do
         member do
           get :translate
