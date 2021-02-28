@@ -97,7 +97,6 @@ ActiveRecord::Schema.define(version: 2021_02_26_220002) do
     t.index ["client_id", "name"], name: "index_categories_on_client_id_and_name", unique: true
     t.index ["client_id", "posts_count"], name: "index_categories_on_client_id_and_posts_count"
     t.index ["client_id"], name: "index_categories_on_client_id"
-    t.index ["hierarchy_path"], name: "index_categories_on_hierarchy_path", length: 768
     t.index ["parent_id"], name: "index_categories_on_parent_id"
   end
 

@@ -17,7 +17,6 @@ class CreateCategories < ActiveRecord::Migration[6.1]
 
       t.index %i[client_id name], unique: true
       t.index %i[client_id posts_count]
-      t.index %i[hierarchy_path]
     end
   end
 end
