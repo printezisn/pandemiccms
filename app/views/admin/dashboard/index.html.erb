@@ -30,7 +30,7 @@
       <article class="message is-warning">
         <div class="message-body">
           <header>
-            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Category', '%{count} Categories', 0) % { count: 0 } %></h2>
+            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Category', '%{count} Categories', @categories_count) % { count: @categories_count } %></h2>
           </header>
         </div>
       </article>
