@@ -1,0 +1,35 @@
+<%= form_with(method: :get, html: { class: 'smart-table-search', 'data-target' => 'subcategories-smart-table' }) do |t| %>
+<div class="field has-addons">
+  <div class="control is-expanded">
+    <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />
+  </div>
+  <div class="control">
+    <button type="submit" class="button is-success" title="<%= _('Search') %>">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+</div>
+<% end %>
+<table class="table is-striped is-hoverable is-fullwidth mt-2">
+  <thead>
+    <tr>
+      <th><%= render partial: 'admin/shared/table_header', locals: { field: 'name', title: _('Name') } %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @categories.none? %>
+    <tr>
+      <td><%= _('No subcategories were found.') %></td>
+    </tr>
+    <% else %>
+    <% @categories.each do |category| %>
+    <tr>
+      <td>
+        <a href="<%= admin_category_path(category) %>"><%= category.name %></a>
+      </td>
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @categories %>

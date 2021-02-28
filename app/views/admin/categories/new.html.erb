@@ -1,0 +1,106 @@
+<%
+    content_for :title, _('Create Category | %{client}') % { client: current_client.name }
+    content_for :description, _('Create new category for %{client}') % { client: current_client.name }
+%>
+
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-th"></i>
+      &nbsp;
+      <%= _('Create Category') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <%= render "admin/shared/error_messages", resource: @category %>
+    <%= form_with(model: @category, url: admin_categories_path, method: :post) do |f| %>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :image, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <%= render partial: 'admin/shared/image_uploader', locals: { model: @category, f: f } %>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :name, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :name, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :slug, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :slug, class: 'input' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% unless @parents.empty? %>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :parent_id, _('Category|Parent'), class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <div class="select">
+              <%= f.select :parent_id, @parents, include_blank: _('None|Parent') %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :description, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_area :description, class: 'textarea', rows: 5 %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :template, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <div class="select">
+              <%= f.select :template, @templates %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success mb-1' %>
+            <a class="button" href="<%= params[:parent_id].present? ? admin_category_path(id: params[:parent_id]) : admin_categories_path %>"><%= _('Cancel') %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</article>

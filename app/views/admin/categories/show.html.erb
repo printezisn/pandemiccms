@@ -1,0 +1,203 @@
+<%
+    content_for :title, _('Category Details | %{client}') % { client: current_client.name }
+    content_for :description, _('Details for a category of %{client}') % { client: current_client.name }
+%>
+
+<a class="button" href="<%= admin_categories_path %>">
+  <i class="fas fa-long-arrow-alt-left"></i>
+  &nbsp;
+  <%= _('Back') %>
+</a>
+<div class="dropdown is-togglable">
+  <div class="dropdown-trigger">
+    <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" class="button">
+      <%= _('Actions') %>
+      &nbsp;
+      <i class="fas fa-angle-down"></i>
+    </a>
+  </div>
+  <div class="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <% if current_client.show_category_page %>
+      <a class="dropdown-item" rel="noopener" target="_blank" href="<%= category_path(id: @category.id, slug: @category.displayed_slug(current_language&.transliterations)) %>">
+        <i class="fas fa-external-link-alt"></i>
+        &nbsp;
+        <%= _('Preview') %>
+      </a>
+      <% end %>
+      <% if current_client.enabled_languages.size > 1 %>
+      <a class="dropdown-item" href="<%= translate_admin_category_path(@category) %>">
+        <i class="fas fa-globe"></i>
+        &nbsp;
+        <%= _('Translate') %>
+      </a>
+      <% end %>
+      <a class="dropdown-item" href="<%= edit_admin_category_path(@category) %>">
+        <i class="fas fa-pen"></i>
+        &nbsp;
+        <%= _('Edit') %>
+      </a>
+      <hr class="dropdown-divider" />
+      <a class="dropdown-item" href="<%= new_admin_category_path(parent_id: @category.id) %>">
+        <i class="fas fa-plus"></i>
+        &nbsp;
+        <%= _('New Subcategory') %>
+      </a>
+      <hr class="dropdown-divider" />
+      <a href="javascript:void(0)" class="dropdown-item" data-modal-open="delete-category-modal">
+        <i class="fas fa-trash"></i>
+        &nbsp;
+        <%= _('Delete') %>
+      </a>
+      <%= form_with(url: admin_category_path(@category), method: :delete, id: 'delete-category-modal', class: 'modal') do %>
+      <div class="modal-background cancel"></div>
+      <div class="modal-card">
+        <div class="modal-card-head">
+          <p class="modal-card-title"><%= _('Delete Confirmation') %></p>
+          <button type="button" class="delete cancel" aria-label="close"></button>
+        </div>
+        <div class="modal-card-body">
+          <p><%= _('Are you sure you want to delete this category ?') %></p>
+        </div>
+        <div class="modal-card-foot">
+          <button type="button" class="button cancel"><%= _('No') %></button>
+          <button type="submit" class="button is-success"><%= _('Yes') %></button>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="columns is-multiline is-mobile mt-3">
+  <div class="column is-full-mobile is-full-tablet is-full-desktop is-full-widescreen">
+    <article class="card">
+      <header class="card-header">
+        <h1 class="card-header-title">
+          <i class="fas fa-th"></i>
+          &nbsp;
+          <%= _('Category Details') %>
+        </h1>
+      </header>
+      <div class="card-content">
+        <div class="field is-horizontal">
+          <div class="field-label"></div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <% if @category.image.attached? %>
+                <img src="<%= rails_representation_url(@category.image.variant(resize_to_limit: [256, 256])) %>" width="256" height="256" alt="image" />
+                <% else %>
+                <i class="fas fa-8x fa-question-circle"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Name') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @category.name %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Slug') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @category.slug %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Hierarchy') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <% @category.ancestors.each do |category| %>
+                <a href="<%= admin_category_path(category) %>"><%= category.name %></a>
+                >
+                <% end %>
+                <%= @category.name %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Description') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @category.description %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Template') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @category.template %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Created At') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @category.created_at %></div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <span class="label"><%= _('Updated At') %></span>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control"><%= @category.updated_at %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="column is-full-mobile is-full-tablet is-half-desktop">
+    <article class="card">
+      <div class="card-header">
+        <h2 class="card-header-title">
+          <i class="fas fa-sitemap"></i>
+          &nbsp;
+          <%= _('Subcategories') %>
+        </h2>
+      </div>
+      <div class="card-content">
+        <div class="smart-table" id="subcategories-smart-table" data-autoload="<%= children_admin_category_path(@category) %>"></div>
+      </div>
+    </article>
+  </div>
+  <div class="column is-full-mobile is-full-tablet is-half-desktop">
+    <article class="card">
+      <div class="card-header">
+        <h2 class="card-header-title">
+          <i class="fas fa-file"></i>
+          &nbsp;
+          <%= _('Posts') %>
+        </h2>
+      </div>
+      <div class="card-content">
+        <div class="smart-table" id="posts-smart-table" data-autoload="<%= admin_category_posts_path(@category) %>"></div>
+      </div>
+    </article>
+  </div>
+</div>

@@ -48,7 +48,7 @@
                 &nbsp;
                 <%= _('Posts') %>
               </a>
-              <a class="navbar-item" href="javascript:void(0)">
+              <a class="navbar-item<%= ' is-active' if controller_name == 'categories' %>" href="<%= admin_categories_path %>">
                 <i class="fas fa-th"></i>
                 &nbsp;
                 <%= _('Categories') %>
