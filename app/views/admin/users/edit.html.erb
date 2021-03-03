@@ -3,6 +3,8 @@
     content_for :description, _('Edit a user of %{client}') % { client: current_client.name }
 %>
 
+<%= form_with(model: @user, url: admin_user_path(@user), method: :patch) do |f| %>
+<%= render "admin/shared/error_messages", resource: @user %>
 <article class="card">
   <header class="card-header">
     <h1 class="card-header-title">
@@ -12,8 +14,6 @@
     </h1>
   </header>
   <div class="card-content">
-    <%= render "admin/shared/error_messages", resource: @user %>
-    <%= form_with(model: @user, url: admin_user_path(@user), method: :patch) do |f| %>
     <div class="field is-horizontal">
       <div class="field-label">
         <span class="label"><%= _('Username') %></span>
@@ -36,7 +36,31 @@
         </div>
       </div>
     </div>
-    <hr />
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :role, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <div class="select">
+              <%= f.select :role, @roles, include_blank: _('Author') %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-users"></i>
+      &nbsp;
+      <%= _('Profile') %>
+    </h1>
+  </header>
+  <div class="card-content">
     <div class="field is-horizontal">
       <div class="field-label is-normal">
         <%= f.label :image, class: 'label' %>
@@ -95,31 +119,21 @@
         </div>
       </div>
     </div>
+  </div>
+</article>
+<div class="card mt-5">
+  <div class="card-content">
     <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <%= f.label :role, class: 'label' %>
-      </div>
+      <div class="field-label is-hidden-touch is-hidden-mobile"></div>
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <div class="select">
-              <%= f.select :role, @roles, include_blank: _('Author') %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="field is-horizontal">
-      <div class="field-label is-normal"></div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control">
-            <%= f.submit _('Submit'), class: 'button is-success mb-1' %>
+            <%= f.submit _('Submit'), class: 'button is-success' %>
             <a class="button" href="<%= admin_user_path(@user) %>"><%= _('Cancel') %></a>
           </div>
         </div>
       </div>
     </div>
-    <% end %>
   </div>
-</article>
+</div>
+<% end %>
