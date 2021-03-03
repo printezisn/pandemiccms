@@ -54,9 +54,9 @@
       <div class="card-content">
         <%= form_with(model: @translation, url: translate_admin_category_path(@category, translation_locale: translation_locale), method: :post) do |f| %>
         <div class="field">
-          <%= f.label :name, class: 'label required-label' %>
+          <%= f.label :name, class: 'label' %>
           <div class="control">
-            <%= f.text_field :name, class: 'input', required: true %>
+            <%= f.text_field :name, class: 'input' %>
           </div>
         </div>
         <div class="field">

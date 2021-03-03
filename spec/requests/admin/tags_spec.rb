@@ -263,7 +263,7 @@ RSpec.describe '/admin/tags', type: :request do
     context 'with invalid parameters' do
       let(:translation_params) do
         {
-          'name' => '',
+          'name' => Array.new(256) { 'a' }.join,
           'slug' => 'translated-slug',
           'description' => 'Translated description'
         }

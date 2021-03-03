@@ -138,7 +138,7 @@ RSpec.describe '/admin/email_templates', type: :request do
     context 'with invalid parameters' do
       let(:translation_params) do
         {
-          'subject' => '',
+          'subject' => Array.new(256) { 'a' }.join,
           'body' => 'Translated body'
         }
       end

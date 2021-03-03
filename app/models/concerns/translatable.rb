@@ -9,7 +9,13 @@ module Translatable
   end
 
   def save_translation(locale)
-    return false unless valid?
+    validate
+    errors.attribute_names.each do |attribute|
+      errors.delete(attribute, :blank)
+      errors.delete(attribute, :taken)
+    end
+
+    return false if errors.any?
 
     !!ActiveRecord::Base.transaction do
       translation = translations.find_or_initialize_by(locale: locale.to_s)
