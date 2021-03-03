@@ -100,6 +100,9 @@ msgstr "Current Sign In At"
 msgid "AdminUser|Current sign in ip"
 msgstr "Current Sign In IP"
 
+msgid "AdminUser|Description"
+msgstr "Description"
+
 msgid "AdminUser|Email"
 msgstr "Email"
 

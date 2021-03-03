@@ -100,6 +100,9 @@ msgstr "Τωρινή Σύνδεση"
 msgid "AdminUser|Current sign in ip"
 msgstr "IP Τωρινής Σύνδεσης"
 
+msgid "AdminUser|Description"
+msgstr "Περιγραφή"
+
 msgid "AdminUser|Email"
 msgstr "Email"
 
