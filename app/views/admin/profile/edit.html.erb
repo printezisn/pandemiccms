@@ -3,6 +3,8 @@
     content_for :description, _('Edit the profile of the current user of %{client}') % { client: current_client.name }
 %>
 
+<%= render "admin/shared/error_messages", resource: @user %>
+<%= form_with(model: @user, url: admin_profile_edit_path, method: :patch) do |f| %>
 <article class="card">
   <header class="card-header">
     <h1 class="card-header-title">
@@ -12,8 +14,6 @@
     </h1>
   </header>
   <div class="card-content">
-    <%= render "admin/shared/error_messages", resource: @user %>
-    <%= form_with(model: @user, url: admin_profile_edit_path, method: :patch) do |f| %>
     <div class="field is-horizontal">
       <div class="field-label is-normal">
         <%= f.label :image, class: 'label' %>
@@ -84,17 +84,21 @@
         </div>
       </div>
     </div>
+  </div>
+</article>
+<div class="card mt-5">
+  <div class="card-content">
     <div class="field is-horizontal">
-      <div class="field-label is-normal"></div>
+      <div class="field-label is-hidden-touch is-hidden-mobile"></div>
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <%= f.submit _('Submit'), class: 'button is-success mb-1' %>
+            <%= f.submit _('Submit'), class: 'button is-success' %>
             <a class="button" href="<%= admin_profile_path %>"><%= _('Cancel') %></a>
           </div>
         </div>
       </div>
     </div>
-    <% end %>
   </div>
-</article>
+</div>
+<% end %>

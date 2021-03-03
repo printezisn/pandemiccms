@@ -7,6 +7,8 @@
 <%= javascript_pack_tag 'admin/pages/clients/edit', defer: true %>
 <% end %>
 
+<%= render "admin/shared/error_messages", resource: @client %>
+<%= form_with(model: @client, url: admin_client_edit_path(@client), method: :patch) do |f| %>
 <article class="card">
   <header class="card-header">
     <h1 class="card-header-title">
@@ -16,8 +18,6 @@
     </h1>
   </header>
   <div class="card-content">
-    <%= render "admin/shared/error_messages", resource: @client %>
-    <%= form_with(model: @client, url: admin_client_edit_path(@client), method: :patch) do |f| %>
     <div class="field is-horizontal">
       <div class="field-label is-normal">
         <%= f.label :image, class: 'label' %>
@@ -169,17 +169,21 @@
         </div>
       </div>
     </div>
+  </div>
+</article>
+<div class="card mt-5">
+  <div class="card-content">
     <div class="field is-horizontal">
-      <div class="field-label is-normal"></div>
+      <div class="field-label is-hidden-touch is-hidden-mobile"></div>
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <%= f.submit _('Submit'), class: 'button is-success mb-1' %>
+            <%= f.submit _('Submit'), class: 'button is-success' %>
             <a class="button" href="<%= admin_root_path %>"><%= _('Cancel') %></a>
           </div>
         </div>
       </div>
     </div>
-    <% end %>
   </div>
-</article>
+</div>
+<% end %>
