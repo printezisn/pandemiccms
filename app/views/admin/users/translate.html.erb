@@ -3,6 +3,7 @@
     content_for :description, _('Translate a user of %{client}') % { client: current_client.name }
 %>
 
+<%= render "admin/shared/error_messages", resource: @user %>
 <a class="button" href="<%= admin_user_path(@user) %>">
   <i class="fas fa-long-arrow-alt-left"></i>
   &nbsp;
@@ -61,7 +62,6 @@
         <%= render partial: 'admin/shared/languages_dropdown' %>
       </header>
       <div class="card-content">
-        <%= render "admin/shared/error_messages", resource: @user %>
         <%= form_with(model: @translation, url: translate_admin_user_path(@user, translation_locale: translation_locale), method: :post) do |f| %>
         <div class="field">
           <span class="label"><%= _('Username') %></span>

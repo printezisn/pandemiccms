@@ -3,6 +3,7 @@
     content_for :description, _('Translate an email template of %{client}') % { client: current_client.name }
 %>
 
+<%= render "admin/shared/error_messages", resource: @email_template %>
 <a class="button" href="<%= admin_email_template_path(@email_template) %>">
   <i class="fas fa-long-arrow-alt-left"></i>
   &nbsp;
@@ -51,7 +52,6 @@
         <%= render partial: 'admin/shared/languages_dropdown' %>
       </header>
       <div class="card-content">
-        <%= render "admin/shared/error_messages", resource: @email_template %>
         <%= form_with(model: @translation.becomes(EmailTemplate), url: translate_admin_email_template_path(@email_template, translation_locale: translation_locale), method: :post) do |f| %>
         <div class="field">
           <span class="label"><%= _('Name') %></span>
