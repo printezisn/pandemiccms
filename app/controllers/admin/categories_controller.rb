@@ -14,9 +14,8 @@ module Admin
     def index
       @categories = Category.where(client_id: current_client.id)
                             .simple_text_search(params[:search])
-                            .bound_sort(params[:sort_by], params[:dir])
-                            .page(params[:page].to_i)
-                            .per(PAGE_SIZE)
+      @show_depth = params[:search].blank?
+
       render :_categories_table, layout: nil if request.xhr?
     end
 
@@ -25,9 +24,7 @@ module Admin
     def children
       @categories = Category.where(client_id: current_client.id, parent_id: params[:id])
                             .simple_text_search(params[:search])
-                            .bound_sort(params[:sort_by], params[:dir])
-                            .page(params[:page].to_i)
-                            .per(PAGE_SIZE)
+                            .bound_sort(params[:sort_by] || 'name', params[:dir])
       render :children, layout: nil
     end
 
@@ -116,9 +113,9 @@ module Admin
     end
 
     def fetch_parents(excluded_category = nil)
-      @parents = Category.full_hierarchy(current_client.id, excluded_category).map do |id, hierarchy|
-        [hierarchy.map(&:name).join(' > '), id]
-      end.sort_by(&:first)
+      @parents = Category.ordered_by_hierarchy(current_client.id, excluded_category).map do |category|
+        [category.name_with_depth, category.id]
+      end
     end
 
     def category_params

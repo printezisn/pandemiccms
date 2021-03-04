@@ -54,29 +54,38 @@ RSpec.shared_examples 'Parentable' do
     it { expect(model.parent.descendants.map(&:id)).to contain_exactly(model.id, model.children[0].id, model.children[1].id) }
   end
 
-  describe '.full_hierarchy' do
+  describe '#depth' do
+    it { expect(model.depth).to eq(1) }
+  end
+
+  describe '#name_with_depth' do
+    context 'when depth is 0' do
+      it { expect(model.parent.name_with_depth).to eq(model.parent.name) }
+    end
+
+    context 'when depth is greater than 0' do
+      it { expect(model.name_with_depth).to eq("-- #{model.name}") }
+    end
+  end
+
+  describe '.ordered_by_hierarchy' do
     context 'when an excluded instance is passed' do
-      let(:full_hierarchy) do
-        described_class.full_hierarchy(model.client_id, model).transform_values { |instances| instances.map(&:id) }
+      subject(:hierarchy) do
+        described_class.ordered_by_hierarchy(model.client_id, model).map(&:id)
       end
 
       it 'does not include the excluded instance and its descendants' do
-        expect(full_hierarchy).to eq({ model.parent_id => [model.parent_id] })
+        expect(hierarchy).to eq([model.parent_id])
       end
     end
 
     context 'when an excluded instance is not passed' do
-      let(:full_hierarchy) do
-        described_class.full_hierarchy(model.client_id, nil).transform_values { |instances| instances.map(&:id) }
+      subject(:hierarchy) do
+        described_class.ordered_by_hierarchy(model.client_id, nil).map(&:id)
       end
 
       it 'includes all instances' do
-        expect(full_hierarchy).to eq({
-                                       model.parent_id => [model.parent_id],
-                                       model.id => [model.parent_id, model.id],
-                                       model.children[0].id => [model.parent_id, model.id, model.children[0].id],
-                                       model.children[1].id => [model.parent_id, model.id, model.children[1].id]
-                                     })
+        expect(hierarchy).to eq([model.parent_id, model.id, model.children[0].id, model.children[1].id])
       end
     end
   end

@@ -11,18 +11,17 @@ module Parentable
     before_save :set_hierarchy_path, if: -> { new_record? || will_save_change_to_parent_id? }
     after_save :update_children_hierarchy_path, if: :saved_change_to_hierarchy_path?
 
-    def self.full_hierarchy(client_id, excluded_instance)
+    def self.ordered_by_hierarchy(client_id, excluded_instance)
       all_instances = where(client_id: client_id).to_a
       if excluded_instance
         all_instances.reject! { |instance| instance.id == excluded_instance.id || instance.ancestor_ids.include?(excluded_instance.id) }
       end
 
-      all_instances.map do |instance|
+      all_instances.sort_by do |instance|
         ancestors = all_instances.select { |ancestor| instance.ancestor_ids.include?(ancestor.id) }
                                  .sort_by { |ancestor| instance.ancestor_ids.index(ancestor.id) }
-
-        [instance.id, ancestors + [instance]]
-      end.to_h
+        (ancestors + [instance]).map(&:name)
+      end
     end
   end
 
@@ -43,6 +42,16 @@ module Parentable
     return @descendants if defined?(@descendants) && memoized?
 
     @descendants = fetch_descendants
+  end
+
+  def depth
+    ancestor_ids.size
+  end
+
+  def name_with_depth
+    return name if depth.zero?
+
+    "#{Array.new(depth) { '--' }.join} #{name}"
   end
 
   private

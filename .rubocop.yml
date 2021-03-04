@@ -37,3 +37,6 @@ RSpec/MultipleExpectations:
 
 RSpec/MultipleMemoizedHelpers:
   Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false

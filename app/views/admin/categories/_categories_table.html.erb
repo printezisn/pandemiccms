@@ -24,10 +24,9 @@
 <table class="table is-striped is-hoverable is-fullwidth">
   <thead>
     <tr>
-      <th><%= render partial: 'admin/shared/table_header', locals: { field: 'name', title: _('Name') } %></th>
-      <th class="is-hidden-mobile"><%= _('Hierarchy') %></th>
-      <th class="is-hidden-touch"><%= render partial: 'admin/shared/table_header', locals: { field: 'created_at', title: _('Created At') } %></th>
-      <th class="is-hidden-touch"><%= render partial: 'admin/shared/table_header', locals: { field: 'updated_at', title: _('Updated At') } %></th>
+      <th><%= _('Name') %></th>
+      <th class="is-hidden-touch"><%= _('Created At') %></th>
+      <th class="is-hidden-touch"><%= _('Updated At') %></th>
       <th class="actions-cell"></th>
     </tr>
   </thead>
@@ -40,9 +39,8 @@
     <% @categories.each do |category| %>
     <tr>
       <td>
-        <a href="<%= admin_category_path(category) %>"><%= category.name %></a>
+        <a href="<%= admin_category_path(category) %>"><%= @show_depth ? category.name_with_depth : category.name %></a>
       </td>
-      <td class="is-hidden-mobile"><%= (category.ancestors + [category]).map(&:name).join(' > ') %></td>
       <td class="is-hidden-touch"><%= category.created_at %></td>
       <td class="is-hidden-touch"><%= category.updated_at %></td>
       <td class="actions-cell">
@@ -74,6 +72,12 @@
                 <%= _('Edit') %>
               </a>
               <hr class="dropdown-divider" />
+              <a class="dropdown-item" href="<%= new_admin_category_path(parent_id: category.id) %>">
+                <i class="fas fa-plus"></i>
+                &nbsp;
+                <%= _('New Subcategory') %>
+              </a>
+              <hr class="dropdown-divider" />
               <a href="javascript:void(0)" class="dropdown-item" data-modal-open="delete-category-modal<%= category.id %>">
                 <i class="fas fa-trash"></i>
                 &nbsp;
@@ -88,7 +92,6 @@
     <% end %>
   </tbody>
 </table>
-<%= paginate @categories %>
 
 <% @categories.each do |category| %>
 <%= form_with(url: admin_category_path(category), method: :delete, id: "delete-category-modal#{category.id}", class: 'modal') do %>
