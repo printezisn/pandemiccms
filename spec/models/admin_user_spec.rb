@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require './spec/models/concerns/simple_text_searchable_spec'
-require './spec/models/concerns/bound_sortable_spec'
-require './spec/models/concerns/imageable_spec'
-require './spec/models/concerns/translatable_spec'
+require './spec/models/concerns/simple_text_searchable'
+require './spec/models/concerns/bound_sortable'
+require './spec/models/concerns/imageable'
+require './spec/models/concerns/translatable'
 
 RSpec.describe AdminUser, type: :model do
   subject(:model) { FactoryBot.build(:admin_user) }

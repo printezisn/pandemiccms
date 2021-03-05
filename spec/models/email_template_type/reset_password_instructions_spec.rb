@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require './spec/models/email_template_type/shared_spec'
+require './spec/models/email_template_type/shared'
 
 RSpec.describe EmailTemplateType::ResetPasswordInstructions, type: :model do
   subject(:model) { FactoryBot.build(:email_template, type: described_class.name).becomes(described_class) }

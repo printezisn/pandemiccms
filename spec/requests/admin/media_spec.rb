@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require './spec/requests/admin/shared/access_spec'
+require './spec/requests/admin/shared/access'
 
 RSpec.describe '/admin/media', type: :request do
   let(:file_attributes) do

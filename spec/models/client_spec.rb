@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-require './spec/models/concerns/imageable_spec'
+require './spec/models/concerns/imageable'
 
 RSpec.describe Client, type: :model do
   subject(:model) { FactoryBot.build(:client) }

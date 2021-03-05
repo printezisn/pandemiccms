@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require './spec/models/concerns/simple_text_searchable_spec'
-require './spec/models/concerns/bound_sortable_spec'
-require './spec/models/concerns/sluggable_spec'
-require './spec/models/concerns/translatable_spec'
+require './spec/models/concerns/simple_text_searchable'
+require './spec/models/concerns/bound_sortable'
+require './spec/models/concerns/sluggable'
+require './spec/models/concerns/translatable'
 
 RSpec.describe Tag, type: :model do
   subject(:model) { FactoryBot.build(:tag) }

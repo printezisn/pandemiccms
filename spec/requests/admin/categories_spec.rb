@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require './spec/requests/admin/shared/access_spec'
+require './spec/requests/admin/shared/access'
 
 RSpec.describe '/admin/categories', type: :request do
   let!(:admin_user) { FactoryBot.create(:admin_user) }
