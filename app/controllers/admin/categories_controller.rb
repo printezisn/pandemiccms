@@ -24,7 +24,7 @@ module Admin
     def children
       @categories = Category.where(client_id: current_client.id, parent_id: params[:id])
                             .simple_text_search(params[:search])
-                            .bound_sort(params[:sort_by] || 'name', params[:dir])
+                            .bound_sort(params[:sort_by], params[:dir])
       render :children, layout: nil
     end
 
