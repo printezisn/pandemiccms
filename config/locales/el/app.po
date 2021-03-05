@@ -571,6 +571,33 @@ msgstr "Σελίδες του %{client}"
 msgid "Pages | %{client}"
 msgstr "Σελίδες | %{client}"
 
+msgid "Pages|Description"
+msgstr "Περιγραφή"
+
+msgid "Pages|Image"
+msgstr "Εικόνα"
+
+msgid "Page|Body"
+msgstr "Κείμενο"
+
+msgid "Page|Name"
+msgstr "Όνομα"
+
+msgid "Page|Parent"
+msgstr "Γονέας"
+
+msgid "Page|Slug"
+msgstr "Slug"
+
+msgid "Page|Status"
+msgstr "Κατάσταση"
+
+msgid "Page|Template"
+msgstr "Πρότυπο"
+
+msgid "Page|Visibility"
+msgstr "Ορατότητα"
+
 msgid "Parameters"
 msgstr "Παράμετροι"
 
@@ -1029,6 +1056,24 @@ msgstr "Το θέμα είναι υποχρεωτικό."
 
 msgid "activerecord.errors.models.email_template.attributes.subject.too_long"
 msgstr "Το θέμα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.page.attributes.name.blank"
+msgstr "Το όνομα είναι υποχρεωτικό."
+
+msgid "activerecord.errors.models.page.attributes.name.taken"
+msgstr "Το όνομα χρησιμοποιείται ήδη."
+
+msgid "activerecord.errors.models.page.attributes.name.too_long"
+msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.page.attributes.parent_id.blank"
+msgstr "Ο γονέας δε βρέθηκε."
+
+msgid "activerecord.errors.models.page.attributes.parent_id.circle"
+msgstr "Ο γονέας δεν είναι έγκυρος. Εντοπίστηκε κύκλος στην ιεραρχία."
+
+msgid "activerecord.errors.models.page.attributes.slug.too_long"
+msgstr "Το slug μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
 
 msgid "activerecord.errors.models.tag.attributes.name.blank"
 msgstr "Το όνομα είναι υποχρεωτικό."

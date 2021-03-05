@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-03 21:57+0200\n"
-"PO-Revision-Date: 2021-03-03 21:57+0200\n"
+"POT-Creation-Date: 2021-03-06 01:06+0200\n"
+"PO-Revision-Date: 2021-03-06 01:06+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -572,6 +572,33 @@ msgstr ""
 msgid "Pages | %{client}"
 msgstr ""
 
+msgid "Pages|Description"
+msgstr ""
+
+msgid "Pages|Image"
+msgstr ""
+
+msgid "Page|Body"
+msgstr ""
+
+msgid "Page|Name"
+msgstr ""
+
+msgid "Page|Parent"
+msgstr ""
+
+msgid "Page|Slug"
+msgstr ""
+
+msgid "Page|Status"
+msgstr ""
+
+msgid "Page|Template"
+msgstr ""
+
+msgid "Page|Visibility"
+msgstr ""
+
 msgid "Parameters"
 msgstr ""
 
@@ -1029,6 +1056,24 @@ msgid "activerecord.errors.models.email_template.attributes.subject.blank"
 msgstr ""
 
 msgid "activerecord.errors.models.email_template.attributes.subject.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.page.attributes.name.blank"
+msgstr ""
+
+msgid "activerecord.errors.models.page.attributes.name.taken"
+msgstr ""
+
+msgid "activerecord.errors.models.page.attributes.name.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.page.attributes.parent_id.blank"
+msgstr ""
+
+msgid "activerecord.errors.models.page.attributes.parent_id.circle"
+msgstr ""
+
+msgid "activerecord.errors.models.page.attributes.slug.too_long"
 msgstr ""
 
 msgid "activerecord.errors.models.tag.attributes.name.blank"
