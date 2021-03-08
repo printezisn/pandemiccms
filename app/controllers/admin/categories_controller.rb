@@ -12,8 +12,13 @@ module Admin
     # GET /categories
     # GET /categories.json
     def index
-      @categories = Category.where(client_id: current_client.id)
-                            .simple_text_search(params[:search])
+      @categories = if params[:search].present?
+                      Category.where(client_id: current_client.id)
+                              .simple_text_search(params[:search])
+                              .bound_sort(params[:sort_by], params[:dir])
+                    else
+                      Category.ordered_by_hierarchy(current_client.id, nil)
+                    end
       @show_depth = params[:search].blank?
 
       render :_categories_table, layout: nil if request.xhr?
