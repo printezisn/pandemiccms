@@ -8,10 +8,6 @@ RSpec.describe Admin::CategoriesController, type: :routing do
       expect(get: '/admin/categories').to route_to('admin/categories#index')
     end
 
-    it 'routes to #children' do
-      expect(get: '/admin/categories/1/children').to route_to('admin/categories#children', id: '1')
-    end
-
     it 'routes to #new' do
       expect(get: '/admin/categories/new').to route_to('admin/categories#new')
     end

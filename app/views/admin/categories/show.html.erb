@@ -68,136 +68,132 @@
     </div>
   </div>
 </div>
-<div class="columns is-multiline is-mobile mt-3">
-  <div class="column is-full-mobile is-full-tablet is-full-desktop is-full-widescreen">
-    <article class="card">
-      <header class="card-header">
-        <h1 class="card-header-title">
-          <i class="fas fa-th"></i>
-          &nbsp;
-          <%= _('Category Details') %>
-        </h1>
-      </header>
-      <div class="card-content">
-        <div class="field is-horizontal">
-          <div class="field-label"></div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <% if @category.image.attached? %>
-                <img src="<%= rails_representation_url(@category.image.variant(resize_to_limit: [256, 256])) %>" width="256" height="256" alt="image" />
-                <% else %>
-                <i class="fas fa-8x fa-question-circle"></i>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <span class="label"><%= _('Name') %></span>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control"><%= @category.name %></div>
-            </div>
-          </div>
-        </div>
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <span class="label"><%= _('Slug') %></span>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control"><%= @category.slug %></div>
-            </div>
-          </div>
-        </div>
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <span class="label"><%= _('Hierarchy') %></span>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <% @category.ancestors.each do |category| %>
-                <a href="<%= admin_category_path(category) %>"><%= category.name %></a>
-                >
-                <% end %>
-                <%= @category.name %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <span class="label"><%= _('Description') %></span>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control"><%= @category.description %></div>
-            </div>
-          </div>
-        </div>
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <span class="label"><%= _('Template') %></span>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control"><%= @category.template %></div>
-            </div>
-          </div>
-        </div>
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <span class="label"><%= _('Created At') %></span>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control"><%= @category.created_at %></div>
-            </div>
-          </div>
-        </div>
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <span class="label"><%= _('Updated At') %></span>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control"><%= @category.updated_at %></div>
-            </div>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-th"></i>
+      &nbsp;
+      <%= _('Category Details') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <% if @category.image.attached? %>
+            <img src="<%= rails_representation_url(@category.image.variant(resize_to_limit: [256, 256])) %>" width="256" height="256" alt="image" />
+            <% else %>
+            <i class="fas fa-8x fa-question-circle"></i>
+            <% end %>
           </div>
         </div>
       </div>
-    </article>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Name') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @category.name %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Slug') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @category.slug %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Hierarchy') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <% @category.ancestors.each do |category| %>
+            <a href="<%= admin_category_path(category) %>"><%= category.name %></a>
+            >
+            <% end %>
+            <%= @category.name %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Description') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @category.description %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Template') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @category.template %></div>
+        </div>
+      </div>
+    </div>
+    <% if @category.children.any? %>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Subcategories') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= @category.children.sort_by(&:name).map do |child|
+                      link_to(child.name, admin_category_path(child))
+                    end.join(', ').html_safe %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Created At') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @category.created_at %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Updated At') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @category.updated_at %></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="column is-full-mobile is-full-tablet is-half-desktop">
-    <article class="card">
-      <div class="card-header">
-        <h2 class="card-header-title">
-          <i class="fas fa-sitemap"></i>
-          &nbsp;
-          <%= _('Subcategories') %>
-        </h2>
-      </div>
-      <div class="card-content">
-        <div class="smart-table" id="subcategories-smart-table" data-autoload="<%= children_admin_category_path(@category) %>"></div>
-      </div>
-    </article>
+</article>
+<article class="card mt-5">
+  <div class="card-header">
+    <h2 class="card-header-title">
+      <i class="fas fa-file"></i>
+      &nbsp;
+      <%= _('Posts') %>
+    </h2>
   </div>
-  <div class="column is-full-mobile is-full-tablet is-half-desktop">
-    <article class="card">
-      <div class="card-header">
-        <h2 class="card-header-title">
-          <i class="fas fa-file"></i>
-          &nbsp;
-          <%= _('Posts') %>
-        </h2>
-      </div>
-      <div class="card-content">
-        <div class="smart-table" id="posts-smart-table" data-autoload="<%= admin_category_posts_path(@category) %>"></div>
-      </div>
-    </article>
+  <div class="card-content">
+    <div class="smart-table" id="posts-smart-table" data-autoload="<%= admin_category_posts_path(@category) %>"></div>
   </div>
-</div>
+</article>
