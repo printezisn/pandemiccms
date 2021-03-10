@@ -19,6 +19,7 @@ Rails.application.routes.draw do
         resources :posts, only: :index
 
         member do
+          get :children
           get :translate
           post :translate, to: 'categories#save_translation'
         end

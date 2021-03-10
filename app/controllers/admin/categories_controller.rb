@@ -3,6 +3,8 @@
 module Admin
   # Admin categories controller
   class CategoriesController < BaseController
+    PAGE_SIZE = 10
+
     before_action :fetch_category, only: %i[show edit update destroy translate save_translation]
     before_action :fetch_translation, only: %i[translate save_translation]
     before_action :fetch_templates, only: %i[new edit create update]
@@ -20,6 +22,15 @@ module Admin
       @show_depth = params[:search].blank?
 
       render :_categories_table, layout: nil if request.xhr?
+    end
+
+    # GET /categories/1/children
+    # GET /categories/1/children.json
+    def children
+      @categories = Category.where(client_id: current_client.id, parent_id: params[:id])
+                            .simple_text_search(params[:search])
+                            .bound_sort(params[:sort_by], params[:dir])
+      render :children, layout: nil
     end
 
     # GET /categories/1

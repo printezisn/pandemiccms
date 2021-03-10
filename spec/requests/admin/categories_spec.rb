@@ -27,6 +27,21 @@ RSpec.describe '/admin/categories', type: :request do
     end
   end
 
+  describe 'GET /children' do
+    let(:model) { FactoryBot.build(:category, :with_children) }
+    let(:request) { get children_admin_category_path(model) }
+
+    before { model.save! }
+
+    it_behaves_like 'admin user page'
+
+    it 'returns a successful response' do
+      request
+
+      expect(response).to be_successful
+    end
+  end
+
   describe 'GET /show' do
     let(:request) { get admin_category_path(model) }
 
