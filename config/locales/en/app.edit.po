@@ -190,6 +190,9 @@ msgstr "Cancel"
 msgid "Categories"
 msgstr "Categories"
 
+msgid "Categories Tree | %{client}"
+msgstr "Categories Tree | %{client}"
+
 msgid "Categories of %{client}"
 msgstr "Categories of %{client}"
 
@@ -712,6 +715,9 @@ msgstr "Submit"
 msgid "Supervisor"
 msgstr "Supervisor"
 
+msgid "Table"
+msgstr "Table"
+
 msgid "Tag"
 msgstr "Tag"
 
@@ -864,6 +870,12 @@ msgstr "Translate the profile of the current user of %{client}"
 
 msgid "Translation"
 msgstr "Translation"
+
+msgid "Tree"
+msgstr "Tree"
+
+msgid "Tree with categories of %{client}"
+msgstr "Tree with categories of %{client}"
 
 msgid "Unconfirmed Email"
 msgstr "Unconfirmed Email"

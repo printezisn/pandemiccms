@@ -18,6 +18,10 @@ Rails.application.routes.draw do
       resources :categories do
         resources :posts, only: :index
 
+        collection do
+          get :tree
+        end
+
         member do
           get :children
           get :translate

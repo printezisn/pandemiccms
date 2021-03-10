@@ -12,16 +12,19 @@ module Admin
     # GET /categories
     # GET /categories.json
     def index
-      @categories = if params[:search].present?
-                      Category.where(client_id: current_client.id)
-                              .simple_text_search(params[:search])
-                              .bound_sort(params[:sort_by], params[:dir])
-                    else
-                      Category.ordered_by_hierarchy(current_client.id, nil)
-                    end
-      @show_depth = params[:search].blank?
+      @categories = Category.where(client_id: current_client.id)
+                            .simple_text_search(params[:search])
+                            .bound_sort(params[:sort_by], params[:dir])
+                            .page(params[:page].to_i)
+                            .per(PAGE_SIZE)
 
       render :_categories_table, layout: nil if request.xhr?
+    end
+
+    # GET /categories/tree
+    # GET /categories/tree.json
+    def tree
+      @categories = Category.ordered_by_hierarchy(current_client.id, nil)
     end
 
     # GET /categories/1/children
@@ -29,7 +32,9 @@ module Admin
     def children
       @categories = Category.where(client_id: current_client.id, parent_id: params[:id])
                             .simple_text_search(params[:search])
-                            .bound_sort(params[:sort_by], params[:dir])
+                            .bound_sort(params[:sort_by] || 'name', params[:dir])
+                            .page(params[:page].to_i)
+                            .per(PAGE_SIZE)
       render :children, layout: nil
     end
 
