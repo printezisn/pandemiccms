@@ -16,35 +16,8 @@
       <i class="fas fa-angle-down"></i>
     </a>
   </div>
-  <div class="dropdown-menu" role="menu">
-    <div class="dropdown-content">
-      <% if current_client.enabled_languages.size > 1 %>
-      <a class="dropdown-item" href="<%= translate_admin_user_path(@user) %>">
-        <i class="fas fa-globe"></i>
-        &nbsp;
-        <%= _('Translate') %>
-      </a>
-      <% end %>
-      <a class="dropdown-item" href="<%= edit_admin_user_path(@user) %>">
-        <i class="fas fa-pen"></i>
-        &nbsp;
-        <%= _('Edit') %>
-      </a>
-      <hr class="dropdown-divider" />
-      <a href="javascript:void(0)" class="dropdown-item" data-modal-open="toggle-user-status-modal<%= @user.id %>">
-        <% if @user.active? %>
-        <i class="fas fa-lock"></i>
-        &nbsp;
-        <%= _('Deactivate') %>
-        <% else %>
-        <i class="fas fa-unlock-alt"></i>
-        &nbsp;
-        <%= _('Activate') %>
-        <% end %>
-      </a>
-      <%= render partial: 'admin/users/toggle_user_status_modal', locals: { user: @user } %>
-    </div>
-  </div>
+  <%= render partial: 'admin/users/dropdown_menu', locals: { user: @user } %>
+  <%= render partial: 'admin/users/toggle_user_status_modal', locals: { user: @user } %>
 </div>
 <div class="columns is-multiline is-mobile mt-3">
   <div class="column is-full-mobile is-full-tablet is-half-desktop">
