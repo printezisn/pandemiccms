@@ -1,0 +1,82 @@
+@import "~select2/dist/css/select2.css";
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+@import "~bulma/sass/utilities/derived-variables";
+@import "~bulma/sass/utilities/mixins";
+@import "~bulma/sass/utilities/controls";
+@import "~bulma/sass/form/shared";
+
+// https://gist.github.com/n1crack/8f6cd38fa0839dced22e89c5406c680a
+.select2-container {
+  max-width: 100%;
+
+  @media screen and (min-width: $tablet) {
+    min-width: 200px;
+  }
+
+  @media screen and (max-width: $tablet) {
+    width: 100% !important;
+  }
+
+  .select2-selection--single {
+    transition: border-color $speed;
+    font-family: $family-sans-serif;
+    height: 2.285em;
+
+    font-size: 1rem;
+    outline: none !important;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    border-color: $border;
+    border-radius: $radius;
+    &:hover {
+      border-color: $border-hover;
+    }
+
+    .select2-selection__rendered {
+      padding-left: 0.75em;
+      padding-right: 0.75em;
+      line-height: 2.3em;
+    }
+    .select2-selection__arrow {
+      height: 2.3em;
+      top: 0px;
+    }
+  }
+
+  .select2-dropdown {
+    border-color: $link;
+
+    .select2-search {
+      margin: 10px;
+      .select2-search__field {
+        @extend %input;
+        border-radius: $radius !important;
+      }
+    }
+
+    .select2-results__options {
+      max-height: 210px;
+      .select2-results__option {
+        padding: 0.75em;
+        font-family: $family-sans-serif;
+        font-size: 1rem;
+
+        &.select2-results__option--highlighted {
+          background: $link;
+        }
+      }
+    }
+  }
+}
+
+.select2-container--open {
+  .select2-selection--single {
+    border-color: $link;
+
+    &:hover {
+      border-color: $link;
+    }
+  }
+}

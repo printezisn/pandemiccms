@@ -126,6 +126,14 @@ const initRichEditors = (root) => {
   });
 };
 
+const initSelections = (root) => {
+  Array.from(root.querySelectorAll('select')).forEach((el) => {
+    import(/* webpackChunkName: 'selection' */ './selection').then(({ default: initSelection }) => {
+      initSelection(el);
+    });
+  });
+};
+
 const initParentFormSubmits = (root) => {
   Array.from(root.getElementsByClassName('submit-parent-form')).forEach((el) => {
     el.addEventListener('click', () => {
@@ -155,6 +163,7 @@ const initAll = () => {
   initTabWrappers(document);
   initImageUploaders(document);
   initRichEditors(document);
+  initSelections(document);
   initParentFormSubmits(document);
 
   initHistory();
