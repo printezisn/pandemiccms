@@ -11,7 +11,7 @@
   max-width: 100%;
 
   @media screen and (min-width: $tablet) {
-    min-width: 200px;
+    min-width: 300px;
   }
 
   @media screen and (max-width: $tablet) {
@@ -39,9 +39,14 @@
       padding-right: 0.75em;
       line-height: 2.3em;
     }
+
     .select2-selection__arrow {
       height: 2.3em;
       top: 0px;
+    }
+
+    .select2-selection__clear {
+      margin-right: 0;
     }
   }
 
@@ -58,6 +63,7 @@
 
     .select2-results__options {
       max-height: 210px;
+
       .select2-results__option {
         padding: 0.75em;
         font-family: $family-sans-serif;

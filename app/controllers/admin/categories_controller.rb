@@ -46,14 +46,10 @@ module Admin
     def new
       @category = Category.new
       @category.parent_id = params[:parent_id]
-
-      fetch_parents
     end
 
     # GET /categories/1/edit
-    def edit
-      fetch_parents(@category)
-    end
+    def edit; end
 
     # POST /categories
     # POST /categories.json
@@ -64,8 +60,6 @@ module Admin
       if @category.save
         redirect_to admin_category_path(@category), notice: _('The category was successfully created.')
       else
-        fetch_parents
-
         render :new
       end
     end
@@ -73,11 +67,11 @@ module Admin
     # PATCH/PUT /categories/1
     # PATCH/PUT /categories/1.json
     def update
-      if @category.update(category_params)
+      default_params = { parent_id: nil }
+
+      if @category.update(default_params.merge(category_params))
         redirect_to admin_category_path(@category), notice: _('The category was successfully updated.')
       else
-        fetch_parents(@category)
-
         render :edit
       end
     end
@@ -107,6 +101,26 @@ module Admin
       end
     end
 
+    # GET /categories/parents
+    # GET /categories/parents.json
+    def parents
+      categories = Category.where(client_id: current_client.id)
+      if params[:excluded_id].present?
+        excluded_category = Category.find_by!(id: params[:excluded_id], client_id: current_client.id)
+        categories = categories.where.not(id: excluded_category.id).where.not(id: Category.descendants_of(excluded_category))
+      end
+
+      categories = categories.simple_text_search(params[:search])
+                             .bound_sort(params[:sort_by] || 'name', params[:dir])
+                             .select(:id, :name)
+                             .page(params[:page].to_i)
+                             .per(PAGE_SIZE)
+      results = categories.map { |category| { id: category.id, text: category.name } }
+      more = !categories.last_page? && results.any?
+
+      render json: { results: results, pagination: { more: more } }
+    end
+
     private
 
     def fetch_category
@@ -120,12 +134,6 @@ module Admin
     def fetch_templates
       path = Rails.root.join("app/views/templates/#{current_client.template}/categories/templates/*.html.erb")
       @templates = Dir[path].map { |f| File.basename(f, '.html.erb') }.sort
-    end
-
-    def fetch_parents(excluded_category = nil)
-      @parents = Category.ordered_by_hierarchy(current_client.id, excluded_category).map do |category|
-        [category.name_with_depth, category.id]
-      end
     end
 
     def category_params

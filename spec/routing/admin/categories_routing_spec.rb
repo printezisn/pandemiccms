@@ -55,5 +55,9 @@ RSpec.describe Admin::CategoriesController, type: :routing do
     it 'routes to #save_translation' do
       expect(post: '/admin/categories/1/translate').to route_to('admin/categories#save_translation', id: '1')
     end
+
+    it 'routes to #parents' do
+      expect(get: '/admin/categories/parents').to route_to('admin/categories#parents')
+    end
   end
 end

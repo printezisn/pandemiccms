@@ -89,4 +89,10 @@ RSpec.shared_examples 'Parentable' do
       end
     end
   end
+
+  describe '.descendants_of' do
+    it 'returns a query with the descendants of an instance' do
+      expect(described_class.descendants_of(model).map(&:id)).to match_array(model.children.map(&:id))
+    end
+  end
 end

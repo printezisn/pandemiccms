@@ -11,6 +11,14 @@ module Parentable
     before_save :set_hierarchy_path, if: -> { new_record? || will_save_change_to_parent_id? }
     after_save :update_children_hierarchy_path, if: :saved_change_to_hierarchy_path?
 
+    scope :descendants_of, lambda { |instance|
+      path = (instance.ancestor_ids + [instance.id]).join(',')
+
+      where(client_id: instance.client_id)
+        .where(hierarchy_path: path)
+        .or(where(arel_table[:hierarchy_path].matches("#{path},%")))
+    }
+
     def self.ordered_by_hierarchy(client_id, excluded_instance)
       all_instances = where(client_id: client_id).to_a
       if excluded_instance

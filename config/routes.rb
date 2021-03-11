@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
         collection do
           get :tree
+          get :parents
         end
 
         member do

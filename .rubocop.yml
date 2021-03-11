@@ -40,3 +40,6 @@ RSpec/MultipleMemoizedHelpers:
 
 Metrics/CyclomaticComplexity:
   Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false

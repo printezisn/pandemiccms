@@ -296,4 +296,29 @@ RSpec.describe '/admin/categories', type: :request do
       end
     end
   end
+
+  describe 'GET /parents' do
+    let(:request) { get parents_admin_categories_path(excluded_id: model.id, search: model.parent.name) }
+    let(:expected_results) do
+      {
+        'results' => [{ 'id' => model.parent.id, 'text' => model.parent.name }],
+        'pagination' => { 'more' => false }
+      }
+    end
+    let(:model) { FactoryBot.create(:category, :with_parent) }
+
+    it_behaves_like 'admin user page'
+
+    it 'returns a successful response' do
+      request
+
+      expect(response).to be_successful
+    end
+
+    it 'returns the correct categories' do
+      request
+
+      expect(JSON.parse(response.body)).to eq(expected_results)
+    end
+  end
 end
