@@ -13,16 +13,12 @@ class Page < ApplicationRecord
   include Parentable
   include Imageable
   include Taggable
+  include Draftable
 
   belongs_to :client, inverse_of: :pages
   belongs_to :author, class_name: 'AdminUser', inverse_of: :pages, optional: true
   belongs_to :parent, inverse_of: :children, class_name: 'Page', optional: true
   has_many :children, inverse_of: :parent, class_name: 'Page', foreign_key: :parent_id, dependent: :destroy
-
-  enum status: {
-    draft: 0,
-    published: 1
-  }
 
   enum visibility: {
     public: 0,
