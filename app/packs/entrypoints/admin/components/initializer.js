@@ -1,4 +1,5 @@
 import toastr from 'toastr';
+import loadLocales from '../../locales';
 import { initSmartTable, initSmartTableSearchForm } from './smart-table';
 import initTabs from './tab';
 import initDropdown from './dropdown';
@@ -119,18 +120,16 @@ const initImageUploaders = (root) => {
 };
 
 const initRichEditors = (root) => {
-  Array.from(root.getElementsByClassName('rich-editor')).forEach((el) => {
-    import(/* webpackChunkName: 'rich-editor' */ './rich-editor').then(({ default: initRichEditor }) => {
-      initRichEditor(el);
-    });
+  Array.from(root.getElementsByClassName('rich-editor')).forEach(async (el) => {
+    const { default: initRichEditor } = await import(/* webpackChunkName: 'rich-editor' */ './rich-editor');
+    initRichEditor(el);
   });
 };
 
 const initSelections = (root) => {
-  Array.from(root.querySelectorAll('select')).forEach((el) => {
-    import(/* webpackChunkName: 'selection' */ './selection').then(({ default: initSelection }) => {
-      initSelection(el);
-    });
+  Array.from(root.querySelectorAll('select')).forEach(async (el) => {
+    const { default: initSelection } = await import(/* webpackChunkName: 'selection' */ './selection');
+    initSelection(el);
   });
 };
 
@@ -148,7 +147,7 @@ const initHistory = () => {
   });
 };
 
-const initAll = () => {
+const initComponents = () => {
   initNavbars(document);
   initNotifications(document);
   initFlashErrors(document);
@@ -169,4 +168,4 @@ const initAll = () => {
   initHistory();
 };
 
-export default initAll;
+export default initComponents;
