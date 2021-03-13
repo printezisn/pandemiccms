@@ -7,6 +7,7 @@ require './spec/models/concerns/sluggable'
 require './spec/models/concerns/translatable'
 require './spec/models/concerns/imageable'
 require './spec/models/concerns/parentable'
+require './spec/models/concerns/taggable'
 
 RSpec.describe Page, type: :model do
   subject(:model) { FactoryBot.build(:page, author: author) }
@@ -17,8 +18,6 @@ RSpec.describe Page, type: :model do
   it { is_expected.to belong_to(:author).class_name('AdminUser').optional(true) }
   it { is_expected.to belong_to(:parent).class_name('Page').optional(true) }
   it { is_expected.to have_many(:children).class_name('Page').with_foreign_key(:parent_id).dependent(:destroy) }
-  it { is_expected.to have_many(:tag_taggables).dependent(:destroy) }
-  it { is_expected.to have_many(:tags).through(:tag_taggables) }
 
   it { is_expected.to define_enum_for(:status).with_values(draft: 0, published: 1) }
   it { is_expected.to define_enum_for(:visibility).with_values(public: 0, private: 1).with_suffix(:visibility) }
@@ -39,5 +38,6 @@ RSpec.describe Page, type: :model do
     it_behaves_like 'Translatable'
     it_behaves_like 'Imageable'
     it_behaves_like 'Parentable'
+    it_behaves_like 'Taggable'
   end
 end
