@@ -1,5 +1,4 @@
 import toastr from 'toastr';
-import loadLocales from '../../locales';
 import { initSmartTable, initSmartTableSearchForm } from './smart-table';
 import initTabs from './tab';
 import initDropdown from './dropdown';
