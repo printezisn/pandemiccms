@@ -10,6 +10,10 @@ Rails.application.routes.draw do
         resources :posts, only: :index
         resources :pages, only: :index
 
+        collection do
+          get :search
+        end
+
         member do
           get :translate
           post :translate, to: 'tags#save_translation'

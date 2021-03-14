@@ -276,4 +276,29 @@ RSpec.describe '/admin/tags', type: :request do
       end
     end
   end
+
+  describe 'GET /search' do
+    let(:request) { get search_admin_tags_path(term: model.name) }
+    let(:expected_results) do
+      {
+        'results' => [{ 'id' => model.id, 'text' => model.name }],
+        'pagination' => { 'more' => false }
+      }
+    end
+    let(:model) { FactoryBot.create(:tag) }
+
+    it_behaves_like 'admin user page'
+
+    it 'returns a successful response' do
+      request
+
+      expect(response).to be_successful
+    end
+
+    it 'returns the correct tags' do
+      request
+
+      expect(JSON.parse(response.body)).to eq(expected_results)
+    end
+  end
 end

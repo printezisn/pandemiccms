@@ -80,6 +80,21 @@ module Admin
       end
     end
 
+    # GET /tags/search
+    # GET /tags/search.json
+    def search
+      tags = Tag.where(client_id: current_client.id)
+                .simple_text_search(params[:term])
+                .bound_sort(params[:sort_by] || 'name', params[:dir])
+                .select(:id, :name)
+                .page(params[:page].to_i)
+                .per(PAGE_SIZE)
+      results = tags.map { |tag| { id: tag.id, text: tag.name } }
+      more = !tags.last_page? && results.any?
+
+      render json: { results: results, pagination: { more: more } }
+    end
+
     private
 
     def fetch_tag
