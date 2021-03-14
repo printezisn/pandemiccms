@@ -101,16 +101,16 @@ module Admin
       end
     end
 
-    # GET /categories/parents
-    # GET /categories/parents.json
-    def parents
+    # GET /categories/search
+    # GET /categories/search.json
+    def search
       categories = Category.where(client_id: current_client.id)
       if params[:excluded_id].present?
         excluded_category = Category.find_by!(id: params[:excluded_id], client_id: current_client.id)
         categories = categories.where.not(id: excluded_category.id).where.not(id: Category.descendants_of(excluded_category))
       end
 
-      categories = categories.simple_text_search(params[:search])
+      categories = categories.simple_text_search(params[:term])
                              .bound_sort(params[:sort_by] || 'name', params[:dir])
                              .select(:id, :name)
                              .page(params[:page].to_i)

@@ -297,8 +297,8 @@ RSpec.describe '/admin/categories', type: :request do
     end
   end
 
-  describe 'GET /parents' do
-    let(:request) { get parents_admin_categories_path(excluded_id: model.id, search: model.parent.name) }
+  describe 'GET /search' do
+    let(:request) { get search_admin_categories_path(excluded_id: model.id, term: model.parent.name) }
     let(:expected_results) do
       {
         'results' => [{ 'id' => model.parent.id, 'text' => model.parent.name }],

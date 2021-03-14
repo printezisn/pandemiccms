@@ -56,9 +56,9 @@
         <div class="field">
           <div class="control">
             <% if @category.parent %>
-            <%= f.select :parent_id, [[@category.parent.name, @category.parent.id]], {}, { placeholder: _('None|Parent'), 'data-fetchUrl' => parents_admin_categories_path } %>
+            <%= f.select :parent_id, [[@category.parent.name, @category.parent.id]], {}, { placeholder: _('None|Parent'), 'data-fetchUrl' => search_admin_categories_path } %>
             <% else %>
-            <%= f.select :parent_id, [], {}, { placeholder: _('None|Parent'), 'data-fetchUrl' => parents_admin_categories_path } %>
+            <%= f.select :parent_id, [], {}, { placeholder: _('None|Parent'), 'data-fetchUrl' => search_admin_categories_path } %>
             <% end %>
           </div>
         </div>

@@ -20,7 +20,7 @@ const initSelection = async (selection) => {
     options.ajax = {
       url: fetchUrl,
       data: (params) => ({
-        search: params.term,
+        term: params.term,
         page: params.page || 1,
       }),
     };
