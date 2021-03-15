@@ -3,6 +3,6 @@
 # Pages controller
 class PagesController < ApplicationController
   def index
-    render "templates/#{current_client.template}/pages/index"
+    render "templates/#{current_client.template}/pages/templates/index"
   end
 end
