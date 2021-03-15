@@ -14,13 +14,13 @@ RSpec.shared_examples 'Taggable' do
 
       it 'creates a new tag' do
         expect do
-          model.update!(should_save_tags: true, tag_names: new_tag_names.join(','))
+          model.update!(should_save_tags: true, tag_names: new_tag_names)
         end.to change(Tag, :count).by(1)
       end
 
       it 'adds the new tag to the model' do
         expect do
-          model.update!(should_save_tags: true, tag_names: new_tag_names.join(','))
+          model.update!(should_save_tags: true, tag_names: new_tag_names)
         end.to change { model.reload.tags.map(&:name) }.from([initial_tag.name]).to(new_tag_names)
       end
     end
@@ -30,7 +30,7 @@ RSpec.shared_examples 'Taggable' do
 
       it 'removes the tag from the model' do
         expect do
-          model.update!(should_save_tags: true, tag_names: new_tag_names.join(','))
+          model.update!(should_save_tags: true, tag_names: new_tag_names)
         end.to change { model.reload.tags.map(&:name) }.from([initial_tag.name]).to(new_tag_names)
       end
     end
@@ -40,13 +40,13 @@ RSpec.shared_examples 'Taggable' do
 
       it 'creates a new tag' do
         expect do
-          model.update!(should_save_tags: true, tag_names: new_tag_names.join(','))
+          model.update!(should_save_tags: true, tag_names: new_tag_names)
         end.to change(Tag, :count).by(1)
       end
 
       it 'removes the existing tag from the model and adds the new one' do
         expect do
-          model.update!(should_save_tags: true, tag_names: new_tag_names.join(','))
+          model.update!(should_save_tags: true, tag_names: new_tag_names)
         end.to change { model.reload.tags.map(&:name) }.from([initial_tag.name]).to(new_tag_names)
       end
     end
@@ -56,13 +56,13 @@ RSpec.shared_examples 'Taggable' do
 
       it 'does not create a new tag' do
         expect do
-          model.update!(should_save_tags: false, tag_names: new_tag_names.join(','))
+          model.update!(should_save_tags: false, tag_names: new_tag_names)
         end.not_to change(Tag, :count)
       end
 
       it 'does not change the tags of the model' do
         expect do
-          model.update!(should_save_tags: false, tag_names: new_tag_names.join(','))
+          model.update!(should_save_tags: false, tag_names: new_tag_names)
         end.not_to change { model.reload.tags.map(&:name) }.from([initial_tag.name])
       end
     end
