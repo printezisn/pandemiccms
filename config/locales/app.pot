@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-10 22:18+0200\n"
-"PO-Revision-Date: 2021-03-10 22:18+0200\n"
+"POT-Creation-Date: 2021-03-21 13:58+0200\n"
+"PO-Revision-Date: 2021-03-21 13:58+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -161,6 +161,9 @@ msgstr ""
 msgid "AdminUser|Username"
 msgstr ""
 
+msgid "All|Pages"
+msgstr ""
+
 msgid "An error occurred. Please try again later."
 msgstr ""
 
@@ -176,7 +179,13 @@ msgstr ""
 msgid "Are you sure you want to delete this medium ?"
 msgstr ""
 
+msgid "Are you sure you want to delete this page ?"
+msgstr ""
+
 msgid "Are you sure you want to delete this tag ?"
+msgstr ""
+
+msgid "Are you sure you want to publish this page ?"
 msgstr ""
 
 msgid "Author"
@@ -293,6 +302,12 @@ msgstr ""
 msgid "Create Category | %{client}"
 msgstr ""
 
+msgid "Create Page"
+msgstr ""
+
+msgid "Create Page | %{client}"
+msgstr ""
+
 msgid "Create Tag"
 msgstr ""
 
@@ -306,6 +321,9 @@ msgid "Create User | %{client}"
 msgstr ""
 
 msgid "Create new category for %{client}"
+msgstr ""
+
+msgid "Create new page for %{client}"
 msgstr ""
 
 msgid "Create new tag for %{client}"
@@ -344,6 +362,9 @@ msgstr ""
 msgid "Details for a category of %{client}"
 msgstr ""
 
+msgid "Details for a page of %{client}"
+msgstr ""
+
 msgid "Details for a tag of %{client}"
 msgstr ""
 
@@ -359,6 +380,9 @@ msgstr ""
 msgid "Didn't receive unlock instructions ?"
 msgstr ""
 
+msgid "Draft|Page"
+msgstr ""
+
 msgid "Edit"
 msgstr ""
 
@@ -372,6 +396,12 @@ msgid "Edit Email Template"
 msgstr ""
 
 msgid "Edit Email Template | %{client}"
+msgstr ""
+
+msgid "Edit Page"
+msgstr ""
+
+msgid "Edit Page | %{client}"
 msgstr ""
 
 msgid "Edit Profile"
@@ -393,6 +423,9 @@ msgid "Edit User | %{client}"
 msgstr ""
 
 msgid "Edit a category of %{client}"
+msgstr ""
+
+msgid "Edit a page of %{client}"
 msgstr ""
 
 msgid "Edit a tag of %{client}"
@@ -521,6 +554,9 @@ msgstr ""
 msgid "New Subcategory"
 msgstr ""
 
+msgid "New Subpage"
+msgstr ""
+
 msgid "Next Page"
 msgstr ""
 
@@ -563,10 +599,31 @@ msgstr ""
 msgid "OldPassword|Password salt"
 msgstr ""
 
+msgid "Only drafts|Pages"
+msgstr ""
+
+msgid "Only my pages"
+msgstr ""
+
+msgid "Only published|Pages"
+msgstr ""
+
+msgid "Page"
+msgstr ""
+
+msgid "Page Details"
+msgstr ""
+
+msgid "Page Details | %{client}"
+msgstr ""
+
 msgid "Page Drafts"
 msgstr ""
 
 msgid "Pages"
+msgstr ""
+
+msgid "Pages Tree | %{client}"
 msgstr ""
 
 msgid "Pages of %{client}"
@@ -575,13 +632,13 @@ msgstr ""
 msgid "Pages | %{client}"
 msgstr ""
 
-msgid "Pages|Description"
-msgstr ""
-
-msgid "Pages|Image"
-msgstr ""
-
 msgid "Page|Body"
+msgstr ""
+
+msgid "Page|Description"
+msgstr ""
+
+msgid "Page|Image"
 msgstr ""
 
 msgid "Page|Name"
@@ -594,6 +651,9 @@ msgid "Page|Slug"
 msgstr ""
 
 msgid "Page|Status"
+msgstr ""
+
+msgid "Page|Tag names"
 msgstr ""
 
 msgid "Page|Template"
@@ -626,7 +686,22 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
+msgid "Private|Visibility"
+msgstr ""
+
 msgid "Profile"
+msgstr ""
+
+msgid "Public|Visibility"
+msgstr ""
+
+msgid "Publish"
+msgstr ""
+
+msgid "Publish Confirmation"
+msgstr ""
+
+msgid "Published|Page"
 msgstr ""
 
 msgid "Remove"
@@ -713,6 +788,15 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
+msgid "Submit & Publish"
+msgstr ""
+
+msgid "Submit as draft"
+msgstr ""
+
+msgid "Subpages"
+msgstr ""
+
 msgid "Supervisor"
 msgstr ""
 
@@ -788,6 +872,24 @@ msgstr ""
 msgid "The medium was successfully deleted."
 msgstr ""
 
+msgid "The page could not be published."
+msgstr ""
+
+msgid "The page was successfully created."
+msgstr ""
+
+msgid "The page was successfully deleted."
+msgstr ""
+
+msgid "The page was successfully published."
+msgstr ""
+
+msgid "The page was successfully translated."
+msgstr ""
+
+msgid "The page was successfully updated."
+msgstr ""
+
 msgid "The profile of the current user of %{client}"
 msgstr ""
 
@@ -845,6 +947,9 @@ msgstr ""
 msgid "Translate Email Template | %{client}"
 msgstr ""
 
+msgid "Translate Page | %{client}"
+msgstr ""
+
 msgid "Translate Profile | %{client}"
 msgstr ""
 
@@ -855,6 +960,9 @@ msgid "Translate User | %{client}"
 msgstr ""
 
 msgid "Translate a category of %{client}"
+msgstr ""
+
+msgid "Translate a page of %{client}"
 msgstr ""
 
 msgid "Translate a tag of %{client}"
@@ -876,6 +984,9 @@ msgid "Tree"
 msgstr ""
 
 msgid "Tree with categories of %{client}"
+msgstr ""
+
+msgid "Tree with pages of %{client}"
 msgstr ""
 
 msgid "Unconfirmed Email"
@@ -906,6 +1017,9 @@ msgid "Users of %{client}"
 msgstr ""
 
 msgid "Users | %{client}"
+msgstr ""
+
+msgid "Visibility"
 msgstr ""
 
 msgid "We're contacting you to notify you that your email has been changed to %{email}"

@@ -1,0 +1,95 @@
+<%
+    content_for :title, _('Translate Page | %{client}') % { client: current_client.name }
+    content_for :description, _('Translate a page of %{client}') % { client: current_client.name }
+%>
+
+<%= render "admin/shared/error_messages", resource: @page %>
+<a class="button" href="<%= admin_page_path(@page) %>">
+  <i class="fas fa-long-arrow-alt-left"></i>
+  &nbsp;
+  <%= _('Back') %>
+</a>
+<div class="columns is-multiline is-mobile mt-3">
+  <div class="column is-full-mobile is-full-tablet is-half-desktop">
+    <article class="card">
+      <header class="card-header">
+        <h1 class="card-header-title">
+          <i class="fas fa-sticky-note"></i>
+          &nbsp;
+          <%= _('Page') %>
+        </h1>
+      </header>
+      <div class="card-content">
+        <div class="field">
+          <span class="label"><%= _('Name') %></span>
+          <div class="control">
+            <input type="text" class="input" value="<%= @page.name %>" readonly />
+          </div>
+        </div>
+        <div class="field">
+          <span class="label"><%= _('Slug') %></span>
+          <div class="control">
+            <input type="text" class="input" value="<%= @page.slug %>" readonly />
+          </div>
+        </div>
+        <div class="field">
+          <span class="label"><%= _('Description') %></span>
+          <div class="control">
+            <textarea rows="5" class="textarea" readonly><%= @page.description %></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <span class="label"><%= _('Page|Body') %></span>
+          <div class="control">
+            <textarea id="original-page-body" rows="5" class="textarea rich-editor" readonly><%= @page.body %></textarea>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="column is-full-mobile is-full-tablet is-half-desktop">
+    <article class="card">
+      <header class="card-header">
+        <h1 class="card-header-title">
+          <i class="fas fa-sticky-note"></i>
+          &nbsp;
+          <%= _('Translation') %>
+        </h1>
+        <%= render partial: 'admin/shared/languages_dropdown' %>
+      </header>
+      <div class="card-content">
+        <%= form_with(model: @translation, url: translate_admin_page_path(@page, translation_locale: translation_locale), method: :post) do |f| %>
+        <div class="field">
+          <%= f.label :name, class: 'label' %>
+          <div class="control">
+            <%= f.text_field :name, class: 'input' %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :slug, class: 'label' %>
+          <div class="control">
+            <%= f.text_field :slug, class: 'input' %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :description, class: 'label' %>
+          <div class="control">
+            <%= f.text_area :description, class: 'textarea', rows: 5 %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :body, class: 'label' %>
+          <div class="control">
+            <%= f.text_area :body, class: 'rich-editor textarea', rows: 5 %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success' %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </article>
+  </div>
+</div>

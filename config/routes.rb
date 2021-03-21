@@ -33,6 +33,18 @@ Rails.application.routes.draw do
           post :translate, to: 'categories#save_translation'
         end
       end
+      resources :pages do
+        collection do
+          get :tree
+          get :search
+        end
+
+        member do
+          post :publish
+          get :translate
+          post :translate, to: 'pages#save_translation'
+        end
+      end
       resources :email_templates, only: %i[index show edit update] do
         member do
           get :translate
@@ -70,6 +82,7 @@ Rails.application.routes.draw do
       root 'dashboard#index'
     end
 
+    get 'pg/:id/:slug', to: 'pages#show', as: :page
     get 't/:id/:slug', to: 'tags#show', as: :tag
     get 'c/:id/:slug', to: 'categories#show', as: :category
 

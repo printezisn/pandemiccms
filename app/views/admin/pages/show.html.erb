@@ -1,9 +1,9 @@
 <%
-    content_for :title, _('Category Details | %{client}') % { client: current_client.name }
-    content_for :description, _('Details for a category of %{client}') % { client: current_client.name }
+    content_for :title, _('Page Details | %{client}') % { client: current_client.name }
+    content_for :description, _('Details for a page of %{client}') % { client: current_client.name }
 %>
 
-<a class="button" href="<%= admin_categories_path %>">
+<a class="button" href="<%= admin_pages_path %>">
   <i class="fas fa-long-arrow-alt-left"></i>
   &nbsp;
   <%= _('Back') %>
@@ -16,15 +16,16 @@
       <i class="fas fa-angle-down"></i>
     </a>
   </div>
-  <%= render partial: 'admin/categories/dropdown_menu', locals: { category: @category } %>
-  <%= render partial: 'admin/categories/delete_modal', locals: { category: @category } %>
+  <%= render partial: 'admin/pages/dropdown_menu', locals: { page: @page } %>
+  <%= render partial: 'admin/pages/delete_modal', locals: { page: @page } %>
+  <%= render partial: 'admin/pages/publish_modal', locals: { page: @page } %>
 </div>
 <article class="card mt-5">
   <header class="card-header">
     <h1 class="card-header-title">
-      <i class="fas fa-th"></i>
+      <i class="fas fa-sticky-note"></i>
       &nbsp;
-      <%= _('Category Details') %>
+      <%= _('Page Details') %>
     </h1>
   </header>
   <div class="card-content">
@@ -33,8 +34,8 @@
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <% if @category.image.attached? %>
-            <img src="<%= rails_representation_url(@category.image.variant(resize_to_limit: [256, 256])) %>" width="256" height="256" alt="image" />
+            <% if @page.image.attached? %>
+            <img src="<%= rails_representation_url(@page.image.variant(resize_to_limit: [256, 256])) %>" width="256" height="256" alt="image" />
             <% else %>
             <i class="fas fa-8x fa-question-circle"></i>
             <% end %>
@@ -48,7 +49,7 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control"><%= @category.name %></div>
+          <div class="control"><%= @page.name %></div>
         </div>
       </div>
     </div>
@@ -58,7 +59,7 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control"><%= @category.slug %></div>
+          <div class="control"><%= @page.slug %></div>
         </div>
       </div>
     </div>
@@ -69,11 +70,11 @@
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <% @category.ancestors.each do |category| %>
-            <a href="<%= admin_category_path(category) %>"><%= category.name %></a>
+            <% @page.ancestors.each do |page| %>
+            <a href="<%= admin_page_path(page) %>"><%= page.name %></a>
             >
             <% end %>
-            <%= @category.name %>
+            <%= @page.name %>
           </div>
         </div>
       </div>
@@ -84,7 +85,19 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control"><%= @category.description %></div>
+          <div class="control"><%= @page.description %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Tags') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= @page.tags.map { |tag| link_to tag.name, admin_tag_path(tag) }.join(', ').html_safe %>
+          </div>
         </div>
       </div>
     </div>
@@ -94,7 +107,27 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control"><%= @category.template %></div>
+          <div class="control"><%= @page.template %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Status') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @page.draft? ? _('Draft|Page') : _('Published|Page') %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Visibility') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @page.public_visibility? ? _('Public|Visibility') : _('Private|Visibility') %></div>
         </div>
       </div>
     </div>
@@ -104,7 +137,7 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control"><%= @category.created_at %></div>
+          <div class="control"><%= @page.created_at %></div>
         </div>
       </div>
     </div>
@@ -114,7 +147,7 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control"><%= @category.updated_at %></div>
+          <div class="control"><%= @page.updated_at %></div>
         </div>
       </div>
     </div>
@@ -123,24 +156,26 @@
 <article class="card mt-5">
   <div class="card-header">
     <h2 class="card-header-title">
-      <i class="fas fa-sitemap"></i>
+      <i class="fas fa-sticky-note"></i>
       &nbsp;
-      <%= _('Subcategories') %>
+      <%= _('Page|Body') %>
     </h2>
   </div>
   <div class="card-content">
-    <div class="smart-table" id="subcategories-smart-table" data-autoload="<%= children_admin_category_path(@category) %>"></div>
+    <div class="content">
+      <%= @page.body&.html_safe %>
+    </div>
   </div>
 </article>
 <article class="card mt-5">
   <div class="card-header">
     <h2 class="card-header-title">
-      <i class="fas fa-file"></i>
+      <i class="fas fa-sitemap"></i>
       &nbsp;
-      <%= _('Posts') %>
+      <%= _('Subpages') %>
     </h2>
   </div>
   <div class="card-content">
-    <div class="smart-table" id="posts-smart-table" data-autoload="<%= admin_category_posts_path(@category) %>"></div>
+    <div class="smart-table" id="pages-smart-table" data-autoload="<%= admin_pages_path(parent_id: @page.id, hide_actions: true, hide_status_filter: true, hide_user_filter: true) %>"></div>
   </div>
 </article>

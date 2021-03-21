@@ -61,13 +61,13 @@
             </div>
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="javascript:void(0)">
+            <a class="navbar-link<%= ' is-active' if %w[pages menus].include?(controller_name) %>" href="javascript:void(0)">
               <i class="fas fa-sticky-note"></i>
               &nbsp;
               <%= _('Pages') %>
             </a>
             <div class="navbar-dropdown">
-              <a class="navbar-item" href="javascript:void(0)">
+              <a class="navbar-item<%= ' is-active' if controller_name == 'pages' %>" href="<%= admin_pages_path %>">
                 <i class="fas fa-sticky-note"></i>
                 &nbsp;
                 <%= _('Pages') %>

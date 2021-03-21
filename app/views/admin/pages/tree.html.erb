@@ -1,0 +1,67 @@
+<%
+    content_for :title, _('Pages Tree | %{client}') % { client: current_client.name }
+    content_for :description, _('Tree with pages of %{client}') % { client: current_client.name }
+%>
+
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-sticky-note"></i>
+      &nbsp;
+      <%= _('Pages') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="has-text-right-tablet">
+      <a class="button" href="<%= admin_pages_path %>">
+        <i class="fas fa-table"></i>
+        &nbsp;
+        <%= _('Table') %>
+      </a>
+      <a class="button is-success" href="<%= new_admin_page_path %>">
+        <%= _('Create') %>
+        &nbsp;
+        <i class="fas fa-plus"></i>
+      </a>
+    </div>
+    <table class="table is-striped is-hoverable is-fullwidth mt-2">
+      <thead>
+        <tr>
+          <th><%= _('Name') %></th>
+          <th class="is-hidden-mobile"><%= _('Status') %></th>
+          <th class="is-hidden-touch"><%= _('Created At') %></th>
+          <th class="is-hidden-touch"><%= _('Updated At') %></th>
+          <th class="actions-cell"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @pages.none? %>
+        <tr>
+          <td colspan="5"><%= _('No pages were found.') %></td>
+        </tr>
+        <% else %>
+        <% @pages.each do |page| %>
+        <tr>
+          <td>
+            <a href="<%= admin_page_path(page) %>"><%= page.name_with_depth %></a>
+          </td>
+          <td class="is-hidden-mobile"><%= page.draft? ? _('Draft|Page') : _('Published|Page') %></td>
+          <td class="is-hidden-touch"><%= page.created_at %></td>
+          <td class="is-hidden-touch"><%= page.updated_at %></td>
+          <td class="actions-cell">
+            <div class="dropdown is-togglable is-right">
+              <div class="dropdown-trigger">
+                <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" title="<%= _('Actions') %>">
+                  <i class="fas fa-ellipsis-v"></i>
+                </a>
+              </div>
+              <%= render partial: 'admin/pages/dropdown_menu', locals: { page: page } %>
+            </div>
+          </td>
+        </tr>
+        <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</article>

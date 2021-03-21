@@ -1,33 +1,92 @@
-<%= form_with(method: :get, html: { class: 'smart-table-search', 'data-target' => 'pages-smart-table' }) do |t| %>
-<div class="field has-addons">
-  <div class="control is-expanded">
-    <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />
-  </div>
-  <div class="control">
-    <button type="submit" class="button is-success" title="<%= _('Search') %>">
-      <i class=" fas fa-search"></i>
-    </button>
-  </div>
+<% if params[:hide_status_filter].blank? %>
+<div class="buttons toolbar has-addons is-inline-flex mr-4">
+  <a href="<%= url_for(request.query_parameters.except(:status)) %>" class="button<%= ' is-success is-selected' if params[:status].blank? %>"><%= _('All|Pages') %></a>
+  <a href="<%= url_for(request.query_parameters.merge(status: :draft)) %>" class="button<%= ' is-success is-selected' if params[:status] == 'draft' %>"><%= _('Only drafts|Pages') %></a>
+  <a href="<%= url_for(request.query_parameters.merge(status: :published)) %>" class="button<%= ' is-success is-selected' if params[:status] == 'published' %>"><%= _('Only published|Pages') %></a>
 </div>
 <% end %>
+<% if params[:hide_user_filter].blank? %>
+<div class="buttons toolbar has-addons is-inline-flex">
+  <a href="<%= url_for(request.query_parameters.except(:user_id)) %>" class="button<%= ' is-success is-selected' if params[:user_id].blank? %>"><%= _('All|Pages') %></a>
+  <a href="<%= url_for(request.query_parameters.merge(user_id: current_admin_user.id)) %>" class="button<%= ' is-success is-selected' if params[:user_id] == current_admin_user.id.to_s %>"><%= _('Only my pages') %></a>
+</div>
+<% end %>
+<div class="columns is-multiline">
+  <div class="column is-full-tablet is-half-desktop">
+    <%= form_with(method: :get, html: { class: 'smart-table-search field has-addons', 'data-target' => 'pages-smart-table' }) do |t| %>
+    <input type="hidden" name="hide_actions" value="<%= params[:hide_actions] %>" />
+    <input type="hidden" name="hide_status_filter" value="<%= params[:hide_status_filter] %>" />
+    <input type="hidden" name="hide_user_filter" value="<%= params[:hide_user_filter] %>" />
+    <input type="hidden" name="status" value="<%= params[:status] %>" />
+    <input type="hidden" name="user_id" value="<%= params[:user_id] %>" />
+    <input type="hidden" name="parent_id" value="<%= params[:parent_id] %>" />
+    <div class="control is-expanded">
+      <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />
+    </div>
+    <div class="control">
+      <button type="submit" class="button is-success" title="<%= _('Search') %>">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+    <% end %>
+  </div>
+  <% if params[:hide_actions].blank? %>
+  <div class="column has-text-right-tablet">
+    <a class="button" href="<%= tree_admin_pages_path %>">
+      <i class="fas fa-sitemap"></i>
+      &nbsp;
+      <%= _('Tree') %>
+    </a>
+    <a class="button is-success" href="<%= new_admin_page_path %>">
+      <%= _('Create') %>
+      &nbsp;
+      <i class="fas fa-plus"></i>
+    </a>
+  </div>
+  <% end %>
+</div>
 <table class="table is-striped is-hoverable is-fullwidth mt-2">
   <thead>
     <tr>
       <th><%= render partial: 'admin/shared/table_header', locals: { field: 'name', title: _('Name') } %></th>
+      <th class="is-hidden-mobile"><%= _('Status') %></th>
+      <th class="is-hidden-touch"><%= render partial: 'admin/shared/table_header', locals: { field: 'created_at', title: _('Created At') } %></th>
+      <th class="is-hidden-touch"><%= render partial: 'admin/shared/table_header', locals: { field: 'updated_at', title: _('Updated At') } %></th>
+      <th class="actions-cell"></th>
     </tr>
   </thead>
   <tbody>
     <% if @pages.none? %>
     <tr>
-      <td><%= _('No pages were found.') %></td>
+      <td colspan="5"><%= _('No pages were found.') %></td>
     </tr>
     <% else %>
     <% @pages.each do |page| %>
     <tr>
-      <td><%= page.name %></td>
+      <td>
+        <a href="<%= admin_page_path(page) %>"><%= page.name %></a>
+      </td>
+      <td class="is-hidden-mobile"><%= page.draft? ? _('Draft|Page') : _('Published|Page') %></td>
+      <td class="is-hidden-touch"><%= page.created_at %></td>
+      <td class="is-hidden-touch"><%= page.updated_at %></td>
+      <td class="actions-cell">
+        <div class="dropdown is-togglable is-right">
+          <div class="dropdown-trigger">
+            <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" title="<%= _('Actions') %>">
+              <i class="fas fa-ellipsis-v"></i>
+            </a>
+          </div>
+          <%= render partial: 'admin/pages/dropdown_menu', locals: { page: page } %>
+        </div>
+      </td>
     </tr>
     <% end %>
     <% end %>
   </tbody>
 </table>
 <%= paginate @pages %>
+
+<% @pages.each do |page| %>
+<%= render partial: 'admin/pages/delete_modal', locals: { page: page } %>
+<%= render partial: 'admin/pages/publish_modal', locals: { page: page } %>
+<% end %>

@@ -15,6 +15,15 @@ const initSelection = async (selection) => {
     options.allowClear = true;
   }
 
+  if (selection.getAttribute('data-fullWidth')) {
+    options.width = '100%';
+  }
+
+  if (selection.getAttribute('data-tags')) {
+    options.tags = true;
+    options.tokenSeparators = [','];
+  }
+
   const fetchUrl = selection.getAttribute('data-fetchUrl');
   if (fetchUrl) {
     options.ajax = {
@@ -24,6 +33,11 @@ const initSelection = async (selection) => {
         page: params.page || 1,
       }),
     };
+    if (options.tags) {
+      options.ajax.processResults = (data) => ({
+        results: data.results.map((item) => ({ id: item.text, text: item.text })),
+      });
+    }
   }
 
   $(selection).select2(options);

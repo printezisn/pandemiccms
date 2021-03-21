@@ -1,0 +1,149 @@
+<%
+    content_for :title, _('Edit Page | %{client}') % { client: current_client.name }
+    content_for :description, _('Edit a page of %{client}') % { client: current_client.name }
+%>
+
+<%= render "admin/shared/error_messages", resource: @page %>
+<%= form_with(model: @page, url: admin_page_path(@page), method: :patch) do |f| %>
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-sticky-note"></i>
+      &nbsp;
+      <%= _('Edit Page') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :image, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <%= render partial: 'admin/shared/image_uploader', locals: { model: @page, f: f } %>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :name, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :name, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :slug, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :slug, class: 'input' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :parent_id, _('Page|Parent'), class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <% if @page.parent %>
+            <%= f.select :parent_id, [[@page.parent.name, @page.parent.id]], {}, { placeholder: _('None|Parent'), 'data-fetchUrl' => search_admin_pages_path } %>
+            <% else %>
+            <%= f.select :parent_id, [], {}, { placeholder: _('None|Parent'), 'data-fetchUrl' => search_admin_pages_path } %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :description, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_area :description, class: 'textarea', rows: 5 %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :tag_names, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.select :tag_names, @page.tag_names.map(&:present?), {}, { 'data-fetchUrl' => search_admin_tags_path, multiple: true, 'data-tags': true, 'data-fullWidth': true } %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :template, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.select :template, @templates %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :visibility, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.select :visibility, @visibilities %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-sticky-note"></i>
+      &nbsp;
+      <%= _('Page|Body') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <%= f.text_area :body, class: 'rich-editor', rows: 10 %>
+  </div>
+</article>
+<div class="card mt-5">
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-hidden-touch is-hidden-mobile"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <% if @page.draft? %>
+            <%= f.submit _('Submit as draft'), class: 'button is-success' %>
+            <%= f.submit _('Submit & Publish'), name: 'publish', class: 'button is-link' %>
+            <% else %>
+            <%= f.submit _('Submit'), class: 'button is-success' %>
+            <% end %>
+            <a class="button" href="<%= params[:parent_id].present? ? admin_page_path(id: params[:parent_id]) : admin_pages_path %>"><%= _('Cancel') %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

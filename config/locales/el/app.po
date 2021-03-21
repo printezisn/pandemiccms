@@ -160,6 +160,9 @@ msgstr "Μη Επιβεβαιωμένο Email"
 msgid "AdminUser|Username"
 msgstr "Όνομα Χρήστη"
 
+msgid "All|Pages"
+msgstr "Όλες"
+
 msgid "An error occurred. Please try again later."
 msgstr "Παρουσιάστηκε κάποιο σφάλμα. Παρακαλούμε προσπαθήστε ξανά αργότερα."
 
@@ -175,8 +178,14 @@ msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψε
 msgid "Are you sure you want to delete this medium ?"
 msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτό το αρχείο ?"
 
+msgid "Are you sure you want to delete this page ?"
+msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτή τη σελίδα ?"
+
 msgid "Are you sure you want to delete this tag ?"
 msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτή την ετικέτα ?"
+
+msgid "Are you sure you want to publish this page ?"
+msgstr "Είστε σίγουρος/η ότι θέλετε να δημοσιεύσετε αυτή τη σελίδα ?"
 
 msgid "Author"
 msgstr "Συντάκτης"
@@ -292,6 +301,12 @@ msgstr "Δημιουργία Κατηγορίας"
 msgid "Create Category | %{client}"
 msgstr "Δημιουργία Κατηγορίας | %{client}"
 
+msgid "Create Page"
+msgstr "Δημιουργία Σελίδας"
+
+msgid "Create Page | %{client}"
+msgstr "Δημιουργία Σελίδας | %{client}"
+
 msgid "Create Tag"
 msgstr "Δημιουργία Ετικέτας"
 
@@ -306,6 +321,9 @@ msgstr "Δημιουργία Χρήστη | %{client}"
 
 msgid "Create new category for %{client}"
 msgstr "Δημιουργία νέας κατηγορίας για το %{client}"
+
+msgid "Create new page for %{client}"
+msgstr "Δημιουργία νέας σελίδας για το %{client}"
 
 msgid "Create new tag for %{client}"
 msgstr "Δημιουργία νέας ετικέτας για το %{client}"
@@ -343,6 +361,9 @@ msgstr "Περιγραφή"
 msgid "Details for a category of %{client}"
 msgstr "Λεπτομέρειες για την κατηγορία του %{client}"
 
+msgid "Details for a page of %{client}"
+msgstr "Λεπτομέρειες για τη σελίδα του %{client}"
+
 msgid "Details for a tag of %{client}"
 msgstr "Λεπτομέρειες για την ετικέτα του %{client}"
 
@@ -358,6 +379,9 @@ msgstr "Δε λάβατε οδηγίες επιβεβαίωσης ?"
 msgid "Didn't receive unlock instructions ?"
 msgstr "Δε λάβατε οδηγίες ξεκλειδώματος"
 
+msgid "Draft|Page"
+msgstr "Προσχέδιο"
+
 msgid "Edit"
 msgstr "Επεξεργασία"
 
@@ -372,6 +396,12 @@ msgstr "Επεξεργασία Προτύπου Email"
 
 msgid "Edit Email Template | %{client}"
 msgstr "Επεξεργασία Προτύπου Email | %{client}"
+
+msgid "Edit Page"
+msgstr "Επεξεργασία Σελίδας"
+
+msgid "Edit Page | %{client}"
+msgstr "Επεξεργασία Σελίδας | %{client}"
 
 msgid "Edit Profile"
 msgstr "Επεξεργασία Προφίλ"
@@ -393,6 +423,9 @@ msgstr "Επεξεργασία Χρήστη | %{client}"
 
 msgid "Edit a category of %{client}"
 msgstr "Επεξεργασία κατηγορίας του %{client}"
+
+msgid "Edit a page of %{client}"
+msgstr "Επεξεργασία σελίδας του %{client}"
 
 msgid "Edit a tag of %{client}"
 msgstr "Επεξεργασία ετικέτας του %{client}"
@@ -520,6 +553,9 @@ msgstr "Νέος Κωδικός"
 msgid "New Subcategory"
 msgstr "Νέα υποκατηγορία"
 
+msgid "New Subpage"
+msgstr "Νέα Υποσελίδα"
+
 msgid "Next Page"
 msgstr "Επόμενη Σελίδα"
 
@@ -562,11 +598,32 @@ msgstr "Τύπος Αρχειοποίησης Κωδικού"
 msgid "OldPassword|Password salt"
 msgstr "Πρόσθετο Κωδικού"
 
+msgid "Only drafts|Pages"
+msgstr "Μόνο προσχέδια"
+
+msgid "Only my pages"
+msgstr "Μόνο οι δικές μου σελίδες"
+
+msgid "Only published|Pages"
+msgstr "Μόνο δημοσιευμένες"
+
+msgid "Page"
+msgstr "Σελίδα"
+
+msgid "Page Details"
+msgstr "Λεπτομέρειες Σελίδας"
+
+msgid "Page Details | %{client}"
+msgstr "Λεπτομέρειες Σελίδας | %{client}"
+
 msgid "Page Drafts"
 msgstr "Προσχέδια Σελίδων"
 
 msgid "Pages"
 msgstr "Σελίδες"
+
+msgid "Pages Tree | %{client}"
+msgstr "Δέντρο Σελίδων | %{client}"
 
 msgid "Pages of %{client}"
 msgstr "Σελίδες του %{client}"
@@ -574,14 +631,14 @@ msgstr "Σελίδες του %{client}"
 msgid "Pages | %{client}"
 msgstr "Σελίδες | %{client}"
 
-msgid "Pages|Description"
-msgstr "Περιγραφή"
-
-msgid "Pages|Image"
-msgstr "Εικόνα"
-
 msgid "Page|Body"
 msgstr "Κείμενο"
+
+msgid "Page|Description"
+msgstr "Περιγραφή"
+
+msgid "Page|Image"
+msgstr "Εικόνα"
 
 msgid "Page|Name"
 msgstr "Όνομα"
@@ -594,6 +651,9 @@ msgstr "Slug"
 
 msgid "Page|Status"
 msgstr "Κατάσταση"
+
+msgid "Page|Tag names"
+msgstr "Ετικέτες"
 
 msgid "Page|Template"
 msgstr "Πρότυπο"
@@ -625,8 +685,23 @@ msgstr "Προεσκόπιση"
 msgid "Previous Page"
 msgstr "Προηγούμενη Σελίδα"
 
+msgid "Private|Visibility"
+msgstr "Ιδιωτική"
+
 msgid "Profile"
 msgstr "Προφίλ"
+
+msgid "Public|Visibility"
+msgstr "Δημόσια"
+
+msgid "Publish"
+msgstr "Δημοσίευση"
+
+msgid "Publish Confirmation"
+msgstr "Επιβεβαίωση Δημοσίευσης"
+
+msgid "Published|Page"
+msgstr "Δημοσιευμένη"
 
 msgid "Remove"
 msgstr "Αφαίρεση"
@@ -712,6 +787,15 @@ msgstr "Θέμα"
 msgid "Submit"
 msgstr "Υποβολή"
 
+msgid "Submit & Publish"
+msgstr "Υποβολή & Δημοσίευση"
+
+msgid "Submit as draft"
+msgstr "Υποβολή ως προσχέδιο"
+
+msgid "Subpages"
+msgstr "Υποσελίδες"
+
 msgid "Supervisor"
 msgstr "Επόπτης"
 
@@ -787,6 +871,24 @@ msgstr "Το αρχείο δημιουργήθηκε με επιτυχία."
 msgid "The medium was successfully deleted."
 msgstr "Το αρχείο διαγράφτηκε με επιτυχία."
 
+msgid "The page could not be published."
+msgstr "Η σελίδα δε μπόρεσε να δημοσιευτεί."
+
+msgid "The page was successfully created."
+msgstr "Η σελίδα δημιουργήθηκε με επιτυχία."
+
+msgid "The page was successfully deleted."
+msgstr "Η σελίδα διαγράφτηκε με επιτυχία."
+
+msgid "The page was successfully published."
+msgstr "Η σελίδα δημοσιεύτηκε με επιτυχία."
+
+msgid "The page was successfully translated."
+msgstr "Η σελίδα μεταφράστηκε με επιτυχία."
+
+msgid "The page was successfully updated."
+msgstr "Η σελίδα ανανεώθηκε με επιτυχία."
+
 msgid "The profile of the current user of %{client}"
 msgstr "Το προφίλ του τωρινού χρήστη του %{client}"
 
@@ -844,6 +946,9 @@ msgstr "Μετάφραση Κατηγορίας | %{client}"
 msgid "Translate Email Template | %{client}"
 msgstr "Μετάφραση Προτύπου Email | %{client}"
 
+msgid "Translate Page | %{client}"
+msgstr "Μετάφραση Σελίδας | %{client}"
+
 msgid "Translate Profile | %{client}"
 msgstr "Μετάφραση Προφίλ | %{client}"
 
@@ -855,6 +960,9 @@ msgstr "Μετάφραση Χρήστη | %{client}"
 
 msgid "Translate a category of %{client}"
 msgstr "Μετάφραση κατηγορίας του %{client}"
+
+msgid "Translate a page of %{client}"
+msgstr "Μετάφραση σελίδας του %{client}"
 
 msgid "Translate a tag of %{client}"
 msgstr "Μετάφραση ετικέτας του %{client}"
@@ -876,6 +984,9 @@ msgstr "Δέντρο"
 
 msgid "Tree with categories of %{client}"
 msgstr "Δέντρο με τις κατηγορίες του %{client}"
+
+msgid "Tree with pages of %{client}"
+msgstr "Δέντρο με τις σελίδες του %{client}"
 
 msgid "Unconfirmed Email"
 msgstr "Μη Επιβεβαιωμένο Email"
@@ -906,6 +1017,9 @@ msgstr "Χρήστες του %{client}"
 
 msgid "Users | %{client}"
 msgstr "Χρήστες | %{client}"
+
+msgid "Visibility"
+msgstr "Ορατότητα"
 
 msgid "We're contacting you to notify you that your email has been changed to %{email}"
 msgstr "Επικοινωνούμε μαζί σας για να σας γνωστοποιήσουμε ότι το email σας έχει αλλάξει σε %{email}"

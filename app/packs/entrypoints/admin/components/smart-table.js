@@ -1,5 +1,5 @@
 const initLinks = (table) => {
-  Array.from(table.querySelectorAll('th a, .pagination a')).forEach((el) => {
+  Array.from(table.querySelectorAll('th a, .toolbar a, .pagination a')).forEach((el) => {
     el.addEventListener('click', (e) => {
       e.preventDefault();
       table.dispatchEvent(new CustomEvent('refresh', {
