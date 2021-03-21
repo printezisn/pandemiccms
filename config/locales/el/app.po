@@ -544,6 +544,15 @@ msgstr "Το Προφίλ Μου"
 msgid "My Profile | %{client}"
 msgstr "Το Προφίλ Μου | %{client}"
 
+msgid "My page drafts"
+msgstr "Τα προσχέδια σελίδων μου"
+
+msgid "My page drafts (%{count})"
+msgstr "Τα προσχέδια σελίδων μου (%{count})"
+
+msgid "My post drafts"
+msgstr "Τα προσχέδια άρθρων μου"
+
 msgid "Name"
 msgstr "Όνομα"
 
@@ -616,9 +625,6 @@ msgstr "Λεπτομέρειες Σελίδας"
 msgid "Page Details | %{client}"
 msgstr "Λεπτομέρειες Σελίδας | %{client}"
 
-msgid "Page Drafts"
-msgstr "Προσχέδια Σελίδων"
-
 msgid "Pages"
 msgstr "Σελίδες"
 
@@ -666,9 +672,6 @@ msgstr "Παράμετροι"
 
 msgid "Password Change"
 msgstr "Αλλαγή Κωδικού"
-
-msgid "Post Drafts"
-msgstr "Προσχέδια Άρθρων"
 
 msgid "Posts"
 msgstr "Άρθρα"

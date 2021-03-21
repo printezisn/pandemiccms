@@ -544,6 +544,15 @@ msgstr "My Profile"
 msgid "My Profile | %{client}"
 msgstr "My Profile | %{client}"
 
+msgid "My page drafts"
+msgstr "My page drafts"
+
+msgid "My page drafts (%{count})"
+msgstr "My page drafts (%{count})"
+
+msgid "My post drafts"
+msgstr "My post drafts"
+
 msgid "Name"
 msgstr "Name"
 
@@ -616,9 +625,6 @@ msgstr "Page Details"
 msgid "Page Details | %{client}"
 msgstr "Page Details | %{client}"
 
-msgid "Page Drafts"
-msgstr "Page Drafts"
-
 msgid "Pages"
 msgstr "Pages"
 
@@ -666,9 +672,6 @@ msgstr "Parameters"
 
 msgid "Password Change"
 msgstr "Password Change"
-
-msgid "Post Drafts"
-msgstr "Post Drafts"
 
 msgid "Posts"
 msgstr "Posts"

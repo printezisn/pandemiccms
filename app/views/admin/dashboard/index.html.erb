@@ -48,7 +48,7 @@
       <article class="message is-info">
         <div class="message-body">
           <header>
-            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Page', '%{count} Pages', 0) % { count: 0 } %></h2>
+            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Page', '%{count} Pages', @pages_count) % { count: @pages_count } %></h2>
           </header>
         </div>
       </article>
@@ -78,7 +78,7 @@
   <article class="card">
     <header class="card-header">
       <h2 class="card-header-title">
-        <%= _('Post Drafts') %>
+        <%= _('My post drafts') %>
         &nbsp;
         <i class="fas fa-check has-text-success"></i>
       </h2>
@@ -88,10 +88,25 @@
     </div>
   </article>
 
+  <% if @draft_pages_count > 0 %>
   <article class="card mt-5">
     <header class="card-header">
       <h2 class="card-header-title">
-        <%= _('Page Drafts') %>
+        <%= _('My page drafts (%{count})') % { count: @draft_pages_count } %>
+        &nbsp;
+        <i class="fas fa-exclamation-triangle has-text-warning"></i>
+      </h2>
+    </header>
+    <div class="card-content">
+      <div class="smart-table" id="pages-smart-table" data-autoload="<%= admin_pages_path(hide_actions: true, hide_user_filter: true, hide_status_filter: true, status: :draft, user_id: current_admin_user.id) %>">
+      </div>
+    </div>
+  </article>
+  <% else %>
+  <article class="card mt-5">
+    <header class="card-header">
+      <h2 class="card-header-title">
+        <%= _('My page drafts') %>
         &nbsp;
         <i class="fas fa-check has-text-success"></i>
       </h2>
@@ -100,4 +115,5 @@
       <%= _('You have no page drafts.') %>
     </div>
   </article>
+  <% end %>
 </article>

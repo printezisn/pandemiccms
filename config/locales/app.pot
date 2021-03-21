@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-21 13:58+0200\n"
-"PO-Revision-Date: 2021-03-21 13:58+0200\n"
+"POT-Creation-Date: 2021-03-21 14:30+0200\n"
+"PO-Revision-Date: 2021-03-21 14:30+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -545,6 +545,15 @@ msgstr ""
 msgid "My Profile | %{client}"
 msgstr ""
 
+msgid "My page drafts"
+msgstr ""
+
+msgid "My page drafts (%{count})"
+msgstr ""
+
+msgid "My post drafts"
+msgstr ""
+
 msgid "Name"
 msgstr ""
 
@@ -617,9 +626,6 @@ msgstr ""
 msgid "Page Details | %{client}"
 msgstr ""
 
-msgid "Page Drafts"
-msgstr ""
-
 msgid "Pages"
 msgstr ""
 
@@ -666,9 +672,6 @@ msgid "Parameters"
 msgstr ""
 
 msgid "Password Change"
-msgstr ""
-
-msgid "Post Drafts"
 msgstr ""
 
 msgid "Posts"
