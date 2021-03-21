@@ -52,7 +52,7 @@
       <th class="is-hidden-mobile"><%= _('Status') %></th>
       <th class="is-hidden-touch"><%= render partial: 'admin/shared/table_header', locals: { field: 'created_at', title: _('Created At') } %></th>
       <th class="is-hidden-touch"><%= render partial: 'admin/shared/table_header', locals: { field: 'updated_at', title: _('Updated At') } %></th>
-      <th class="actions-cell"></th>
+      <th class="actions-cell<%= ' is-hidden' if params[:hide_actions].present? %>"></th>
     </tr>
   </thead>
   <tbody>
@@ -69,7 +69,7 @@
       <td class="is-hidden-mobile"><%= page.draft? ? _('Draft|Page') : _('Published|Page') %></td>
       <td class="is-hidden-touch"><%= page.created_at %></td>
       <td class="is-hidden-touch"><%= page.updated_at %></td>
-      <td class="actions-cell">
+      <td class="actions-cell<%= ' is-hidden' if params[:hide_actions].present? %>">
         <div class="dropdown is-togglable is-right">
           <div class="dropdown-trigger">
             <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" title="<%= _('Actions') %>">
