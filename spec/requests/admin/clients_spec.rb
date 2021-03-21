@@ -35,10 +35,7 @@ RSpec.describe '/admin/clients', type: :request do
           image: Rack::Test::UploadedFile.new(File.open(Rails.root.join('spec/fixtures/test.png'))),
           name: 'Test Client Name',
           time_zone: 'Athens',
-          email: 'testnew@email.com',
-          show_search_page: true,
-          show_category_page: true,
-          show_tag_page: true
+          email: 'testnew@email.com'
         },
         language_ids: [client_languages.first.id.to_s],
         default_language_id: client_languages.first.id.to_s
@@ -63,9 +60,6 @@ RSpec.describe '/admin/clients', type: :request do
 
         expect(client.image).to be_attached
         expect(client.name).to eq(params[:client][:name])
-        expect(client.show_search_page).to eq(params[:client][:show_search_page])
-        expect(client.show_category_page).to eq(params[:client][:show_category_page])
-        expect(client.show_tag_page).to eq(params[:client][:show_tag_page])
         expect(client.enabled_client_languages.map(&:id)).to contain_exactly(client_languages.first.id)
         expect(client.default_language.id).to eq(client_languages.first.language_id)
       end
@@ -78,10 +72,7 @@ RSpec.describe '/admin/clients', type: :request do
             image: Rack::Test::UploadedFile.new(File.open(Rails.root.join('spec/fixtures/test.png'))),
             name: '',
             time_zone: 'Athens',
-            email: 'testnew@email.com',
-            show_search_page: true,
-            show_category_page: true,
-            show_tag_page: true
+            email: 'testnew@email.com'
           },
           language_ids: [client_languages.first.id.to_s],
           default_language_id: client_languages.first.id.to_s

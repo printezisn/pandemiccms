@@ -1,12 +1,10 @@
 <div class="dropdown-menu" role="menu">
   <div class="dropdown-content">
-    <% if current_client.show_category_page %>
     <a class="dropdown-item" rel="noopener" target="_blank" href="<%= category_path(id: category.id, slug: category.displayed_slug(current_language&.transliterations)) %>">
       <i class="fas fa-external-link-alt"></i>
       &nbsp;
       <%= _('Preview') %>
     </a>
-    <% end %>
     <% if current_client.enabled_languages.size > 1 %>
     <a class="dropdown-item" href="<%= translate_admin_category_path(category) %>">
       <i class="fas fa-globe"></i>

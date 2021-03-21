@@ -64,63 +64,17 @@
         </div>
       </div>
     </div>
-    <div class="field is-horizontal">
-      <div class="field-label">
-        <%= f.label :show_search_page, class: 'label' %>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control">
-            <label class="radio">
-              <%= f.radio_button :show_search_page, true %>
-              <%= _('Yes') %>
-            </label>
-            <label class="radio">
-              <%= f.radio_button :show_search_page, false %>
-              <%= _('No') %>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="field is-horizontal">
-      <div class="field-label">
-        <%= f.label :show_category_page, class: 'label' %>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control">
-            <label class="radio">
-              <%= f.radio_button :show_category_page, true %>
-              <%= _('Yes') %>
-            </label>
-            <label class="radio">
-              <%= f.radio_button :show_category_page, false %>
-              <%= _('No') %>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="field is-horizontal">
-      <div class="field-label">
-        <%= f.label :show_tag_page, class: 'label' %>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <div class="control">
-            <label class="radio">
-              <%= f.radio_button :show_tag_page, true %>
-              <%= _('Yes') %>
-            </label>
-            <label class="radio">
-              <%= f.radio_button :show_tag_page, false %>
-              <%= _('No') %>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
+</article>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-globe"></i>
+      &nbsp;
+      <%= _('Languages') %>
+    </h1>
+  </header>
+  <div class="card-content">
     <div class="field is-horizontal">
       <div class="field-label">
         <label class="label"><%= _('Enabled Languages') %></label>
