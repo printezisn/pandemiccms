@@ -1,6 +1,8 @@
 <div class="columns">
-  <div class="column">
+  <div class="column is-full-tablet is-half-desktop">
     <%= form_with(method: :get, html: { class: 'smart-table-search', 'data-target' => 'categories-smart-table' }) do |t| %>
+    <input type="hidden" name="hide_actions" value="<%= params[:hide_actions] %>" />
+    <input type="hidden" name="parent_id" value="<%= params[:parent_id] %>" />
     <div class="field has-addons">
       <div class="control is-expanded">
         <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />
@@ -13,6 +15,7 @@
     </div>
     <% end %>
   </div>
+  <% if params[:hide_actions].blank? %>
   <div class="column has-text-right-tablet">
     <a class="button" href="<%= tree_admin_categories_path %>">
       <i class="fas fa-sitemap"></i>
@@ -25,21 +28,21 @@
       <i class="fas fa-plus"></i>
     </a>
   </div>
+  <% end %>
 </div>
 <table class="table is-striped is-hoverable is-fullwidth">
   <thead>
     <tr>
       <th><%= render partial: 'admin/shared/table_header', locals: { field: 'name', title: _('Name') } %></th>
-      <th class="is-hidden-mobile"><%= _('Hierarchy') %></th>
       <th class="is-hidden-touch"><%= render partial: 'admin/shared/table_header', locals: { field: 'created_at', title: _('Created At') } %></th>
       <th class="is-hidden-touch"><%= render partial: 'admin/shared/table_header', locals: { field: 'updated_at', title: _('Updated At') } %></th>
-      <th class="actions-cell"></th>
+      <th class="actions-cell<%= ' is-hidden' if params[:hide_actions].present? %>"></th>
     </tr>
   </thead>
   <tbody>
     <% if @categories.none? %>
     <tr>
-      <td colspan="5"><%= _('No categories were found.') %></td>
+      <td colspan="4"><%= _('No categories were found.') %></td>
     </tr>
     <% else %>
     <% @categories.each do |category| %>
@@ -47,10 +50,9 @@
       <td>
         <a href="<%= admin_category_path(category) %>"><%= category.name %></a>
       </td>
-      <td class="is-hidden-mobile"><%= (category.ancestors + [category]).map(&:name).join(' > ') %></td>
       <td class="is-hidden-touch"><%= category.created_at %></td>
       <td class="is-hidden-touch"><%= category.updated_at %></td>
-      <td class="actions-cell">
+      <td class="actions-cell<%= ' is-hidden' if params[:hide_actions].present? %>">
         <div class="dropdown is-togglable is-right">
           <div class="dropdown-trigger">
             <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" title="<%= _('Actions') %>">

@@ -129,7 +129,7 @@
     </h2>
   </div>
   <div class="card-content">
-    <div class="smart-table" id="subcategories-smart-table" data-autoload="<%= children_admin_category_path(@category) %>"></div>
+    <div class="smart-table" id="categories-smart-table" data-autoload="<%= admin_categories_path(parent_id: @category.id, hide_actions: true) %>"></div>
   </div>
 </article>
 <article class="card mt-5">
