@@ -68,6 +68,15 @@ RSpec.shared_examples 'Parentable' do
     end
   end
 
+  describe '#children_count' do
+    it 'reflects the correct number of children' do
+      expect(model.parent.children_count).to eq(1)
+      expect(model.children_count).to eq(2)
+      expect(model.children[0].children_count).to be_zero
+      expect(model.children[1].children_count).to be_zero
+    end
+  end
+
   describe '.ordered_by_hierarchy' do
     context 'when an excluded instance is passed' do
       subject(:hierarchy) do

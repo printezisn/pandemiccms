@@ -14,7 +14,7 @@ class Category < ApplicationRecord
   include Imageable
 
   belongs_to :client, inverse_of: :categories
-  belongs_to :parent, inverse_of: :children, class_name: 'Category', optional: true
+  belongs_to :parent, inverse_of: :children, class_name: 'Category', optional: true, counter_cache: :children_count
   has_many :children, inverse_of: :parent, class_name: 'Category', foreign_key: :parent_id, dependent: :destroy
   has_many :category_categorizables, inverse_of: :category, dependent: :destroy
 
