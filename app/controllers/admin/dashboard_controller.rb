@@ -10,6 +10,8 @@ module Admin
       @users_count = AdminUser.where(client_id: current_client.id, status: :active).count if current_admin_user.supervisor?
       @pages_count = Page.where(client_id: current_client.id).count
       @draft_pages_count = Page.draft.where(author_id: current_admin_user.id).count
+      @posts_count = Post.where(client_id: current_client.id).count
+      @draft_posts_count = Post.draft.where(author_id: current_admin_user.id).count
     end
   end
 end

@@ -21,7 +21,7 @@
       <article class="message is-success">
         <div class="message-body">
           <header>
-            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Post', '%{count} Posts', 0) % { count: 0 } %></h2>
+            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Post', '%{count} Posts', @posts_count) % { count: @posts_count } %></h2>
           </header>
         </div>
       </article>
@@ -75,7 +75,22 @@
     <% end %>
   </div>
 
-  <article class="card">
+  <% if @draft_posts_count > 0 %>
+  <article class="card mt-5">
+    <header class="card-header">
+      <h2 class="card-header-title">
+        <%= _('My post drafts (%{count})') % { count: @draft_posts_count } %>
+        &nbsp;
+        <i class="fas fa-exclamation-triangle has-text-warning"></i>
+      </h2>
+    </header>
+    <div class="card-content">
+      <div class="smart-table" id="posts-smart-table" data-autoload="<%= admin_posts_path(hide_actions: true, hide_user_filter: true, hide_status_filter: true, status: :draft, user_id: current_admin_user.id) %>">
+      </div>
+    </div>
+  </article>
+  <% else %>
+  <article class="card mt-5">
     <header class="card-header">
       <h2 class="card-header-title">
         <%= _('My post drafts') %>
@@ -87,6 +102,7 @@
       <%= _('You have no post drafts.') %>
     </div>
   </article>
+  <% end %>
 
   <% if @draft_pages_count > 0 %>
   <article class="card mt-5">

@@ -589,6 +589,9 @@ msgstr "My page drafts (%{count})"
 msgid "My post drafts"
 msgstr "My post drafts"
 
+msgid "My post drafts (%{count})"
+msgstr "My post drafts (%{count})"
+
 msgid "Name"
 msgstr "Name"
 

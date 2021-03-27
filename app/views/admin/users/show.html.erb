@@ -212,7 +212,7 @@
         </h2>
       </div>
       <div class="card-content">
-        <div class="smart-table" id="posts-smart-table" data-autoload="<%= admin_user_posts_path(@user, compact: true) %>"></div>
+        <div class="smart-table" id="posts-smart-table" data-autoload="<%= admin_user_posts_path(@user, hide_actions: true, hide_user_filter: true) %>"></div>
       </div>
     </article>
   </div>

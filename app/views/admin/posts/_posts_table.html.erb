@@ -1,4 +1,4 @@
-<% parameters = request.query_parameters.merge(request.parameters.slice(:user_id, :tag_id)) %>
+<% parameters = request.query_parameters.merge(request.parameters.slice(:user_id, :tag_id, :category_id)) %>
 <% if params[:hide_status_filter].blank? %>
 <div class="buttons toolbar has-addons is-inline-flex mr-4">
   <a href="<%= admin_posts_path(parameters.except(:status)) %>" class="button<%= ' is-success is-selected' if params[:status].blank? %>"><%= _('All|Posts') %></a>
@@ -19,6 +19,8 @@
     <input type="hidden" name="hide_status_filter" value="<%= params[:hide_status_filter] %>" />
     <input type="hidden" name="hide_user_filter" value="<%= params[:hide_user_filter] %>" />
     <input type="hidden" name="status" value="<%= params[:status] %>" />
+    <input type="hidden" name="tag_id" value="<%= params[:tag_id] %>" />
+    <input type="hidden" name="category_id" value="<%= params[:category_id] %>" />
     <input type="hidden" name="user_id" value="<%= params[:user_id] %>" />
     <div class="control is-expanded">
       <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />

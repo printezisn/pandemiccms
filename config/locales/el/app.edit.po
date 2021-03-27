@@ -589,6 +589,9 @@ msgstr "Τα προσχέδια σελίδων μου (%{count})"
 msgid "My post drafts"
 msgstr "Τα προσχέδια άρθρων μου"
 
+msgid "My post drafts (%{count})"
+msgstr "Τα προσχέδια άρθρων μου (%{count})"
+
 msgid "Name"
 msgstr "Όνομα"
 
