@@ -77,6 +77,14 @@ RSpec.shared_examples 'Parentable' do
     end
   end
 
+  describe '#detach_children' do
+    before { model.parent.destroy }
+
+    it 'nullifies :parent_id of children' do
+      expect(model.parent_id).to be_nil
+    end
+  end
+
   describe '.ordered_by_hierarchy' do
     context 'when an excluded instance is passed' do
       subject(:hierarchy) do

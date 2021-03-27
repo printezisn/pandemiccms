@@ -10,6 +10,7 @@ module Parentable
 
     before_save :set_hierarchy_path, if: -> { new_record? || will_save_change_to_parent_id? }
     after_save :update_children_hierarchy_path, if: :saved_change_to_hierarchy_path?
+    before_destroy :detach_children
 
     scope :descendants_of, lambda { |instance|
       path = (instance.ancestor_ids + [instance.id]).join(',')
@@ -95,6 +96,10 @@ module Parentable
 
   def update_children_hierarchy_path
     children.each { |child| child.update!(hierarchy_path: (ancestor_ids + [id]).join(',')) }
+  end
+
+  def detach_children
+    children.each { |child| child.update!(parent_id: nil) }
   end
 
   def memoized?
