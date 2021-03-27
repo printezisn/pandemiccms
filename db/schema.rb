@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_27_110336) do
+ActiveRecord::Schema.define(version: 2021_03_27_140425) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -211,6 +211,18 @@ ActiveRecord::Schema.define(version: 2021_03_27_110336) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.text "description"
+    t.text "body"
+    t.string "template"
+    t.integer "status", limit: 1, default: 0, null: false
+    t.integer "visibility", limit: 1, default: 0, null: false
+    t.datetime "published_at"
+    t.bigint "author_id", null: false
+    t.index ["author_id"], name: "index_posts_on_author_id"
+    t.index ["client_id", "name"], name: "index_posts_on_client_id_and_name", unique: true
+    t.index ["client_id", "status"], name: "index_posts_on_client_id_and_status"
+    t.index ["client_id", "template"], name: "index_posts_on_client_id_and_template"
     t.index ["client_id"], name: "index_posts_on_client_id"
   end
 
@@ -265,6 +277,7 @@ ActiveRecord::Schema.define(version: 2021_03_27_110336) do
   add_foreign_key "pages", "admin_users", column: "author_id"
   add_foreign_key "pages", "clients"
   add_foreign_key "pages", "pages", column: "parent_id"
+  add_foreign_key "posts", "admin_users", column: "author_id"
   add_foreign_key "posts", "clients"
   add_foreign_key "tag_taggables", "tags"
   add_foreign_key "tags", "clients"
