@@ -160,7 +160,7 @@ module Admin
 
     def page_params
       params.require(:page).permit(:image, :should_remove_image, :name, :slug, :description, :body,
-                                   :template, :parent_id, tag_names: [])
+                                   :visibility, :template, :parent_id, tag_names: [])
     end
 
     def translation_params

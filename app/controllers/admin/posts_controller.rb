@@ -154,7 +154,7 @@ module Admin
 
     def post_params
       params.require(:post).permit(:image, :should_remove_image, :name, :slug, :description, :body,
-                                   :template, category_names: [], tag_names: [])
+                                   :visibility, :template, category_names: [], tag_names: [])
     end
 
     def translation_params
