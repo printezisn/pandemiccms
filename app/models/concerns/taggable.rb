@@ -17,6 +17,11 @@ module Taggable
   private
 
   def save_tags
-    self.tags = tag_names.select(&:present?).map { |tag_name| Tag.find_or_initialize_by(name: tag_name, client_id: client_id) }
+    new_tags = tag_names.select(&:present?).map { |tag_name| Tag.find_or_initialize_by(name: tag_name, client_id: client_id) }
+    tag_taggables.each do |tag_taggable|
+      tag_taggable.destroy unless new_tags.any? { |tag| tag.id == tag_taggable.tag_id }
+    end
+
+    self.tags = new_tags
   end
 end
