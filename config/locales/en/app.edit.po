@@ -979,6 +979,24 @@ msgstr "The page was successfully translated."
 msgid "The page was successfully updated."
 msgstr "The page was successfully created."
 
+msgid "The post could not be published."
+msgstr "The post could not be published."
+
+msgid "The post was successfully created."
+msgstr "The post was successfully created."
+
+msgid "The post was successfully deleted."
+msgstr "The post was successfully deleted."
+
+msgid "The post was successfully published."
+msgstr "The post was successfully published."
+
+msgid "The post was successfully translated."
+msgstr "The post was successfully translated."
+
+msgid "The post was successfully updated."
+msgstr "The post was successfully created."
+
 msgid "The profile of the current user of %{client}"
 msgstr "The profile of the current user of %{client}"
 

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-27 18:39+0200\n"
-"PO-Revision-Date: 2021-03-27 18:39+0200\n"
+"POT-Creation-Date: 2021-03-27 19:22+0200\n"
+"PO-Revision-Date: 2021-03-27 19:22+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -978,6 +978,24 @@ msgid "The page was successfully translated."
 msgstr ""
 
 msgid "The page was successfully updated."
+msgstr ""
+
+msgid "The post could not be published."
+msgstr ""
+
+msgid "The post was successfully created."
+msgstr ""
+
+msgid "The post was successfully deleted."
+msgstr ""
+
+msgid "The post was successfully published."
+msgstr ""
+
+msgid "The post was successfully translated."
+msgstr ""
+
+msgid "The post was successfully updated."
 msgstr ""
 
 msgid "The profile of the current user of %{client}"

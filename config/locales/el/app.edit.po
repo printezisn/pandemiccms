@@ -979,6 +979,24 @@ msgstr "Η σελίδα μεταφράστηκε με επιτυχία."
 msgid "The page was successfully updated."
 msgstr "Η σελίδα ανανεώθηκε με επιτυχία."
 
+msgid "The post could not be published."
+msgstr "Το άρθρο δε μπόρεσε να δημοσιευτεί."
+
+msgid "The post was successfully created."
+msgstr "Το άρθρο δημιουργήθηκε με επιτυχία."
+
+msgid "The post was successfully deleted."
+msgstr "Το άρθρο διαγράφτηκε με επιτυχία."
+
+msgid "The post was successfully published."
+msgstr "Το άρθρο δημοσιεύτηκε με επιτυχία."
+
+msgid "The post was successfully translated."
+msgstr "Το άρθρο μεταφράστηκε με επιτυχία."
+
+msgid "The post was successfully updated."
+msgstr "Το άρθρο ανανεώθηκε με επιτυχία."
+
 msgid "The profile of the current user of %{client}"
 msgstr "Το προφίλ του τωρινού χρήστη του %{client}"
 
