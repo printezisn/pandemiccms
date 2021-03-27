@@ -13,7 +13,7 @@ class AuthMailer < Devise::Mailer
       )
     }
 
-    super unless fetch_email_template_type(EmailTemplateType::AccountConfirmation, record, values, opts)
+    super unless mail_with_email_template(EmailTemplateType::AccountConfirmation, record, values, opts)
   end
 
   def reset_password_instructions(record, token, opts = {})
@@ -27,7 +27,7 @@ class AuthMailer < Devise::Mailer
       )
     }
 
-    super unless fetch_email_template_type(EmailTemplateType::ResetPasswordInstructions, record, values, opts)
+    super unless mail_with_email_template(EmailTemplateType::ResetPasswordInstructions, record, values, opts)
   end
 
   def email_changed(record, opts = {})
@@ -38,7 +38,7 @@ class AuthMailer < Devise::Mailer
       '{user.unconfirmed_email}' => record.unconfirmed_email
     }
 
-    super unless fetch_email_template_type(EmailTemplateType::EmailChange, record, values, opts)
+    super unless mail_with_email_template(EmailTemplateType::EmailChange, record, values, opts)
   end
 
   def password_change(record, opts = {})
@@ -48,6 +48,6 @@ class AuthMailer < Devise::Mailer
       '{user.email}' => record.email
     }
 
-    super unless fetch_email_template_type(EmailTemplateType::PasswordChange, record, values, opts)
+    super unless mail_with_email_template(EmailTemplateType::PasswordChange, record, values, opts)
   end
 end
