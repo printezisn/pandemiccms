@@ -133,6 +133,16 @@
     </div>
     <div class="field is-horizontal">
       <div class="field-label">
+        <span class="label"><%= _('Author') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= render partial: 'admin/shared/admin_user_name', locals: { admin_user: @page.author } %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
         <span class="label"><%= _('Created At') %></span>
       </div>
       <div class="field-body">
