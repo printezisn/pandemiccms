@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :set_time_zone
   before_action :set_date_time_formats
+  before_action :verify_current_admin_user
 
   helper_method :current_client
   helper_method :current_language
@@ -41,6 +42,13 @@ class ApplicationController < ActionController::Base
   def set_date_time_formats
     Date::DATE_FORMATS[:default] = _('date.formats.default')
     Time::DATE_FORMATS[:default] = _('time.formats.default')
+  end
+
+  def verify_current_admin_user
+    return if !current_admin_user || current_admin_user.client_id == current_client.id
+
+    sign_out(current_admin_user)
+    redirect_to new_admin_user_session_path
   end
 
   def layout
