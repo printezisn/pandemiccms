@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_27_110028) do
+ActiveRecord::Schema.define(version: 2021_03_27_110336) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -197,6 +197,7 @@ ActiveRecord::Schema.define(version: 2021_03_27_110028) do
     t.bigint "author_id", null: false
     t.bigint "parent_id"
     t.text "hierarchy_path"
+    t.integer "children_count", default: 0
     t.index ["author_id"], name: "index_pages_on_author_id"
     t.index ["client_id", "name"], name: "index_pages_on_client_id_and_name", unique: true
     t.index ["client_id", "status"], name: "index_pages_on_client_id_and_status"
