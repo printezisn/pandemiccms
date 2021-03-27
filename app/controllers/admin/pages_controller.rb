@@ -59,7 +59,9 @@ module Admin
 
     # GET /pages/1/edit
     # GET /pages/1/edit.json
-    def edit; end
+    def edit
+      @page.tag_names = @page.tags.map(&:name)
+    end
 
     # GET /pages/new
     def new

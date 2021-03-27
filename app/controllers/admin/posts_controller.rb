@@ -51,7 +51,10 @@ module Admin
 
     # GET /posts/1/edit
     # GET /posts/1/edit.json
-    def edit; end
+    def edit
+      @post.category_names = @post.categories.map(&:name)
+      @post.tag_names = @post.tags.map(&:name)
+    end
 
     # GET /posts/new
     def new

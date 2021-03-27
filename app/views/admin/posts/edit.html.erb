@@ -67,7 +67,7 @@
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <%= f.select :category_names, @post.category_names.map(&:present?), {}, { 'data-fetchUrl' => search_admin_categories_path, multiple: true, 'data-tags': true, 'data-fullWidth': true } %>
+            <%= f.select :category_names, @post.category_names.select(&:present?), {}, { 'data-fetchUrl' => search_admin_categories_path, multiple: true, 'data-tags': true, 'data-fullWidth': true } %>
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <%= f.select :tag_names, @post.tag_names.map(&:present?), {}, { 'data-fetchUrl' => search_admin_tags_path, multiple: true, 'data-tags': true, 'data-fullWidth': true } %>
+            <%= f.select :tag_names, @post.tag_names.select(&:present?), {}, { 'data-fetchUrl' => search_admin_tags_path, multiple: true, 'data-tags': true, 'data-fullWidth': true } %>
           </div>
         </div>
       </div>

@@ -83,7 +83,7 @@
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <%= f.select :tag_names, @page.tag_names.map(&:present?), {}, { 'data-fetchUrl' => search_admin_tags_path, multiple: true, 'data-tags': true, 'data-fullWidth': true } %>
+            <%= f.select :tag_names, @page.tag_names.select(&:present?), {}, { 'data-fetchUrl' => search_admin_tags_path, multiple: true, 'data-tags': true, 'data-fullWidth': true } %>
           </div>
         </div>
       </div>
