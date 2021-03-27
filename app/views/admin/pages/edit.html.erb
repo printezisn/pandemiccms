@@ -139,7 +139,7 @@
             <% else %>
             <%= f.submit _('Submit'), class: 'button is-success' %>
             <% end %>
-            <a class="button" href="<%= params[:parent_id].present? ? admin_page_path(id: params[:parent_id]) : admin_pages_path %>"><%= _('Cancel') %></a>
+            <a class="button" href="<%= admin_page_path(@page) %>"><%= _('Cancel') %></a>
           </div>
         </div>
       </div>
