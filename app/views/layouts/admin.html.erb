@@ -43,7 +43,7 @@
               <%= _('Posts') %>
             </a>
             <div class="navbar-dropdown">
-              <a class="navbar-item" href="javascript:void(0)">
+              <a class="navbar-item<%= ' is-active' if controller_name == 'posts' %>" href="<%= admin_posts_path %>">
                 <i class="fas fa-file"></i>
                 &nbsp;
                 <%= _('Posts') %>
