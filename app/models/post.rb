@@ -28,7 +28,23 @@ class Post < ApplicationRecord
                    uniqueness: { case_sensitive: false, scope: [:client_id] }
   validates :slug, length: { maximum: 255 }
 
+  after_update :update_counters
+
   def visible?
     public_visibility? && published?
+  end
+
+  private
+
+  def update_counters
+    was_visible = status_before_last_save == 'published' && visibility_before_last_save == 'public'
+
+    if visible? && !was_visible
+      categories.each { |category| category.increment!(:posts_count) }
+      tags.each { |tag| tag.increment!(:posts_count) }
+    elsif !visible? && was_visible
+      categories.each { |category| category.decrement!(:posts_count) }
+      tags.each { |tag| tag.decrement!(:posts_count) }
+    end
   end
 end

@@ -53,6 +53,49 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  describe '#update_counters' do
+    subject(:model) do
+      FactoryBot.create(:post, visibility: :private, status: :draft, tags: [tag], categories: [category])
+    end
+
+    let(:category) { FactoryBot.create(:category) }
+    let(:tag) { FactoryBot.create(:tag) }
+
+    context 'when visibility is changed, but the post is still not visible' do
+      it 'does not update the counters' do
+        expect { model.public_visibility! }.not_to(
+          change { [category.reload.posts_count, tag.reload.posts_count] }
+        )
+      end
+    end
+
+    context 'when status is changed, but the post is still not visible' do
+      it 'does not update the counters' do
+        expect { model.published! }.not_to(
+          change { [category.reload.posts_count, tag.reload.posts_count] }
+        )
+      end
+    end
+
+    context 'when the post becomes visible' do
+      it 'updates the counters' do
+        expect { model.update!(status: :published, visibility: :public) }.to(
+          change { [category.reload.posts_count, tag.reload.posts_count] }.from([0, 0]).to([1, 1])
+        )
+      end
+    end
+
+    context 'when the post becomes not visible after an update' do
+      it 'updates the counters' do
+        model.update!(status: :published, visibility: :public)
+
+        expect { model.private_visibility! }.to(
+          change { [category.reload.posts_count, tag.reload.posts_count] }.from([1, 1]).to([0, 0])
+        )
+      end
+    end
+  end
+
   describe 'concerns' do
     subject(:model) { FactoryBot.create(:post) }
 
