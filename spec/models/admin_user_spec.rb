@@ -12,7 +12,8 @@ RSpec.describe AdminUser, type: :model do
   it { is_expected.to belong_to(:client) }
 
   it { is_expected.to have_many(:admin_user_roles).dependent(:destroy) }
-  it { is_expected.to have_many(:pages).dependent(:destroy) }
+  it { is_expected.to have_many(:pages).with_foreign_key(:author_id).dependent(:destroy) }
+  it { is_expected.to have_many(:posts).with_foreign_key(:author_id).dependent(:destroy) }
 
   it { is_expected.to define_enum_for(:status).with_values(active: 0, inactive: 1) }
 

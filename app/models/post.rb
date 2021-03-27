@@ -15,8 +15,8 @@ class Post < ApplicationRecord
   include Taggable
   include Draftable
 
-  belongs_to :client, inverse_of: :pages
-  belongs_to :author, class_name: 'AdminUser', inverse_of: :pages, optional: true
+  belongs_to :client, inverse_of: :posts
+  belongs_to :author, class_name: 'AdminUser', inverse_of: :posts, optional: true
 
   enum visibility: {
     public: 0,
