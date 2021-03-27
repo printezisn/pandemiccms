@@ -44,6 +44,17 @@ Rails.application.routes.draw do
           post :translate, to: 'pages#save_translation'
         end
       end
+      resources :posts do
+        collection do
+          get :search
+        end
+
+        member do
+          post :publish
+          get :translate
+          post :translate, to: 'posts#save_translation'
+        end
+      end
       resources :email_templates, only: %i[index show edit update] do
         member do
           get :translate
