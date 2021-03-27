@@ -1,15 +1,14 @@
-<% parameters = request.query_parameters.merge(request.parameters.slice(:user_id, :tag_id)) %>
 <% if params[:hide_status_filter].blank? %>
 <div class="buttons toolbar has-addons is-inline-flex mr-4">
-  <a href="<%= admin_pages_path(parameters.except(:status)) %>" class="button<%= ' is-success is-selected' if params[:status].blank? %>"><%= _('All|Pages') %></a>
-  <a href="<%= admin_pages_path(parameters.merge(status: :draft)) %>" class="button<%= ' is-success is-selected' if params[:status] == 'draft' %>"><%= _('Only drafts|Pages') %></a>
-  <a href="<%= admin_pages_path(parameters.merge(status: :published)) %>" class="button<%= ' is-success is-selected' if params[:status] == 'published' %>"><%= _('Only published|Pages') %></a>
+  <a href="<%= url_for(request.query_parameters.except(:status)) %>" class="button<%= ' is-success is-selected' if params[:status].blank? %>"><%= _('All|Pages') %></a>
+  <a href="<%= url_for(request.query_parameters.merge(status: :draft)) %>" class="button<%= ' is-success is-selected' if params[:status] == 'draft' %>"><%= _('Only drafts|Pages') %></a>
+  <a href="<%= url_for(request.query_parameters.merge(status: :published)) %>" class="button<%= ' is-success is-selected' if params[:status] == 'published' %>"><%= _('Only published|Pages') %></a>
 </div>
 <% end %>
-<% if params[:hide_user_filter].blank? %>
+<% if params[:user_id].blank? %>
 <div class="buttons toolbar has-addons is-inline-flex">
-  <a href="<%= admin_pages_path(parameters.except(:user_id)) %>" class="button<%= ' is-success is-selected' if params[:user_id].blank? %>"><%= _('All|Pages') %></a>
-  <a href="<%= admin_pages_path(parameters.merge(user_id: current_admin_user.id)) %>" class="button<%= ' is-success is-selected' if params[:user_id] == current_admin_user.id.to_s %>"><%= _('Only my pages') %></a>
+  <a href="<%= url_for(request.query_parameters.except(:only_mine)) %>" class="button<%= ' is-success is-selected' if params[:only_mine].blank? %>"><%= _('All|Pages') %></a>
+  <a href="<%= url_for(request.query_parameters.merge(only_mine: true)) %>" class="button<%= ' is-success is-selected' if params[:only_mine].present? %>"><%= _('Only my pages') %></a>
 </div>
 <% end %>
 <div class="columns is-multiline">
@@ -17,10 +16,8 @@
     <%= form_with(method: :get, html: { class: 'smart-table-search field has-addons', 'data-target' => 'pages-smart-table' }) do |t| %>
     <input type="hidden" name="hide_actions" value="<%= params[:hide_actions] %>" />
     <input type="hidden" name="hide_status_filter" value="<%= params[:hide_status_filter] %>" />
-    <input type="hidden" name="hide_user_filter" value="<%= params[:hide_user_filter] %>" />
     <input type="hidden" name="status" value="<%= params[:status] %>" />
-    <input type="hidden" name="tag_id" value="<%= params[:tag_id] %>" />
-    <input type="hidden" name="user_id" value="<%= params[:user_id] %>" />
+    <input type="hidden" name="only_mine" value="<%= params[:only_mine] %>" />
     <input type="hidden" name="parent_id" value="<%= params[:parent_id] %>" />
     <div class="control is-expanded">
       <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />

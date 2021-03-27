@@ -15,13 +15,16 @@ module Admin
     # GET /tag/:tag_id/posts
     # GET /user/:user_id/posts
     def index
+      user_id = params[:user_id]
+      user_id ||= current_admin_user.id if params[:only_mine].present?
+
       @posts = Post.where(client_id: current_client.id)
       @posts = @posts.where(status: params[:status]) if params[:status].present?
       @posts = @posts.joins(:tag_taggables).where(tag_taggables: { tag_id: params[:tag_id] }) if params[:tag_id].present?
       if params[:category_id].present?
         @posts = @posts.joins(:category_categorizables).where(category_categorizables: { category_id: params[:category_id] })
       end
-      @posts = @posts.where(author_id: params[:user_id]) if params[:user_id].present?
+      @posts = @posts.where(author_id: user_id) if user_id.present?
 
       @posts = @posts.simple_text_search(params[:search])
                      .bound_sort(params[:sort_by], params[:dir])
