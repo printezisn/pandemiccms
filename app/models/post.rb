@@ -11,6 +11,7 @@ class Post < ApplicationRecord
   include Sluggable
   include Translatable
   include Imageable
+  include Categorizable
   include Taggable
   include Draftable
 

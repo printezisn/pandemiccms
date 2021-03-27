@@ -6,6 +6,7 @@ require './spec/models/concerns/bound_sortable'
 require './spec/models/concerns/sluggable'
 require './spec/models/concerns/translatable'
 require './spec/models/concerns/imageable'
+require './spec/models/concerns/categorizable'
 require './spec/models/concerns/taggable'
 require './spec/models/concerns/draftable'
 
@@ -62,6 +63,7 @@ RSpec.describe Post, type: :model do
     it_behaves_like 'Sluggable'
     it_behaves_like 'Translatable'
     it_behaves_like 'Imageable'
+    it_behaves_like 'Categorizable'
     it_behaves_like 'Taggable'
     it_behaves_like 'Draftable'
   end
