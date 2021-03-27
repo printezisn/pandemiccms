@@ -23,8 +23,9 @@ Rails/CreateTableWithTimestamps:
     - "db/migrate/20201226150556_create_active_storage_tables.active_storage.rb"
 
 Rails/SkipsModelValidations:
-  Exclude:
-    - "app/models/tag_taggable.rb"
+  AllowedMethods:
+    - "increment!"
+    - "decrement!"
 
 RSpec/NestedGroups:
   Enabled: false
