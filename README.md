@@ -4,10 +4,10 @@
   Pandemic CMS
 </h1>
 
-A CMS, created in the pandemic, which can do the following for you:
+**This is still a work in progress.**
 
-- Handle common CMS entities:
-
+A CMS with all the necessary components to help you create fast and amazing websites. Why Pandemic CMS ? Because it was created during the pandemic. Here is the core philosophy of it:
+- It provides core entities to help you get started fast, but it's designed to be easily extended with new entities. The core entities are the following:
   - Posts
   - Categories
   - Tags
@@ -17,13 +17,9 @@ A CMS, created in the pandemic, which can do the following for you:
   - Settings
   - Email Templates
   - Users
-
-- Support multiple clients/sites in the same instance.
-- Support multiple languages.
-
-It's designed to be simple and easily extensible, with no magic tricks, so that it can be used as a base for various kinds of projects.
-
-**This is still a work in progress.**
+- The majority of web applications need a dashboard to keep track of users, edit settings and handle content. Pandemic CMS is designed to be easily extended and become that dashboard for your web applications, from simple blogs to big SaaS.
+- Many applications need to support multiple languages. This is easy for static content, but what about dynamic content ? Pandemic CMS is designed to support multilingual content.
+- Pandemic CMS is designed to be multi-tenant, meaning that it is possible to support multiple applications/clients on the same instance.
 
 ## Stack
 
@@ -84,7 +80,7 @@ smtp:
 
 If you need to generate a new value for `secret_key_base`, you can do it by running `rails secret`.
 
-Also, you can generate different configuration for production by running `EDITOR=<editor> rails credentials:edit --environment production`. This will generate a new `production.key` file whose value needs to be stored on the server in a secure way (e.g. environment variable).
+Also, you can generate different configuration for production by running `EDITOR=<editor> rails credentials:edit --environment production`. This will generate a new `production.key` file whose value needs to be stored on the server in a secure way.
 
 **3. Create the database**:
 
@@ -97,15 +93,25 @@ Log in the database system and perform the following actions:
 
 Run the migrations with `bundle exec rails db:migrate`.
 
-**5. Add SMTP settings**:
+**5. Add initial database data**:
 
-Open the `config/environments/development.rb` file and configure the `config.action_mailer.smtp_settings` setting to point to your mail server.
-Please note that you need to do the same for the other environments too.
+Run `bundle exec rake pandemiccms:init`. This will add the initial data to the database.
 
-**6. Run the setup script**:
+**6. Create a client**:
 
-Run the setup script with `bundle exec rails r ./setup.rb` and follow the instructions to set up the appropriate data.
-Afterwards, you'll be able to sign in with the supervisor user which you created.
+Run `bundle exec rake pandemiccms:create_client -- -n CLIENT_NAME -t TEMPLATE -d DOMAIN:PORT` to create a client.
+
+For example: `bundle exec rake pandemiccms:create_client -- -n "Pandemic CMS" -t sample -d mysite:80 -d localhost:3000`.
+
+For more information, you can run `bundle exec rake pandemiccms:create_client -- -h` for help.
+
+**7. Create a supervisor user**:
+
+Run `bundle exec rake pandemiccms:create_supervisor -- -u USERNAME -e EMAIL -p PASSWORD -c CLIENT_NAME` to create a supervisor user.
+
+For example: `bundle exec rake pandemiccms:create_supervisor -- -u username -e me@email.com -p mypass -c "Pandemic CMS"`.
+
+For more information, you can run `bundle exec rake pandemiccms:create_supervisor -- -h` for help.
 
 ## How to run
 
@@ -122,10 +128,13 @@ Afterwards, you'll be able to sign in with the supervisor user which you created
 
 `bundle exec rails s`
 
-or with docker compose:
+## Rake tasks
 
-`docker-compose up`
+1. `bundle exec rake pandemiccms:init`: Initializes the necessary data for the application.
+1. `bundle exec rake pandemiccms:create_client -- [OPTIONS]`: Creates a new client.
+1. `bundle exec rake pandemiccms:create_supervisor -- [OPTIONS]`: Creates a new supervisor user.
 
-## How to deploy
+## Docker compose
 
-You must first tweak the capistrano-related files to work for your infrastructure. Then, you can deploy with `bundle exec cap production deploy`.
+- `docker-compose.infrastructure.yml`: Spins up all infrastructure services (MariaDB, etc.).
+- `docker-compose.yml`: Spins up all infrastructure services and the application.
