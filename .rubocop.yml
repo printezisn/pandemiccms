@@ -47,3 +47,7 @@ Metrics/ClassLength:
 
 Metrics/PerceivedComplexity:
   Enabled: false
+
+Lint/EmptyBlock:
+  Exclude:
+    - "lib/tasks/pandemiccms.rake"
