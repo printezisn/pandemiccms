@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-27 20:12+0200\n"
-"PO-Revision-Date: 2021-03-27 20:12+0200\n"
+"POT-Creation-Date: 2021-04-09 21:58+0300\n"
+"PO-Revision-Date: 2021-04-09 21:58+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -189,6 +189,9 @@ msgid "Are you sure you want to delete this post ?"
 msgstr ""
 
 msgid "Are you sure you want to delete this tag ?"
+msgstr ""
+
+msgid "Are you sure you want to delete this user ?"
 msgstr ""
 
 msgid "Are you sure you want to publish this page ?"
@@ -722,6 +725,9 @@ msgstr ""
 msgid "Password Change"
 msgstr ""
 
+msgid "Please note that this operation will also delete the content created by this user."
+msgstr ""
+
 msgid "Post"
 msgstr ""
 
@@ -1029,6 +1035,9 @@ msgid "The user was successfully created."
 msgstr ""
 
 msgid "The user was successfully deactivated."
+msgstr ""
+
+msgid "The user was successfully deleted."
 msgstr ""
 
 msgid "The user was successfully translated."

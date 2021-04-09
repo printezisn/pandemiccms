@@ -190,6 +190,9 @@ msgstr "Are you sure you want to delete this post ?"
 msgid "Are you sure you want to delete this tag ?"
 msgstr "Are you sure you want to delete this tag ?"
 
+msgid "Are you sure you want to delete this user ?"
+msgstr "Are you sure you want to delete this user ?"
+
 msgid "Are you sure you want to publish this page ?"
 msgstr "Are you sure you want to publish this page ?"
 
@@ -721,6 +724,9 @@ msgstr "Parameters"
 msgid "Password Change"
 msgstr "Password Change"
 
+msgid "Please note that this operation will also delete the content created by this user."
+msgstr "Please note that this operation will also delete the content created by this user."
+
 msgid "Post"
 msgstr "Post"
 
@@ -1029,6 +1035,9 @@ msgstr "The user was successfully created."
 
 msgid "The user was successfully deactivated."
 msgstr "The user was successfully deactivated."
+
+msgid "The user was successfully deleted."
+msgstr "The user was successfully deleted."
 
 msgid "The user was successfully translated."
 msgstr "The user was successfully translated."

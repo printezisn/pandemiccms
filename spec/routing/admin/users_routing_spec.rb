@@ -32,6 +32,10 @@ RSpec.describe Admin::UsersController, type: :routing do
       expect(patch: '/admin/users/1').to route_to('admin/users#update', id: '1')
     end
 
+    it 'routes to #destroy' do
+      expect(delete: '/admin/users/1').to route_to('admin/users#destroy', id: '1')
+    end
+
     it 'routes to #activate' do
       expect(post: '/admin/users/1/activate').to route_to('admin/users#activate', id: '1')
     end

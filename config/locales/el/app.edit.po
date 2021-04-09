@@ -190,6 +190,9 @@ msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψε
 msgid "Are you sure you want to delete this tag ?"
 msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτή την ετικέτα ?"
 
+msgid "Are you sure you want to delete this user ?"
+msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτό το χρήστη ?"
+
 msgid "Are you sure you want to publish this page ?"
 msgstr "Είστε σίγουρος/η ότι θέλετε να δημοσιεύσετε αυτή τη σελίδα ?"
 
@@ -721,6 +724,9 @@ msgstr "Παράμετροι"
 msgid "Password Change"
 msgstr "Αλλαγή Κωδικού"
 
+msgid "Please note that this operation will also delete the content created by this user."
+msgstr "Παρακαλούμε σημειώστε ότι αυτή η ενέργεια θα διαγράψει και το περιεχόμενο που έχει δημιουργηθεί απο αυτό το χρήστη."
+
 msgid "Post"
 msgstr "Άρθρο"
 
@@ -1029,6 +1035,9 @@ msgstr "Ο χρήστης δημιουργήθηκε με επιτυχία."
 
 msgid "The user was successfully deactivated."
 msgstr "Ο χρήστης απενεργοποιήθηκε με επιτυχία."
+
+msgid "The user was successfully deleted."
+msgstr "Ο χρήστης διαγράφτηκε με επιτυχία."
 
 msgid "The user was successfully translated."
 msgstr "Ο χρήστης μεταφράστηκε με επιτυχία."

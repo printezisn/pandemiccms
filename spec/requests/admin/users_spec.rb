@@ -189,6 +189,24 @@ RSpec.describe '/admin/users', type: :request do
     end
   end
 
+  describe 'DELETE /destroy' do
+    let(:request) { delete admin_user_path(admin_user) }
+
+    before { admin_user }
+
+    it_behaves_like 'supervisor page'
+
+    it 'destroys the requested user' do
+      expect { request }.to change(AdminUser, :count).by(-1)
+    end
+
+    it 'redirects to the users list' do
+      request
+
+      expect(response).to redirect_to(admin_users_path(locale: 'en'))
+    end
+  end
+
   describe 'POST /deactivate' do
     let(:request) { post deactivate_admin_user_path(admin_user) }
 

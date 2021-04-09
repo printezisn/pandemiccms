@@ -62,7 +62,7 @@ Rails.application.routes.draw do
           post :test
         end
       end
-      resources :users, except: :destroy do
+      resources :users do
         resources :posts, only: :index
         resources :pages, only: :index
 

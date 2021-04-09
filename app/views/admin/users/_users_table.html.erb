@@ -56,4 +56,5 @@
 
 <% @users.each do |user| %>
 <%= render partial: 'admin/users/toggle_user_status_modal', locals: { user: user } %>
+<%= render partial: 'admin/users/delete_modal', locals: { user: user } %>
 <% end %>

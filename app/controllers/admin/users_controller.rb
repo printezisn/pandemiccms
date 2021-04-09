@@ -53,6 +53,13 @@ module Admin
     end
 
     # DELETE /users/1
+    def destroy
+      @user.destroy
+
+      redirect_to admin_users_path, notice: _('The user was successfully deleted.')
+    end
+
+    # DELETE /users/1
     def activate
       @user.active!
 
