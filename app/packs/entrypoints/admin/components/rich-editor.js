@@ -20,12 +20,12 @@ const initRichEditor = (editor) => {
     plugins: [
       'advlist autolink lists link image charmap print preview anchor',
       'searchreplace visualblocks code fullscreen',
-      'insertdatetime media table paste code help wordcount autoresize',
+      'insertdatetime media table paste code help wordcount autoresize code',
     ],
     toolbar: `undo redo | formatselect |
       bold italic forecolor | alignleft aligncenter
       alignright alignjustify | link image | bullist numlist outdent indent |
-      removeformat fullscreen`,
+      code | removeformat fullscreen`,
     menubar: false,
     min_height: 350,
     readonly: editor.hasAttribute('readonly') ? 1 : 0,
