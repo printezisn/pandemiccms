@@ -42,6 +42,11 @@ msgid_plural "%{count} Posts"
 msgstr[0] "%{count} Άρθρο"
 msgstr[1] "%{count} Άρθρα"
 
+msgid "%{count} Redirect"
+msgid_plural "%{count} Redirects"
+msgstr[0] "%{count} Ανακατεύθυνση"
+msgstr[1] "%{count} Ανακατευθύνσεις"
+
 msgid "%{count} Tag"
 msgid_plural "%{count} Tags"
 msgstr[0] "%{count} Ετικέτα"
@@ -262,6 +267,9 @@ msgstr "Αλλαγή του κωδικού του τωρινού χρήστη τ
 msgid "Choose an image..."
 msgstr "Επιλέξτε εικόνα..."
 
+msgid "Clear Cache"
+msgstr "Καθάρισμα Cache"
+
 msgid "Click the link below to unlock your account:"
 msgstr "Πατήστε στο σύνδεσμο για να ξεκλειδώσετε το λογαριασμό σας:"
 
@@ -300,6 +308,9 @@ msgstr "Επιβεβαιώστε το νέο σας κωδικό"
 
 msgid "Confirmed At"
 msgstr "Επιβεβαιώθηκε Στις"
+
+msgid "Content"
+msgstr "Περιεχόμενο"
 
 msgid "Copy"
 msgstr "Αντιγραφή"
@@ -801,6 +812,9 @@ msgstr "Δημοσιευμένη"
 
 msgid "Published|Post"
 msgstr "Δημοσιευμένο"
+
+msgid "Redirects"
+msgstr "Ανακατευθύνσεις"
 
 msgid "Remove"
 msgstr "Αφαίρεση"

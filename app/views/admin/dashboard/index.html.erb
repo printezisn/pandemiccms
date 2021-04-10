@@ -12,7 +12,7 @@
       <article class="message is-info">
         <div class="message-body">
           <header>
-            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Medium', '%{count} Media', @media_count) % { count: @media_count } %></h2>
+            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Post', '%{count} Posts', @posts_count) % { count: @posts_count } %></h2>
           </header>
         </div>
       </article>
@@ -21,7 +21,7 @@
       <article class="message is-success">
         <div class="message-body">
           <header>
-            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Post', '%{count} Posts', @posts_count) % { count: @posts_count } %></h2>
+            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Page', '%{count} Pages', @pages_count) % { count: @pages_count } %></h2>
           </header>
         </div>
       </article>
@@ -48,7 +48,7 @@
       <article class="message is-info">
         <div class="message-body">
           <header>
-            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Page', '%{count} Pages', @pages_count) % { count: @pages_count } %></h2>
+            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Menu', '%{count} Menus', 0) % { count: 0 } %></h2>
           </header>
         </div>
       </article>
@@ -57,14 +57,23 @@
       <article class="message is-success">
         <div class="message-body">
           <header>
-            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Menu', '%{count} Menus', 0) % { count: 0 } %></h2>
+            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Medium', '%{count} Media', @media_count) % { count: @media_count } %></h2>
+          </header>
+        </div>
+      </article>
+    </div>
+    <div class="column is-one-quarter-widescreen is-half-desktop is-half-tablet is-full-mobile">
+      <article class="message is-warning">
+        <div class="message-body">
+          <header>
+            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Redirect', '%{count} Redirects', 0) % { count: 0 } %></h2>
           </header>
         </div>
       </article>
     </div>
     <% if current_admin_user.supervisor? %>
     <div class="column is-one-quarter-widescreen is-half-desktop is-half-tablet is-full-mobile">
-      <article class="message is-warning">
+      <article class="message is-danger">
         <div class="message-body">
           <header>
             <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} User', '%{count} Users', @users_count) % { count: @users_count } %></h2>

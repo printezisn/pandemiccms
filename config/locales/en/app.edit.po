@@ -42,6 +42,11 @@ msgid_plural "%{count} Posts"
 msgstr[0] "%{count} Post"
 msgstr[1] "%{count} Posts"
 
+msgid "%{count} Redirect"
+msgid_plural "%{count} Redirects"
+msgstr[0] "%{count} Redirect"
+msgstr[1] "%{count} Redirects"
+
 msgid "%{count} Tag"
 msgid_plural "%{count} Tags"
 msgstr[0] "%{count} Tag"
@@ -262,6 +267,9 @@ msgstr "Change the password of the current user of %{client}"
 msgid "Choose an image..."
 msgstr "Choose an image..."
 
+msgid "Clear Cache"
+msgstr "Clear Cache"
+
 msgid "Click the link below to unlock your account:"
 msgstr "Click the link below to unlock your account:"
 
@@ -300,6 +308,9 @@ msgstr "Confirm your new password"
 
 msgid "Confirmed At"
 msgstr "Confirmed At"
+
+msgid "Content"
+msgstr "Content"
 
 msgid "Copy"
 msgstr "Copy"
@@ -801,6 +812,9 @@ msgstr "Published"
 
 msgid "Published|Post"
 msgstr "Published"
+
+msgid "Redirects"
+msgstr "Redirects"
 
 msgid "Remove"
 msgstr "Remove"

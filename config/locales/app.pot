@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-09 21:58+0300\n"
-"PO-Revision-Date: 2021-04-09 21:58+0300\n"
+"POT-Creation-Date: 2021-04-10 16:01+0300\n"
+"PO-Revision-Date: 2021-04-10 16:01+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -40,6 +40,11 @@ msgstr[1] ""
 
 msgid "%{count} Post"
 msgid_plural "%{count} Posts"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%{count} Redirect"
+msgid_plural "%{count} Redirects"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -263,6 +268,9 @@ msgstr ""
 msgid "Choose an image..."
 msgstr ""
 
+msgid "Clear Cache"
+msgstr ""
+
 msgid "Click the link below to unlock your account:"
 msgstr ""
 
@@ -300,6 +308,9 @@ msgid "Confirm your new password"
 msgstr ""
 
 msgid "Confirmed At"
+msgstr ""
+
+msgid "Content"
 msgstr ""
 
 msgid "Copy"
@@ -801,6 +812,9 @@ msgid "Published|Page"
 msgstr ""
 
 msgid "Published|Post"
+msgstr ""
+
+msgid "Redirects"
 msgstr ""
 
 msgid "Remove"
