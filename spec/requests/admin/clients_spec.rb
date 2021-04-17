@@ -35,7 +35,9 @@ RSpec.describe '/admin/clients', type: :request do
           image: Rack::Test::UploadedFile.new(File.open(Rails.root.join('spec/fixtures/test.png'))),
           name: 'Test Client Name',
           time_zone: 'Athens',
-          email: 'testnew@email.com'
+          email: 'testnew@email.com',
+          cache_enabled: true,
+          cache_duration: 10
         },
         language_ids: [client_languages.first.id.to_s],
         default_language_id: client_languages.first.id.to_s
@@ -72,7 +74,9 @@ RSpec.describe '/admin/clients', type: :request do
             image: Rack::Test::UploadedFile.new(File.open(Rails.root.join('spec/fixtures/test.png'))),
             name: '',
             time_zone: 'Athens',
-            email: 'testnew@email.com'
+            email: 'testnew@email.com',
+            cache_enabled: true,
+            cache_duration: 10
           },
           language_ids: [client_languages.first.id.to_s],
           default_language_id: client_languages.first.id.to_s

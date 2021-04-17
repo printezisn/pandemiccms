@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-17 21:52+0300\n"
-"PO-Revision-Date: 2021-04-17 21:52+0300\n"
+"POT-Creation-Date: 2021-04-17 23:24+0300\n"
+"PO-Revision-Date: 2021-04-17 23:24+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -209,6 +209,15 @@ msgid "Author"
 msgstr ""
 
 msgid "Back"
+msgstr ""
+
+msgid "Cache"
+msgstr ""
+
+msgid "Cache|Duration"
+msgstr ""
+
+msgid "Cache|Enabled"
 msgstr ""
 
 msgid "Cancel"
@@ -578,6 +587,9 @@ msgid "Menus"
 msgstr ""
 
 msgid "Middle Name"
+msgstr ""
+
+msgid "Minutes"
 msgstr ""
 
 msgid "My Profile"

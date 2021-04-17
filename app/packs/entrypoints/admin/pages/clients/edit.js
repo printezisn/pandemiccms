@@ -17,10 +17,28 @@ const initLanguageSelectors = () => {
   });
 };
 
-if (document.readyState === 'complete') {
+const initCacheSettings = () => {
+  const cacheEnabled = document.getElementById('client_cache_enabled');
+  const cacheSettings = document.getElementById('cache-settings');
+
+  cacheEnabled.addEventListener('change', () => {
+    if (cacheEnabled.checked) {
+      cacheSettings.classList.remove('is-hidden');
+    } else {
+      cacheSettings.classList.add('is-hidden');
+    }
+  });
+};
+
+const init = () => {
   initLanguageSelectors();
+  initCacheSettings();
+};
+
+if (document.readyState === 'complete') {
+  init();
 } else {
   document.addEventListener('DOMContentLoaded', () => {
-    initLanguageSelectors();
+    init();
   });
 }

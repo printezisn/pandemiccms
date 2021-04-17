@@ -210,6 +210,15 @@ msgstr "Author"
 msgid "Back"
 msgstr "Back"
 
+msgid "Cache"
+msgstr "Cache"
+
+msgid "Cache|Duration"
+msgstr "Duration"
+
+msgid "Cache|Enabled"
+msgstr "Enabled"
+
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -578,6 +587,9 @@ msgstr "Menus"
 
 msgid "Middle Name"
 msgstr "Middle Name"
+
+msgid "Minutes"
+msgstr "Minutes"
 
 msgid "My Profile"
 msgstr "My Profile"

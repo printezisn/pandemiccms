@@ -210,6 +210,15 @@ msgstr "Συντάκτης"
 msgid "Back"
 msgstr "Πίσω"
 
+msgid "Cache"
+msgstr "Cache"
+
+msgid "Cache|Duration"
+msgstr "Διάρκεια"
+
+msgid "Cache|Enabled"
+msgstr "Ενεργοποιημένη"
+
 msgid "Cancel"
 msgstr "Ακύρωση"
 
@@ -578,6 +587,9 @@ msgstr "Μενού"
 
 msgid "Middle Name"
 msgstr "Μεσαίο Όνομα"
+
+msgid "Minutes"
+msgstr "Λεπτά"
 
 msgid "My Profile"
 msgstr "Το Προφίλ Μου"

@@ -123,6 +123,46 @@
     </div>
   </div>
 </article>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-database"></i>
+      &nbsp;
+      <%= _('Cache') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <%= f.label :cache_enabled, _('Cache|Enabled'), class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <div class="checkbox">
+              <%= f.check_box :cache_enabled %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal<%= ' is-hidden' unless @client.cache_enabled? %>" id="cache-settings">
+      <div class="field-label is-normal">
+        <%= f.label :cache_duration, _('Cache|Duration'), class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field has-addons">
+          <div class="control">
+            <%= f.text_field :cache_duration, class: 'input' %>
+          </div>
+          <div class="control">
+            <a href="javascript:void(0)" class="button is-static"><%= _('Minutes') %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
 <div class="card mt-5">
   <div class="card-content">
     <div class="field is-horizontal">

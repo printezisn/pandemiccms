@@ -12,9 +12,7 @@ module Admin
     # PUT /client/edit
     # PATCH /client/edit
     def update
-      saved = !ActiveRecord::Base.transaction do
-        return unless @client.update(client_params)
-
+      saved = ActiveRecord::Base.transaction do
         language_ids = params.fetch(:language_ids, [])
         default_language_id = params.fetch(:default_language_id)
         @client.client_languages.each do |cl|
@@ -24,8 +22,8 @@ module Admin
           )
         end
 
-        true
-      end.nil?
+        @client.update(client_params)
+      end.present?
 
       if saved
         redirect_to admin_client_edit_path, notice: _('The settings were successfully updated.')
@@ -45,7 +43,7 @@ module Admin
     end
 
     def client_params
-      params.require(:client).permit(:image, :should_remove_image, :name, :email, :time_zone)
+      params.require(:client).permit(:image, :should_remove_image, :name, :email, :time_zone, :cache_enabled, :cache_duration)
     end
   end
 end
