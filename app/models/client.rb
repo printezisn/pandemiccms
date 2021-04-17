@@ -22,6 +22,7 @@ class Client < ApplicationRecord
   validates :name, presence: true, length: { maximum: 255 }
   validates :email, length: { maximum: 255 }
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, if: -> { email.present? }
+  validates :cache_duration, presence: true, if: :cache_enabled?
   validate :valid_time_zone
 
   def default_url_options

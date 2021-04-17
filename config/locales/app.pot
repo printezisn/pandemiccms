@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-10 16:01+0300\n"
-"PO-Revision-Date: 2021-04-10 16:01+0300\n"
+"POT-Creation-Date: 2021-04-17 21:52+0300\n"
+"PO-Revision-Date: 2021-04-17 21:52+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -281,15 +281,6 @@ msgid "Client|Image"
 msgstr ""
 
 msgid "Client|Name"
-msgstr ""
-
-msgid "Client|Show category page"
-msgstr ""
-
-msgid "Client|Show search page"
-msgstr ""
-
-msgid "Client|Show tag page"
 msgstr ""
 
 msgid "Client|Time zone"
@@ -1298,6 +1289,9 @@ msgid "activerecord.errors.models.category.attributes.parent_id.circle"
 msgstr ""
 
 msgid "activerecord.errors.models.category.attributes.slug.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.client.attributes.cache_duration.blank"
 msgstr ""
 
 msgid "activerecord.errors.models.client.attributes.email.invalid"

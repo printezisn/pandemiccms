@@ -23,6 +23,16 @@ RSpec.describe Client, type: :model do
   it { is_expected.to allow_value('test@test.com').for(:email) }
   it { is_expected.not_to allow_value('test').for(:email).with_message('The email format is invalid.') }
 
+  context 'when :cache_enabled? is false' do
+    it { is_expected.not_to validate_presence_of(:cache_duration) }
+  end
+
+  context 'when :cache_enabled? is true' do
+    before { model.cache_enabled = true }
+
+    it { is_expected.to validate_presence_of(:cache_duration).with_message('The cache duration is required.') }
+  end
+
   describe '#valid_time_zone' do
     context 'when invalid time zone' do
       before { model.time_zone = 'invalid' }

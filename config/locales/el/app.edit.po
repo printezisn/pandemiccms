@@ -282,15 +282,6 @@ msgstr "Λογότυπο"
 msgid "Client|Name"
 msgstr "Όνομα"
 
-msgid "Client|Show category page"
-msgstr "Προβολή Σελίδας Κατηγορίας"
-
-msgid "Client|Show search page"
-msgstr "Προβολή Σελίδας Αναζήτησης"
-
-msgid "Client|Show tag page"
-msgstr "Προβολή Σελίδας Ετικέτας"
-
 msgid "Client|Time zone"
 msgstr "Ζώνη Ώρας"
 
@@ -1298,6 +1289,9 @@ msgstr "Ο γονέας δεν είναι έγκυρος. Εντοπίστηκε
 
 msgid "activerecord.errors.models.category.attributes.slug.too_long"
 msgstr "Το slug μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.client.attributes.cache_duration.blank"
+msgstr "Η διάρκεια της cache είναι υποχρεωτική."
 
 msgid "activerecord.errors.models.client.attributes.email.invalid"
 msgstr "Το email δεν είναι έγκυρο."
