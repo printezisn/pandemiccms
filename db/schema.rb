@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_17_182944) do
+ActiveRecord::Schema.define(version: 2021_04_22_183817) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -175,6 +175,16 @@ ActiveRecord::Schema.define(version: 2021_04_17_182944) do
     t.index ["client_id"], name: "index_media_on_client_id"
   end
 
+  create_table "menus", charset: "utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "client_id", null: false
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id", "name"], name: "index_menus_on_client_id_and_name", unique: true
+    t.index ["client_id"], name: "index_menus_on_client_id"
+  end
+
   create_table "old_passwords", charset: "utf8", force: :cascade do |t|
     t.string "encrypted_password", null: false
     t.string "password_archivable_type", null: false
@@ -276,6 +286,7 @@ ActiveRecord::Schema.define(version: 2021_04_17_182944) do
   add_foreign_key "client_languages", "languages"
   add_foreign_key "email_templates", "clients"
   add_foreign_key "media", "clients"
+  add_foreign_key "menus", "clients"
   add_foreign_key "pages", "admin_users", column: "author_id"
   add_foreign_key "pages", "clients"
   add_foreign_key "pages", "pages", column: "parent_id"
