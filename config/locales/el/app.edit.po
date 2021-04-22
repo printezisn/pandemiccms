@@ -585,6 +585,12 @@ msgstr "Αρχεία | %{client}"
 msgid "Menus"
 msgstr "Μενού"
 
+msgid "Menu|Description"
+msgstr "Περιγραφή"
+
+msgid "Menu|Name"
+msgstr "Όνομα"
+
 msgid "Middle Name"
 msgstr "Μεσαίο Όνομα"
 
@@ -1328,6 +1334,15 @@ msgstr "Το θέμα είναι υποχρεωτικό."
 
 msgid "activerecord.errors.models.email_template.attributes.subject.too_long"
 msgstr "Το θέμα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.menu.attributes.name.blank"
+msgstr "Το όνομα είναι υποχρεωτικό."
+
+msgid "activerecord.errors.models.menu.attributes.name.taken"
+msgstr "Το όνομα χρησιμοποιείται ήδη."
+
+msgid "activerecord.errors.models.menu.attributes.name.too_long"
+msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
 
 msgid "activerecord.errors.models.page.attributes.name.blank"
 msgstr "Το όνομα είναι υποχρεωτικό."

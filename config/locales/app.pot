@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-17 23:24+0300\n"
-"PO-Revision-Date: 2021-04-17 23:24+0300\n"
+"POT-Creation-Date: 2021-04-22 22:57+0300\n"
+"PO-Revision-Date: 2021-04-22 22:57+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -584,6 +584,12 @@ msgid "Media | %{client}"
 msgstr ""
 
 msgid "Menus"
+msgstr ""
+
+msgid "Menu|Description"
+msgstr ""
+
+msgid "Menu|Name"
 msgstr ""
 
 msgid "Middle Name"
@@ -1328,6 +1334,15 @@ msgid "activerecord.errors.models.email_template.attributes.subject.blank"
 msgstr ""
 
 msgid "activerecord.errors.models.email_template.attributes.subject.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.menu.attributes.name.blank"
+msgstr ""
+
+msgid "activerecord.errors.models.menu.attributes.name.taken"
+msgstr ""
+
+msgid "activerecord.errors.models.menu.attributes.name.too_long"
 msgstr ""
 
 msgid "activerecord.errors.models.page.attributes.name.blank"
