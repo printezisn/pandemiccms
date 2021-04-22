@@ -1,0 +1,65 @@
+<div class="columns">
+  <div class="column">
+    <%= form_with(method: :get, html: { class: 'smart-table-search', 'data-target' => 'menus-smart-table' }) do |t| %>
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />
+      </div>
+      <div class="control">
+        <button type="submit" class="button is-success" title="<%= _('Search') %>">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="column has-text-right-tablet">
+    <a class="button is-success" href="<%= new_admin_menu_path %>">
+      <%= _('Create') %>
+      &nbsp;
+      <i class="fas fa-plus"></i>
+    </a>
+  </div>
+</div>
+<table class="table is-striped is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th><%= render partial: 'admin/shared/table_header', locals: { field: 'name', title: _('Name') } %></th>
+      <th class="is-hidden-touch"><%= render partial: 'admin/shared/table_header', locals: { field: 'created_at', title: _('Created At') } %></th>
+      <th class="is-hidden-touch"><%= render partial: 'admin/shared/table_header', locals: { field: 'updated_at', title: _('Updated At') } %></th>
+      <th class="actions-cell"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @menus.none? %>
+    <tr>
+      <td colspan="4"><%= _('No menus were found.') %></td>
+    </tr>
+    <% else %>
+    <% @menus.each do |menu| %>
+    <tr>
+      <td>
+        <a href="<%= admin_menu_path(menu) %>"><%= menu.name %></a>
+      </td>
+      <td class="is-hidden-touch"><%= menu.created_at %></td>
+      <td class="is-hidden-touch"><%= menu.updated_at %></td>
+      <td class="actions-cell">
+        <div class="dropdown is-togglable is-right">
+          <div class="dropdown-trigger">
+            <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" title="<%= _('Actions') %>">
+              <i class="fas fa-ellipsis-v"></i>
+            </a>
+          </div>
+          <%= render partial: 'admin/menus/dropdown_menu', locals: { menu: menu } %>
+        </div>
+      </td>
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @menus %>
+
+<% @menus.each do |menu| %>
+<%= render partial: 'admin/menus/delete_modal', locals: { menu: menu } %>
+<% end %>

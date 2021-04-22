@@ -1,0 +1,19 @@
+<%
+    content_for :title, _('Menus | %{client}') % { client: current_client.name }
+    content_for :description, _('Menus of %{client}') % { client: current_client.name }
+%>
+
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-bars"></i>
+      &nbsp;
+      <%= _('Menus') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="smart-table" id="menus-smart-table" data-use-history="true">
+      <%= render partial: 'admin/menus/menus_table' %>
+    </div>
+  </div>
+</article>

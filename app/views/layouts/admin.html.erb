@@ -32,7 +32,7 @@
       <div class="navbar-menu" id="main-menu">
         <div class="navbar-start">
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link<%= ' is-active' if %w[posts pages categories tags menus media].include?(controller_name) %>" href="javascript:void(0)">
+            <a class="navbar-link<%= ' is-active' if %w[posts pages categories tags menus menu_items media].include?(controller_name) %>" href="javascript:void(0)">
               <i class="fas fa-file"></i>
               &nbsp;
               <%= _('Content') %>
@@ -58,7 +58,7 @@
                 &nbsp;
                 <%= _('Tags') %>
               </a>
-              <a class="navbar-item" href="javascript:void(0)">
+              <a class="navbar-item<%= ' is-active' if %w[menus menu_items].include?(controller_name) %>" href="<%= admin_menus_path %>">
                 <i class="fas fa-bars"></i>
                 &nbsp;
                 <%= _('Menus') %>

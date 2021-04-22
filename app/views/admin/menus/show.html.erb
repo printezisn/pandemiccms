@@ -1,0 +1,72 @@
+<%
+    content_for :title, _('Menu Details | %{client}') % { client: current_client.name }
+    content_for :description, _('Details for a menu of %{client}') % { client: current_client.name }
+%>
+
+<a class="button" href="<%= admin_menus_path %>">
+  <i class="fas fa-long-arrow-alt-left"></i>
+  &nbsp;
+  <%= _('Back') %>
+</a>
+<div class="dropdown is-togglable">
+  <div class="dropdown-trigger">
+    <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" class="button">
+      <%= _('Actions') %>
+      &nbsp;
+      <i class="fas fa-angle-down"></i>
+    </a>
+  </div>
+  <%= render partial: 'admin/menus/dropdown_menu', locals: { menu: @menu } %>
+  <%= render partial: 'admin/menus/delete_modal', locals: { menu: @menu } %>
+</div>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-bars"></i>
+      &nbsp;
+      <%= _('Menu Details') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Name') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @menu.name %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Description') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @menu.description %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Created At') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @menu.created_at %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Updated At') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @menu.updated_at %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

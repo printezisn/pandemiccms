@@ -186,6 +186,9 @@ msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψε
 msgid "Are you sure you want to delete this medium ?"
 msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτό το αρχείο ?"
 
+msgid "Are you sure you want to delete this menu ?"
+msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτό το μενού ?"
+
 msgid "Are you sure you want to delete this page ?"
 msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτή τη σελίδα ?"
 
@@ -324,6 +327,12 @@ msgstr "Δημιουργία Κατηγορίας"
 msgid "Create Category | %{client}"
 msgstr "Δημιουργία Κατηγορίας | %{client}"
 
+msgid "Create Menu"
+msgstr "Δημιουργία Μενού"
+
+msgid "Create Menu | %{client}"
+msgstr "Δημιουργία Μενού | %{client}"
+
 msgid "Create Page"
 msgstr "Δημιουργία Σελίδας"
 
@@ -350,6 +359,9 @@ msgstr "Δημιουργία Χρήστη | %{client}"
 
 msgid "Create new category for %{client}"
 msgstr "Δημιουργία νέας κατηγορίας για το %{client}"
+
+msgid "Create new menu for %{client}"
+msgstr "Δημιουργία νέου μενού για το %{client}"
 
 msgid "Create new page for %{client}"
 msgstr "Δημιουργία νέας σελίδας για το %{client}"
@@ -393,6 +405,9 @@ msgstr "Περιγραφή"
 msgid "Details for a category of %{client}"
 msgstr "Λεπτομέρειες για την κατηγορία του %{client}"
 
+msgid "Details for a menu of %{client}"
+msgstr "Λεπτομέρειες για το μενού του %{client}"
+
 msgid "Details for a page of %{client}"
 msgstr "Λεπτομέρειες για τη σελίδα του %{client}"
 
@@ -435,6 +450,12 @@ msgstr "Επεξεργασία Προτύπου Email"
 msgid "Edit Email Template | %{client}"
 msgstr "Επεξεργασία Προτύπου Email | %{client}"
 
+msgid "Edit Menu"
+msgstr "Επεξεργασία Μενού"
+
+msgid "Edit Menu | %{client}"
+msgstr "Επεξεργασία Μενού | %{client}"
+
 msgid "Edit Page"
 msgstr "Επεξεργασία Σελίδας"
 
@@ -467,6 +488,9 @@ msgstr "Επεξεργασία Χρήστη | %{client}"
 
 msgid "Edit a category of %{client}"
 msgstr "Επεξεργασία κατηγορίας του %{client}"
+
+msgid "Edit a menu of %{client}"
+msgstr "Επεξεργασία μενού του %{client}"
 
 msgid "Edit a page of %{client}"
 msgstr "Επεξεργασία σελίδας του %{client}"
@@ -582,8 +606,23 @@ msgstr "Αρχεία του %{client}"
 msgid "Media | %{client}"
 msgstr "Αρχεία | %{client}"
 
+msgid "Menu"
+msgstr "Μενού"
+
+msgid "Menu Details"
+msgstr "Λεπτομέρειες Μενού"
+
+msgid "Menu Details | %{client}"
+msgstr "Λεπτομέρειες Μενού | %{client}"
+
 msgid "Menus"
 msgstr "Μενού"
+
+msgid "Menus of %{client}"
+msgstr "Μενού του %{client}"
+
+msgid "Menus | %{client}"
+msgstr "Μενού | %{client}"
 
 msgid "Menu|Description"
 msgstr "Περιγραφή"
@@ -641,6 +680,9 @@ msgstr "Δε βρέθηκαν πρότυπα email."
 
 msgid "No media were found."
 msgstr "Δε βρέθηκαν αρχεία."
+
+msgid "No menus were found."
+msgstr "Δε βρέθηκαν μενού."
 
 msgid "No pages were found."
 msgstr "Δε βρέθηκαν σελίδες."
@@ -993,6 +1035,18 @@ msgstr "Το αρχείο δημιουργήθηκε με επιτυχία."
 msgid "The medium was successfully deleted."
 msgstr "Το αρχείο διαγράφτηκε με επιτυχία."
 
+msgid "The menu was successfully created."
+msgstr "Το μενού δημιουργήθηκε με επιτυχία."
+
+msgid "The menu was successfully deleted."
+msgstr "Το μενού διαγράφτηκε με επιτυχία."
+
+msgid "The menu was successfully translated."
+msgstr "Το μενού μεταφράστηκε με επιτυχία."
+
+msgid "The menu was successfully updated."
+msgstr "Το μενού ανανεώθηκε με επιτυχία."
+
 msgid "The page could not be published."
 msgstr "Η σελίδα δε μπόρεσε να δημοσιευτεί."
 
@@ -1089,6 +1143,9 @@ msgstr "Μετάφραση Κατηγορίας | %{client}"
 msgid "Translate Email Template | %{client}"
 msgstr "Μετάφραση Προτύπου Email | %{client}"
 
+msgid "Translate Menu | %{client}"
+msgstr "Μετάφραση Μενού | %{client}"
+
 msgid "Translate Page | %{client}"
 msgstr "Μετάφραση Σελίδας | %{client}"
 
@@ -1106,6 +1163,9 @@ msgstr "Μετάφραση Χρήστη | %{client}"
 
 msgid "Translate a category of %{client}"
 msgstr "Μετάφραση κατηγορίας του %{client}"
+
+msgid "Translate a menu of %{client}"
+msgstr "Μετάφραση μενού του %{client}"
 
 msgid "Translate a page of %{client}"
 msgstr "Μετάφραση σελίδας του %{client}"

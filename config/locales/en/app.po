@@ -186,6 +186,9 @@ msgstr "Are you sure you want to delete this category ?"
 msgid "Are you sure you want to delete this medium ?"
 msgstr "Are you sure you want to delete this medium ?"
 
+msgid "Are you sure you want to delete this menu ?"
+msgstr "Are you sure you want to delete this menu ?"
+
 msgid "Are you sure you want to delete this page ?"
 msgstr "Are you sure you want to delete this page ?"
 
@@ -324,6 +327,12 @@ msgstr "Create Category"
 msgid "Create Category | %{client}"
 msgstr "Create Category | %{client}"
 
+msgid "Create Menu"
+msgstr "Create Menu"
+
+msgid "Create Menu | %{client}"
+msgstr "Create Menu | %{client}"
+
 msgid "Create Page"
 msgstr "Create Page"
 
@@ -350,6 +359,9 @@ msgstr "Create User | %{client}"
 
 msgid "Create new category for %{client}"
 msgstr "Create new category for %{client}"
+
+msgid "Create new menu for %{client}"
+msgstr "Create new menu for %{client}"
 
 msgid "Create new page for %{client}"
 msgstr "Create new page for %{client}"
@@ -393,6 +405,9 @@ msgstr "Description"
 msgid "Details for a category of %{client}"
 msgstr "Details for a category of %{client}"
 
+msgid "Details for a menu of %{client}"
+msgstr "Details for a menu of %{client}"
+
 msgid "Details for a page of %{client}"
 msgstr "Details for a page of %{client}"
 
@@ -435,6 +450,12 @@ msgstr "Edit Email Template"
 msgid "Edit Email Template | %{client}"
 msgstr "Edit Email Template | %{client}"
 
+msgid "Edit Menu"
+msgstr "Edit Menu"
+
+msgid "Edit Menu | %{client}"
+msgstr "Edit Menu | %{client}"
+
 msgid "Edit Page"
 msgstr "Edit Page"
 
@@ -467,6 +488,9 @@ msgstr "Edit User | %{client}"
 
 msgid "Edit a category of %{client}"
 msgstr "Edit a category of %{client}"
+
+msgid "Edit a menu of %{client}"
+msgstr "Edit a menu of %{client}"
 
 msgid "Edit a page of %{client}"
 msgstr "Edit a page of %{client}"
@@ -582,8 +606,23 @@ msgstr "Media of %{client}"
 msgid "Media | %{client}"
 msgstr "Media | %{client}"
 
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Menu Details"
+msgstr "Menu Details"
+
+msgid "Menu Details | %{client}"
+msgstr "Menu Details | %{client}"
+
 msgid "Menus"
 msgstr "Menus"
+
+msgid "Menus of %{client}"
+msgstr "Menus of %{client}"
+
+msgid "Menus | %{client}"
+msgstr "Menus | %{client}"
 
 msgid "Menu|Description"
 msgstr "Description"
@@ -641,6 +680,9 @@ msgstr "No email templates were found."
 
 msgid "No media were found."
 msgstr "No media were found."
+
+msgid "No menus were found."
+msgstr "No menus were found."
 
 msgid "No pages were found."
 msgstr "No pages were found."
@@ -993,6 +1035,18 @@ msgstr "The medium was successfully created."
 msgid "The medium was successfully deleted."
 msgstr "The medium was successfully deleted."
 
+msgid "The menu was successfully created."
+msgstr "The menu was successfully created."
+
+msgid "The menu was successfully deleted."
+msgstr "The menu was successfully deleted."
+
+msgid "The menu was successfully translated."
+msgstr "The menu was successfully translated."
+
+msgid "The menu was successfully updated."
+msgstr "The menu was successfully updated."
+
 msgid "The page could not be published."
 msgstr "The page could not be published."
 
@@ -1089,6 +1143,9 @@ msgstr "Translate Category | %{client}"
 msgid "Translate Email Template | %{client}"
 msgstr "Translate Email Template | %{client}"
 
+msgid "Translate Menu | %{client}"
+msgstr "Translate Menu | %{client}"
+
 msgid "Translate Page | %{client}"
 msgstr "Translate Page | %{client}"
 
@@ -1106,6 +1163,9 @@ msgstr "Translate User | %{client}"
 
 msgid "Translate a category of %{client}"
 msgstr "Translate a category of %{client}"
+
+msgid "Translate a menu of %{client}"
+msgstr "Translate a menu of %{client}"
 
 msgid "Translate a page of %{client}"
 msgstr "Translate a page of %{client}"

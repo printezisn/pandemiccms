@@ -1,0 +1,58 @@
+<%
+    content_for :title, _('Create Menu | %{client}') % { client: current_client.name }
+    content_for :description, _('Create new menu for %{client}') % { client: current_client.name }
+%>
+
+<%= render "admin/shared/error_messages", resource: @menu %>
+<%= form_with(model: @menu, url: admin_menus_path, method: :post) do |f| %>
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-bars"></i>
+      &nbsp;
+      <%= _('Create Menu') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :name, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :name, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :description, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_area :description, class: 'textarea', rows: 5 %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<div class="card mt-5">
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-hidden-touch is-hidden-mobile"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success' %>
+            <a class="button" href="<%= admin_menus_path %>"><%= _('Cancel') %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
