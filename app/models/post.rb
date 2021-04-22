@@ -2,7 +2,7 @@
 
 # Post model
 class Post < ApplicationRecord
-  SORTABLE_FIELDS = %i[name created_at].freeze
+  SORTABLE_FIELDS = %i[name created_at updated_at].freeze
   TEXT_SEARCHABLE_FIELDS = %i[name].freeze
   TRANSLATABLE_FIELDS = %w[name slug description body].freeze
 
