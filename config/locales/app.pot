@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-22 22:39+0300\n"
-"PO-Revision-Date: 2021-04-22 22:39+0300\n"
+"POT-Creation-Date: 2021-04-25 15:40+0300\n"
+"PO-Revision-Date: 2021-04-25 15:40+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -166,10 +166,10 @@ msgstr ""
 msgid "AdminUser|Username"
 msgstr ""
 
-msgid "All|Pages"
+msgid "All pages"
 msgstr ""
 
-msgid "All|Posts"
+msgid "All posts"
 msgstr ""
 
 msgid "An error occurred. Please try again later."
@@ -311,9 +311,6 @@ msgid "Confirm your new password"
 msgstr ""
 
 msgid "Confirmed At"
-msgstr ""
-
-msgid "Content"
 msgstr ""
 
 msgid "Copy"
@@ -548,6 +545,9 @@ msgid "EmailTemplate|Type"
 msgstr ""
 
 msgid "Enabled Languages"
+msgstr ""
+
+msgid "Filters"
 msgstr ""
 
 msgid "First Name"

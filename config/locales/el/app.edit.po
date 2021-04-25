@@ -165,11 +165,11 @@ msgstr "Μη Επιβεβαιωμένο Email"
 msgid "AdminUser|Username"
 msgstr "Όνομα Χρήστη"
 
-msgid "All|Pages"
-msgstr "Όλες"
+msgid "All pages"
+msgstr "Όλες οι σελίδες"
 
-msgid "All|Posts"
-msgstr "Όλα"
+msgid "All posts"
+msgstr "Όλα τα άρθρα"
 
 msgid "An error occurred. Please try again later."
 msgstr "Παρουσιάστηκε κάποιο σφάλμα. Παρακαλούμε προσπαθήστε ξανά αργότερα."
@@ -311,9 +311,6 @@ msgstr "Επιβεβαιώστε το νέο σας κωδικό"
 
 msgid "Confirmed At"
 msgstr "Επιβεβαιώθηκε Στις"
-
-msgid "Content"
-msgstr "Περιεχόμενο"
 
 msgid "Copy"
 msgstr "Αντιγραφή"
@@ -548,6 +545,9 @@ msgstr "Τύπος"
 
 msgid "Enabled Languages"
 msgstr "Ενεργοποιημένες Γλώσσες"
+
+msgid "Filters"
+msgstr "Φίλτρα"
 
 msgid "First Name"
 msgstr "Όνομα"

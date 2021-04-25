@@ -165,11 +165,11 @@ msgstr "Unconfirmed Email"
 msgid "AdminUser|Username"
 msgstr "Username"
 
-msgid "All|Pages"
-msgstr "All"
+msgid "All pages"
+msgstr "All pages"
 
-msgid "All|Posts"
-msgstr "All"
+msgid "All posts"
+msgstr "All posts"
 
 msgid "An error occurred. Please try again later."
 msgstr "An error occurred. Please try again later."
@@ -311,9 +311,6 @@ msgstr "Confirm your new password"
 
 msgid "Confirmed At"
 msgstr "Confirmed At"
-
-msgid "Content"
-msgstr "Content"
 
 msgid "Copy"
 msgstr "Copy"
@@ -548,6 +545,9 @@ msgstr "Type"
 
 msgid "Enabled Languages"
 msgstr "Enabled Languages"
+
+msgid "Filters"
+msgstr "Filters"
 
 msgid "First Name"
 msgstr "First Name"
