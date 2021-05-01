@@ -26,6 +26,10 @@ Rails/SkipsModelValidations:
   AllowedMethods:
     - "increment!"
     - "decrement!"
+    - "update_column"
+
+Style/MultilineBlockChain:
+  Enabled: false
 
 RSpec/NestedGroups:
   Enabled: false

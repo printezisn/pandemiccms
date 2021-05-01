@@ -17,6 +17,7 @@ class Category < ApplicationRecord
   belongs_to :parent, inverse_of: :children, class_name: 'Category', optional: true, counter_cache: :children_count
   has_many :children, inverse_of: :parent, class_name: 'Category', foreign_key: :parent_id, dependent: :destroy
   has_many :category_categorizables, inverse_of: :category, dependent: :destroy
+  has_many :menu_items, as: :linkable, dependent: :destroy
 
   validates :name, presence: true,
                    length: { maximum: 255 },

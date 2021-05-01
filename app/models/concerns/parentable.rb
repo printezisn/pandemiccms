@@ -15,9 +15,7 @@ module Parentable
     scope :descendants_of, lambda { |instance|
       path = (instance.ancestor_ids + [instance.id]).join(',')
 
-      where(client_id: instance.client_id)
-        .where(hierarchy_path: path)
-        .or(where(arel_table[:hierarchy_path].matches("#{path},%")))
+      where(hierarchy_path: path).or(where(arel_table[:hierarchy_path].matches("#{path},%")))
     }
 
     def self.ordered_by_hierarchy(scope, sort_field = :name)

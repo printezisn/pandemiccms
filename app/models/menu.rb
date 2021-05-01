@@ -11,6 +11,7 @@ class Menu < ApplicationRecord
   include Translatable
 
   belongs_to :client, inverse_of: :menus
+  has_many :menu_items, inverse_of: :menu, dependent: :destroy
 
   validates :name, presence: true,
                    length: { maximum: 255 },

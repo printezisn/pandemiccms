@@ -1404,6 +1404,24 @@ msgstr "Το όνομα χρησιμοποιείται ήδη."
 msgid "activerecord.errors.models.menu.attributes.name.too_long"
 msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
 
+msgid "activerecord.errors.models.menu_item.attributes.external_url.blank"
+msgstr "Το εξωτερικό URL είναι υποχρεωτικό."
+
+msgid "activerecord.errors.models.menu_item.attributes.linkable_id.blank"
+msgstr "Το συνδεδεμένο αντικείμενο δε βρέθηκε."
+
+msgid "activerecord.errors.models.menu_item.attributes.name.blank"
+msgstr "Το όνομα είναι υποχρεωτικό."
+
+msgid "activerecord.errors.models.menu_item.attributes.name.too_long"
+msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.menu_item.attributes.parent_id.blank"
+msgstr "Ο γονέας δε βρέθηκε."
+
+msgid "activerecord.errors.models.menu_item.attributes.parent_id.circle"
+msgstr "Ο γονέας δεν είναι έγκυρος. Εντοπίστηκε κύκλος στην ιεραρχία."
+
 msgid "activerecord.errors.models.page.attributes.name.blank"
 msgstr "Το όνομα είναι υποχρεωτικό."
 

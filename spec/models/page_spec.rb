@@ -19,6 +19,7 @@ RSpec.describe Page, type: :model do
   it { is_expected.to belong_to(:author).class_name('AdminUser').optional(true) }
   it { is_expected.to belong_to(:parent).class_name('Page').optional(true) }
   it { is_expected.to have_many(:children).class_name('Page').with_foreign_key(:parent_id).dependent(:destroy) }
+  it { is_expected.to have_many(:menu_items).dependent(:destroy) }
 
   it { is_expected.to define_enum_for(:visibility).with_values(public: 0, private: 1).with_suffix(:visibility) }
 
