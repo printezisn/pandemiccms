@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_22_183817) do
+ActiveRecord::Schema.define(version: 2021_04_30_084532) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -175,6 +175,23 @@ ActiveRecord::Schema.define(version: 2021_04_22_183817) do
     t.index ["client_id"], name: "index_media_on_client_id"
   end
 
+  create_table "menu_items", charset: "utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "sort_order", default: 1, null: false
+    t.text "external_url"
+    t.bigint "menu_id", null: false
+    t.string "linkable_type"
+    t.bigint "linkable_id"
+    t.bigint "parent_id"
+    t.text "hierarchy_path"
+    t.integer "children_count", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["linkable_type", "linkable_id"], name: "index_menu_items_on_linkable"
+    t.index ["menu_id"], name: "index_menu_items_on_menu_id"
+    t.index ["parent_id"], name: "index_menu_items_on_parent_id"
+  end
+
   create_table "menus", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.bigint "client_id", null: false
@@ -286,6 +303,8 @@ ActiveRecord::Schema.define(version: 2021_04_22_183817) do
   add_foreign_key "client_languages", "languages"
   add_foreign_key "email_templates", "clients"
   add_foreign_key "media", "clients"
+  add_foreign_key "menu_items", "menu_items", column: "parent_id"
+  add_foreign_key "menu_items", "menus"
   add_foreign_key "menus", "clients"
   add_foreign_key "pages", "admin_users", column: "author_id"
   add_foreign_key "pages", "clients"
