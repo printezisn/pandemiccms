@@ -1035,6 +1035,18 @@ msgstr "The medium was successfully created."
 msgid "The medium was successfully deleted."
 msgstr "The medium was successfully deleted."
 
+msgid "The menu item was successfully created."
+msgstr "The menu item was successfully created."
+
+msgid "The menu item was successfully deleted."
+msgstr "The menu item was successfully deleted."
+
+msgid "The menu item was successfully translated."
+msgstr "The menu item was successfully translated."
+
+msgid "The menu item was successfully updated."
+msgstr "The menu item was successfully updated."
+
 msgid "The menu was successfully created."
 msgstr "The menu was successfully created."
 

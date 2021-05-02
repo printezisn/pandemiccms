@@ -60,6 +60,13 @@ Rails.application.routes.draw do
           get :translate
           post :translate, to: 'menus#save_translation'
         end
+
+        resources :menu_items, except: :index do
+          member do
+            get :translate
+            post :translate, to: 'menu_items#save_translation'
+          end
+        end
       end
       resources :email_templates, only: %i[index show edit update] do
         member do

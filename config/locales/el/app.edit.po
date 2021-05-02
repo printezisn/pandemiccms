@@ -1035,6 +1035,18 @@ msgstr "Το αρχείο δημιουργήθηκε με επιτυχία."
 msgid "The medium was successfully deleted."
 msgstr "Το αρχείο διαγράφτηκε με επιτυχία."
 
+msgid "The menu item was successfully created."
+msgstr "Το στοιχείο μενού δημιουργήθηκε με επιτυχία."
+
+msgid "The menu item was successfully deleted."
+msgstr "Το στοιχείο μενού διαγράφτηκε με επιτυχία."
+
+msgid "The menu item was successfully translated."
+msgstr "Το στοιχείο μενού μεταφράστηκε με επιτυχία."
+
+msgid "The menu item was successfully updated."
+msgstr "Το στοιχείο μενού ανανεώθηκε με επιτυχία."
+
 msgid "The menu was successfully created."
 msgstr "Το μενού δημιουργήθηκε με επιτυχία."
 
