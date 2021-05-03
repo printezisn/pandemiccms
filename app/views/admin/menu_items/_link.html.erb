@@ -1,0 +1,14 @@
+<%
+  case menu_item.linkable_type
+  when 'Post'
+%>
+<%= link_to "#{menu_item.linkable.name} (#{_('Post')})", admin_post_path(menu_item.linkable) %>
+<% when 'Page' %>
+<%= link_to "#{menu_item.linkable.name} (#{_('Page')})", admin_page_path(menu_item.linkable) %>
+<% when 'Category' %>
+<%= link_to "#{menu_item.linkable.name} (#{_('Category')})", admin_category_path(menu_item.linkable) %>
+<% when 'Tag' %>
+<%= link_to "#{menu_item.linkable.name} (#{_('Tag')})", admin_tag_path(menu_item.linkable) %>
+<% else %>
+<%= link_to "#{menu_item.external_url} (#{_('MenuItem|External url')})", menu_item.external_url %>
+<% end %>

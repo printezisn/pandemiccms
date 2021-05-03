@@ -1,0 +1,59 @@
+<%
+    content_for :title, _('Translate Menu Item | %{client}') % { client: current_client.name }
+    content_for :description, _('Translate a menu item of %{client}') % { client: current_client.name }
+%>
+
+<%= render "admin/shared/error_messages", resource: @menu_item %>
+<a class="button" href="<%= admin_menu_menu_item_path(id: @menu_item.id, menu_id: @menu_item.menu_id) %>">
+  <i class="fas fa-long-arrow-alt-left"></i>
+  &nbsp;
+  <%= _('Back') %>
+</a>
+<div class="columns is-multiline is-mobile mt-3">
+  <div class="column is-full-mobile is-full-tablet is-half-desktop">
+    <article class="card">
+      <header class="card-header">
+        <h1 class="card-header-title">
+          <i class="fas fa-bars"></i>
+          &nbsp;
+          <%= _('Menu Item') %>
+        </h1>
+      </header>
+      <div class="card-content">
+        <div class="field">
+          <span class="label"><%= _('Name') %></span>
+          <div class="control">
+            <input type="text" class="input" value="<%= @menu_item.name %>" readonly />
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="column is-full-mobile is-full-tablet is-half-desktop">
+    <article class="card">
+      <header class="card-header">
+        <h1 class="card-header-title">
+          <i class="fas fa-bars"></i>
+          &nbsp;
+          <%= _('Translation') %>
+        </h1>
+        <%= render partial: 'admin/shared/languages_dropdown' %>
+      </header>
+      <div class="card-content">
+        <%= form_with(model: @translation, url: translate_admin_menu_menu_item_path(id: @menu_item.id, menu_id: @menu_item.menu_id, translation_locale: translation_locale), method: :post) do |f| %>
+        <div class="field">
+          <%= f.label :name, class: 'label' %>
+          <div class="control">
+            <%= f.text_field :name, class: 'input' %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success' %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </article>
+  </div>
+</div>

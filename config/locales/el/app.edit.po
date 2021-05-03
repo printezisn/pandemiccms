@@ -189,6 +189,9 @@ msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψε
 msgid "Are you sure you want to delete this menu ?"
 msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτό το μενού ?"
 
+msgid "Are you sure you want to delete this menu item ?"
+msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτό το στοιχείο μενού ?"
+
 msgid "Are you sure you want to delete this page ?"
 msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτή τη σελίδα ?"
 
@@ -327,6 +330,12 @@ msgstr "Δημιουργία Κατηγορίας | %{client}"
 msgid "Create Menu"
 msgstr "Δημιουργία Μενού"
 
+msgid "Create Menu Item"
+msgstr "Δημιουργία Στοιχείου Μενού"
+
+msgid "Create Menu Item | %{client}"
+msgstr "Δημιουργία Στοιχείου Μενού | %{client}"
+
 msgid "Create Menu | %{client}"
 msgstr "Δημιουργία Μενού | %{client}"
 
@@ -359,6 +368,9 @@ msgstr "Δημιουργία νέας κατηγορίας για το %{client}
 
 msgid "Create new menu for %{client}"
 msgstr "Δημιουργία νέου μενού για το %{client}"
+
+msgid "Create new menu item for %{client}"
+msgstr "Δημιουργία νέου στοιχείου μενού για το %{client}"
 
 msgid "Create new page for %{client}"
 msgstr "Δημιουργία νέας σελίδας για το %{client}"
@@ -401,6 +413,9 @@ msgstr "Περιγραφή"
 
 msgid "Details for a category of %{client}"
 msgstr "Λεπτομέρειες για την κατηγορία του %{client}"
+
+msgid "Details for a menu item of %{client}"
+msgstr "Λεπτομέρειες για το στοιχείο μενού του %{client}"
 
 msgid "Details for a menu of %{client}"
 msgstr "Λεπτομέρειες για το μενού του %{client}"
@@ -450,6 +465,12 @@ msgstr "Επεξεργασία Προτύπου Email | %{client}"
 msgid "Edit Menu"
 msgstr "Επεξεργασία Μενού"
 
+msgid "Edit Menu Item"
+msgstr "Επεξεργασία Στοιχείου Μενού"
+
+msgid "Edit Menu Item | %{client}"
+msgstr "Επεξεργασία Στοιχείου Μενού | %{client}"
+
 msgid "Edit Menu | %{client}"
 msgstr "Επεξεργασία Μενού | %{client}"
 
@@ -485,6 +506,9 @@ msgstr "Επεξεργασία Χρήστη | %{client}"
 
 msgid "Edit a category of %{client}"
 msgstr "Επεξεργασία κατηγορίας του %{client}"
+
+msgid "Edit a menu item of %{client}"
+msgstr "Επεξεργασία στοιχείου μενού του %{client}"
 
 msgid "Edit a menu of %{client}"
 msgstr "Επεξεργασία μενού του %{client}"
@@ -594,6 +618,9 @@ msgstr "Τελευταία Σύνδεση Στις"
 msgid "Last Sign In IP"
 msgstr "IP Τελευταίας Σύνδεσης"
 
+msgid "Link"
+msgstr "Σύνδεσμος"
+
 msgid "Log in"
 msgstr "Σύνδεση"
 
@@ -614,6 +641,30 @@ msgstr "Λεπτομέρειες Μενού"
 
 msgid "Menu Details | %{client}"
 msgstr "Λεπτομέρειες Μενού | %{client}"
+
+msgid "Menu Item"
+msgstr "Στοιχείο Μενού"
+
+msgid "Menu Item Details"
+msgstr "Λεπτομέρειες Στοιχείου Μενού"
+
+msgid "Menu Item Details | %{client}"
+msgstr "Λεπτομέρειες Στοιχείου Μενού | %{client}"
+
+msgid "Menu Items"
+msgstr "Στοιχεία Μενού"
+
+msgid "MenuItem|External url"
+msgstr "Εξωτερικός Σύνδεσμος"
+
+msgid "MenuItem|Name"
+msgstr "Όνομα"
+
+msgid "MenuItem|Parent"
+msgstr "Γονέας"
+
+msgid "MenuItem|Sort order"
+msgstr "Σειρά Ταξινόμησης"
 
 msgid "Menus"
 msgstr "Μενού"
@@ -663,6 +714,9 @@ msgstr "Νέος Κωδικός"
 msgid "New Subcategory"
 msgstr "Νέα υποκατηγορία"
 
+msgid "New Subitem"
+msgstr "Νέο Υποστοιχείο"
+
 msgid "New Subpage"
 msgstr "Νέα Υποσελίδα"
 
@@ -681,6 +735,9 @@ msgstr "Δε βρέθηκαν πρότυπα email."
 msgid "No media were found."
 msgstr "Δε βρέθηκαν αρχεία."
 
+msgid "No menu items were found."
+msgstr "Δε βρέθηκαν στοιχεία μενού."
+
 msgid "No menus were found."
 msgstr "Δε βρέθηκαν μενού."
 
@@ -692,6 +749,9 @@ msgstr "Δε βρέθηκαν άρθρα."
 
 msgid "No subcategories were found."
 msgstr "Δε βρέθηκαν υποκατηγορίες."
+
+msgid "No subitems were found."
+msgstr "Δε βρέθηκαν υποστοιχεία."
 
 msgid "No tags were found."
 msgstr "Δε βρέθηκαν ετικέτες."
@@ -939,11 +999,17 @@ msgstr "Slug"
 msgid "Someone has requested a link to change your password. You can do this through the link below."
 msgstr "Κάποιος ζήτησε σύνδεσμο για αλλαγή του κωδικού σας. Μπορείτε να το κάνετε μέσω του παρακάτω συνδέσμου."
 
+msgid "Sort Order"
+msgstr "Σειρά Ταξινόμησης"
+
 msgid "Status"
 msgstr "Κατάσταση"
 
 msgid "Subcategories"
 msgstr "Υποκατηγορίες"
+
+msgid "Subitems"
+msgstr "Υποστοιχεία"
 
 msgid "Subject"
 msgstr "Θέμα"
@@ -1155,6 +1221,9 @@ msgstr "Μετάφραση Κατηγορίας | %{client}"
 msgid "Translate Email Template | %{client}"
 msgstr "Μετάφραση Προτύπου Email | %{client}"
 
+msgid "Translate Menu Item | %{client}"
+msgstr "Μετάφραση Στοιχείου Μενού | %{client}"
+
 msgid "Translate Menu | %{client}"
 msgstr "Μετάφραση Μενού | %{client}"
 
@@ -1175,6 +1244,9 @@ msgstr "Μετάφραση Χρήστη | %{client}"
 
 msgid "Translate a category of %{client}"
 msgstr "Μετάφραση κατηγορίας του %{client}"
+
+msgid "Translate a menu item of %{client}"
+msgstr "Μετάφραση στοιχείου μενού του %{client}"
 
 msgid "Translate a menu of %{client}"
 msgstr "Μετάφραση μενού του %{client}"

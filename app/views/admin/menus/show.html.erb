@@ -70,3 +70,15 @@
     </div>
   </div>
 </article>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-bars"></i>
+      &nbsp;
+      <%= _('Menu Items') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <%= render partial: 'admin/menu_items/menu_items_table', locals: { menu: @menu, menu_items: @menu_items } %>
+  </div>
+</article>

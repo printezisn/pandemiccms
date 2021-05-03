@@ -1,0 +1,137 @@
+<%
+    content_for :title, _('Menu Item Details | %{client}') % { client: current_client.name }
+    content_for :description, _('Details for a menu item of %{client}') % { client: current_client.name }
+%>
+
+<a class="button" href="<%= admin_menu_path(@menu_item.menu) %>">
+  <i class="fas fa-long-arrow-alt-left"></i>
+  &nbsp;
+  <%= _('Back') %>
+</a>
+<div class="dropdown is-togglable">
+  <div class="dropdown-trigger">
+    <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" class="button">
+      <%= _('Actions') %>
+      &nbsp;
+      <i class="fas fa-angle-down"></i>
+    </a>
+  </div>
+  <%= render partial: 'admin/menu_items/dropdown_menu', locals: { menu_item: @menu_item } %>
+  <%= render partial: 'admin/menu_items/delete_modal', locals: { menu_item: @menu_item } %>
+</div>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-bars"></i>
+      &nbsp;
+      <%= _('Menu Item Details') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Name') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @menu_item.name %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Sort Order') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @menu_item.sort_order %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Link') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= render partial: 'admin/menu_items/link', locals: { menu_item: @menu_item } %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Hierarchy') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <% @menu_item.ancestors.each do |menu_item| %>
+            <a href="<%= admin_menu_menu_item_path(id: menu_item.id, menu_id: menu_item.menu_id) %>"><%= menu_item.name %></a>
+            >
+            <% end %>
+            <%= @menu_item.name %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Created At') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @menu_item.created_at %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Updated At') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @menu_item.updated_at %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="card mt-5">
+  <div class="card-header">
+    <h2 class="card-header-title">
+      <i class="fas fa-sitemap"></i>
+      &nbsp;
+      <%= _('Subitems') %>
+    </h2>
+  </div>
+  <div class="card-content">
+    <table class="table is-striped is-hoverable is-fullwidth">
+      <thead>
+        <tr>
+          <th><%= _('Name') %></th>
+          <th class="is-hidden-touch"><%= _('Link') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @menu_item.children.none? %>
+        <tr>
+          <td colspan="2"><%= _('No subitems were found.') %></td>
+        </tr>
+        <% else %>
+        <% @menu_item.children.includes(:linkable).each do |menu_item| %>
+        <tr>
+          <td>
+            <a href="<%= admin_menu_menu_item_path(id: menu_item.id, menu_id: menu_item.menu_id) %>"><%= menu_item.name %></a>
+          </td>
+          <td class="is-hidden-touch">
+            <%= render partial: 'admin/menu_items/link', locals: { menu_item: menu_item } %>
+          </td>
+        </tr>
+        <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</article>

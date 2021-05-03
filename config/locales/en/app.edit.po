@@ -189,6 +189,9 @@ msgstr "Are you sure you want to delete this medium ?"
 msgid "Are you sure you want to delete this menu ?"
 msgstr "Are you sure you want to delete this menu ?"
 
+msgid "Are you sure you want to delete this menu item ?"
+msgstr "Are you sure you want to delete this menu item ?"
+
 msgid "Are you sure you want to delete this page ?"
 msgstr "Are you sure you want to delete this page ?"
 
@@ -327,6 +330,12 @@ msgstr "Create Category | %{client}"
 msgid "Create Menu"
 msgstr "Create Menu"
 
+msgid "Create Menu Item"
+msgstr "Create Menu Item"
+
+msgid "Create Menu Item | %{client}"
+msgstr "Create Menu Item | %{client}"
+
 msgid "Create Menu | %{client}"
 msgstr "Create Menu | %{client}"
 
@@ -359,6 +368,9 @@ msgstr "Create new category for %{client}"
 
 msgid "Create new menu for %{client}"
 msgstr "Create new menu for %{client}"
+
+msgid "Create new menu item for %{client}"
+msgstr "Create new menu item for %{client}"
 
 msgid "Create new page for %{client}"
 msgstr "Create new page for %{client}"
@@ -401,6 +413,9 @@ msgstr "Description"
 
 msgid "Details for a category of %{client}"
 msgstr "Details for a category of %{client}"
+
+msgid "Details for a menu item of %{client}"
+msgstr "Details for a menu item of %{client}"
 
 msgid "Details for a menu of %{client}"
 msgstr "Details for a menu of %{client}"
@@ -450,6 +465,12 @@ msgstr "Edit Email Template | %{client}"
 msgid "Edit Menu"
 msgstr "Edit Menu"
 
+msgid "Edit Menu Item"
+msgstr "Edit Menu Item"
+
+msgid "Edit Menu Item | %{client}"
+msgstr "Edit Menu Item | %{client}"
+
 msgid "Edit Menu | %{client}"
 msgstr "Edit Menu | %{client}"
 
@@ -485,6 +506,9 @@ msgstr "Edit User | %{client}"
 
 msgid "Edit a category of %{client}"
 msgstr "Edit a category of %{client}"
+
+msgid "Edit a menu item of %{client}"
+msgstr "Edit a menu item of %{client}"
 
 msgid "Edit a menu of %{client}"
 msgstr "Edit a menu of %{client}"
@@ -594,6 +618,9 @@ msgstr "Last Sign In At"
 msgid "Last Sign In IP"
 msgstr "Last Sign In IP"
 
+msgid "Link"
+msgstr "Link"
+
 msgid "Log in"
 msgstr "Log in"
 
@@ -614,6 +641,30 @@ msgstr "Menu Details"
 
 msgid "Menu Details | %{client}"
 msgstr "Menu Details | %{client}"
+
+msgid "Menu Item"
+msgstr "Menu Item"
+
+msgid "Menu Item Details"
+msgstr "Menu Item Details"
+
+msgid "Menu Item Details | %{client}"
+msgstr "Menu Item Details | %{client}"
+
+msgid "Menu Items"
+msgstr "Menu Items"
+
+msgid "MenuItem|External url"
+msgstr "External URL"
+
+msgid "MenuItem|Name"
+msgstr "Name"
+
+msgid "MenuItem|Parent"
+msgstr "Parent"
+
+msgid "MenuItem|Sort order"
+msgstr "Sort Order"
 
 msgid "Menus"
 msgstr "Menus"
@@ -663,6 +714,9 @@ msgstr "New Password"
 msgid "New Subcategory"
 msgstr "New Subcategory"
 
+msgid "New Subitem"
+msgstr "New Subitem"
+
 msgid "New Subpage"
 msgstr "New Subpage"
 
@@ -681,6 +735,9 @@ msgstr "No email templates were found."
 msgid "No media were found."
 msgstr "No media were found."
 
+msgid "No menu items were found."
+msgstr "No menu items were found."
+
 msgid "No menus were found."
 msgstr "No menus were found."
 
@@ -692,6 +749,9 @@ msgstr "No posts were found."
 
 msgid "No subcategories were found."
 msgstr "No subcategories were found."
+
+msgid "No subitems were found."
+msgstr "No subitems were found."
 
 msgid "No tags were found."
 msgstr "No tags were found."
@@ -939,11 +999,17 @@ msgstr "Slug"
 msgid "Someone has requested a link to change your password. You can do this through the link below."
 msgstr "Someone has requested a link to change your password. You can do this through the link below."
 
+msgid "Sort Order"
+msgstr "Sort Order"
+
 msgid "Status"
 msgstr "Status"
 
 msgid "Subcategories"
 msgstr "Subcategories"
+
+msgid "Subitems"
+msgstr "Subitems"
 
 msgid "Subject"
 msgstr "Subject"
@@ -1155,6 +1221,9 @@ msgstr "Translate Category | %{client}"
 msgid "Translate Email Template | %{client}"
 msgstr "Translate Email Template | %{client}"
 
+msgid "Translate Menu Item | %{client}"
+msgstr "Translate Menu Item | %{client}"
+
 msgid "Translate Menu | %{client}"
 msgstr "Translate Menu | %{client}"
 
@@ -1175,6 +1244,9 @@ msgstr "Translate User | %{client}"
 
 msgid "Translate a category of %{client}"
 msgstr "Translate a category of %{client}"
+
+msgid "Translate a menu item of %{client}"
+msgstr "Translate a menu item of %{client}"
 
 msgid "Translate a menu of %{client}"
 msgstr "Translate a menu of %{client}"

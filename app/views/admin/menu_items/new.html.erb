@@ -1,0 +1,148 @@
+<%
+    content_for :title, _('Create Menu Item | %{client}') % { client: current_client.name }
+    content_for :description, _('Create new menu item for %{client}') % { client: current_client.name }
+%>
+
+<% content_for :scripts do %>
+<%= javascript_pack_tag 'admin/pages/menu_items/edit', defer: true %>
+<% end %>
+
+<%= render "admin/shared/error_messages", resource: @menu_item %>
+<%= form_with(model: @menu_item, url: admin_menu_menu_items_path(menu_id: @menu.id), method: :post) do |f| %>
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-bars"></i>
+      &nbsp;
+      <%= _('Create Menu Item') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :name, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :name, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :parent_id, _('MenuItem|Parent'), class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.select :parent_id, @parents, { include_blank: true }, { placeholder: _('None|Parent') } %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :sort_order, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :sort_order, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <%= f.label :linkable_type, _('Link'), class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <ul>
+              <li>
+                <label class="radio">
+                  <%= f.radio_button :linkable_type, nil %>
+                  <%= _('MenuItem|External url') %>
+                </label>
+                <div style="display: none">
+                  <%= f.text_field :external_url, class: 'input' %>
+                </div>
+              </li>
+              <li>
+                <label class="radio">
+                  <%= f.radio_button :linkable_type, 'Post' %>
+                  <%= _('Post') %>
+                </label>
+                <div style="display: none">
+                  <% if @menu_item.linkable&.is_a?(Post) %>
+                  <%= f.select :linkable_id, [[@menu_item.linkable.name, @menu_item.linkable.id]], {}, { id: 'linkable-post', 'data-fetchUrl' => search_admin_posts_path } %>
+                  <% else %>
+                  <%= f.select :linkable_id, [], {}, { id: 'linkable-post', 'data-fetchUrl' => search_admin_posts_path } %>
+                  <% end %>
+                </div>
+              </li>
+              <li>
+                <label class="radio">
+                  <%= f.radio_button :linkable_type, 'Page' %>
+                  <%= _('Page') %>
+                </label>
+                <div style="display: none">
+                  <% if @menu_item.linkable&.is_a?(Page) %>
+                  <%= f.select :linkable_id, [[@menu_item.linkable.name, @menu_item.linkable.id]], {}, { id: 'linkable-page', 'data-fetchUrl' => search_admin_pages_path } %>
+                  <% else %>
+                  <%= f.select :linkable_id, [], {}, { id: 'linkable-page', 'data-fetchUrl' => search_admin_pages_path } %>
+                  <% end %>
+                </div>
+              </li>
+              <li>
+                <label class="radio">
+                  <%= f.radio_button :linkable_type, 'Category' %>
+                  <%= _('Category') %>
+                </label>
+                <div style="display: none">
+                  <% if @menu_item.linkable&.is_a?(Category) %>
+                  <%= f.select :linkable_id, [[@menu_item.linkable.name, @menu_item.linkable.id]], {}, { id: 'linkable-category', 'data-fetchUrl' => search_admin_categories_path } %>
+                  <% else %>
+                  <%= f.select :linkable_id, [], {}, { id: 'linkable-category', 'data-fetchUrl' => search_admin_categories_path } %>
+                  <% end %>
+                </div>
+              </li>
+              <li>
+                <label class="radio">
+                  <%= f.radio_button :linkable_type, 'Tag' %>
+                  <%= _('Tag') %>
+                </label>
+                <div style="display: none">
+                  <% if @menu_item.linkable&.is_a?(Tag) %>
+                  <%= f.select :linkable_id, [[@menu_item.linkable.name, @menu_item.linkable.id]], {}, { id: 'linkable-tag', 'data-fetchUrl' => search_admin_tags_path } %>
+                  <% else %>
+                  <%= f.select :linkable_id, [], {}, { id: 'linkable-tag', 'data-fetchUrl' => search_admin_tags_path } %>
+                  <% end %>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<div class="card mt-5">
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-hidden-touch is-hidden-mobile"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success' %>
+            <a class="button" href="<%= admin_menu_path(@menu) %>"><%= _('Cancel') %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -7,6 +7,7 @@ module Admin
 
     before_action :fetch_menu, only: %i[show edit update destroy translate save_translation]
     before_action :fetch_translation, only: %i[translate save_translation]
+    before_action :fetch_menu_items, only: :show
 
     # GET /menus
     # GET /menus.json
@@ -87,6 +88,10 @@ module Admin
 
     def fetch_translation
       @translation = @menu.translate(translation_locale)
+    end
+
+    def fetch_menu_items
+      @menu_items = MenuItem.ordered_by_hierarchy(@menu.menu_items.includes(:linkable), :sort_order)
     end
 
     def menu_params
