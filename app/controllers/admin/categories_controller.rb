@@ -26,7 +26,7 @@ module Admin
     # GET /categories/tree
     # GET /categories/tree.json
     def tree
-      @categories = Category.ordered_by_hierarchy(current_client.id, nil)
+      @categories = Category.ordered_by_hierarchy(Category.where(client_id: current_client.id))
     end
 
     # GET /categories/1

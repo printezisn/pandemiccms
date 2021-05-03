@@ -33,7 +33,7 @@ module Admin
     # GET /pages/tree
     # GET /pages/tree.json
     def tree
-      @pages = Page.ordered_by_hierarchy(current_client.id, nil)
+      @pages = Page.ordered_by_hierarchy(Page.where(client_id: current_client.id))
     end
 
     # GET /pages/search

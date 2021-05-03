@@ -86,24 +86,14 @@ RSpec.shared_examples 'Parentable' do
   end
 
   describe '.ordered_by_hierarchy' do
-    context 'when an excluded instance is passed' do
-      subject(:hierarchy) do
-        described_class.ordered_by_hierarchy(model.client_id, model).map(&:id)
-      end
-
-      it 'does not include the excluded instance and its descendants' do
-        expect(hierarchy).to eq([model.parent_id])
-      end
+    subject(:hierarchy) do
+      described_class.ordered_by_hierarchy(described_class.all).map(&:id)
     end
 
-    context 'when an excluded instance is not passed' do
-      subject(:hierarchy) do
-        described_class.ordered_by_hierarchy(model.client_id, nil).map(&:id)
-      end
+    before { model }
 
-      it 'includes all instances' do
-        expect(hierarchy).to eq([model.parent_id, model.id, model.children[0].id, model.children[1].id])
-      end
+    it 'includes all instances' do
+      expect(hierarchy).to eq([model.parent_id, model.id, model.children[0].id, model.children[1].id])
     end
   end
 

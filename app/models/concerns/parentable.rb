@@ -20,16 +20,12 @@ module Parentable
         .or(where(arel_table[:hierarchy_path].matches("#{path},%")))
     }
 
-    def self.ordered_by_hierarchy(client_id, excluded_instance)
-      all_instances = where(client_id: client_id).to_a
-      if excluded_instance
-        all_instances.reject! { |instance| instance.id == excluded_instance.id || instance.ancestor_ids.include?(excluded_instance.id) }
-      end
-
-      all_instances.sort_by do |instance|
-        ancestors = all_instances.select { |ancestor| instance.ancestor_ids.include?(ancestor.id) }
-                                 .sort_by { |ancestor| instance.ancestor_ids.index(ancestor.id) }
-        (ancestors + [instance]).map(&:name)
+    def self.ordered_by_hierarchy(scope, sort_field = :name)
+      models = scope.to_a
+      models.sort_by do |instance|
+        ancestors = models.select { |ancestor| instance.ancestor_ids.include?(ancestor.id) }
+                          .sort_by { |ancestor| instance.ancestor_ids.index(ancestor.id) }
+        (ancestors + [instance]).map(&sort_field)
       end
     end
   end
