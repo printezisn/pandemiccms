@@ -19,6 +19,9 @@ module Admin
     def new
       @menu_item = MenuItem.new
       @menu_item.parent_id = params[:parent_id]
+
+      max_sort_order = @menu.menu_items.where(parent_id: @menu_item.parent_id).pluck(:sort_order).max || 0
+      @menu_item.sort_order = max_sort_order + 1
     end
 
     # GET /menus/1/edit
