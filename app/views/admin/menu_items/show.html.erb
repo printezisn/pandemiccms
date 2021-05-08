@@ -30,6 +30,18 @@
   <div class="card-content">
     <div class="field is-horizontal">
       <div class="field-label">
+        <span class="label"><%= _('Menu') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <a href="<%= admin_menu_path(@menu) %>"><%= @menu.name %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
         <span class="label"><%= _('Name') %></span>
       </div>
       <div class="field-body">
@@ -120,7 +132,7 @@
           <td colspan="2"><%= _('No subitems were found.') %></td>
         </tr>
         <% else %>
-        <% @menu_item.children.includes(:linkable).each do |menu_item| %>
+        <% @menu_item.children.includes(:linkable).sort_by(&:sort_order).each do |menu_item| %>
         <tr>
           <td>
             <a href="<%= admin_menu_menu_item_path(id: menu_item.id, menu_id: menu_item.menu_id) %>"><%= menu_item.name %></a>

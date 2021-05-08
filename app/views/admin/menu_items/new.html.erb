@@ -19,6 +19,16 @@
   </header>
   <div class="card-content">
     <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Menu') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @menu.name %></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
       <div class="field-label is-normal">
         <%= f.label :name, class: 'label required-label' %>
       </div>
