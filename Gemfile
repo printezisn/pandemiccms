@@ -31,6 +31,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot', '~> 6.1'
   gem 'factory_bot_rails', '~> 6.1'
+  gem 'pry', '~> 0.13.1'
+  gem 'pry-rails', '~> 0.3.9'
   gem 'rspec', '~> 3.10'
   gem 'rspec-rails', '~> 4.0'
   gem 'rubocop', '~> 1.5', require: false
@@ -48,8 +50,6 @@ group :development do
   gem 'capistrano', '~> 3.14', require: false
   gem 'capistrano-rails', '~> 1.6', require: false
   gem 'capistrano-rbenv', '~> 2.2', require: false
-  gem 'pry', '~> 0.13.1'
-  gem 'pry-rails', '~> 0.3.9'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
