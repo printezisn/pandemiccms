@@ -17,6 +17,7 @@ RSpec.describe Client, type: :model do
   it { is_expected.to have_many(:pages).dependent(:destroy) }
   it { is_expected.to have_many(:email_templates).dependent(:destroy) }
   it { is_expected.to have_many(:menus).dependent(:destroy) }
+  it { is_expected.to have_many(:redirects).dependent(:destroy) }
 
   it { is_expected.to validate_presence_of(:name).with_message('The name is required.') }
 

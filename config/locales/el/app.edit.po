@@ -927,6 +927,12 @@ msgstr "Δημοσιευμένο"
 msgid "Redirects"
 msgstr "Ανακατευθύνσεις"
 
+msgid "Redirect|From"
+msgstr "Απο"
+
+msgid "Redirect|To"
+msgstr "Προς"
+
 msgid "Remove"
 msgstr "Αφαίρεση"
 
@@ -1535,6 +1541,12 @@ msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} �
 
 msgid "activerecord.errors.models.post.attributes.slug.too_long"
 msgstr "Το slug μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.redirect.attributes.from.blank"
+msgstr "Η πηγή (απο) είναι υποχρεωτική."
+
+msgid "activerecord.errors.models.redirect.attributes.to.blank"
+msgstr "Ο προορισμός (προς) είναι υποχρεωτικός."
 
 msgid "activerecord.errors.models.tag.attributes.name.blank"
 msgstr "Το όνομα είναι υποχρεωτικό."
