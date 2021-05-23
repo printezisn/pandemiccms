@@ -1170,6 +1170,15 @@ msgstr "Το άρθρο ανανεώθηκε με επιτυχία."
 msgid "The profile of the current user of %{client}"
 msgstr "Το προφίλ του τωρινού χρήστη του %{client}"
 
+msgid "The redirect was successfully created."
+msgstr "Η ανακατεύθυνση δημιουργήθηκε με επιτυχία."
+
+msgid "The redirect was successfully deleted."
+msgstr "Η ανακατεύθυνση διαγράφτηκε με επιτυχία."
+
+msgid "The redirect was successfully updated."
+msgstr "Η ανακατεύθυνση ανανεώθηκε με επιτυχία."
+
 msgid "The reset password link."
 msgstr "Ο σύνδεσμος επαναφοράς κωδικού."
 

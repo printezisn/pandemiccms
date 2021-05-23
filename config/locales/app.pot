@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-23 14:18+0300\n"
-"PO-Revision-Date: 2021-05-23 14:18+0300\n"
+"POT-Creation-Date: 2021-05-23 14:35+0300\n"
+"PO-Revision-Date: 2021-05-23 14:35+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1169,6 +1169,15 @@ msgid "The post was successfully updated."
 msgstr ""
 
 msgid "The profile of the current user of %{client}"
+msgstr ""
+
+msgid "The redirect was successfully created."
+msgstr ""
+
+msgid "The redirect was successfully deleted."
+msgstr ""
+
+msgid "The redirect was successfully updated."
 msgstr ""
 
 msgid "The reset password link."

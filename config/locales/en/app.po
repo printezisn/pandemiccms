@@ -1170,6 +1170,15 @@ msgstr "The post was successfully created."
 msgid "The profile of the current user of %{client}"
 msgstr "The profile of the current user of %{client}"
 
+msgid "The redirect was successfully created."
+msgstr "The redirect was successfully created."
+
+msgid "The redirect was successfully deleted."
+msgstr "The redirect was successfully deleted."
+
+msgid "The redirect was successfully updated."
+msgstr "The redirect was successfully updated."
+
 msgid "The reset password link."
 msgstr "The reset password link."
 

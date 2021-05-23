@@ -86,6 +86,7 @@ Rails.application.routes.draw do
           post :translate, to: 'users#save_translation'
         end
       end
+      resources :redirects
 
       get 'client/edit', to: 'clients#edit', as: :client_edit
       put 'client/edit', to: 'clients#update'
