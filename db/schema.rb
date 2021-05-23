@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_30_084532) do
+ActiveRecord::Schema.define(version: 2021_05_23_104316) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -255,6 +255,15 @@ ActiveRecord::Schema.define(version: 2021_04_30_084532) do
     t.index ["client_id"], name: "index_posts_on_client_id"
   end
 
+  create_table "redirects", charset: "utf8", force: :cascade do |t|
+    t.bigint "client_id", null: false
+    t.text "from"
+    t.text "to"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_redirects_on_client_id"
+  end
+
   create_table "tag_taggables", charset: "utf8", force: :cascade do |t|
     t.bigint "tag_id", null: false
     t.string "taggable_type", null: false
@@ -311,6 +320,7 @@ ActiveRecord::Schema.define(version: 2021_04_30_084532) do
   add_foreign_key "pages", "pages", column: "parent_id"
   add_foreign_key "posts", "admin_users", column: "author_id"
   add_foreign_key "posts", "clients"
+  add_foreign_key "redirects", "clients"
   add_foreign_key "tag_taggables", "tags"
   add_foreign_key "tags", "clients"
 end
