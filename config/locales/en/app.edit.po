@@ -198,6 +198,9 @@ msgstr "Are you sure you want to delete this page ?"
 msgid "Are you sure you want to delete this post ?"
 msgstr "Are you sure you want to delete this post ?"
 
+msgid "Are you sure you want to delete this redirect ?"
+msgstr "Are you sure you want to delete this redirect ?"
+
 msgid "Are you sure you want to delete this tag ?"
 msgstr "Are you sure you want to delete this tag ?"
 
@@ -351,6 +354,12 @@ msgstr "Create Post"
 msgid "Create Post | %{client}"
 msgstr "Create Post | %{client}"
 
+msgid "Create Redirect"
+msgstr "Create Redirect"
+
+msgid "Create Redirect | %{client}"
+msgstr "Create Redirect | %{client}"
+
 msgid "Create Tag"
 msgstr "Create Tag"
 
@@ -377,6 +386,9 @@ msgstr "Create new page for %{client}"
 
 msgid "Create new post for %{client}"
 msgstr "Create new post for %{client}"
+
+msgid "Create new redirect for %{client}"
+msgstr "Create new redirect for %{client}"
 
 msgid "Create new tag for %{client}"
 msgstr "Create new tag for %{client}"
@@ -425,6 +437,9 @@ msgstr "Details for a page of %{client}"
 
 msgid "Details for a post of %{client}"
 msgstr "Details for a post of %{client}"
+
+msgid "Details for a redirect of %{client}"
+msgstr "Details for a redirect of %{client}"
 
 msgid "Details for a tag of %{client}"
 msgstr "Details for a tag of %{client}"
@@ -492,6 +507,12 @@ msgstr "Edit Profile"
 msgid "Edit Profile | %{client}"
 msgstr "Edit Profile | %{client}"
 
+msgid "Edit Redirect"
+msgstr "Edit Redirect"
+
+msgid "Edit Redirect | %{client}"
+msgstr "Edit Redirect | %{client}"
+
 msgid "Edit Tag"
 msgstr "Edit Tag"
 
@@ -518,6 +539,9 @@ msgstr "Edit a page of %{client}"
 
 msgid "Edit a post of %{client}"
 msgstr "Edit a post of %{client}"
+
+msgid "Edit a redirect of %{client}"
+msgstr "Edit a redirect of %{client}"
 
 msgid "Edit a tag of %{client}"
 msgstr "Edit a tag of %{client}"
@@ -747,6 +771,9 @@ msgstr "No pages were found."
 msgid "No posts were found."
 msgstr "No posts were found."
 
+msgid "No redirects were found."
+msgstr "No redirects were found."
+
 msgid "No subcategories were found."
 msgstr "No subcategories were found."
 
@@ -924,8 +951,20 @@ msgstr "Published"
 msgid "Published|Post"
 msgstr "Published"
 
+msgid "Redirect Details"
+msgstr "Redirect Details"
+
+msgid "Redirect Details | %{client}"
+msgstr "Redirect Details | %{client}"
+
 msgid "Redirects"
 msgstr "Redirects"
+
+msgid "Redirects of %{client}"
+msgstr "Redirects of %{client}"
+
+msgid "Redirects | %{client}"
+msgstr "Redirects | %{client}"
 
 msgid "Redirect|From"
 msgstr "From"

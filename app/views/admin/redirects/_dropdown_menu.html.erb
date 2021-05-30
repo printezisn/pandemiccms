@@ -1,0 +1,15 @@
+<div class="dropdown-menu" role="menu">
+  <div class="dropdown-content">
+    <a class="dropdown-item" href="<%= edit_admin_redirect_path(redirect) %>">
+      <i class="fas fa-pen"></i>
+      &nbsp;
+      <%= _('Edit') %>
+    </a>
+    <hr class="dropdown-divider" />
+    <a href="javascript:void(0)" class="dropdown-item" data-modal-open="delete-redirect-modal<%= redirect.id %>">
+      <i class="fas fa-trash"></i>
+      &nbsp;
+      <%= _('Delete') %>
+    </a>
+  </div>
+</div>

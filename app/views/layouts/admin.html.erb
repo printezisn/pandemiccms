@@ -77,7 +77,7 @@
                 &nbsp;
                 <%= _('Menus') %>
               </a>
-              <a class="navbar-item<%= ' is-active' if controller_name == 'redirects' %>" href="javascript:void(0)">
+              <a class="navbar-item<%= ' is-active' if controller_name == 'redirects' %>" href="<%= admin_redirects_path %>">
                 <i class="fas fa-location-arrow"></i>
                 &nbsp;
                 <%= _('Redirects') %>
@@ -86,7 +86,7 @@
           </div>
           <% if current_admin_user&.supervisor? %>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link<%= ' is-active' if %w[redirects clients email_templates users].include?(controller_name) %>" href="javascript:void(0)">
+            <a class="navbar-link<%= ' is-active' if %w[clients email_templates users].include?(controller_name) %>" href="javascript:void(0)">
               <i class="fas fa-cog"></i>
               &nbsp;
               <%= _('Settings') %>

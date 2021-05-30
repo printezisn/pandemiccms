@@ -1,0 +1,58 @@
+<%
+    content_for :title, _('Create Redirect | %{client}') % { client: current_client.name }
+    content_for :description, _('Create new redirect for %{client}') % { client: current_client.name }
+%>
+
+<%= render "admin/shared/error_messages", resource: @redirect %>
+<%= form_with(model: @redirect, url: admin_redirects_path, method: :post) do |f| %>
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-location-arrow"></i>
+      &nbsp;
+      <%= _('Create Redirect') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :from, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :from, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :to, class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :to, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<div class="card mt-5">
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-hidden-touch is-hidden-mobile"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success' %>
+            <a class="button" href="<%= admin_redirects_path %>"><%= _('Cancel') %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
