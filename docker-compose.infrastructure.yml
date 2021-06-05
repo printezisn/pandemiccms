@@ -13,6 +13,13 @@ services:
       - ./docker/mariadb/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
+  redis:
+    image: redis
+    command: redis-server --requirepass 1234
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
   mailcatcher:
     image: schickling/mailcatcher
     ports:
@@ -20,3 +27,4 @@ services:
       - "1025:1025"
 volumes:
   mariadb_data:
+  redis_data:
