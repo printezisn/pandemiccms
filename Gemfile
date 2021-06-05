@@ -81,3 +81,5 @@ gem 'kaminari', '~> 1.2'
 gem 'babosa', '~> 1.0'
 
 gem 'image_processing', '~> 1.12'
+
+gem 'redis', '~> 4.2'
