@@ -38,6 +38,12 @@
             <textarea rows="5" class="textarea" readonly><%= @tag.description %></textarea>
           </div>
         </div>
+        <div class="field">
+          <span class="label"><%= _('Tag|Body') %></span>
+          <div class="control">
+            <textarea id="original-tag-body" rows="5" class="textarea rich-editor" readonly><%= @tag.body %></textarea>
+          </div>
+        </div>
       </div>
     </article>
   </div>
@@ -69,6 +75,12 @@
           <%= f.label :description, class: 'label' %>
           <div class="control">
             <%= f.text_area :description, class: 'textarea', rows: 5 %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :body, class: 'label' %>
+          <div class="control">
+            <%= f.text_area :body, class: 'rich-editor textarea', rows: 5 %>
           </div>
         </div>
         <div class="field">

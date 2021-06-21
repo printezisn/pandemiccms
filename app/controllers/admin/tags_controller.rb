@@ -8,6 +8,7 @@ module Admin
     before_action :fetch_tag, only: %i[show edit update destroy translate save_translation]
     before_action :fetch_translation, only: %i[translate save_translation]
     before_action :fetch_templates, only: %i[new edit create update]
+    before_action :fetch_visibilities, only: %i[new edit create update]
 
     # GET /tags
     # GET /tags.json
@@ -114,8 +115,12 @@ module Admin
       @templates = Dir[path].map { |f| File.basename(f, '.html.erb') }.sort
     end
 
+    def fetch_visibilities
+      @visibilities = [[_('Public|Visibility'), :public], [_('Private|Visibility'), :private]]
+    end
+
     def tag_params
-      params.require(:tag).permit(:name, :slug, :description, :template)
+      params.require(:tag).permit(:name, :slug, :description, :body, :template, :visibility)
     end
 
     def translation_params

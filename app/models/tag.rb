@@ -4,7 +4,7 @@
 class Tag < ApplicationRecord
   SORTABLE_FIELDS = %i[name created_at updated_at].freeze
   TEXT_SEARCHABLE_FIELDS = %i[name].freeze
-  TRANSLATABLE_FIELDS = %w[name slug description].freeze
+  TRANSLATABLE_FIELDS = %w[name slug description body].freeze
 
   include SimpleTextSearchable
   include BoundSortable
@@ -15,6 +15,11 @@ class Tag < ApplicationRecord
 
   has_many :tag_taggables, inverse_of: :tag, dependent: :destroy
   has_many :menu_items, as: :linkable, dependent: :destroy
+
+  enum visibility: {
+    public: 0,
+    private: 1
+  }, _suffix: :visibility
 
   validates :name, presence: true,
                    length: { maximum: 255 },

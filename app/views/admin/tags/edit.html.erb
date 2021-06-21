@@ -62,6 +62,30 @@
         </div>
       </div>
     </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :visibility, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.select :visibility, @visibilities %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-tag"></i>
+      &nbsp;
+      <%= _('Tag|Body') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <%= f.text_area :body, class: 'rich-editor', rows: 10 %>
   </div>
 </article>
 <div class="card mt-5">

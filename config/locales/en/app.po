@@ -1101,6 +1101,9 @@ msgstr "Tags of %{client}"
 msgid "Tags | %{client}"
 msgstr "Tags | %{client}"
 
+msgid "Tag|Body"
+msgstr "Body"
+
 msgid "Tag|Description"
 msgstr "Description"
 
@@ -1112,6 +1115,9 @@ msgstr "Slug"
 
 msgid "Tag|Template"
 msgstr "Template"
+
+msgid "Tag|Visibility"
+msgstr "Visibility"
 
 msgid "Template"
 msgstr "Template"

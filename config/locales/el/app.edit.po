@@ -1101,6 +1101,9 @@ msgstr "Ετικέτες του %{client}"
 msgid "Tags | %{client}"
 msgstr "Ετικέτες | %{client}"
 
+msgid "Tag|Body"
+msgstr "Κείμενο"
+
 msgid "Tag|Description"
 msgstr "Περιγραφή"
 
@@ -1112,6 +1115,9 @@ msgstr "Slug"
 
 msgid "Tag|Template"
 msgstr "Πρότυπο"
+
+msgid "Tag|Visibility"
+msgstr "Ορατότητα"
 
 msgid "Template"
 msgstr "Πρότυπο"
