@@ -35,6 +35,7 @@ module Admin
       @menu_item.linkable = @linkable
 
       if @menu_item.save
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_menu_menu_item_path(id: @menu_item.id, menu_id: @menu_item.menu_id),
                     notice: _('The menu item was successfully created.')
       else
@@ -49,6 +50,7 @@ module Admin
       @menu_item.linkable = @linkable
 
       if @menu_item.save
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_menu_menu_item_path(id: @menu_item.id, menu_id: @menu_item.menu_id),
                     notice: _('The menu item was successfully updated.')
       else
@@ -60,6 +62,7 @@ module Admin
     # DELETE /menus/1/menu_items/1.json
     def destroy
       @menu_item.destroy
+      CacheVersionBumper.call(current_client.id)
 
       redirect_to admin_menu_path(id: @menu_item.menu_id), notice: _('The menu item was successfully deleted.')
     end
@@ -72,6 +75,7 @@ module Admin
       @menu_item.assign_attributes(translation_params)
 
       if @menu_item.save_translation(translation_locale)
+        CacheVersionBumper.call(current_client.id)
         redirect_to translate_admin_menu_menu_item_path(id: @menu_item.id, menu_id: @menu_item.menu_id, translation_locale: translation_locale),
                     notice: _('The menu item was successfully translated.')
       else

@@ -110,6 +110,10 @@ RSpec.describe '/admin/pages', type: :request do
 
         expect(response).to redirect_to(admin_page_path(id: Page.last.id, locale: 'en'))
       end
+
+      it 'bumps cache version' do
+        expect { request }.to(change { CacheVersionGetter.call(admin_user.client_id) })
+      end
     end
 
     context 'with invalid parameters' do
@@ -171,6 +175,10 @@ RSpec.describe '/admin/pages', type: :request do
 
         expect(response).to redirect_to(admin_page_path(id: model.id, locale: 'en'))
       end
+
+      it 'bumps cache version' do
+        expect { request }.to(change { CacheVersionGetter.call(admin_user.client_id) })
+      end
     end
 
     context 'with invalid parameters' do
@@ -209,6 +217,10 @@ RSpec.describe '/admin/pages', type: :request do
       request
 
       expect(response).to redirect_to(admin_pages_path(locale: 'en'))
+    end
+
+    it 'bumps cache version' do
+      expect { request }.to(change { CacheVersionGetter.call(admin_user.client_id) })
     end
   end
 
@@ -255,6 +267,10 @@ RSpec.describe '/admin/pages', type: :request do
         request
 
         expect(response).to redirect_to(translate_admin_page_path(id: model.id, locale: 'en', translation_locale: 'en'))
+      end
+
+      it 'bumps cache version' do
+        expect { request }.to(change { CacheVersionGetter.call(admin_user.client_id) })
       end
     end
 
@@ -316,6 +332,10 @@ RSpec.describe '/admin/pages', type: :request do
 
     it 'changes the page status' do
       expect { request }.to change { model.reload.status }.from('draft').to('published')
+    end
+
+    it 'bumps cache version' do
+      expect { request }.to(change { CacheVersionGetter.call(admin_user.client_id) })
     end
   end
 end

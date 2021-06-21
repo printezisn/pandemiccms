@@ -39,6 +39,7 @@ module Admin
       @tag.client_id = current_client.id
 
       if @tag.save
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_tag_path(@tag), notice: _('The tag was successfully created.')
       else
         render :new
@@ -49,6 +50,7 @@ module Admin
     # PATCH/PUT /tags/1.json
     def update
       if @tag.update(tag_params)
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_tag_path(@tag), notice: _('The tag was successfully updated.')
       else
         render :edit
@@ -59,6 +61,7 @@ module Admin
     # DELETE /tags/1.json
     def destroy
       @tag.destroy
+      CacheVersionBumper.call(current_client.id)
 
       redirect_to admin_tags_path, notice: _('The tag was successfully deleted.')
     end
@@ -71,6 +74,7 @@ module Admin
       @tag.assign_attributes(translation_params)
 
       if @tag.save_translation(translation_locale)
+        CacheVersionBumper.call(current_client.id)
         redirect_to translate_admin_tag_path(@tag, translation_locale: translation_locale),
                     notice: _('The tag was successfully translated.')
       else

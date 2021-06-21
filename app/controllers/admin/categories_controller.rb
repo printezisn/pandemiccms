@@ -49,6 +49,7 @@ module Admin
       @category.client_id = current_client.id
 
       if @category.save
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_category_path(@category), notice: _('The category was successfully created.')
       else
         render :new
@@ -61,6 +62,7 @@ module Admin
       default_params = { parent_id: nil }
 
       if @category.update(default_params.merge(category_params))
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_category_path(@category), notice: _('The category was successfully updated.')
       else
         render :edit
@@ -71,6 +73,7 @@ module Admin
     # DELETE /categories/1.json
     def destroy
       @category.destroy
+      CacheVersionBumper.call(current_client.id)
 
       redirect_to admin_categories_path, notice: _('The category was successfully deleted.')
     end
@@ -83,6 +86,7 @@ module Admin
       @category.assign_attributes(translation_params)
 
       if @category.save_translation(translation_locale)
+        CacheVersionBumper.call(current_client.id)
         redirect_to translate_admin_category_path(@category, translation_locale: translation_locale),
                     notice: _('The category was successfully translated.')
       else

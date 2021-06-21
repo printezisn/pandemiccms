@@ -46,6 +46,7 @@ module Admin
     # PATCH/PUT /users/1
     def update
       if @user.update(update_params)
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_user_path(@user), notice: _('The user was successfully updated.')
       else
         render :edit
@@ -81,6 +82,7 @@ module Admin
       @user.assign_attributes(translation_params)
 
       if @user.save_translation(translation_locale)
+        CacheVersionBumper.call(current_client.id)
         redirect_to translate_admin_user_path(@user, translation_locale: translation_locale),
                     notice: _('The user was successfully translated.')
       else

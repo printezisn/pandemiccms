@@ -16,6 +16,7 @@ module Admin
     # PATCH /profile/edit
     def update
       if @user.update(user_params)
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_profile_path, notice: _('Your profile was successfully updated.')
       else
         render :edit
@@ -30,6 +31,7 @@ module Admin
       @user.assign_attributes(translation_params)
 
       if @user.save_translation(translation_locale)
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_profile_translate_path(translation_locale: translation_locale),
                     notice: _('Your profile was successfully translated.')
       else

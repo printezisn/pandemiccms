@@ -39,6 +39,7 @@ module Admin
       @menu.client_id = current_client.id
 
       if @menu.save
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_menu_path(@menu), notice: _('The menu was successfully created.')
       else
         render :new
@@ -49,6 +50,7 @@ module Admin
     # PATCH/PUT /menus/1.json
     def update
       if @menu.update(menu_params)
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_menu_path(@menu), notice: _('The menu was successfully updated.')
       else
         render :edit
@@ -59,6 +61,7 @@ module Admin
     # DELETE /menus/1.json
     def destroy
       @menu.destroy
+      CacheVersionBumper.call(current_client.id)
 
       redirect_to admin_menus_path, notice: _('The menu was successfully deleted.')
     end
@@ -71,6 +74,7 @@ module Admin
       @menu.assign_attributes(translation_params)
 
       if @menu.save_translation(translation_locale)
+        CacheVersionBumper.call(current_client.id)
         redirect_to translate_admin_menu_path(@menu, translation_locale: translation_locale),
                     notice: _('The menu was successfully translated.')
       else

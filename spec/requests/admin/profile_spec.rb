@@ -63,6 +63,10 @@ RSpec.describe '/admin/profile', type: :request do
 
         expect(response).to redirect_to(admin_profile_path(locale: 'en'))
       end
+
+      it 'bumps cache version' do
+        expect { request }.to(change { CacheVersionGetter.call(admin_user.client_id) })
+      end
     end
 
     context 'with invalid parameters' do
@@ -124,6 +128,10 @@ RSpec.describe '/admin/profile', type: :request do
         request
 
         expect(response).to redirect_to(admin_profile_translate_path(locale: 'en', translation_locale: 'en'))
+      end
+
+      it 'bumps cache version' do
+        expect { request }.to(change { CacheVersionGetter.call(admin_user.client_id) })
       end
     end
 

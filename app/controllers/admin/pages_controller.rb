@@ -83,6 +83,7 @@ module Admin
       result = params[:publish].present? ? @page.publish_now : @page.save
 
       if result
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_page_path(@page), notice: _('The page was successfully created.')
       else
         render :new
@@ -98,6 +99,7 @@ module Admin
       result = params[:publish].present? ? @page.publish_now : @page.save
 
       if result
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_page_path(@page), notice: _('The page was successfully updated.')
       else
         render :edit
@@ -108,6 +110,7 @@ module Admin
     # DELETE /pages/1.json
     def destroy
       @page.destroy
+      CacheVersionBumper.call(current_client.id)
 
       redirect_to admin_pages_path, notice: _('The page was successfully deleted.')
     end
@@ -116,6 +119,7 @@ module Admin
     # POST /pages/2/publish.json
     def publish
       if @page.publish_now
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_page_path(@page), notice: _('The page was successfully published.')
       else
         redirect_to admin_page_path(@page), alert: _('The page could not be published.')
@@ -130,6 +134,7 @@ module Admin
       @page.assign_attributes(translation_params)
 
       if @page.save_translation(translation_locale)
+        CacheVersionBumper.call(current_client.id)
         redirect_to translate_admin_page_path(@page, translation_locale: translation_locale),
                     notice: _('The page was successfully translated.')
       else

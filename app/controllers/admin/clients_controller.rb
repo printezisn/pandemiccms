@@ -26,6 +26,7 @@ module Admin
       end.present?
 
       if saved
+        CacheVersionBumper.call(current_client.id)
         redirect_to admin_client_edit_path, notice: _('The settings were successfully updated.')
       else
         render :edit

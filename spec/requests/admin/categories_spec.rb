@@ -108,6 +108,10 @@ RSpec.describe '/admin/categories', type: :request do
 
         expect(response).to redirect_to(admin_category_path(id: Category.last.id, locale: 'en'))
       end
+
+      it 'bumps cache version' do
+        expect { request }.to(change { CacheVersionGetter.call(admin_user.client_id) })
+      end
     end
 
     context 'with invalid parameters' do
@@ -165,6 +169,10 @@ RSpec.describe '/admin/categories', type: :request do
 
         expect(response).to redirect_to(admin_category_path(id: model.id, locale: 'en'))
       end
+
+      it 'bumps cache version' do
+        expect { request }.to(change { CacheVersionGetter.call(admin_user.client_id) })
+      end
     end
 
     context 'with invalid parameters' do
@@ -200,6 +208,10 @@ RSpec.describe '/admin/categories', type: :request do
       request
 
       expect(response).to redirect_to(admin_categories_path(locale: 'en'))
+    end
+
+    it 'bumps cache version' do
+      expect { request }.to(change { CacheVersionGetter.call(admin_user.client_id) })
     end
   end
 
@@ -262,6 +274,10 @@ RSpec.describe '/admin/categories', type: :request do
         request
 
         expect(response).to redirect_to(translate_admin_category_path(id: model.id, locale: 'en', translation_locale: 'en'))
+      end
+
+      it 'bumps cache version' do
+        expect { request }.to(change { CacheVersionGetter.call(admin_user.client_id) })
       end
     end
 

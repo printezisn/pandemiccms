@@ -65,6 +65,10 @@ RSpec.describe '/admin/clients', type: :request do
         expect(client.enabled_client_languages.map(&:id)).to contain_exactly(client_languages.first.id)
         expect(client.default_language.id).to eq(client_languages.first.language_id)
       end
+
+      it 'bumps cache version' do
+        expect { request }.to(change { CacheVersionGetter.call(supervisor.client_id) })
+      end
     end
 
     context 'when the params are invalid' do
