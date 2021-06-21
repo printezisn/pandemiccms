@@ -1119,6 +1119,9 @@ msgstr "Ο σύνδεσμος επιβεβαίωσης λογαριασμού."
 msgid "The administration of %{client}"
 msgstr "Η διαχείριση του %{client}"
 
+msgid "The cache was successfully cleared."
+msgstr "Η cache καθαρίστηκε με επιτυχία."
+
 msgid "The category was successfully created."
 msgstr "Η κατηγορία δημιουργήθηκε με επιτυχία."
 

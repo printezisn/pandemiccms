@@ -107,11 +107,13 @@
                 &nbsp;
                 <%= _('Users') %>
               </a>
-              <a class="navbar-item" href="javascript:void(0)">
+              <%= form_with(url: admin_cache_clear_path, method: :post) do |f| %>
+              <a class="navbar-item submit-parent-form" href="javascript:void(0)">
                 <i class="fas fa-database"></i>
                 &nbsp;
                 <%= _('Clear Cache') %>
               </a>
+              <% end %>
             </div>
           </div>
           <% end %>

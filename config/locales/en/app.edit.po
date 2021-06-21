@@ -1119,6 +1119,9 @@ msgstr "The account confirmation link."
 msgid "The administration of %{client}"
 msgstr "The administration of %{client}"
 
+msgid "The cache was successfully cleared."
+msgstr "The cache was successfully cleared."
+
 msgid "The category was successfully created."
 msgstr "The category was successfully created."
 

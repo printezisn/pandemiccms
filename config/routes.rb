@@ -103,6 +103,8 @@ Rails.application.routes.draw do
       put 'password/edit', to: 'password#update'
       patch 'password/edit', to: 'password#update'
 
+      post 'cache/clear', to: 'cache#clear', as: :cache_clear
+
       root 'dashboard#index'
     end
 
