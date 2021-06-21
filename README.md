@@ -51,6 +51,7 @@ You need to have the following installed to run the project:
 - Ruby
 - NodeJS
 - MySQL (or MariaDB)
+- Redis
 - ImageMagick
 
 ## How to prepare
@@ -64,6 +65,7 @@ You need to have the following installed to run the project:
 
 Add configuration by running `EDITOR=<editor> rails credentials:edit`. The credentials file contains configuration for the following services:
 - MySQL/MariaDB
+- Redis
 - SMTP mail server
 
 and it has the following structure:
@@ -73,6 +75,9 @@ secret_key_base: <secret_key_base>
 mysql:
   host: <host>
   username: <username>
+  password: <password>
+redis:
+  host: <host>
   password: <password>
 smtp:
   host: <host>
