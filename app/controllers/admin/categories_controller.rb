@@ -8,6 +8,7 @@ module Admin
     before_action :fetch_category, only: %i[show edit update destroy translate save_translation]
     before_action :fetch_translation, only: %i[translate save_translation]
     before_action :fetch_templates, only: %i[new edit create update]
+    before_action :fetch_visibilities, only: %i[new edit create update]
 
     # GET /categories
     # GET /categories.json
@@ -131,8 +132,13 @@ module Admin
       @templates = Dir[path].map { |f| File.basename(f, '.html.erb') }.sort
     end
 
+    def fetch_visibilities
+      @visibilities = [[_('Public|Visibility'), :public], [_('Private|Visibility'), :private]]
+    end
+
     def category_params
-      params.require(:category).permit(:image, :should_remove_image, :name, :slug, :description, :template, :parent_id)
+      params.require(:category).permit(:image, :should_remove_image, :name, :slug, :description, :body,
+                                       :template, :visibility, :parent_id)
     end
 
     def translation_params

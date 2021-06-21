@@ -252,6 +252,9 @@ msgstr "Category Details"
 msgid "Category Details | %{client}"
 msgstr "Category Details | %{client}"
 
+msgid "Category|Body"
+msgstr "Body"
+
 msgid "Category|Description"
 msgstr "Description"
 
@@ -269,6 +272,9 @@ msgstr "Slug"
 
 msgid "Category|Template"
 msgstr "Template"
+
+msgid "Category|Visibility"
+msgstr "Visibility"
 
 msgid "Change Password"
 msgstr "Change Password"

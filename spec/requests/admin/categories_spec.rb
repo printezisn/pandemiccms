@@ -89,7 +89,9 @@ RSpec.describe '/admin/categories', type: :request do
         name: model.name,
         slug: model.slug,
         description: model.description,
+        body: model.body,
         template: model.template,
+        visibility: model.visibility,
         parent_id: parent.id
       }
     end
@@ -121,7 +123,9 @@ RSpec.describe '/admin/categories', type: :request do
           name: '',
           slug: model.slug,
           description: model.description,
+          body: model.body,
           template: model.template,
+          visibility: model.visibility,
           parent_id: parent.id
         }
       end
@@ -146,7 +150,9 @@ RSpec.describe '/admin/categories', type: :request do
         name: model.name,
         slug: model.slug,
         description: 'New description',
+        body: model.body,
         template: model.template,
+        visibility: model.visibility,
         parent_id: parent.id
       }
     end
@@ -181,7 +187,9 @@ RSpec.describe '/admin/categories', type: :request do
           name: '',
           slug: model.slug,
           description: 'New description',
-          template: model.template
+          body: model.body,
+          template: model.template,
+          visibility: model.visibility
         }
       end
 
@@ -251,7 +259,8 @@ RSpec.describe '/admin/categories', type: :request do
       {
         'name' => 'Translated Name',
         'slug' => 'translated-slug',
-        'description' => 'Translated description'
+        'description' => 'Translated description',
+        'body' => 'Translated body'
       }
     end
 
@@ -286,7 +295,8 @@ RSpec.describe '/admin/categories', type: :request do
         {
           'name' => Array.new(256) { 'a' }.join,
           'slug' => 'translated-slug',
-          'description' => 'Translated description'
+          'description' => 'Translated description',
+          'body' => 'Translated body'
         }
       end
 

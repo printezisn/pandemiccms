@@ -17,6 +17,8 @@ RSpec.describe Category, type: :model do
   it { is_expected.to have_many(:category_categorizables).dependent(:destroy) }
   it { is_expected.to have_many(:menu_items).dependent(:destroy) }
 
+  it { is_expected.to define_enum_for(:visibility).with_values(public: 0, private: 1).with_suffix(:visibility) }
+
   it { is_expected.to validate_presence_of(:name).with_message('The name is required.') }
   it { is_expected.to validate_length_of(:name).is_at_most(255).with_message('The name may contain up to 255 characters.') }
   it { is_expected.to validate_uniqueness_of(:name).case_insensitive.scoped_to([:client_id]).with_message('The name is already used.') }

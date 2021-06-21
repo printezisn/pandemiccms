@@ -100,6 +100,16 @@
     </div>
     <div class="field is-horizontal">
       <div class="field-label">
+        <span class="label"><%= _('Visibility') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @category.public_visibility? ? _('Public|Visibility') : _('Private|Visibility') %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
         <span class="label"><%= _('Created At') %></span>
       </div>
       <div class="field-body">
@@ -117,6 +127,20 @@
           <div class="control"><%= @category.updated_at %></div>
         </div>
       </div>
+    </div>
+  </div>
+</article>
+<article class="card mt-5">
+  <div class="card-header">
+    <h2 class="card-header-title">
+      <i class="fas fa-th"></i>
+      &nbsp;
+      <%= _('Category|Body') %>
+    </h2>
+  </div>
+  <div class="card-content">
+    <div class="content">
+      <%= @category.body&.html_safe %>
     </div>
   </div>
 </article>

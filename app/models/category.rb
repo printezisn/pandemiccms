@@ -4,7 +4,7 @@
 class Category < ApplicationRecord
   SORTABLE_FIELDS = %i[name created_at updated_at].freeze
   TEXT_SEARCHABLE_FIELDS = %i[name].freeze
-  TRANSLATABLE_FIELDS = %w[name slug description].freeze
+  TRANSLATABLE_FIELDS = %w[name slug description body].freeze
 
   include SimpleTextSearchable
   include BoundSortable
@@ -18,6 +18,11 @@ class Category < ApplicationRecord
   has_many :children, inverse_of: :parent, class_name: 'Category', foreign_key: :parent_id, dependent: :destroy
   has_many :category_categorizables, inverse_of: :category, dependent: :destroy
   has_many :menu_items, as: :linkable, dependent: :destroy
+
+  enum visibility: {
+    public: 0,
+    private: 1
+  }, _suffix: :visibility
 
   validates :name, presence: true,
                    length: { maximum: 255 },

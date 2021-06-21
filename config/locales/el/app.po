@@ -252,6 +252,9 @@ msgstr "Λεπτομέρειες Κατηγορίας"
 msgid "Category Details | %{client}"
 msgstr "Λεπτομέρειες Κατηγορίας | %{client}"
 
+msgid "Category|Body"
+msgstr "Κείμενο"
+
 msgid "Category|Description"
 msgstr "Περιγραφή"
 
@@ -269,6 +272,9 @@ msgstr "Slug"
 
 msgid "Category|Template"
 msgstr "Πρότυπο"
+
+msgid "Category|Visibility"
+msgstr "Ορατότητα"
 
 msgid "Change Password"
 msgstr "Αλλαγή Κωδικού"

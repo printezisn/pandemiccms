@@ -4,6 +4,7 @@ FactoryBot.define do
   factory :category do
     sequence(:name) { |n| "Category#{n}" }
     sequence(:description) { |n| "Category description #{n}" }
+    sequence(:body) { |n| "Category body #{n}" }
 
     association :client
 
