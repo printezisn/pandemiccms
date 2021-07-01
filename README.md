@@ -53,6 +53,7 @@ You need to have the following installed to run the project:
 - MySQL (or MariaDB)
 - Redis
 - ImageMagick
+- Sidekiq
 
 ## How to prepare
 
@@ -67,6 +68,7 @@ Add configuration by running `EDITOR=<editor> rails credentials:edit`. The crede
 - MySQL/MariaDB
 - Redis
 - SMTP mail server
+- Sidekiq Web UI
 
 and it has the following structure:
 
@@ -82,6 +84,9 @@ redis:
 smtp:
   host: <host>
   port: <port>
+sidekiq_ui:
+  username: <username>
+  password: <password>
 ```
 
 If you need to generate a new value for `secret_key_base`, you can do it by running `rails secret`.
@@ -129,6 +134,12 @@ For more information, you can run `bundle exec rake pandemiccms:create_superviso
 **Run the tests**:
 
 `bundle exec rspec`
+
+**Run sidekiq**:
+
+`bundle exec sidekiq`
+
+Sidekiq is responsible for running background jobs.
 
 **Run the application**:
 
