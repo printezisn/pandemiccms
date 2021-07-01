@@ -83,3 +83,5 @@ gem 'babosa', '~> 1.0'
 gem 'image_processing', '~> 1.12'
 
 gem 'redis', '~> 4.2'
+
+gem 'sidekiq', '~> 6.2'
