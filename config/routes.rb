@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  Sidekiq::Web.use Rack::Auth::Basic, 'Protected Area' do |username, password|
+    Rack::Utils.secure_compare(::Digest::SHA256.hexdigest(username),
+                               ::Digest::SHA256.hexdigest(Rails.application.credentials.sidekiq_ui[:username])) &
+      Rack::Utils.secure_compare(::Digest::SHA256.hexdigest(password),
+                                 ::Digest::SHA256.hexdigest(Rails.application.credentials.sidekiq_ui[:password]))
+  end
+  mount Sidekiq::Web => '/sidekiq'
+
   scope '(:locale)' do
     devise_for :admin_users
 
