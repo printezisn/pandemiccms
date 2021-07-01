@@ -40,6 +40,20 @@ services:
     depends_on:
       - mariadb
       - redis
+  sidekiq:
+    build:
+      context: .
+      dockerfile: ./docker/sidekiq/Dockerfile
+    environment:
+      RAILS_ENV: production
+      RAILS_SERVE_STATIC_FILES: 1
+      RAILS_MASTER_KEY: 0fa8098c8e652a8a7c2bb448bb11ff54
+    volumes:
+      - log_data:/app/logs
+      - storage_data:/app/storage
+    depends_on:
+      - mariadb
+      - redis
 volumes:
   mariadb_data:
   redis_data:
