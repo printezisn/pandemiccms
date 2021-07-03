@@ -20,6 +20,19 @@ services:
       - redis_data:/data
     ports:
       - "6379:6379"
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.13.2
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
+      - xpack.security.enabled=true
+      - "ELASTIC_PASSWORD=1234"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
   mailcatcher:
     image: schickling/mailcatcher
     ports:
@@ -28,3 +41,4 @@ services:
 volumes:
   mariadb_data:
   redis_data:
+  elasticsearch_data:
