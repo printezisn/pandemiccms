@@ -80,6 +80,7 @@ mysql:
   password: <password>
 redis:
   host: <host>
+  port: <port>
   password: <password>
 smtp:
   host: <host>
