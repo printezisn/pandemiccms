@@ -52,6 +52,7 @@ You need to have the following installed to run the project:
 - NodeJS
 - MySQL (or MariaDB)
 - Redis
+- Elasticsearch
 - ImageMagick
 - Sidekiq
 
@@ -67,6 +68,7 @@ You need to have the following installed to run the project:
 Add configuration by running `EDITOR=<editor> rails credentials:edit`. The credentials file contains configuration for the following services:
 - MySQL/MariaDB
 - Redis
+- Elasticsearch
 - SMTP mail server
 - Sidekiq Web UI
 
@@ -81,6 +83,10 @@ mysql:
 redis:
   host: <host>
   port: <port>
+  password: <password>
+elasticsearch:
+  url: <url>
+  username: <username>
   password: <password>
 smtp:
   host: <host>
