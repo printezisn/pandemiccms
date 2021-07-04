@@ -31,7 +31,7 @@ module Translatable
 
   def translate(locale, use_defaults: false)
     model = dup
-    translation = translations.find_by(locale: locale.to_s)
+    translation = translations.detect { |t| t.locale == locale.to_s }
 
     self.class::TRANSLATABLE_FIELDS.each do |field|
       field_translation = translation&.fields.try(:[], field)
