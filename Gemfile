@@ -87,3 +87,5 @@ gem 'redis', '~> 4.2'
 gem 'sidekiq', '~> 6.2'
 
 gem 'elasticsearch-persistence', '~> 7.1'
+
+gem 'htmlentities', '~> 4.3'
