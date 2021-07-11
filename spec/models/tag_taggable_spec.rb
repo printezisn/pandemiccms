@@ -30,6 +30,26 @@ RSpec.describe TagTaggable, type: :model do
     end
   end
 
+  describe '#decrement_posts_count' do
+    let(:visibility) { :public }
+    let(:tag) { FactoryBot.create(:tag) }
+
+    before do
+      FactoryBot.create(:post, tags: [tag], status: :published, visibility: visibility)
+      FactoryBot.create(:page, tags: [tag])
+    end
+
+    context 'when the post is visible' do
+      it { expect { tag.tag_taggables.destroy_all }.to change(tag, :posts_count).from(1).to(0) }
+    end
+
+    context 'when the post is not visible' do
+      let(:visibility) { :private }
+
+      it { expect { tag.tag_taggables.destroy_all }.not_to change(tag, :posts_count) }
+    end
+  end
+
   describe 'scopes' do
     let(:tag) { FactoryBot.create(:tag) }
     let!(:post) { FactoryBot.create(:post, tags: [tag]) }

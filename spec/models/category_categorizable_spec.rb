@@ -29,6 +29,25 @@ RSpec.describe CategoryCategorizable, type: :model do
     end
   end
 
+  describe '#decrement_posts_count' do
+    let(:visibility) { :public }
+    let(:category) { FactoryBot.create(:category) }
+
+    before do
+      FactoryBot.create(:post, categories: [category], status: :published, visibility: visibility)
+    end
+
+    context 'when the post is visible' do
+      it { expect { category.category_categorizables.destroy_all }.to change(category, :posts_count).from(1).to(0) }
+    end
+
+    context 'when the post is not visible' do
+      let(:visibility) { :private }
+
+      it { expect { category.category_categorizables.destroy_all }.not_to change(category, :posts_count) }
+    end
+  end
+
   describe 'scopes' do
     let(:category) { FactoryBot.create(:category) }
     let!(:post) { FactoryBot.create(:post, categories: [category]) }
