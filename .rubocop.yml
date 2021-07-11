@@ -27,6 +27,7 @@ Rails/SkipsModelValidations:
     - "increment!"
     - "decrement!"
     - "update_column"
+    - "update_all"
 
 Style/MultilineBlockChain:
   Enabled: false
@@ -55,3 +56,6 @@ Metrics/PerceivedComplexity:
 Lint/EmptyBlock:
   Exclude:
     - "lib/tasks/pandemiccms.rake"
+
+RSpec/AnyInstance:
+  Enabled: false

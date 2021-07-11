@@ -93,4 +93,17 @@ RSpec.configure do |config|
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
+
+  config.after do
+    es_client = Elasticsearch::Client.new(
+      url: Rails.application.credentials.elasticsearch[:url],
+      log: Rails.env.development?,
+      user: Rails.application.credentials.elasticsearch[:username],
+      password: Rails.application.credentials.elasticsearch[:password]
+    )
+    index_names = es_client.indices.get(index: '_all').keys.select { |index_name| index_name.end_with?('_test') }
+    index_names.each do |index_name|
+      es_client.indices.delete(index: index_name)
+    end
+  end
 end
