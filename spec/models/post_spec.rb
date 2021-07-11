@@ -9,6 +9,7 @@ require './spec/models/concerns/imageable'
 require './spec/models/concerns/categorizable'
 require './spec/models/concerns/taggable'
 require './spec/models/concerns/draftable'
+require './spec/utils/retry'
 
 RSpec.describe Post, type: :model do
   subject(:model) { FactoryBot.build(:post, author: author) }
@@ -93,6 +94,36 @@ RSpec.describe Post, type: :model do
         expect { model.private_visibility! }.to(
           change { [category.reload.posts_count, tag.reload.posts_count] }.from([1, 1]).to([0, 0])
         )
+      end
+    end
+  end
+
+  describe '#index' do
+    before { model.save! }
+
+    context 'when the post is created' do
+      it 'indexes it' do
+        expect(IndexJob).to have_been_enqueued.exactly(:once)
+      end
+    end
+
+    context 'when the post is updated' do
+      before { model.update!(name: 'New Name') }
+
+      it 'reindexes it' do
+        expect(IndexJob).to have_been_enqueued.exactly(:twice)
+      end
+    end
+  end
+
+  describe '#unindex' do
+    before { model.save! }
+
+    context 'when the post is destroyed' do
+      before { model.destroy }
+
+      it 'unindexes it' do
+        expect(UnindexJob).to have_been_enqueued.exactly(:once)
       end
     end
   end

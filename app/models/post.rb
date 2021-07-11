@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   SORTABLE_FIELDS = %i[name created_at updated_at].freeze
   TEXT_SEARCHABLE_FIELDS = %i[name].freeze
   TRANSLATABLE_FIELDS = %w[name slug description body].freeze
+  INDEXABLE_FIELDS = %w[name description body visibility status].freeze
 
   include SimpleTextSearchable
   include BoundSortable
@@ -29,10 +30,18 @@ class Post < ApplicationRecord
                    uniqueness: { case_sensitive: false, scope: [:client_id] }
   validates :slug, length: { maximum: 255 }
 
+  before_save :reset_indexed_at, if: :should_index?
+
   after_update :update_counters
+  after_commit :create_index_job, on: %i[create update], if: -> { indexed_at.nil? }
+  after_commit :unindex, on: :destroy
 
   def visible?
     public_visibility? && published?
+  end
+
+  def index
+    update!(indexed_at: nil)
   end
 
   private
@@ -47,5 +56,21 @@ class Post < ApplicationRecord
       categories.each { |category| category.decrement!(:posts_count) }
       tags.each { |tag| tag.decrement!(:posts_count) }
     end
+  end
+
+  def reset_indexed_at
+    self.indexed_at = nil
+  end
+
+  def should_index?
+    new_record? || should_save_tags? || should_save_categories? || (changes.keys & INDEXABLE_FIELDS).any?
+  end
+
+  def unindex
+    UnindexJob.perform_later(self.class, client_id, id)
+  end
+
+  def create_index_job
+    IndexJob.perform_later(self.class, id)
   end
 end

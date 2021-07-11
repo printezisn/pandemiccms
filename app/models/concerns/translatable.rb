@@ -25,6 +25,9 @@ module Translatable
 
       reload
 
+      index if respond_to?(:index) || self.class.private_method_defined?(:index)
+      index_associations if respond_to?(:index_associations) || self.class.private_method_defined?(:index_associations)
+
       true
     end
   end

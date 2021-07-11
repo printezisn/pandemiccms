@@ -36,7 +36,7 @@ RSpec.describe IndexJob, type: :job do
       it 'fails to update the entity index information' do
         described_class.perform_now(entity.class, entity.id)
 
-        expect(described_class).to have_been_enqueued.exactly(:once)
+        expect(described_class).to have_been_enqueued.exactly(:twice)
       end
     end
   end

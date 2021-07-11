@@ -5,6 +5,7 @@ class Category < ApplicationRecord
   SORTABLE_FIELDS = %i[name created_at updated_at].freeze
   TEXT_SEARCHABLE_FIELDS = %i[name].freeze
   TRANSLATABLE_FIELDS = %w[name slug description body].freeze
+  INDEXABLE_FIELDS_FOR_ASSOCIATIONS = %w[name visibility].freeze
 
   include SimpleTextSearchable
   include BoundSortable
@@ -12,6 +13,9 @@ class Category < ApplicationRecord
   include Translatable
   include Parentable
   include Imageable
+
+  after_update :index_associations, if: :should_index_associations?
+  before_destroy :index_associations
 
   belongs_to :client, inverse_of: :categories
   belongs_to :parent, inverse_of: :children, class_name: 'Category', optional: true, counter_cache: :children_count
@@ -28,4 +32,16 @@ class Category < ApplicationRecord
                    length: { maximum: 255 },
                    uniqueness: { case_sensitive: false, scope: [:client_id] }
   validates :slug, length: { maximum: 255 }
+
+  private
+
+  def index_associations
+    category_categorizables.post.each do |category_categorizable|
+      category_categorizable.categorizable.index
+    end
+  end
+
+  def should_index_associations?
+    (previous_changes.keys & INDEXABLE_FIELDS_FOR_ASSOCIATIONS).any?
+  end
 end

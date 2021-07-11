@@ -105,5 +105,8 @@ RSpec.configure do |config|
     index_names.each do |index_name|
       es_client.indices.delete(index: index_name)
     end
+
+    ActiveJob::Base.queue_adapter.enqueued_jobs = []
+    ActiveJob::Base.queue_adapter.performed_jobs = []
   end
 end

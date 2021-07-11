@@ -21,7 +21,7 @@ RSpec.shared_examples 'Categorizable' do
       it 'adds the new category to the model' do
         expect do
           model.update!(should_save_categories: true, category_names: new_category_names)
-        end.to change { model.reload.categories.map(&:name) }.from([initial_category.name]).to(new_category_names)
+        end.to change { model.categories.map(&:name) }.from([initial_category.name]).to(new_category_names)
       end
     end
 
@@ -31,7 +31,7 @@ RSpec.shared_examples 'Categorizable' do
       it 'removes the category from the model' do
         expect do
           model.update!(should_save_categories: true, category_names: new_category_names)
-        end.to change { model.reload.categories.map(&:name) }.from([initial_category.name]).to(new_category_names)
+        end.to change { model.categories.map(&:name) }.from([initial_category.name]).to(new_category_names)
       end
     end
 
@@ -47,7 +47,7 @@ RSpec.shared_examples 'Categorizable' do
       it 'removes the existing category from the model and adds the new one' do
         expect do
           model.update!(should_save_categories: true, category_names: new_category_names)
-        end.to change { model.reload.categories.map(&:name) }.from([initial_category.name]).to(new_category_names)
+        end.to change { model.categories.map(&:name) }.from([initial_category.name]).to(new_category_names)
       end
     end
 
@@ -63,7 +63,7 @@ RSpec.shared_examples 'Categorizable' do
       it 'does not change the categories of the model' do
         expect do
           model.update!(should_save_categories: false, category_names: new_category_names)
-        end.not_to change { model.reload.categories.map(&:name) }.from([initial_category.name])
+        end.not_to change { model.categories.map(&:name) }.from([initial_category.name])
       end
     end
   end

@@ -24,6 +24,28 @@ RSpec.describe Category, type: :model do
   it { is_expected.to validate_uniqueness_of(:name).case_insensitive.scoped_to([:client_id]).with_message('The name is already used.') }
   it { is_expected.to validate_length_of(:slug).is_at_most(255).with_message('The slug may contain up to 255 characters.') }
 
+  describe '#index_associations' do
+    subject(:model) { FactoryBot.create(:category) }
+
+    before { FactoryBot.create(:post, categories: [model]) }
+
+    context 'when the category is updated' do
+      before { model.update!(name: 'New Name') }
+
+      it 'reindexes the associations' do
+        expect(IndexJob).to have_been_enqueued.exactly(:twice)
+      end
+    end
+
+    context 'when the category is destroyed' do
+      before { model.destroy }
+
+      it 'reindexes the associations' do
+        expect(IndexJob).to have_been_enqueued.exactly(:twice)
+      end
+    end
+  end
+
   describe 'concerns' do
     subject(:model) { FactoryBot.create(:category, :with_parent, :with_children) }
 
