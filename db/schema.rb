@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_21_150125) do
+ActiveRecord::Schema.define(version: 2021_07_11_090534) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -250,11 +250,14 @@ ActiveRecord::Schema.define(version: 2021_06_21_150125) do
     t.integer "visibility", limit: 1, default: 0, null: false
     t.datetime "published_at"
     t.bigint "author_id", null: false
+    t.datetime "indexed_at"
+    t.string "index_version"
     t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["client_id", "name"], name: "index_posts_on_client_id_and_name", unique: true
     t.index ["client_id", "status"], name: "index_posts_on_client_id_and_status"
     t.index ["client_id", "template"], name: "index_posts_on_client_id_and_template"
     t.index ["client_id"], name: "index_posts_on_client_id"
+    t.index ["indexed_at"], name: "index_posts_on_indexed_at"
   end
 
   create_table "redirects", charset: "utf8", force: :cascade do |t|
