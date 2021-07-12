@@ -1,0 +1,7 @@
+:schedule:
+  index_all:
+    every: "1m"
+    class: IndexAllJob
+    args: ["", true]
+    description: "Job which indexes all entities to Elasticsearch"
+    enabled: true

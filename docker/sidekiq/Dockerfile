@@ -10,4 +10,4 @@ COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
 COPY . /app
 
-CMD ["bundle", "exec", "sidekiq"]
+CMD ["bundle", "exec", "sidekiq", "-d", "./config/sidekiq.yml"]
