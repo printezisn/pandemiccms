@@ -4,12 +4,12 @@ default: &default
   host: <%= Rails.application.credentials[:mysql][:host] %>
   username: <%= Rails.application.credentials[:mysql][:username] %>
   password: <%= Rails.application.credentials[:mysql][:password] %>
-  database: pandemiccms
   timeout: 5000
   encoding: utf8
 
 development:
   <<: *default
+  database: pandemiccms_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -20,3 +20,4 @@ test:
 
 production:
   <<: *default
+  database: pandemiccms_production

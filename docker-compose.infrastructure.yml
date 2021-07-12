@@ -7,7 +7,7 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_USER: pandemiccms
       MYSQL_PASSWORD: 1234
-      MYSQL_DATABASE: pandemiccms
+      MYSQL_DATABASE: pandemiccms_production
     volumes:
       - mariadb_data:/var/lib/mysql
       - ./docker/mariadb/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
