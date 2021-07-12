@@ -114,6 +114,13 @@
                 <%= _('Clear Cache') %>
               </a>
               <% end %>
+              <%= form_with(url: admin_index_start_path, method: :post) do |f| %>
+              <a class="navbar-item submit-parent-form" href="javascript:void(0)">
+                <i class="fas fa-server"></i>
+                &nbsp;
+                <%= _('Index|Process') %>
+              </a>
+              <% end %>
             </div>
           </div>
           <% end %>

@@ -630,6 +630,9 @@ msgstr "Αν δε το ζητήσατε, παρακαλούμε αγνοήστε
 msgid "Inactive"
 msgstr "Ανενεργός"
 
+msgid "Index|Process"
+msgstr "Ευρετηριοποίηση"
+
 msgid "Kind Regards,"
 msgstr "Φιλικά,"
 
@@ -1151,6 +1154,9 @@ msgstr "Το πρότυπο email μεταφράστηκε με επιτυχία
 
 msgid "The email template was successfully updated."
 msgstr "Το πρότυπο email δημιουργήθηκε με επιτυχία."
+
+msgid "The indexing process was successfully initiated."
+msgstr "Η διαδικασία ευρετηριοποίησης ξεκίνησε με επιτυχία."
 
 msgid "The link was successfully copied"
 msgstr "Ο σύνδεσμος αντιγράφτηκε με επιτυχία"

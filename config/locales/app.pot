@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-21 18:07+0300\n"
-"PO-Revision-Date: 2021-06-21 18:07+0300\n"
+"POT-Creation-Date: 2021-07-12 20:43+0300\n"
+"PO-Revision-Date: 2021-07-12 20:43+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -631,6 +631,9 @@ msgstr ""
 msgid "Inactive"
 msgstr ""
 
+msgid "Index|Process"
+msgstr ""
+
 msgid "Kind Regards,"
 msgstr ""
 
@@ -1151,6 +1154,9 @@ msgid "The email template was successfully translated."
 msgstr ""
 
 msgid "The email template was successfully updated."
+msgstr ""
+
+msgid "The indexing process was successfully initiated."
 msgstr ""
 
 msgid "The link was successfully copied"

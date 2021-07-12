@@ -630,6 +630,9 @@ msgstr "If you didn't request this, please ignore this email."
 msgid "Inactive"
 msgstr "Inactive"
 
+msgid "Index|Process"
+msgstr "Index"
+
 msgid "Kind Regards,"
 msgstr "Kind Regards,"
 
@@ -1151,6 +1154,9 @@ msgstr "The email template was successfully translated."
 
 msgid "The email template was successfully updated."
 msgstr "The email template was successfully created."
+
+msgid "The indexing process was successfully initiated."
+msgstr "The indexing process was successfully initiated."
 
 msgid "The link was successfully copied"
 msgstr "The link was successfully copied"
