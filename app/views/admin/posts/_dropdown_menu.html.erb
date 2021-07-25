@@ -1,6 +1,6 @@
 <div class="dropdown-menu" role="menu">
   <div class="dropdown-content">
-    <a class="dropdown-item" rel="noopener" target="_blank" href="<%= post_path(id: post.id, slug: post.displayed_slug(current_language&.transliterations)) %>">
+    <a class="dropdown-item" rel="noopener" target="_blank" href="<%= post.path(current_language) %>">
       <i class="fas fa-external-link-alt"></i>
       &nbsp;
       <%= _('Preview') %>

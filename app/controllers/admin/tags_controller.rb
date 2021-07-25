@@ -10,6 +10,8 @@ module Admin
     before_action :fetch_templates, only: %i[new edit create update]
     before_action :fetch_visibilities, only: %i[new edit create update]
 
+    decorates_assigned :tags
+
     # GET /tags
     # GET /tags.json
     def index
@@ -103,7 +105,7 @@ module Admin
     private
 
     def fetch_tag
-      @tag = Tag.find_by!(id: params[:id], client_id: current_client.id)
+      @tag = Tag.find_by!(id: params[:id], client_id: current_client.id).decorate
     end
 
     def fetch_translation

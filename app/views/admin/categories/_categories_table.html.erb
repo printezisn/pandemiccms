@@ -40,12 +40,12 @@
     </tr>
   </thead>
   <tbody>
-    <% if @categories.none? %>
+    <% if categories.none? %>
     <tr>
       <td colspan="4"><%= _('No categories were found.') %></td>
     </tr>
     <% else %>
-    <% @categories.each do |category| %>
+    <% categories.each do |category| %>
     <tr>
       <td>
         <a href="<%= admin_category_path(category) %>"><%= category.name %></a>
@@ -69,6 +69,6 @@
 </table>
 <%= paginate @categories %>
 
-<% @categories.each do |category| %>
+<% categories.each do |category| %>
 <%= render partial: 'admin/categories/delete_modal', locals: { category: category } %>
 <% end %>

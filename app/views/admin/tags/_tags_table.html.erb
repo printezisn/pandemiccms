@@ -31,12 +31,12 @@
     </tr>
   </thead>
   <tbody>
-    <% if @tags.none? %>
+    <% if tags.none? %>
     <tr>
       <td colspan="4"><%= _('No tags were found.') %></td>
     </tr>
     <% else %>
-    <% @tags.each do |tag| %>
+    <% tags.each do |tag| %>
     <tr>
       <td>
         <a href="<%= admin_tag_path(tag) %>"><%= tag.name %></a>
@@ -60,6 +60,6 @@
 </table>
 <%= paginate @tags %>
 
-<% @tags.each do |tag| %>
+<% tags.each do |tag| %>
 <%= render partial: 'admin/tags/delete_modal', locals: { tag: tag } %>
 <% end %>

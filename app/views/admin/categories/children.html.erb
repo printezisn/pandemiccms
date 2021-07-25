@@ -17,12 +17,12 @@
     </tr>
   </thead>
   <tbody>
-    <% if @categories.none? %>
+    <% if categories.none? %>
     <tr>
       <td><%= _('No subcategories were found.') %></td>
     </tr>
     <% else %>
-    <% @categories.each do |category| %>
+    <% categories.each do |category| %>
     <tr>
       <td>
         <a href="<%= admin_category_path(category) %>"><%= category.name %></a>
