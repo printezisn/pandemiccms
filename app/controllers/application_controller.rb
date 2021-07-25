@@ -52,7 +52,9 @@ class ApplicationController < ActionController::Base
   end
 
   def layout
-    devise_controller? ? 'admin_auth' : 'application'
+    return 'admin_auth' if devise_controller?
+
+    "templates/#{current_client.template}/layout"
   end
 
   def default_url_options

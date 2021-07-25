@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="<%= current_locale %>">
+
+<head>
+  <title><%= yield :title %></title>
+  <%= yield :meta %>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="icon" href="<%= current_client.image.attached? ? rails_representation_url(current_client.image.variant(resize_to_limit: [32, 32])) : '/favicon.png' %>">
+
+  <%= stylesheet_packs_with_chunks_tag "templates/#{current_client.template}/styles/main", media: 'all' %>
+  <%= javascript_packs_with_chunks_tag "templates/#{current_client.template}/main", defer: true %>
+  <%= yield :scripts %>
+</head>
+
+<body>
+
+</body>
+
+</html>
