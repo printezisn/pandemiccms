@@ -91,3 +91,5 @@ gem 'elasticsearch-persistence', '~> 7.1'
 gem 'htmlentities', '~> 4.3'
 
 gem 'sidekiq-scheduler', '~> 3.1'
+
+gem 'draper', '~> 4.0'
