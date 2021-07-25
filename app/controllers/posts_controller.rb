@@ -4,6 +4,6 @@
 class PostsController < ApplicationController
   # GET /p/1/slug
   def show
-    render "templates/#{current_client.template}/posts/templates/default"
+    render "templates/#{current_client.template}/posts/default"
   end
 end

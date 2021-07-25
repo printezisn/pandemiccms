@@ -4,6 +4,6 @@
 class TagsController < ApplicationController
   # GET /t/1/slug
   def show
-    render "templates/#{current_client.template}/tags/templates/default"
+    render "templates/#{current_client.template}/tags/default"
   end
 end

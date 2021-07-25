@@ -149,8 +149,10 @@ module Admin
     end
 
     def fetch_templates
-      path = Rails.root.join("app/views/templates/#{current_client.template}/posts/templates/*.html.erb")
-      @templates = Dir[path].map { |f| File.basename(f, '.html.erb') }.sort
+      path = Rails.root.join("app/views/templates/#{current_client.template}/posts/*.html.erb")
+      @templates = Dir[path].map { |f| File.basename(f, '.html.erb') }
+                            .reject { |f| f.start_with?('_') }
+                            .sort
     end
 
     def fetch_visibilities

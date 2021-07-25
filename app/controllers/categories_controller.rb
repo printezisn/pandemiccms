@@ -4,6 +4,6 @@
 class CategoriesController < ApplicationController
   # GET /c/1/slug
   def show
-    render "templates/#{current_client.template}/categories/templates/default"
+    render "templates/#{current_client.template}/categories/default"
   end
 end
