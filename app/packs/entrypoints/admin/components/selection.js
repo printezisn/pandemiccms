@@ -27,6 +27,7 @@ const initSelection = async (selection) => {
   const fetchUrl = selection.getAttribute('data-fetchUrl');
   if (fetchUrl) {
     options.ajax = {
+      delay: 500,
       url: fetchUrl,
       data: (params) => ({
         term: params.term,

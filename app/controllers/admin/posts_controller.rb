@@ -20,7 +20,7 @@ module Admin
       user_id = params[:user_id]
       user_id ||= current_admin_user.id if params[:only_mine].present?
 
-      @posts = Post.where(client_id: current_client.id)
+      @posts = Post.includes(:translations).where(client_id: current_client.id)
       @posts = @posts.where(status: params[:status]) if params[:status].present?
       @posts = @posts.joins(:tag_taggables).where(tag_taggables: { tag_id: params[:tag_id] }) if params[:tag_id].present?
       if params[:category_id].present?

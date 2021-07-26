@@ -15,7 +15,7 @@ module Admin
     # GET /categories
     # GET /categories.json
     def index
-      @categories = Category.where(client_id: current_client.id)
+      @categories = Category.includes(:translations).where(client_id: current_client.id)
       @categories = @categories.where(parent_id: params[:parent_id]) if params[:parent_id].present?
 
       @categories = @categories.simple_text_search(params[:search])
@@ -29,7 +29,9 @@ module Admin
     # GET /categories/tree
     # GET /categories/tree.json
     def tree
-      @categories = Category.ordered_by_hierarchy(Category.where(client_id: current_client.id))
+      @categories = Category.ordered_by_hierarchy(
+        Category.includes(:translations).where(client_id: current_client.id)
+      )
     end
 
     # GET /categories/1

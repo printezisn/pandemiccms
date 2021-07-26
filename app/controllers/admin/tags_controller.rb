@@ -15,7 +15,8 @@ module Admin
     # GET /tags
     # GET /tags.json
     def index
-      @tags = Tag.where(client_id: current_client.id)
+      @tags = Tag.includes(:translations)
+                 .where(client_id: current_client.id)
                  .simple_text_search(params[:search])
                  .bound_sort(params[:sort_by], params[:dir])
                  .page(params[:page].to_i)

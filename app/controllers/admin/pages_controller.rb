@@ -19,7 +19,7 @@ module Admin
       user_id = params[:user_id]
       user_id ||= current_admin_user.id if params[:only_mine].present?
 
-      @pages = Page.where(client_id: current_client.id)
+      @pages = Page.includes(:translations).where(client_id: current_client.id)
       @pages = @pages.where(status: params[:status]) if params[:status].present?
       @pages = @pages.joins(:tag_taggables).where(tag_taggables: { tag_id: params[:tag_id] }) if params[:tag_id].present?
       @pages = @pages.where(author_id: user_id) if user_id.present?
@@ -35,7 +35,7 @@ module Admin
     # GET /pages/tree
     # GET /pages/tree.json
     def tree
-      @pages = Page.ordered_by_hierarchy(Page.where(client_id: current_client.id))
+      @pages = Page.ordered_by_hierarchy(Page.includes(:translations).where(client_id: current_client.id))
     end
 
     # GET /pages/search
