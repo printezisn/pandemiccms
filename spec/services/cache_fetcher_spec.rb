@@ -3,10 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe CacheFetcher do
-  subject(:service_call) { described_class.call(client, key) { result } }
+  subject(:service_call) { described_class.call(client, cache_version, key) { result } }
 
   let(:cache_enabled) { true }
   let(:cache_duration) { 180 }
+  let(:cache_version) { '1' }
   let(:key) { 'key' }
   let(:result) { 'result' }
 

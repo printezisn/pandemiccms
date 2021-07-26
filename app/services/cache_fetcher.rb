@@ -2,9 +2,10 @@
 
 # Service class used to fetch objects from the cache or store them if they are not cached
 class CacheFetcher < ApplicationService
-  def initialize(client, key, &block)
+  def initialize(client, cache_version, key, &block)
     super()
     @client = client
+    @cache_version = cache_version
     @key = key
     @block = block
   end
@@ -12,10 +13,14 @@ class CacheFetcher < ApplicationService
   def call
     return block.call unless client.cache_enabled?
 
-    Rails.cache.fetch(key, expires_in: client.cache_duration.minutes, &block)
+    Rails.cache.fetch(
+      [key, client.id, cache_version],
+      expires_in: client.cache_duration.minutes,
+      &block
+    )
   end
 
   private
 
-  attr_reader :client, :key, :block
+  attr_reader :client, :cache_version, :key, :block
 end
