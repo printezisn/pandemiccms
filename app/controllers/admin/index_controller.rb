@@ -2,7 +2,9 @@
 
 module Admin
   # Admin controller for handling search index-related operations
-  class IndexController < BaseSupervisorController
+  class IndexController < BaseController
+    before_action :require_supervisor
+
     # POST /start
     def start
       IndexAllJob.perform_later(current_client.id, false)

@@ -2,9 +2,10 @@
 
 module Admin
   # Admin users controller
-  class UsersController < BaseSupervisorController
+  class UsersController < BaseController
     PAGE_SIZE = 10
 
+    before_action :require_supervisor
     before_action :fetch_user, except: %i[index new create]
     before_action :fetch_roles, only: %i[new create edit update]
     before_action :fetch_translation, only: %i[translate save_translation]

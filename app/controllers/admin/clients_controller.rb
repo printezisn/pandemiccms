@@ -2,7 +2,8 @@
 
 module Admin
   # Clients controller
-  class ClientsController < BaseSupervisorController
+  class ClientsController < BaseController
+    before_action :require_supervisor
     before_action :fetch_client
     before_action :fetch_languages
 

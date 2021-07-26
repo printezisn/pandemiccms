@@ -2,7 +2,8 @@
 
 module Admin
   # Admin email templates controller
-  class EmailTemplatesController < BaseSupervisorController
+  class EmailTemplatesController < BaseController
+    before_action :require_supervisor
     before_action :fetch_email_template, only: %i[show edit update translate save_translation test]
     before_action :fetch_translation, only: %i[translate save_translation]
 

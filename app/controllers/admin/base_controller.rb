@@ -21,5 +21,11 @@ module Admin
         current_client.enabled_languages.detect { |l| l.locale == params[:translation_locale] } ||
         current_client.default_language
     end
+
+    protected
+
+    def require_supervisor
+      redirect_to admin_root_path unless current_admin_user.supervisor?
+    end
   end
 end

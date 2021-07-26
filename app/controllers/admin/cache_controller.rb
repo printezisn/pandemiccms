@@ -2,7 +2,9 @@
 
 module Admin
   # Admin controller for handling cache-related operations
-  class CacheController < BaseSupervisorController
+  class CacheController < BaseController
+    before_action :require_supervisor
+
     # POST /clear
     def clear
       CacheVersionBumper.call(current_client.id)

@@ -27,18 +27,6 @@ class ApplicationController < ActionController::Base
     Time.zone = current_client.time_zone
   end
 
-  def current_client
-    @current_client ||= fetch_current_client
-  end
-
-  def current_language
-    @current_language ||= fetch_current_language
-  end
-
-  def current_locale
-    @current_locale ||= current_language&.locale || I18n.default_locale
-  end
-
   def set_date_time_formats
     Date::DATE_FORMATS[:default] = _('date.formats.default')
     Time::DATE_FORMATS[:default] = _('time.formats.default')
@@ -49,6 +37,18 @@ class ApplicationController < ActionController::Base
 
     sign_out(current_admin_user)
     redirect_to new_admin_user_session_path
+  end
+
+  def current_client
+    @current_client ||= fetch_current_client
+  end
+
+  def current_language
+    @current_language ||= fetch_current_language
+  end
+
+  def current_locale
+    @current_locale ||= current_language&.locale || I18n.default_locale
   end
 
   def layout
