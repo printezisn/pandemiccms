@@ -64,7 +64,9 @@ class ApplicationController < ActionController::Base
   private
 
   def fetch_current_client
-    Client.joins(:client_domains).find_by(client_domains: { domain: request.domain, port: request.port })
+    Client.joins(:client_domains)
+          .find_by(client_domains: { domain: request.domain, port: request.port })
+          .decorate
   end
 
   def fetch_current_language
