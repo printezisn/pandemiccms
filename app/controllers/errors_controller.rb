@@ -3,6 +3,9 @@
 # Controller with custom error handling
 class ErrorsController < ApplicationController
   def not_found
+    redirect = Redirect.find_by(client_id: current_client.id, from: request.original_fullpath)
+    return redirect_to redirect.to, status: :moved_permanently if redirect
+
     @model = CacheFetcher.call(current_client, current_cache_version, 'not_found_page') do
       Page.includes(:translations).find_by(client_id: current_client.id, template: 'not_found')
     end
