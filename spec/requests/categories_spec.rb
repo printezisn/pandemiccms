@@ -37,6 +37,12 @@ RSpec.describe 'categories', type: :request do
     context 'when the slug is different' do
       let(:request) { get category_path(id: model.id, slug: 'different-slug') }
 
+      it 'has a moved_permanently status' do
+        request
+
+        expect(response).to be_moved_permanently
+      end
+
       it 'redirects to the correct slug' do
         request
 

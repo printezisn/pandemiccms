@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
     @translated_model = @model.translate(current_locale, use_defaults: true)
 
     slug = @translated_model.displayed_slug(current_language&.transliterations)
-    return redirect_to category_path(id: @model.id, slug: slug) if slug != params[:slug]
+    return redirect_to category_path(id: @model.id, slug: slug), status: :moved_permanently if slug != params[:slug]
 
     render "templates/#{current_client.template}/categories/#{@model.template}"
   end
