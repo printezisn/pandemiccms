@@ -4,9 +4,7 @@
 class CategoriesController < ApplicationController
   # GET /c/1/slug
   def show
-    @model = CacheFetcher.call(current_client, current_cache_version, ['category', params[:id]]) do
-      Category.includes(:translations).find_by!(client_id: current_client.id, id: params[:id])
-    end
+    @model = Category.includes(:translations).find_by!(client_id: current_client.id, id: params[:id])
     raise ActionController::RoutingError, 'Not Found' if @model.private_visibility? && current_admin_user.nil?
 
     @translated_model = @model.translate(current_locale, use_defaults: true)

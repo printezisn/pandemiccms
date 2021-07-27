@@ -6,9 +6,7 @@ class ErrorsController < ApplicationController
     redirect = Redirect.find_by(client_id: current_client.id, from: request.original_fullpath)
     return redirect_to redirect.to, status: :moved_permanently if redirect
 
-    @model = CacheFetcher.call(current_client, current_cache_version, 'not_found_page') do
-      Page.includes(:translations).find_by(client_id: current_client.id, template: 'not_found')
-    end
+    @model = Page.includes(:translations).find_by(client_id: current_client.id, template: 'not_found')
     if @model.nil? || (@model.draft? && current_admin_user.nil?)
       return render file: Rails.root.join('public/404.html'),
                     layout: false,
@@ -21,9 +19,7 @@ class ErrorsController < ApplicationController
   end
 
   def internal_server_error
-    @model = CacheFetcher.call(current_client, current_cache_version, 'internal_server_error_page') do
-      Page.includes(:translations).find_by(client_id: current_client.id, template: 'internal_error')
-    end
+    @model = Page.includes(:translations).find_by(client_id: current_client.id, template: 'internal_error')
     if @model.nil? || (@model.draft? && current_admin_user.nil?)
       return render file: Rails.root.join('public/500.html'),
                     layout: false,

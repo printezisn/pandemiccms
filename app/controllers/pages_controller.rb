@@ -4,9 +4,7 @@
 class PagesController < ApplicationController
   # GET /
   def index
-    @model = CacheFetcher.call(current_client, current_cache_version, 'index_page') do
-      Page.includes(:translations).find_by!(client_id: current_client.id, template: 'index')
-    end
+    @model = Page.includes(:translations).find_by!(client_id: current_client.id, template: 'index')
     raise ActionController::RoutingError, 'Not Found' if !@model.visible? && current_admin_user.nil?
 
     @translated_model = @model.translate(current_locale, use_defaults: true)
@@ -16,9 +14,7 @@ class PagesController < ApplicationController
 
   # GET /pg/1/slug
   def show
-    @model = CacheFetcher.call(current_client, current_cache_version, ['page', params[:id]]) do
-      Page.includes(:translations).find_by!(client_id: current_client.id, id: params[:id])
-    end
+    @model = Page.includes(:translations).find_by!(client_id: current_client.id, id: params[:id])
     raise ActionController::RoutingError, 'Not Found' if !@model.visible? && current_admin_user.nil?
 
     @translated_model = @model.translate(current_locale, use_defaults: true)

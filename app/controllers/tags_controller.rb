@@ -4,9 +4,7 @@
 class TagsController < ApplicationController
   # GET /t/1/slug
   def show
-    @model = CacheFetcher.call(current_client, current_cache_version, ['tag', params[:id]]) do
-      Tag.includes(:translations).find_by!(client_id: current_client.id, id: params[:id])
-    end
+    @model = Tag.includes(:translations).find_by!(client_id: current_client.id, id: params[:id])
     raise ActionController::RoutingError, 'Not Found' if @model.private_visibility? && current_admin_user.nil?
 
     @translated_model = @model.translate(current_locale, use_defaults: true)
