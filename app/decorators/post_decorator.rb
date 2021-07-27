@@ -5,7 +5,7 @@ class PostDecorator < ApplicationDecorator
   delegate_all
 
   def path(language = nil)
-    locale = language&.locale || I18n.default_locale
+    locale = language&.locale || I18n.locale
 
     Rails.application.routes.url_helpers.post_path(
       id: object.id,
