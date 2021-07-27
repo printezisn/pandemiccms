@@ -125,6 +125,9 @@ Rails.application.routes.draw do
     get 't/:id/:slug', to: 'tags#show', as: :tag
     get 'c/:id/:slug', to: 'categories#show', as: :category
 
+    match '/404', to: 'errors#not_found', via: :all
+    match '/500', to: 'errors#internal_server_error', via: :all
+
     root 'pages#index'
   end
 end

@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   layout :layout
 
   def check_client_existence
-    raise ActionController::RoutingError, 'Not Found' unless current_client
+    render file: Rails.root.join('public/404.html'), layout: false, status: :not_found if current_client.nil?
   end
 
   def set_locale
@@ -70,7 +70,7 @@ class ApplicationController < ActionController::Base
   def fetch_current_client
     Client.joins(:client_domains)
           .find_by(client_domains: { domain: request.domain, port: request.port })
-          .decorate
+          &.decorate
   end
 
   def fetch_current_language
