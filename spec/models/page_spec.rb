@@ -28,6 +28,34 @@ RSpec.describe Page, type: :model do
   it { is_expected.to validate_uniqueness_of(:name).case_insensitive.scoped_to([:client_id]).with_message('The name is already used.') }
   it { is_expected.to validate_length_of(:slug).is_at_most(255).with_message('The slug may contain up to 255 characters.') }
 
+  describe '#visible?' do
+    subject { model.visible? }
+
+    let(:visibility) { :public }
+    let(:status) { :published }
+
+    before do
+      model.visibility = visibility
+      model.status = status
+    end
+
+    context 'when the page does not have public visibility' do
+      let(:visibility) { :private }
+
+      it { is_expected.to be_falsey }
+    end
+
+    context 'when the page is not published' do
+      let(:status) { :draft }
+
+      it { is_expected.to be_falsey }
+    end
+
+    context 'when the page has public visibility and is published' do
+      it { is_expected.to be_truthy }
+    end
+  end
+
   describe 'concerns' do
     subject(:model) { FactoryBot.create(:page, :with_parent, :with_children) }
 

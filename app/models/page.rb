@@ -30,4 +30,8 @@ class Page < ApplicationRecord
                    length: { maximum: 255 },
                    uniqueness: { case_sensitive: false, scope: [:client_id] }
   validates :slug, length: { maximum: 255 }
+
+  def visible?
+    public_visibility? && published?
+  end
 end

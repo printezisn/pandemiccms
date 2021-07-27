@@ -51,6 +51,10 @@ class ApplicationController < ActionController::Base
     @current_locale ||= current_language&.locale || I18n.default_locale
   end
 
+  def current_cache_version
+    @current_cache_version ||= CacheVersionGetter.call(current_client.id)
+  end
+
   def layout
     return 'admin_auth' if devise_controller?
 
