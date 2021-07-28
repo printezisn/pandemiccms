@@ -8,7 +8,8 @@ RSpec.describe 'posts', type: :request do
       :post,
       template: template,
       status: status,
-      visibility: visibility
+      visibility: visibility,
+      published_at: Time.now.utc
     )
   end
 

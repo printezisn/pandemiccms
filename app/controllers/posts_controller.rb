@@ -4,7 +4,7 @@
 class PostsController < ApplicationController
   # GET /p/1/slug
   def show
-    @model = Post.includes(:translations).find_by!(client_id: current_client.id, id: params[:id])
+    @model = Post.includes(:translations).find_by!(client_id: current_client.id, id: params[:id]).decorate
     raise ActionController::RoutingError, 'Not Found' if !@model.visible? && current_admin_user.nil?
 
     @translated_model = @model.translate(current_locale, use_defaults: true)

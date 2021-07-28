@@ -44,6 +44,14 @@ class Post < ApplicationRecord
     update!(indexed_at: nil)
   end
 
+  def first_category
+    @first_category ||= categories.public_visibility.first
+  end
+
+  def translated_tags(locale)
+    @translated_tags ||= tags.includes(:translations).map { |tag| tag.translate(locale, use_defaults: true) }
+  end
+
   private
 
   def update_counters
