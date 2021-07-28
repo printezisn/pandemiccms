@@ -34,4 +34,8 @@ class Page < ApplicationRecord
   def visible?
     public_visibility? && published?
   end
+
+  def translated_tags(locale)
+    @translated_tags ||= tags.includes(:translations).map { |tag| tag.translate(locale, use_defaults: true) }
+  end
 end

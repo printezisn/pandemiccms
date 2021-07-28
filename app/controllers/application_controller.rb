@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_client
   helper_method :current_language
   helper_method :current_locale
+  helper_method :current_cache_version
 
   layout :layout
 
@@ -68,8 +69,10 @@ class ApplicationController < ActionController::Base
   private
 
   def fetch_current_client
+    domain = [request.subdomain, request.domain].map(&:presence).compact.join('.')
+
     Client.joins(:client_domains)
-          .find_by(client_domains: { domain: request.domain, port: request.port })
+          .find_by(client_domains: { domain: domain, port: request.port })
           &.decorate
   end
 
