@@ -1,0 +1,4 @@
+<% content_for :meta do %>
+  <%= render partial: "templates/#{current_client.template}/categories/meta",
+             locals: { model: @model, translated_model: @translated_model } %>
+<% end %>
