@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :client_domain do
-    domain { 'example.com' }
+    domain { 'www.example.com' }
     port { 80 }
   end
 end

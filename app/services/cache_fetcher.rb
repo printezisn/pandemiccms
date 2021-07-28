@@ -15,7 +15,8 @@ class CacheFetcher < ApplicationService
 
     Rails.cache.fetch(
       [key, client.id, cache_version],
-      expires_in: client.cache_duration.minutes,
+      expires_in: client.cache_duration&.minutes,
+      race_condition_ttl: 10.seconds,
       &block
     )
   end

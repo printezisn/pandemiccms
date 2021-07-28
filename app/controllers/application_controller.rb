@@ -69,7 +69,7 @@ class ApplicationController < ActionController::Base
   private
 
   def fetch_current_client
-    domain = [request.subdomain, request.domain].map(&:presence).compact.join('.')
+    domain = [request.subdomain, request.domain].filter_map(&:presence).join('.')
 
     Client.joins(:client_domains)
           .find_by(client_domains: { domain: domain, port: request.port })

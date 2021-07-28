@@ -6,7 +6,8 @@ module ApplicationHelper
     cache_if(
       current_client.cache_enabled?,
       [current_client.id, current_cache_version, key],
-      expires_in: current_client.cache_duration.minutes,
+      expires_in: current_client.cache_duration&.minutes,
+      race_condition_ttl: 10.seconds,
       &block
     )
   end

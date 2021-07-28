@@ -5,7 +5,7 @@
   <meta property="og:description" content="<%= translated_model.description %>" />
   <meta property="og:site_name" content="<%= current_client.name %>" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="<%= category_url(id: model.id, slug: model.displayed_slug(current_language.transliterations)) %>" />
+  <meta property="og:url" content="<%= category_url(id: model.id, slug: model.displayed_slug(current_language&.transliterations)) %>" />
   <% image = model.image.attached? ? model.image : current_client.image %>
   <% if image.attached? %>
   <meta property="og:image" content="<%= rails_blob_url(image) %>" />
