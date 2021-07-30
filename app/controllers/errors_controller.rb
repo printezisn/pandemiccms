@@ -6,7 +6,7 @@ class ErrorsController < ApplicationController
     redirect = Redirect.find_by(client_id: current_client.id, from: request.original_fullpath)
     return redirect_to redirect.to, status: :moved_permanently if redirect
 
-    @model = Page.includes(:translations).find_by(client_id: current_client.id, template: 'not_found').decorate
+    @model = Page.find_by(client_id: current_client.id, template: 'not_found').decorate
     if @model.nil? || (@model.draft? && current_admin_user.nil?)
       return render file: Rails.root.join('public/404.html'),
                     layout: false,
@@ -19,7 +19,7 @@ class ErrorsController < ApplicationController
   end
 
   def internal_server_error
-    @model = Page.includes(:translations).find_by(client_id: current_client.id, template: 'internal_error').decorate
+    @model = Page.find_by(client_id: current_client.id, template: 'internal_error').decorate
     if @model.nil? || (@model.draft? && current_admin_user.nil?)
       return render file: Rails.root.join('public/500.html'),
                     layout: false,
