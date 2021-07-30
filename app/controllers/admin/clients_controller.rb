@@ -15,7 +15,7 @@ module Admin
     def update
       saved = ActiveRecord::Base.transaction do
         language_ids = params.fetch(:language_ids, [])
-        default_language_id = params.fetch(:default_language_id)
+        default_language_id = params.fetch(:default_language_id, nil)
         @client.client_languages.each do |cl|
           raise ActiveRecord::Rollback unless cl.update(
             enabled: language_ids.include?(cl.id.to_s),
