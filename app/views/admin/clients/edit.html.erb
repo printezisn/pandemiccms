@@ -8,7 +8,7 @@
 <% end %>
 
 <%= render "admin/shared/error_messages", resource: @client %>
-<%= form_with(model: @client, url: admin_client_edit_path(@client), method: :patch) do |f| %>
+<%= form_with(model: @client, url: admin_client_edit_path, method: :patch) do |f| %>
 <article class="card">
   <header class="card-header">
     <h1 class="card-header-title">
