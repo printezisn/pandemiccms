@@ -1287,6 +1287,12 @@ msgstr "Το όνομα χρήστη."
 msgid "The user's unconfirmed email address."
 msgstr "Η μη επιβεβαιωμένη διεύθυνση email του χρήστη."
 
+msgid "Top Categories"
+msgstr "Κορυφαίες Κατηγορίες"
+
+msgid "Top Tags"
+msgstr "Κορυφαίες Ετικέτες"
+
 msgid "Translate"
 msgstr "Μετάφραση"
 

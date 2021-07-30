@@ -1287,6 +1287,12 @@ msgstr "The user's name."
 msgid "The user's unconfirmed email address."
 msgstr "The user's unconfirmed email address."
 
+msgid "Top Categories"
+msgstr "Top Categories"
+
+msgid "Top Tags"
+msgstr "Top Tags"
+
 msgid "Translate"
 msgstr "Translate"
 

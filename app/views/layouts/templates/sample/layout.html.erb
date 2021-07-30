@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+  <% client_cache 'Favicon' do %>
   <link rel="icon" href="<%= current_client.image_path_with_default([32, 32], '/favicon.png') %>">
+  <% end %>
 
   <%= stylesheet_packs_with_chunks_tag "templates/#{current_client.template}/styles/main", media: 'all' %>
   <%= javascript_packs_with_chunks_tag "templates/#{current_client.template}/main", defer: true %>
@@ -14,7 +16,57 @@
 </head>
 
 <body>
+  <header>
+    <nav class="navbar is-dark">
+      <div class="container">
+        <div class="navbar-brand">
+          <span class="navbar-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-end">
+            <%= render partial: "layouts/templates/#{current_client.template}/header_menu" %>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <% client_cache ['Hero', current_locale] do %>
+    <% hero_post = Post.find_by(client_id: current_client.id, name: 'Hero')&.translate(current_locale, use_defaults: true) %>
+    <div class="hero is-dark is-medium">
+      <div class="hero-body">
+        <div class="columns is-centered is-vcentered is-multiline is-mobile">
+          <img src="<%= current_client.image_path_with_default([64, 64], '/logo.png') %>" class="pr-3" alt="logo" />
+          <h1 class="title is-1"><%= hero_post&.name %></h1>
+        </div>
+        <div class="subtitle has-text-centered"><%= hero_post&.body&.html_safe %></div>
+      </div>
+    </div>
+    <% end %>
+  </header>
 
+  <main class="container">
+    <div class="columns is-multiline is-mobile pt-5">
+      <div class="column is-two-thirds"><%= yield %></div>
+      <div class="column is-one-third">
+        <%= render partial: "layouts/templates/#{current_client.template}/sidebar" %>
+      </div>
+    </div>
+  </main>
+
+  <% client_cache ['Footer', current_locale] do %>
+  <footer>
+    <div class="container">
+      <%= render partial: "layouts/templates/#{current_client.template}/footer_menu" %>
+      <% footer_post = Post.find_by(client_id: current_client.id, name: 'Footer')&.translate(current_locale, use_defaults: true) %>
+      <% if footer_post %>
+      <div class="content"><%= footer_post.body.gsub('{year}', Time.now.year.to_s).html_safe %></div>
+      <% end %>
+    </div>
+  </footer>
+  <% end %>
 </body>
 
 </html>
