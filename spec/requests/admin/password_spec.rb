@@ -46,7 +46,7 @@ RSpec.describe '/admin/profile', type: :request do
       it 'redirects to the sign in page' do
         request
 
-        expect(response).to redirect_to(admin_root_path(locale: 'en'))
+        expect(response).to redirect_to(admin_root_path)
       end
     end
 

@@ -87,7 +87,7 @@ RSpec.describe '/admin/redirects', type: :request do
       it 'redirects to the created redirect' do
         request
 
-        expect(response).to redirect_to(admin_redirect_path(id: Redirect.last.id, locale: 'en'))
+        expect(response).to redirect_to(admin_redirect_path(id: Redirect.last.id))
       end
     end
 
@@ -135,7 +135,7 @@ RSpec.describe '/admin/redirects', type: :request do
       it 'redirects to the redirect' do
         request
 
-        expect(response).to redirect_to(admin_redirect_path(id: model.id, locale: 'en'))
+        expect(response).to redirect_to(admin_redirect_path(id: model.id))
       end
     end
 
@@ -169,7 +169,7 @@ RSpec.describe '/admin/redirects', type: :request do
     it 'redirects to the redirects list' do
       request
 
-      expect(response).to redirect_to(admin_redirects_path(locale: 'en'))
+      expect(response).to redirect_to(admin_redirects_path)
     end
   end
 end

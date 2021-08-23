@@ -108,7 +108,7 @@ RSpec.describe '/admin/pages', type: :request do
       it 'redirects to the created page' do
         request
 
-        expect(response).to redirect_to(admin_page_path(id: Page.last.id, locale: 'en'))
+        expect(response).to redirect_to(admin_page_path(id: Page.last.id))
       end
 
       it 'bumps cache version' do
@@ -173,7 +173,7 @@ RSpec.describe '/admin/pages', type: :request do
       it 'redirects to the page' do
         request
 
-        expect(response).to redirect_to(admin_page_path(id: model.id, locale: 'en'))
+        expect(response).to redirect_to(admin_page_path(id: model.id))
       end
 
       it 'bumps cache version' do
@@ -216,7 +216,7 @@ RSpec.describe '/admin/pages', type: :request do
     it 'redirects to the pages list' do
       request
 
-      expect(response).to redirect_to(admin_pages_path(locale: 'en'))
+      expect(response).to redirect_to(admin_pages_path)
     end
 
     it 'bumps cache version' do
@@ -266,7 +266,7 @@ RSpec.describe '/admin/pages', type: :request do
       it 'redirects to the page translation' do
         request
 
-        expect(response).to redirect_to(translate_admin_page_path(id: model.id, locale: 'en', translation_locale: 'en'))
+        expect(response).to redirect_to(translate_admin_page_path(id: model.id, translation_locale: 'en'))
       end
 
       it 'bumps cache version' do
@@ -327,7 +327,7 @@ RSpec.describe '/admin/pages', type: :request do
     it 'redirects to the page' do
       request
 
-      expect(response).to redirect_to(admin_page_path(id: model.id, locale: 'en'))
+      expect(response).to redirect_to(admin_page_path(id: model.id))
     end
 
     it 'changes the page status' do

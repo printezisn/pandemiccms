@@ -78,7 +78,7 @@ RSpec.describe '/admin/menu_items', type: :request do
       it 'redirects to the created menu item' do
         request
 
-        expect(response).to redirect_to(admin_menu_menu_item_path(id: MenuItem.last.id, menu_id: menu.id, locale: 'en'))
+        expect(response).to redirect_to(admin_menu_menu_item_path(id: MenuItem.last.id, menu_id: menu.id))
       end
 
       it 'bumps cache version' do
@@ -137,7 +137,7 @@ RSpec.describe '/admin/menu_items', type: :request do
       it 'redirects to the menu item' do
         request
 
-        expect(response).to redirect_to(admin_menu_menu_item_path(id: model.id, menu_id: model.menu_id, locale: 'en'))
+        expect(response).to redirect_to(admin_menu_menu_item_path(id: model.id, menu_id: model.menu_id))
       end
 
       it 'bumps cache version' do
@@ -178,7 +178,7 @@ RSpec.describe '/admin/menu_items', type: :request do
     it 'redirects to the menu items list' do
       request
 
-      expect(response).to redirect_to(admin_menu_path(id: model.menu_id, locale: 'en'))
+      expect(response).to redirect_to(admin_menu_path(id: model.menu_id))
     end
 
     it 'bumps cache version' do
@@ -228,7 +228,7 @@ RSpec.describe '/admin/menu_items', type: :request do
 
         expect(response).to redirect_to(
           translate_admin_menu_menu_item_path(
-            id: model.id, menu_id: model.menu_id, locale: 'en', translation_locale: 'en'
+            id: model.id, menu_id: model.menu_id, translation_locale: 'en'
           )
         )
       end

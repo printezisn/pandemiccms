@@ -21,7 +21,7 @@ RSpec.describe '/admin/index', type: :request do
     it 'redirects to the dashboard page' do
       request
 
-      expect(response).to redirect_to(admin_root_path(locale: 'en'))
+      expect(response).to redirect_to(admin_root_path)
     end
 
     it 'enqueues a job to index all entities' do

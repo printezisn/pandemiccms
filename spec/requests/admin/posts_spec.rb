@@ -92,7 +92,7 @@ RSpec.describe '/admin/posts', type: :request do
       it 'redirects to the created post' do
         request
 
-        expect(response).to redirect_to(admin_post_path(id: Post.last.id, locale: 'en'))
+        expect(response).to redirect_to(admin_post_path(id: Post.last.id))
       end
 
       it 'bumps cache version' do
@@ -154,7 +154,7 @@ RSpec.describe '/admin/posts', type: :request do
       it 'redirects to the post' do
         request
 
-        expect(response).to redirect_to(admin_post_path(id: model.id, locale: 'en'))
+        expect(response).to redirect_to(admin_post_path(id: model.id))
       end
 
       it 'bumps cache version' do
@@ -196,7 +196,7 @@ RSpec.describe '/admin/posts', type: :request do
     it 'redirects to the posts list' do
       request
 
-      expect(response).to redirect_to(admin_posts_path(locale: 'en'))
+      expect(response).to redirect_to(admin_posts_path)
     end
 
     it 'bumps cache version' do
@@ -246,7 +246,7 @@ RSpec.describe '/admin/posts', type: :request do
       it 'redirects to the post translation' do
         request
 
-        expect(response).to redirect_to(translate_admin_post_path(id: model.id, locale: 'en', translation_locale: 'en'))
+        expect(response).to redirect_to(translate_admin_post_path(id: model.id, translation_locale: 'en'))
       end
 
       it 'bumps cache version' do
@@ -307,7 +307,7 @@ RSpec.describe '/admin/posts', type: :request do
     it 'redirects to the post' do
       request
 
-      expect(response).to redirect_to(admin_post_path(id: model.id, locale: 'en'))
+      expect(response).to redirect_to(admin_post_path(id: model.id))
     end
 
     it 'changes the post status' do

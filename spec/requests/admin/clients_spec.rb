@@ -52,7 +52,7 @@ RSpec.describe '/admin/clients', type: :request do
       it 'redirects to the edit page' do
         request
 
-        expect(response).to redirect_to(admin_client_edit_path(locale: 'en'))
+        expect(response).to redirect_to(admin_client_edit_path)
       end
 
       it 'updates the client' do

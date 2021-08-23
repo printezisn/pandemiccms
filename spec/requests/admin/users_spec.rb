@@ -88,7 +88,7 @@ RSpec.describe '/admin/users', type: :request do
       it 'redirects to the created user' do
         request
 
-        expect(response).to redirect_to(admin_user_path(id: AdminUser.last.id, locale: 'en'))
+        expect(response).to redirect_to(admin_user_path(id: AdminUser.last.id))
       end
     end
 
@@ -147,7 +147,7 @@ RSpec.describe '/admin/users', type: :request do
       it 'redirects to the user' do
         request
 
-        expect(response).to redirect_to(admin_user_path(id: admin_user.id, locale: 'en'))
+        expect(response).to redirect_to(admin_user_path(id: admin_user.id))
       end
 
       it 'bumps cache version' do
@@ -189,7 +189,7 @@ RSpec.describe '/admin/users', type: :request do
     it 'redirects to the user' do
       request
 
-      expect(response).to redirect_to(admin_user_path(inactive_user, locale: 'en'))
+      expect(response).to redirect_to(admin_user_path(inactive_user))
     end
   end
 
@@ -207,7 +207,7 @@ RSpec.describe '/admin/users', type: :request do
     it 'redirects to the users list' do
       request
 
-      expect(response).to redirect_to(admin_users_path(locale: 'en'))
+      expect(response).to redirect_to(admin_users_path)
     end
   end
 
@@ -223,7 +223,7 @@ RSpec.describe '/admin/users', type: :request do
     it 'redirects to the user' do
       request
 
-      expect(response).to redirect_to(admin_user_path(admin_user, locale: 'en'))
+      expect(response).to redirect_to(admin_user_path(admin_user))
     end
   end
 
@@ -265,7 +265,7 @@ RSpec.describe '/admin/users', type: :request do
       it 'redirects to the user translation' do
         request
 
-        expect(response).to redirect_to(translate_admin_user_path(id: admin_user.id, locale: 'en', translation_locale: 'en'))
+        expect(response).to redirect_to(translate_admin_user_path(id: admin_user.id, translation_locale: 'en'))
       end
 
       it 'bumps cache version' do

@@ -29,7 +29,7 @@ RSpec.shared_examples 'supervisor page' do
     it 'redirects to the admin dashboard page' do
       request
 
-      expect(response).to redirect_to(admin_root_path(locale: 'en'))
+      expect(response).to redirect_to(admin_root_path)
     end
   end
 end

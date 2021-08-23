@@ -47,7 +47,7 @@ RSpec.describe '/admin/media', type: :request do
     it 'redirects to the index page' do
       request
 
-      expect(response).to redirect_to(admin_media_path(locale: 'en'))
+      expect(response).to redirect_to(admin_media_path)
     end
 
     it 'creates the medium' do
@@ -65,7 +65,7 @@ RSpec.describe '/admin/media', type: :request do
     it 'redirects to the index page' do
       request
 
-      expect(response).to redirect_to(admin_media_path(locale: 'en'))
+      expect(response).to redirect_to(admin_media_path)
     end
 
     it 'destroys the medium' do

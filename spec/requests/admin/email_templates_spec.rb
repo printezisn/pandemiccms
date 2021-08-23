@@ -75,7 +75,7 @@ RSpec.describe '/admin/email_templates', type: :request do
       it 'redirects to the email template' do
         request
 
-        expect(response).to redirect_to(admin_email_template_path(id: model.id, locale: 'en'))
+        expect(response).to redirect_to(admin_email_template_path(id: model.id))
       end
     end
 
@@ -131,7 +131,7 @@ RSpec.describe '/admin/email_templates', type: :request do
       it 'redirects to the email template translation' do
         request
 
-        expect(response).to redirect_to(translate_admin_email_template_path(id: model.id, locale: 'en', translation_locale: 'en'))
+        expect(response).to redirect_to(translate_admin_email_template_path(id: model.id, translation_locale: 'en'))
       end
     end
 
@@ -163,7 +163,7 @@ RSpec.describe '/admin/email_templates', type: :request do
     it 'redirects to the email template' do
       request
 
-      expect(response).to redirect_to(admin_email_template_path(id: model.id, locale: 'en'))
+      expect(response).to redirect_to(admin_email_template_path(id: model.id))
     end
   end
 end

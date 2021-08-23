@@ -91,7 +91,7 @@ RSpec.describe '/admin/tags', type: :request do
       it 'redirects to the created tag' do
         request
 
-        expect(response).to redirect_to(admin_tag_path(id: Tag.last.id, locale: 'en'))
+        expect(response).to redirect_to(admin_tag_path(id: Tag.last.id))
       end
 
       it 'bumps cache version' do
@@ -151,7 +151,7 @@ RSpec.describe '/admin/tags', type: :request do
       it 'redirects to the tag' do
         request
 
-        expect(response).to redirect_to(admin_tag_path(id: model.id, locale: 'en'))
+        expect(response).to redirect_to(admin_tag_path(id: model.id))
       end
 
       it 'bumps cache version' do
@@ -193,7 +193,7 @@ RSpec.describe '/admin/tags', type: :request do
     it 'redirects to the tags list' do
       request
 
-      expect(response).to redirect_to(admin_tags_path(locale: 'en'))
+      expect(response).to redirect_to(admin_tags_path)
     end
 
     it 'bumps cache version' do
@@ -277,7 +277,7 @@ RSpec.describe '/admin/tags', type: :request do
       it 'redirects to the tag translation' do
         request
 
-        expect(response).to redirect_to(translate_admin_tag_path(id: model.id, locale: 'en', translation_locale: 'en'))
+        expect(response).to redirect_to(translate_admin_tag_path(id: model.id, translation_locale: 'en'))
       end
 
       it 'bumps cache version' do

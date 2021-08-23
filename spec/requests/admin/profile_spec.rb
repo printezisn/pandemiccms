@@ -61,7 +61,7 @@ RSpec.describe '/admin/profile', type: :request do
       it 'redirects to the profile' do
         request
 
-        expect(response).to redirect_to(admin_profile_path(locale: 'en'))
+        expect(response).to redirect_to(admin_profile_path)
       end
 
       it 'bumps cache version' do
@@ -127,7 +127,7 @@ RSpec.describe '/admin/profile', type: :request do
       it 'redirects to the profile translation' do
         request
 
-        expect(response).to redirect_to(admin_profile_translate_path(locale: 'en', translation_locale: 'en'))
+        expect(response).to redirect_to(admin_profile_translate_path(translation_locale: 'en'))
       end
 
       it 'bumps cache version' do
