@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
   mount Sidekiq::Web => '/sidekiq'
 
-  scope '(:locale)', constraints: { locale: Regexp.new(FastGettext.default_available_locales.map { |l| "(#{l})" }.join('|')) } do
+  scope '(:locale)', constraints: { locale: Regexp.new(FastGettext.available_locales.map { |l| "(#{l.tr('_', '-')})" }.join('|')) } do
     devise_for :admin_users
 
     namespace :admin do
