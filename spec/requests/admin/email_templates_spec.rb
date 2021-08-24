@@ -116,7 +116,7 @@ RSpec.describe '/admin/email_templates', type: :request do
     end
 
     let(:request) do
-      post translate_admin_email_template_path(model), params: { translation_locale: 'en', email_template: translation_params }
+      post translate_admin_email_template_path(model), params: { translation_locale: 'en-GB', email_template: translation_params }
     end
 
     it_behaves_like 'supervisor page'
@@ -125,13 +125,13 @@ RSpec.describe '/admin/email_templates', type: :request do
       it 'translates the requested email template' do
         request
 
-        expect(model.reload.translate(:en).attributes.slice(*translation_params.keys)).to eq(translation_params)
+        expect(model.reload.translate('en-GB').attributes.slice(*translation_params.keys)).to eq(translation_params)
       end
 
       it 'redirects to the email template translation' do
         request
 
-        expect(response).to redirect_to(translate_admin_email_template_path(id: model.id, translation_locale: 'en'))
+        expect(response).to redirect_to(translate_admin_email_template_path(id: model.id, translation_locale: 'en-GB'))
       end
     end
 

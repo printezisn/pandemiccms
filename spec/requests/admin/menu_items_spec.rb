@@ -209,7 +209,7 @@ RSpec.describe '/admin/menu_items', type: :request do
 
     let(:request) do
       post translate_admin_menu_menu_item_path(id: model.id, menu_id: model.menu_id),
-           params: { translation_locale: 'en', menu_item: translation_params }
+           params: { translation_locale: 'en-GB', menu_item: translation_params }
     end
 
     before { model.save! }
@@ -220,7 +220,7 @@ RSpec.describe '/admin/menu_items', type: :request do
       it 'translates the requested menu item' do
         request
 
-        expect(model.reload.translate(:en).attributes.slice(*translation_params.keys)).to eq(translation_params)
+        expect(model.reload.translate('en-GB').attributes.slice(*translation_params.keys)).to eq(translation_params)
       end
 
       it 'redirects to the menu item translation' do
@@ -228,7 +228,7 @@ RSpec.describe '/admin/menu_items', type: :request do
 
         expect(response).to redirect_to(
           translate_admin_menu_menu_item_path(
-            id: model.id, menu_id: model.menu_id, translation_locale: 'en'
+            id: model.id, menu_id: model.menu_id, translation_locale: 'en-GB'
           )
         )
       end

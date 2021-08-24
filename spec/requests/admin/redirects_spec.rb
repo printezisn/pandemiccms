@@ -114,7 +114,7 @@ RSpec.describe '/admin/redirects', type: :request do
   describe 'PATCH /update' do
     let(:redirect_params) do
       {
-        from: '/en/updated_from',
+        from: '/en-GB/updated_from',
         to: model.to
       }
     end

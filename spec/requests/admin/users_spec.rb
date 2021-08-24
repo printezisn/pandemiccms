@@ -250,7 +250,7 @@ RSpec.describe '/admin/users', type: :request do
     end
 
     let(:request) do
-      post translate_admin_user_path(admin_user), params: { translation_locale: 'en', admin_user: translation_params }
+      post translate_admin_user_path(admin_user), params: { translation_locale: 'en-GB', admin_user: translation_params }
     end
 
     it_behaves_like 'supervisor page'
@@ -259,13 +259,13 @@ RSpec.describe '/admin/users', type: :request do
       it 'translates the requested user' do
         request
 
-        expect(admin_user.reload.translate(:en).attributes.slice(*translation_params.keys)).to eq(translation_params)
+        expect(admin_user.reload.translate('en-GB').attributes.slice(*translation_params.keys)).to eq(translation_params)
       end
 
       it 'redirects to the user translation' do
         request
 
-        expect(response).to redirect_to(translate_admin_user_path(id: admin_user.id, translation_locale: 'en'))
+        expect(response).to redirect_to(translate_admin_user_path(id: admin_user.id, translation_locale: 'en-GB'))
       end
 
       it 'bumps cache version' do

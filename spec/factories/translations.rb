@@ -3,6 +3,6 @@
 FactoryBot.define do
   factory :translation do
     translatable { nil }
-    locale { 'en' }
+    locale { 'en-GB' }
   end
 end

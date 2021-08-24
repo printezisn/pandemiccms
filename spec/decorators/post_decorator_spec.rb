@@ -9,15 +9,15 @@ RSpec.describe PostDecorator, type: :decorator do
     subject { model.path(language) }
 
     context 'when a language is passed' do
-      let(:language) { FactoryBot.create(:language, locale: 'el') }
+      let(:language) { FactoryBot.create(:language, locale: 'el-GR') }
 
-      it { is_expected.to eq("/el/p/#{model.id}/#{model.slug}") }
+      it { is_expected.to eq("/el-GR/p/#{model.id}/#{model.slug}") }
     end
 
     context 'when no language is passed' do
       let(:language) { nil }
 
-      it { is_expected.to eq("/en/p/#{model.id}/#{model.slug}") }
+      it { is_expected.to eq("/en-GB/p/#{model.id}/#{model.slug}") }
     end
   end
 end

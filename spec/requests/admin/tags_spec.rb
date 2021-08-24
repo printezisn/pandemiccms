@@ -260,7 +260,7 @@ RSpec.describe '/admin/tags', type: :request do
     end
 
     let(:request) do
-      post translate_admin_tag_path(model), params: { translation_locale: 'en', tag: translation_params }
+      post translate_admin_tag_path(model), params: { translation_locale: 'en-GB', tag: translation_params }
     end
 
     before { model.save! }
@@ -271,13 +271,13 @@ RSpec.describe '/admin/tags', type: :request do
       it 'translates the requested tag' do
         request
 
-        expect(model.reload.translate(:en).attributes.slice(*translation_params.keys)).to eq(translation_params)
+        expect(model.reload.translate('en-GB').attributes.slice(*translation_params.keys)).to eq(translation_params)
       end
 
       it 'redirects to the tag translation' do
         request
 
-        expect(response).to redirect_to(translate_admin_tag_path(id: model.id, translation_locale: 'en'))
+        expect(response).to redirect_to(translate_admin_tag_path(id: model.id, translation_locale: 'en-GB'))
       end
 
       it 'bumps cache version' do

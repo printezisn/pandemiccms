@@ -9,15 +9,15 @@ RSpec.describe TagDecorator, type: :decorator do
     subject { model.path(language) }
 
     context 'when a language is passed' do
-      let(:language) { FactoryBot.create(:language, locale: 'el') }
+      let(:language) { FactoryBot.create(:language, locale: 'el-GR') }
 
-      it { is_expected.to eq("/el/t/#{model.id}/#{model.slug}") }
+      it { is_expected.to eq("/el-GR/t/#{model.id}/#{model.slug}") }
     end
 
     context 'when no language is passed' do
       let(:language) { nil }
 
-      it { is_expected.to eq("/en/t/#{model.id}/#{model.slug}") }
+      it { is_expected.to eq("/en-GB/t/#{model.id}/#{model.slug}") }
     end
   end
 end

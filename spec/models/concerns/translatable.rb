@@ -11,11 +11,11 @@ RSpec.shared_examples 'Translatable' do
     before { model.assign_attributes(translatable_fields(translation)) }
 
     it 'saves the translation' do
-      expect { model.save_translation(:en) }.to change(model.translations, :count).by(1)
+      expect { model.save_translation('en-GB') }.to change(model.translations, :count).by(1)
     end
 
     it 'does not affect the model' do
-      model.save_translation(:en)
+      model.save_translation('en-GB')
 
       expect(translatable_fields(model)).not_to eq(translatable_fields(translation))
     end
@@ -24,11 +24,11 @@ RSpec.shared_examples 'Translatable' do
   describe '#translate' do
     before do
       model.assign_attributes(translatable_fields(translation))
-      model.save_translation(:en)
+      model.save_translation('en-GB')
     end
 
     it 'translates fields' do
-      expect(translatable_fields(model.translate(:en))).to eq(translatable_fields(translation))
+      expect(translatable_fields(model.translate('en-GB'))).to eq(translatable_fields(translation))
     end
   end
 end

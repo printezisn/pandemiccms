@@ -14,29 +14,29 @@ RSpec.describe PageDecorator, type: :decorator do
       let(:template) { 'index' }
 
       context 'when a language is passed' do
-        let(:language) { FactoryBot.create(:language, locale: 'el') }
+        let(:language) { FactoryBot.create(:language, locale: 'el-GR') }
 
-        it { is_expected.to eq('/el') }
+        it { is_expected.to eq('/el-GR') }
       end
 
       context 'when no language is passed' do
         let(:language) { nil }
 
-        it { is_expected.to eq('/en') }
+        it { is_expected.to eq('/en-GB') }
       end
     end
 
     context 'when the template is not index' do
       context 'when a language is passed' do
-        let(:language) { FactoryBot.create(:language, locale: 'el') }
+        let(:language) { FactoryBot.create(:language, locale: 'el-GR') }
 
-        it { is_expected.to eq("/el/pg/#{model.id}/#{model.slug}") }
+        it { is_expected.to eq("/el-GR/pg/#{model.id}/#{model.slug}") }
       end
 
       context 'when no language is passed' do
         let(:language) { nil }
 
-        it { is_expected.to eq("/en/pg/#{model.id}/#{model.slug}") }
+        it { is_expected.to eq("/en-GB/pg/#{model.id}/#{model.slug}") }
       end
     end
   end

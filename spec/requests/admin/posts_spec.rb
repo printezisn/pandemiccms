@@ -229,7 +229,7 @@ RSpec.describe '/admin/posts', type: :request do
     end
 
     let(:request) do
-      post translate_admin_post_path(model), params: { translation_locale: 'en', post: translation_params }
+      post translate_admin_post_path(model), params: { translation_locale: 'en-GB', post: translation_params }
     end
 
     before { model.save! }
@@ -240,13 +240,13 @@ RSpec.describe '/admin/posts', type: :request do
       it 'translates the requested post' do
         request
 
-        expect(model.reload.translate(:en).attributes.slice(*translation_params.keys)).to eq(translation_params)
+        expect(model.reload.translate('en-GB').attributes.slice(*translation_params.keys)).to eq(translation_params)
       end
 
       it 'redirects to the post translation' do
         request
 
-        expect(response).to redirect_to(translate_admin_post_path(id: model.id, translation_locale: 'en'))
+        expect(response).to redirect_to(translate_admin_post_path(id: model.id, translation_locale: 'en-GB'))
       end
 
       it 'bumps cache version' do

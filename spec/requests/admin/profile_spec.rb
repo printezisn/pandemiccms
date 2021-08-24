@@ -112,7 +112,7 @@ RSpec.describe '/admin/profile', type: :request do
     end
 
     let(:request) do
-      post admin_profile_translate_path, params: { translation_locale: 'en', admin_user: translation_params }
+      post admin_profile_translate_path, params: { translation_locale: 'en-GB', admin_user: translation_params }
     end
 
     it_behaves_like 'admin user page'
@@ -121,13 +121,13 @@ RSpec.describe '/admin/profile', type: :request do
       it 'translates the profile' do
         request
 
-        expect(admin_user.reload.translate(:en).attributes.slice(*translation_params.keys)).to eq(translation_params)
+        expect(admin_user.reload.translate('en-GB').attributes.slice(*translation_params.keys)).to eq(translation_params)
       end
 
       it 'redirects to the profile translation' do
         request
 
-        expect(response).to redirect_to(admin_profile_translate_path(translation_locale: 'en'))
+        expect(response).to redirect_to(admin_profile_translate_path(translation_locale: 'en-GB'))
       end
 
       it 'bumps cache version' do

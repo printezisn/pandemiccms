@@ -265,7 +265,7 @@ RSpec.describe '/admin/categories', type: :request do
     end
 
     let(:request) do
-      post translate_admin_category_path(model), params: { translation_locale: 'en', category: translation_params }
+      post translate_admin_category_path(model), params: { translation_locale: 'en-GB', category: translation_params }
     end
 
     before { model.save! }
@@ -276,13 +276,13 @@ RSpec.describe '/admin/categories', type: :request do
       it 'translates the requested category' do
         request
 
-        expect(model.reload.translate(:en).attributes.slice(*translation_params.keys)).to eq(translation_params)
+        expect(model.reload.translate('en-GB').attributes.slice(*translation_params.keys)).to eq(translation_params)
       end
 
       it 'redirects to the category translation' do
         request
 
-        expect(response).to redirect_to(translate_admin_category_path(id: model.id, translation_locale: 'en'))
+        expect(response).to redirect_to(translate_admin_category_path(id: model.id, translation_locale: 'en-GB'))
       end
 
       it 'bumps cache version' do

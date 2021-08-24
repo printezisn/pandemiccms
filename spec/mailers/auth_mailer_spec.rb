@@ -25,7 +25,7 @@ RSpec.describe AuthMailer, type: :mailer do
       expect(mail.to).to contain_exactly(admin_user.email)
       expect(mail.subject).to eq("Hi #{admin_user.username}!")
       expect(mail.body.encoded).to eq("Hi #{admin_user.username}! Activate your email <a href=\"" \
-                                      "http://www.example.com/en/admin_users/confirmation?confirmation_token=#{token}\">here</a>")
+                                      "http://www.example.com/en-GB/admin_users/confirmation?confirmation_token=#{token}\">here</a>")
     end
   end
 
@@ -51,7 +51,7 @@ RSpec.describe AuthMailer, type: :mailer do
       expect(mail.to).to contain_exactly(admin_user.email)
       expect(mail.subject).to eq("Hi #{admin_user.username}!")
       expect(mail.body.encoded).to eq("Hi #{admin_user.username}! Reset your password <a href=\"" \
-                                      "http://www.example.com/en/admin_users/password/edit?reset_password_token=#{token}\">here</a>")
+                                      "http://www.example.com/en-GB/admin_users/password/edit?reset_password_token=#{token}\">here</a>")
     end
   end
 

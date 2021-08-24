@@ -136,12 +136,12 @@ RSpec.describe Post, type: :model do
     before do
       tags.each.with_index(1) do |tag, index|
         tag.name = "Translated Tag #{index}"
-        tag.save_translation(:en)
+        tag.save_translation('en-GB')
       end
     end
 
     it 'returns the translated tags' do
-      expect(model.translated_tags(:en).map(&:name)).to contain_exactly('Translated Tag 1', 'Translated Tag 2')
+      expect(model.translated_tags('en-GB').map(&:name)).to contain_exactly('Translated Tag 1', 'Translated Tag 2')
     end
   end
 
