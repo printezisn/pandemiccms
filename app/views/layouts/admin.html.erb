@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= current_locale %>">
+<html lang="<%= current_locale.to_s.split('-').first %>">
 
 <head>
   <title><%= yield :title %></title>
