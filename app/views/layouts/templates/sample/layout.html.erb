@@ -20,13 +20,13 @@
     <nav class="navbar is-dark">
       <div class="container">
         <div class="navbar-brand">
-          <span class="navbar-burger">
+          <span class="navbar-burger" data-target="header-menu">
             <span></span>
             <span></span>
             <span></span>
           </span>
         </div>
-        <div class="navbar-menu">
+        <div class="navbar-menu" id="header-menu">
           <div class="navbar-end">
             <%= render partial: "layouts/templates/#{current_client.template}/header_menu" %>
           </div>
@@ -35,11 +35,11 @@
     </nav>
     <% client_cache ['Hero', current_locale] do %>
     <% hero_post = Post.find_by(client_id: current_client.id, name: 'Hero')&.translate(current_locale, use_defaults: true) %>
-    <div class="hero is-dark is-medium">
+    <div class="hero is-dark">
       <div class="hero-body">
-        <div class="columns is-centered is-vcentered is-multiline is-mobile">
+        <div class="columns is-centered is-vcentered is-multiline has-text-centered is-mobile">
           <img src="<%= current_client.image_path_with_default([64, 64], '/logo.png') %>" class="pr-3" alt="logo" />
-          <h1 class="title is-1"><%= hero_post&.name %></h1>
+          <h1 class="title is-2"><%= hero_post&.name %></h1>
         </div>
         <div class="subtitle has-text-centered"><%= hero_post&.body&.html_safe %></div>
       </div>
@@ -47,11 +47,13 @@
     <% end %>
   </header>
 
-  <main class="container">
-    <div class="columns is-multiline is-mobile pt-5">
-      <div class="column is-two-thirds"><%= yield %></div>
-      <div class="column is-one-third">
-        <%= render partial: "layouts/templates/#{current_client.template}/sidebar" %>
+  <main>
+    <div class="container">
+      <div class="columns is-multiline is-mobile pt-5">
+        <div class="column is-two-thirds-desktop is-full-tablet is-full-mobile"><%= yield %></div>
+        <div class="column is-one-third-desktop is-full-tablet is-full-mobile">
+          <%= render partial: "layouts/templates/#{current_client.template}/sidebar" %>
+        </div>
       </div>
     </div>
   </main>

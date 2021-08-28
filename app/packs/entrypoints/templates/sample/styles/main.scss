@@ -4,7 +4,7 @@
 
 html,
 body {
-  background: $grey-lighter;
+  background: $dark;
 }
 
 .navbar.is-dark .navbar-dropdown a.navbar-item.is-active {
@@ -13,7 +13,12 @@ body {
 }
 
 main {
-  background-color: $white-bis;
+  background-color: $grey-lighter;
+
+  > .container {
+    background-color: $white-bis;
+    padding: 0 0.75rem;
+  }
 }
 
 body > footer {
@@ -22,6 +27,7 @@ body > footer {
   position: relative;
   font-size: 0.8rem;
   padding: 1.5rem 1.5rem 6rem;
+  text-align: center;
 
   a,
   a:hover,
