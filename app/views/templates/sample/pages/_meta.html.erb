@@ -1,11 +1,12 @@
 <% client_cache ['PageMeta', current_locale, model.id] do %>
+  <% url = model.template == 'index' ? root_url : page_url(id: model.id, slug: model.displayed_slug(current_language&.transliterations)) %>
   <title><%= translated_model.name %> | <%= current_client.name %></title>
   <meta name="description" content="<%= translated_model.description %>" />
   <meta property="og:title" content="<%= translated_model.name %>" />
   <meta property="og:description" content="<%= translated_model.description %>" />
   <meta property="og:site_name" content="<%= current_client.name %>" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="<%= model.template == 'index' ? root_url : page_url(id: model.id, slug: model.displayed_slug(current_language&.transliterations)) %>" />
+  <meta property="og:url" content="<%= url %>" />
   <% image = model.image.attached? ? model.image : current_client.image %>
   <% if image.attached? %>
   <meta property="og:image" content="<%= rails_blob_url(image) %>" />
@@ -13,4 +14,5 @@
   <meta property="og:image:width" content="<%= image.blob.metadata[:width] %>" />
   <meta property="og:image:height" content="<%= image.blob.metadata[:height] %>" />
   <% end %>
+  <link rel="canonical" href="<%= url %>" />
 <% end %>

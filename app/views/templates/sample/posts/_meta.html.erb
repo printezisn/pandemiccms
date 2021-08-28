@@ -1,11 +1,12 @@
 <% client_cache ['PostMeta', current_locale, model.id] do %>
+  <% url = post_url(id: model.id, slug: model.displayed_slug(current_language&.transliterations)) %>
   <title><%= translated_model.name %> | <%= current_client.name %></title>
   <meta name="description" content="<%= translated_model.description %>" />
   <meta property="og:title" content="<%= translated_model.name %>" />
   <meta property="og:description" content="<%= translated_model.description %>" />
   <meta property="og:site_name" content="<%= current_client.name %>" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="<%= post_url(id: model.id, slug: model.displayed_slug(current_language&.transliterations)) %>" />
+  <meta property="og:url" content="<%= url %>" />
   <% image = model.image.attached? ? model.image : current_client.image %>
   <% if image.attached? %>
   <meta property="og:image" content="<%= rails_blob_url(image) %>" />
@@ -20,4 +21,5 @@
   <% model.translated_tags(current_locale).each do |tag| %>
   <meta property="article:tag" content="<%= tag.name %>" />
   <% end %>
+  <link rel="canonical" href="<%= url %>" />
 <% end %>
