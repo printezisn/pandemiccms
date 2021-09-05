@@ -40,3 +40,15 @@ body > footer {
     text-decoration: underline;
   }
 }
+
+.circular-warning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: $warning;
+  font-weight: bold;
+  font-size: 3rem;
+}
