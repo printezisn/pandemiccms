@@ -34,7 +34,7 @@
       </div>
     </nav>
     <% client_cache ['Hero', current_locale] do %>
-    <% hero_post = Post.find_by(client_id: current_client.id, name: 'Hero')&.translate(current_locale, use_defaults: true) %>
+    <% hero_post = Post.joins(:categories).find_by(client_id: current_client.id, categories: { name: 'Hero' })&.translate(current_locale, use_defaults: true) %>
     <div class="hero is-dark">
       <div class="hero-body">
         <div class="columns is-centered is-vcentered is-multiline has-text-centered is-mobile">
