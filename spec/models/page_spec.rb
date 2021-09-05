@@ -56,23 +56,6 @@ RSpec.describe Page, type: :model do
     end
   end
 
-  describe '#translated_tags' do
-    subject(:model) { FactoryBot.create(:page, author: author, tags: tags) }
-
-    let(:tags) { FactoryBot.create_list(:tag, 2) }
-
-    before do
-      tags.each.with_index(1) do |tag, index|
-        tag.name = "Translated Tag #{index}"
-        tag.save_translation('en-GB')
-      end
-    end
-
-    it 'returns the translated tags' do
-      expect(model.translated_tags('en-GB').map(&:name)).to contain_exactly('Translated Tag 1', 'Translated Tag 2')
-    end
-  end
-
   describe 'concerns' do
     subject(:model) { FactoryBot.create(:page, :with_parent, :with_children) }
 

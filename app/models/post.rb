@@ -48,8 +48,8 @@ class Post < ApplicationRecord
     @first_category ||= categories.public_visibility.first
   end
 
-  def translated_tags(locale)
-    @translated_tags ||= tags.includes(:translations).map { |tag| tag.translate(locale, use_defaults: true) }
+  def visible_tags_with_translations
+    @visible_tags_with_translations ||= tags.includes(:translations).where(visibility: :public).to_a
   end
 
   private

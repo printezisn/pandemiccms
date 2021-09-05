@@ -2,3 +2,16 @@
   <%= render partial: "templates/#{current_client.template}/posts/meta",
              locals: { model: @model, translated_model: @translated_model } %>
 <% end %>
+
+<article>
+  <header class="mb-5">
+    <%= render partial: "templates/#{current_client.template}/posts/breadcrumb",
+               locals: { model: @model, translated_model: @translated_model } %>
+    <h2 class="title is-4"><%= @translated_model.name %></h2>
+  </header>
+  <div class="content mb-5"><%= @translated_model.body.html_safe %></div>
+  <%= render partial: "templates/#{current_client.template}/posts/tags",
+             locals: { model: @model } %>
+  <%= render partial: "templates/#{current_client.template}/posts/author",
+             locals: { model: @model } %>
+</article>

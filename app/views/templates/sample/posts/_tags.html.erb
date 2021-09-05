@@ -1,0 +1,14 @@
+<% client_cache ['PostTags', current_locale, model.id] do %>
+<% if model.visible_tags_with_translations.present? %>
+<footer class="mb-5">
+  <strong><%= _('Tags:') %></strong>
+  <nav class="tag-list">
+    <ul>
+      <% model.visible_tags_with_translations.map(&:decorate).each do |tag| %>
+      <li><a href="<%= tag.path(current_language) %>"><%= tag.translate(current_locale, use_defaults: true).name %></a></li>
+      <% end %>
+    </ul>
+  </nav>
+</footer>
+<% end %>
+<% end %>

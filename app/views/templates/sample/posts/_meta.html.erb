@@ -18,8 +18,8 @@
   <meta property="article:modified_time" content="<%= model.updated_at.iso8601 %>" />
   <meta property="article:author" content="<%= model.author.translate(current_locale, use_defaults: true).full_name %>" />
   <meta property="article:section" content="<%= model.first_category&.translate(current_locale, use_defaults: true)&.name %>" />
-  <% model.translated_tags(current_locale).each do |tag| %>
-  <meta property="article:tag" content="<%= tag.name %>" />
+  <% model.visible_tags_with_translations.each do |tag| %>
+  <meta property="article:tag" content="<%= tag.translate(current_locale, use_defaults: true).name %>" />
   <% end %>
   <link rel="canonical" href="<%= url %>" />
 <% end %>

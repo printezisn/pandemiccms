@@ -1,0 +1,34 @@
+<nav class="breadcrumb has-succeeds-operator is-small">
+  <ul>
+    <% client_cache ['PostBreadcrumb', 'RootPage', current_locale] do %>
+    <% root_page = Page.find_by(client_id: current_client.id, template: 'index', visibility: :public, status: :published)&.decorate %>
+    <% if root_page %>
+    <li>
+      <a href="<%= root_page.path(current_language) %>"><%= root_page.translate(current_locale, use_defaults: true).name %></a>
+    </li>
+    <% end %>
+    <% end %>
+
+    <% category = model.categories.first&.decorate %>
+    <% if category %>
+    <% client_cache ['PostBreadcrumb', 'Category', current_locale, category.id] do %>
+    <%
+      category_ids = category.ancestor_ids + [category.id]
+      ancestors = Category.includes(:translations)
+                          .where(id: category_ids, visibility: :public)
+                          .sort_by { |ancestor| category_ids.index(ancestor.id) }
+                          .map(&:decorate)
+    %>
+    <% ancestors.each do |ancestor| %>
+    <li>
+      <a href="<%= ancestor.path(current_language) %>"><%= ancestor.translate(current_locale, use_defaults: true).name %></a>
+    </li>
+    <% end %>
+    <% end %>
+    <% end %>
+
+    <li class="is-active">
+      <a href="#"><%= translated_model.name %></a>
+    </li>
+  </ul>
+</nav>

@@ -128,20 +128,17 @@ RSpec.describe Post, type: :model do
     end
   end
 
-  describe '#translated_tags' do
+  describe '#visible_tags_with_translations' do
     subject(:model) { FactoryBot.create(:post, author: author, tags: tags) }
 
     let(:tags) { FactoryBot.create_list(:tag, 2) }
 
     before do
-      tags.each.with_index(1) do |tag, index|
-        tag.name = "Translated Tag #{index}"
-        tag.save_translation('en-GB')
-      end
+      tags.first.update!(visibility: :private)
     end
 
     it 'returns the translated tags' do
-      expect(model.translated_tags('en-GB').map(&:name)).to contain_exactly('Translated Tag 1', 'Translated Tag 2')
+      expect(model.visible_tags_with_translations.map(&:name)).to contain_exactly(tags.second.name)
     end
   end
 

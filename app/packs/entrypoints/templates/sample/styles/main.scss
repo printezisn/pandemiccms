@@ -52,3 +52,35 @@ body > footer {
   font-weight: bold;
   font-size: 3rem;
 }
+
+.tag-list {
+  display: inline;
+
+  ul,
+  li {
+    display: inline;
+  }
+
+  li::after {
+    content: ", ";
+  }
+
+  li:last-child::after {
+    content: "";
+  }
+}
+
+.no-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  font-size: 5rem;
+  font-weight: bold;
+  background-color: $grey-lighter;
+
+  &::after {
+    content: "?";
+  }
+}

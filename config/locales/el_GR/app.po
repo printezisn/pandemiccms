@@ -1104,6 +1104,9 @@ msgstr "Ετικέτες του %{client}"
 msgid "Tags | %{client}"
 msgstr "Ετικέτες | %{client}"
 
+msgid "Tags:"
+msgstr "Ετικέτες:"
+
 msgid "Tag|Body"
 msgstr "Κείμενο"
 

@@ -1104,6 +1104,9 @@ msgstr "Tags of %{client}"
 msgid "Tags | %{client}"
 msgstr "Tags | %{client}"
 
+msgid "Tags:"
+msgstr "Tags:"
+
 msgid "Tag|Body"
 msgstr "Body"
 
