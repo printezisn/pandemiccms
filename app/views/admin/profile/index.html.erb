@@ -19,13 +19,13 @@
   <div class="dropdown-menu" role="menu">
     <div class="dropdown-content">
       <% if current_client.enabled_languages.size > 1 %>
-      <a class="dropdown-item" href="<%= admin_profile_translate_path(@user) %>">
+      <a class="dropdown-item" href="<%= admin_profile_translate_path %>">
         <i class="fas fa-globe"></i>
         &nbsp;
         <%= _('Translate') %>
       </a>
       <% end %>
-      <a class="dropdown-item" href="<%= admin_profile_edit_path(@user) %>">
+      <a class="dropdown-item" href="<%= admin_profile_edit_path %>">
         <i class="fas fa-pen"></i>
         &nbsp;
         <%= _('Edit') %>

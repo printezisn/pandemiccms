@@ -58,7 +58,7 @@
         <%= render partial: 'admin/shared/languages_dropdown' %>
       </header>
       <div class="card-content">
-        <%= form_with(model: @translation, url: admin_profile_translate_path(@user, translation_locale: translation_locale), method: :post) do |f| %>
+        <%= form_with(model: @translation, url: admin_profile_translate_path(translation_locale: translation_locale), method: :post) do |f| %>
         <div class="field">
           <%= f.label :first_name, class: 'label' %>
           <div class="control">
