@@ -2,12 +2,12 @@
 <%
   search_page = Page.find_by(client_id: current_client.id, template: 'search')&.decorate
   top_categories = Category.includes(:translations)
-                           .where(client_id: current_client.id, posts_count: 1..)
+                           .where(client_id: current_client.id, posts_count: 1.., visibility: :public)
                            .order(posts_count: :desc)
                            .limit(5)
                            .map(&:decorate)
   top_tags = Tag.includes(:translations)
-                .where(client_id: current_client.id, posts_count: 1..)
+                .where(client_id: current_client.id, posts_count: 1.., visibility: :public)
                 .order(posts_count: :desc)
                 .limit(5)
                 .map(&:decorate)
