@@ -1,53 +1,37 @@
-<% client_cache ['HeaderMenu', current_locale] do %>
-<%
-  menu_items = MenuItem.includes(:translations, :linkable, linkable: :translations)
-                       .joins(:menu)
-                       .where(menus: { client_id: current_client.id, name: 'Header Menu' })
-                       .sort_by(&:sort_order)
-  menu_items = MenuItemDecorator.decorate_collection(menu_items)
-%>
-<% menu_items.reject { |menu_item| menu_item.parent_id }.each do |menu_item| %>
-<%
-  path = menu_item.path(current_language)
-  translated_menu_item = menu_item.translate(current_locale, use_defaults: true)
-  children = menu_items.select { |child| child.parent_id == menu_item.id }.sort_by(&:sort_order)
-%>
-<% if children.any? %>
-<div class="navbar-item has-dropdown is-hoverable">
-  <a href="#" class="navbar-link">
-    <%= translated_menu_item.name %>
-  </a>
-  <div class="navbar-dropdown">
-    <% children.each do |child| %>
-    <%
-      path = child.path(current_language)
-      translated_child = child.translate(current_locale, use_defaults: true)
-    %>
-    <a href="<%= path %>" class="navbar-item"><%= translated_child.name %></a>
+<% client_cache 'HeaderMenu' do %>
+  <% @tp.menu('Header Menu').each do |menu_item, children| %>
+    <% if children.present? %>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a href="#" class="navbar-link">
+          <%= @tp.t(menu_item).name %>
+        </a>
+        <div class="navbar-dropdown">
+          <% children.map(&:first).each do |child| %>
+            <a href="<%= child.path(current_language) %>" class="navbar-item"><%= @tp.t(child).name %></a>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <a href="<%= menu_item.path(current_language) %>" class="navbar-item"><%= @tp.t(menu_item).name %></a>
     <% end %>
-  </div>
-</div>
-<% else %>
-<a href="<%= path %>" class="navbar-item"><%= translated_menu_item.name %></a>
-<% end %>
-<% end %>
+  <% end %>
 <% end %>
 
 <% if current_client.enabled_languages.size > 1 && controller_name != 'errors' %>
-<div class="navbar-item has-dropdown is-hoverable">
-  <a href="#" class="navbar-link">
-    <span class="flag-icon flag-icon-<%= current_language.flag %>"></span>
-    &nbsp;
-    <%= current_language.name %>
-  </a>
-  <div class="navbar-dropdown">
-    <% current_client.enabled_languages.each do |language| %>
-    <a href="<%= @model.path(language) %>" class="navbar-item">
-      <span class="flag-icon flag-icon-<%= language.flag %>"></span>
+  <div class="navbar-item has-dropdown is-hoverable">
+    <a href="#" class="navbar-link">
+      <span class="flag-icon flag-icon-<%= current_language.flag %>"></span>
       &nbsp;
-      <%= language.name %>
+      <%= current_language.name %>
     </a>
-    <% end %>
+    <div class="navbar-dropdown">
+      <% current_client.enabled_languages.each do |language| %>
+        <a href="<%= @model.path(language) %>" class="navbar-item">
+          <span class="flag-icon flag-icon-<%= language.flag %>"></span>
+          &nbsp;
+          <%= language.name %>
+        </a>
+      <% end %>
+    </div>
   </div>
-</div>
 <% end %>

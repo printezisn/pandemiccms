@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :set_time_zone
   before_action :set_date_time_formats
   before_action :verify_current_admin_user
+  before_action :set_theme_presenter
 
   helper_method :current_client
   helper_method :current_language
@@ -38,6 +39,10 @@ class ApplicationController < ActionController::Base
 
     sign_out(current_admin_user)
     redirect_to new_admin_user_session_path
+  end
+
+  def set_theme_presenter
+    @tp = ThemePresenter.new(current_client, current_locale, current_admin_user)
   end
 
   def current_client

@@ -44,14 +44,6 @@ class Post < ApplicationRecord
     update!(indexed_at: nil)
   end
 
-  def first_category
-    @first_category ||= categories.public_visibility.first
-  end
-
-  def visible_tags_with_translations
-    @visible_tags_with_translations ||= tags.includes(:translations).where(visibility: :public).to_a
-  end
-
   private
 
   def update_counters

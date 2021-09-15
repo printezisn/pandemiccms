@@ -1,31 +1,29 @@
 <% content_for :meta do %>
-  <%= render partial: "templates/#{current_client.template}/pages/meta",
-             locals: { model: @model, translated_model: @translated_model } %>
+  <%= render partial: "templates/#{current_client.template}/pages/meta" %>
 <% end %>
 
 <article>
   <header class="mb-5">
     <nav class="breadcrumb has-succeeds-operator is-small">
       <ul>
-        <% client_cache ['PageBreadcrumb', current_locale, @model.ancestor_ids] do %>
-        <%
-          ancestors = Page.includes(:translations)
-                          .where(id: @model.ancestor_ids, visibility: :public, status: :published)
-                          .sort_by { |page| @model.ancestor_ids.index(page.id) }
-                          .map(&:decorate)
-        %>
-        <% ancestors.each do |ancestor| %>
-        <li>
-          <a href="<%= ancestor.path(current_language) %>"><%= ancestor.translate(current_locale, use_defaults: true).name %></a>
-        </li>
-        <% end %>
+        <% client_cache ['PageBreadcrumb', @model.ancestor_ids] do %>
+          <%
+            ancestors = @tp.pages.where(id: @model.ancestor_ids)
+                                 .sort_by { |page| @model.ancestor_ids.index(page.id) }
+                                 .map(&:decorate)
+          %>
+          <% ancestors.each do |ancestor| %>
+            <li>
+              <a href="<%= ancestor.path(current_language) %>"><%= @tp.t(ancestor).name %></a>
+            </li>
+          <% end %>
         <% end %>
         <li class="is-active">
-          <a href="#"><%= @translated_model.name %></a>
+          <a href="#"><%= @tp.t(@model).name %></a>
         </li>
       </ul>
     </nav>
-    <h2 class="title is-4"><%= @translated_model.name %></h2>
+    <h2 class="title is-4"><%= @tp.t(@model).name %></h2>
   </header>
-  <div class="content mb-5"><%= @translated_model.body.html_safe %></div>
+  <div class="content mb-5"><%= @tp.t(@model).body&.html_safe %></div>
 </article>

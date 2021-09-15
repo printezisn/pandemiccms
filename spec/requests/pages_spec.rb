@@ -32,7 +32,7 @@ RSpec.describe 'Pages', type: :request do
       let(:visibility) { 'private' }
 
       it 'raises a routing error' do
-        expect { request }.to raise_error(ActionController::RoutingError)
+        expect { request }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
 
@@ -40,7 +40,7 @@ RSpec.describe 'Pages', type: :request do
       let(:status) { 'draft' }
 
       it 'raises a routing error' do
-        expect { request }.to raise_error(ActionController::RoutingError)
+        expect { request }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
 
@@ -61,7 +61,7 @@ RSpec.describe 'Pages', type: :request do
       let(:visibility) { 'private' }
 
       it 'raises a routing error' do
-        expect { request }.to raise_error(ActionController::RoutingError)
+        expect { request }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
 
@@ -69,7 +69,7 @@ RSpec.describe 'Pages', type: :request do
       let(:status) { 'draft' }
 
       it 'raises a routing error' do
-        expect { request }.to raise_error(ActionController::RoutingError)
+        expect { request }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
 

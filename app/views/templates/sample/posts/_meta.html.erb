@@ -1,25 +1,32 @@
-<% client_cache ['PostMeta', current_locale, model.id] do %>
-  <% url = post_url(id: model.id, slug: model.displayed_slug(current_language&.transliterations)) %>
-  <title><%= translated_model.name %> | <%= current_client.name %></title>
-  <meta name="description" content="<%= translated_model.description %>" />
-  <meta property="og:title" content="<%= translated_model.name %>" />
-  <meta property="og:description" content="<%= translated_model.description %>" />
+<% client_cache ['PostMeta', @model.id] do %>
+  <%
+    url = post_url(id: @model.id, slug: @model.displayed_slug(current_language&.transliterations))
+    @post_category = @tp.categories(post_id: @model.id).first
+    @post_tags = @tp.tags(post_id: @model.id).to_a
+  %>
+
+  <title><%= @tp.t(@model).name %> | <%= current_client.name %></title>
+  <meta name="description" content="<%= @tp.t(@model).description %>" />
+  <meta property="og:title" content="<%= @tp.t(@model).name %>" />
+  <meta property="og:description" content="<%= @tp.t(@model).description %>" />
   <meta property="og:site_name" content="<%= current_client.name %>" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="<%= url %>" />
-  <% image = model.image.attached? ? model.image : current_client.image %>
+  <% image = @model.image.attached? ? @model.image : current_client.image %>
   <% if image.attached? %>
-  <meta property="og:image" content="<%= rails_blob_url(image) %>" />
-  <meta property="og:image:type" content="<%= image.blob.content_type %>" />
-  <meta property="og:image:width" content="<%= image.blob.metadata[:width] %>" />
-  <meta property="og:image:height" content="<%= image.blob.metadata[:height] %>" />
+    <meta property="og:image" content="<%= rails_blob_url(image) %>" />
+    <meta property="og:image:type" content="<%= image.blob.content_type %>" />
+    <meta property="og:image:width" content="<%= image.blob.metadata[:width] %>" />
+    <meta property="og:image:height" content="<%= image.blob.metadata[:height] %>" />
   <% end %>
-  <meta property="article:published_time" content="<%= model.published_at.iso8601 %>" />
-  <meta property="article:modified_time" content="<%= model.updated_at.iso8601 %>" />
-  <meta property="article:author" content="<%= model.author.translate(current_locale, use_defaults: true).full_name %>" />
-  <meta property="article:section" content="<%= model.first_category&.translate(current_locale, use_defaults: true)&.name %>" />
-  <% model.visible_tags_with_translations.each do |tag| %>
-  <meta property="article:tag" content="<%= tag.translate(current_locale, use_defaults: true).name %>" />
+  <meta property="article:published_time" content="<%= @model.published_at.iso8601 %>" />
+  <meta property="article:modified_time" content="<%= @model.updated_at.iso8601 %>" />
+  <meta property="article:author" content="<%= @tp.t(@model.author).full_name %>" />
+  <% if @post_category %>
+    <meta property="article:section" content="<%= @tp.t(@post_category).name %>" />
+  <% end %>
+  <% @post_tags.each do |tag| %>
+    <meta property="article:tag" content="<%= @tp.t(tag).name %>" />
   <% end %>
   <link rel="canonical" href="<%= url %>" />
 <% end %>

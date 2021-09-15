@@ -70,6 +70,23 @@ body > footer {
   }
 }
 
+.footer-menu {
+  display: inline-block;
+
+  ul,
+  li {
+    display: inline;
+  }
+
+  li::after {
+    content: "|";
+  }
+
+  li:last-child::after {
+    content: "";
+  }
+}
+
 .no-image {
   display: flex;
   align-items: center;

@@ -128,34 +128,6 @@ RSpec.describe Post, type: :model do
     end
   end
 
-  describe '#visible_tags_with_translations' do
-    subject(:model) { FactoryBot.create(:post, author: author, tags: tags) }
-
-    let(:tags) { FactoryBot.create_list(:tag, 2) }
-
-    before do
-      tags.first.update!(visibility: :private)
-    end
-
-    it 'returns the translated tags' do
-      expect(model.visible_tags_with_translations.map(&:name)).to contain_exactly(tags.second.name)
-    end
-  end
-
-  describe '#first_category' do
-    subject(:model) { FactoryBot.create(:post, author: author, categories: categories) }
-
-    let(:categories) { FactoryBot.create_list(:category, 2) }
-
-    before do
-      categories.first.update!(visibility: :private)
-    end
-
-    it 'returns the first visible category' do
-      expect(model.first_category.id).to eq(categories.second.id)
-    end
-  end
-
   describe 'concerns' do
     subject(:model) { FactoryBot.create(:post) }
 

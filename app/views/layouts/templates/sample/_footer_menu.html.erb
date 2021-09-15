@@ -1,15 +1,11 @@
-<%
-  menu_items = MenuItem.includes(:translations, :linkable, linkable: :translations)
-                       .joins(:menu)
-                       .where(menus: { client_id: current_client.id, name: 'Footer Menu' })
-                       .sort_by(&:sort_order)
-  menu_items = MenuItemDecorator.decorate_collection(menu_items)
-%>
-<% if menu_items.any? %>
-<nav class="mb-5">
-  <% menu_items.each.with_index do |menu_item, index| %>
-  <%= ' | ' if index.positive? %>
-  <a href="<%= menu_item.path(current_language) %>"><%= menu_item.translate(current_locale, use_defaults: true).name %></a>
-  <% end %>
-</nav>
+<% if @tp.menu('Footer Menu').any? %>
+  <nav class="mb-5 footer-menu">
+    <ul>
+      <% @tp.menu('Footer Menu').each do |menu_item, _| %>
+        <li>
+          <a href="<%= menu_item.path(current_language) %>"><%= @tp.t(menu_item).name %></a>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
 <% end %>

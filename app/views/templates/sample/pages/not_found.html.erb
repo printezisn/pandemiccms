@@ -1,12 +1,11 @@
 <% content_for :meta do %>
-  <%= render partial: "templates/#{current_client.template}/pages/meta",
-             locals: { model: @model, translated_model: @translated_model } %>
+  <%= render partial: "templates/#{current_client.template}/pages/meta" %>
 <% end %>
 
 <article class="has-text-centered">
   <header class="mb-5">
     <span class="circular-warning mx-auto mb-5">404</span>
-    <h2 class="title is-4"><%= @translated_model.name %></h2>
+    <h2 class="title is-4"><%= @tp.t(@model).name %></h2>
   </header>
-  <div class="content mb-5"><%= @translated_model.body.html_safe %></div>
+  <div class="content mb-5"><%= @tp.t(@model).body&.html_safe %></div>
 </article>
