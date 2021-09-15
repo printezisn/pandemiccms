@@ -6,8 +6,8 @@ namespace :pandemiccms do
   desc 'Initializes the necessary data for the application'
   task init: [:environment] do
     languages = [
-      Language.new(locale: 'en', name: 'English', flag: 'gb'),
-      Language.new(locale: 'el', name: 'Ελληνικά', flag: 'gr', transliterations: 'greek')
+      Language.new(locale: 'en-GB', name: 'English', flag: 'gb'),
+      Language.new(locale: 'el-GR', name: 'Ελληνικά', flag: 'gr', transliterations: 'greek')
     ]
 
     languages.each do |language|
