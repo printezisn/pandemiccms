@@ -127,37 +127,7 @@
         </div>
         <div class="navbar-end">
           <% if admin_user_signed_in? %>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link<%= ' is-active' if %w[profile password].include?(controller_name) %>" href="javascript:void(0)">
-              <% if current_admin_user.image.attached? %>
-              <img src="<%= rails_representation_url(current_admin_user.image.variant(resize_to_limit: [32, 32])) %>" alt="<%= current_admin_user.username %>" width="32" height="32" />
-              <% else %>
-              <i class="fas fa-user"></i>
-              <% end %>
-              &nbsp;
-              <%= current_admin_user.username %>
-            </a>
-            <div class="navbar-dropdown is-right">
-              <a class="navbar-item<%= ' is-active' if controller_name == 'profile' %>" href="<%= admin_profile_path %>">
-                <i class="fas fa-user"></i>
-                &nbsp;
-                <%= _('My Profile') %>
-              </a>
-              <a class="navbar-item<%= ' is-active' if controller_name == 'password' %>" href="<%= admin_password_edit_path %>">
-                <i class="fas fa-key"></i>
-                &nbsp;
-                <%= _('Change Password') %>
-              </a>
-              <hr class="navbar-divider" />
-              <%= form_with(url: destroy_admin_user_session_path, method: :delete) do |f| %>
-              <a class="navbar-item submit-parent-form" href="javascript:void(0)">
-                <i class="fas fa-sign-out-alt"></i>
-                &nbsp;
-                <%= _('Sign Out') %>
-              </a>
-              <% end %>
-            </div>
-          </div>
+          <%= render partial: 'layouts/shared/admin_profile_menu', locals: { admin_panel: true } %>
           <% end %>
           <% if current_client.enabled_languages.size > 1 %>
           <div class="navbar-item has-dropdown is-hoverable">

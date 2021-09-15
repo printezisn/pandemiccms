@@ -81,6 +81,9 @@ msgstr "Επιβεβαίωση Ενεργοποίησης"
 msgid "Active"
 msgstr "Ενεργός"
 
+msgid "Admin Panel"
+msgstr "Πίνακας Διαχείρισης"
+
 msgid "Admin dashboard of %{client}"
 msgstr "Ταμπλό διαχείρισης στο %{client}"
 
@@ -218,6 +221,9 @@ msgstr "Συντάκτης"
 
 msgid "Back"
 msgstr "Πίσω"
+
+msgid "Back to Site"
+msgstr "Πίσω στο Site"
 
 msgid "Cache"
 msgstr "Cache"

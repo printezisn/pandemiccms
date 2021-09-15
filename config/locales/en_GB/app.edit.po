@@ -81,6 +81,9 @@ msgstr "Activate Confirmation"
 msgid "Active"
 msgstr "Active"
 
+msgid "Admin Panel"
+msgstr "Admin Panel"
+
 msgid "Admin dashboard of %{client}"
 msgstr "Admin dashboard of %{client}"
 
@@ -218,6 +221,9 @@ msgstr "Author"
 
 msgid "Back"
 msgstr "Back"
+
+msgid "Back to Site"
+msgstr "Back to Site"
 
 msgid "Cache"
 msgstr "Cache"

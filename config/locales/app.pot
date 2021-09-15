@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-05 19:43+0300\n"
-"PO-Revision-Date: 2021-09-05 19:43+0300\n"
+"POT-Creation-Date: 2021-09-15 21:02+0300\n"
+"PO-Revision-Date: 2021-09-15 21:02+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -80,6 +80,9 @@ msgid "Activate Confirmation"
 msgstr ""
 
 msgid "Active"
+msgstr ""
+
+msgid "Admin Panel"
 msgstr ""
 
 msgid "Admin dashboard of %{client}"
@@ -218,6 +221,9 @@ msgid "Author"
 msgstr ""
 
 msgid "Back"
+msgstr ""
+
+msgid "Back to Site"
 msgstr ""
 
 msgid "Cache"

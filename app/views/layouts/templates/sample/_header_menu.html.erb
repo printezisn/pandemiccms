@@ -16,7 +16,9 @@
     <% end %>
   <% end %>
 <% end %>
-
+<% if admin_user_signed_in? %>
+  <%= render partial: 'layouts/shared/admin_profile_menu', locals: { admin_panel: false } %>
+<% end %>
 <% if current_client.enabled_languages.size > 1 && controller_name != 'errors' %>
   <div class="navbar-item has-dropdown is-hoverable">
     <a href="#" class="navbar-link">
