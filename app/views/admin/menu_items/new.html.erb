@@ -1,11 +1,8 @@
 <%
     content_for :title, _('Create Menu Item | %{client}') % { client: current_client.name }
     content_for :description, _('Create new menu item for %{client}') % { client: current_client.name }
+    content_for :scripts, 'admin/pages/menu_items/edit'
 %>
-
-<% content_for :scripts do %>
-<%= javascript_pack_tag 'admin/pages/menu_items/edit', defer: true %>
-<% end %>
 
 <%= render "admin/shared/error_messages", resource: @menu_item %>
 <%= form_with(model: @menu_item, url: admin_menu_menu_items_path(menu_id: @menu.id), method: :post) do |f| %>

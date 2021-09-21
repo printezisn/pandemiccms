@@ -9,8 +9,8 @@
   <%= csp_meta_tag %>
   <link rel="icon" href="<%= current_client.image_path_with_default([32, 32], '/favicon.png') %>">
 
-  <%= stylesheet_packs_with_chunks_tag 'admin_auth/styles/main', media: 'all' %>
-  <%= javascript_packs_with_chunks_tag 'admin_auth/main', defer: true %>
+  <%= stylesheet_pack_tag 'admin_auth/styles/main', *(content_for?(:stylesheets) ? yield(:stylesheets).split(',') : []), media: 'all' %>
+  <%= javascript_pack_tag 'admin_auth/main', *(content_for?(:scripts).split(',') ? yield(:scripts) : []) %>
 </head>
 
 <body>
