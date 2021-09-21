@@ -1,0 +1,27 @@
+<% path = post.path(current_language) %>
+
+<article>
+  <div class="columns">
+    <div class="column is-narrow">
+      <a href="<%= path %>">
+        <% if post.image.attached? %>
+          <img src="<%= rails_representation_url(post.image.variant(resize_to_limit: [200, 200])) %>" width="200" height="200"
+              alt="<%= @tp.t(post).name %>" loading="lazy" />
+        <% else %>
+          <span class="no-image"></span>
+        <% end %>
+      </a>
+    </div>
+    <div class="column">
+      <h3 class="title is-5 mb-3">
+        <a href="<%= path %>"><%= @tp.t(post).name %></a>
+      </h3>
+      <% if post.published_at %>
+        <div class="is-size-7 mb-2 has-text-weight-bold">
+          <time datetime="<%= post.published_at.to_date.to_s(:db) %>"><%= post.published_at.to_date.to_s(:long) %></time>
+        </div>
+      <% end %>
+      <p><%= @tp.t(post).description %></p>
+    </div>
+  </div>
+</article>

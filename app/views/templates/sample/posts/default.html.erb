@@ -7,6 +7,11 @@
     <%= render partial: "templates/#{current_client.template}/posts/breadcrumb" %>
     <h2 class="title is-4"><%= @tp.t(@model).name %></h2>
   </header>
+  <% if @model.published_at %>
+    <div class="is-size-7 mb-5 has-text-weight-bold">
+      <time datetime="<%= @model.published_at.to_date.to_s(:db) %>"><%= @model.published_at.to_date.to_s(:long) %></time>
+    </div>
+  <% end %>
   <div class="content mb-5"><%= @tp.t(@model).body&.html_safe %></div>
   <%= render partial: "templates/#{current_client.template}/posts/tags" %>
   <%= render partial: "templates/#{current_client.template}/posts/author" %>

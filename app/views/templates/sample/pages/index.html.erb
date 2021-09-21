@@ -1,3 +1,22 @@
+<% page = [params[:page].to_i, 1].max %>
+
 <% content_for :meta do %>
-  <%= render partial: "templates/#{current_client.template}/pages/meta" %>
+  <%= render partial: "templates/#{current_client.template}/pages/meta", locals: { page: page } %>
 <% end %>
+
+<article>
+  <header class="is-sr-only">
+    <h2><%= @tp.t(@model).name %></h2>
+  </header>
+
+  <% client_cache ['IndexPagePosts', page] do %>
+    <% posts = @tp.posts.includes(:image_attachment).order(published_at: :desc, id: :desc).page(page).per(10) %>
+    <% posts.map(&:decorate).each do |post| %>
+      <%= render partial: "templates/#{current_client.template}/shared/post", locals: { post: post } %>
+      <hr />
+    <% end %>
+    <footer class="mb-5">
+      <%= paginate posts %>
+    </footer>
+  <% end %>
+</article>
