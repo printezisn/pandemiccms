@@ -7,8 +7,17 @@ const initNavbars = () => {
   });
 };
 
+const initParentFormSubmits = () => {
+  Array.from(document.getElementsByClassName('submit-parent-form')).forEach((el) => {
+    el.addEventListener('click', () => {
+      el.parentElement.submit();
+    });
+  });
+};
+
 const init = () => {
   initNavbars();
+  initParentFormSubmits();
 };
 
 if (document.readyState === 'complete') {
