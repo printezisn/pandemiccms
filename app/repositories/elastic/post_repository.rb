@@ -8,7 +8,7 @@ module Elastic
     attr_reader :client_id, :locale
 
     def index_name
-      "posts_#{client_id}_#{locale}_#{Rails.env}"
+      "posts_#{client_id}_#{locale}_#{Rails.env}".downcase
     end
 
     def klass
