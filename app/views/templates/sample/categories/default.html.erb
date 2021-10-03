@@ -1,3 +1,11 @@
 <% content_for :meta do %>
   <%= render partial: "templates/#{current_client.template}/categories/meta" %>
 <% end %>
+
+<article>
+  <header class="mb-5">
+    <%= render partial: "templates/#{current_client.template}/categories/breadcrumb" %>
+    <h2 class="title is-4"><%= @tp.t(@model).name %></h2>
+  </header>
+  <div class="content mb-5"><%= @tp.t(@model).body&.html_safe %></div>
+</article>

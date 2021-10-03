@@ -1,6 +1,6 @@
 <nav class="breadcrumb has-succeeds-operator is-small">
   <ul>
-    <% client_cache ['PostBreadcrumb', 'RootPage'] do %>
+    <% client_cache ['Breadcrumb', 'RootPage'] do %>
       <% root_page = @tp.pages.find_by(template: 'index')&.decorate %>
       <% if root_page %>
         <li>
@@ -9,10 +9,10 @@
       <% end %>
     <% end %>
 
-    <% client_cache ['PostBreadcrumb', 'PostCategory', @model.id] do %>
+    <% client_cache ['Breadcrumb', 'PostCategory', @model.id] do %>
       <% @post_category = @tp.categories(post_id: @model.id).first unless defined?(@post_category) %>
       <% if @post_category %>
-        <% client_cache ['PostBreadcrumb', 'Category', @post_category.id] do %>
+        <% client_cache ['Breadcrumb', 'Category', @post_category.id] do %>
           <%
             category_ids = @post_category.ancestor_ids + [@post_category.id]
             ancestors = @tp.categories.where(id: category_ids)
