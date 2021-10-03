@@ -37,11 +37,17 @@
       <% if hero_post %>
         <div class="hero is-dark">
           <div class="hero-body">
-            <div class="columns is-centered is-vcentered is-multiline has-text-centered is-mobile">
-              <img src="<%= current_client.image_path_with_default([64, 64], '/logo.png') %>" class="pr-3" alt="logo" />
-              <h1 class="title is-2"><%= hero_post.name %></h1>
+            <div class="columns is-centered is-vcentered is-multiline is-mobile">
+              <a href="<%= root_path %>">
+                <img src="<%= current_client.image_path_with_default([64, 64], '/logo.png') %>" class="pr-3" alt="logo" />
+              </a>
+              <div>
+                <h1 class="title is-2">
+                  <a href="<%= root_path %>"><%= hero_post.name %></a>
+                </h1>
+                <div class="subtitle"><%= hero_post.body&.html_safe %></div>
+              </div>
             </div>
-            <div class="subtitle has-text-centered"><%= hero_post.body&.html_safe %></div>
           </div>
         </div>
       <% end %>
