@@ -56,9 +56,9 @@
         <div class="field">
           <div class="control">
             <% if @page.parent %>
-            <%= f.select :parent_id, [[@page.parent.name, @page.parent.id]], {}, { placeholder: _('None|Parent'), 'data-fetchUrl' => search_admin_pages_path } %>
+            <%= f.select :parent_id, [[@page.parent.name, @page.parent.id]], {}, { placeholder: _('None|Parent'), 'data-fetchUrl' => search_admin_pages_path(excluded_id: @page.id) } %>
             <% else %>
-            <%= f.select :parent_id, [], {}, { placeholder: _('None|Parent'), 'data-fetchUrl' => search_admin_pages_path } %>
+            <%= f.select :parent_id, [], {}, { placeholder: _('None|Parent'), 'data-fetchUrl' => search_admin_pages_path(excluded_id: @page.id) } %>
             <% end %>
           </div>
         </div>

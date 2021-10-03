@@ -95,7 +95,9 @@ module Admin
     # PATCH/PUT /pages
     # PATCH/PUT /pages.json
     def update
-      @page.assign_attributes(page_params)
+      default_params = { parent_id: nil }
+
+      @page.assign_attributes(default_params.merge(page_params))
       @page.should_save_tags = true
 
       result = params[:publish].present? ? @page.publish_now : @page.save
