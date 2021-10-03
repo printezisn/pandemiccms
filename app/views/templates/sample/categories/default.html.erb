@@ -1,5 +1,7 @@
+<% page = [params[:page].to_i, 1].max %>
+
 <% content_for :meta do %>
-  <%= render partial: "templates/#{current_client.template}/categories/meta" %>
+  <%= render partial: "templates/#{current_client.template}/categories/meta", locals: { page: page } %>
 <% end %>
 
 <article>
@@ -8,4 +10,22 @@
     <h2 class="title is-4"><%= @tp.t(@model).name %></h2>
   </header>
   <div class="content mb-5"><%= @tp.t(@model).body&.html_safe %></div>
+
+  <% client_cache ['CategoryPosts', @model.id, page] do %>
+    <%
+      posts = @tp.posts.includes(:image_attachment)
+                       .joins(:category_categorizables)
+                       .where(category_categorizables: { category_id: @model.id })
+                       .order(published_at: :desc, id: :desc)
+                       .page(page)
+                       .per(10)
+    %>
+    <% posts.map(&:decorate).each do |post| %>
+      <%= render partial: "templates/#{current_client.template}/shared/post", locals: { post: post } %>
+      <hr />
+    <% end %>
+    <footer class="mb-5">
+      <%= paginate posts %>
+    </footer>
+  <% end %>
 </article>
