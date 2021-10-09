@@ -1,9 +1,26 @@
-<% page ||= nil %>
-<% client_cache ['PageMeta', @model.id, page] do %>
-  <% url = @model.template == 'index' ? root_url(page: page) : page_url(id: @model.id, slug: @model.displayed_slug(current_language&.transliterations), page: page) %>
-  <title><%= @tp.t(@model).name %> | <%= current_client.name %></title>
+<%
+  page ||= nil
+  term ||= nil
+%>
+
+<% client_cache ['PageMeta', @model.id, page, term] do %>
+  <%
+    title ||= @tp.t(@model).name
+    url = if @model.template == 'index'
+            root_url(page: page)
+          else
+            page_url(
+              id: @model.id,
+              slug: @tp.t(@model).displayed_slug(current_language&.transliterations),
+              page: page,
+              term: term
+            )
+          end
+  %>
+  
+  <title><%= title %> | <%= current_client.name %></title>
   <meta name="description" content="<%= @tp.t(@model).description %>" />
-  <meta property="og:title" content="<%= @tp.t(@model).name %>" />
+  <meta property="og:title" content="<%= title %>" />
   <meta property="og:description" content="<%= @tp.t(@model).description %>" />
   <meta property="og:site_name" content="<%= current_client.name %>" />
   <meta property="og:type" content="website" />

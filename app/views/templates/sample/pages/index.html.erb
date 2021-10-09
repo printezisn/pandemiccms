@@ -8,6 +8,7 @@
   <header class="is-sr-only">
     <h2><%= @tp.t(@model).name %></h2>
   </header>
+  <div class="content mb-5"><%= @tp.t(@model).body&.html_safe %></div>
 
   <% client_cache ['IndexPagePosts', page] do %>
     <% posts = @tp.posts.includes(:image_attachment).order(published_at: :desc, id: :desc).page(page).per(10) %>

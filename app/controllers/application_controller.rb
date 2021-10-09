@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_theme_presenter
-    @tp = ThemePresenter.new(current_client, current_locale, current_admin_user)
+    @tp = ThemePresenter.new(current_client.id, current_locale, current_admin_user)
   end
 
   def current_client

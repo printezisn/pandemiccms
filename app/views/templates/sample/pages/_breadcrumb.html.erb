@@ -1,4 +1,4 @@
- <nav class="breadcrumb has-succeeds-operator is-small">
+<nav class="breadcrumb has-succeeds-operator is-small">
   <ul>
     <% client_cache ['Breadcrumb', 'Page', @model.parent_id] do %>
       <%
@@ -13,7 +13,8 @@
       <% end %>
     <% end %>
     <li class="is-active">
-      <a href="#"><%= @tp.t(@model).name %></a>
+       <% title ||= @tp.t(@model).name %>
+      <a href="#"><%= title %></a>
     </li>
   </ul>
 </nav>
