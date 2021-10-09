@@ -11,12 +11,6 @@
 
   <% client_cache ['IndexPagePosts', page] do %>
     <% posts = @tp.posts.includes(:image_attachment).order(published_at: :desc, id: :desc).page(page).per(10) %>
-    <% posts.map(&:decorate).each do |post| %>
-      <%= render partial: "templates/#{current_client.template}/shared/post", locals: { post: post } %>
-      <hr />
-    <% end %>
-    <footer class="mb-5">
-      <%= paginate posts %>
-    </footer>
+    <%= render partial: "templates/#{current_client.template}/shared/post_list", locals: { posts: posts } %>
   <% end %>
 </article>

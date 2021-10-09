@@ -1,0 +1,14 @@
+<% decorated_posts = posts.map(&:decorate) %>
+<% if decorated_posts.blank? %>
+  <p><%= _('No posts were found.') %></p>
+<% else %>
+  <% decorated_posts.each_with_index do |post, index| %>
+    <% if index > 0 %>
+      <hr />
+    <% end %>
+    <%= render partial: "templates/#{current_client.template}/shared/post", locals: { post: post } %>
+  <% end %>
+  <footer class="mb-5">
+    <%= paginate posts %>
+  </footer>
+<% end %>
