@@ -56,6 +56,22 @@ class ThemePresenter
     @translation[entity.class.name][entity.id] ||= entity.translate(locale, use_defaults: true)
   end
 
+  def search_posts(text, only_visible: true)
+    repo = Elastic::PostRepository.new(client_id, locale)
+
+    matching_post_ids = repo.search(
+      query: {
+        multi_match: {
+          query: text.to_s,
+          fuzziness: 'AUTO'
+        }
+      },
+      size: 1000
+    ).to_a.map { |post| post.attributes['id'] }
+
+    posts(only_visible: only_visible).where(id: matching_post_ids)
+  end
+
   private
 
   def fetch_menu(name)

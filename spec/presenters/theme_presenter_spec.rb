@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require './spec/utils/retry'
 
 describe ThemePresenter, type: :presenter do
   let(:client) { FactoryBot.create(:client) }
@@ -165,5 +166,21 @@ describe ThemePresenter, type: :presenter do
     end
 
     it { is_expected.to eq({ 'name' => post.name, 'description' => translated_description }) }
+  end
+
+  describe '#search' do
+    let(:locale) { 'en' }
+    let(:post) { FactoryBot.create(:post, status: :published) }
+    let(:repo) { Elastic::PostRepository.new(post.client.id, locale) }
+
+    before { repo.save(Elastic::Post.from_entity(locale, post)) }
+
+    it 'returns the matched posts' do
+      matched_post_ids = retry_operation(expected_value: [post.id]) do
+        presenter.search_posts(post.name).map(&:id)
+      end
+
+      expect(matched_post_ids).to contain_exactly(post.id)
+    end
   end
 end
