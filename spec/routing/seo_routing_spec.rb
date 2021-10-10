@@ -7,5 +7,9 @@ RSpec.describe SeoController, type: :routing do
     it 'routes to #sitemap' do
       expect(get: '/sitemap.xml').to route_to('seo#sitemap', format: 'xml')
     end
+
+    it 'routes to #robots' do
+      expect(get: '/robots.txt').to route_to('seo#robots', format: 'text')
+    end
   end
 end

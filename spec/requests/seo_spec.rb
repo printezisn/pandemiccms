@@ -37,4 +37,23 @@ RSpec.describe 'seo', type: :request do
 
     it { is_expected.to eq(expected_result) }
   end
+
+  describe 'GET /robots.txt' do
+    subject { response.body.gsub(/\s+/, '') }
+
+    let(:expected_result) do
+      "User-agent: *
+       Disallow: /admin/
+       Disallow: /sidekiq/
+       Sitemap: http://www.example.com/sitemap.xml".gsub(/\s+/, '')
+    end
+
+    before do
+      FactoryBot.create(:client)
+
+      get robots_path
+    end
+
+    it { is_expected.to eq(expected_result) }
+  end
 end

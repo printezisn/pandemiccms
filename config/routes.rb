@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   available_locales = %w[en-GB el-GR]
 
   get '/sitemap.xml', to: 'seo#sitemap', format: 'xml', as: :sitemap
+  get '/robots.txt', to: 'seo#robots', format: 'text', as: :robots
 
   scope '(:locale)', constraints: { locale: Regexp.new(available_locales.join('|')) } do
     devise_for :admin_users
