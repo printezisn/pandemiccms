@@ -4,8 +4,6 @@
   Pandemic CMS
 </h1>
 
-**This is still a work in progress.**
-
 A CMS with all the necessary components to help you create fast and amazing websites. Why Pandemic CMS ? Because it was created during the pandemic. Here is the core philosophy of it:
 - It provides core entities to help you get started fast, but it's designed to be easily extended with new entities. The core entities are the following:
   - Posts
