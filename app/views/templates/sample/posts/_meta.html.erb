@@ -23,7 +23,6 @@
     <meta property="article:published_time" content="<%= @model.published_at.iso8601 %>" />
   <% end %>
   <meta property="article:modified_time" content="<%= @model.updated_at.iso8601 %>" />
-  <meta property="article:author" content="<%= @tp.t(@model.author).full_name %>" />
   <% if @post_category %>
     <meta property="article:section" content="<%= @tp.t(@post_category).name %>" />
   <% end %>
