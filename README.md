@@ -160,3 +160,7 @@ Sidekiq is responsible for running background jobs.
 
 - `docker-compose.infrastructure.yml`: Spins up all infrastructure services (MariaDB, etc.).
 - `docker-compose.yml`: Spins up all infrastructure services and the application.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
