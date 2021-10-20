@@ -57,6 +57,19 @@ Rails.application.configure do
     port: Rails.application.credentials[:smtp][:port]
   }
 
+  if Rails.application.credentials[:smtp][:username].present? && Rails.application.credentials[:smtp][:password].present?
+    config.action_mailer.smtp_settings.merge!(
+      {
+        address: Rails.application.credentials[:smtp][:host],
+        port: Rails.application.credentials[:smtp][:port],
+        user_name: Rails.application.credentials[:smtp][:username],
+        password: Rails.application.credentials[:smtp][:password],
+        authentication: :plain,
+        enable_starttls_auto: true
+      }
+    )
+  end
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

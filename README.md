@@ -89,6 +89,8 @@ elasticsearch:
 smtp:
   host: <host>
   port: <port>
+  username: <username>
+  password: <password>
 sidekiq_ui:
   username: <username>
   password: <password>
