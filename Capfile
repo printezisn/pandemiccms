@@ -18,7 +18,9 @@ require 'capistrano/scm/git'
 install_plugin Capistrano::SCM::Git
 
 require 'capistrano/rails'
+require 'capistrano/passenger'
 require 'capistrano/rbenv'
+require 'capistrano/sidekiq'
 
 # Include tasks from other gems included in your Gemfile
 #
@@ -41,6 +43,9 @@ require 'capistrano/rbenv'
 
 set :rbenv_type, :user
 set :rbenv_ruby, '3.0.2'
+
+install_plugin Capistrano::Sidekiq
+install_plugin Capistrano::Sidekiq::Systemd
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }

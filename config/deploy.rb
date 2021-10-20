@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # config valid for current version and patch releases of Capistrano
-lock '~> 3.14.1'
+lock '~> 3.16.0'
 
 set :application, 'pandemiccms'
 set :repo_url, 'git@github.com:printezisn/pandemiccms.git'
@@ -10,7 +10,7 @@ set :repo_url, 'git@github.com:printezisn/pandemiccms.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/deploy/pandemiccms'
+set :deploy_to, "/home/deploy/#{fetch :application}"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -29,7 +29,7 @@ set :deploy_to, '/home/deploy/pandemiccms'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'storage', 'public/system', 'public/uploads'
 
 # Default value for default_env is {}
-set :default_env, { path: '$HOME/.nvm/versions/node/v15.6.0/bin:$PATH', node_env: 'production' }
+set :default_env, { path: '$HOME/.nvm/versions/node/v14.13.0/bin:$PATH', node_env: 'production' }
 
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
@@ -39,11 +39,3 @@ set :keep_releases, 5
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
-
-namespace :deploy do
-  after :published, :restart_apache do
-    on roles(:web), wait: 10 do
-      execute 'sudo systemctl restart apache2.service'
-    end
-  end
-end
