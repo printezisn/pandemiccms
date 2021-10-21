@@ -52,7 +52,15 @@ RSpec.describe Client, type: :model do
   describe '#default_url_options' do
     let(:client_domain) { model.client_domains.first }
 
-    it { expect(model.default_url_options).to eq({ host: client_domain.domain, port: client_domain.port }) }
+    context 'when the port is not 443' do
+      it { expect(model.default_url_options).to eq({ host: client_domain.domain, port: client_domain.port, protocol: 'http' }) }
+    end
+
+    context 'when the port is 443' do
+      before { client_domain.update!(port: 443) }
+
+      it { expect(model.default_url_options).to eq({ host: client_domain.domain, port: client_domain.port, protocol: 'https' }) }
+    end
   end
 
   describe '#enabled_client_languages' do

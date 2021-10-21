@@ -30,7 +30,8 @@ class Client < ApplicationRecord
   def default_url_options
     @default_url_options ||= {
       host: client_domains.first.domain,
-      port: client_domains.first.port
+      port: client_domains.first.port,
+      protocol: client_domains.first.port == 443 ? 'https' : 'http'
     }
   end
 
