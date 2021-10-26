@@ -1504,7 +1504,7 @@ msgid "activerecord.errors.models.admin_user.attributes.password.blank"
 msgstr "Ο κωδικός είναι υποχρεωτικός."
 
 msgid "activerecord.errors.models.admin_user.attributes.password.invalid"
-msgstr "Ο κωδικός πρέπει να περιέχει τουλάχιστον 1 μικρό χαρακτήρα, 1 κεφαλαίο, 1 ψηφίο κι 1 σύμβολο."
+msgstr "Ο κωδικός πρέπει να περιέχει τουλάχιστον 1 μικρό χαρακτήρα, 1 κεφαλαίο, 1 ψηφίο κι 1 σύμβολο (@#$!%%*?&^)."
 
 msgid "activerecord.errors.models.admin_user.attributes.password.too_long"
 msgstr "Ο κωδικός μπορεί να περιέχει μέχρι %{count} χαρακτήρες."

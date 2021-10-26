@@ -7,6 +7,11 @@ class AdminUser < ApplicationRecord
   SORTABLE_FIELDS = %i[username email].freeze
   TEXT_SEARCHABLE_FIELDS = %i[username email].freeze
   TRANSLATABLE_FIELDS = %w[first_name middle_name last_name description].freeze
+  PASSWORD_LOWERCASE_CHARS = ('a'..'z').to_a.freeze
+  PASSWORD_UPPERCASE_CHARS = ('A'..'Z').to_a.freeze
+  PASSWORD_DIGITS = ('0'..'9').to_a.freeze
+  PASSWORD_SYMBOLS = ['@', '#', '$', '!', '%', '*', '?', '&', '^'].freeze
+  PASSWORD_REGEX = /\A(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@\#$!%*?&^])[A-Za-z\d@\#$!%*?&^]{8,}\z/
 
   include SimpleTextSearchable
   include BoundSortable
@@ -45,7 +50,7 @@ class AdminUser < ApplicationRecord
                        uniqueness: { case_sensitive: false, scope: [:client_id] },
                        if: -> { username.present? && (new_record? || will_save_change_to_username?) }
   validates :password, presence: true, if: -> { new_record? || password_confirmation.present? }
-  validates :password, format: { with: /\A(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@\#$!%*?&^])[A-Za-z\d@\#$!%*?&^]{8,}\z/ },
+  validates :password, format: { with: PASSWORD_REGEX },
                        length: { maximum: 128 },
                        confirmation: { case_sensitive: false },
                        if: -> { password.present? }
@@ -77,6 +82,25 @@ class AdminUser < ApplicationRecord
 
   def active_for_authentication?
     super && active?
+  end
+
+  def set_random_password
+    password = nil
+
+    loop do
+      chars = [
+        PASSWORD_LOWERCASE_CHARS.shuffle,
+        PASSWORD_UPPERCASE_CHARS.shuffle,
+        PASSWORD_DIGITS.shuffle,
+        PASSWORD_SYMBOLS.shuffle
+      ]
+
+      password = Array.new(20) { chars.sample.sample }.join
+      break if password.match?(PASSWORD_REGEX)
+    end
+
+    self.password = password
+    self.password_confirmation = password
   end
 
   private

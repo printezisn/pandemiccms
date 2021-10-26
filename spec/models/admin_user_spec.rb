@@ -70,7 +70,7 @@ RSpec.describe AdminUser, type: :model do
   it do
     expect(model).not_to allow_value('test1234')
       .for(:password)
-      .with_message('The password must contain at least 1 upper case character, 1 lower case, 1 digit and 1 symbol.')
+      .with_message('The password must contain at least 1 upper case character, 1 lower case, 1 digit and 1 symbol (@#$!%*?&^).')
   end
 
   it do
@@ -184,6 +184,14 @@ RSpec.describe AdminUser, type: :model do
       before { model.should_set_roles = true }
 
       it { expect { model.save! }.to change(model, :supervisor?).from(true).to(false) }
+    end
+  end
+
+  describe '#set_random_password' do
+    before { model.password = nil }
+
+    it 'sets an appropriate random password' do
+      expect { model.set_random_password }.to change(model, :valid?).from(false).to(true)
     end
   end
 

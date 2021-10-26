@@ -1504,7 +1504,7 @@ msgid "activerecord.errors.models.admin_user.attributes.password.blank"
 msgstr "The password is required."
 
 msgid "activerecord.errors.models.admin_user.attributes.password.invalid"
-msgstr "The password must contain at least 1 upper case character, 1 lower case, 1 digit and 1 symbol."
+msgstr "The password must contain at least 1 upper case character, 1 lower case, 1 digit and 1 symbol (@#$!%%*?&^)."
 
 msgid "activerecord.errors.models.admin_user.attributes.password.too_long"
 msgstr "The password may contain up to %{count} characters."
