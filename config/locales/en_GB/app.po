@@ -657,6 +657,9 @@ msgstr "Last Sign In At"
 msgid "Last Sign In IP"
 msgstr "Last Sign In IP"
 
+msgid "Leave empty to set random password"
+msgstr "Leave empty to set random password"
+
 msgid "Link"
 msgstr "Link"
 

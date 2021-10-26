@@ -36,6 +36,7 @@ module Admin
     def create
       @user = AdminUser.new(create_params)
       @user.client_id = current_client.id
+      @user.set_random_password if @user.password.blank?
 
       if @user.save
         redirect_to admin_user_path(@user), notice: _('The user was successfully created.')

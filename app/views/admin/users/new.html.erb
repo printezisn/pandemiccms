@@ -40,25 +40,27 @@
     </div>
     <div class="field is-horizontal">
       <div class="field-label is-normal">
-        <%= f.label :password, class: 'label required-label' %>
+        <%= f.label :password, class: 'label' %>
       </div>
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <%= f.password_field :password, class: 'input', required: true %>
+            <%= f.password_field :password, class: 'input' %>
           </div>
+          <p class="help"><%= _('Leave empty to set random password') %></p>
         </div>
       </div>
     </div>
     <div class="field is-horizontal">
       <div class="field-label is-normal">
-        <%= f.label :password_confirmation, class: 'label required-label' %>
+        <%= f.label :password_confirmation, class: 'label' %>
       </div>
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <%= f.password_field :password_confirmation, class: 'input', required: true %>
+            <%= f.password_field :password_confirmation, class: 'input' %>
           </div>
+          <p class="help"><%= _('Leave empty to set random password') %></p>
         </div>
       </div>
     </div>

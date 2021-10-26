@@ -70,8 +70,6 @@ RSpec.describe '/admin/users', type: :request do
         first_name: admin_user.first_name,
         middle_name: admin_user.middle_name,
         last_name: admin_user.last_name,
-        password: admin_user.password,
-        password_confirmation: admin_user.password,
         description: admin_user.description
       }
     end
@@ -101,8 +99,6 @@ RSpec.describe '/admin/users', type: :request do
           first_name: admin_user.first_name,
           middle_name: admin_user.middle_name,
           last_name: admin_user.last_name,
-          password: admin_user.password,
-          password_confirmation: admin_user.password,
           description: admin_user.description
         }
       end

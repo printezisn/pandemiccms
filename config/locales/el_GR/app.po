@@ -657,6 +657,9 @@ msgstr "Τελευταία Σύνδεση Στις"
 msgid "Last Sign In IP"
 msgstr "IP Τελευταίας Σύνδεσης"
 
+msgid "Leave empty to set random password"
+msgstr "Αφήστε το κενό για να θέσετε τυχαίο κωδικό"
+
 msgid "Link"
 msgstr "Σύνδεσμος"
 
