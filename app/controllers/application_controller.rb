@@ -30,8 +30,8 @@ class ApplicationController < ActionController::Base
   end
 
   def set_date_time_formats
-    Date::DATE_FORMATS[:default] = _('date.formats.default')
-    Time::DATE_FORMATS[:default] = _('time.formats.default')
+    Date::DATE_FORMATS[:default] = I18n.t('date.formats.default')
+    Time::DATE_FORMATS[:default] = I18n.t('time.formats.default')
   end
 
   def verify_current_admin_user

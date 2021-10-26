@@ -9,7 +9,7 @@
   </header>
   <% if @model.published_at %>
     <div class="is-size-7 mb-5 has-text-weight-bold">
-      <time datetime="<%= @model.published_at.to_date.to_s(:db) %>"><%= @model.published_at.to_date.to_s(:long) %></time>
+      <time datetime="<%= @model.published_at.to_date.to_s(:db) %>"><%= I18n.l(@model.published_at.to_date, format: :long) %></time>
     </div>
   <% end %>
   <div class="content mb-5"><%= @tp.t(@model).body&.html_safe %></div>

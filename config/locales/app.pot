@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-26 17:34+0300\n"
-"PO-Revision-Date: 2021-10-26 17:34+0300\n"
+"POT-Creation-Date: 2021-10-26 18:51+0300\n"
+"PO-Revision-Date: 2021-10-26 18:51+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1648,9 +1648,6 @@ msgstr ""
 msgid "activerecord.errors.models.tag.attributes.slug.too_long"
 msgstr ""
 
-msgid "date.formats.default"
-msgstr ""
-
 msgid "devise.confirmations.confirmed"
 msgstr ""
 
@@ -1832,7 +1829,4 @@ msgid "errors.messages.taken_in_past"
 msgstr ""
 
 msgid "parameters"
-msgstr ""
-
-msgid "time.formats.default"
 msgstr ""

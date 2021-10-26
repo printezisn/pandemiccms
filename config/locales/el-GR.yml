@@ -1,0 +1,22 @@
+el-GR:
+  time:
+    formats:
+      default: "%Y-%m-%d %H:%M"
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%e %b, %Y"
+    abbr_month_names:
+      -
+      - Ιαν
+      - Φεβ
+      - Μαρ
+      - Απρ
+      - Μαϊ
+      - Ιουν
+      - Ιουλ
+      - Αυγ
+      - Σεπ
+      - Οκτ
+      - Νοε
+      - Δεκ

@@ -1,0 +1,22 @@
+en-GB:
+  time:
+    formats:
+      default: "%Y-%m-%d %H:%M"
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%e %b, %Y"
+    abbr_month_names:
+      -
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
