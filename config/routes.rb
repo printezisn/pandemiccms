@@ -12,12 +12,10 @@ Rails.application.routes.draw do
   end
   mount Sidekiq::Web => '/sidekiq'
 
-  available_locales = %w[en-GB el-GR]
-
   get '/sitemap.xml', to: 'seo#sitemap', format: 'xml', as: :sitemap
   get '/robots.txt', to: 'seo#robots', format: 'text', as: :robots
 
-  scope '(:locale)', constraints: { locale: Regexp.new(available_locales.join('|')) } do
+  scope '(:locale)', constraints: { locale: Regexp.new(Rails.application.config.available_languages.pluck(:locale).join('|')) } do
     devise_for :admin_users
 
     namespace :admin do
