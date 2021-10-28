@@ -15,6 +15,9 @@ Metrics/AbcSize:
 Metrics/MethodLength:
   Enabled: false
 
+Metrics/ParameterLists:
+  Max: 6
+
 Layout/LineLength:
   Max: 150
 
