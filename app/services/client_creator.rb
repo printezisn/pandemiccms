@@ -48,6 +48,8 @@ class ClientCreator < ApplicationService
       end
 
       admin_user.supervisor!
+
+      "ThemeInitializer::#{template.camelize}".constantize.call(client, admin_user)
     end
 
     errors
