@@ -105,31 +105,20 @@ Also, you can generate different configuration for production by running `EDITOR
 Log in the database system and perform the following actions:
 
 1. Create the development database with `CREATE DATABASE pandemiccms;`.
-1. Create the test database with `CREATE DATABASE pandemiccms_test`.
+1. Create the test database with `CREATE DATABASE pandemiccms_test;`.
+1. Create the production database with `CREATE DATABASE pandemiccms_production;`.
 
 **4. Run the database migrations**:
 
 Run the migrations with `bundle exec rails db:migrate`.
 
-**5. Add initial database data**:
+**5. Create a client**:
 
-Run `bundle exec rake pandemiccms:init`. This will add the initial data to the database.
+Run `bundle exec rake pandemiccms:create_client -- -n CLIENT_NAME -t TEMPLATE -d DOMAIN:PORT -s SUPERVISOR_EMAIL` to create a client.
 
-**6. Create a client**:
-
-Run `bundle exec rake pandemiccms:create_client -- -n CLIENT_NAME -t TEMPLATE -d DOMAIN:PORT` to create a client.
-
-For example: `bundle exec rake pandemiccms:create_client -- -n "Pandemic CMS" -t sample -d mysite:80 -d localhost:3000`.
+For example: `bundle exec rake pandemiccms:create_client -- -n "Pandemic CMS" -t sample -d mysite:80 -d localhost:3000 -s admin@test.com`.
 
 For more information, you can run `bundle exec rake pandemiccms:create_client -- -h` for help.
-
-**7. Create a supervisor user**:
-
-Run `bundle exec rake pandemiccms:create_supervisor -- -u USERNAME -e EMAIL -p PASSWORD -c CLIENT_NAME` to create a supervisor user.
-
-For example: `bundle exec rake pandemiccms:create_supervisor -- -u username -e me@email.com -p mypass -c "Pandemic CMS"`.
-
-For more information, you can run `bundle exec rake pandemiccms:create_supervisor -- -h` for help.
 
 ## How to run
 
@@ -154,9 +143,7 @@ Sidekiq is responsible for running background jobs.
 
 ## Rake tasks
 
-1. `bundle exec rake pandemiccms:init`: Initializes the necessary data for the application.
-1. `bundle exec rake pandemiccms:create_client -- [OPTIONS]`: Creates a new client.
-1. `bundle exec rake pandemiccms:create_supervisor -- [OPTIONS]`: Creates a new supervisor user.
+`bundle exec rake pandemiccms:create_client -- [OPTIONS]`: Creates a new client.
 
 ## Docker compose
 
