@@ -1026,6 +1026,9 @@ msgstr "Role"
 msgid "Search"
 msgstr "Search"
 
+msgid "Search results for \"%<term>s\""
+msgstr "Search results for \"%<term>s\""
+
 msgid "Search..."
 msgstr "Search..."
 

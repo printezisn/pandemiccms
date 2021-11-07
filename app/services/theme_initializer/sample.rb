@@ -13,7 +13,7 @@ module ThemeInitializer
     def call
       home_page = Page.create!(name: 'Home Page', template: 'index', client_id: client.id, author_id: admin_user.id,
                                status: :published, published_at: Time.now.utc)
-      Page.create!(name: 'Search results for "%<term>s"', template: 'search', client_id: client.id, author_id: admin_user.id,
+      Page.create!(name: 'Search', template: 'search', client_id: client.id, author_id: admin_user.id,
                    parent_id: home_page.id, status: :published, published_at: Time.now.utc)
       Page.create!(name: 'Page not found', template: 'not_found', client_id: client.id, author_id: admin_user.id,
                    parent_id: home_page.id, body: 'The page you requested was not found.', status: :published, published_at: Time.now.utc)

@@ -1,17 +1,16 @@
 <%
   page = [params[:page].to_i, 1].max
-  title = @tp.t(@model).name % { term: params[:term] }
 %>
 
 <% content_for :meta do %>
-  <%= render partial: "templates/#{current_client.template}/pages/meta", locals: { page: page, title: title, term: params[:term].to_s } %>
+  <%= render partial: "templates/#{current_client.template}/pages/meta", locals: { page: page, term: params[:term].to_s } %>
 <% end %>
 
 <article>
   <header class="mb-5">
-    <%= render partial: "templates/#{current_client.template}/pages/breadcrumb", locals: { title: title } %>
+    <%= render partial: "templates/#{current_client.template}/pages/breadcrumb" %>
     <h2 class="is-sr-only"><%= @tp.t(@model).name %></h2>
-    <p class="title is-4"><%= title %></p>
+    <p class="title is-4"><%= _('Search results for "%<term>s"') % { term: params[:term] } %></p>
   </header>
   <div class="content mb-5"><%= @tp.t(@model).body&.html_safe %></div>
 

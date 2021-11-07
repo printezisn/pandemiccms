@@ -1026,6 +1026,9 @@ msgstr "Ρόλος"
 msgid "Search"
 msgstr "Αναζήτηση"
 
+msgid "Search results for \"%<term>s\""
+msgstr "Αποτελέσματα αναζήτησης για \"%<term>s\""
+
 msgid "Search..."
 msgstr "Αναζήτηση..."
 
