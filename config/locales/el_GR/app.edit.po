@@ -225,6 +225,9 @@ msgstr "Πίσω"
 msgid "Back to Site"
 msgstr "Πίσω στο Site"
 
+msgid "CSS Class"
+msgstr "CSS Κλάση"
+
 msgid "Cache"
 msgstr "Cache"
 
@@ -696,11 +699,17 @@ msgstr "Λεπτομέρειες Στοιχείου Μενού | %{client}"
 msgid "Menu Items"
 msgstr "Στοιχεία Μενού"
 
+msgid "MenuItem|Css class"
+msgstr "CSS Κλάση"
+
 msgid "MenuItem|External url"
 msgstr "Εξωτερικός Σύνδεσμος"
 
 msgid "MenuItem|Name"
 msgstr "Όνομα"
+
+msgid "MenuItem|Open in new window"
+msgstr "Άνοιγμα σε νέο παράθυρο"
 
 msgid "MenuItem|Parent"
 msgstr "Γονέας"
@@ -833,6 +842,9 @@ msgstr "Μόνο δημοσιευμένες"
 
 msgid "Only published|Posts"
 msgstr "Μόνο δημοσιευμένα"
+
+msgid "Open in new window"
+msgstr "Άνοιγμα σε νέο παράθυρο"
 
 msgid "Page"
 msgstr "Σελίδα"

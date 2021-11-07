@@ -90,6 +90,26 @@
     </div>
     <div class="field is-horizontal">
       <div class="field-label">
+        <span class="label"><%= _('CSS Class') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @menu_item.css_class %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Open in new window') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @menu_item.open_in_new_window? ? _('Yes') : _('No') %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
         <span class="label"><%= _('Created At') %></span>
       </div>
       <div class="field-body">

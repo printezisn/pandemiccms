@@ -3,7 +3,12 @@
     <ul>
       <% @tp.menu('Footer Menu').each do |menu_item, _| %>
         <li>
-          <a href="<%= menu_item.path(current_language) %>"><%= @tp.t(menu_item).name %></a>
+          <a href="<%= menu_item.path(current_language) %>" target="<%= '_blank' if menu_item.open_in_new_window? %>">
+            <% if menu_item.css_class.present? %>
+              <i class="<%= menu_item.css_class %>"></i>
+            <% end %>
+            <%= @tp.t(menu_item).name %>
+          </a>
         </li>
       <% end %>
     </ul>

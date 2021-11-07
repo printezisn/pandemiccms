@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_11_090534) do
+ActiveRecord::Schema.define(version: 2021_11_07_110517) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -189,6 +189,8 @@ ActiveRecord::Schema.define(version: 2021_07_11_090534) do
     t.integer "children_count", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "css_class"
+    t.boolean "open_in_new_window", default: false
     t.index ["linkable_type", "linkable_id"], name: "index_menu_items_on_linkable"
     t.index ["menu_id"], name: "index_menu_items_on_menu_id"
     t.index ["parent_id"], name: "index_menu_items_on_parent_id"

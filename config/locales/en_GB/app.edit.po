@@ -225,6 +225,9 @@ msgstr "Back"
 msgid "Back to Site"
 msgstr "Back to Site"
 
+msgid "CSS Class"
+msgstr "CSS Class"
+
 msgid "Cache"
 msgstr "Cache"
 
@@ -696,11 +699,17 @@ msgstr "Menu Item Details | %{client}"
 msgid "Menu Items"
 msgstr "Menu Items"
 
+msgid "MenuItem|Css class"
+msgstr "CSS Class"
+
 msgid "MenuItem|External url"
 msgstr "External URL"
 
 msgid "MenuItem|Name"
 msgstr "Name"
+
+msgid "MenuItem|Open in new window"
+msgstr "Open in new window"
 
 msgid "MenuItem|Parent"
 msgstr "Parent"
@@ -833,6 +842,9 @@ msgstr "Only published"
 
 msgid "Only published|Posts"
 msgstr "Only published"
+
+msgid "Open in new window"
+msgstr "Open in new window"
 
 msgid "Page"
 msgstr "Page"
