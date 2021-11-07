@@ -4,4 +4,8 @@
 
 <p><%= link_to _('Confirm my account'), confirmation_url(@resource, @resource.client.default_url_options.merge(confirmation_token: @token, locale: I18n.locale)) %></p>
 
+<p><%= _('Afterwards, if you don\'t already have a password, you can create a new one by following the instructions in the link below:') %></p>
+
+<p><%= link_to _('Reset my password'), new_password_url(@resource, @resource.client.default_url_options.merge(locale: I18n.locale)) %></p>
+
 <p><%= _('Kind Regards,') %><br /><%= _('The administration of %{client}') % { client: @resource.client.name } %></p>

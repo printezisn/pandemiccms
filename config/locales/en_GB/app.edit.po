@@ -168,6 +168,9 @@ msgstr "Unconfirmed Email"
 msgid "AdminUser|Username"
 msgstr "Username"
 
+msgid "Afterwards, if you don't already have a password, you can create a new one by following the instructions in the link below:"
+msgstr "Afterwards, if you don't already have a password, you can create a new one by following the instructions in the link below:"
+
 msgid "All pages"
 msgstr "All pages"
 
@@ -1028,6 +1031,9 @@ msgstr "Reset Password Instructions"
 
 msgid "Reset Password | %{client}"
 msgstr "Reset Password | %{client}"
+
+msgid "Reset my password"
+msgstr "Reset my password"
 
 msgid "Reset your password in %{client}"
 msgstr "Reset your password in %{client}"

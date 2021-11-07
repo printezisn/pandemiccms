@@ -168,6 +168,9 @@ msgstr "Μη Επιβεβαιωμένο Email"
 msgid "AdminUser|Username"
 msgstr "Όνομα Χρήστη"
 
+msgid "Afterwards, if you don't already have a password, you can create a new one by following the instructions in the link below:"
+msgstr "Έπειτα, αν δεν έχετε ήδη κωδικό, μπορείτε να δημιουργήσετε έναν καινούργιο ακολουθώντας τις οδηγίες στον παρακάτω σύνδεσμο:"
+
 msgid "All pages"
 msgstr "Όλες οι σελίδες"
 
@@ -1028,6 +1031,9 @@ msgstr "Οδηγίες Επαναφοράς Κωδικού"
 
 msgid "Reset Password | %{client}"
 msgstr "Επαναφορά Κωδικού | %{client}"
+
+msgid "Reset my password"
+msgstr "Επαναφορά του κωδικού μου"
 
 msgid "Reset your password in %{client}"
 msgstr "Επαναφέρετε τον κωδικό σας στο %{client}"

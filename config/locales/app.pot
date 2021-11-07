@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-07 13:21+0200\n"
-"PO-Revision-Date: 2021-11-07 13:21+0200\n"
+"POT-Creation-Date: 2021-11-07 14:02+0200\n"
+"PO-Revision-Date: 2021-11-07 14:02+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -167,6 +167,9 @@ msgid "AdminUser|Unconfirmed email"
 msgstr ""
 
 msgid "AdminUser|Username"
+msgstr ""
+
+msgid "Afterwards, if you don't already have a password, you can create a new one by following the instructions in the link below:"
 msgstr ""
 
 msgid "All pages"
@@ -1028,6 +1031,9 @@ msgid "Reset Password Instructions"
 msgstr ""
 
 msgid "Reset Password | %{client}"
+msgstr ""
+
+msgid "Reset my password"
 msgstr ""
 
 msgid "Reset your password in %{client}"
