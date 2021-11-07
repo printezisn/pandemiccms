@@ -20,6 +20,8 @@ A CMS with all the necessary components to help you create fast and amazing webs
 - Many applications need to support multiple languages. This is easy for static content, but what about dynamic content ? Pandemic CMS is designed to support multilingual content.
 - Pandemic CMS is designed to be multi-tenant, meaning that it is possible to support multiple applications/clients on the same instance.
 
+Website: https://pandemiccms.com
+
 ## Stack
 
 **Programming languages**:
