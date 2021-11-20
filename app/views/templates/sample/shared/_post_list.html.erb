@@ -6,7 +6,7 @@
     <% if index > 0 %>
       <hr />
     <% end %>
-    <%= render partial: "templates/#{current_client.template}/shared/post", locals: { post: post } %>
+    <%= render partial: "templates/#{current_client.template}/shared/post", locals: { post: post, index: index } %>
   <% end %>
   <footer class="mb-5">
     <%= paginate posts %>

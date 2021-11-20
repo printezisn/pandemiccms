@@ -6,7 +6,7 @@
       <a href="<%= path %>">
         <% if post.image.attached? %>
           <img src="<%= rails_representation_url(post.image.variant(resize_to_limit: [200, 200])) %>" width="200" height="200"
-              alt="<%= @tp.t(post).name %>" loading="lazy" />
+            alt="<%= @tp.t(post).name %>" loading="<%= 'lazy' if index > 2 %>" />
         <% else %>
           <span class="no-image"></span>
         <% end %>
