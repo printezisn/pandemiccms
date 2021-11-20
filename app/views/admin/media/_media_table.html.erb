@@ -48,7 +48,16 @@
     <% @media.each do |medium| %>
     <tr>
       <td>
-        <a href="<%= url_for(medium.file) %>" rel="noopener" target="_blank"><%= medium.name %></a>
+        <% if medium.file.image? %>
+          <a href="<%= url_for(medium.file) %>" rel="noopener" target="_blank">
+            <%= image_tag medium.file.variant(resize_to_limit: [256, 256]) %>
+          </a><br>
+        <% end %>
+        <a href="<%= url_for(medium.file) %>" rel="noopener" target="_blank"><%= medium.name %></a><br>
+        <span><%= number_to_human_size(medium.file.byte_size) %></span><br>
+        <% if medium.file.image? && medium.file.metadata['width'].present? && medium.file.metadata['height'].present? %>
+          <%= medium.file.metadata['width'] %> x <%= medium.file.metadata['height'] %><br>
+        <% end %>
       </td>
       <td class="is-hidden-touch"><%= medium.created_at %></td>
       <td class="actions-cell">
