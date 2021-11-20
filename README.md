@@ -155,3 +155,13 @@ Sidekiq is responsible for running background jobs.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contributors
+
+<a href="https://github.com/printezisn">
+  <img src="https://avatars.githubusercontent.com/u/28266572?v=4" width="80" height="80" title="printezisn" alt="printezisn" />
+</a>
+&nbsp;
+<a href="https://github.com/cvrac">
+  <img src="https://avatars.githubusercontent.com/u/10595219?v=4" width="80" height="80" title="cvrac" alt="cvrac" />
+</a>
