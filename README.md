@@ -58,12 +58,25 @@ You need to have the following installed to run the project:
 
 ## How to prepare
 
-**1. Install dependencies**:
+**1. Set up required components**:
+
+In order to run the project, you have to install the following components:
+
+1. Ruby (3.0.2)
+1. NodeJS
+1. MariaDB (or MySQL) *
+1. Redis *
+1. Elasticsearch *
+1. ImageMagick
+
+* You may skip the installation of these components if you want and use the `docker-compose.infrastructure.yml` instead.
+
+**2. Install dependencies**:
 
 - `bundle install`
 - `yarn`
 
-**2. Add configuration**:
+**3. Add configuration**:
 
 Add configuration by running `EDITOR=<editor> rails credentials:edit`. The credentials file contains configuration for the following services:
 - MySQL/MariaDB
@@ -100,9 +113,11 @@ sidekiq_ui:
 
 If you need to generate a new value for `secret_key_base`, you can do it by running `rails secret`.
 
-Also, you can generate different configuration for production by running `EDITOR=<editor> rails credentials:edit --environment production`. This will generate a new `production.key` file whose value needs to be stored on the server in a secure way.
+Also, you can generate different configuration for production by running `EDITOR=<editor> rails credentials:edit --environment production`. This will generate a new `production.key` file whose value needs to be stored on the server in a secure way. For the development environment, the project contains a default credentials file with a `master.key` file to open it.
 
-**3. Create the database**:
+**4. Create the database**:
+
+You have to follow these instructions only if you don't use the default services from `docker-compose.infrastructure.yml`.
 
 Log in the database system and perform the following actions:
 
@@ -110,17 +125,19 @@ Log in the database system and perform the following actions:
 1. Create the test database with `CREATE DATABASE pandemiccms_test;`.
 1. Create the production database with `CREATE DATABASE pandemiccms_production;`.
 
-**4. Run the database migrations**:
+**5. Run the database migrations**:
 
 Run the migrations with `bundle exec rails db:migrate`.
 
-**5. Create a client**:
+**6. Create a client**:
 
 Run `bundle exec rake pandemiccms:create_client -- -n CLIENT_NAME -t TEMPLATE -d DOMAIN:PORT -s SUPERVISOR_EMAIL` to create a client.
 
-For example: `bundle exec rake pandemiccms:create_client -- -n "Pandemic CMS" -t sample -d mysite:80 -d localhost:3000 -s admin@test.com`.
+For example: `bundle exec rake pandemiccms:create_client -- -n "Pandemic CMS" -t sample -d localhost:3000 -d mysite:80 -s admin@test.com`.
 
 For more information, you can run `bundle exec rake pandemiccms:create_client -- -h` for help.
+
+This will send an email to the supervisor with instructions on how to activate the account. If you're using the default services from `docker-compose.infrastructure.yml`, then you can view all the emails in mailcatcher which is in `http://localhost:1080`.
 
 ## How to run
 
