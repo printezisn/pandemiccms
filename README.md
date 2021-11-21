@@ -69,7 +69,7 @@ In order to run the project, you have to install the following components:
 1. Elasticsearch *
 1. ImageMagick
 
-* You may skip the installation of these components if you want and use the `docker-compose.infrastructure.yml` instead.
+\* You may skip the installation of these components if you want and use the `docker-compose.infrastructure.yml` instead.
 
 **2. Install dependencies**:
 
@@ -113,7 +113,9 @@ sidekiq_ui:
 
 If you need to generate a new value for `secret_key_base`, you can do it by running `rails secret`.
 
-Also, you can generate different configuration for production by running `EDITOR=<editor> rails credentials:edit --environment production`. This will generate a new `production.key` file whose value needs to be stored on the server in a secure way. For the development environment, the project contains a default credentials file with a `master.key` file to open it.
+Also, you can generate different configuration for production by running `EDITOR=<editor> rails credentials:edit --environment production`. This will generate a new `production.key` file whose value needs to be stored on the server in a secure way.
+
+For the development environment, the project contains a default credentials file with a `master.key` file to open it.
 
 **4. Create the database**:
 
