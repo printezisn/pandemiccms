@@ -11,7 +11,12 @@
         </a>
         <div class="navbar-dropdown">
           <% children.map(&:first).each do |child| %>
-            <a href="<%= child.path(current_language) %>" class="navbar-item" target="<%= '_blank' if child.open_in_new_window? %>">
+            <a
+              href="<%= child.path(current_language) %>"
+              class="navbar-item"
+              target="<%= '_blank' if child.open_in_new_window? %>"
+              rel="<%= 'noopener' if child.open_in_new_window? %>"
+            >
               <% if child.css_class.present? %>
                 <i class="<%= child.css_class %>"></i>
                 &nbsp;
@@ -22,7 +27,12 @@
         </div>
       </div>
     <% else %>
-      <a href="<%= menu_item.path(current_language) %>" class="navbar-item" target="<%= '_blank' if menu_item.open_in_new_window? %>">
+      <a
+        href="<%= menu_item.path(current_language) %>"
+        class="navbar-item"
+        target="<%= '_blank' if menu_item.open_in_new_window? %>"
+        rel="<%= 'noopener' if menu_item.open_in_new_window? %>"
+      >
         <% if menu_item.css_class.present? %>
           <i class="<%= menu_item.css_class %>"></i>
           &nbsp;
