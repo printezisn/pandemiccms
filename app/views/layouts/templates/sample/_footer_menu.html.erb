@@ -5,14 +5,10 @@
         <li>
           <a
             href="<%= menu_item.path(current_language) %>"
+            class="<%= menu_item.css_class %>"
             target="<%= '_blank' if menu_item.open_in_new_window? %>"
             rel="<%= 'noopener' if menu_item.open_in_new_window? %>"
-          >
-            <% if menu_item.css_class.present? %>
-              <i class="<%= menu_item.css_class %>"></i>
-            <% end %>
-            <%= @tp.t(menu_item).name %>
-          </a>
+          ><%= @tp.t(menu_item).name %></a>
         </li>
       <% end %>
     </ul>
