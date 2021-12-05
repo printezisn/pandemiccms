@@ -36,6 +36,13 @@ module ThemeInitializer
 
       footer_menu = Menu.create!(name: 'Footer Menu', client_id: client.id)
       footer_menu.menu_items.create!(name: 'Home', linkable: home_page)
+
+      [
+        EmailTemplateType::AccountConfirmation,
+        EmailTemplateType::EmailChange,
+        EmailTemplateType::PasswordChange,
+        EmailTemplateType::ResetPasswordInstructions
+      ].each { |email_template_type| email_template_type.create!(client_id: client.id) }
     end
 
     private
