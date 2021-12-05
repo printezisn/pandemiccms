@@ -9,7 +9,6 @@ namespace :pandemiccms do
     template = ''
     domains_and_ports = []
     locales = []
-    email_templates = []
     supervisor_email = ''
 
     option_parser = OptionParser.new
@@ -29,11 +28,6 @@ namespace :pandemiccms do
                      'then the client is considered to have all available languages.') do |locale|
       locales << locale
     end
-    option_parser.on('-e', '--email-template NAME',
-                     'An email template of the client (e.g. AccountConfirmation). Can be used multiple times. If none is specified, ' \
-                     'then the client is considered to have all available email templates.') do |email_template|
-      email_templates << email_template
-    end
     option_parser.on('-s', '--supervisor-email EMAIL',
                      "The email of the client's supervisor user") do |supervisor_email_option|
       supervisor_email = supervisor_email_option
@@ -42,7 +36,7 @@ namespace :pandemiccms do
     args = option_parser.order!(ARGV) {}
     option_parser.parse!(args)
 
-    errors = ClientCreator.call(name, template, domains_and_ports, locales, email_templates, supervisor_email)
+    errors = ClientCreator.call(name, template, domains_and_ports, locales, supervisor_email)
 
     puts "The client could not be created because of the following errors: #{errors}" if errors.present?
     exit 0
