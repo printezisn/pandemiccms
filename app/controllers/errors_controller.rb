@@ -17,7 +17,7 @@ class ErrorsController < ApplicationController
   end
 
   def internal_server_error
-    @model = @tp.find_by(template: 'internal_error')&.decorate
+    @model = @tp.pages.find_by(template: 'internal_error')&.decorate
     if @model.nil?
       return render file: Rails.root.join('public/500.html'),
                     layout: false,
