@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-07 14:02+0200\n"
-"PO-Revision-Date: 2021-11-07 14:02+0200\n"
+"POT-Creation-Date: 2021-12-29 10:47+0200\n"
+"PO-Revision-Date: 2021-12-29 10:47+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "%<total>i medium was successfully created."
+msgid_plural "%<total>i media were successfully created."
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "%{count} Category"
 msgid_plural "%{count} Categories"
@@ -676,6 +681,9 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
+msgid "Media files are required."
+msgstr ""
+
 msgid "Media of %{client}"
 msgstr ""
 
@@ -1193,9 +1201,6 @@ msgid "The indexing process was successfully initiated."
 msgstr ""
 
 msgid "The link was successfully copied"
-msgstr ""
-
-msgid "The medium was successfully created."
 msgstr ""
 
 msgid "The medium was successfully deleted."

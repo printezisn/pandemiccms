@@ -22,13 +22,25 @@ module Admin
     # POST /admin/media
     # POST /admin/media.json
     def create
-      @medium = Medium.new(medium_params)
-      @medium.client_id = current_client.id
+      media = ActiveRecord::Base.transaction do
+        media_files.map do |file|
+          medium = Medium.new({ file: file })
+          medium.client_id = current_client.id
 
-      if @medium.save
-        redirect_to admin_media_path, notice: _('The medium was successfully created.')
-      else
+          raise ActiveRecord::Rollback unless medium.save
+
+          medium
+        end
+      end
+
+      if media.nil?
         redirect_to admin_media_path, alert: _('An error occurred. Please try again later.')
+      elsif media.empty?
+        redirect_to admin_media_path, alert: _('Media files are required.')
+      else
+        notice = format(n_('%<total>i medium was successfully created.', '%<total>i media were successfully created.', media.size), total: media.size)
+
+        redirect_to admin_media_path, notice: notice
       end
     end
 
@@ -46,8 +58,8 @@ module Admin
       @medium = Medium.find_by!(id: params[:id], client_id: current_client.id)
     end
 
-    def medium_params
-      params.require(:medium).permit(:file)
+    def media_files
+      params.require(:medium).permit(file: []).fetch(:file, [])
     end
   end
 end

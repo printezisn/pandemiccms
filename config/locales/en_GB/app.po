@@ -17,6 +17,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
+msgid "%<total>i medium was successfully created."
+msgid_plural "%<total>i media were successfully created."
+msgstr[0] "%<total>i medium was successfully created."
+msgstr[1] "%<total>i media were successfully created."
+
 msgid "%{count} Category"
 msgid_plural "%{count} Categories"
 msgstr[0] "%{count} Category"
@@ -675,6 +680,9 @@ msgstr "Log in"
 msgid "Media"
 msgstr "Media"
 
+msgid "Media files are required."
+msgstr "Media files are required."
+
 msgid "Media of %{client}"
 msgstr "Media of %{client}"
 
@@ -1193,9 +1201,6 @@ msgstr "The indexing process was successfully initiated."
 
 msgid "The link was successfully copied"
 msgstr "The link was successfully copied"
-
-msgid "The medium was successfully created."
-msgstr "The medium was successfully created."
 
 msgid "The medium was successfully deleted."
 msgstr "The medium was successfully deleted."

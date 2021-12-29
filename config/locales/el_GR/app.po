@@ -17,6 +17,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
+msgid "%<total>i medium was successfully created."
+msgid_plural "%<total>i media were successfully created."
+msgstr[0] "%<total>i αρχείο δημιουργήθηκε με επιτυχία."
+msgstr[1] "%<total>i αρχεία δημιουργήθηκαν με επιτυχία."
+
 msgid "%{count} Category"
 msgid_plural "%{count} Categories"
 msgstr[0] "%{count} Κατηγορία"
@@ -675,6 +680,9 @@ msgstr "Σύνδεση"
 msgid "Media"
 msgstr "Αρχεία"
 
+msgid "Media files are required."
+msgstr "Τα αρχεία είναι υποχρεωτικά."
+
 msgid "Media of %{client}"
 msgstr "Αρχεία του %{client}"
 
@@ -1193,9 +1201,6 @@ msgstr "Η διαδικασία ευρετηριοποίησης ξεκίνησ�
 
 msgid "The link was successfully copied"
 msgstr "Ο σύνδεσμος αντιγράφτηκε με επιτυχία"
-
-msgid "The medium was successfully created."
-msgstr "Το αρχείο δημιουργήθηκε με επιτυχία."
 
 msgid "The medium was successfully deleted."
 msgstr "Το αρχείο διαγράφτηκε με επιτυχία."

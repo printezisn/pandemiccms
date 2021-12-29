@@ -35,7 +35,10 @@ RSpec.describe '/admin/media', type: :request do
     let(:params) do
       {
         medium: {
-          file: Rack::Test::UploadedFile.new(file_attributes[:io])
+          file: [
+            Rack::Test::UploadedFile.new(file_attributes[:io]),
+            Rack::Test::UploadedFile.new(file_attributes[:io])
+          ]
         }
       }
     end
@@ -50,8 +53,8 @@ RSpec.describe '/admin/media', type: :request do
       expect(response).to redirect_to(admin_media_path)
     end
 
-    it 'creates the medium' do
-      expect { request }.to change(Medium, :count).by(1)
+    it 'creates the media' do
+      expect { request }.to change(Medium, :count).by(2)
     end
   end
 
