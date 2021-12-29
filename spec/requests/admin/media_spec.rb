@@ -58,6 +58,33 @@ RSpec.describe '/admin/media', type: :request do
     end
   end
 
+  describe 'POST /create (JSON)' do
+    let(:params) do
+      {
+        medium: {
+          file: [
+            Rack::Test::UploadedFile.new(file_attributes[:io]),
+            Rack::Test::UploadedFile.new(file_attributes[:io])
+          ]
+        }
+      }
+    end
+
+    let(:request) { post admin_media_path(format: :json), params: params }
+
+    it_behaves_like 'admin user page with json format'
+
+    it 'returns a URL to the first medium' do
+      request
+
+      expect(JSON.parse(response.body)).to eq({ 'url' => rails_blob_url(Medium.first.file) })
+    end
+
+    it 'creates the media' do
+      expect { request }.to change(Medium, :count).by(2)
+    end
+  end
+
   describe 'DELETE /destroy' do
     let(:request) { delete admin_medium_path(model) }
 

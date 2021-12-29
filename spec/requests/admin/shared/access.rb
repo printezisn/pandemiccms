@@ -12,6 +12,24 @@ RSpec.shared_examples 'admin user page' do
   end
 end
 
+RSpec.shared_examples 'admin user page with json format' do
+  context 'when the admin user is not signed in' do
+    let(:signed_in_user) { nil }
+
+    it 'returns unauthorized status' do
+      request
+
+      expect(response).to be_unauthorized
+    end
+
+    it 'returns an error message' do
+      request
+
+      expect(JSON.parse(response.body)).to eq({ 'error' => 'You need to sign in before continuing.' })
+    end
+  end
+end
+
 RSpec.shared_examples 'supervisor page' do
   context 'when the admin user is not signed in' do
     let(:signed_in_user) { nil }

@@ -34,13 +34,30 @@ module Admin
       end
 
       if media.nil?
-        redirect_to admin_media_path, alert: _('An error occurred. Please try again later.')
+        respond_to do |format|
+          format.html { redirect_to admin_media_path, alert: _('An error occurred. Please try again later.') }
+          format.json { render json: { error: _('An error occurred. Please try again later.') } }
+        end
       elsif media.empty?
-        redirect_to admin_media_path, alert: _('Media files are required.')
+        respond_to do |format|
+          format.html { redirect_to admin_media_path, alert: _('Media files are required.') }
+          format.json { render json: { error: _('Media files are required.') } }
+        end
       else
-        notice = format(n_('%<total>i medium was successfully created.', '%<total>i media were successfully created.', media.size), total: media.size)
+        respond_to do |format|
+          format.html do
+            notice = format(
+              n_('%<total>i medium was successfully created.', '%<total>i media were successfully created.', media.size),
+              total: media.size
+            )
 
-        redirect_to admin_media_path, notice: notice
+            redirect_to admin_media_path, notice: notice
+          end
+
+          format.json do
+            render json: { url: rails_blob_url(media.first.file) }
+          end
+        end
       end
     end
 
