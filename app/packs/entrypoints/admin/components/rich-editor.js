@@ -27,6 +27,7 @@ const initRichEditor = (editor) => {
       alignright alignjustify | link image | bullist numlist outdent indent |
       code | removeformat fullscreen`,
     menubar: false,
+    image_caption: true,
     min_height: 350,
     readonly: editor.hasAttribute('readonly') ? 1 : 0,
     images_upload_handler: (blobInfo, success, failure) => {
