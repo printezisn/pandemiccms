@@ -1,3 +1,5 @@
+import './styles/main.scss';
+
 const initNavbars = () => {
   Array.from(document.getElementsByClassName('navbar-burger')).forEach((el) => {
     const target = document.getElementById(el.getAttribute('data-target'));

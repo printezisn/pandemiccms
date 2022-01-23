@@ -1,6 +1,6 @@
 const loadLocales = async () => {
   const lang = document.documentElement.getAttribute('data-js-locale');
-  const { default: locales } = await import(/* webpackChunkName: 'locales' */ `./${lang}/app`);
+  const { default: locales } = await import(/* webpackChunkName: 'locales/locales' */ `./${lang}/app`);
 
   return locales;
 };

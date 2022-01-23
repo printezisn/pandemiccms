@@ -62,3 +62,7 @@ Lint/EmptyBlock:
 
 RSpec/AnyInstance:
   Enabled: false
+
+Style/ClassVars:
+  Exclude:
+    - "app/services/asset_path_fetcher.rb"

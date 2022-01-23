@@ -9,8 +9,12 @@
   <%= csp_meta_tag %>
   <link rel="icon" href="<%= current_client.image_path_with_default([32, 32], '/favicon.png')  %>">
 
-  <%= stylesheet_pack_tag 'admin/styles/main', *(content_for?(:stylesheets) ? yield(:stylesheets).split(',') : []), media: 'all' %>
-  <%= javascript_pack_tag 'admin/main', *(content_for?(:scripts) ? yield(:scripts).split(',') : []) %>
+  <% ['admin/main'].concat(yield(:stylesheets).split(',')).each do |name| %>
+    <%= css(name) %>
+  <% end %>
+  <% ['runtime', 'admin/main'].concat(yield(:scripts).split(',')).each do |name| %>
+    <%= js(name) %>
+  <% end %>
 </head>
 
 <body>

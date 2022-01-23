@@ -10,8 +10,12 @@
     <link rel="icon" href="<%= current_client.image_path_with_default([32, 32], '/favicon.png') %>">
   <% end %>
 
-  <%= stylesheet_pack_tag "templates/#{current_client.template}/styles/main", *(content_for?(:stylesheets) ? yield(:stylesheets).split(',') : []), media: 'all' %>
-  <%= javascript_pack_tag "templates/#{current_client.template}/main", *(content_for?(:scripts) ? yield(:scripts).split(',') : []) %>
+  <% ["templates/#{current_client.template}/main"].concat(yield(:stylesheets).split(',')).each do |name| %>
+    <%= css(name) %>
+  <% end %>
+  <% ['runtime', "templates/#{current_client.template}/main"].concat(yield(:scripts).split(',')).each do |name| %>
+    <%= js(name) %>
+  <% end %>
 </head>
 
 <body>

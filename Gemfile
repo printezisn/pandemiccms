@@ -9,8 +9,6 @@ ruby '3.0.2'
 gem 'rails', '~> 6.1'
 # Use Puma as the app server
 gem 'puma', '~> 5.3'
-# Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -93,3 +91,7 @@ gem 'htmlentities', '~> 4.3'
 gem 'sidekiq-scheduler', '~> 3.1'
 
 gem 'draper', '~> 4.0'
+
+gem 'jsbundling-rails', '~> 1.0'
+
+gem 'sprockets-rails', '~> 3.2', require: 'sprockets/railtie'
