@@ -4,7 +4,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@rails/actioncable": "^6.0.0",
-    "@rails/webpacker": "^6.0.0-rc.5",
+    "@rails/webpacker": "^6.0.0-rc.6",
     "babel-plugin-macros": "^3.1.0",
     "bulma": "^0.9.2",
     "css-loader": "^6.0.0",
@@ -17,16 +17,18 @@
     "sass-loader": "^12.1.0",
     "select2": "^4.1.0-rc.0",
     "tinymce": "^5.7.0",
-    "toastr": "^2.1.4"
+    "toastr": "^2.1.4",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0"
   },
   "version": "0.1.0",
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.4",
-    "@webpack-cli/serve": "^1.5.2",
+    "@webpack-cli/serve": "^1.6.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
-    "webpack-dev-server": "^4.2.1"
+    "webpack-dev-server": "^4.7.3"
   },
   "scripts": {
     "lint": "eslint ./app ./config",

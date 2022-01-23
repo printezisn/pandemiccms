@@ -12,7 +12,7 @@ gem 'puma', '~> 5.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 6.0.0.rc.5'
+gem 'webpacker', '~> 6.0.0.rc.6'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -42,28 +42,28 @@ group :development, :test do
 end
 
 group :development do
-  gem 'bullet', '~> 6.1'
+  gem 'bullet', '~> 7.0'
   gem 'listen', '~> 3.2'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '~> 4.1'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'capistrano', '~> 3.14', require: false
-  gem 'capistrano-passenger', '~> 0.2.1', require: false
+  gem 'capistrano-passenger', '~> 0.2', require: false
   gem 'capistrano-rails', '~> 1.6', require: false
   gem 'capistrano-rbenv', '~> 2.2', require: false
   gem 'capistrano-sidekiq', '~> 2.0', require: false
   gem 'spring', '~> 2.1'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen', '~> 2.0'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.35'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'selenium-webdriver', '~> 3.142'
+  gem 'selenium-webdriver', '~> 4.1'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'timecop', '~> 0.9'
-  gem 'webdrivers', '~> 4.6'
+  gem 'webdrivers', '~> 5.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -80,7 +80,7 @@ gem 'gettext', '~> 3.3'
 
 gem 'kaminari', '~> 1.2'
 
-gem 'babosa', '~> 1.0'
+gem 'babosa', '~> 2.0'
 
 gem 'image_processing', '~> 1.12'
 
