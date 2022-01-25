@@ -12,7 +12,7 @@ require './spec/models/concerns/draftable'
 require './spec/utils/retry'
 
 RSpec.describe Post, type: :model do
-  subject(:model) { build(:post, author: author) }
+  subject(:model) { build(:post, author:) }
 
   let(:author) { create(:admin_user) }
 

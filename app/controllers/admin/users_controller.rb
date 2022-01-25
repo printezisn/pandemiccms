@@ -85,7 +85,7 @@ module Admin
 
       if @user.save_translation(translation_locale)
         CacheVersionBumper.call(current_client.id)
-        redirect_to translate_admin_user_path(@user, translation_locale: translation_locale),
+        redirect_to translate_admin_user_path(@user, translation_locale:),
                     notice: _('The user was successfully translated.')
       else
         @translation.assign_attributes(translation_params)

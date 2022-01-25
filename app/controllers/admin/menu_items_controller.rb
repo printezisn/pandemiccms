@@ -76,7 +76,7 @@ module Admin
 
       if @menu_item.save_translation(translation_locale)
         CacheVersionBumper.call(current_client.id)
-        redirect_to translate_admin_menu_menu_item_path(id: @menu_item.id, menu_id: @menu_item.menu_id, translation_locale: translation_locale),
+        redirect_to translate_admin_menu_menu_item_path(id: @menu_item.id, menu_id: @menu_item.menu_id, translation_locale:),
                     notice: _('The menu item was successfully translated.')
       else
         @translation.assign_attributes(translation_params)

@@ -15,7 +15,7 @@ RSpec.describe TagTaggable, type: :model do
     let(:tag) { create(:tag) }
 
     before do
-      create(:post, tags: [tag], status: :published, visibility: visibility)
+      create(:post, tags: [tag], status: :published, visibility:)
       create(:page, tags: [tag])
     end
 
@@ -35,7 +35,7 @@ RSpec.describe TagTaggable, type: :model do
     let(:tag) { create(:tag) }
 
     before do
-      create(:post, tags: [tag], status: :published, visibility: visibility)
+      create(:post, tags: [tag], status: :published, visibility:)
       create(:page, tags: [tag])
     end
 

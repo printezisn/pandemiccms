@@ -10,7 +10,7 @@ RSpec.describe '/admin/clients', type: :request do
   let(:signed_in_user) { supervisor }
 
   let(:client) { supervisor.client }
-  let!(:client_languages) { create_list(:client_language, 2, client: client) }
+  let!(:client_languages) { create_list(:client_language, 2, client:) }
 
   before do
     sign_in signed_in_user if signed_in_user

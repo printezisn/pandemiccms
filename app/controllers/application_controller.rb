@@ -77,7 +77,7 @@ class ApplicationController < ActionController::Base
     domain = [request.subdomain, request.domain].filter_map(&:presence).join('.')
 
     Client.joins(:client_domains)
-          .find_by(client_domains: { domain: domain, port: request.port })
+          .find_by(client_domains: { domain:, port: request.port })
           &.decorate
   end
 

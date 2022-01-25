@@ -38,7 +38,7 @@ module Admin
       @email_template.assign_attributes(translation_params)
 
       if @email_template.save_translation(translation_locale)
-        redirect_to translate_admin_email_template_path(@email_template, translation_locale: translation_locale),
+        redirect_to translate_admin_email_template_path(@email_template, translation_locale:),
                     notice: _('The email template was successfully translated.')
       else
         @translation.assign_attributes(translation_params)

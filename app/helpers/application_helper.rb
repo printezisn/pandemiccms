@@ -10,7 +10,7 @@ module ApplicationHelper
     content_tag(:script, nil, { src: AssetPathFetcher.call(name, '.js'), defer: 'defer' })
   end
 
-  def client_cache(key, &block)
+  def client_cache(key, &)
     cache_if(
       current_client.cache_enabled?,
       [
@@ -23,7 +23,7 @@ module ApplicationHelper
       ],
       expires_in: current_client.cache_duration&.minutes,
       race_condition_ttl: 10.seconds,
-      &block
+      &
     )
   end
 end

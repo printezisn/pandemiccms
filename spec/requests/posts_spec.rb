@@ -6,9 +6,9 @@ RSpec.describe 'posts', type: :request do
   subject!(:model) do
     create(
       :post,
-      template: template,
-      status: status,
-      visibility: visibility,
+      template:,
+      status:,
+      visibility:,
       published_at: Time.now.utc
     )
   end
@@ -18,7 +18,7 @@ RSpec.describe 'posts', type: :request do
   let(:visibility) { 'public' }
 
   describe 'GET /show' do
-    let(:request) { get post_path(id: model.id, slug: slug) }
+    let(:request) { get post_path(id: model.id, slug:) }
     let(:slug) { model.displayed_slug(nil) }
 
     context 'when the post is private' do
@@ -57,7 +57,7 @@ RSpec.describe 'posts', type: :request do
       it 'redirects to the correct slug' do
         request
 
-        expect(response).to redirect_to(post_path(id: model.id, slug: slug))
+        expect(response).to redirect_to(post_path(id: model.id, slug:))
       end
     end
   end

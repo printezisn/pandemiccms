@@ -11,7 +11,7 @@ RSpec.describe ClientCreator do
   let(:locales) { %w[en-GB] }
   let(:supervisor_email) { 'admin@pandemiccms.com' }
 
-  let(:client) { Client.find_by(name: name) }
+  let(:client) { Client.find_by(name:) }
   let(:client_domains) do
     client.client_domains.map { |client_domain| "#{client_domain.domain}:#{client_domain.port}" }
   end

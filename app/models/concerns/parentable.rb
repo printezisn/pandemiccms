@@ -75,7 +75,7 @@ module Parentable
 
   def fetch_descendants
     hierarchy_path = (ancestor_ids + [id]).join(',')
-    self.class.where(hierarchy_path: hierarchy_path).or(
+    self.class.where(hierarchy_path:).or(
       self.class.where(self.class.arel_table[:hierarchy_path].matches("#{hierarchy_path},%"))
     )
   end

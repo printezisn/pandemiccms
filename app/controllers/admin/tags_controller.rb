@@ -79,7 +79,7 @@ module Admin
 
       if @tag.save_translation(translation_locale)
         CacheVersionBumper.call(current_client.id)
-        redirect_to translate_admin_tag_path(@tag, translation_locale: translation_locale),
+        redirect_to translate_admin_tag_path(@tag, translation_locale:),
                     notice: _('The tag was successfully translated.')
       else
         @translation.assign_attributes(translation_params)
@@ -100,7 +100,7 @@ module Admin
       results = tags.map { |tag| { id: tag.id, text: tag.name } }
       more = !tags.last_page? && results.any?
 
-      render json: { results: results, pagination: { more: more } }
+      render json: { results:, pagination: { more: } }
     end
 
     private

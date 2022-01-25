@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe MenuItemDecorator do
-  subject(:model) { create(:menu_item, external_url: external_url, linkable: linkable).decorate }
+  subject(:model) { create(:menu_item, external_url:, linkable:).decorate }
 
   let(:linkable) { nil }
   let(:external_url) { nil }

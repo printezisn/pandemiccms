@@ -34,7 +34,7 @@ class MenuItem < ApplicationRecord
       moved_up = saved_change_to_menu_id? || saved_change_to_parent_id? || sort_order <= sort_order_before_last_save
 
       menu.menu_items
-          .where(parent_id: parent_id)
+          .where(parent_id:)
           .sort_by do |menu_item|
             if menu_item.id == id
               [sort_order, moved_up ? 0 : 2, id]

@@ -15,7 +15,7 @@ RSpec.describe CategoryCategorizable, type: :model do
     let(:category) { create(:category) }
 
     before do
-      create(:post, categories: [category], status: :published, visibility: visibility)
+      create(:post, categories: [category], status: :published, visibility:)
     end
 
     context 'when the post is visible' do
@@ -34,7 +34,7 @@ RSpec.describe CategoryCategorizable, type: :model do
     let(:category) { create(:category) }
 
     before do
-      create(:post, categories: [category], status: :published, visibility: visibility)
+      create(:post, categories: [category], status: :published, visibility:)
     end
 
     context 'when the post is visible' do

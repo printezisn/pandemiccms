@@ -18,7 +18,7 @@ module Categorizable
 
   def save_categories
     new_categories = category_names.select(&:present?).map do |category_name|
-      Category.find_or_initialize_by(name: category_name, client_id: client_id)
+      Category.find_or_initialize_by(name: category_name, client_id:)
     end
     category_categorizables.each do |category_categorizable|
       category_categorizable.destroy unless new_categories.any? { |category| category.id == category_categorizable.category_id }

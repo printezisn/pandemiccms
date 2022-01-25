@@ -11,7 +11,7 @@ require './spec/models/concerns/taggable'
 require './spec/models/concerns/draftable'
 
 RSpec.describe Page, type: :model do
-  subject(:model) { build(:page, author: author) }
+  subject(:model) { build(:page, author:) }
 
   let(:author) { create(:admin_user) }
 

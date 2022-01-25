@@ -6,9 +6,9 @@ RSpec.describe 'Pages', type: :request do
   subject!(:model) do
     create(
       :page,
-      template: template,
-      status: status,
-      visibility: visibility
+      template:,
+      status:,
+      visibility:
     )
   end
 
@@ -54,7 +54,7 @@ RSpec.describe 'Pages', type: :request do
   end
 
   describe 'GET /show' do
-    let(:request) { get page_path(id: model.id, slug: slug) }
+    let(:request) { get page_path(id: model.id, slug:) }
     let(:slug) { model.displayed_slug(nil) }
 
     context 'when the page is private' do
@@ -93,7 +93,7 @@ RSpec.describe 'Pages', type: :request do
       it 'redirects to the correct slug' do
         request
 
-        expect(response).to redirect_to(page_path(id: model.id, slug: slug))
+        expect(response).to redirect_to(page_path(id: model.id, slug:))
       end
     end
   end

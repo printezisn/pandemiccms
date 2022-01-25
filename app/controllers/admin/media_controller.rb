@@ -24,7 +24,7 @@ module Admin
     def create
       media = ActiveRecord::Base.transaction do
         media_files.map do |file|
-          medium = Medium.new({ file: file })
+          medium = Medium.new({ file: })
           medium.client_id = current_client.id
 
           raise ActiveRecord::Rollback unless medium.save

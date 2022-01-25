@@ -22,11 +22,11 @@ class ClientCreator < ApplicationService
 
       valid_locales = available_locales.select { |l| locales.blank? || locales.include?(l) }
 
-      client = Client.new(name: name, template: template, time_zone: 'UTC')
+      client = Client.new(name:, template:, time_zone: 'UTC')
       domains_and_ports.each do |domain_and_port|
         client.client_domains.build(domain: domain_and_port.split(':')[0], port: domain_and_port.split(':')[1])
       end
-      valid_locales.each { |locale| client.client_languages.build(language: Language.find_by!(locale: locale)) }
+      valid_locales.each { |locale| client.client_languages.build(language: Language.find_by!(locale:)) }
 
       unless client.save
         errors = client.errors.messages

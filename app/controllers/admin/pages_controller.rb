@@ -55,7 +55,7 @@ module Admin
       results = pages.map { |page| { id: page.id, text: page.name } }
       more = !pages.last_page? && results.any?
 
-      render json: { results: results, pagination: { more: more } }
+      render json: { results:, pagination: { more: } }
     end
 
     # GET /pages/1/show
@@ -139,7 +139,7 @@ module Admin
 
       if @page.save_translation(translation_locale)
         CacheVersionBumper.call(current_client.id)
-        redirect_to translate_admin_page_path(@page, translation_locale: translation_locale),
+        redirect_to translate_admin_page_path(@page, translation_locale:),
                     notice: _('The page was successfully translated.')
       else
         @translation.assign_attributes(translation_params)

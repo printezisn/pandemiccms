@@ -92,7 +92,7 @@ module Admin
 
       if @category.save_translation(translation_locale)
         CacheVersionBumper.call(current_client.id)
-        redirect_to translate_admin_category_path(@category, translation_locale: translation_locale),
+        redirect_to translate_admin_category_path(@category, translation_locale:),
                     notice: _('The category was successfully translated.')
       else
         @translation.assign_attributes(translation_params)
@@ -118,7 +118,7 @@ module Admin
       results = categories.map { |category| { id: category.id, text: category.name } }
       more = !categories.last_page? && results.any?
 
-      render json: { results: results, pagination: { more: more } }
+      render json: { results:, pagination: { more: } }
     end
 
     private

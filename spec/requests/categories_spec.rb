@@ -6,8 +6,8 @@ RSpec.describe 'categories', type: :request do
   subject!(:model) do
     create(
       :category,
-      template: template,
-      visibility: visibility
+      template:,
+      visibility:
     )
   end
 
@@ -15,7 +15,7 @@ RSpec.describe 'categories', type: :request do
   let(:visibility) { 'public' }
 
   describe 'GET /show' do
-    let(:request) { get category_path(id: model.id, slug: slug) }
+    let(:request) { get category_path(id: model.id, slug:) }
     let(:slug) { model.displayed_slug(nil) }
 
     context 'when the category is private' do
@@ -46,7 +46,7 @@ RSpec.describe 'categories', type: :request do
       it 'redirects to the correct slug' do
         request
 
-        expect(response).to redirect_to(category_path(id: model.id, slug: slug))
+        expect(response).to redirect_to(category_path(id: model.id, slug:))
       end
     end
   end

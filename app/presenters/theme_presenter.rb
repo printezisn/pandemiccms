@@ -16,21 +16,21 @@ class ThemePresenter
   end
 
   def posts(only_visible: true)
-    query = Post.includes(:translations).where(client_id: client_id)
+    query = Post.includes(:translations).where(client_id:)
     query = query.where(visibility: :public, status: :published) if admin_user.nil? && only_visible
 
     query
   end
 
   def pages(only_visible: true)
-    query = Page.includes(:translations).where(client_id: client_id)
+    query = Page.includes(:translations).where(client_id:)
     query = query.where(visibility: :public, status: :published) if admin_user.nil? && only_visible
 
     query
   end
 
   def categories(only_visible: true, post_id: nil)
-    query = Category.includes(:translations).where(client_id: client_id)
+    query = Category.includes(:translations).where(client_id:)
     query = query.where(visibility: :public) if admin_user.nil? && only_visible
     if post_id
       query = query.joins(:category_categorizables)
@@ -41,7 +41,7 @@ class ThemePresenter
   end
 
   def tags(only_visible: true, post_id: nil)
-    query = Tag.includes(:translations).where(client_id: client_id)
+    query = Tag.includes(:translations).where(client_id:)
     query = query.where(visibility: :public) if admin_user.nil? && only_visible
     query = query.joins(:tag_taggables).where(tag_taggables: { taggable_type: Post.name, taggable_id: post_id }) if post_id
 
@@ -69,7 +69,7 @@ class ThemePresenter
       size: 1000
     ).to_a.map { |post| post.attributes['id'] }
 
-    posts(only_visible: only_visible).where(id: matching_post_ids)
+    posts(only_visible:).where(id: matching_post_ids)
   end
 
   private
@@ -77,7 +77,7 @@ class ThemePresenter
   def fetch_menu(name)
     menu_items = MenuItem.includes(:translations, :linkable, linkable: :translations)
                          .joins(:menu)
-                         .where(menus: { client_id: client_id, name: name })
+                         .where(menus: { client_id:, name: })
 
     fetch_menu_item_children(menu_items, nil)
   end

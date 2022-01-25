@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe PageDecorator, type: :decorator do
-  subject(:model) { create(:page, slug: 'test-slug', template: template).decorate }
+  subject(:model) { create(:page, slug: 'test-slug', template:).decorate }
 
   let(:template) { 'default' }
 
