@@ -13,8 +13,9 @@ class AssetPathFetcher < ApplicationService
 
   def call
     @@asset_paths ||= {}
+    key = "#{name}#{extension}"
 
-    return @@asset_paths[name] if @@asset_paths[name]
+    return @@asset_paths[key] if @@asset_paths[key]
 
     dirpath = name.include?('/') ? Rails.root.join("public/assets/#{File.dirname(name)}").to_s : Rails.root.join('public/assets').to_s
     fingerprinted_filename = Dir.entries(dirpath).detect do |filename|
@@ -24,6 +25,6 @@ class AssetPathFetcher < ApplicationService
 
     return asset_path if Rails.env.development?
 
-    @@asset_paths[name] = asset_path
+    @@asset_paths[key] = asset_path
   end
 end
