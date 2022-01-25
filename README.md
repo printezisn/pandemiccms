@@ -53,7 +53,7 @@ You need to have the following installed to run the project:
 - MySQL (or MariaDB)
 - Redis
 - Elasticsearch
-- ImageMagick
+- libvips
 - Sidekiq
 
 ## How to prepare
@@ -67,7 +67,7 @@ In order to run the project, you have to install the following components:
 1. MariaDB (or MySQL) *
 1. Redis *
 1. Elasticsearch *
-1. ImageMagick
+1. libvips
 
 \* You may skip the installation of these components if you want and use the `docker-compose.infrastructure.yml` instead.
 
