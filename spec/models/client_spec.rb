@@ -5,7 +5,7 @@ require 'rails_helper'
 require './spec/models/concerns/imageable'
 
 RSpec.describe Client, type: :model do
-  subject(:model) { FactoryBot.build(:client) }
+  subject(:model) { build(:client) }
 
   it { is_expected.to have_many(:client_domains).dependent(:destroy) }
   it { is_expected.to have_many(:client_languages).dependent(:destroy) }
@@ -64,9 +64,9 @@ RSpec.describe Client, type: :model do
   end
 
   describe '#enabled_client_languages' do
-    let!(:enabled_client_language) { FactoryBot.create(:client_language, client_id: model.id, enabled: true) }
+    let!(:enabled_client_language) { create(:client_language, client_id: model.id, enabled: true) }
 
-    before { FactoryBot.create(:client_language, client_id: model.id) }
+    before { create(:client_language, client_id: model.id) }
 
     it 'returns only the enabled client languages' do
       expect(model.enabled_client_languages).to contain_exactly(enabled_client_language)
@@ -74,9 +74,9 @@ RSpec.describe Client, type: :model do
   end
 
   describe '#enabled_languages' do
-    let!(:enabled_client_language) { FactoryBot.create(:client_language, client_id: model.id, enabled: true) }
+    let!(:enabled_client_language) { create(:client_language, client_id: model.id, enabled: true) }
 
-    before { FactoryBot.create(:client_language, client_id: model.id) }
+    before { create(:client_language, client_id: model.id) }
 
     it 'returns only the enabled languages' do
       expect(model.enabled_languages).to contain_exactly(enabled_client_language.language)
@@ -84,8 +84,8 @@ RSpec.describe Client, type: :model do
   end
 
   describe '#default_language' do
-    let!(:non_default_client_language) { FactoryBot.create(:client_language, client_id: model.id, enabled: true) }
-    let!(:default_client_language) { FactoryBot.create(:client_language, client_id: model.id, enabled: enabled_default_language, default: true) }
+    let!(:non_default_client_language) { create(:client_language, client_id: model.id, enabled: true) }
+    let!(:default_client_language) { create(:client_language, client_id: model.id, enabled: enabled_default_language, default: true) }
     let(:enabled_default_language) { true }
 
     context 'when there is a default language' do

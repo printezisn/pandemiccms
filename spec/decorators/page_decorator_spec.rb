@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe PageDecorator, type: :decorator do
-  subject(:model) { FactoryBot.create(:page, slug: 'test-slug', template: template).decorate }
+  subject(:model) { create(:page, slug: 'test-slug', template: template).decorate }
 
   let(:template) { 'default' }
 
@@ -14,7 +14,7 @@ RSpec.describe PageDecorator, type: :decorator do
       let(:template) { 'index' }
 
       context 'when a language is passed' do
-        let(:language) { FactoryBot.create(:language, locale: 'el-GR') }
+        let(:language) { create(:language, locale: 'el-GR') }
 
         it { is_expected.to eq('/el-GR') }
       end
@@ -28,7 +28,7 @@ RSpec.describe PageDecorator, type: :decorator do
 
     context 'when the template is not index' do
       context 'when a language is passed' do
-        let(:language) { FactoryBot.create(:language, locale: 'el-GR') }
+        let(:language) { create(:language, locale: 'el-GR') }
 
         it { is_expected.to eq("/el-GR/pg/#{model.id}/#{model.slug}") }
       end

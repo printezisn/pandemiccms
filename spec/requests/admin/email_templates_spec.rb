@@ -4,12 +4,12 @@ require 'rails_helper'
 require './spec/requests/admin/shared/access'
 
 RSpec.describe '/admin/email_templates', type: :request do
-  let(:admin_user) { FactoryBot.create(:admin_user) }
-  let!(:supervisor) { FactoryBot.create(:admin_user, :supervisor) }
+  let(:admin_user) { create(:admin_user) }
+  let!(:supervisor) { create(:admin_user, :supervisor) }
 
   let(:signed_in_user) { supervisor }
 
-  let(:model) { FactoryBot.create(:email_template, type: EmailTemplateType::EmailChange.name) }
+  let(:model) { create(:email_template, type: EmailTemplateType::EmailChange.name) }
 
   before do
     sign_in signed_in_user if signed_in_user

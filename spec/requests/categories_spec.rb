@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'categories', type: :request do
   subject!(:model) do
-    FactoryBot.create(
+    create(
       :category,
       template: template,
       visibility: visibility

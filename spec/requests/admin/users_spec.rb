@@ -4,8 +4,8 @@ require 'rails_helper'
 require './spec/requests/admin/shared/access'
 
 RSpec.describe '/admin/users', type: :request do
-  let!(:admin_user) { FactoryBot.create(:admin_user) }
-  let!(:supervisor) { FactoryBot.create(:admin_user, :supervisor) }
+  let!(:admin_user) { create(:admin_user) }
+  let!(:supervisor) { create(:admin_user, :supervisor) }
 
   let(:signed_in_user) { supervisor }
 
@@ -172,7 +172,7 @@ RSpec.describe '/admin/users', type: :request do
   end
 
   describe 'POST /activate' do
-    let(:inactive_user) { FactoryBot.create(:admin_user, status: :inactive) }
+    let(:inactive_user) { create(:admin_user, status: :inactive) }
 
     let(:request) { post activate_admin_user_path(inactive_user) }
 

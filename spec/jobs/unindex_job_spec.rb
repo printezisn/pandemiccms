@@ -5,7 +5,7 @@ require './spec/utils/retry'
 
 RSpec.describe UnindexJob, type: :job do
   before do
-    FactoryBot.create_list(:language, 3)
+    create_list(:language, 3)
   end
 
   def expect_records_found(entity, repo_klass, expected_value)
@@ -30,7 +30,7 @@ RSpec.describe UnindexJob, type: :job do
   end
 
   describe 'Post' do
-    let(:entity) { FactoryBot.create(:post) }
+    let(:entity) { create(:post) }
     let(:repo_klass) { Elastic::PostRepository }
 
     it_behaves_like 'unindexing job'

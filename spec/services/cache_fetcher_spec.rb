@@ -11,7 +11,7 @@ RSpec.describe CacheFetcher do
   let(:key) { 'key' }
   let(:result) { 'result' }
 
-  let(:client) { FactoryBot.build(:client, cache_enabled: cache_enabled, cache_duration: cache_duration) }
+  let(:client) { build(:client, cache_enabled: cache_enabled, cache_duration: cache_duration) }
 
   context 'when the cache is enabled' do
     it { is_expected.to eq(result) }

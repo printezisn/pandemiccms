@@ -5,7 +5,7 @@ RSpec.shared_examples 'Taggable' do
   it { is_expected.to have_many(:tags).through(:tag_taggables) }
 
   describe '#save_tags' do
-    let(:initial_tag) { FactoryBot.create(:tag) }
+    let(:initial_tag) { create(:tag) }
 
     before { model.tags = [initial_tag] }
 

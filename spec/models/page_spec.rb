@@ -11,9 +11,9 @@ require './spec/models/concerns/taggable'
 require './spec/models/concerns/draftable'
 
 RSpec.describe Page, type: :model do
-  subject(:model) { FactoryBot.build(:page, author: author) }
+  subject(:model) { build(:page, author: author) }
 
-  let(:author) { FactoryBot.create(:admin_user) }
+  let(:author) { create(:admin_user) }
 
   it { is_expected.to belong_to(:client) }
   it { is_expected.to belong_to(:author).class_name('AdminUser').optional(true) }
@@ -57,9 +57,9 @@ RSpec.describe Page, type: :model do
   end
 
   describe 'concerns' do
-    subject(:model) { FactoryBot.create(:page, :with_parent, :with_children) }
+    subject(:model) { create(:page, :with_parent, :with_children) }
 
-    let(:translation) { FactoryBot.build(:page) }
+    let(:translation) { build(:page) }
 
     it_behaves_like 'SimpleTextSearchable'
     it_behaves_like 'BoundSortable'

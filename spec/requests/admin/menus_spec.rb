@@ -4,10 +4,10 @@ require 'rails_helper'
 require './spec/requests/admin/shared/access'
 
 RSpec.describe '/admin/menus', type: :request do
-  let!(:admin_user) { FactoryBot.create(:admin_user) }
+  let!(:admin_user) { create(:admin_user) }
   let(:signed_in_user) { admin_user }
 
-  let(:model) { FactoryBot.build(:menu) }
+  let(:model) { build(:menu) }
 
   before do
     sign_in signed_in_user if signed_in_user

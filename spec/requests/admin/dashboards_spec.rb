@@ -4,7 +4,7 @@ require 'rails_helper'
 require './spec/requests/admin/shared/access'
 
 RSpec.describe 'Admin::Dashboard', type: :request do
-  let!(:admin_user) { FactoryBot.create(:admin_user) }
+  let!(:admin_user) { create(:admin_user) }
   let(:signed_in_user) { admin_user }
 
   before do

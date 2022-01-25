@@ -9,7 +9,7 @@ require './spec/models/concerns/imageable'
 require './spec/models/concerns/parentable'
 
 RSpec.describe Category, type: :model do
-  subject(:model) { FactoryBot.build(:category) }
+  subject(:model) { build(:category) }
 
   it { is_expected.to belong_to(:client) }
   it { is_expected.to belong_to(:parent).class_name('Category').optional(true) }
@@ -25,9 +25,9 @@ RSpec.describe Category, type: :model do
   it { is_expected.to validate_length_of(:slug).is_at_most(255).with_message('The slug may contain up to 255 characters.') }
 
   describe '#index_associations' do
-    subject(:model) { FactoryBot.create(:category) }
+    subject(:model) { create(:category) }
 
-    before { FactoryBot.create(:post, categories: [model]) }
+    before { create(:post, categories: [model]) }
 
     context 'when the category is updated' do
       before { model.update!(name: 'New Name') }
@@ -47,9 +47,9 @@ RSpec.describe Category, type: :model do
   end
 
   describe 'concerns' do
-    subject(:model) { FactoryBot.create(:category, :with_parent, :with_children) }
+    subject(:model) { create(:category, :with_parent, :with_children) }
 
-    let(:translation) { FactoryBot.build(:category) }
+    let(:translation) { build(:category) }
 
     it_behaves_like 'SimpleTextSearchable'
     it_behaves_like 'BoundSortable'

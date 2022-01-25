@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe CategoryCategorizable, type: :model do
-  subject(:model) { FactoryBot.build(:category_categorizable) }
+  subject(:model) { build(:category_categorizable) }
 
   it { is_expected.to belong_to(:category) }
   it { is_expected.to belong_to(:categorizable) }
@@ -12,10 +12,10 @@ RSpec.describe CategoryCategorizable, type: :model do
     subject { category.posts_count }
 
     let(:visibility) { :public }
-    let(:category) { FactoryBot.create(:category) }
+    let(:category) { create(:category) }
 
     before do
-      FactoryBot.create(:post, categories: [category], status: :published, visibility: visibility)
+      create(:post, categories: [category], status: :published, visibility: visibility)
     end
 
     context 'when the post is visible' do
@@ -31,10 +31,10 @@ RSpec.describe CategoryCategorizable, type: :model do
 
   describe '#decrement_posts_count' do
     let(:visibility) { :public }
-    let(:category) { FactoryBot.create(:category) }
+    let(:category) { create(:category) }
 
     before do
-      FactoryBot.create(:post, categories: [category], status: :published, visibility: visibility)
+      create(:post, categories: [category], status: :published, visibility: visibility)
     end
 
     context 'when the post is visible' do
@@ -49,8 +49,8 @@ RSpec.describe CategoryCategorizable, type: :model do
   end
 
   describe 'scopes' do
-    let(:category) { FactoryBot.create(:category) }
-    let!(:post) { FactoryBot.create(:post, categories: [category]) }
+    let(:category) { create(:category) }
+    let!(:post) { create(:post, categories: [category]) }
 
     it { expect(described_class.post.map(&:categorizable)).to contain_exactly(post) }
   end

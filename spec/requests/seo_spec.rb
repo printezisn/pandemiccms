@@ -6,10 +6,10 @@ RSpec.describe 'seo', type: :request do
   describe 'GET /sitemap.xml' do
     subject { response.body.gsub(/\s+/, '') }
 
-    let!(:post) { FactoryBot.create(:post, name: 'Test Post', slug: 'test-post', status: :published) }
-    let!(:page) { FactoryBot.create(:page, name: 'Test Page', slug: 'test-page', status: :published) }
-    let!(:category) { FactoryBot.create(:category, name: 'Test Category', slug: 'test-category') }
-    let!(:tag) { FactoryBot.create(:tag, name: 'Test Tag', slug: 'test-tag') }
+    let!(:post) { create(:post, name: 'Test Post', slug: 'test-post', status: :published) }
+    let!(:page) { create(:page, name: 'Test Page', slug: 'test-page', status: :published) }
+    let!(:category) { create(:category, name: 'Test Category', slug: 'test-category') }
+    let!(:tag) { create(:tag, name: 'Test Tag', slug: 'test-tag') }
 
     let(:expected_result) do
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
@@ -49,7 +49,7 @@ RSpec.describe 'seo', type: :request do
     end
 
     before do
-      FactoryBot.create(:client)
+      create(:client)
 
       get robots_path
     end

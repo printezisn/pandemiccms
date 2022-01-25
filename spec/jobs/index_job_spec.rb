@@ -5,7 +5,7 @@ require './spec/utils/retry'
 
 RSpec.describe IndexJob, type: :job do
   before do
-    FactoryBot.create_list(:language, 3)
+    create_list(:language, 3)
   end
 
   shared_examples 'indexing job' do
@@ -42,7 +42,7 @@ RSpec.describe IndexJob, type: :job do
   end
 
   describe 'Post' do
-    let(:entity) { FactoryBot.create(:post) }
+    let(:entity) { create(:post) }
     let(:repo_klass) { Elastic::PostRepository }
 
     it_behaves_like 'indexing job'

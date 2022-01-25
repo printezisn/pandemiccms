@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe TagTaggable, type: :model do
-  subject(:model) { FactoryBot.build(:tag_taggable) }
+  subject(:model) { build(:tag_taggable) }
 
   it { is_expected.to belong_to(:tag) }
   it { is_expected.to belong_to(:taggable) }
@@ -12,11 +12,11 @@ RSpec.describe TagTaggable, type: :model do
     subject { tag.posts_count }
 
     let(:visibility) { :public }
-    let(:tag) { FactoryBot.create(:tag) }
+    let(:tag) { create(:tag) }
 
     before do
-      FactoryBot.create(:post, tags: [tag], status: :published, visibility: visibility)
-      FactoryBot.create(:page, tags: [tag])
+      create(:post, tags: [tag], status: :published, visibility: visibility)
+      create(:page, tags: [tag])
     end
 
     context 'when the post is visible' do
@@ -32,11 +32,11 @@ RSpec.describe TagTaggable, type: :model do
 
   describe '#decrement_posts_count' do
     let(:visibility) { :public }
-    let(:tag) { FactoryBot.create(:tag) }
+    let(:tag) { create(:tag) }
 
     before do
-      FactoryBot.create(:post, tags: [tag], status: :published, visibility: visibility)
-      FactoryBot.create(:page, tags: [tag])
+      create(:post, tags: [tag], status: :published, visibility: visibility)
+      create(:page, tags: [tag])
     end
 
     context 'when the post is visible' do
@@ -51,9 +51,9 @@ RSpec.describe TagTaggable, type: :model do
   end
 
   describe 'scopes' do
-    let(:tag) { FactoryBot.create(:tag) }
-    let!(:post) { FactoryBot.create(:post, tags: [tag]) }
-    let!(:page) { FactoryBot.create(:page, tags: [tag]) }
+    let(:tag) { create(:tag) }
+    let!(:post) { create(:post, tags: [tag]) }
+    let!(:page) { create(:page, tags: [tag]) }
 
     it { expect(described_class.post.map(&:taggable)).to contain_exactly(post) }
     it { expect(described_class.page.map(&:taggable)).to contain_exactly(page) }

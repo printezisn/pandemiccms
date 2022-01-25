@@ -4,8 +4,8 @@ require 'rails_helper'
 require './spec/requests/admin/shared/access'
 
 RSpec.describe '/admin/index', type: :request do
-  let(:admin_user) { FactoryBot.create(:admin_user) }
-  let!(:supervisor) { FactoryBot.create(:admin_user, :supervisor) }
+  let(:admin_user) { create(:admin_user) }
+  let!(:supervisor) { create(:admin_user, :supervisor) }
 
   let(:signed_in_user) { supervisor }
 

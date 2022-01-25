@@ -4,7 +4,7 @@ require 'rails_helper'
 require './spec/models/email_template_type/shared'
 
 RSpec.describe EmailTemplateType::PasswordChange, type: :model do
-  subject(:model) { FactoryBot.build(:email_template, type: described_class.name).becomes(described_class) }
+  subject(:model) { build(:email_template, type: described_class.name).becomes(described_class) }
 
   describe '#type_name' do
     it { expect(model.type_name).to eq('Password Change') }

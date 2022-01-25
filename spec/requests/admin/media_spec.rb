@@ -8,10 +8,10 @@ RSpec.describe '/admin/media', type: :request do
     { io: File.open(Rails.root.join('spec/fixtures/test.png')), filename: 'test.png' }
   end
 
-  let!(:admin_user) { FactoryBot.create(:admin_user) }
+  let!(:admin_user) { create(:admin_user) }
   let(:signed_in_user) { admin_user }
 
-  let(:model) { FactoryBot.build(:medium, file: file_attributes) }
+  let(:model) { build(:medium, file: file_attributes) }
 
   before do
     sign_in signed_in_user if signed_in_user

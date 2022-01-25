@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'posts', type: :request do
   subject!(:model) do
-    FactoryBot.create(
+    create(
       :post,
       template: template,
       status: status,

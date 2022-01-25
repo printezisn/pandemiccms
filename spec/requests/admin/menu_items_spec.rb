@@ -4,11 +4,11 @@ require 'rails_helper'
 require './spec/requests/admin/shared/access'
 
 RSpec.describe '/admin/menu_items', type: :request do
-  let!(:admin_user) { FactoryBot.create(:admin_user) }
+  let!(:admin_user) { create(:admin_user) }
   let(:signed_in_user) { admin_user }
 
-  let(:menu) { FactoryBot.create(:menu) }
-  let(:model) { FactoryBot.build(:menu_item) }
+  let(:menu) { create(:menu) }
+  let(:model) { build(:menu_item) }
 
   before do
     sign_in signed_in_user if signed_in_user
@@ -55,7 +55,7 @@ RSpec.describe '/admin/menu_items', type: :request do
   end
 
   describe 'POST /create' do
-    let(:linkable) { FactoryBot.create(:page) }
+    let(:linkable) { create(:page) }
     let(:menu_item_params) do
       {
         name: model.name,
@@ -110,7 +110,7 @@ RSpec.describe '/admin/menu_items', type: :request do
   end
 
   describe 'PATCH /update' do
-    let(:linkable) { FactoryBot.create(:page) }
+    let(:linkable) { create(:page) }
     let(:menu_item_params) do
       {
         name: 'New name',

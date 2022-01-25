@@ -7,7 +7,7 @@ require './spec/models/concerns/sluggable'
 require './spec/models/concerns/translatable'
 
 RSpec.describe Tag, type: :model do
-  subject(:model) { FactoryBot.build(:tag) }
+  subject(:model) { build(:tag) }
 
   it { is_expected.to belong_to(:client) }
   it { is_expected.to have_many(:tag_taggables).dependent(:destroy) }
@@ -21,9 +21,9 @@ RSpec.describe Tag, type: :model do
   it { is_expected.to validate_length_of(:slug).is_at_most(255).with_message('The slug may contain up to 255 characters.') }
 
   describe '#index_associations' do
-    subject(:model) { FactoryBot.create(:tag) }
+    subject(:model) { create(:tag) }
 
-    before { FactoryBot.create(:post, indexed_at: Time.now.utc, tags: [model]) }
+    before { create(:post, indexed_at: Time.now.utc, tags: [model]) }
 
     context 'when the tag is updated' do
       before { model.update!(name: 'New Name') }
@@ -43,7 +43,7 @@ RSpec.describe Tag, type: :model do
   end
 
   describe 'concerns' do
-    let(:translation) { FactoryBot.build(:tag) }
+    let(:translation) { build(:tag) }
 
     before { model.save! }
 

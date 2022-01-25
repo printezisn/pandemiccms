@@ -6,7 +6,7 @@ RSpec.describe IndexAllJob, type: :job do
   let(:only_unindexed_entities) { false }
 
   before do
-    FactoryBot.create_list(:post, 2)
+    create_list(:post, 2)
     Post.first.update!(indexed_at: Time.now.utc)
 
     described_class.perform_now(client_id, only_unindexed_entities)

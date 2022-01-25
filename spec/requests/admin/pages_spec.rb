@@ -4,10 +4,10 @@ require 'rails_helper'
 require './spec/requests/admin/shared/access'
 
 RSpec.describe '/admin/pages', type: :request do
-  let!(:admin_user) { FactoryBot.create(:admin_user) }
+  let!(:admin_user) { create(:admin_user) }
   let(:signed_in_user) { admin_user }
 
-  let(:model) { FactoryBot.build(:page, author_id: admin_user.id) }
+  let(:model) { build(:page, author_id: admin_user.id) }
 
   before do
     sign_in signed_in_user if signed_in_user
@@ -82,7 +82,7 @@ RSpec.describe '/admin/pages', type: :request do
   end
 
   describe 'POST /create' do
-    let!(:parent) { FactoryBot.create(:page) }
+    let!(:parent) { create(:page) }
     let(:page_params) do
       {
         image: Rack::Test::UploadedFile.new(File.open(Rails.root.join('spec/fixtures/test.png'))),
@@ -143,7 +143,7 @@ RSpec.describe '/admin/pages', type: :request do
   end
 
   describe 'PATCH /update' do
-    let!(:parent) { FactoryBot.create(:page) }
+    let!(:parent) { create(:page) }
     let(:page_params) do
       {
         image: Rack::Test::UploadedFile.new(File.open(Rails.root.join('spec/fixtures/test.png'))),
@@ -300,7 +300,7 @@ RSpec.describe '/admin/pages', type: :request do
         'pagination' => { 'more' => false }
       }
     end
-    let(:model) { FactoryBot.create(:page, :with_parent) }
+    let(:model) { create(:page, :with_parent) }
 
     it_behaves_like 'admin user page'
 
@@ -320,7 +320,7 @@ RSpec.describe '/admin/pages', type: :request do
   describe 'POST /publish' do
     let(:request) { post publish_admin_page_path(model) }
 
-    let(:model) { FactoryBot.create(:page) }
+    let(:model) { create(:page) }
 
     it_behaves_like 'admin user page'
 

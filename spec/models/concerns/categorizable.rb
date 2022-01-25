@@ -5,7 +5,7 @@ RSpec.shared_examples 'Categorizable' do
   it { is_expected.to have_many(:categories).through(:category_categorizables) }
 
   describe '#save_categories' do
-    let(:initial_category) { FactoryBot.create(:category) }
+    let(:initial_category) { create(:category) }
 
     before { model.categories = [initial_category] }
 

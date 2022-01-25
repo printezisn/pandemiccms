@@ -12,9 +12,9 @@ require './spec/models/concerns/draftable'
 require './spec/utils/retry'
 
 RSpec.describe Post, type: :model do
-  subject(:model) { FactoryBot.build(:post, author: author) }
+  subject(:model) { build(:post, author: author) }
 
-  let(:author) { FactoryBot.create(:admin_user) }
+  let(:author) { create(:admin_user) }
 
   it { is_expected.to belong_to(:client) }
   it { is_expected.to belong_to(:author).class_name('AdminUser').optional(true) }
@@ -57,11 +57,11 @@ RSpec.describe Post, type: :model do
 
   describe '#update_counters' do
     subject(:model) do
-      FactoryBot.create(:post, visibility: :private, status: :draft, tags: [tag], categories: [category])
+      create(:post, visibility: :private, status: :draft, tags: [tag], categories: [category])
     end
 
-    let(:category) { FactoryBot.create(:category) }
-    let(:tag) { FactoryBot.create(:tag) }
+    let(:category) { create(:category) }
+    let(:tag) { create(:tag) }
 
     context 'when visibility is changed, but the post is still not visible' do
       it 'does not update the counters' do
@@ -129,9 +129,9 @@ RSpec.describe Post, type: :model do
   end
 
   describe 'concerns' do
-    subject(:model) { FactoryBot.create(:post) }
+    subject(:model) { create(:post) }
 
-    let(:translation) { FactoryBot.build(:post) }
+    let(:translation) { build(:post) }
 
     it_behaves_like 'SimpleTextSearchable'
     it_behaves_like 'BoundSortable'

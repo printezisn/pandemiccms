@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe ClientDecorator do
-  subject(:model) { FactoryBot.create(:client).decorate }
+  subject(:model) { create(:client).decorate }
 
   describe '#image_path_with_default' do
     subject { model.image_path_with_default(size) }

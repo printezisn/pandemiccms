@@ -5,7 +5,7 @@ require './spec/models/concerns/simple_text_searchable'
 require './spec/models/concerns/bound_sortable'
 
 RSpec.describe Redirect, type: :model do
-  subject(:model) { FactoryBot.build(:redirect) }
+  subject(:model) { build(:redirect) }
 
   it { is_expected.to belong_to(:client) }
 

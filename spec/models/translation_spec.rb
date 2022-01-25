@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe Translation, type: :model do
-  subject { FactoryBot.build(:translation) }
+  subject { build(:translation) }
 
   it { is_expected.to belong_to(:translatable) }
 

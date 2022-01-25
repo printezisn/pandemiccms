@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.shared_examples 'EmailTemplate' do
-  subject(:model) { FactoryBot.build(:email_template, type: described_class.name).becomes(described_class) }
+  subject(:model) { build(:email_template, type: described_class.name).becomes(described_class) }
 
   it { is_expected.to belong_to(:client) }
 
@@ -24,7 +24,7 @@ RSpec.shared_examples 'EmailTemplate' do
   end
 
   describe '#send_test_email' do
-    let!(:admin_user) { FactoryBot.create(:admin_user) }
+    let!(:admin_user) { create(:admin_user) }
 
     it 'sends test email' do
       expect { model.send_test_email(admin_user) }.to change { ActionMailer::Base.deliveries.count }.by(1)
@@ -32,7 +32,7 @@ RSpec.shared_examples 'EmailTemplate' do
   end
 
   describe 'concerns' do
-    let(:translation) { FactoryBot.build(:email_template, type: described_class.name) }
+    let(:translation) { build(:email_template, type: described_class.name) }
 
     before { model.save! }
 

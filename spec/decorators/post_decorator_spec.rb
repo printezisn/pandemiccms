@@ -3,13 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe PostDecorator, type: :decorator do
-  subject(:model) { FactoryBot.create(:post, slug: 'test-slug').decorate }
+  subject(:model) { create(:post, slug: 'test-slug').decorate }
 
   describe '#path' do
     subject { model.path(language) }
 
     context 'when a language is passed' do
-      let(:language) { FactoryBot.create(:language, locale: 'el-GR') }
+      let(:language) { create(:language, locale: 'el-GR') }
 
       it { is_expected.to eq("/el-GR/p/#{model.id}/#{model.slug}") }
     end

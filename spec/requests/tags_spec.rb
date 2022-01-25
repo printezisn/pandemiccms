@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'tags', type: :request do
   subject!(:model) do
-    FactoryBot.create(
+    create(
       :tag,
       template: template,
       visibility: visibility

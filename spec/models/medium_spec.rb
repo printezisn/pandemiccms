@@ -5,7 +5,7 @@ require './spec/models/concerns/simple_text_searchable'
 require './spec/models/concerns/bound_sortable'
 
 RSpec.describe Medium, type: :model do
-  subject(:model) { FactoryBot.build(:medium) }
+  subject(:model) { build(:medium) }
 
   let(:file) do
     {

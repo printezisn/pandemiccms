@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Pages', type: :request do
   subject!(:model) do
-    FactoryBot.create(
+    create(
       :page,
       template: template,
       status: status,

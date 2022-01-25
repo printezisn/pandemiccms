@@ -6,7 +6,7 @@ require './spec/models/concerns/bound_sortable'
 require './spec/models/concerns/translatable'
 
 RSpec.describe Menu, type: :model do
-  subject(:model) { FactoryBot.build(:menu) }
+  subject(:model) { build(:menu) }
 
   it { is_expected.to belong_to(:client) }
   it { is_expected.to have_many(:menu_items).dependent(:destroy) }
@@ -15,7 +15,7 @@ RSpec.describe Menu, type: :model do
   it { is_expected.to validate_length_of(:name).is_at_most(255).with_message('The name may contain up to 255 characters.') }
 
   describe 'concerns' do
-    let(:translation) { FactoryBot.build(:tag) }
+    let(:translation) { build(:tag) }
 
     before { model.save! }
 

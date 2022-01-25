@@ -4,10 +4,10 @@ require 'rails_helper'
 require './spec/requests/admin/shared/access'
 
 RSpec.describe '/admin/tags', type: :request do
-  let!(:admin_user) { FactoryBot.create(:admin_user) }
+  let!(:admin_user) { create(:admin_user) }
   let(:signed_in_user) { admin_user }
 
-  let(:model) { FactoryBot.build(:tag) }
+  let(:model) { build(:tag) }
 
   before do
     sign_in signed_in_user if signed_in_user
@@ -206,7 +206,7 @@ RSpec.describe '/admin/tags', type: :request do
 
     before do
       model.save!
-      FactoryBot.create(:post, tags: [model])
+      create(:post, tags: [model])
     end
 
     it_behaves_like 'admin user page'
@@ -223,7 +223,7 @@ RSpec.describe '/admin/tags', type: :request do
 
     before do
       model.save!
-      FactoryBot.create(:page, tags: [model])
+      create(:page, tags: [model])
     end
 
     it_behaves_like 'admin user page'
@@ -311,7 +311,7 @@ RSpec.describe '/admin/tags', type: :request do
         'pagination' => { 'more' => false }
       }
     end
-    let(:model) { FactoryBot.create(:tag) }
+    let(:model) { create(:tag) }
 
     it_behaves_like 'admin user page'
 

@@ -7,7 +7,7 @@ require './spec/models/concerns/imageable'
 require './spec/models/concerns/translatable'
 
 RSpec.describe AdminUser, type: :model do
-  subject(:model) { FactoryBot.build(:admin_user) }
+  subject(:model) { build(:admin_user) }
 
   it { is_expected.to belong_to(:client) }
 
@@ -100,19 +100,19 @@ RSpec.describe AdminUser, type: :model do
     end
 
     context 'with first and last name' do
-      subject(:model) { FactoryBot.build(:admin_user, middle_name: '') }
+      subject(:model) { build(:admin_user, middle_name: '') }
 
       it { expect(model.full_name).to eq("#{model.first_name} #{model.last_name}") }
     end
 
     context 'with first name only' do
-      subject(:model) { FactoryBot.build(:admin_user, middle_name: '', last_name: '') }
+      subject(:model) { build(:admin_user, middle_name: '', last_name: '') }
 
       it { expect(model.full_name).to eq(model.first_name) }
     end
 
     context 'without any name' do
-      subject(:model) { FactoryBot.build(:admin_user, first_name: '', middle_name: '', last_name: '') }
+      subject(:model) { build(:admin_user, first_name: '', middle_name: '', last_name: '') }
 
       it { expect(model.full_name).to eq(model.username) }
     end
@@ -124,14 +124,14 @@ RSpec.describe AdminUser, type: :model do
     end
 
     context 'when the user has a supervisor role' do
-      subject(:model) { FactoryBot.create(:admin_user, :supervisor) }
+      subject(:model) { create(:admin_user, :supervisor) }
 
       it { is_expected.to be_supervisor }
     end
   end
 
   describe '#supervisor!' do
-    subject(:model) { FactoryBot.create(:admin_user) }
+    subject(:model) { create(:admin_user) }
 
     it { expect { model.supervisor! }.to change(model, :supervisor?).from(false).to(true) }
   end
@@ -142,27 +142,27 @@ RSpec.describe AdminUser, type: :model do
     end
 
     context 'when the user has a supervisor role' do
-      subject(:model) { FactoryBot.create(:admin_user, :supervisor) }
+      subject(:model) { create(:admin_user, :supervisor) }
 
       it { is_expected.not_to be_author }
     end
   end
 
   describe '#author!' do
-    subject(:model) { FactoryBot.create(:admin_user, :supervisor) }
+    subject(:model) { create(:admin_user, :supervisor) }
 
     it { expect { model.author! }.to change(model, :author?).from(false).to(true) }
   end
 
   describe '#active_for_authentication?' do
     context 'when the user is active' do
-      subject(:model) { FactoryBot.create(:admin_user) }
+      subject(:model) { create(:admin_user) }
 
       it { is_expected.to be_active_for_authentication }
     end
 
     context 'when the user is inactive' do
-      subject(:model) { FactoryBot.create(:admin_user, status: :inactive) }
+      subject(:model) { create(:admin_user, status: :inactive) }
 
       it { is_expected.not_to be_active_for_authentication }
     end
@@ -179,7 +179,7 @@ RSpec.describe AdminUser, type: :model do
     end
 
     context 'when no roles is set' do
-      subject(:model) { FactoryBot.create(:admin_user, :supervisor) }
+      subject(:model) { create(:admin_user, :supervisor) }
 
       before { model.should_set_roles = true }
 
@@ -196,7 +196,7 @@ RSpec.describe AdminUser, type: :model do
   end
 
   describe 'concerns' do
-    let(:translation) { FactoryBot.build(:admin_user) }
+    let(:translation) { build(:admin_user) }
 
     before { model.save! }
 

@@ -5,7 +5,7 @@ require './spec/models/concerns/translatable'
 require './spec/models/concerns/parentable'
 
 RSpec.describe MenuItem, type: :model do
-  subject(:model) { FactoryBot.build(:menu_item) }
+  subject(:model) { build(:menu_item) }
 
   it { is_expected.to belong_to(:menu) }
   it { is_expected.to belong_to(:linkable).optional(true) }
@@ -20,7 +20,7 @@ RSpec.describe MenuItem, type: :model do
   end
 
   context 'when there is a linkable' do
-    let(:linkable) { FactoryBot.create(:page) }
+    let(:linkable) { create(:page) }
 
     before { model.linkable = linkable }
 
@@ -28,9 +28,9 @@ RSpec.describe MenuItem, type: :model do
   end
 
   describe '#valid_linkable' do
-    subject(:model) { FactoryBot.create(:menu_item) }
+    subject(:model) { create(:menu_item) }
 
-    let(:linkable) { FactoryBot.create(:page) }
+    let(:linkable) { create(:page) }
 
     before { model.linkable = linkable }
 
@@ -52,10 +52,10 @@ RSpec.describe MenuItem, type: :model do
       end
     end
 
-    let!(:menu_item1) { FactoryBot.create(:menu_item) }
-    let!(:menu_item2) { FactoryBot.create(:menu_item, menu_id: menu_item1.menu_id, sort_order: 2) }
-    let!(:menu_item3) { FactoryBot.create(:menu_item, :with_children, menu_id: menu_item1.menu_id, sort_order: 2) }
-    let!(:menu_item4) { FactoryBot.create(:menu_item, menu_id: menu_item1.menu_id, sort_order: 4) }
+    let!(:menu_item1) { create(:menu_item) }
+    let!(:menu_item2) { create(:menu_item, menu_id: menu_item1.menu_id, sort_order: 2) }
+    let!(:menu_item3) { create(:menu_item, :with_children, menu_id: menu_item1.menu_id, sort_order: 2) }
+    let!(:menu_item4) { create(:menu_item, menu_id: menu_item1.menu_id, sort_order: 4) }
 
     before do
       menu_item1.update!(sort_order: 3)
@@ -66,9 +66,9 @@ RSpec.describe MenuItem, type: :model do
   end
 
   describe 'concerns' do
-    subject(:model) { FactoryBot.create(:menu_item, :with_parent, :with_children) }
+    subject(:model) { create(:menu_item, :with_parent, :with_children) }
 
-    let(:translation) { FactoryBot.build(:menu_item) }
+    let(:translation) { build(:menu_item) }
 
     it_behaves_like 'Translatable'
     it_behaves_like 'Parentable'
