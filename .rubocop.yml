@@ -24,6 +24,7 @@ Layout/LineLength:
 Rails/CreateTableWithTimestamps:
   Exclude:
     - "db/migrate/20201226150556_create_active_storage_tables.active_storage.rb"
+    - "db/migrate/20220125164010_create_active_storage_variant_records.active_storage.rb"
 
 Rails/SkipsModelValidations:
   AllowedMethods:
