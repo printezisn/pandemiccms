@@ -152,15 +152,9 @@ This will send an email to the supervisor with instructions on how to activate t
 
 `bundle exec rspec`
 
-**Run sidekiq**:
-
-`bundle exec sidekiq`
-
-Sidekiq is responsible for running background jobs.
-
 **Run the application**:
 
-`bundle exec rails s`
+`./bin/dev`
 
 ## Rake tasks
 
