@@ -4,6 +4,7 @@ const path = require('path');
 const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 
 const entries = {};
 
@@ -76,5 +77,6 @@ module.exports = {
         },
       ],
     }),
+    new CompressionWebpackPlugin(),
   ],
 };
