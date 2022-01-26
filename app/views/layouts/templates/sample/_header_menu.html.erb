@@ -48,14 +48,14 @@
 <% if current_client.enabled_languages.size > 1 && controller_name != 'errors' %>
   <div class="navbar-item has-dropdown is-hoverable">
     <a href="#" class="navbar-link">
-      <span class="flag-icon flag-icon-<%= current_language.flag %>"></span>
+      <span class="fi fi-<%= current_language.flag %>"></span>
       &nbsp;
       <%= current_language.name %>
     </a>
     <div class="navbar-dropdown">
       <% current_client.enabled_languages.each do |language| %>
         <a href="<%= @model.path(language) %>" class="navbar-item">
-          <span class="flag-icon flag-icon-<%= language.flag %>"></span>
+          <span class="fi fi-<%= language.flag %>"></span>
           &nbsp;
           <%= language.name %>
         </a>

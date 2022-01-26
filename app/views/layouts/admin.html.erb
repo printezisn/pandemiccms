@@ -135,14 +135,14 @@
           <% if current_client.enabled_languages.size > 1 %>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link" href="javascript:void(0)">
-              <span class="flag-icon flag-icon-<%= current_language.flag %>"></span>
+              <span class="fi fi-<%= current_language.flag %>"></span>
               &nbsp;
               <%= current_language.name %>
             </a>
             <div class="navbar-dropdown is-right">
               <% current_client.enabled_languages.each do |language| %>
               <a class="navbar-item" href="<%= url_for(locale: language.locale) %>">
-                <span class="flag-icon flag-icon-<%= language.flag %>"></span>
+                <span class="fi fi-<%= language.flag %>"></span>
                 &nbsp;
                 <%= language.name %>
               </a>

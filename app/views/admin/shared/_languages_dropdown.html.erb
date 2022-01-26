@@ -2,7 +2,7 @@
 <div class="dropdown is-togglable is-right">
   <div class="dropdown-trigger card-header-icon">
     <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu">
-      <span class="flag-icon flag-icon-<%= translation_language.flag %>"></span>
+      <span class="fi fi-<%= translation_language.flag %>"></span>
       <%= translation_language.name %>
       <i class="fas fa-angle-down" aria-hidden="true"></i>
     </a>
@@ -11,7 +11,7 @@
     <nav class="dropdown-content">
       <% current_client.enabled_languages.each do |language| %>
       <a class="dropdown-item" href="<%= url_for(translation_locale: language.locale) %>">
-        <span class="flag-icon flag-icon-<%= language.flag %>"></span>
+        <span class="fi fi-<%= language.flag %>"></span>
         &nbsp;
         <%= language.name %>
       </a>

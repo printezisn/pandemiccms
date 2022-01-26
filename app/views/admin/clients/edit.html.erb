@@ -85,7 +85,7 @@
                 <label class="checkbox">
                   <input type="checkbox" name="language_ids[]" value="<%= client_language.id %>" <%= client_language.enabled? ? 'checked' : '' %> />
                   &nbsp;
-                  <span class="flag-icon flag-icon-<%= client_language.language.flag %>"></span>
+                  <span class="fi fi-<%= client_language.language.flag %>"></span>
                   <%= client_language.language.name %>
                 </label>
               </li>
@@ -108,7 +108,7 @@
                 <label class="radio">
                   <input type="radio" name="default_language_id" value="<%= client_language.id %>" <%= client_language.default? ? 'checked' : '' %> />
                   &nbsp;
-                  <span class="flag-icon flag-icon-<%= client_language.language.flag %>"></span>
+                  <span class="fi fi-<%= client_language.language.flag %>"></span>
                   <%= client_language.language.name %>
                 </label>
               </li>
