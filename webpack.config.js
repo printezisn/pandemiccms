@@ -13,8 +13,8 @@ glob.sync('./app/javascript/**/main.js').forEach((entry) => {
   entries[output] = entry;
 });
 
-module.exports = {
-  mode: 'production',
+module.exports = (env) => ({
+  mode: env.development ? 'development' : 'production',
   devtool: 'source-map',
   entry: entries,
   output: {
@@ -79,4 +79,4 @@ module.exports = {
     }),
     new CompressionWebpackPlugin(),
   ],
-};
+});
