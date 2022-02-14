@@ -43,7 +43,7 @@ RSpec.describe '/admin/media', type: :request do
       }
     end
 
-    let(:request) { post admin_media_path, params: params }
+    let(:request) { post admin_media_path, params: }
 
     it_behaves_like 'admin user page'
 
@@ -70,7 +70,7 @@ RSpec.describe '/admin/media', type: :request do
       }
     end
 
-    let(:request) { post admin_media_path(format: :json), params: params }
+    let(:request) { post admin_media_path(format: :json), params: }
 
     it_behaves_like 'admin user page with json format'
 

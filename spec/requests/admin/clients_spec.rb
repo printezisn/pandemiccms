@@ -44,7 +44,7 @@ RSpec.describe '/admin/clients', type: :request do
       }
     end
 
-    let(:request) { patch admin_client_edit_path, params: params }
+    let(:request) { patch admin_client_edit_path, params: }
 
     it_behaves_like 'supervisor page'
 

@@ -51,7 +51,7 @@ module Admin
               total: media.size
             )
 
-            redirect_to admin_media_path, notice: notice
+            redirect_to admin_media_path, notice:
           end
 
           format.json do
