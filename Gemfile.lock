@@ -136,10 +136,10 @@ GEM
       request_store (>= 1.0)
       ruby2_keywords
     e2mmap (0.1.0)
-    elasticsearch (7.17.0)
-      elasticsearch-api (= 7.17.0)
-      elasticsearch-transport (= 7.17.0)
-    elasticsearch-api (7.17.0)
+    elasticsearch (7.17.1)
+      elasticsearch-api (= 7.17.1)
+      elasticsearch-transport (= 7.17.1)
+    elasticsearch-api (7.17.1)
       multi_json
     elasticsearch-model (7.2.1)
       activesupport (> 3)
@@ -151,7 +151,7 @@ GEM
       elasticsearch (~> 7)
       elasticsearch-model (= 7.2.1)
       hashie
-    elasticsearch-transport (7.17.0)
+    elasticsearch-transport (7.17.1)
       faraday (~> 1)
       multi_json
     erubi (1.10.0)
@@ -203,7 +203,7 @@ GEM
     htmlentities (4.3.4)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
-    image_processing (1.12.1)
+    image_processing (1.12.2)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
     io-wait (0.2.1)
@@ -364,7 +364,7 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
-    rubocop-rspec (2.8.0)
+    rubocop-rspec (2.9.0)
       rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
     ruby-vips (2.1.4)
