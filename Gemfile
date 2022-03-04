@@ -94,4 +94,4 @@ gem 'draper', '~> 4.0'
 
 gem 'jsbundling-rails', '~> 1.0'
 
-gem 'sprockets-rails', '~> 3.2', require: 'sprockets/railtie'
+gem 'propshaft', '~> 0.6'

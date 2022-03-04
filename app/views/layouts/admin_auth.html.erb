@@ -10,10 +10,10 @@
   <link rel="icon" href="<%= current_client.image_path_with_default([32, 32], '/favicon.png') %>">
 
   <% ['admin_auth/main'].concat(yield(:stylesheets).split(',')).each do |name| %>
-    <%= css(name) %>
+    <%= stylesheet_link_tag name, media: 'all' %>
   <% end %>
   <% ['runtime', 'admin_auth/main'].concat(yield(:scripts).split(',')).each do |name| %>
-    <%= js(name) %>
+    <%= javascript_include_tag name, defer: true %>
   <% end %>
 </head>
 

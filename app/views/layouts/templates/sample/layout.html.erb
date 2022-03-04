@@ -11,10 +11,10 @@
   <% end %>
 
   <% ["templates/#{current_client.template}/main"].concat(yield(:stylesheets).split(',')).each do |name| %>
-    <%= css(name) %>
+    <%= stylesheet_link_tag name, media: 'all' %>
   <% end %>
   <% ['runtime', "templates/#{current_client.template}/main"].concat(yield(:scripts).split(',')).each do |name| %>
-    <%= js(name) %>
+    <%= javascript_include_tag name, defer: true %>
   <% end %>
 </head>
 
