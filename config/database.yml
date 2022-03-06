@@ -1,14 +1,14 @@
 default: &default
   adapter: mysql2
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: <%= Rails.application.credentials[:mysql][:host] %>
-  username: <%= Rails.application.credentials[:mysql][:username] %>
-  password: <%= Rails.application.credentials[:mysql][:password] %>
+  username: "<%= Rails.application.credentials.dig(:mariadb, :username) %>"
+  password: "<%= Rails.application.credentials.dig(:mariadb, :password) %>"
   timeout: 5000
   encoding: utf8
 
 development:
   <<: *default
+  host: 127.0.0.1
   database: pandemiccms_development
 
 # Warning: The database defined as "test" will be erased and
@@ -16,8 +16,10 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  host: 127.0.0.1
   database: pandemiccms_test
 
 production:
   <<: *default
+  host: mariadb
   database: pandemiccms_production
