@@ -24,6 +24,8 @@ module Pandemiccms
 
     config.exceptions_app = routes
 
+    config.search = config_for(:elasticsearch)
+
     config.available_languages = [
       { locale: 'en-GB', name: 'English', flag: 'gb' },
       { locale: 'el-GR', name: 'Ελληνικά', flag: 'gr', transliterations: 'greek' }

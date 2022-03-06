@@ -1,0 +1,15 @@
+default: &default
+  username: "<%= Rails.application.credentials.dig(:elasticsearch, :username) %>"
+  password: "<%= Rails.application.credentials.dig(:elasticsearch, :password) %>"
+
+development:
+  <<: *default
+  url: "http://localhost:9200"
+
+test:
+  <<: *default
+  url: "http://localhost:9200"
+
+production:
+  <<: *default
+  url: "http://elasticsearch:9200"

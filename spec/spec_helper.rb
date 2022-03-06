@@ -96,10 +96,10 @@ RSpec.configure do |config|
 
   config.after do
     es_client = Elasticsearch::Client.new(
-      url: Rails.application.credentials.elasticsearch[:url],
+      url: Rails.application.config.search[:url],
       log: Rails.env.development?,
-      user: Rails.application.credentials.elasticsearch[:username],
-      password: Rails.application.credentials.elasticsearch[:password]
+      user: Rails.application.config.search[:username],
+      password: Rails.application.config.search[:password]
     )
     index_names = es_client.indices.get(index: '_all').keys.select { |index_name| index_name.end_with?('_test') }
     index_names.each do |index_name|
