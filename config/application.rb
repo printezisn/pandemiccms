@@ -27,6 +27,12 @@ module Pandemiccms
     config.search = config_for(:elasticsearch)
     config.redis = config_for(:redis)
 
+    smtp_config = config_for(:smtp)
+    if smtp_config.present?
+      config.action_mailer.delivery_method = :smtp
+      config.action_mailer.smtp_settings = smtp_config
+    end
+
     config.available_languages = [
       { locale: 'en-GB', name: 'English', flag: 'gb' },
       { locale: 'el-GR', name: 'Ελληνικά', flag: 'gr', transliterations: 'greek' }
