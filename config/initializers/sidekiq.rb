@@ -2,14 +2,14 @@
 
 Sidekiq.configure_server do |config|
   config.redis = {
-    url: "redis://#{Rails.application.credentials.redis[:host]}:#{Rails.application.credentials.redis[:port]}",
-    password: Rails.application.credentials.redis[:password]
+    url: "redis://#{Rails.application.config.redis[:host]}:#{Rails.application.config.redis[:port]}",
+    password: Rails.application.config.redis[:password]
   }
 end
 
 Sidekiq.configure_client do |config|
   config.redis = {
-    url: "redis://#{Rails.application.credentials.redis[:host]}:#{Rails.application.credentials.redis[:port]}",
-    password: Rails.application.credentials.redis[:password]
+    url: "redis://#{Rails.application.config.redis[:host]}:#{Rails.application.config.redis[:port]}",
+    password: Rails.application.config.redis[:password]
   }
 end

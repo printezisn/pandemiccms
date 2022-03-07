@@ -4,9 +4,9 @@
 module RedisWrapper
   def redis
     @redis ||= Redis.new(
-      host: Rails.application.credentials.redis[:host],
-      port: Rails.application.credentials.redis[:port],
-      password: Rails.application.credentials.redis[:password]
+      host: Rails.application.config.redis[:host],
+      port: Rails.application.config.redis[:port],
+      password: Rails.application.config.redis[:password]
     )
   end
 end

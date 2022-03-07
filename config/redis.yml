@@ -1,0 +1,15 @@
+default: &default
+  port: 6379
+  password: "<%= Rails.application.credentials.dig(:redis, :password) %>"
+
+development:
+  <<: *default
+  host: 127.0.0.1
+
+test:
+  <<: *default
+  host: 127.0.0.1
+
+production:
+  <<: *default
+  host: redis
