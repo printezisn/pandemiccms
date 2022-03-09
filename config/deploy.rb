@@ -26,7 +26,8 @@ set :deploy_to, "/home/deploy/#{fetch :application}"
 # append :linked_files, []
 
 # Default value for linked_dirs is []
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'storage', 'public/system', 'public/uploads'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'storage', 'public/system',
+       'public/uploads', 'app/assets/builds'
 
 # Default value for default_env is {}
 set :default_env, { path: '$HOME/.nvm/versions/node/v14.13.0/bin:$PATH', node_env: 'production' }
