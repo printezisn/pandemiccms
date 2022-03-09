@@ -82,31 +82,21 @@ Add configuration by running `EDITOR=<editor> rails credentials:edit`. The crede
 - MySQL/MariaDB
 - Redis
 - Elasticsearch
-- SMTP mail server
-- Sidekiq Web UI
+- Super admin areas (e.g. Sidekiq Web UI)
 
 and it has the following structure:
 
 ```
 secret_key_base: <secret_key_base>
-mysql:
-  host: <host>
+mariadb:
   username: <username>
   password: <password>
 redis:
-  host: <host>
-  port: <port>
   password: <password>
 elasticsearch:
-  url: <url>
   username: <username>
   password: <password>
-smtp:
-  host: <host>
-  port: <port>
-  username: <username>
-  password: <password>
-sidekiq_ui:
+super_admin:
   username: <username>
   password: <password>
 ```
