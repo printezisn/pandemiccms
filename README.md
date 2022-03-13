@@ -20,6 +20,8 @@ A CMS with all the necessary components to help you create fast and amazing webs
 - Many applications need to support multiple languages. This is easy for static content, but what about dynamic content ? Pandemic CMS is designed to support multilingual content.
 - Pandemic CMS is designed to be multi-tenant, meaning that it is possible to support multiple applications/clients on the same instance.
 
+![https://pandemiccms.com](README/admin_dashboard.jpeg)
+
 Website: https://pandemiccms.com
 
 ## Stack
@@ -71,6 +73,8 @@ In order to run the project, you have to install the following components:
 
 \* You may skip the installation of these components if you want and use the `docker-compose.infrastructure.yml` instead.
 
+You may actually skip the whole step if you use [remote containers](https://code.visualstudio.com/docs/remote/containers) with Visual Studio Code. It also spins up `docker-compose.infrastructure.yml` for you.
+
 **2. Install dependencies**:
 
 - `bundle install`
@@ -78,7 +82,7 @@ In order to run the project, you have to install the following components:
 
 **3. Add configuration**:
 
-Add configuration by running `EDITOR=<editor> rails credentials:edit`. The credentials file contains configuration for the following services:
+Add configuration by running `EDITOR=<editor> rails credentials:edit` (e.g. `EDITOR="code --wait" rails credentials:edit`). The credentials file contains configuration for the following services:
 - MySQL/MariaDB
 - Redis
 - Elasticsearch
