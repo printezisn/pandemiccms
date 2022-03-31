@@ -21,7 +21,7 @@ module Translatable
       translation = translations.find_or_initialize_by(locale: locale.to_s)
       translation.fields = attributes.slice(*self.class::TRANSLATABLE_FIELDS)
 
-      return unless translation.save
+      raise ActiveRecord::Rollback unless translation.save
 
       reload
 
