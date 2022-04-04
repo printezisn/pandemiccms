@@ -6,7 +6,12 @@ require 'uri'
 class Client < ApplicationRecord
   DEFAULT_EMAIL = 'admin@pandemiccms.com'
 
+  SORTABLE_FIELDS = %i[name created_at updated_at].freeze
+  TEXT_SEARCHABLE_FIELDS = %i[name].freeze
+
   include Imageable
+  include SimpleTextSearchable
+  include BoundSortable
 
   has_many :client_languages, inverse_of: :client, dependent: :destroy
   has_many :languages, through: :client_languages

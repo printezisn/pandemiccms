@@ -2,6 +2,8 @@
 
 require 'rails_helper'
 
+require './spec/models/concerns/simple_text_searchable'
+require './spec/models/concerns/bound_sortable'
 require './spec/models/concerns/imageable'
 
 RSpec.describe Client, type: :model do
@@ -113,5 +115,11 @@ RSpec.describe Client, type: :model do
     end
   end
 
-  it_behaves_like 'Imageable'
+  describe 'concerns' do
+    subject(:model) { create(:client) }
+
+    it_behaves_like 'SimpleTextSearchable'
+    it_behaves_like 'BoundSortable'
+    it_behaves_like 'Imageable'
+  end
 end
