@@ -1,0 +1,16 @@
+<%= form_with(url: '', method: :delete, id: "delete-client-modal#{client.id}", class: 'modal') do %>
+<div class="modal-background cancel"></div>
+<div class="modal-card">
+  <div class="modal-card-head">
+    <p class="modal-card-title"><%= _('Delete Confirmation') %></p>
+    <button type="button" class="delete cancel" aria-label="close"></button>
+  </div>
+  <div class="modal-card-body">
+    <p><%= _('Are you sure you want to delete this client ?') %></p>
+  </div>
+  <div class="modal-card-foot">
+    <button type="button" class="button cancel"><%= _('No') %></button>
+    <button type="submit" class="button is-success"><%= _('Yes') %></button>
+  </div>
+</div>
+<% end %>

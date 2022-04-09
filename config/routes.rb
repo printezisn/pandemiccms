@@ -123,6 +123,10 @@ Rails.application.routes.draw do
       root 'dashboard#index'
     end
 
+    namespace :super_admin do
+      resources :clients
+    end
+
     get 'pg/:id/:slug', to: 'pages#show', as: :page
     get 'p/:id/:slug', to: 'posts#show', as: :post
     get 't/:id/:slug', to: 'tags#show', as: :tag

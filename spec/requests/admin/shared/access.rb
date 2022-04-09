@@ -51,3 +51,17 @@ RSpec.shared_examples 'supervisor page' do
     end
   end
 end
+
+RSpec.shared_examples 'super admin page' do
+  context 'when the super admin is not signed in' do
+    before do
+      headers[:HTTP_AUTHORIZATION] = nil
+    end
+
+    it 'returns unauthorized status' do
+      request
+
+      expect(response).to be_unauthorized
+    end
+  end
+end

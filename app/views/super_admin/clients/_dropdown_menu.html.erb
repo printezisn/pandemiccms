@@ -1,0 +1,15 @@
+<div class="dropdown-menu" role="menu">
+  <div class="dropdown-content">
+    <a class="dropdown-item" href="">
+      <i class="fas fa-pen"></i>
+      &nbsp;
+      <%= _('Edit') %>
+    </a>
+    <hr class="dropdown-divider" />
+    <a href="javascript:void(0)" class="dropdown-item" data-modal-open="delete-client-modal<%= client.id %>">
+      <i class="fas fa-trash"></i>
+      &nbsp;
+      <%= _('Delete') %>
+    </a>
+  </div>
+</div>

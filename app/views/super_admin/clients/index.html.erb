@@ -1,0 +1,19 @@
+<%
+  content_for :title, _('Clients | %{client}') % { client: 'Pandemic CMS' }
+  content_for :description, _('Clients of %{client}') % { client: 'Pandemic CMS' }
+%>
+
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-cog"></i>
+      &nbsp;
+      <%= _('Clients') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="smart-table" id="clients-smart-table" data-use-history="true">
+      <%= render partial: 'super_admin/clients/clients_table' %>
+    </div>
+  </div>
+</article>

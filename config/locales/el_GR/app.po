@@ -194,6 +194,9 @@ msgstr "Είστε σίγουρος/η ότι θέλετε να απενεργο
 msgid "Are you sure you want to delete this category ?"
 msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτή την κατηγορία ?"
 
+msgid "Are you sure you want to delete this client ?"
+msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτό το πελάτη ?"
+
 msgid "Are you sure you want to delete this medium ?"
 msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτό το αρχείο ?"
 
@@ -313,6 +316,15 @@ msgstr "Καθάρισμα Cache"
 
 msgid "Click the link below to unlock your account:"
 msgstr "Πατήστε στο σύνδεσμο για να ξεκλειδώσετε το λογαριασμό σας:"
+
+msgid "Clients"
+msgstr "Πελάτες"
+
+msgid "Clients of %{client}"
+msgstr "Πελάτες του %{client}"
+
+msgid "Clients | %{client}"
+msgstr "Πελάτες | %{client}"
 
 msgid "Client|Email"
 msgstr "Email"
@@ -790,6 +802,9 @@ msgstr "Όχι"
 
 msgid "No categories were found."
 msgstr "Δε βρέθηκαν κατηγορίες."
+
+msgid "No clients were found."
+msgstr "Δε βρέθηκαν πελάτες."
 
 msgid "No email templates were found."
 msgstr "Δε βρέθηκαν πρότυπα email."
@@ -1399,6 +1414,9 @@ msgstr "Δέντρο με τις κατηγορίες του %{client}"
 
 msgid "Tree with pages of %{client}"
 msgstr "Δέντρο με τις σελίδες του %{client}"
+
+msgid "URL"
+msgstr "Σύνδεσμος"
 
 msgid "Unconfirmed Email"
 msgstr "Μη Επιβεβαιωμένο Email"

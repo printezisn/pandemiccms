@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="<%= current_locale.to_s.split('-').first %>" data-js-locale="<%= current_locale.to_s.tr('-', '_') %>">
+
+<head>
+  <title><%= yield :title %></title>
+  <meta name="description" content="<%= yield :description %>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="icon" href="/favicon.png" />
+
+  <% ['admin/main'].concat(yield(:stylesheets).split(',')).each do |name| %>
+    <%= stylesheet_link_tag name, media: 'all' %>
+  <% end %>
+  <% ['runtime', 'admin/main'].concat(yield(:scripts).split(',')).each do |name| %>
+    <%= javascript_include_tag name, defer: true %>
+  <% end %>
+</head>
+
+<body>
+  <header class="title is-3 logo-header">
+    <img src="/logo.png" alt="logo" />
+    <span>&nbsp; Pandemic CMS</span>
+  </header>
+  <main class="container is-fluid"><%= yield %></main>
+  <%= render partial: 'layouts/shared/admin_notifications' %>
+</body>
+
+</html>
