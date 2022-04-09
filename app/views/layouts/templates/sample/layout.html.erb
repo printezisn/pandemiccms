@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <% client_cache 'Favicon' do %>
-    <link rel="icon" href="<%= current_client.image_path_with_default([32, 32], '/favicon.png') %>">
+    <link rel="icon" href="<%= current_client.image_path_with_default([32, 32], '/favicon.png') %>" />
   <% end %>
 
   <% ["templates/#{current_client.template}/main"].concat(yield(:stylesheets).split(',')).each do |name| %>

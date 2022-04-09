@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-  <link rel="icon" href="<%= current_client.image_path_with_default([32, 32], '/favicon.png') %>">
+  <link rel="icon" href="<%= current_client.image_path_with_default([32, 32], '/favicon.png') %>" />
 
   <% ['admin_auth/main'].concat(yield(:stylesheets).split(',')).each do |name| %>
     <%= stylesheet_link_tag name, media: 'all' %>
