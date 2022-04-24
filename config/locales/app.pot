@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 05:16+0000\n"
-"PO-Revision-Date: 2022-04-09 05:16+0000\n"
+"POT-Creation-Date: 2022-04-23 18:24+0000\n"
+"PO-Revision-Date: 2022-04-23 18:24+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -85,6 +85,9 @@ msgid "Activate Confirmation"
 msgstr ""
 
 msgid "Active"
+msgstr ""
+
+msgid "Add"
 msgstr ""
 
 msgid "Admin Panel"
@@ -366,6 +369,12 @@ msgstr ""
 msgid "Create Category | %{client}"
 msgstr ""
 
+msgid "Create Client"
+msgstr ""
+
+msgid "Create Client | %{client}"
+msgstr ""
+
 msgid "Create Menu"
 msgstr ""
 
@@ -396,6 +405,9 @@ msgstr ""
 msgid "Create Redirect | %{client}"
 msgstr ""
 
+msgid "Create Supervisor User"
+msgstr ""
+
 msgid "Create Tag"
 msgstr ""
 
@@ -409,6 +421,9 @@ msgid "Create User | %{client}"
 msgstr ""
 
 msgid "Create new category for %{client}"
+msgstr ""
+
+msgid "Create new client for %{client}"
 msgstr ""
 
 msgid "Create new menu for %{client}"
@@ -490,6 +505,12 @@ msgid "Didn't receive confirmation instructions ?"
 msgstr ""
 
 msgid "Didn't receive unlock instructions ?"
+msgstr ""
+
+msgid "Domain"
+msgstr ""
+
+msgid "Domains and Ports"
 msgstr ""
 
 msgid "Draft|Page"
@@ -646,6 +667,24 @@ msgid "Forgot Password | %{client}"
 msgstr ""
 
 msgid "Forgot your password ?"
+msgstr ""
+
+msgid "FormClient|Admin email"
+msgstr ""
+
+msgid "FormClient|Admin password"
+msgstr ""
+
+msgid "FormClient|Admin password confirmation"
+msgstr ""
+
+msgid "FormClient|Admin username"
+msgstr ""
+
+msgid "FormClient|Client name"
+msgstr ""
+
+msgid "FormClient|Client template"
 msgstr ""
 
 msgid "Hello %{email}!"
@@ -933,6 +972,9 @@ msgstr ""
 msgid "Please note that this operation will also delete the content created by this user."
 msgstr ""
 
+msgid "Port"
+msgstr ""
+
 msgid "Post"
 msgstr ""
 
@@ -1204,6 +1246,9 @@ msgid "The category was successfully translated."
 msgstr ""
 
 msgid "The category was successfully updated."
+msgstr ""
+
+msgid "The client was successfully created."
 msgstr ""
 
 msgid "The email template was successfully translated."
@@ -1615,6 +1660,57 @@ msgid "activerecord.errors.models.email_template.attributes.subject.blank"
 msgstr ""
 
 msgid "activerecord.errors.models.email_template.attributes.subject.too_long"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.admin_email.blank"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.admin_email.invalid"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.admin_email.too_long"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.admin_password.blank"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.admin_password.invalid"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.admin_password.too_long"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.admin_password_confirmation.confirmation"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.admin_username.blank"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.admin_username.invalid"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.admin_username.too_long"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.client_name.blank"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.client_name.too_long"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.client_template.blank"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.domains.blank"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.domains.taken"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.ports.blank"
+msgstr ""
+
+msgid "activemodel.errors.models.form/client.attributes.ports.invalid"
 msgstr ""
 
 msgid "activerecord.errors.models.menu.attributes.name.blank"

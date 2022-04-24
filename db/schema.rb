@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_25_164011) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
@@ -30,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.string "service_name", null: false
     t.bigint "byte_size", null: false
     t.string "checksum"
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
@@ -43,8 +42,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
   create_table "admin_user_roles", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "admin_user_id", null: false
     t.integer "role", limit: 1, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["admin_user_id"], name: "index_admin_user_roles_on_admin_user_id"
   end
 
@@ -54,22 +53,22 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.bigint "client_id", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
+    t.datetime "reset_password_sent_at", precision: nil
     t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
+    t.datetime "current_sign_in_at", precision: nil
+    t.datetime "last_sign_in_at", precision: nil
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
+    t.datetime "confirmed_at", precision: nil
+    t.datetime "confirmation_sent_at", precision: nil
     t.string "unconfirmed_email"
     t.integer "failed_attempts", default: 0, null: false
-    t.datetime "locked_at"
-    t.datetime "password_changed_at"
+    t.datetime "locked_at", precision: nil
+    t.datetime "password_changed_at", precision: nil
     t.string "unique_session_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "middle_name"
     t.string "last_name"
@@ -92,8 +91,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.integer "posts_count", default: 0, null: false
     t.bigint "parent_id"
     t.text "hierarchy_path"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "children_count", default: 0
     t.integer "visibility", limit: 1, default: 0, null: false
     t.text "body"
@@ -107,8 +106,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.bigint "category_id", null: false
     t.string "categorizable_type", null: false
     t.bigint "categorizable_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["categorizable_type", "categorizable_id"], name: "index_category_categorizables_on_categorizable"
     t.index ["category_id", "categorizable_id", "categorizable_type"], name: "index_category_categorizable_on_category_and_categorizable", unique: true
     t.index ["category_id"], name: "index_category_categorizables_on_category_id"
@@ -118,8 +117,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.bigint "client_id", null: false
     t.string "domain", null: false
     t.integer "port", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_client_domains_on_client_id"
     t.index ["domain", "port"], name: "index_client_domains_on_domain_and_port", unique: true
   end
@@ -128,8 +127,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.bigint "client_id", null: false
     t.bigint "language_id", null: false
     t.boolean "default", default: false, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "enabled", default: false, null: false
     t.index ["client_id", "language_id"], name: "index_client_languages_on_client_id_and_language_id", unique: true
     t.index ["client_id"], name: "index_client_languages_on_client_id"
@@ -141,8 +140,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.string "time_zone", null: false
     t.string "template", null: false
     t.text "settings"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "email"
     t.boolean "cache_enabled", default: false, null: false
     t.integer "cache_duration"
@@ -153,8 +152,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.string "type", null: false
     t.string "subject"
     t.text "body"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["client_id", "type"], name: "index_email_templates_on_client_id_and_type"
     t.index ["client_id"], name: "index_email_templates_on_client_id"
   end
@@ -163,8 +162,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.string "locale", null: false
     t.string "name", null: false
     t.string "flag", limit: 10, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "transliterations"
     t.index ["locale"], name: "index_languages_on_locale", unique: true
   end
@@ -172,8 +171,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
   create_table "media", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "client_id", null: false
     t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_media_on_client_id"
   end
 
@@ -187,8 +186,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.bigint "parent_id"
     t.text "hierarchy_path"
     t.integer "children_count", default: 0, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "css_class"
     t.boolean "open_in_new_window", default: false
     t.index ["linkable_type", "linkable_id"], name: "index_menu_items_on_linkable"
@@ -200,8 +199,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.string "name", null: false
     t.bigint "client_id", null: false
     t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["client_id", "name"], name: "index_menus_on_client_id_and_name", unique: true
     t.index ["client_id"], name: "index_menus_on_client_id"
   end
@@ -211,22 +210,22 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.string "password_archivable_type", null: false
     t.integer "password_archivable_id", null: false
     t.string "password_salt"
-    t.datetime "created_at"
+    t.datetime "created_at", precision: nil
     t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable"
   end
 
   create_table "pages", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "client_id", null: false
     t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "slug"
     t.text "description"
     t.text "body"
     t.string "template"
     t.integer "status", limit: 1, default: 0, null: false
     t.integer "visibility", limit: 1, default: 0, null: false
-    t.datetime "published_at"
+    t.datetime "published_at", precision: nil
     t.bigint "author_id", null: false
     t.bigint "parent_id"
     t.text "hierarchy_path"
@@ -242,17 +241,17 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
   create_table "posts", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "client_id", null: false
     t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "slug"
     t.text "description"
     t.text "body"
     t.string "template"
     t.integer "status", limit: 1, default: 0, null: false
     t.integer "visibility", limit: 1, default: 0, null: false
-    t.datetime "published_at"
+    t.datetime "published_at", precision: nil
     t.bigint "author_id", null: false
-    t.datetime "indexed_at"
+    t.datetime "indexed_at", precision: nil
     t.string "index_version"
     t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["client_id", "name"], name: "index_posts_on_client_id_and_name", unique: true
@@ -266,8 +265,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.bigint "client_id", null: false
     t.text "from"
     t.text "to"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_redirects_on_client_id"
   end
 
@@ -275,8 +274,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.bigint "tag_id", null: false
     t.string "taggable_type", null: false
     t.bigint "taggable_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["tag_id", "taggable_id", "taggable_type"], name: "index_tag_taggables_on_tag_id_and_taggable_id_and_taggable_type", unique: true
     t.index ["tag_id"], name: "index_tag_taggables_on_tag_id"
     t.index ["taggable_type", "taggable_id"], name: "index_tag_taggables_on_taggable"
@@ -289,8 +288,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.text "description"
     t.string "template"
     t.integer "posts_count", default: 0, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "visibility", limit: 1, default: 0, null: false
     t.text "body"
     t.index ["client_id", "name"], name: "index_tags_on_client_id_and_name", unique: true
@@ -303,8 +302,8 @@ ActiveRecord::Schema.define(version: 2022_01_25_164011) do
     t.bigint "translatable_id", null: false
     t.string "locale", null: false
     t.text "fields"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["translatable_id", "translatable_type", "locale"], name: "index_translations_on_translatable_and_locale", unique: true
     t.index ["translatable_type", "translatable_id"], name: "index_translations_on_translatable"
   end

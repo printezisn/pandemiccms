@@ -1,0 +1,141 @@
+<% total_domains_and_ports = [@form_model.domains.size, @form_model.ports.size].max %>
+
+<%= render "admin/shared/error_messages", resource: @form_model %>
+<article class="card">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-cog"></i>
+      &nbsp;
+      <%= _('Create Client') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :client_name, _('FormClient|Client name'), class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :client_name, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :client_template, _('FormClient|Client template'), class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.select :client_template, @form_model.templates %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-cog"></i>
+      &nbsp;
+      <%= _('Domains and Ports') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="has-text-right-tablet">
+      <button type="button" class="button is-success" id="add-domain-button">
+        <%= _('Add') %>
+        &nbsp;
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+    <div class="table-container">
+      <table class="table is-striped is-fullwidth">
+        <thead>
+          <tr>
+            <th><%= _('Domain') %></th>
+            <th><%= _('Port') %></th>
+            <th class="actions-cell"></th>
+          </tr>
+        </thead>
+        <tbody id="domains-container">
+          <% (0...total_domains_and_ports).each do |i| %>
+          <tr>
+            <td>
+              <input type="text" name="form_client[domains][]" class="input min-width-input" placeholder="localhost" value="<%= @form_model.domains[i] %>" />
+            </td>
+            <td>
+              <input type="text" name="form_client[ports][]" class="input min-width-input" placeholder="3000" value="<%= @form_model.ports[i] %>" />
+            </td>
+            <td class="actions-cell">
+              <button type="button" class="button is-danger delete-domain-button">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</article>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-globe"></i>
+      &nbsp;
+      <%= _('Languages') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <label class="label"><%= _('Enabled Languages') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <ul>
+              <% @form_model.all_languages.each do |language| %>
+              <li>
+                <label class="checkbox">
+                  <input type="checkbox" name="form_client[language_ids][]" value="<%= language.id %>" <%= @form_model.language_ids.include?(language.id.to_s) ? 'checked' : '' %> />
+                  &nbsp;
+                  <span class="fi fi-<%= language.flag %>"></span>
+                  <%= language.name %>
+                </label>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="default-languages" class="field is-horizontal <%= @form_model.language_ids.size.to_i > 1 ? '' : 'is-hidden' %>">
+      <div class="field-label">
+        <label class="label"><%= _('Default Language') %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <ul>
+              <% @form_model.all_languages.each do |language| %>
+              <li id="default-language-<%= language.id %>" class="<%= @form_model.language_ids.include?(language.id.to_s) ? '' : 'is-hidden' %>">
+                <label class="radio">
+                  <input type="radio" name="form_client[default_language_id]" value="<%= language.id %>" <%= language.id.to_s == @form_model.default_language_id ? 'checked' : '' %> />
+                  &nbsp;
+                  <span class="fi fi-<%= language.flag %>"></span>
+                  <%= language.name %>
+                </label>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

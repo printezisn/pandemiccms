@@ -49,7 +49,12 @@ main {
   justify-content: center;
 }
 
-@media screen and (min-width: 769px), print {
+.min-width-input {
+  min-width: 100px;
+}
+
+@media screen and (min-width: 769px),
+print {
   .dropdown.is-right-tablet {
     .dropdown-menu {
       left: auto;

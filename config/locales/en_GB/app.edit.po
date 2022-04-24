@@ -86,6 +86,9 @@ msgstr "Activate Confirmation"
 msgid "Active"
 msgstr "Active"
 
+msgid "Add"
+msgstr "Add"
+
 msgid "Admin Panel"
 msgstr "Admin Panel"
 
@@ -365,6 +368,12 @@ msgstr "Create Category"
 msgid "Create Category | %{client}"
 msgstr "Create Category | %{client}"
 
+msgid "Create Client"
+msgstr "Create Client"
+
+msgid "Create Client | %{client}"
+msgstr "Create Client | %{client}"
+
 msgid "Create Menu"
 msgstr "Create Menu"
 
@@ -395,6 +404,9 @@ msgstr "Create Redirect"
 msgid "Create Redirect | %{client}"
 msgstr "Create Redirect | %{client}"
 
+msgid "Create Supervisor User"
+msgstr "Create Supervisor User"
+
 msgid "Create Tag"
 msgstr "Create Tag"
 
@@ -409,6 +421,9 @@ msgstr "Create User | %{client}"
 
 msgid "Create new category for %{client}"
 msgstr "Create new category for %{client}"
+
+msgid "Create new client for %{client}"
+msgstr "Create new client for %{client}"
 
 msgid "Create new menu for %{client}"
 msgstr "Create new menu for %{client}"
@@ -490,6 +505,12 @@ msgstr "Didn't receive confirmation instructions ?"
 
 msgid "Didn't receive unlock instructions ?"
 msgstr "Didn't receive unlock instructions ?"
+
+msgid "Domain"
+msgstr "Domains"
+
+msgid "Domains and Ports"
+msgstr "Domains and Ports"
 
 msgid "Draft|Page"
 msgstr "Draft"
@@ -646,6 +667,24 @@ msgstr "Forgot Password | %{client}"
 
 msgid "Forgot your password ?"
 msgstr "Forgot your password ?"
+
+msgid "FormClient|Admin email"
+msgstr "Email"
+
+msgid "FormClient|Admin password"
+msgstr "Password"
+
+msgid "FormClient|Admin password confirmation"
+msgstr "Password Confirmation"
+
+msgid "FormClient|Admin username"
+msgstr "Username"
+
+msgid "FormClient|Client name"
+msgstr "Name"
+
+msgid "FormClient|Client template"
+msgstr "Template"
 
 msgid "Hello %{email}!"
 msgstr "Hello %{email}!"
@@ -932,6 +971,9 @@ msgstr "Password Change"
 msgid "Please note that this operation will also delete the content created by this user."
 msgstr "Please note that this operation will also delete the content created by this user."
 
+msgid "Port"
+msgstr "Port"
+
 msgid "Post"
 msgstr "Post"
 
@@ -1204,6 +1246,9 @@ msgstr "The category was successfully translated."
 
 msgid "The category was successfully updated."
 msgstr "The category was successfully created."
+
+msgid "The client was successfully created."
+msgstr "The client was successfully created."
 
 msgid "The email template was successfully translated."
 msgstr "The email template was successfully translated."
@@ -1498,6 +1543,57 @@ msgstr "Your profile was successfully translated."
 
 msgid "Your profile was successfully updated."
 msgstr "Your profile was successfully created."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_email.blank"
+msgstr "The email is required."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_email.invalid"
+msgstr "The email format is invalid."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_email.too_long"
+msgstr "The email may contain up to %{count} characters."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_password.blank"
+msgstr "The password is required."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_password.invalid"
+msgstr "The password must contain at least 1 upper case character, 1 lower case, 1 digit and 1 symbol (@#$!%%*?&^)."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_password.too_long"
+msgstr "The password may contain up to %{count} characters."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_password_confirmation.confirmation"
+msgstr "Password confirmation must match the password."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_username.blank"
+msgstr "The username is required."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_username.invalid"
+msgstr "The username must contain only letters, digits, dashes and dots."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_username.too_long"
+msgstr "The username may contain up to %{count} characters."
+
+msgid "activemodel.errors.models.form/client.attributes.client_name.blank"
+msgstr "The name is required."
+
+msgid "activemodel.errors.models.form/client.attributes.client_name.too_long"
+msgstr "The name may contain up to %{count} characters."
+
+msgid "activemodel.errors.models.form/client.attributes.client_template.blank"
+msgstr "The template is required."
+
+msgid "activemodel.errors.models.form/client.attributes.domains.blank"
+msgstr "The domains are required and cannot be empty."
+
+msgid "activemodel.errors.models.form/client.attributes.domains.taken"
+msgstr "Some domains are already in use."
+
+msgid "activemodel.errors.models.form/client.attributes.ports.blank"
+msgstr "The ports are required and cannot be empty."
+
+msgid "activemodel.errors.models.form/client.attributes.ports.invalid"
+msgstr "The ports must be valid numbers."
 
 msgid "activerecord.attributes.admin_user.email"
 msgstr "Email"

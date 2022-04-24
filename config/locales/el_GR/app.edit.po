@@ -86,6 +86,9 @@ msgstr "Επιβεβαίωση Ενεργοποίησης"
 msgid "Active"
 msgstr "Ενεργός"
 
+msgid "Add"
+msgstr "Προσθήκη"
+
 msgid "Admin Panel"
 msgstr "Πίνακας Διαχείρισης"
 
@@ -365,6 +368,12 @@ msgstr "Δημιουργία Κατηγορίας"
 msgid "Create Category | %{client}"
 msgstr "Δημιουργία Κατηγορίας | %{client}"
 
+msgid "Create Client"
+msgstr "Δημιουργία Πελάτη"
+
+msgid "Create Client | %{client}"
+msgstr "Δημιουργία Πελάτη | %{client}"
+
 msgid "Create Menu"
 msgstr "Δημιουργία Μενού"
 
@@ -395,6 +404,9 @@ msgstr "Δημιουργία Ανακατεύθυνσης"
 msgid "Create Redirect | %{client}"
 msgstr "Δημιουργία Ανακατεύθυνσης | %{client}"
 
+msgid "Create Supervisor User"
+msgstr "Δημιουργία Επόπτη"
+
 msgid "Create Tag"
 msgstr "Δημιουργία Ετικέτας"
 
@@ -409,6 +421,9 @@ msgstr "Δημιουργία Χρήστη | %{client}"
 
 msgid "Create new category for %{client}"
 msgstr "Δημιουργία νέας κατηγορίας για το %{client}"
+
+msgid "Create new client for %{client}"
+msgstr "Δημιουργία νέου πελάτη για το %{client}"
 
 msgid "Create new menu for %{client}"
 msgstr "Δημιουργία νέου μενού για το %{client}"
@@ -490,6 +505,12 @@ msgstr "Δε λάβατε οδηγίες επιβεβαίωσης ?"
 
 msgid "Didn't receive unlock instructions ?"
 msgstr "Δε λάβατε οδηγίες ξεκλειδώματος"
+
+msgid "Domain"
+msgstr "Domain"
+
+msgid "Domains and Ports"
+msgstr "Domains και Ports"
 
 msgid "Draft|Page"
 msgstr "Προσχέδιο"
@@ -646,6 +667,24 @@ msgstr "Ξέχασα τον Κωδικό | %{client}"
 
 msgid "Forgot your password ?"
 msgstr "Ξεχάσατε τον κωδικό σας ?"
+
+msgid "FormClient|Admin email"
+msgstr "Email"
+
+msgid "FormClient|Admin password"
+msgstr "Κωδικός"
+
+msgid "FormClient|Admin password confirmation"
+msgstr "Επιβεβαίωση Κωδικού"
+
+msgid "FormClient|Admin username"
+msgstr "Όνομα Χρήστη"
+
+msgid "FormClient|Client name"
+msgstr "Όνομα"
+
+msgid "FormClient|Client template"
+msgstr "Πρότυπο"
 
 msgid "Hello %{email}!"
 msgstr "Γειά σας %{email}!"
@@ -932,6 +971,9 @@ msgstr "Αλλαγή Κωδικού"
 msgid "Please note that this operation will also delete the content created by this user."
 msgstr "Παρακαλούμε σημειώστε ότι αυτή η ενέργεια θα διαγράψει και το περιεχόμενο που έχει δημιουργηθεί απο αυτό το χρήστη."
 
+msgid "Port"
+msgstr "Port"
+
 msgid "Post"
 msgstr "Άρθρο"
 
@@ -1204,6 +1246,9 @@ msgstr "Η κατηγορία μεταφράστηκε με επιτυχία."
 
 msgid "The category was successfully updated."
 msgstr "Η κατηγορία δημιουργήθηκε με επιτυχία."
+
+msgid "The client was successfully created."
+msgstr "Ο πελάτης δημιουργήθηκε με επιτυχία."
 
 msgid "The email template was successfully translated."
 msgstr "Το πρότυπο email μεταφράστηκε με επιτυχία."
@@ -1498,6 +1543,57 @@ msgstr "Το προφίλ σας μεταφράστηκε με επιτυχία.
 
 msgid "Your profile was successfully updated."
 msgstr "Το προφίλ σας ανανεώθηκε με επιτυχία."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_email.blank"
+msgstr "Το email είναι υποχρεωτικό."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_email.invalid"
+msgstr "Το email δεν είναι έγκυρο."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_email.too_long"
+msgstr "Το email μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_password.blank"
+msgstr "Ο κωδικός είναι υποχρεωτικός."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_password.invalid"
+msgstr "Ο κωδικός πρέπει να περιέχει τουλάχιστον 1 μικρό χαρακτήρα, 1 κεφαλαίο, 1 ψηφίο κι 1 σύμβολο (@#$!%%*?&^)."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_password.too_long"
+msgstr "Ο κωδικός μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_password_confirmation.confirmation"
+msgstr "Η επιβεβαίωση κωδικού πρέπει να είναι ίδια με τον κωδικό."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_username.blank"
+msgstr "Το όνομα χρήστη είναι υποχρεωτικό."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_username.invalid"
+msgstr "Το όνομα χρήστη πρέπει να περιέχει μόνο γράμματα, ψηφία, παύλες και κάτω παύλες."
+
+msgid "activemodel.errors.models.form/client.attributes.admin_username.too_long"
+msgstr "Το όνομα χρήστη μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activemodel.errors.models.form/client.attributes.client_name.blank"
+msgstr "Το όνομα είναι υποχρεωτικό."
+
+msgid "activemodel.errors.models.form/client.attributes.client_name.too_long"
+msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activemodel.errors.models.form/client.attributes.client_template.blank"
+msgstr "Το πρότυπο είναι υποχρεωτικό."
+
+msgid "activemodel.errors.models.form/client.attributes.domains.blank"
+msgstr "Τα domains είναι υποχρεωτικά και δε μπορούν να είναι κενά."
+
+msgid "activemodel.errors.models.form/client.attributes.domains.taken"
+msgstr "Κάποια domains χρησιμοποιούνται ήδη."
+
+msgid "activemodel.errors.models.form/client.attributes.ports.blank"
+msgstr "Οι ports είναι υποχρεωτικές και δε μπορούν να είναι κενές."
+
+msgid "activemodel.errors.models.form/client.attributes.ports.invalid"
+msgstr "Οι ports πρέπει να είναι έγκυροι αριθμοί."
 
 msgid "activerecord.attributes.admin_user.email"
 msgstr "Email"

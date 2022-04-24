@@ -1,0 +1,83 @@
+<%
+    content_for :title, _('Create Client | %{client}') % { client: 'Pandemic CMS' }
+    content_for :description, _('Create new client for %{client}') % { client: 'Pandemic CMS' }
+    content_for :scripts, 'super_admin/pages/clients/edit/main'
+%>
+
+<%= form_with(model: @form_model, url: super_admin_clients_path, method: :post) do |f| %>
+<%= render partial: 'super_admin/clients/client_form', locals: { f: } %>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-user"></i>
+      &nbsp;
+      <%= _('Create Supervisor User') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :admin_email, _('FormClient|Admin email'), class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :admin_email, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :admin_username, _('FormClient|Admin username'), class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :admin_username, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :admin_password, _('FormClient|Admin password'), class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.password_field :admin_password, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :admin_password_confirmation, _('FormClient|Admin password confirmation'), class: 'label required-label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.password_field :admin_password_confirmation, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<div class="card mt-5">
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-hidden-touch is-hidden-mobile"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success' %>
+            <a class="button" href="<%= super_admin_clients_path %>"><%= _('Cancel') %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
