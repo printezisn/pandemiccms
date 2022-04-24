@@ -1,4 +1,4 @@
-<%= form_with(url: '', method: :delete, id: "delete-client-modal#{client.id}", class: 'modal') do %>
+<%= form_with(url: super_admin_client_path(client), method: :delete, id: "delete-client-modal#{client.id}", class: 'modal') do %>
 <div class="modal-background cancel"></div>
 <div class="modal-card">
   <div class="modal-card-head">

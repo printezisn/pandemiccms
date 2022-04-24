@@ -111,4 +111,22 @@ RSpec.describe '/super_admin/clients' do
       expect(response).to be_successful
     end
   end
+
+  describe 'DELETE /destroy' do
+    let(:request) { delete super_admin_client_path(model), headers: }
+
+    before { model.save! }
+
+    it_behaves_like 'super admin page'
+
+    it 'destroys the requested client' do
+      expect { request }.to change(Client, :count).by(-1)
+    end
+
+    it 'redirects to the clients list' do
+      request
+
+      expect(response).to redirect_to(super_admin_clients_path)
+    end
+  end
 end

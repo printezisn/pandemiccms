@@ -1262,6 +1262,9 @@ msgstr "Η κατηγορία δημιουργήθηκε με επιτυχία."
 msgid "The client was successfully created."
 msgstr "Ο πελάτης δημιουργήθηκε με επιτυχία."
 
+msgid "The client was successfully deleted."
+msgstr "Ο πελάτης διαγράφτηκε με επιτυχία."
+
 msgid "The email template was successfully translated."
 msgstr "Το πρότυπο email μεταφράστηκε με επιτυχία."
 

@@ -1262,6 +1262,9 @@ msgstr "The category was successfully created."
 msgid "The client was successfully created."
 msgstr "The client was successfully created."
 
+msgid "The client was successfully deleted."
+msgstr "The client was successfully deleted."
+
 msgid "The email template was successfully translated."
 msgstr "The email template was successfully translated."
 

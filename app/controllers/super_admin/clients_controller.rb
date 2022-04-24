@@ -6,7 +6,7 @@ module SuperAdmin
     PAGE_SIZE = 10
 
     before_action :initialize_languages, only: :new
-    before_action :fetch_client, only: :show
+    before_action :fetch_client, only: %i[show destroy]
 
     # GET /super_admin/clients
     def index
@@ -44,7 +44,11 @@ module SuperAdmin
     def update; end
 
     # DELETE /super_admin/clients/1
-    def destroy; end
+    def destroy
+      @client.destroy
+
+      redirect_to super_admin_clients_path, notice: _('The client was successfully deleted.')
+    end
 
     private
 
