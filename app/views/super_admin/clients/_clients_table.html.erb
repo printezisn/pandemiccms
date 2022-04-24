@@ -47,8 +47,8 @@
         <a href="<%= super_admin_client_path(client) %>"><%= client.name %></a>
       </td>
       <td class="is-hidden-mobile">
-        <a href="<%= root_url(client.default_url_options) %>" target="_blank" rel="noopener">
-          <%= root_url(client.default_url_options) %>
+        <a href="<%= root_url(client.default_url_options.merge(locale: '')) %>" target="_blank" rel="noopener">
+          <%= root_url(client.default_url_options.merge(locale: '')) %>
         </a>
       </td>
       <td class="is-hidden-touch"><%= client.created_at %></td>

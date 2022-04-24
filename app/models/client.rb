@@ -33,11 +33,7 @@ class Client < ApplicationRecord
   validate :valid_time_zone
 
   def default_url_options
-    @default_url_options ||= {
-      host: client_domains.first.domain,
-      port: client_domains.first.port,
-      protocol: client_domains.first.port == 443 ? 'https' : 'http'
-    }
+    @default_url_options ||= client_domains.first.url_options
   end
 
   def enabled_client_languages

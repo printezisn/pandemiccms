@@ -6,6 +6,7 @@ module SuperAdmin
     PAGE_SIZE = 10
 
     before_action :initialize_languages, only: :new
+    before_action :fetch_client, only: :show
 
     # GET /super_admin/clients
     def index
@@ -33,6 +34,9 @@ module SuperAdmin
       end
     end
 
+    # GET /super_admin/clients/1
+    def show; end
+
     # GET /super_admin/clients/1/edit
     def edit; end
 
@@ -53,6 +57,10 @@ module SuperAdmin
 
     def initialize_languages
       LanguageInitializer.call
+    end
+
+    def fetch_client
+      @client = Client.find(params[:id])
     end
   end
 end

@@ -1,0 +1,115 @@
+<%
+    content_for :title, _('Client Details | %{client}') % { client: 'Pandemic CMS' }
+    content_for :description, _('Details for a client of %{client}') % { client: 'Pandemic CMS' }
+%>
+
+<a class="button" href="<%= super_admin_clients_path %>">
+  <i class="fas fa-long-arrow-alt-left"></i>
+  &nbsp;
+  <%= _('Back') %>
+</a>
+<div class="dropdown is-togglable">
+  <div class="dropdown-trigger">
+    <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" class="button">
+      <%= _('Actions') %>
+      &nbsp;
+      <i class="fas fa-angle-down"></i>
+    </a>
+  </div>
+  <%= render partial: 'super_admin/clients/dropdown_menu', locals: { client: @client } %>
+  <%= render partial: 'super_admin/clients/delete_modal', locals: { client: @client } %>
+</div>
+<a href="<%= admin_root_url(@client.default_url_options.merge(locale: '')) %>" target="_blank" rel="noopener" class="button is-link">
+  <%= _('Admin Panel') %>
+</a>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fas fa-cog"></i>
+      &nbsp;
+      <%= _('Client Details') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Name') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @client.name %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Template') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @client.template %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('URLs') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <ul>
+              <% @client.client_domains.each do |client_domain| %>
+              <li>
+                <a href="<%= root_url(client_domain.url_options.merge(locale: '')) %>" target="_blank" rel="noopener">
+                  <%= root_url(client_domain.url_options.merge(locale: '')) %>
+                </a>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Enabled Languages') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <ul>
+              <% @client.client_languages.includes(:language).each_with_index do |client_language, i| %>
+              <li>
+                <span class="fi fi-<%= client_language.language.flag %>"></span>
+                <%= client_language.language.name %>
+                <%= " (#{_('Language|default')})" if client_language.default? %>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Created At') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @client.created_at %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Updated At') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @client.updated_at %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

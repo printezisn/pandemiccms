@@ -97,4 +97,18 @@ RSpec.describe '/super_admin/clients' do
       end
     end
   end
+
+  describe 'GET /show' do
+    let(:request) { get super_admin_client_path(model), headers: }
+
+    before { model.save! }
+
+    it_behaves_like 'super admin page'
+
+    it 'returns a successful response' do
+      request
+
+      expect(response).to be_successful
+    end
+  end
 end

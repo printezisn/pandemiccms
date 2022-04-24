@@ -320,6 +320,12 @@ msgstr "Καθάρισμα Cache"
 msgid "Click the link below to unlock your account:"
 msgstr "Πατήστε στο σύνδεσμο για να ξεκλειδώσετε το λογαριασμό σας:"
 
+msgid "Client Details"
+msgstr "Λεπτομέρειες Πελάτη"
+
+msgid "Client Details | %{client}"
+msgstr "Λεπτομέρειες Πελάτη | %{client}"
+
 msgid "Clients"
 msgstr "Πελάτες"
 
@@ -475,6 +481,9 @@ msgstr "Περιγραφή"
 
 msgid "Details for a category of %{client}"
 msgstr "Λεπτομέρειες για την κατηγορία του %{client}"
+
+msgid "Details for a client of %{client}"
+msgstr "Λεπτομέρειες για τον πελάτη του %{client}"
 
 msgid "Details for a menu item of %{client}"
 msgstr "Λεπτομέρειες για το στοιχείο μενού του %{client}"
@@ -706,6 +715,9 @@ msgstr "Φιλικά,"
 
 msgid "Languages"
 msgstr "Γλώσσες"
+
+msgid "Language|default"
+msgstr "προεπιλεγμένη"
 
 msgid "Last Name"
 msgstr "Επώνυμο"
@@ -1462,6 +1474,9 @@ msgstr "Δέντρο με τις σελίδες του %{client}"
 
 msgid "URL"
 msgstr "Σύνδεσμος"
+
+msgid "URLs"
+msgstr "Σύνδεσμοι"
 
 msgid "Unconfirmed Email"
 msgstr "Μη Επιβεβαιωμένο Email"

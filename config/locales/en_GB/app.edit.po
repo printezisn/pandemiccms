@@ -320,6 +320,12 @@ msgstr "Clear Cache"
 msgid "Click the link below to unlock your account:"
 msgstr "Click the link below to unlock your account:"
 
+msgid "Client Details"
+msgstr "Client Details"
+
+msgid "Client Details | %{client}"
+msgstr "Client Details | %{client}"
+
 msgid "Clients"
 msgstr "Clients"
 
@@ -475,6 +481,9 @@ msgstr "Description"
 
 msgid "Details for a category of %{client}"
 msgstr "Details for a category of %{client}"
+
+msgid "Details for a client of %{client}"
+msgstr "Details for a client of %{client}"
 
 msgid "Details for a menu item of %{client}"
 msgstr "Details for a menu item of %{client}"
@@ -706,6 +715,9 @@ msgstr "Kind Regards,"
 
 msgid "Languages"
 msgstr "Languages"
+
+msgid "Language|default"
+msgstr "default"
 
 msgid "Last Name"
 msgstr "Last Name"
@@ -1462,6 +1474,9 @@ msgstr "Tree with pages of %{client}"
 
 msgid "URL"
 msgstr "URL"
+
+msgid "URLs"
+msgstr "URLs"
 
 msgid "Unconfirmed Email"
 msgstr "Unconfirmed Email"
