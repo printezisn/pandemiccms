@@ -233,6 +233,9 @@ msgstr "Are you sure you want to publish this post ?"
 msgid "Author"
 msgstr "Author"
 
+msgid "Available Languages"
+msgstr "Available Languages"
+
 msgid "Back"
 msgstr "Back"
 
@@ -319,6 +322,9 @@ msgstr "Clear Cache"
 
 msgid "Click the link below to unlock your account:"
 msgstr "Click the link below to unlock your account:"
+
+msgid "Client"
+msgstr "Client"
 
 msgid "Client Details"
 msgstr "Client Details"
@@ -536,6 +542,9 @@ msgstr "Edit Category"
 msgid "Edit Category | %{client}"
 msgstr "Edit Category | %{client}"
 
+msgid "Edit Client | %{client}"
+msgstr "Edit Client | %{client}"
+
 msgid "Edit Email Template"
 msgstr "Edit Email Template"
 
@@ -592,6 +601,9 @@ msgstr "Edit User | %{client}"
 
 msgid "Edit a category of %{client}"
 msgstr "Edit a category of %{client}"
+
+msgid "Edit a client of %{client}"
+msgstr "Edit a client of %{client}"
 
 msgid "Edit a menu item of %{client}"
 msgstr "Edit a menu item of %{client}"
@@ -715,9 +727,6 @@ msgstr "Kind Regards,"
 
 msgid "Languages"
 msgstr "Languages"
-
-msgid "Language|default"
-msgstr "default"
 
 msgid "Last Name"
 msgstr "Last Name"
@@ -1264,6 +1273,9 @@ msgstr "The client was successfully created."
 
 msgid "The client was successfully deleted."
 msgstr "The client was successfully deleted."
+
+msgid "The client was successfully updated."
+msgstr "The client was successfully updated."
 
 msgid "The email template was successfully translated."
 msgstr "The email template was successfully translated."

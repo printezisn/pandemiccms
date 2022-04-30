@@ -233,6 +233,9 @@ msgstr "Είστε σίγουρος/η ότι θέλετε να δημοσιεύ
 msgid "Author"
 msgstr "Συντάκτης"
 
+msgid "Available Languages"
+msgstr "Διαθέσιμες Γλώσσες"
+
 msgid "Back"
 msgstr "Πίσω"
 
@@ -319,6 +322,9 @@ msgstr "Καθάρισμα Cache"
 
 msgid "Click the link below to unlock your account:"
 msgstr "Πατήστε στο σύνδεσμο για να ξεκλειδώσετε το λογαριασμό σας:"
+
+msgid "Client"
+msgstr "Πελάτης"
 
 msgid "Client Details"
 msgstr "Λεπτομέρειες Πελάτη"
@@ -536,6 +542,9 @@ msgstr "Επεξεργασία Κατηγορίας"
 msgid "Edit Category | %{client}"
 msgstr "Επεξεργασία Κατηγορίας | %{client}"
 
+msgid "Edit Client | %{client}"
+msgstr "Επεξεργασία Πελάτη | %{client}"
+
 msgid "Edit Email Template"
 msgstr "Επεξεργασία Προτύπου Email"
 
@@ -592,6 +601,9 @@ msgstr "Επεξεργασία Χρήστη | %{client}"
 
 msgid "Edit a category of %{client}"
 msgstr "Επεξεργασία κατηγορίας του %{client}"
+
+msgid "Edit a client of %{client}"
+msgstr "Επεξεργασία πελάτη του %{client}"
 
 msgid "Edit a menu item of %{client}"
 msgstr "Επεξεργασία στοιχείου μενού του %{client}"
@@ -715,9 +727,6 @@ msgstr "Φιλικά,"
 
 msgid "Languages"
 msgstr "Γλώσσες"
-
-msgid "Language|default"
-msgstr "προεπιλεγμένη"
 
 msgid "Last Name"
 msgstr "Επώνυμο"
@@ -1264,6 +1273,9 @@ msgstr "Ο πελάτης δημιουργήθηκε με επιτυχία."
 
 msgid "The client was successfully deleted."
 msgstr "Ο πελάτης διαγράφτηκε με επιτυχία."
+
+msgid "The client was successfully updated."
+msgstr "Ο πελάτης ανανεώθηκε με επιτυχία."
 
 msgid "The email template was successfully translated."
 msgstr "Το πρότυπο email μεταφράστηκε με επιτυχία."

@@ -73,7 +73,7 @@
     </div>
     <div class="field is-horizontal">
       <div class="field-label">
-        <span class="label"><%= _('Enabled Languages') %></span>
+        <span class="label"><%= _('Available Languages') %></span>
       </div>
       <div class="field-body">
         <div class="field">
@@ -83,7 +83,6 @@
               <li>
                 <span class="fi fi-<%= client_language.language.flag %>"></span>
                 <%= client_language.language.name %>
-                <%= " (#{_('Language|default')})" if client_language.default? %>
               </li>
               <% end %>
             </ul>

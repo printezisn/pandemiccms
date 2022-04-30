@@ -1,0 +1,24 @@
+<%
+    content_for :title, _('Edit Client | %{client}') % { client: 'Pandemic CMS' }
+    content_for :description, _('Edit a client of %{client}') % { client: 'Pandemic CMS' }
+    content_for :scripts, 'super_admin/pages/clients/edit/main'
+%>
+
+<%= form_with(model: @form_model, url: super_admin_client_path(@client), method: :patch) do |f| %>
+<%= render partial: 'super_admin/clients/client_form', locals: { f: } %>
+<div class="card mt-5">
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-hidden-touch is-hidden-mobile"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success' %>
+            <a class="button" href="<%= super_admin_client_path(@client) %>"><%= _('Cancel') %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

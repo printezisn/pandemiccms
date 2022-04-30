@@ -123,52 +123,96 @@ RSpec.describe Form::Client, type: :model do
     subject(:action) { model.save }
 
     let(:languages) { create_list(:language, 2) }
-
-    let(:attributes) do
-      {
-        client_name: 'Test Client',
-        client_template: 'sample',
-        domains: %w[localhost],
-        ports: %w[3000],
-        language_ids: languages.map { |l| l.id.to_s },
-        default_language_id: languages.second.id.to_s,
-        admin_email: 'test@test.com',
-        admin_username: 'testuser',
-        admin_password: 'T3$tPa$$',
-        admin_password_confirmation: 'T3$tPa$$'
-      }
-    end
-
     let(:model) { described_class.new(attributes) }
 
-    context 'when the model is invalid' do
-      before { attributes[:client_name] = '' }
+    context 'when it is a new client' do
+      let(:attributes) do
+        {
+          client_name: 'Test Client',
+          client_template: 'sample',
+          domains: %w[localhost],
+          ports: %w[3000],
+          language_ids: languages.map { |l| l.id.to_s },
+          admin_email: 'test@test.com',
+          admin_username: 'testuser',
+          admin_password: 'T3$tPa$$',
+          admin_password_confirmation: 'T3$tPa$$'
+        }
+      end
 
-      it { is_expected.to be_falsey }
+      context 'when the model is invalid' do
+        before { attributes[:client_name] = '' }
+
+        it { is_expected.to be_falsey }
+      end
+
+      context 'when the model is valid' do
+        it { is_expected.to be_truthy }
+      end
+
+      it 'creates a new client' do
+        expect { action }.to change(::Client, :count).by(1)
+      end
+
+      it 'creates a new supervisor user' do
+        expect { action }.to change { AdminUserRole.supervisor.count }.by(1)
+      end
+
+      it 'sets the client domains and ports' do
+        action
+
+        expect(Client.last.client_domains.pluck(:domain, :port)).to contain_exactly(['localhost', 3000])
+      end
+
+      it 'sets the client languages' do
+        action
+
+        expect(Client.last.client_languages.map(&:language_id)).to match_array(languages.map(&:id))
+      end
     end
 
-    context 'when the model is valid' do
-      it { is_expected.to be_truthy }
-    end
+    context 'when it is an existing client' do
+      let(:client) { create(:client) }
 
-    it 'creates a new client' do
-      expect { action }.to change(::Client, :count).by(1)
-    end
+      let(:attributes) do
+        {
+          client_id: client.id,
+          client_name: 'Test Client',
+          domains: %w[localhost],
+          ports: %w[3000],
+          language_ids: languages.map { |l| l.id.to_s }
+        }
+      end
 
-    it 'creates a new supervisor user' do
-      expect { action }.to change { AdminUserRole.supervisor.count }.by(1)
-    end
+      context 'when the model is invalid' do
+        before { attributes[:client_name] = '' }
 
-    it 'sets the client languages' do
-      action
+        it { is_expected.to be_falsey }
+      end
 
-      expect(Client.last.client_languages.map(&:language_id)).to match_array(languages.map(&:id))
-    end
+      context 'when the model is valid' do
+        it { is_expected.to be_truthy }
+      end
 
-    it 'sets the default client language' do
-      action
+      it 'updates the client' do
+        expect { action }.to change { client.reload.name }.to('Test Client')
+      end
 
-      expect(Client.last.client_languages.detect(&:default?).language_id).to eq(languages.second.id)
+      it 'does not create any user' do
+        expect { action }.not_to(change { AdminUserRole.supervisor.count })
+      end
+
+      it 'sets the client domains and ports' do
+        action
+
+        expect(Client.last.client_domains.pluck(:domain, :port)).to contain_exactly(['localhost', 3000])
+      end
+
+      it 'sets the client languages' do
+        action
+
+        expect(client.reload.client_languages.map(&:language_id)).to match_array(languages.map(&:id))
+      end
     end
   end
 end

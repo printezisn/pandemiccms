@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-24 09:24+0000\n"
-"PO-Revision-Date: 2022-04-24 09:24+0000\n"
+"POT-Creation-Date: 2022-04-24 12:33+0000\n"
+"PO-Revision-Date: 2022-04-24 12:33+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -234,6 +234,9 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
+msgid "Available Languages"
+msgstr ""
+
 msgid "Back"
 msgstr ""
 
@@ -319,6 +322,9 @@ msgid "Clear Cache"
 msgstr ""
 
 msgid "Click the link below to unlock your account:"
+msgstr ""
+
+msgid "Client"
 msgstr ""
 
 msgid "Client Details"
@@ -537,6 +543,9 @@ msgstr ""
 msgid "Edit Category | %{client}"
 msgstr ""
 
+msgid "Edit Client | %{client}"
+msgstr ""
+
 msgid "Edit Email Template"
 msgstr ""
 
@@ -592,6 +601,9 @@ msgid "Edit User | %{client}"
 msgstr ""
 
 msgid "Edit a category of %{client}"
+msgstr ""
+
+msgid "Edit a client of %{client}"
 msgstr ""
 
 msgid "Edit a menu item of %{client}"
@@ -715,9 +727,6 @@ msgid "Kind Regards,"
 msgstr ""
 
 msgid "Languages"
-msgstr ""
-
-msgid "Language|default"
 msgstr ""
 
 msgid "Last Name"
@@ -1264,6 +1273,9 @@ msgid "The client was successfully created."
 msgstr ""
 
 msgid "The client was successfully deleted."
+msgstr ""
+
+msgid "The client was successfully updated."
 msgstr ""
 
 msgid "The email template was successfully translated."

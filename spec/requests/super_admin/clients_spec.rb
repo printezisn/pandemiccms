@@ -50,7 +50,6 @@ RSpec.describe '/super_admin/clients' do
           client_name: 'Test Client',
           client_template: 'sample',
           language_ids: languages.map { |l| l.id.to_s },
-          default_language_id: languages.second.id.to_s,
           domains: %w[localhost],
           ports: %w[3000],
           admin_email: 'test@test.com',
@@ -109,6 +108,66 @@ RSpec.describe '/super_admin/clients' do
       request
 
       expect(response).to be_successful
+    end
+  end
+
+  describe 'GET /edit' do
+    let(:request) { get edit_super_admin_client_path(model), headers: }
+
+    before { model.save! }
+
+    it_behaves_like 'super admin page'
+
+    it 'returns a successful response' do
+      request
+
+      expect(response).to be_successful
+    end
+  end
+
+  describe 'PATCH /update' do
+    let(:request) { patch super_admin_client_path(model), params:, headers: }
+    let(:languages) { create_list(:language, 2) }
+    let(:params) do
+      {
+        form_client: {
+          client_id: model.id,
+          client_name: 'Test Client',
+          language_ids: languages.map { |l| l.id.to_s },
+          domains: %w[localhost],
+          ports: %w[3000]
+        }
+      }
+    end
+
+    before { model.save! }
+
+    it_behaves_like 'super admin page'
+
+    context 'with valid parameters' do
+      it 'updates the requested client' do
+        expect { request }.to change { model.reload.name }.to('Test Client')
+      end
+
+      it 'redirects to the updated client' do
+        request
+
+        expect(response).to redirect_to(super_admin_client_path(model.id))
+      end
+    end
+
+    context 'with invalid parameters' do
+      before { params[:form_client][:client_name] = '' }
+
+      it 'does not update the requested client' do
+        expect { request }.not_to(change { model.reload.updated_at })
+      end
+
+      it 'returns a successful response' do
+        request
+
+        expect(response).to be_successful
+      end
     end
   end
 
