@@ -17,7 +17,10 @@ class ApplicationController < ActionController::Base
   layout :layout
 
   def check_client_existence
-    render file: Rails.root.join('public/404.html'), layout: false, status: :not_found if current_client.nil?
+    return if current_client
+    return redirect_to new_super_admin_client_path if Client.none?
+
+    render file: Rails.root.join('public/404.html'), layout: false, status: :not_found
   end
 
   def set_locale
@@ -82,6 +85,8 @@ class ApplicationController < ActionController::Base
   end
 
   def fetch_current_language
+    return unless current_client
+
     current_client.enabled_languages.detect { |l| l.locale == params[:locale] } ||
       current_client.default_language
   end
