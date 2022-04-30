@@ -125,17 +125,17 @@ Log in the database system and perform the following actions:
 
 Run the migrations with `bundle exec rails db:migrate`.
 
-**6. Create a client**:
+**6. Create your first client**:
 
-Run `bundle exec rake pandemiccms:create_client -- -n CLIENT_NAME -t TEMPLATE -d DOMAIN:PORT -s SUPERVISOR_EMAIL` to create a client.
+Run `./bin/dev` to start the application and visit [http://localhost:3000](http://localhost:3000). It will redirect you to a page to create your first client (you'll need the super admin credentials you added in the configuration in step 3).
 
-For example: `bundle exec rake pandemiccms:create_client -- -n "Pandemic CMS" -t sample -d localhost:3000 -d mysite:80 -s admin@test.com`.
+After this step is complete, an email will be sent to the supervisor with instructions on how to activate the account. If you're using the default services from `docker-compose.infrastructure.yml`, then you can view all the emails in mailcatcher which is in [http://localhost:1080](http://localhost:1080).
 
-For more information, you can run `bundle exec rake pandemiccms:create_client -- -h` for help.
+**7. You're done!**
 
-This will send an email to the supervisor with instructions on how to activate the account. If you're using the default services from `docker-compose.infrastructure.yml`, then you can view all the emails in mailcatcher which is in `http://localhost:1080`.
+Visit [http://localhost:3000](http://localhost:3000) and enjoy your new client :)
 
-## How to run
+You can sign in to the admin panel by visiting [http://localhost:3000/admin](http://localhost:3000/admin).
 
 **Run the linters**:
 
@@ -149,10 +149,6 @@ This will send an email to the supervisor with instructions on how to activate t
 **Run the application**:
 
 `./bin/dev`
-
-## Rake tasks
-
-`bundle exec rake pandemiccms:create_client -- [OPTIONS]`: Creates a new client.
 
 ## Docker compose
 
