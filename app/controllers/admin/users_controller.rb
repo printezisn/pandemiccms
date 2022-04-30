@@ -35,6 +35,7 @@ module Admin
     # POST /users
     def create
       @user = AdminUser.new(create_params)
+      @user.should_set_roles = true
       @user.client_id = current_client.id
       @user.set_random_password if @user.password.blank?
 
@@ -111,12 +112,12 @@ module Admin
     end
 
     def create_params
-      params.require(:admin_user).permit(:image, :should_remove_image, :username, :email, :first_name,
+      params.require(:admin_user).permit(:image, :should_remove_image, :username, :email, :role, :first_name,
                                          :middle_name, :last_name, :description, :password, :password_confirmation)
     end
 
     def update_params
-      params.require(:admin_user).permit(:image, :should_remove_image, :email, :first_name, :middle_name,
+      params.require(:admin_user).permit(:image, :should_remove_image, :email, :role, :first_name, :middle_name,
                                          :last_name, :description)
     end
 
