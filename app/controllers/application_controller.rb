@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     return if current_client
     return redirect_to new_super_admin_client_path if Client.none?
 
-    render file: Rails.root.join('public/404.html'), layout: false, status: :not_found
+    render file: Rails.public_path.join('404.html'), layout: false, status: :not_found
   end
 
   def set_locale

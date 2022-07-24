@@ -5,7 +5,7 @@ module Categorizable
   extend ActiveSupport::Concern
 
   included do
-    attribute :category_names, default: []
+    attribute :category_names, default: -> { [] }
     attribute :should_save_categories, :boolean
 
     has_many :category_categorizables, as: :categorizable, dependent: :destroy

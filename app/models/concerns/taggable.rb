@@ -5,7 +5,7 @@ module Taggable
   extend ActiveSupport::Concern
 
   included do
-    attribute :tag_names, default: []
+    attribute :tag_names, default: -> { [] }
     attribute :should_save_tags, :boolean
 
     has_many :tag_taggables, as: :taggable, dependent: :destroy
