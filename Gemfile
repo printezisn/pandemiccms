@@ -8,7 +8,7 @@ ruby '3.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 7.0'
 # Use Puma as the app server
-gem 'puma', '~> 5.6'
+gem 'puma', '~> 6.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -30,7 +30,7 @@ group :development, :test do
   gem 'pry', '~> 0.14'
   gem 'pry-rails', '~> 0.3'
   gem 'rspec', '~> 3.10'
-  gem 'rspec-rails', '~> 5.0'
+  gem 'rspec-rails', '~> 6.0'
   gem 'rubocop', '~> 1.5', require: false
   gem 'rubocop-performance', '~> 1.9', require: false
   gem 'rubocop-rails', '~> 2.8', require: false
@@ -80,15 +80,15 @@ gem 'babosa', '~> 2.0'
 
 gem 'image_processing', '~> 1.12'
 
-gem 'redis', '~> 4.2'
+gem 'redis', '~> 5.0'
 
-gem 'sidekiq', '~> 6.2'
+gem 'sidekiq', '~> 6.5'
 
 gem 'elasticsearch-persistence', '~> 7.1'
 
 gem 'htmlentities', '~> 4.3'
 
-gem 'sidekiq-scheduler', '~> 3.1'
+gem 'sidekiq-scheduler', '~> 4.0'
 
 gem 'draper', '~> 4.0'
 
