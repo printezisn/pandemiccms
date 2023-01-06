@@ -62,16 +62,16 @@ module Admin
     # GET /pages/1/show.json
     def show; end
 
-    # GET /pages/1/edit
-    # GET /pages/1/edit.json
-    def edit
-      @page.tag_names = @page.tags.map(&:name)
-    end
-
     # GET /pages/new
     def new
       @page = Page.new
       @page.parent_id = params[:parent_id]
+    end
+
+    # GET /pages/1/edit
+    # GET /pages/1/edit.json
+    def edit
+      @page.tag_names = @page.tags.map(&:name)
     end
 
     # POST /pages

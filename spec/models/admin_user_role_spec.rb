@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe AdminUserRole, type: :model do
+RSpec.describe AdminUserRole do
   subject { build(:admin_user_role) }
 
   it { is_expected.to belong_to(:admin_user) }

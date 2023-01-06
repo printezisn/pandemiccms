@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Admin::TagsController, type: :routing do
+RSpec.describe Admin::TagsController do
   describe 'routing' do
     it 'routes to #index' do
       expect(get: '/admin/tags').to route_to('admin/tags#index')

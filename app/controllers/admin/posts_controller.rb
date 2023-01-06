@@ -54,16 +54,16 @@ module Admin
     # GET /posts/1/show.json
     def show; end
 
+    # GET /posts/new
+    def new
+      @post = Post.new
+    end
+
     # GET /posts/1/edit
     # GET /posts/1/edit.json
     def edit
       @post.category_names = @post.categories.map(&:name)
       @post.tag_names = @post.tags.map(&:name)
-    end
-
-    # GET /posts/new
-    def new
-      @post = Post.new
     end
 
     # POST /posts

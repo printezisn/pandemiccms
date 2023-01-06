@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Admin::ProfileController, type: :routing do
+RSpec.describe Admin::ProfileController do
   describe 'routing' do
     it 'routes to #edit' do
       expect(get: '/admin/password/edit').to route_to('admin/password#edit')

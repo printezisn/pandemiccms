@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Admin::CategoriesController, type: :routing do
+RSpec.describe Admin::CategoriesController do
   describe 'routing' do
     it 'routes to #index' do
       expect(get: '/admin/categories').to route_to('admin/categories#index')

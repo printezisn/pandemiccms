@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe AuthMailer, type: :mailer do
+RSpec.describe AuthMailer do
   describe 'confirmation_instructions' do
     subject(:mail) { described_class.confirmation_instructions(admin_user, token) }
 

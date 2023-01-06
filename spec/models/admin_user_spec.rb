@@ -6,7 +6,7 @@ require './spec/models/concerns/bound_sortable'
 require './spec/models/concerns/imageable'
 require './spec/models/concerns/translatable'
 
-RSpec.describe AdminUser, type: :model do
+RSpec.describe AdminUser do
   subject(:model) { build(:admin_user) }
 
   it { is_expected.to belong_to(:client) }

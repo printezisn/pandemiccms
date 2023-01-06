@@ -6,7 +6,7 @@ require './spec/models/concerns/bound_sortable'
 require './spec/models/concerns/sluggable'
 require './spec/models/concerns/translatable'
 
-RSpec.describe Tag, type: :model do
+RSpec.describe Tag do
   subject(:model) { build(:tag) }
 
   it { is_expected.to belong_to(:client) }

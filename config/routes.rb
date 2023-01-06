@@ -5,10 +5,10 @@ require 'sidekiq-scheduler/web'
 
 Rails.application.routes.draw do
   Sidekiq::Web.use Rack::Auth::Basic, 'Protected Area' do |username, password|
-    Rack::Utils.secure_compare(::Digest::SHA256.hexdigest(username),
-                               ::Digest::SHA256.hexdigest(Rails.application.credentials.super_admin[:username].to_s)) &
-      Rack::Utils.secure_compare(::Digest::SHA256.hexdigest(password),
-                                 ::Digest::SHA256.hexdigest(Rails.application.credentials.super_admin[:password].to_s))
+    Rack::Utils.secure_compare(Digest::SHA256.hexdigest(username),
+                               Digest::SHA256.hexdigest(Rails.application.credentials.super_admin[:username].to_s)) &
+      Rack::Utils.secure_compare(Digest::SHA256.hexdigest(password),
+                                 Digest::SHA256.hexdigest(Rails.application.credentials.super_admin[:password].to_s))
   end
   mount Sidekiq::Web => '/sidekiq'
 

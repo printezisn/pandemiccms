@@ -4,7 +4,7 @@ require 'rails_helper'
 require './spec/models/concerns/translatable'
 require './spec/models/concerns/parentable'
 
-RSpec.describe MenuItem, type: :model do
+RSpec.describe MenuItem do
   subject(:model) { build(:menu_item) }
 
   it { is_expected.to belong_to(:menu) }

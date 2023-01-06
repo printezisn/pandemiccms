@@ -8,7 +8,7 @@ require './spec/models/concerns/translatable'
 require './spec/models/concerns/imageable'
 require './spec/models/concerns/parentable'
 
-RSpec.describe Category, type: :model do
+RSpec.describe Category do
   subject(:model) { build(:category) }
 
   it { is_expected.to belong_to(:client) }

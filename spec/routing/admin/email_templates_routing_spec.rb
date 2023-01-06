@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Admin::EmailTemplatesController, type: :routing do
+RSpec.describe Admin::EmailTemplatesController do
   describe 'routing' do
     it 'routes to #index' do
       expect(get: '/admin/email_templates').to route_to('admin/email_templates#index')

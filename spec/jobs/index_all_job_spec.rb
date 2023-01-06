@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe IndexAllJob, type: :job do
+RSpec.describe IndexAllJob do
   let(:only_unindexed_entities) { false }
 
   before do

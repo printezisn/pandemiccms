@@ -64,7 +64,7 @@ RSpec.describe '/super_admin/clients' do
 
     context 'with valid parameters' do
       it 'creates a new client' do
-        expect { request }.to change(::Client, :count).by(1)
+        expect { request }.to change(Client, :count).by(1)
       end
 
       it 'creates a new supervisor user' do
@@ -74,7 +74,7 @@ RSpec.describe '/super_admin/clients' do
       it 'redirects to the created client' do
         request
 
-        expect(response).to redirect_to(super_admin_client_path(::Client.last))
+        expect(response).to redirect_to(super_admin_client_path(Client.last))
       end
     end
 
@@ -82,7 +82,7 @@ RSpec.describe '/super_admin/clients' do
       before { params[:form_client][:client_name] = '' }
 
       it 'does not create a new client' do
-        expect { request }.not_to change(::Client, :count)
+        expect { request }.not_to change(Client, :count)
       end
 
       it 'does not create a new supervisor user' do

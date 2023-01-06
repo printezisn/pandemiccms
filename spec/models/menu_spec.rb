@@ -5,7 +5,7 @@ require './spec/models/concerns/simple_text_searchable'
 require './spec/models/concerns/bound_sortable'
 require './spec/models/concerns/translatable'
 
-RSpec.describe Menu, type: :model do
+RSpec.describe Menu do
   subject(:model) { build(:menu) }
 
   it { is_expected.to belong_to(:client) }

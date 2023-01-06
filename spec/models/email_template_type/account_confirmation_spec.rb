@@ -3,7 +3,7 @@
 require 'rails_helper'
 require './spec/models/email_template_type/shared'
 
-RSpec.describe EmailTemplateType::AccountConfirmation, type: :model do
+RSpec.describe EmailTemplateType::AccountConfirmation do
   subject(:model) { build(:email_template, type: described_class.name).becomes(described_class) }
 
   describe '#type_name' do

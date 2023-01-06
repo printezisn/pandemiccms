@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Admin::MediaController, type: :routing do
+RSpec.describe Admin::MediaController do
   describe 'routing' do
     it 'routes to #index' do
       expect(get: '/admin/media').to route_to('admin/media#index')

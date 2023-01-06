@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe SuperAdmin::ClientsController, type: :routing do
+RSpec.describe SuperAdmin::ClientsController do
   describe 'routing' do
     it 'routes to #index' do
       expect(get: '/super_admin/clients').to route_to('super_admin/clients#index')

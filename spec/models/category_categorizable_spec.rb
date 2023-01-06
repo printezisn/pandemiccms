@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe CategoryCategorizable, type: :model do
+RSpec.describe CategoryCategorizable do
   subject(:model) { build(:category_categorizable) }
 
   it { is_expected.to belong_to(:category) }

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'categories', type: :request do
+RSpec.describe 'categories' do
   subject!(:model) do
     create(
       :category,

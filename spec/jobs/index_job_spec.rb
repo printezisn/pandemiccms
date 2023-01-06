@@ -3,7 +3,7 @@
 require 'rails_helper'
 require './spec/utils/retry'
 
-RSpec.describe IndexJob, type: :job do
+RSpec.describe IndexJob do
   before do
     create_list(:language, 3)
   end

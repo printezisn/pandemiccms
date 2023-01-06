@@ -3,7 +3,7 @@
 RSpec.shared_examples 'Imageable' do
   let(:file) do
     {
-      io: File.open(Rails.root.join('spec/fixtures/test.png')),
+      io: Rails.root.join('spec/fixtures/test.png').open,
       filename: 'test.png'
     }
   end

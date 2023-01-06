@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Translation, type: :model do
+RSpec.describe Translation do
   subject { build(:translation) }
 
   it { is_expected.to belong_to(:translatable) }

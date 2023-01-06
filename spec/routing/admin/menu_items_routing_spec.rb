@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Admin::MenuItemsController, type: :routing do
+RSpec.describe Admin::MenuItemsController do
   describe 'routing' do
     it 'routes to #new' do
       expect(get: '/admin/menus/1/menu_items/new').to route_to('admin/menu_items#new', menu_id: '1')

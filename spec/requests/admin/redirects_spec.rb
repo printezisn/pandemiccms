@@ -3,7 +3,7 @@
 require 'rails_helper'
 require './spec/requests/admin/shared/access'
 
-RSpec.describe '/admin/redirects', type: :request do
+RSpec.describe '/admin/redirects' do
   let!(:admin_user) { create(:admin_user) }
   let(:signed_in_user) { admin_user }
 

@@ -3,7 +3,7 @@
 require 'rails_helper'
 require './spec/requests/admin/shared/access'
 
-RSpec.describe '/admin/menu_items', type: :request do
+RSpec.describe '/admin/menu_items' do
   let!(:admin_user) { create(:admin_user) }
   let(:signed_in_user) { admin_user }
 

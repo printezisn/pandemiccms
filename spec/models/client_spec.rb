@@ -6,7 +6,7 @@ require './spec/models/concerns/simple_text_searchable'
 require './spec/models/concerns/bound_sortable'
 require './spec/models/concerns/imageable'
 
-RSpec.describe Client, type: :model do
+RSpec.describe Client do
   subject(:model) { build(:client) }
 
   it { is_expected.to have_many(:client_domains).dependent(:destroy) }

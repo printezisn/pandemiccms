@@ -4,7 +4,7 @@ require 'rails_helper'
 require './spec/models/concerns/simple_text_searchable'
 require './spec/models/concerns/bound_sortable'
 
-RSpec.describe Redirect, type: :model do
+RSpec.describe Redirect do
   subject(:model) { build(:redirect) }
 
   it { is_expected.to belong_to(:client) }

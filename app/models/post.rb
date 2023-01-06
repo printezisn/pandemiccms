@@ -63,7 +63,7 @@ class Post < ApplicationRecord
   end
 
   def should_index?
-    new_record? || should_save_tags? || should_save_categories? || (changes.keys & INDEXABLE_FIELDS).any?
+    new_record? || should_save_tags? || should_save_categories? || changes.keys.intersect?(INDEXABLE_FIELDS)
   end
 
   def unindex

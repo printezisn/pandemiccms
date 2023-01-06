@@ -13,7 +13,7 @@ RSpec.describe ClientDecorator do
     context 'when the client has an image' do
       let(:file) do
         {
-          io: File.open(Rails.root.join('spec/fixtures/test.png')),
+          io: Rails.root.join('spec/fixtures/test.png').open,
           filename: 'test.png'
         }
       end

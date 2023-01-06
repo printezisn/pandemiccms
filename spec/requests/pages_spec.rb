@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Pages', type: :request do
+RSpec.describe 'Pages' do
   subject!(:model) do
     create(
       :page,

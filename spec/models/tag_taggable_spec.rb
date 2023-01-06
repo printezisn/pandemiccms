@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe TagTaggable, type: :model do
+RSpec.describe TagTaggable do
   subject(:model) { build(:tag_taggable) }
 
   it { is_expected.to belong_to(:tag) }

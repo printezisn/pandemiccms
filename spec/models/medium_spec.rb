@@ -4,12 +4,12 @@ require 'rails_helper'
 require './spec/models/concerns/simple_text_searchable'
 require './spec/models/concerns/bound_sortable'
 
-RSpec.describe Medium, type: :model do
+RSpec.describe Medium do
   subject(:model) { build(:medium) }
 
   let(:file) do
     {
-      io: File.open(Rails.root.join('spec/fixtures/test.png')),
+      io: Rails.root.join('spec/fixtures/test.png').open,
       filename: 'test.png'
     }
   end

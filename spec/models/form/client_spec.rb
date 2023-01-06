@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Form::Client, type: :model do
+RSpec.describe Form::Client do
   let(:model) { described_class.new }
 
   it { is_expected.to validate_presence_of(:client_name).with_message('The name is required.') }
@@ -151,7 +151,7 @@ RSpec.describe Form::Client, type: :model do
       end
 
       it 'creates a new client' do
-        expect { action }.to change(::Client, :count).by(1)
+        expect { action }.to change(Client, :count).by(1)
       end
 
       it 'creates a new supervisor user' do

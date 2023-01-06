@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Admin::MenusController, type: :routing do
+RSpec.describe Admin::MenusController do
   describe 'routing' do
     it 'routes to #index' do
       expect(get: '/admin/menus').to route_to('admin/menus#index')

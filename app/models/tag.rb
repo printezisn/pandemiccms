@@ -37,6 +37,6 @@ class Tag < ApplicationRecord
   end
 
   def should_index_associations?
-    (previous_changes.keys & INDEXABLE_FIELDS_FOR_ASSOCIATIONS).any?
+    previous_changes.keys.intersect?(INDEXABLE_FIELDS_FOR_ASSOCIATIONS)
   end
 end

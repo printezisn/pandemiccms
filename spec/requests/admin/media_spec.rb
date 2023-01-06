@@ -3,9 +3,9 @@
 require 'rails_helper'
 require './spec/requests/admin/shared/access'
 
-RSpec.describe '/admin/media', type: :request do
+RSpec.describe '/admin/media' do
   let(:file_attributes) do
-    { io: File.open(Rails.root.join('spec/fixtures/test.png')), filename: 'test.png' }
+    { io: Rails.root.join('spec/fixtures/test.png').open, filename: 'test.png' }
   end
 
   let!(:admin_user) { create(:admin_user) }

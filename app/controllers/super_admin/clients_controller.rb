@@ -18,9 +18,23 @@ module SuperAdmin
       render :_clients_table, layout: nil if request.xhr?
     end
 
+    # GET /super_admin/clients/1
+    def show; end
+
     # GET /super_admin/clients/new
     def new
       @form_model = Form::Client.new
+    end
+
+    # GET /super_admin/clients/1/edit
+    def edit
+      @form_model = Form::Client.new(
+        client_id: @client.id,
+        client_name: @client.name,
+        domains: @client.client_domains.map(&:domain),
+        ports: @client.client_domains.map { |client_domain| client_domain.port.to_s },
+        language_ids: @client.client_languages.map { |cl| cl.language_id.to_s }
+      )
     end
 
     # POST /super_admin/clients
@@ -32,20 +46,6 @@ module SuperAdmin
       else
         render :new
       end
-    end
-
-    # GET /super_admin/clients/1
-    def show; end
-
-    # GET /super_admin/clients/1/edit
-    def edit
-      @form_model = Form::Client.new(
-        client_id: @client.id,
-        client_name: @client.name,
-        domains: @client.client_domains.map(&:domain),
-        ports: @client.client_domains.map { |client_domain| client_domain.port.to_s },
-        language_ids: @client.client_languages.map { |cl| cl.language_id.to_s }
-      )
     end
 
     # PATCH/PUT /super_admin/clients/1

@@ -11,7 +11,7 @@ require './spec/models/concerns/taggable'
 require './spec/models/concerns/draftable'
 require './spec/utils/retry'
 
-RSpec.describe Post, type: :model do
+RSpec.describe Post do
   subject(:model) { build(:post, author:) }
 
   let(:author) { create(:admin_user) }

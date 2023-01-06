@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'seo', type: :request do
+RSpec.describe 'seo' do
   describe 'GET /sitemap.xml' do
     subject { response.body.gsub(/\s+/, '') }
 

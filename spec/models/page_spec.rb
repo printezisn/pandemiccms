@@ -10,7 +10,7 @@ require './spec/models/concerns/parentable'
 require './spec/models/concerns/taggable'
 require './spec/models/concerns/draftable'
 
-RSpec.describe Page, type: :model do
+RSpec.describe Page do
   subject(:model) { build(:page, author:) }
 
   let(:author) { create(:admin_user) }

@@ -3,7 +3,7 @@
 require 'rails_helper'
 require './spec/requests/admin/shared/access'
 
-RSpec.describe '/admin/clients', type: :request do
+RSpec.describe '/admin/clients' do
   let(:admin_user) { create(:admin_user) }
   let(:supervisor) { create(:admin_user, :supervisor) }
 

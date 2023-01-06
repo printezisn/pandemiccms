@@ -18,7 +18,7 @@ module Form
                             length: { maximum: 255 },
                             if: -> { admin_email.present? && client_id.nil? }
     validates :admin_username, presence: true, unless: -> { client_id }
-    validates :admin_username, format: { with: /\A[A-Za-z0-9.\-]*\z/ },
+    validates :admin_username, format: { with: /\A[A-Za-z0-9.-]*\z/ },
                                length: { maximum: 50 },
                                if: -> { admin_username.present? && client_id.nil? }
     validates :admin_password, presence: true, unless: -> { client_id }

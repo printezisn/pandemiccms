@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'tags', type: :request do
+RSpec.describe 'tags' do
   subject!(:model) do
     create(
       :tag,

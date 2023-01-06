@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe SeoController, type: :routing do
+RSpec.describe SeoController do
   describe 'routing' do
     it 'routes to #sitemap' do
       expect(get: '/sitemap.xml').to route_to('seo#sitemap', format: 'xml')
