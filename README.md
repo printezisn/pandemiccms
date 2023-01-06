@@ -125,13 +125,17 @@ Log in the database system and perform the following actions:
 
 Run the migrations with `bundle exec rails db:migrate`.
 
-**6. Create your first client**:
+**6. Precompile the web assets**:
+
+Precompile the web assets with `bundle exec rails assets:precompile`
+
+**7. Create your first client**:
 
 Run `./bin/dev` to start the application and visit [http://localhost:3000](http://localhost:3000). It will redirect you to a page to create your first client (you'll need the super admin credentials you added in the configuration in step 3).
 
 After this step is complete, an email will be sent to the supervisor with instructions on how to activate the account. If you're using the default services from `docker-compose.infrastructure.yml`, then you can view all the emails in mailcatcher which is in [http://localhost:1080](http://localhost:1080).
 
-**7. You're done!**
+**8. You're done!**
 
 Visit [http://localhost:3000](http://localhost:3000) and enjoy your new client :)
 
