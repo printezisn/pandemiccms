@@ -1,4 +1,4 @@
-FROM ruby:3.1.0
+FROM ruby:3.2.0
 
 RUN apt-get update && apt-get install -y \
   curl \
