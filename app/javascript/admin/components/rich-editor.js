@@ -11,7 +11,6 @@ import 'tinymce/plugins/lists';
 import 'tinymce/plugins/link';
 import 'tinymce/plugins/image';
 import 'tinymce/plugins/charmap';
-import 'tinymce/plugins/print';
 import 'tinymce/plugins/preview';
 import 'tinymce/plugins/anchor';
 import 'tinymce/plugins/searchreplace';
@@ -21,7 +20,6 @@ import 'tinymce/plugins/fullscreen';
 import 'tinymce/plugins/insertdatetime';
 import 'tinymce/plugins/media';
 import 'tinymce/plugins/table';
-import 'tinymce/plugins/paste';
 import 'tinymce/plugins/wordcount';
 import 'tinymce/plugins/help';
 import 'tinymce/plugins/autoresize';
@@ -36,9 +34,9 @@ const initRichEditor = (editor) => {
     selector: `#${editor.id}`,
     convert_urls: false,
     plugins: [
-      'advlist autolink lists link image charmap print preview anchor',
+      'advlist autolink lists link image charmap preview anchor',
       'searchreplace visualblocks code fullscreen',
-      'insertdatetime media table paste code help wordcount autoresize code',
+      'insertdatetime media table code help wordcount autoresize code',
     ],
     toolbar: `undo redo | formatselect |
       bold italic forecolor | alignleft aligncenter
