@@ -25,7 +25,7 @@ RSpec.shared_examples 'admin user page with json format' do
     it 'returns an error message' do
       request
 
-      expect(JSON.parse(response.body)).to eq({ 'error' => 'You need to sign in before continuing.' })
+      expect(response.parsed_body).to eq({ 'error' => 'You need to sign in before continuing.' })
     end
   end
 end

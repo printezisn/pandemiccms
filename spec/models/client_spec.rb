@@ -41,7 +41,7 @@ RSpec.describe Client do
     context 'when invalid time zone' do
       before { model.time_zone = 'invalid' }
 
-      it { is_expected.to be_invalid }
+      it { is_expected.not_to be_valid }
     end
 
     context 'when valid time zone' do

@@ -5,6 +5,6 @@ FactoryBot.define do
     sequence(:from) { |n| "/en-GB/from/#{n}" }
     sequence(:to) { |n| "/en-GB/to/#{n}" }
 
-    association :client
+    client
   end
 end

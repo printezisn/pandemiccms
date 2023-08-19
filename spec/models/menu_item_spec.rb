@@ -41,7 +41,7 @@ RSpec.describe MenuItem do
     context 'when the linkable does not belong to the same client' do
       before { model.menu.client_id = 0 }
 
-      it { is_expected.to be_invalid }
+      it { is_expected.not_to be_valid }
     end
   end
 

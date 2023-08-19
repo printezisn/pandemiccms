@@ -5,7 +5,7 @@ class AddCssClassAndOpenInNewWindowToMenuItem < ActiveRecord::Migration[6.1]
   def change
     change_table :menu_items, bulk: true do |t|
       t.string :css_class
-      t.boolean :open_in_new_window, default: false
+      t.boolean :open_in_new_window, default: false, null: false
     end
   end
 end

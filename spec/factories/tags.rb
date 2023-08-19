@@ -6,6 +6,6 @@ FactoryBot.define do
     sequence(:description) { |n| "Tag description #{n}" }
     sequence(:body) { |n| "Tag body #{n}" }
 
-    association :client
+    client
   end
 end

@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :medium do
-    association :client
+    client
   end
 end

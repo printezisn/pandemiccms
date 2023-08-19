@@ -5,6 +5,6 @@ FactoryBot.define do
     sequence(:name) { |n| "Menu#{n}" }
     sequence(:description) { |n| "Menu description #{n}" }
 
-    association :client
+    client
   end
 end

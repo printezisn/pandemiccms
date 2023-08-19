@@ -4,6 +4,6 @@ FactoryBot.define do
   factory :admin_user_role do
     role { :supervisor }
 
-    association :admin_user
+    admin_user
   end
 end

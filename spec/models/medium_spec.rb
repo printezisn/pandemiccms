@@ -18,7 +18,7 @@ RSpec.describe Medium do
 
   describe 'file' do
     context 'when no file is attached' do
-      it { is_expected.to be_invalid }
+      it { is_expected.not_to be_valid }
     end
 
     context 'when a file is attached' do

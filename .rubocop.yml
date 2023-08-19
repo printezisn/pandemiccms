@@ -67,3 +67,6 @@ RSpec/AnyInstance:
 Style/ClassVars:
   Exclude:
     - "app/services/asset_path_fetcher.rb"
+
+RSpec/IndexedLet:
+  Enabled: false

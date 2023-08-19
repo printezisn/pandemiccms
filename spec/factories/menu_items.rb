@@ -5,7 +5,7 @@ FactoryBot.define do
     sequence(:name) { |n| "Menu Item #{n}" }
     sequence(:external_url) { |n| "https://mytest#{n}.com" }
 
-    association :menu
+    menu
 
     trait :with_parent do
       after(:create) do |instance, _|

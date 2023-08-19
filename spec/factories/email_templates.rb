@@ -5,6 +5,6 @@ FactoryBot.define do
     sequence(:subject) { |n| "Subject #{n}" }
     sequence(:body) { |n| "Body #{n}" }
 
-    association :client
+    client
   end
 end

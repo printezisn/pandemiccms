@@ -6,7 +6,7 @@ FactoryBot.define do
     sequence(:description) { |n| "Category description #{n}" }
     sequence(:body) { |n| "Category body #{n}" }
 
-    association :client
+    client
 
     trait :with_parent do
       after(:create) do |instance, _|

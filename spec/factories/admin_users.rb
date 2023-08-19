@@ -9,7 +9,7 @@ FactoryBot.define do
     sequence(:last_name) { |n| "Lastname#{n}" }
     password { 'T3stPa$$' }
 
-    association :client
+    client
 
     after(:create) { |admin_user, _| admin_user.confirm }
 

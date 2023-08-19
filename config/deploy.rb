@@ -30,7 +30,9 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
        'public/uploads', 'app/assets/builds'
 
 # Default value for default_env is {}
-set :default_env, { path: "$HOME/.nvm/versions/node/v#{File.read(Rails.root.join('.nvmrc')).strip}/bin:$PATH", node_env: 'production' }
+# rubocop:disable Rails/FilePath
+set :default_env, { path: "$HOME/.nvm/versions/node/v#{Rails.root.join('.nvmrc').read.strip}/bin:$PATH", node_env: 'production' }
+# rubocop:enable Rails/FilePath
 
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }

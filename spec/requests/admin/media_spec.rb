@@ -77,7 +77,7 @@ RSpec.describe '/admin/media' do
     it 'returns a URL to the first medium' do
       request
 
-      expect(JSON.parse(response.body)).to eq({ 'url' => rails_blob_url(Medium.first.file) })
+      expect(response.parsed_body).to eq({ 'url' => rails_blob_url(Medium.first.file) })
     end
 
     it 'creates the media' do

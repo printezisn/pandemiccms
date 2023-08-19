@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :client_language do
-    association :client
-    association :language
+    client
+    language
   end
 end

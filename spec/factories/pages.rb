@@ -6,8 +6,8 @@ FactoryBot.define do
     sequence(:description) { |n| "Page description #{n}" }
     sequence(:body) { |n| "Page body #{n}" }
 
-    association :client
-    association :author, factory: :admin_user
+    client
+    author factory: %i[admin_user]
 
     trait :with_parent do
       after(:create) do |instance, _|

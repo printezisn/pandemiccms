@@ -324,7 +324,7 @@ RSpec.describe '/admin/tags' do
     it 'returns the correct tags' do
       request
 
-      expect(JSON.parse(response.body)).to eq(expected_results)
+      expect(response.parsed_body).to eq(expected_results)
     end
   end
 end
