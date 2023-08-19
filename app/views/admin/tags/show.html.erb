@@ -84,7 +84,7 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control"><%= @tag.created_at %></div>
+          <div class="control"><%= @tag.created_at.to_fs %></div>
         </div>
       </div>
     </div>
@@ -94,7 +94,7 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control"><%= @tag.updated_at %></div>
+          <div class="control"><%= @tag.updated_at.to_fs %></div>
         </div>
       </div>
     </div>

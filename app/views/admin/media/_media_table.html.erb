@@ -59,7 +59,7 @@
           <%= medium.file.metadata['width'] %> x <%= medium.file.metadata['height'] %><br>
         <% end %>
       </td>
-      <td class="is-hidden-touch"><%= medium.created_at %></td>
+      <td class="is-hidden-touch"><%= medium.created_at.to_fs %></td>
       <td class="actions-cell">
         <div class="dropdown is-togglable is-right">
           <div class="dropdown-trigger">

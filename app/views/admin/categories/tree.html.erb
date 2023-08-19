@@ -44,8 +44,8 @@
           <td>
             <a href="<%= admin_category_path(category) %>"><%= category.name_with_depth %></a>
           </td>
-          <td class="is-hidden-touch"><%= category.created_at %></td>
-          <td class="is-hidden-touch"><%= category.updated_at %></td>
+          <td class="is-hidden-touch"><%= category.created_at.to_fs %></td>
+          <td class="is-hidden-touch"><%= category.updated_at.to_fs %></td>
           <td class="actions-cell">
             <div class="dropdown is-togglable is-right">
               <div class="dropdown-trigger">

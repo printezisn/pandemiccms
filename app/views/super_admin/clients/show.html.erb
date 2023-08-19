@@ -96,7 +96,7 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control"><%= @client.created_at %></div>
+          <div class="control"><%= @client.created_at.to_fs %></div>
         </div>
       </div>
     </div>
@@ -106,7 +106,7 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control"><%= @client.updated_at %></div>
+          <div class="control"><%= @client.updated_at.to_fs %></div>
         </div>
       </div>
     </div>

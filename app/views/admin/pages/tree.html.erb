@@ -46,8 +46,8 @@
             <a href="<%= admin_page_path(page) %>"><%= page.name_with_depth %></a>
           </td>
           <td class="is-hidden-mobile"><%= page.draft? ? _('Draft|Page') : _('Published|Page') %></td>
-          <td class="is-hidden-touch"><%= page.created_at %></td>
-          <td class="is-hidden-touch"><%= page.updated_at %></td>
+          <td class="is-hidden-touch"><%= page.created_at.to_fs %></td>
+          <td class="is-hidden-touch"><%= page.updated_at.to_fs %></td>
           <td class="actions-cell">
             <div class="dropdown is-togglable is-right">
               <div class="dropdown-trigger">

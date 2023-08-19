@@ -17,7 +17,7 @@
       <td>
         <a href="<%= admin_email_template_path(email_template) %>"><%= email_template.type_name %></a>
       </td>
-      <td class="is-hidden-mobile"><%= email_template.updated_at %></td>
+      <td class="is-hidden-mobile"><%= email_template.updated_at.to_fs %></td>
       <td class="actions-cell">
         <div class="dropdown is-togglable is-right">
           <div class="dropdown-trigger">

@@ -51,8 +51,8 @@
           <%= root_url(client.default_url_options.merge(locale: '')) %>
         </a>
       </td>
-      <td class="is-hidden-touch"><%= client.created_at %></td>
-      <td class="is-hidden-touch"><%= client.updated_at %></td>
+      <td class="is-hidden-touch"><%= client.created_at.to_fs %></td>
+      <td class="is-hidden-touch"><%= client.updated_at.to_fs %></td>
       <td class="actions-cell<%= ' is-hidden' if params[:hide_actions].present? %>">
         <div class="dropdown is-togglable is-right">
           <div class="dropdown-trigger">

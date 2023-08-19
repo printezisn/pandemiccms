@@ -54,7 +54,7 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control"><%= @redirect.created_at %></div>
+          <div class="control"><%= @redirect.created_at.to_fs %></div>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
       </div>
       <div class="field-body">
         <div class="field">
-          <div class="control"><%= @redirect.updated_at %></div>
+          <div class="control"><%= @redirect.updated_at.to_fs %></div>
         </div>
       </div>
     </div>

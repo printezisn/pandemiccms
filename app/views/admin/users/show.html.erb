@@ -156,7 +156,7 @@
           </div>
           <div class="field-body">
             <div class="field">
-              <div class="control"><%= @user.confirmed_at %></div>
+              <div class="control"><%= @user.confirmed_at&.to_fs %></div>
             </div>
           </div>
         </div>
@@ -166,7 +166,7 @@
           </div>
           <div class="field-body">
             <div class="field">
-              <div class="control"><%= @user.last_sign_in_at %></div>
+              <div class="control"><%= @user.last_sign_in_at&.to_fs %></div>
             </div>
           </div>
         </div>
@@ -186,7 +186,7 @@
           </div>
           <div class="field-body">
             <div class="field">
-              <div class="control"><%= @user.created_at %></div>
+              <div class="control"><%= @user.created_at.to_fs %></div>
             </div>
           </div>
         </div>
@@ -196,7 +196,7 @@
           </div>
           <div class="field-body">
             <div class="field">
-              <div class="control"><%= @user.updated_at %></div>
+              <div class="control"><%= @user.updated_at.to_fs %></div>
             </div>
           </div>
         </div>
