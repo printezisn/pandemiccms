@@ -8,8 +8,8 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 const entries = {};
 
 glob.sync('./app/javascript/**/main.js').forEach((entry) => {
-  const output = entry.replace('./app/javascript/', '').replace(/\.js$/, '');
-  entries[output] = entry;
+  const output = entry.replace('app/javascript/', '').replace(/\.js$/, '');
+  entries[output] = `./${entry}`;
 });
 
 module.exports = (env) => ({
