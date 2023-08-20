@@ -14,7 +14,7 @@ glob.sync('./app/javascript/**/main.js').forEach((entry) => {
 
 module.exports = (env) => ({
   mode: env.development ? 'development' : 'production',
-  devtool: env.development ? 'eval' : 'source-map',
+  devtool: 'eval',
   entry: entries,
   output: {
     filename: '[name].js',
