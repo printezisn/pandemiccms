@@ -69,7 +69,12 @@ module.exports = (env) => ({
         test: /\.(png)|(jpg)|(jpeg)|(gif)|(bmp)|(svg)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[name]-[contenthash].digested[ext]',
+          filename: ({ filename }) => {
+            const parts = filename.split('/');
+            const filepath = parts.slice(1, parts.length - 1).join('/');
+
+            return `images/${filepath}/[name]-[contenthash].digested[ext]`;
+          },
         },
       },
       {
