@@ -22,8 +22,6 @@ A CMS with all the necessary components to help you create fast and amazing webs
 
 ![https://pandemiccms.com](README/admin_dashboard.jpeg)
 
-Website: https://pandemiccms.com
-
 ## Stack
 
 **Programming languages**:
