@@ -62,7 +62,7 @@ You need to have the following installed to run the project:
 
 In order to run the project, you have to install the following components:
 
-1. Ruby (3.2.0)
+1. Ruby (3.3.0)
 1. NodeJS
 1. MariaDB (or MySQL) *
 1. Redis *

@@ -42,7 +42,7 @@ require 'capistrano/sidekiq'
 # require "capistrano/passenger"
 
 set :rbenv_type, :user
-set :rbenv_ruby, '3.2.0'
+set :rbenv_ruby, '3.3.0'
 
 install_plugin Capistrano::Sidekiq
 install_plugin Capistrano::Sidekiq::Systemd

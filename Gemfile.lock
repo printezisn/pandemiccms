@@ -248,7 +248,7 @@ GEM
     msgpack (1.7.2)
     multi_json (1.15.0)
     multipart-post (2.3.0)
-    mysql2 (0.5.5)
+    mysql2 (0.5.6)
     net-imap (0.3.7)
       date
       net-protocol
@@ -471,7 +471,7 @@ DEPENDENCIES
   jsbundling-rails (~> 1.0)
   kaminari (~> 1.2)
   listen (~> 3.2)
-  mysql2 (~> 0.5)
+  mysql2 (~> 0.5.6)
   propshaft (~> 0.6)
   pry (~> 0.14)
   pry-rails (~> 0.3)
@@ -496,7 +496,7 @@ DEPENDENCIES
   webdrivers (~> 5.0)
 
 RUBY VERSION
-   ruby 3.2.0p0
+   ruby 3.3.0p0
 
 BUNDLED WITH
    2.3.5

@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.0'
+ruby '3.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 7.0'
@@ -66,7 +66,7 @@ end
 gem 'tzinfo-data', '~> 1.2021', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'devise', '~> 4.7'
-gem 'mysql2', '~> 0.5'
+gem 'mysql2', '~> 0.5.6'
 
 gem 'devise-security', '~> 0.14'
 
