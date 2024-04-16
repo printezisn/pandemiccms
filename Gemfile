@@ -32,9 +32,12 @@ group :development, :test do
   gem 'rspec', '~> 3.10'
   gem 'rspec-rails', '~> 6.0'
   gem 'rubocop', '~> 1.5', require: false
+  gem 'rubocop-capybara', '~> 2.20', require: false
+  gem 'rubocop-factory_bot', '~> 2.25', require: false
   gem 'rubocop-performance', '~> 1.9', require: false
   gem 'rubocop-rails', '~> 2.8', require: false
   gem 'rubocop-rspec', '~> 2.0', require: false
+  gem 'rubocop-rspec_rails', '~> 2.28', require: false
 end
 
 group :development do
@@ -57,7 +60,7 @@ group :test do
   gem 'capybara', '~> 3.35'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'selenium-webdriver', '~> 4.1'
-  gem 'shoulda-matchers', '~> 5.0'
+  gem 'shoulda-matchers', '~> 6.2'
   gem 'timecop', '~> 0.9'
   gem 'webdrivers', '~> 5.0'
 end
@@ -66,7 +69,7 @@ end
 gem 'tzinfo-data', '~> 1.2021', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'devise', '~> 4.7'
-gem 'mysql2', '~> 0.5.6'
+gem 'mysql2', '~> 0.5'
 
 gem 'devise-security', '~> 0.14'
 

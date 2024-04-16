@@ -29,7 +29,7 @@ class EmailTemplate < ApplicationRecord
   def replace_params(text, values)
     return text if text.blank?
 
-    parameters.each { |key, _| text = text.gsub(key, values[key] || '') }
+    parameters.each_key { |key| text = text.gsub(key, values[key] || '') }
     text
   end
 end
