@@ -30,7 +30,7 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
        'public/uploads', 'app/assets/builds'
 
 # Default value for default_env is {}
-set :default_env, { path: '$HOME/.nvm/versions/node/v18.17.1/bin:$PATH', node_env: 'production' }
+set :default_env, { path: '$HOME/.nvm/versions/node/v20.11.0/bin:$PATH', node_env: 'production' }
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
 
