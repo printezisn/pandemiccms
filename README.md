@@ -50,7 +50,7 @@ You need to have the following installed to run the project:
 
 - Ruby
 - NodeJS
-- MySQL (or MariaDB)
+- SQLite or MariaDB (or MySQL)
 - Redis
 - Elasticsearch
 - libvips
@@ -64,7 +64,7 @@ In order to run the project, you have to install the following components:
 
 1. Ruby (3.3.0)
 1. NodeJS
-1. MariaDB (or MySQL) *
+1. SQLite or MariaDB (or MySQL) *
 1. Redis *
 1. Elasticsearch *
 1. libvips
@@ -81,7 +81,7 @@ You may actually skip the whole step if you use [remote containers](https://code
 **3. Add configuration**:
 
 Add configuration by running `EDITOR=<editor> rails credentials:edit` (e.g. `EDITOR="code --wait" rails credentials:edit`). The credentials file contains configuration for the following services:
-- MySQL/MariaDB
+- Database
 - Redis
 - Elasticsearch
 - Super admin areas (e.g. Sidekiq Web UI)
@@ -90,7 +90,9 @@ and it has the following structure:
 
 ```
 secret_key_base: <secret_key_base>
-mariadb:
+database:
+  type: <type>
+  name: <name>
   username: <username>
   password: <password>
 redis:
