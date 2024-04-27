@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2022_01_25_164011) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_27_223951) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -156,6 +156,17 @@ ActiveRecord::Schema[7.1].define(version: 2022_01_25_164011) do
     t.datetime "updated_at", null: false
     t.index ["client_id", "type"], name: "index_email_templates_on_client_id_and_type"
     t.index ["client_id"], name: "index_email_templates_on_client_id"
+  end
+
+  create_table "indexed_entities", force: :cascade do |t|
+    t.string "indexable_type", null: false
+    t.integer "indexable_id", null: false
+    t.string "locale", null: false
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["indexable_id", "indexable_type", "locale"], name: "index_indexed_entities_on_indexable_and_locale", unique: true
+    t.index ["indexable_type", "indexable_id"], name: "index_indexed_entities_on_indexable"
   end
 
   create_table "languages", force: :cascade do |t|
