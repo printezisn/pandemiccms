@@ -83,7 +83,7 @@ You may actually skip the whole step if you use [remote containers](https://code
 Add configuration by running `EDITOR=<editor> rails credentials:edit` (e.g. `EDITOR="code --wait" rails credentials:edit`). The credentials file contains configuration for the following services:
 - Database
 - Redis
-- Elasticsearch
+- Search index (e.g. elasticsearch)
 - Super admin areas (e.g. Sidekiq Web UI)
 
 and it has the following structure:
@@ -97,7 +97,9 @@ database:
   password: <password>
 redis:
   password: <password>
-elasticsearch:
+search:
+  type: <type>
+  url: <url>
   username: <username>
   password: <password>
 super_admin:

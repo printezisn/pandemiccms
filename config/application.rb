@@ -24,7 +24,7 @@ module Pandemiccms
 
     config.exceptions_app = routes
 
-    config.search = config_for(:elasticsearch)
+    config.search = config_for(:search)
     config.redis = config_for(:redis)
 
     smtp_config = config_for(:smtp)
