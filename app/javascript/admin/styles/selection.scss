@@ -1,5 +1,5 @@
 @import "~select2/dist/css/select2.css";
-@import "~bulma/sass/utilities/all";
+@import "~bulma/sass/utilities";
 @import "~bulma/sass/form/shared";
 
 // https://gist.github.com/n1crack/8f6cd38fa0839dced22e89c5406c680a
@@ -30,7 +30,7 @@
     border-color: $border;
     border-radius: $radius;
     &:hover {
-      border-color: $border-hover;
+      border-color: $grey-lighter;
     }
   }
 
@@ -48,6 +48,8 @@
 
     .select2-selection__clear {
       margin-right: 0;
+      margin-left: 0.75em;
+      margin-bottom: 5px;
     }
   }
 

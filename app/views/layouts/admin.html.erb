@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= current_locale.to_s.split('-').first %>" data-js-locale="<%= current_locale.to_s.tr('-', '_') %>">
+<html data-theme="light" lang="<%= current_locale.to_s.split('-').first %>" data-js-locale="<%= current_locale.to_s.tr('-', '_') %>">
 
 <head>
   <title><%= yield :title %></title>
@@ -27,6 +27,7 @@
           <%= current_client.name %>
         </a>
         <div class="navbar-burger burger" data-target="main-menu">
+          <span></span>
           <span></span>
           <span></span>
           <span></span>

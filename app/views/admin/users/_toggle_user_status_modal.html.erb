@@ -12,8 +12,10 @@
     <p><%= user.active? ? _('Are you sure you want to deactivate this user ?') : _('Are you sure you want to activate this user ?') %></p>
   </div>
   <div class="modal-card-foot">
-    <button type="button" class="button cancel"><%= _('No') %></button>
-    <button type="submit" class="button is-success"><%= _('Yes') %></button>
+    <div class="buttons">
+      <button type="button" class="button cancel"><%= _('No') %></button>
+      <button type="submit" class="button is-success"><%= _('Yes') %></button>
+    </div>
   </div>
 </div>
 <% end %>
