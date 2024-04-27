@@ -52,7 +52,7 @@ You need to have the following installed to run the project:
 - NodeJS
 - SQLite or MariaDB (or MySQL)
 - Redis
-- Elasticsearch
+- Elasticsearch (optional)
 - libvips
 - Sidekiq
 
@@ -66,7 +66,7 @@ In order to run the project, you have to install the following components:
 1. NodeJS
 1. SQLite or MariaDB (or MySQL) *
 1. Redis *
-1. Elasticsearch *
+1. Elasticsearch (optional) *
 1. libvips
 
 \* You may skip the installation of these components if you want and use the `docker-compose.infrastructure.yml` instead.
@@ -91,20 +91,20 @@ and it has the following structure:
 ```
 secret_key_base: <secret_key_base>
 database:
-  type: <type>
-  name: <name>
-  username: <username>
-  password: <password>
+  type: <"sqlite3" or "mysql2">
+  name: <the name of the database>
+  username: <the username to access the database (only for mysql2)>
+  password: <the password to access the database (only for mysql2)>
 redis:
-  password: <password>
+  password: <the password to access redis>
 search:
-  type: <type>
-  url: <url>
-  username: <username>
-  password: <password>
+  type: <"database" or "elasticsearch">
+  url: <the url to the service (only for elasticsearch)>
+  username: <the username to access the service (only for elasticsearch)>
+  password: <the password to access the service (only for elasticsearch)>
 super_admin:
-  username: <username>
-  password: <password>
+  username: <the username to access the super admin panel>
+  password: <the password to access the super admin panel>
 ```
 
 If you need to generate a new value for `secret_key_base`, you can do it by running `rails secret`.
@@ -115,7 +115,7 @@ For the development environment, the project contains a default credentials file
 
 **4. Create the database**:
 
-You have to follow these instructions only if you don't use the default services from `docker-compose.infrastructure.yml`.
+You have to follow these instructions only if you use MariaDB (or MySQL) you don't use the default services from `docker-compose.infrastructure.yml`.
 
 Log in the database system and perform the following actions:
 

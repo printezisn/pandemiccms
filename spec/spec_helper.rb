@@ -95,15 +95,17 @@ RSpec.configure do |config|
   #   Kernel.srand config.seed
 
   config.after do
-    es_client = Elasticsearch::Client.new(
-      url: Rails.application.config.search[:url],
-      log: Rails.env.development?,
-      user: Rails.application.config.search[:username],
-      password: Rails.application.config.search[:password]
-    )
-    index_names = es_client.indices.get(index: '_all').keys.select { |index_name| index_name.end_with?('_test') }
-    index_names.each do |index_name|
-      es_client.indices.delete(index: index_name)
+    if Rails.application.config.search[:type] == 'elasticsearch'
+      es_client = Elasticsearch::Client.new(
+        url: Rails.application.config.search[:url],
+        log: Rails.env.development?,
+        user: Rails.application.config.search[:username],
+        password: Rails.application.config.search[:password]
+      )
+      index_names = es_client.indices.get(index: '_all').keys.select { |index_name| index_name.end_with?('_test') }
+      index_names.each do |index_name|
+        es_client.indices.delete(index: index_name)
+      end
     end
 
     ActiveJob::Base.queue_adapter.enqueued_jobs = []

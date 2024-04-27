@@ -62,6 +62,10 @@ module SearchIndex
           size: 1000
         ).to_a.map { |post| post.attributes['id'] }
       end
+
+      def total_entries
+        search(query: { match_all: {} }).response[:hits][:total][:value]
+      end
     end
   end
 end

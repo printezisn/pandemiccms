@@ -12,7 +12,7 @@ RSpec.describe UnindexJob do
     Language.pluck(:locale).each do |locale|
       records_found = retry_operation(expected_value:) do
         repo = repo_klass.new(entity.client_id, locale)
-        repo.search(query: { match_all: {} }).response[:hits][:total][:value]
+        repo.total_entries
       end
 
       expect(records_found).to eq(expected_value)
