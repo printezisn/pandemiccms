@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-# Job which indexes an object to Elasticsearch
+# Job which indexes an object to search index
 class IndexJob < ApplicationJob
   queue_as :default
   retry_on ActiveRecord::StaleObjectError
 
   def perform(*args)
     entity_klass = args[0].to_s.constantize
-    search_entity_klass = "Elastic::#{args[0]}".constantize
+    search_entity_klass = "SearchIndex::#{args[0]}".constantize
     entity = entity_klass.find(args[1])
 
-    repo_klass = "Elastic::#{entity_klass}Repository".constantize
+    repo_klass = SearchIndex::RepositoryFactory.get(entity_klass)
 
     Language.pluck(:locale).each do |locale|
       search_entity = search_entity_klass.from_entity(locale, entity)

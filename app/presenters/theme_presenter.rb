@@ -57,17 +57,9 @@ class ThemePresenter
   end
 
   def search_posts(text, only_visible: true)
-    repo = Elastic::PostRepository.new(client_id, locale)
+    repo = SearchIndex::RepositoryFactory.get(Post).new(client_id, locale)
 
-    matching_post_ids = repo.search(
-      query: {
-        multi_match: {
-          query: text.to_s,
-          fuzziness: 'AUTO'
-        }
-      },
-      size: 1000
-    ).to_a.map { |post| post.attributes['id'] }
+    matching_post_ids = repo.find_matching_ids(text)
 
     posts(only_visible:).where(id: matching_post_ids)
   end

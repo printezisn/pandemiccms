@@ -171,9 +171,9 @@ describe ThemePresenter, type: :presenter do
   describe '#search' do
     let(:locale) { 'en' }
     let(:post) { create(:post, status: :published) }
-    let(:repo) { Elastic::PostRepository.new(post.client.id, locale) }
+    let(:repo) { SearchIndex::RepositoryFactory.get(Post).new(post.client.id, locale) }
 
-    before { repo.save(Elastic::Post.from_entity(locale, post)) }
+    before { repo.save(SearchIndex::Post.from_entity(locale, post)) }
 
     it 'returns the matched posts' do
       matched_post_ids = retry_operation(expected_value: [post.id]) do

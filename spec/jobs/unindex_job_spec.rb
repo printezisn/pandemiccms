@@ -31,7 +31,7 @@ RSpec.describe UnindexJob do
 
   describe 'Post' do
     let(:entity) { create(:post) }
-    let(:repo_klass) { Elastic::PostRepository }
+    let(:repo_klass) { SearchIndex::RepositoryFactory.get(Post) }
 
     it_behaves_like 'unindexing job'
   end

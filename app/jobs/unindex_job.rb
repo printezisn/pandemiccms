@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Job which unindexes an object from Elasticsearch
+# Job which unindexes an object from search index
 class UnindexJob < ApplicationJob
   queue_as :default
 
@@ -9,7 +9,7 @@ class UnindexJob < ApplicationJob
     client_id = args[1]
     entity_id = args[2]
 
-    repo_klass = "Elastic::#{entity_klass}Repository".constantize
+    repo_klass = SearchIndex::RepositoryFactory.get(entity_klass)
 
     Language.pluck(:locale).each do |locale|
       repo = repo_klass.new(client_id, locale)

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Job which indexes all entities to Elasticsearch
+# Job which indexes all entities to search index
 class IndexAllJob < ApplicationJob
   MODEL_TYPES = [Post].freeze
 

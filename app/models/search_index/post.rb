@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module Elastic
-  # Elasticsearch document model for post
+module SearchIndex
+  # Search index document model for post
   class Post
     attr_reader :attributes
 
