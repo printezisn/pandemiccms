@@ -29,10 +29,14 @@
     "node": ">= 20.11.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.16.5",
-    "eslint": "^9.0.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.4"
+    "@eslint/eslintrc": "^3.0.2",
+    "@eslint/js": "^9.1.1",
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "globals": "^15.0.0"
   },
   "scripts": {
     "lint": "eslint ./app/javascript ./webpack.config.js",
