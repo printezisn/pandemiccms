@@ -1,15 +1,15 @@
 default: &default
-  adapter: mysql2
+  adapter: <%= Rails.application.credentials.dig(:database, :type) %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: "<%= Rails.application.credentials.dig(:mariadb, :username) %>"
-  password: "<%= Rails.application.credentials.dig(:mariadb, :password) %>"
+  username: "<%= Rails.application.credentials.dig(:database, :username) %>"
+  password: "<%= Rails.application.credentials.dig(:database, :password) %>"
   timeout: 5000
   encoding: utf8
 
 development:
   <<: *default
   host: 127.0.0.1
-  database: pandemiccms_development
+  database: <%= Rails.application.credentials.dig(:database, :name).gsub('{env}', 'development') %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -17,9 +17,9 @@ development:
 test:
   <<: *default
   host: 127.0.0.1
-  database: pandemiccms_test
+  database: <%= Rails.application.credentials.dig(:database, :name).gsub('{env}', 'test') %>
 
 production:
   <<: *default
-  host: mariadb
-  database: pandemiccms_production
+  host: database
+  database: <%= Rails.application.credentials.dig(:database, :name).gsub('{env}', 'production') %>

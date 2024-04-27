@@ -1,7 +1,5 @@
-version: "3.8"
-
 services:
-  mariadb:
+  database:
     image: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: 1234

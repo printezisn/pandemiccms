@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
-  create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
+ActiveRecord::Schema[7.1].define(version: 2022_01_25_164011) do
+  create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
-  create_table "active_storage_blobs", charset: "utf8mb4", force: :cascade do |t|
+  create_table "active_storage_blobs", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
@@ -33,13 +33,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "active_storage_variant_records", charset: "utf8mb4", force: :cascade do |t|
+  create_table "active_storage_variant_records", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "admin_user_roles", charset: "utf8mb4", force: :cascade do |t|
+  create_table "admin_user_roles", force: :cascade do |t|
     t.bigint "admin_user_id", null: false
     t.integer "role", limit: 1, null: false
     t.datetime "created_at", null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["admin_user_id"], name: "index_admin_user_roles_on_admin_user_id"
   end
 
-  create_table "admin_users", charset: "utf8mb4", force: :cascade do |t|
+  create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "username", default: "", null: false
     t.bigint "client_id", null: false
@@ -82,7 +82,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "categories", charset: "utf8mb4", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.bigint "client_id", null: false
     t.string "name", null: false
     t.string "slug"
@@ -102,7 +102,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["parent_id"], name: "index_categories_on_parent_id"
   end
 
-  create_table "category_categorizables", charset: "utf8mb4", force: :cascade do |t|
+  create_table "category_categorizables", force: :cascade do |t|
     t.bigint "category_id", null: false
     t.string "categorizable_type", null: false
     t.bigint "categorizable_id", null: false
@@ -113,7 +113,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["category_id"], name: "index_category_categorizables_on_category_id"
   end
 
-  create_table "client_domains", charset: "utf8mb4", force: :cascade do |t|
+  create_table "client_domains", force: :cascade do |t|
     t.bigint "client_id", null: false
     t.string "domain", null: false
     t.integer "port", null: false
@@ -123,7 +123,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["domain", "port"], name: "index_client_domains_on_domain_and_port", unique: true
   end
 
-  create_table "client_languages", charset: "utf8mb4", force: :cascade do |t|
+  create_table "client_languages", force: :cascade do |t|
     t.bigint "client_id", null: false
     t.bigint "language_id", null: false
     t.boolean "default", default: false, null: false
@@ -135,7 +135,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["language_id"], name: "index_client_languages_on_language_id"
   end
 
-  create_table "clients", charset: "utf8mb4", force: :cascade do |t|
+  create_table "clients", force: :cascade do |t|
     t.string "name", null: false
     t.string "time_zone", null: false
     t.string "template", null: false
@@ -147,7 +147,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.integer "cache_duration"
   end
 
-  create_table "email_templates", charset: "utf8mb4", force: :cascade do |t|
+  create_table "email_templates", force: :cascade do |t|
     t.bigint "client_id", null: false
     t.string "type", null: false
     t.string "subject"
@@ -158,7 +158,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["client_id"], name: "index_email_templates_on_client_id"
   end
 
-  create_table "languages", charset: "utf8mb4", force: :cascade do |t|
+  create_table "languages", force: :cascade do |t|
     t.string "locale", null: false
     t.string "name", null: false
     t.string "flag", limit: 10, null: false
@@ -168,7 +168,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["locale"], name: "index_languages_on_locale", unique: true
   end
 
-  create_table "media", charset: "utf8mb4", force: :cascade do |t|
+  create_table "media", force: :cascade do |t|
     t.bigint "client_id", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -176,7 +176,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["client_id"], name: "index_media_on_client_id"
   end
 
-  create_table "menu_items", charset: "utf8mb4", force: :cascade do |t|
+  create_table "menu_items", force: :cascade do |t|
     t.string "name", null: false
     t.integer "sort_order", default: 1, null: false
     t.text "external_url"
@@ -195,7 +195,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["parent_id"], name: "index_menu_items_on_parent_id"
   end
 
-  create_table "menus", charset: "utf8mb4", force: :cascade do |t|
+  create_table "menus", force: :cascade do |t|
     t.string "name", null: false
     t.bigint "client_id", null: false
     t.text "description"
@@ -205,7 +205,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["client_id"], name: "index_menus_on_client_id"
   end
 
-  create_table "old_passwords", charset: "utf8mb4", force: :cascade do |t|
+  create_table "old_passwords", force: :cascade do |t|
     t.string "encrypted_password", null: false
     t.string "password_archivable_type", null: false
     t.integer "password_archivable_id", null: false
@@ -214,7 +214,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable"
   end
 
-  create_table "pages", charset: "utf8mb4", force: :cascade do |t|
+  create_table "pages", force: :cascade do |t|
     t.bigint "client_id", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -238,7 +238,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["parent_id"], name: "index_pages_on_parent_id"
   end
 
-  create_table "posts", charset: "utf8mb4", force: :cascade do |t|
+  create_table "posts", force: :cascade do |t|
     t.bigint "client_id", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -261,7 +261,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["indexed_at"], name: "index_posts_on_indexed_at"
   end
 
-  create_table "redirects", charset: "utf8mb4", force: :cascade do |t|
+  create_table "redirects", force: :cascade do |t|
     t.bigint "client_id", null: false
     t.text "from"
     t.text "to"
@@ -270,7 +270,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["client_id"], name: "index_redirects_on_client_id"
   end
 
-  create_table "tag_taggables", charset: "utf8mb4", force: :cascade do |t|
+  create_table "tag_taggables", force: :cascade do |t|
     t.bigint "tag_id", null: false
     t.string "taggable_type", null: false
     t.bigint "taggable_id", null: false
@@ -281,7 +281,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["taggable_type", "taggable_id"], name: "index_tag_taggables_on_taggable"
   end
 
-  create_table "tags", charset: "utf8mb4", force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
     t.bigint "client_id", null: false
     t.string "name", null: false
     t.string "slug"
@@ -297,7 +297,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_01_25_164011) do
     t.index ["client_id"], name: "index_tags_on_client_id"
   end
 
-  create_table "translations", charset: "utf8mb4", force: :cascade do |t|
+  create_table "translations", force: :cascade do |t|
     t.string "translatable_type", null: false
     t.bigint "translatable_id", null: false
     t.string "locale", null: false
