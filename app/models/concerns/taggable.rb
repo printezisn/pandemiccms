@@ -8,7 +8,7 @@ module Taggable
     attribute :tag_names, default: -> { [] }
     attribute :should_save_tags, :boolean
 
-    has_many :tag_taggables, as: :taggable, dependent: :destroy
+    has_many :tag_taggables, as: :taggable, dependent: :destroy, inverse_of: :taggable
     has_many :tags, through: :tag_taggables
 
     after_save :save_tags, if: :should_save_tags

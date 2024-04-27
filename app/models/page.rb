@@ -19,7 +19,7 @@ class Page < ApplicationRecord
   belongs_to :author, class_name: 'AdminUser', inverse_of: :pages, optional: true
   belongs_to :parent, inverse_of: :children, class_name: 'Page', optional: true, counter_cache: :children_count
   has_many :children, inverse_of: :parent, class_name: 'Page', foreign_key: :parent_id, dependent: :destroy
-  has_many :menu_items, as: :linkable, dependent: :destroy
+  has_many :menu_items, as: :linkable, dependent: :destroy, inverse_of: :linkable
 
   enum visibility: {
     public: 0,

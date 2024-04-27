@@ -5,7 +5,7 @@ module Translatable
   extend ActiveSupport::Concern
 
   included do
-    has_many :translations, as: :translatable, dependent: :destroy
+    has_many :translations, as: :translatable, dependent: :destroy, inverse_of: :translatable
   end
 
   def save_translation(locale)

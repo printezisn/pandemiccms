@@ -18,7 +18,7 @@ class Tag < ApplicationRecord
   belongs_to :client, inverse_of: :tags
 
   has_many :tag_taggables, inverse_of: :tag, dependent: :destroy
-  has_many :menu_items, as: :linkable, dependent: :destroy
+  has_many :menu_items, as: :linkable, dependent: :destroy, inverse_of: :linkable
 
   enum visibility: {
     public: 0,

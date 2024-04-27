@@ -18,7 +18,7 @@ class Post < ApplicationRecord
 
   belongs_to :client, inverse_of: :posts
   belongs_to :author, class_name: 'AdminUser', inverse_of: :posts, optional: true
-  has_many :menu_items, as: :linkable, dependent: :destroy
+  has_many :menu_items, as: :linkable, dependent: :destroy, inverse_of: :linkable
 
   enum visibility: {
     public: 0,

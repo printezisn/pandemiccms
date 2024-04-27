@@ -8,7 +8,7 @@ module Categorizable
     attribute :category_names, default: -> { [] }
     attribute :should_save_categories, :boolean
 
-    has_many :category_categorizables, as: :categorizable, dependent: :destroy
+    has_many :category_categorizables, as: :categorizable, dependent: :destroy, inverse_of: :categorizable
     has_many :categories, through: :category_categorizables
 
     after_save :save_categories, if: :should_save_categories
