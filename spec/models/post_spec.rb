@@ -19,6 +19,7 @@ RSpec.describe Post do
   it { is_expected.to belong_to(:client) }
   it { is_expected.to belong_to(:author).class_name('AdminUser').optional(true) }
   it { is_expected.to have_many(:menu_items).dependent(:destroy) }
+  it { is_expected.to have_many(:indexed_entities).dependent(:destroy) }
 
   it { is_expected.to define_enum_for(:visibility).with_values(public: 0, private: 1).with_suffix(:visibility) }
 
