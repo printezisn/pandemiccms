@@ -42,7 +42,7 @@ services:
     environment:
       RAILS_ENV: production
       RAILS_SERVE_STATIC_FILES: 1
-      RAILS_MASTER_KEY: 0fa8098c8e652a8a7c2bb448bb11ff54
+      RAILS_MASTER_KEY: <add value from config/credentials/production.key>
     volumes:
       - log_data:/app/logs
       - storage_data:/app/storage
@@ -60,7 +60,7 @@ services:
     environment:
       RAILS_ENV: production
       RAILS_SERVE_STATIC_FILES: 1
-      RAILS_MASTER_KEY: 0fa8098c8e652a8a7c2bb448bb11ff54
+      RAILS_MASTER_KEY: <add value from config/credentials/production.key>
     volumes:
       - log_data:/app/logs
       - storage_data:/app/storage

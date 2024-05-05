@@ -89,7 +89,9 @@ If you want to use MySQL, MariaDB, elasticsearch or redis, you have to install t
 ## Docker compose
 
 - `docker-compose.infrastructure.yml`: Spins up all infrastructure services (MariaDB, etc.).
-- `docker-compose.yml`: Spins up all infrastructure services and the application.
+- `docker-compose.yml`: Spins up all infrastructure services and the application. However, you must perform the following steps first:
+  - Run `EDITOR=<prefered editor (e.g. vim)> rails credentials:edit -e production` to create a credentials file for production and add a `secret_key_base` value. You can run `rails secret` to generate a new secret value.
+  - Add the content of `config/credentials/production.key` as value to `RAILS_MASTER_KEY` in `docker-compose.yml`.
 
 ## License
 
