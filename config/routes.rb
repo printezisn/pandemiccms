@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  mount MissionControl::Jobs::Engine, at: '/jobs'
+
   get '/sitemap.xml', to: 'seo#sitemap', format: 'xml', as: :sitemap
   get '/robots.txt', to: 'seo#robots', format: 'text', as: :robots
 

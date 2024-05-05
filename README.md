@@ -84,7 +84,7 @@ Add configuration by running `EDITOR=<editor> rails credentials:edit` (e.g. `EDI
 - Database
 - Redis
 - Search index, e.g. elasticsearch
-- Super admin areas, e.g. Queue status (/queue), clients (/super_admin/clients)
+- Super admin areas, e.g. Jobs status (/jobs), clients (/super_admin/clients)
 
 and it has the following structure:
 

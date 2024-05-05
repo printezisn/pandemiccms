@@ -24,6 +24,8 @@ module Pandemiccms
 
     config.exceptions_app = routes
 
+    config.mission_control.jobs.base_controller_class = 'SuperAdmin::BaseController'
+
     config.search = config_for(:search)
     config.redis = config_for(:redis)
 
