@@ -18,7 +18,7 @@ module SearchIndex
                  (h[:tags] || []).pluck(:name)
         text = tokens.join(' ')
 
-        indexed_entity = ::IndexedEntity.find_or_initialize_by(indexable_id: h[:id], indexable_type: ::Post.to_s, locale:)
+        indexed_entity = ::IndexedEntity.find_or_initialize_by(indexable_id: h[:id], indexable_type: ::Post.to_s, client_id:, locale:)
         indexed_entity.text = text
         indexed_entity.save!
       end
@@ -30,11 +30,11 @@ module SearchIndex
 
       def find_matching_ids(text)
         condition = ::IndexedEntity.arel_table[:text].matches("%#{text}%")
-        ::IndexedEntity.where(condition).pluck(:indexable_id)
+        ::IndexedEntity.where(client_id:, locale:, indexable_type: ::Post.to_s).where(condition).pluck(:indexable_id)
       end
 
       def total_entries
-        ::IndexedEntity.where(locale:).count
+        ::IndexedEntity.where(client_id:, locale:, indexable_type: ::Post.to_s).count
       end
     end
   end
