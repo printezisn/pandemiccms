@@ -1,14 +1,12 @@
 default: &default
-  port: 6379
-  host: 127.0.0.1
+  username: pandemiccms
   password: "1234"
 
 development:
   <<: *default
-  
+
 test:
   <<: *default
 
 production:
   <<: *default
-  host: redis

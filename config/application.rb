@@ -28,11 +28,12 @@ module Pandemiccms
 
     config.search = config_for(:search)
     config.redis = config_for(:redis)
+    config.super_admin = config_for(:super_admin)
 
     smtp_config = config_for(:smtp)
     if smtp_config.present?
-      config.action_mailer.delivery_method = :smtp
-      config.action_mailer.smtp_settings = smtp_config
+      config.action_mailer.delivery_method = smtp_config[:delivery_method].to_sym
+      config.action_mailer.smtp_settings = smtp_config.except(:delivery_method)
     end
 
     config.available_languages = [

@@ -1,8 +1,5 @@
 default: &default
-  type: "<%= Rails.application.credentials.dig(:search, :type) %>"
-  url: "<%= Rails.application.credentials.dig(:search, :url) %>"
-  username: "<%= Rails.application.credentials.dig(:search, :username) %>"
-  password: "<%= Rails.application.credentials.dig(:search, :password) %>"
+  type: database
 
 development:
   <<: *default
@@ -12,3 +9,6 @@ test:
 
 production:
   <<: *default
+  url: http://elasticsearch:9200
+  username: elastic
+  password: "1234"

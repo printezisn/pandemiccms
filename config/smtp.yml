@@ -2,10 +2,10 @@ default: &default
 
 development:
   <<: *default
-  address: 127.0.0.1
-  port: 1025
+  delivery_method: file
 
 production:
   <<: *default
+  delivery_method: smtp
   address: mailcatcher
   port: 1025

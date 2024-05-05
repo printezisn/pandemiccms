@@ -7,8 +7,8 @@ RSpec.describe '/super_admin/clients' do
   let(:headers) do
     {
       HTTP_AUTHORIZATION: ActionController::HttpAuthentication::Basic.encode_credentials(
-        Rails.application.credentials.super_admin[:username].to_s,
-        Rails.application.credentials.super_admin[:password].to_s
+        Rails.application.config.super_admin[:username].to_s,
+        Rails.application.config.super_admin[:password].to_s
       )
     }
   end

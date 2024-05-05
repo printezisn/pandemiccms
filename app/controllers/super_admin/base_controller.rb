@@ -4,8 +4,8 @@ module SuperAdmin
   # Base super admin controller
   class BaseController < ApplicationController
     http_basic_authenticate_with(
-      name: Rails.application.credentials.super_admin[:username].to_s,
-      password: Rails.application.credentials.super_admin[:password].to_s
+      name: Rails.application.config.super_admin[:username].to_s,
+      password: Rails.application.config.super_admin[:password].to_s
     )
 
     def check_client_existence; end

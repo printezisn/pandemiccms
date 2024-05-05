@@ -1,25 +1,24 @@
 default: &default
-  adapter: <%= Rails.application.credentials.dig(:database, :type) %>
+  adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: "<%= Rails.application.credentials.dig(:database, :username) %>"
-  password: "<%= Rails.application.credentials.dig(:database, :password) %>"
   timeout: 5000
   encoding: utf8
 
 development:
   <<: *default
-  host: 127.0.0.1
-  database: <%= Rails.application.credentials.dig(:database, :name).gsub('{env}', 'development') %>
+  database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  host: 127.0.0.1
-  database: <%= Rails.application.credentials.dig(:database, :name).gsub('{env}', 'test') %>
+  database: db/test.sqlite3
 
 production:
   <<: *default
+  adapter: mysql2
   host: database
-  database: <%= Rails.application.credentials.dig(:database, :name).gsub('{env}', 'production') %>
+  database: pandemiccms_production
+  username: pandemiccms
+  password: "1234"
