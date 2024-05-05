@@ -1,5 +1,5 @@
-<h1 style="display: flex; align-items: center; gap: 20px;">
-  <img src="public/logo.png" alt="logo" />
+<h1>
+  <img src="public/logo.png" alt="logo" width="32" height="32" />
   <span>Pandemic CMS</span>
 </h1>
 
