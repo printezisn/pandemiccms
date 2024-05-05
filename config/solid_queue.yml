@@ -2,6 +2,11 @@ default: &default
   dispatchers:
     - polling_interval: 1
       batch_size: 500
+      recurring_tasks:
+        index_all:
+          class: IndexAllJob
+          args: ["", true]
+          schedule: every minute
   workers:
     - queues: "*"
       threads: 5
