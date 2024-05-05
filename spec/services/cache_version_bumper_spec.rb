@@ -9,7 +9,7 @@ RSpec.describe CacheVersionBumper do
   let(:key) { 'cache_version_1_test' }
   let(:expected_value) { 5 }
 
-  before { service.redis.set(key, expected_value - 1) }
+  before { Rails.cache.write(key, expected_value - 1, raw: true) }
 
   it { expect(service.call).to eq(expected_value) }
 end

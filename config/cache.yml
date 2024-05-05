@@ -1,7 +1,5 @@
 default: &default
-  port: 6379
-  host: 127.0.0.1
-  password: "1234"
+  type: memory
 
 development:
   <<: *default
@@ -11,4 +9,7 @@ test:
 
 production:
   <<: *default
+  type: redis
   host: redis
+  port: 6379
+  password: "1234"

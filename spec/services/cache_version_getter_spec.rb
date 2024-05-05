@@ -9,7 +9,7 @@ RSpec.describe CacheVersionGetter do
   let(:key) { 'cache_version_1_test' }
   let(:expected_value) { '5' }
 
-  before { service.redis.set(key, expected_value) }
+  before { Rails.cache.write(key, expected_value, raw: true) }
 
   it { expect(service.call).to eq(expected_value) }
 end

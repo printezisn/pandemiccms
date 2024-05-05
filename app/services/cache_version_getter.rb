@@ -2,8 +2,6 @@
 
 # Service class to get the current cache version for a client
 class CacheVersionGetter < ApplicationService
-  include RedisWrapper
-
   attr_reader :client_id
 
   def initialize(client_id)
@@ -12,12 +10,12 @@ class CacheVersionGetter < ApplicationService
   end
 
   def call
-    redis.get(redis_key) || '0'
+    Rails.cache.read(cache_key, raw: true) || '0'
   end
 
   private
 
-  def redis_key
-    @redis_key ||= "cache_version_#{@client_id}_#{Rails.env}"
+  def cache_key
+    @cache_key ||= "cache_version_#{@client_id}_#{Rails.env}"
   end
 end

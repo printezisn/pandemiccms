@@ -27,8 +27,17 @@ module Pandemiccms
     config.mission_control.jobs.base_controller_class = 'SuperAdmin::BaseController'
 
     config.search = config_for(:search)
-    config.redis = config_for(:redis)
     config.super_admin = config_for(:super_admin)
+
+    cache_config = config_for(:cache)
+    config.cache_store = case cache_config[:type]
+                         when 'redis'
+                           [:redis_cache_store, { url: "redis://#{cache_config[:password]}@#{cache_config[:host]}:#{cache_config[:port]}" }]
+                         when 'memory'
+                           :memory_store
+                         else
+                           :null_store
+                         end
 
     smtp_config = config_for(:smtp)
     if smtp_config.present?
