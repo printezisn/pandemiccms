@@ -4,5 +4,7 @@ FactoryBot.define do
   factory :indexed_entity do
     indexable { nil }
     locale { 'en-GB' }
+
+    client
   end
 end
