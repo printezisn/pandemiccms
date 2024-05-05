@@ -39,6 +39,7 @@ yarn-debug.log*
 
 .env
 
+/config/master.key
 /config/credentials/production.key
 /.idea
 
