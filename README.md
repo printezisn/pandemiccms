@@ -34,6 +34,10 @@ A CMS with all the necessary components to help you create fast and amazing webs
 - Ruby on Rails
 - NodeJS
 
+**Jobs**:
+
+- Solid Queue
+
 **Testing**:
 
 - RSpec
@@ -44,117 +48,43 @@ A CMS with all the necessary components to help you create fast and amazing webs
 - Rubocop
 - ESLint
 
-**Requirements**
+## Requirements
 
 You need to have the following installed to run the project:
 
-- Ruby
-- NodeJS
-- SQLite or MariaDB (or MySQL)
-- Redis
-- Elasticsearch (optional)
+- Ruby (3.3.0)
+- NodeJS (20.11.0)
 - libvips
-- Solid Queue
 
-## How to prepare
+## How to run the application
 
-**1. Set up required components**:
+1. Run `bundle` to install the required gems.
+1. Run `yarn` to install the node packages.
+1. Run `EDITOR=<prefered editor (e.g. vim)> rails credentials:edit` to create a credentials file with a `secret_key_base` value.
+1. Run `rails db:migrate` to prepare the database.
+1. Run `./bin/dev`. This will run the rails server, the background job worker and will build the front-end assets. You can then visit the website in `http://localhost:3000`.
 
-In order to run the project, you have to install the following components:
+## Configuration
 
-1. Ruby (3.3.0)
-1. NodeJS
-1. SQLite or MariaDB (or MySQL) *
-1. Redis *
-1. Elasticsearch (optional) *
-1. libvips
+You can find all the classic rails configuration files under the `config` directory. Some of the most important configuration files are the following:
+- **database.yml**: Contains configuration for the database. Currently, only SQLite and MySQL or MariaDB are supported.
+- **search.yml**: Contains configuration for the search indexing functionality, which allows users to search for posts, etc. The configuration has mostly to do with the service backing the functionality. Currently, only database and elasticsearch are supported.
+- **cache.yml**: Contains configuration for the service providing caching functionality to the application. Currently, only memory store and redis are supported.
+- **smtp.yml**: Contains configuration for the service used to send emails. Currently, only file and smtp are supported. File stores emails in the `tmp/mails` directory and is meant only for development purposes.
+- **super_admin.yml**: Contains configuration for the super admin pages (e.g. the credentials to enter). The included pages are the following:
+  - **/jobs**: Contains information about the background jobs.
+  - **/super_admin/clients**: Contains all the applications/clients running on the instance.
 
-\* You may skip the installation of these components if you want and use the `docker-compose.infrastructure.yml` instead.
+If you want to use MySQL, MariaDB, elasticsearch or redis, you have to install them or use `docker-compose.infrastructure.yml` with docker compose.
 
-You may actually skip the whole step if you use [remote containers](https://code.visualstudio.com/docs/remote/containers) with Visual Studio Code. It also spins up `docker-compose.infrastructure.yml` for you.
-
-**2. Install dependencies**:
-
-- `bundle install`
-- `yarn`
-
-**3. Add configuration**:
-
-Add configuration by running `EDITOR=<editor> rails credentials:edit` (e.g. `EDITOR="code --wait" rails credentials:edit`). The credentials file contains configuration for the following services:
-- Database
-- Redis
-- Search index, e.g. elasticsearch
-- Super admin areas, e.g. Jobs status (/jobs), clients (/super_admin/clients)
-
-and it has the following structure:
-
-```
-secret_key_base: <secret_key_base>
-database:
-  type: <"sqlite3" or "mysql2">
-  name: <the name of the database>
-  username: <the username to access the database (only for mysql2)>
-  password: <the password to access the database (only for mysql2)>
-redis:
-  password: <the password to access redis>
-search:
-  type: <"database" or "elasticsearch">
-  url: <the url to the service (only for elasticsearch)>
-  username: <the username to access the service (only for elasticsearch)>
-  password: <the password to access the service (only for elasticsearch)>
-super_admin:
-  username: <the username to access the super admin panel>
-  password: <the password to access the super admin panel>
-```
-
-If you need to generate a new value for `secret_key_base`, you can do it by running `rails secret`.
-
-Also, you can generate different configuration for production by running `EDITOR=<editor> rails credentials:edit --environment production`. This will generate a new `production.key` file whose value needs to be stored on the server in a secure way.
-
-For the development environment, the project contains a default credentials file with a `master.key` file to open it.
-
-**4. Create the database**:
-
-You have to follow these instructions only if you use MariaDB (or MySQL) you don't use the default services from `docker-compose.infrastructure.yml`.
-
-Log in the database system and perform the following actions:
-
-1. Create the development database with `CREATE DATABASE pandemiccms;`.
-1. Create the test database with `CREATE DATABASE pandemiccms_test;`.
-1. Create the production database with `CREATE DATABASE pandemiccms_production;`.
-
-**5. Run the database migrations**:
-
-Run the migrations with `bundle exec rails db:migrate`.
-
-**6. Precompile the web assets**:
-
-Precompile the web assets with `bundle exec rails assets:precompile`
-
-**7. Create your first client**:
-
-Run `./bin/dev` to start the application and visit [http://localhost:3000](http://localhost:3000). It will redirect you to a page to create your first client (you'll need the super admin credentials you added in the configuration in step 3).
-
-After this step is complete, an email will be sent to the supervisor with instructions on how to activate the account. If you're using the default services from `docker-compose.infrastructure.yml`, then you can view all the emails in mailcatcher which is in [http://localhost:1080](http://localhost:1080).
-
-**8. You're done!**
-
-Visit [http://localhost:3000](http://localhost:3000) and enjoy your new client :)
-
-You can sign in to the admin panel by visiting [http://localhost:3000/admin](http://localhost:3000/admin).
-
-**Run the linters**:
+## Run the linters
 
 - `bundle exec rubocop`
 - `yarn lint`
 
-**Run the tests**:
+## Run the tests
 
 `bundle exec rspec`
-
-**Run the application**:
-
-`./bin/dev`
 
 ## Docker compose
 
