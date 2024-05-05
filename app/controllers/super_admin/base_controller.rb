@@ -17,7 +17,7 @@ module SuperAdmin
     end
 
     def current_locale
-      I18n.default_locale
+      request.path.starts_with?('/jobs') ? 'en' : I18n.default_locale
     end
 
     def layout
