@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_27_223951) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_05_082625) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -165,6 +165,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_27_223951) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "client_id", null: false
+    t.index ["client_id", "locale", "indexable_type"], name: "index_indexed_entities_on_indexable_client_locale"
+    t.index ["client_id"], name: "index_indexed_entities_on_client_id"
     t.index ["indexable_id", "indexable_type", "locale"], name: "index_indexed_entities_on_indexable_and_locale", unique: true
     t.index ["indexable_type", "indexable_id"], name: "index_indexed_entities_on_indexable"
   end
@@ -330,6 +333,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_27_223951) do
   add_foreign_key "client_languages", "clients"
   add_foreign_key "client_languages", "languages"
   add_foreign_key "email_templates", "clients"
+  add_foreign_key "indexed_entities", "clients"
   add_foreign_key "media", "clients"
   add_foreign_key "menu_items", "menu_items", column: "parent_id"
   add_foreign_key "menu_items", "menus"
