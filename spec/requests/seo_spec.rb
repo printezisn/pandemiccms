@@ -44,7 +44,7 @@ RSpec.describe 'seo' do
     let(:expected_result) do
       "User-agent: *
        Disallow: /admin/
-       Disallow: /sidekiq/
+       Disallow: /queue/
        Disallow: /super_admin/
        Sitemap: http://www.example.com/sitemap.xml".gsub(/\s+/, '')
     end

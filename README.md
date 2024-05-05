@@ -54,7 +54,7 @@ You need to have the following installed to run the project:
 - Redis
 - Elasticsearch (optional)
 - libvips
-- Sidekiq
+- Solid Queue
 
 ## How to prepare
 
@@ -83,8 +83,8 @@ You may actually skip the whole step if you use [remote containers](https://code
 Add configuration by running `EDITOR=<editor> rails credentials:edit` (e.g. `EDITOR="code --wait" rails credentials:edit`). The credentials file contains configuration for the following services:
 - Database
 - Redis
-- Search index (e.g. elasticsearch)
-- Super admin areas (e.g. Sidekiq Web UI)
+- Search index, e.g. elasticsearch
+- Super admin areas, e.g. Queue status (/queue), clients (/super_admin/clients)
 
 and it has the following structure:
 

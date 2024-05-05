@@ -53,10 +53,10 @@ services:
       - database
       - redis
       - elasticsearch
-  sidekiq:
+  solidqueue:
     build:
       context: .
-      dockerfile: ./docker/sidekiq/Dockerfile
+      dockerfile: ./docker/solid_queue/Dockerfile
     environment:
       RAILS_ENV: production
       RAILS_SERVE_STATIC_FILES: 1
