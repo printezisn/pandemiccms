@@ -3,33 +3,17 @@
 module SearchIndex
   module Elastic
     # Repository for storing posts in elasticsearch
-    class PostRepository
-      include Elasticsearch::Persistence::Repository
-
-      attr_reader :client_id, :locale
-
-      def index_name
-        "posts_#{client_id}_#{locale}_#{Rails.env}".downcase
+    class PostRepository < BaseRepository
+      def model_type
+        'posts'
       end
 
       def klass
         ::SearchIndex::Post
       end
 
-      def client
-        Elasticsearch::Client.new(
-          url: Rails.application.config.search[:url],
-          log: Rails.env.development?,
-          user: Rails.application.config.search[:username],
-          password: Rails.application.config.search[:password]
-        )
-      end
-
       def initialize(client_id, locale)
-        super({})
-
-        @client_id = client_id
-        @locale = locale
+        super(client_id, locale)
 
         settings number_of_shards: 1 do
           mapping dynamic: 'strict' do
@@ -49,22 +33,6 @@ module SearchIndex
             indexes :status, type: 'integer'
           end
         end
-      end
-
-      def find_matching_ids(text)
-        search(
-          query: {
-            multi_match: {
-              query: text.to_s,
-              fuzziness: 'AUTO'
-            }
-          },
-          size: 1000
-        ).to_a.map { |post| post.attributes['id'] }
-      end
-
-      def total_entries
-        search(query: { match_all: {} }).response[:hits][:total][:value]
       end
     end
   end
