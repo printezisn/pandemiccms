@@ -1,7 +1,6 @@
-<h1>
+<h1 style="display: flex; align-items: center; gap: 20px;">
   <img src="public/logo.png" alt="logo" />
-  &nbsp;
-  Pandemic CMS
+  <span>Pandemic CMS</span>
 </h1>
 
 A CMS with all the necessary components to help you create fast and amazing websites. Why Pandemic CMS ? Because it was created during the pandemic. Here is the core philosophy of it:
