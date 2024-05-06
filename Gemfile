@@ -95,3 +95,5 @@ gem 'sqlite3', '~> 1.4'
 gem 'solid_queue', '~> 0.2'
 
 gem 'mission_control-jobs', '~> 0.2'
+
+gem 'vite_rails', '~> 3.0'
