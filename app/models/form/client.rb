@@ -84,6 +84,7 @@ module Form
           role: :supervisor,
           should_set_roles: true
         )
+        admin_user.skip_confirmation!
 
         client.save!
         "ThemeInitializer::#{client.template.camelize}".constantize.call(client, admin_user)
