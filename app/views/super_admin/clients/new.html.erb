@@ -1,7 +1,7 @@
 <%
     content_for :title, _('Create Client | %{client}') % { client: 'Pandemic CMS' }
     content_for :description, _('Create new client for %{client}') % { client: 'Pandemic CMS' }
-    content_for :scripts, 'super_admin/pages/clients/edit/main'
+    content_for :scripts, 'entrypoints/super_admin/pages/clients/edit/main.js'
 %>
 
 <%= form_with(model: @form_model, url: super_admin_clients_path, method: :post) do |f| %>

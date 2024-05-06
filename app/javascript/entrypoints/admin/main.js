@@ -1,6 +1,6 @@
-import './styles/main.scss';
+import '../../styles/admin/main.scss';
 
-import initComponents from './components/initializer';
+import initComponents from '../../components/initializer';
 
 if (document.readyState === 'complete') {
   initComponents();

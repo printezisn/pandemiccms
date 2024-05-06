@@ -25,8 +25,8 @@ import 'tinymce/plugins/autoresize';
 
 import 'tinymce/models/dom';
 
-import contentUiCss from 'tinymce/skins/ui/oxide/content.css';
-import contentCss from 'tinymce/skins/content/default/content.css';
+import contentUiCss from 'tinymce/skins/ui/oxide/content.css?raw';
+import contentCss from 'tinymce/skins/content/default/content.css?raw';
 
 const initRichEditor = (editor) => {
   tinymce.init({
@@ -44,7 +44,7 @@ const initRichEditor = (editor) => {
     readonly: editor.hasAttribute('readonly') ? 1 : 0,
     skin: false,
     content_css: false,
-    content_style: `${contentUiCss.toString()}\n${contentCss.toString()}`,
+    content_style: `${contentUiCss}\n${contentCss}`,
     images_upload_handler: (blobInfo, progress) => new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
       xhr.open('POST', '/admin/media.json');

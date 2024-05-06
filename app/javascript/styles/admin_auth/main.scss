@@ -1,14 +1,12 @@
 @import "./variables";
-@import "~bulma/bulma";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/solid";
-@import "~toastr";
-@import "~flag-icons/sass/flag-icons.scss";
-@import "./cards";
-@import "./labels";
-@import "./page_footer";
-@import "./notifications";
-@import "./tables";
+@import "bulma/bulma";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "toastr";
+@import "../admin/cards";
+@import "../admin/labels";
+@import "../admin/page_footer";
+@import "../admin/notifications";
 
 html {
   overflow-y: auto;
@@ -19,42 +17,37 @@ body {
   background: $white-ter;
 }
 
-.navbar-brand {
-  font-weight: bold;
-}
-
-main {
-  padding: 32px;
-}
-
-.image-uploader {
-  &.without-image {
-    .show-on-image {
-      display: none;
-    }
-  }
-
-  &.with-image {
-    .hide-on-image {
-      display: none;
-    }
-  }
-}
-
-.logo-header {
+body {
+  margin: auto;
   padding-top: 3rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  max-width: 370px;
+
+  > header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
-.min-width-input {
-  min-width: 100px;
+.card {
+  padding: 1.5rem;
 }
 
-.field.has-addons .control button:has(.fas) {
-  height: 100%;
+.button.is-fullwidth {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  white-space: initial;
+  height: auto;
+}
+
+article aside {
+  padding-top: 0.75rem;
+
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
 }
 
 .bd-example:not(:last-child), .bd-options:not(:last-child), .bd-pills:not(:last-child), .bd-snippet:not(:last-child),
@@ -66,14 +59,4 @@ main {
 .table-container:not(:last-child), .table:not(:last-child), .tabs:not(:last-child),
 .tags:not(:last-child), .title:not(:last-child) {
   margin-bottom: var(--bulma-block-spacing);
-}
-
-@media screen and (min-width: 769px),
-print {
-  .dropdown.is-right-tablet {
-    .dropdown-menu {
-      left: auto;
-      right: 0;
-    }
-  }
 }

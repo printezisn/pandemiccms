@@ -1,7 +1,9 @@
 import $ from 'jquery';
-import 'select2';
-import loadLocales from '../../locales';
-import '../styles/selection.scss';
+import select2 from 'select2';
+import loadLocales from '../locales';
+import '../styles/admin/selection.scss';
+
+select2();
 
 const initSelection = async (selection) => {
   const locales = await loadLocales();

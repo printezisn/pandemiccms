@@ -9,11 +9,9 @@
   <%= csp_meta_tag %>
   <link rel="icon" href="/favicon.png" />
 
-  <% ['admin/main'].concat(yield(:stylesheets).split(',')).each do |name| %>
-    <%= stylesheet_link_tag name, media: 'all' %>
-  <% end %>
-  <% ['runtime', 'admin/main'].concat(yield(:scripts).split(',')).each do |name| %>
-    <%= javascript_include_tag name, defer: true %>
+  <%= vite_client_tag %>
+  <% ['entrypoints/admin/main.js'].concat(yield(:scripts).split(',')).each do |name| %>
+    <%= vite_javascript_tag name %>
   <% end %>
 </head>
 

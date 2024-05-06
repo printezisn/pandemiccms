@@ -1,7 +1,7 @@
 <%
     content_for :title, _('Edit Menu Item | %{client}') % { client: current_client.name }
     content_for :description, _('Edit a menu item of %{client}') % { client: current_client.name }
-    content_for :scripts, 'admin/pages/menu_items/edit/main'
+    content_for :scripts, 'entrypoints/admin/pages/menu_items/edit/main.js'
 %>
 
 <%= render "admin/shared/error_messages", resource: @menu_item %>

@@ -1,7 +1,7 @@
 <%
     content_for :title, _('Edit Client | %{client}') % { client: 'Pandemic CMS' }
     content_for :description, _('Edit a client of %{client}') % { client: 'Pandemic CMS' }
-    content_for :scripts, 'super_admin/pages/clients/edit/main'
+    content_for :scripts, 'entrypoints/super_admin/pages/clients/edit/main.js'
 %>
 
 <%= form_with(model: @form_model, url: super_admin_client_path(@client), method: :patch) do |f| %>

@@ -1,10 +1,10 @@
 @import "./variables";
-@import "~bulma/bulma";
-@import "~bulma/sass/utilities/initial-variables";
-@import "~bulma/sass/utilities/derived-variables";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/solid";
-@import "~flag-icons/sass/flag-icons";
+@import "bulma/bulma";
+@import "bulma/sass/utilities/initial-variables";
+@import "bulma/sass/utilities/derived-variables";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "flag-icons/sass/flag-icons";
 
 html,
 body {

@@ -1,6 +1,6 @@
-import './styles/main.scss';
+import '../../styles/admin_auth/main.scss';
 
-import initComponents from '../admin/components/initializer';
+import initComponents from '../../components/initializer';
 
 if (document.readyState === 'complete') {
   initComponents();

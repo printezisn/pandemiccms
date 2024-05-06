@@ -1,4 +1,4 @@
-import './styles/main.scss';
+import '../../../styles/templates/sample/main.scss';
 
 const initNavbars = () => {
   Array.from(document.getElementsByClassName('navbar-burger')).forEach((el) => {
