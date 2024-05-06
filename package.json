@@ -9,20 +9,12 @@
     "@rails/actioncable": "^7.0.0",
     "babel-loader": "^9.1.2",
     "bulma": "^1.0.0",
-    "css-loader": "^7.1.1",
-    "css-minimizer-webpack-plugin": "^6.0.0",
     "flag-icons": "^7.2.1",
-    "glob": "^10.3.3",
     "jquery": "^3.6.0",
-    "mini-css-extract-plugin": "^2.1.0",
     "sass": "^1.32.5",
-    "sass-loader": "^14.2.1",
     "select2": "^4.1.0-rc.0",
-    "terser-webpack-plugin": "^5.3.1",
     "tinymce": "^7.0.1",
-    "toastr": "^2.1.4",
-    "webpack": "^5.67.0",
-    "webpack-cli": "^5.0.1"
+    "toastr": "^2.1.4"
   },
   "version": "1.0.0",
   "engines": {
@@ -39,9 +31,9 @@
     "globals": "^15.0.0"
   },
   "scripts": {
-    "lint": "eslint ./app/javascript ./webpack.config.js",
-    "format": "eslint --fix ./app/javascript ./webpack.config.js",
-    "build": "webpack --config webpack.config.js"
+    "lint": "eslint ./app/javascript",
+    "format": "eslint --fix ./app/javascript",
+    "build": "echo 'OK'"
   },
   "browserslist": [
     "defaults"

@@ -120,14 +120,14 @@ const initImageUploaders = (root) => {
 
 const initRichEditors = (root) => {
   Array.from(root.getElementsByClassName('rich-editor')).forEach(async (el) => {
-    const { default: initRichEditor } = await import(/* webpackChunkName: 'admin/components/rich-editor/rich-editor' */ './rich-editor');
+    const { default: initRichEditor } = await import('./rich-editor');
     initRichEditor(el);
   });
 };
 
 const initSelections = (root) => {
   Array.from(root.querySelectorAll('select')).forEach(async (el) => {
-    const { default: initSelection } = await import(/* webpackChunkName: 'admin/components/selection/selection' */ './selection');
+    const { default: initSelection } = await import('./selection');
     initSelection(el);
   });
 };
