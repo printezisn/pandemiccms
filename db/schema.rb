@@ -14,8 +14,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
+    t.integer "record_id", null: false
+    t.integer "blob_id", null: false
     t.datetime "created_at", precision: nil, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -34,13 +34,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
   end
 
   create_table "active_storage_variant_records", force: :cascade do |t|
-    t.bigint "blob_id", null: false
+    t.integer "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
   create_table "admin_user_roles", force: :cascade do |t|
-    t.bigint "admin_user_id", null: false
+    t.integer "admin_user_id", null: false
     t.integer "role", limit: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "username", default: "", null: false
-    t.bigint "client_id", null: false
+    t.integer "client_id", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at", precision: nil
@@ -83,13 +83,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.bigint "client_id", null: false
+    t.integer "client_id", null: false
     t.string "name", null: false
     t.string "slug"
     t.text "description"
     t.string "template"
     t.integer "posts_count", default: 0, null: false
-    t.bigint "parent_id"
+    t.integer "parent_id"
     t.text "hierarchy_path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -103,9 +103,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
   end
 
   create_table "category_categorizables", force: :cascade do |t|
-    t.bigint "category_id", null: false
+    t.integer "category_id", null: false
     t.string "categorizable_type", null: false
-    t.bigint "categorizable_id", null: false
+    t.integer "categorizable_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["categorizable_type", "categorizable_id"], name: "index_category_categorizables_on_categorizable"
@@ -114,7 +114,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
   end
 
   create_table "client_domains", force: :cascade do |t|
-    t.bigint "client_id", null: false
+    t.integer "client_id", null: false
     t.string "domain", null: false
     t.integer "port", null: false
     t.datetime "created_at", null: false
@@ -124,8 +124,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
   end
 
   create_table "client_languages", force: :cascade do |t|
-    t.bigint "client_id", null: false
-    t.bigint "language_id", null: false
+    t.integer "client_id", null: false
+    t.integer "language_id", null: false
     t.boolean "default", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -148,7 +148,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
   end
 
   create_table "email_templates", force: :cascade do |t|
-    t.bigint "client_id", null: false
+    t.integer "client_id", null: false
     t.string "type", null: false
     t.string "subject"
     t.text "body"
@@ -183,7 +183,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
   end
 
   create_table "media", force: :cascade do |t|
-    t.bigint "client_id", null: false
+    t.integer "client_id", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -194,16 +194,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
     t.string "name", null: false
     t.integer "sort_order", default: 1, null: false
     t.text "external_url"
-    t.bigint "menu_id", null: false
+    t.integer "menu_id", null: false
     t.string "linkable_type"
-    t.bigint "linkable_id"
-    t.bigint "parent_id"
+    t.integer "linkable_id"
+    t.integer "parent_id"
     t.text "hierarchy_path"
     t.integer "children_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "css_class"
-    t.boolean "open_in_new_window", default: false
+    t.boolean "open_in_new_window", default: false, null: false
     t.index ["linkable_type", "linkable_id"], name: "index_menu_items_on_linkable"
     t.index ["menu_id"], name: "index_menu_items_on_menu_id"
     t.index ["parent_id"], name: "index_menu_items_on_parent_id"
@@ -211,7 +211,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
 
   create_table "menus", force: :cascade do |t|
     t.string "name", null: false
-    t.bigint "client_id", null: false
+    t.integer "client_id", null: false
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -229,7 +229,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
   end
 
   create_table "pages", force: :cascade do |t|
-    t.bigint "client_id", null: false
+    t.integer "client_id", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -240,8 +240,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
     t.integer "status", limit: 1, default: 0, null: false
     t.integer "visibility", limit: 1, default: 0, null: false
     t.datetime "published_at", precision: nil
-    t.bigint "author_id", null: false
-    t.bigint "parent_id"
+    t.integer "author_id", null: false
+    t.integer "parent_id"
     t.text "hierarchy_path"
     t.integer "children_count", default: 0
     t.index ["author_id"], name: "index_pages_on_author_id"
@@ -253,7 +253,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.bigint "client_id", null: false
+    t.integer "client_id", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -264,7 +264,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
     t.integer "status", limit: 1, default: 0, null: false
     t.integer "visibility", limit: 1, default: 0, null: false
     t.datetime "published_at", precision: nil
-    t.bigint "author_id", null: false
+    t.integer "author_id", null: false
     t.datetime "indexed_at", precision: nil
     t.string "index_version"
     t.index ["author_id"], name: "index_posts_on_author_id"
@@ -276,7 +276,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
   end
 
   create_table "redirects", force: :cascade do |t|
-    t.bigint "client_id", null: false
+    t.integer "client_id", null: false
     t.text "from"
     t.text "to"
     t.datetime "created_at", null: false
@@ -388,9 +388,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
   end
 
   create_table "tag_taggables", force: :cascade do |t|
-    t.bigint "tag_id", null: false
+    t.integer "tag_id", null: false
     t.string "taggable_type", null: false
-    t.bigint "taggable_id", null: false
+    t.integer "taggable_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tag_id", "taggable_id", "taggable_type"], name: "index_tag_taggables_on_tag_id_and_taggable_id_and_taggable_type", unique: true
@@ -399,7 +399,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
   end
 
   create_table "tags", force: :cascade do |t|
-    t.bigint "client_id", null: false
+    t.integer "client_id", null: false
     t.string "name", null: false
     t.string "slug"
     t.text "description"
@@ -416,7 +416,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_112652) do
 
   create_table "translations", force: :cascade do |t|
     t.string "translatable_type", null: false
-    t.bigint "translatable_id", null: false
+    t.integer "translatable_id", null: false
     t.string "locale", null: false
     t.text "fields"
     t.datetime "created_at", null: false
