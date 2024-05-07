@@ -86,8 +86,6 @@ gem 'htmlentities', '~> 4.3'
 
 gem 'draper', '~> 4.0'
 
-gem 'jsbundling-rails', '~> 1.0'
-
 gem 'propshaft', '~> 0.6'
 
 gem 'sqlite3-ruby', '~> 1.3'
