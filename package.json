@@ -29,8 +29,8 @@
     "vite-plugin-ruby": "^5.0.0"
   },
   "scripts": {
-    "lint": "eslint ./app/javascript",
-    "format": "eslint --fix ./app/javascript"
+    "lint": "eslint ./app/javascript ./vite.config.mjs",
+    "format": "npm run lint -- --fix"
   },
   "browserslist": [
     "defaults"
