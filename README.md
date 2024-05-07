@@ -32,6 +32,7 @@ A CMS with all the necessary components to help you create fast and amazing webs
 
 - Ruby on Rails
 - NodeJS
+- Vite
 
 **Jobs**:
 
@@ -53,6 +54,7 @@ You need to have the following installed to run the project:
 
 - Ruby (3.3.0)
 - NodeJS (20.11.0)
+- yarn
 - libvips
 
 ## How to run the application
