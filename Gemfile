@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.4.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.0'
+gem 'rails', '~> 8.0'
 # Use Puma as the app server
 gem 'puma', '~> 6.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -24,24 +24,24 @@ gem 'bootsnap', '~> 1.7', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', '~> 11.1', platforms: %i[mri mingw x64_mingw]
+  gem 'byebug', '~> 12.0', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot', '~> 6.1'
   gem 'factory_bot_rails', '~> 6.1'
   gem 'pry', '~> 0.14'
   gem 'pry-rails', '~> 0.3'
   gem 'rspec', '~> 3.10'
-  gem 'rspec-rails', '~> 6.0'
+  gem 'rspec-rails', '~> 8.0'
   gem 'rubocop', '~> 1.5', require: false
   gem 'rubocop-capybara', '~> 2.20', require: false
   gem 'rubocop-factory_bot', '~> 2.25', require: false
   gem 'rubocop-performance', '~> 1.9', require: false
   gem 'rubocop-rails', '~> 2.8', require: false
-  gem 'rubocop-rspec', '~> 2.0', require: false
+  gem 'rubocop-rspec', '~> 3.6', require: false
   gem 'rubocop-rspec_rails', '~> 2.28', require: false
 end
 
 group :development do
-  gem 'bullet', '~> 7.0'
+  gem 'bullet', '~> 8.0'
   gem 'listen', '~> 3.2'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '~> 4.1'
@@ -80,20 +80,20 @@ gem 'image_processing', '~> 1.12'
 
 gem 'redis', '~> 5.0'
 
-gem 'elasticsearch-persistence', '~> 7.1'
+gem 'elasticsearch-persistence', '~> 8.0'
 
 gem 'htmlentities', '~> 4.3'
 
 gem 'draper', '~> 4.0'
 
-gem 'propshaft', '~> 0.6'
+gem 'propshaft', '~> 1.2'
 
 gem 'sqlite3-ruby', '~> 1.3'
 
-gem 'sqlite3', '~> 1.4'
+gem 'sqlite3', '~> 2.7'
 
-gem 'solid_queue', '~> 0.2'
+gem 'solid_queue', '~> 1.2'
 
-gem 'mission_control-jobs', '~> 0.2'
+gem 'mission_control-jobs', '~> 1.1'
 
 gem 'vite_rails', '~> 3.0'
