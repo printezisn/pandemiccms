@@ -1,7 +1,6 @@
 FROM ruby:3.4.5
 
 ENV RAILS_ENV production
-ENV RAILS_SERVE_STATIC_FILES true
 
 RUN apt-get update && apt-get install -y \
   curl \

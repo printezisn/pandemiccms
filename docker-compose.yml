@@ -41,7 +41,6 @@ services:
       context: .
     environment:
       RAILS_ENV: production
-      RAILS_SERVE_STATIC_FILES: 1
       RAILS_MASTER_KEY: <add value from config/credentials/production.key>
     volumes:
       - log_data:/app/logs
@@ -59,7 +58,6 @@ services:
       dockerfile: ./docker/solid_queue/Dockerfile
     environment:
       RAILS_ENV: production
-      RAILS_SERVE_STATIC_FILES: 1
       RAILS_MASTER_KEY: <add value from config/credentials/production.key>
     volumes:
       - log_data:/app/logs
