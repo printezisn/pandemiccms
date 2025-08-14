@@ -2,7 +2,7 @@
   <img src="<%= model.image.attached? && model.image.persisted? ? rails_blob_path(model.image) : '' %>" class="show-on-image" width="128" height="128" alt="image" />
   <br class="show-on-image" />
   <button type="button" class="button is-danger show-on-image">
-    <i class="fas fa-trash"></i>
+    <i class="fa-solid fa-trash"></i>
     &nbsp;
     <%= _('Remove') %>
   </button>
@@ -12,7 +12,7 @@
       <%= f.file_field :image, class: 'file-input', accept: 'image/gif, image/jpeg, image/png' %>
       <span class="file-cta">
         <span class="file-icon">
-          <i class="fas fa-upload"></i>
+          <i class="fa-solid fa-upload"></i>
         </span>
         <span class="file-label">
           <%= _('Choose an image...') %>

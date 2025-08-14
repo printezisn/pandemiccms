@@ -13,8 +13,9 @@ COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
 COPY package.json /app/package.json
-COPY package-lock.json /app/package-lock.json
-RUN npm i
+COPY pnpm-lock.yml /app/pnpm-lock.yml
+RUN npm i -g pnpm@latest-10
+RUN pnpm i
 COPY . /app
 
 COPY ./cmd/rspec/entrypoint.sh /usr/bin/

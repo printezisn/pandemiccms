@@ -1,13 +1,13 @@
 <div class="dropdown-menu" role="menu">
   <div class="dropdown-content">
     <a class="dropdown-item" href="<%= edit_admin_user_path(user) %>">
-      <i class="fas fa-pen"></i>
+      <i class="fa-solid fa-pen"></i>
       &nbsp;
       <%= _('Edit') %>
     </a>
     <% if current_client.enabled_languages.size > 1 %>
     <a class="dropdown-item" href="<%= translate_admin_user_path(user) %>">
-      <i class="fas fa-globe"></i>
+      <i class="fa-solid fa-globe"></i>
       &nbsp;
       <%= _('Translate') %>
     </a>
@@ -15,17 +15,17 @@
     <hr class="dropdown-divider" />
     <a href="javascript:void(0)" class="dropdown-item" data-modal-open="toggle-user-status-modal<%= user.id %>">
       <% if user.active? %>
-      <i class="fas fa-lock"></i>
+      <i class="fa-solid fa-lock"></i>
       &nbsp;
       <%= _('Deactivate') %>
       <% else %>
-      <i class="fas fa-unlock-alt"></i>
+      <i class="fa-solid fa-unlock-alt"></i>
       &nbsp;
       <%= _('Activate') %>
       <% end %>
     </a>
     <a href="javascript:void(0)" class="dropdown-item" data-modal-open="delete-user-modal<%= user.id %>">
-      <i class="fas fa-trash"></i>
+      <i class="fa-solid fa-trash"></i>
       &nbsp;
       <%= _('Delete') %>
     </a>

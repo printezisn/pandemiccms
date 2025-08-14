@@ -1,1 +1,3 @@
-$fa-font-path: "@fortawesome/fontawesome-free/webfonts";
+@use '@fortawesome/fontawesome-free/scss/variables' as * with (
+  $font-path: "@fortawesome/fontawesome-free/webfonts",
+);

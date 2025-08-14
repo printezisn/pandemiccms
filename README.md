@@ -53,13 +53,14 @@ A CMS with all the necessary components to help you create fast and amazing webs
 You need to have the following installed to run the project:
 
 - Ruby (3.4.5)
-- NodeJS (20.11.0)
+- NodeJS (22.18.0)
+- pnpm (version 10)
 - libvips
 
 ## How to run the application
 
 1. Run `bundle` to install the required gems.
-1. Run `npm i` to install the node packages.
+1. Run `pnpm i` to install the node packages.
 1. Run `EDITOR=<prefered editor (e.g. vim)> rails credentials:edit` to create a credentials file with a `secret_key_base` value.
 1. Run `rails db:migrate` to prepare the database.
 1. Run `./bin/dev`. This will run the rails server, the background job worker and will build the front-end assets. You can then visit the website in `http://localhost:3000`.
@@ -80,7 +81,7 @@ If you want to use MySQL, MariaDB, elasticsearch or redis, you have to install t
 ## Run the linters
 
 - `bundle exec rubocop`
-- `npm run lint`
+- `pnpm run lint`
 
 ## Run the tests
 

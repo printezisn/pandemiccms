@@ -4,7 +4,7 @@
 %>
 
 <a class="button" href="<%= admin_menu_path(@menu_item.menu) %>">
-  <i class="fas fa-long-arrow-alt-left"></i>
+  <i class="fa-solid fa-long-arrow-alt-left"></i>
   &nbsp;
   <%= _('Back') %>
 </a>
@@ -13,7 +13,7 @@
     <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" class="button">
       <%= _('Actions') %>
       &nbsp;
-      <i class="fas fa-angle-down"></i>
+      <i class="fa-solid fa-angle-down"></i>
     </a>
   </div>
   <%= render partial: 'admin/menu_items/dropdown_menu', locals: { menu_item: @menu_item } %>
@@ -22,7 +22,7 @@
 <article class="card mt-5">
   <header class="card-header">
     <h1 class="card-header-title">
-      <i class="fas fa-bars"></i>
+      <i class="fa-solid fa-bars"></i>
       &nbsp;
       <%= _('Menu Item Details') %>
     </h1>
@@ -133,7 +133,7 @@
 <article class="card mt-5">
   <div class="card-header">
     <h2 class="card-header-title">
-      <i class="fas fa-sitemap"></i>
+      <i class="fa-solid fa-sitemap"></i>
       &nbsp;
       <%= _('Subitems') %>
     </h2>

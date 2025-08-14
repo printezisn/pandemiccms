@@ -4,7 +4,7 @@
 %>
 
 <a class="button" href="<%= admin_pages_path %>">
-  <i class="fas fa-long-arrow-alt-left"></i>
+  <i class="fa-solid fa-long-arrow-alt-left"></i>
   &nbsp;
   <%= _('Back') %>
 </a>
@@ -13,7 +13,7 @@
     <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" class="button">
       <%= _('Actions') %>
       &nbsp;
-      <i class="fas fa-angle-down"></i>
+      <i class="fa-solid fa-angle-down"></i>
     </a>
   </div>
   <%= render partial: 'admin/pages/dropdown_menu', locals: { page: @page } %>
@@ -23,7 +23,7 @@
 <article class="card mt-5">
   <header class="card-header">
     <h1 class="card-header-title">
-      <i class="fas fa-file"></i>
+      <i class="fa-solid fa-file"></i>
       &nbsp;
       <%= _('Page Details') %>
     </h1>
@@ -37,7 +37,7 @@
             <% if @page.image.attached? %>
             <img src="<%= rails_representation_url(@page.image.variant(resize_to_limit: [256, 256])) %>" width="256" height="256" alt="image" />
             <% else %>
-            <i class="fas fa-8x fa-question-circle"></i>
+            <i class="fa-solid fa-8x fa-question-circle"></i>
             <% end %>
           </div>
         </div>
@@ -166,7 +166,7 @@
 <article class="card mt-5">
   <div class="card-header">
     <h2 class="card-header-title">
-      <i class="fas fa-file"></i>
+      <i class="fa-solid fa-file"></i>
       &nbsp;
       <%= _('Page|Body') %>
     </h2>
@@ -180,7 +180,7 @@
 <article class="card mt-5">
   <div class="card-header">
     <h2 class="card-header-title">
-      <i class="fas fa-sitemap"></i>
+      <i class="fa-solid fa-sitemap"></i>
       &nbsp;
       <%= _('Subpages') %>
     </h2>

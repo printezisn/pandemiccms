@@ -32,6 +32,7 @@ const initRichEditor = (editor) => {
   tinymce.init({
     selector: `#${editor.id}`,
     convert_urls: false,
+    license_key: 'gpl',
     plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks'
       + ' code fullscreen insertdatetime media table wordcount autoresize',
     toolbar: `undo redo | formatselect |

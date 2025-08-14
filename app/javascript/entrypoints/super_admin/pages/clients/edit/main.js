@@ -31,7 +31,7 @@ const initDomainsAndPorts = () => {
         </td>
         <td class="actions-cell">
           <button type="button" class="button is-danger delete-domain-button">
-            <i class="fas fa-trash"></i>
+            <i class="fa-solid fa-trash"></i>
           </button>
         </td>
       </tr>

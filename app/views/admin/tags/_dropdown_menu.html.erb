@@ -1,25 +1,25 @@
 <div class="dropdown-menu" role="menu">
   <div class="dropdown-content">
     <a class="dropdown-item" rel="noopener" target="_blank" href="<%= tag.path(current_language) %>">
-      <i class="fas fa-external-link-alt"></i>
+      <i class="fa-solid fa-external-link-alt"></i>
       &nbsp;
       <%= _('Preview') %>
     </a>
     <% if current_client.enabled_languages.size > 1 %>
     <a class="dropdown-item" href="<%= translate_admin_tag_path(tag) %>">
-      <i class="fas fa-globe"></i>
+      <i class="fa-solid fa-globe"></i>
       &nbsp;
       <%= _('Translate') %>
     </a>
     <% end %>
     <a class="dropdown-item" href="<%= edit_admin_tag_path(tag) %>">
-      <i class="fas fa-pen"></i>
+      <i class="fa-solid fa-pen"></i>
       &nbsp;
       <%= _('Edit') %>
     </a>
     <hr class="dropdown-divider" />
     <a href="javascript:void(0)" class="dropdown-item" data-modal-open="delete-tag-modal<%= tag.id %>">
-      <i class="fas fa-trash"></i>
+      <i class="fa-solid fa-trash"></i>
       &nbsp;
       <%= _('Delete') %>
     </a>

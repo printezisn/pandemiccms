@@ -6,7 +6,7 @@
 <article class="card">
   <header class="card-header">
     <h1 class="card-header-title">
-      <i class="fas fa-th"></i>
+      <i class="fa-solid fa-th"></i>
       &nbsp;
       <%= _('Categories') %>
     </h1>
@@ -14,14 +14,14 @@
   <div class="card-content">
     <div class="has-text-right-tablet">
       <a class="button" href="<%= admin_categories_path %>">
-        <i class="fas fa-table"></i>
+        <i class="fa-solid fa-table"></i>
         &nbsp;
         <%= _('Table') %>
       </a>
       <a class="button is-success" href="<%= new_admin_category_path %>">
         <%= _('Create') %>
         &nbsp;
-        <i class="fas fa-plus"></i>
+        <i class="fa-solid fa-plus"></i>
       </a>
     </div>
     <table class="table is-striped is-hoverable is-fullwidth mt-3">
@@ -50,7 +50,7 @@
             <div class="dropdown is-togglable is-right">
               <div class="dropdown-trigger">
                 <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" title="<%= _('Actions') %>">
-                  <i class="fas fa-ellipsis-v"></i>
+                  <i class="fa-solid fa-ellipsis-v"></i>
                 </a>
               </div>
               <%= render partial: 'admin/categories/dropdown_menu', locals: { category: category } %>

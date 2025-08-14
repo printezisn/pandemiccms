@@ -4,7 +4,7 @@
 %>
 
 <a class="button" href="<%= super_admin_clients_path %>">
-  <i class="fas fa-long-arrow-alt-left"></i>
+  <i class="fa-solid fa-long-arrow-alt-left"></i>
   &nbsp;
   <%= _('Back') %>
 </a>
@@ -13,7 +13,7 @@
     <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" class="button">
       <%= _('Actions') %>
       &nbsp;
-      <i class="fas fa-angle-down"></i>
+      <i class="fa-solid fa-angle-down"></i>
     </a>
   </div>
   <%= render partial: 'super_admin/clients/dropdown_menu', locals: { client: @client } %>
@@ -25,7 +25,7 @@
 <article class="card mt-5">
   <header class="card-header">
     <h1 class="card-header-title">
-      <i class="fas fa-cog"></i>
+      <i class="fa-solid fa-cog"></i>
       &nbsp;
       <%= _('Client Details') %>
     </h1>

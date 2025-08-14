@@ -7,7 +7,7 @@
       </div>
       <div class="control">
         <button type="submit" class="button is-success" title="<%= _('Search') %>">
-          <i class="fas fa-search"></i>
+          <i class="fa-solid fa-search"></i>
         </button>
       </div>
     </div>
@@ -20,7 +20,7 @@
         <%= f.file_field 'medium[file]', multiple: true, title: '', class: 'auto-submit file-input' %>
         <span class="file-cta">
           <span class="file-icon">
-            <i class="fas fa-upload"></i>
+            <i class="fa-solid fa-upload"></i>
           </span>
           <span class="file-label">
             <%=  _('Upload') %>
@@ -49,14 +49,14 @@
     <tr>
       <td>
         <% if medium.file.image? %>
-          <a href="<%= url_for(medium.file) %>" rel="noopener" target="_blank">
-            <%= image_tag medium.file.variant(resize_to_limit: [256, 256]) %>
-          </a><br>
+        <a href="<%= url_for(medium.file) %>" rel="noopener" target="_blank">
+          <%= image_tag medium.file.variant(resize_to_limit: [256, 256]) %>
+        </a><br>
         <% end %>
         <a href="<%= url_for(medium.file) %>" rel="noopener" target="_blank"><%= medium.name %></a><br>
         <span><%= number_to_human_size(medium.file.byte_size) %></span><br>
         <% if medium.file.image? && medium.file.metadata['width'].present? && medium.file.metadata['height'].present? %>
-          <%= medium.file.metadata['width'] %> x <%= medium.file.metadata['height'] %><br>
+        <%= medium.file.metadata['width'] %> x <%= medium.file.metadata['height'] %><br>
         <% end %>
       </td>
       <td class="is-hidden-touch"><%= medium.created_at.to_fs %></td>
@@ -64,19 +64,19 @@
         <div class="dropdown is-togglable is-right">
           <div class="dropdown-trigger">
             <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" title="<%= _('Actions') %>">
-              <i class="fas fa-ellipsis-v"></i>
+              <i class="fa-solid fa-ellipsis-v"></i>
             </a>
           </div>
           <div class="dropdown-menu" role="menu">
             <div class="dropdown-content">
               <a class="dropdown-item copy-link" data-link="<%= rails_blob_url(medium.file) %>" data-success-message="<%= _('The link was successfully copied') %>">
-                <i class="fas fa-copy"></i>
+                <i class="fa-solid fa-copy"></i>
                 &nbsp;
                 <%= _('Copy') %>
               </a>
               <hr class="dropdown-divider" />
               <a href="javascript:void(0)" class="dropdown-item" data-modal-open="delete-medium-modal<%= medium.id %>">
-                <i class="fas fa-trash"></i>
+                <i class="fa-solid fa-trash"></i>
                 &nbsp;
                 <%= _('Delete') %>
               </a>

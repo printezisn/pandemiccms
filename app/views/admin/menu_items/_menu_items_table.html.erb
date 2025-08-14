@@ -2,7 +2,7 @@
   <a class="button is-success" href="<%= new_admin_menu_menu_item_path(menu_id: menu) %>">
     <%= _('Create') %>
     &nbsp;
-    <i class="fas fa-plus"></i>
+    <i class="fa-solid fa-plus"></i>
   </a>
 </div>
 <table class="table is-striped is-hoverable is-fullwidth">
@@ -31,7 +31,7 @@
         <div class="dropdown is-togglable is-right">
           <div class="dropdown-trigger">
             <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" title="<%= _('Actions') %>">
-              <i class="fas fa-ellipsis-v"></i>
+              <i class="fa-solid fa-ellipsis-v"></i>
             </a>
           </div>
           <%= render partial: 'admin/menu_items/dropdown_menu', locals: { menu_item: menu_item } %>

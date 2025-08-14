@@ -11,7 +11,7 @@
 
   <%= vite_client_tag %>
   <% ['entrypoints/admin/main.js'].concat(yield(:scripts).split(',')).each do |name| %>
-    <%= vite_javascript_tag name %>
+  <%= vite_javascript_tag name %>
   <% end %>
 </head>
 
@@ -34,29 +34,29 @@
       <div class="navbar-menu" id="main-menu">
         <div class="navbar-start">
           <a class="navbar-item<%= ' is-active' if controller_name == 'media' %>" href="<%= admin_media_path %>">
-            <i class="fas fa-image"></i>
+            <i class="fa-solid fa-image"></i>
             &nbsp;
             <%= _('Media') %>
           </a>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link<%= ' is-active' if %w[posts categories tags].include?(controller_name) %>" href="javascript:void(0)">
-              <i class="fas fa-thumbtack"></i>
+              <i class="fa-solid fa-thumbtack"></i>
               &nbsp;
               <%= _('Posts') %>
             </a>
             <div class="navbar-dropdown">
               <a class="navbar-item<%= ' is-active' if controller_name == 'posts' %>" href="<%= admin_posts_path %>">
-                <i class="fas fa-thumbtack"></i>
+                <i class="fa-solid fa-thumbtack"></i>
                 &nbsp;
                 <%= _('Posts') %>
               </a>
               <a class="navbar-item<%= ' is-active' if controller_name == 'categories' %>" href="<%= admin_categories_path %>">
-                <i class="fas fa-th"></i>
+                <i class="fa-solid fa-th"></i>
                 &nbsp;
                 <%= _('Categories') %>
               </a>
               <a class="navbar-item<%= ' is-active' if controller_name == 'tags' %>" href="<%= admin_tags_path %>">
-                <i class="fas fa-tag"></i>
+                <i class="fa-solid fa-tag"></i>
                 &nbsp;
                 <%= _('Tags') %>
               </a>
@@ -64,23 +64,23 @@
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link<%= ' is-active' if %w[pages menus menu_items redirects].include?(controller_name) %>" href="javascript:void(0)">
-              <i class="fas fa-file"></i>
+              <i class="fa-solid fa-file"></i>
               &nbsp;
               <%= _('Pages') %>
             </a>
             <div class="navbar-dropdown">
               <a class="navbar-item<%= ' is-active' if controller_name == 'pages' %>" href="<%= admin_pages_path %>">
-                <i class="fas fa-file"></i>
+                <i class="fa-solid fa-file"></i>
                 &nbsp;
                 <%= _('Pages') %>
               </a>
               <a class="navbar-item<%= ' is-active' if %w[menus menu_items].include?(controller_name) %>" href="<%= admin_menus_path %>">
-                <i class="fas fa-bars"></i>
+                <i class="fa-solid fa-bars"></i>
                 &nbsp;
                 <%= _('Menus') %>
               </a>
               <a class="navbar-item<%= ' is-active' if controller_name == 'redirects' %>" href="<%= admin_redirects_path %>">
-                <i class="fas fa-location-arrow"></i>
+                <i class="fa-solid fa-location-arrow"></i>
                 &nbsp;
                 <%= _('Redirects') %>
               </a>
@@ -89,36 +89,36 @@
           <% if current_admin_user&.supervisor? %>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link<%= ' is-active' if %w[clients email_templates users].include?(controller_name) %>" href="javascript:void(0)">
-              <i class="fas fa-cog"></i>
+              <i class="fa-solid fa-cog"></i>
               &nbsp;
               <%= _('Settings') %>
             </a>
             <div class="navbar-dropdown">
               <a class="navbar-item<%= ' is-active' if controller_name == 'clients' %>" href="<%= admin_client_edit_path %>">
-                <i class="fas fa-cog"></i>
+                <i class="fa-solid fa-cog"></i>
                 &nbsp;
                 <%= _('Settings') %>
               </a>
               <a class="navbar-item<%= ' is-active' if controller_name == 'email_templates' %>" href="<%= admin_email_templates_path %>">
-                <i class="fas fa-envelope"></i>
+                <i class="fa-solid fa-envelope"></i>
                 &nbsp;
                 <%= _('Email Templates') %>
               </a>
               <a class="navbar-item<%= ' is-active' if controller_name == 'users' %>" href="<%= admin_users_path %>">
-                <i class="fas fa-users"></i>
+                <i class="fa-solid fa-users"></i>
                 &nbsp;
                 <%= _('Users') %>
               </a>
               <%= form_with(url: admin_cache_clear_path, method: :post) do |f| %>
               <a class="navbar-item submit-parent-form" href="javascript:void(0)">
-                <i class="fas fa-database"></i>
+                <i class="fa-solid fa-database"></i>
                 &nbsp;
                 <%= _('Clear Cache') %>
               </a>
               <% end %>
               <%= form_with(url: admin_index_start_path, method: :post) do |f| %>
               <a class="navbar-item submit-parent-form" href="javascript:void(0)">
-                <i class="fas fa-server"></i>
+                <i class="fa-solid fa-server"></i>
                 &nbsp;
                 <%= _('Index|Process') %>
               </a>
