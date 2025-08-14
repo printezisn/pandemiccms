@@ -52,7 +52,7 @@ A CMS with all the necessary components to help you create fast and amazing webs
 
 You need to have the following installed to run the project:
 
-- Ruby (3.3.0)
+- Ruby (3.4.5)
 - NodeJS (20.11.0)
 - libvips
 

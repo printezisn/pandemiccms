@@ -506,7 +506,7 @@ DEPENDENCIES
   webdrivers (~> 5.0)
 
 RUBY VERSION
-   ruby 3.3.0p0
+   ruby 3.4.5p51
 
 BUNDLED WITH
    2.3.5
