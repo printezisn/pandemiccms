@@ -30,6 +30,7 @@ module Pandemiccms
     config.exceptions_app = routes
 
     config.mission_control.jobs.base_controller_class = 'SuperAdmin::BaseController'
+    config.mission_control.jobs.http_basic_auth_enabled = false
 
     config.search = config_for(:search)
     config.super_admin = config_for(:super_admin)
