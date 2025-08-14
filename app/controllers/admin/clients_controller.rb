@@ -45,7 +45,7 @@ module Admin
     end
 
     def client_params
-      params.require(:client).permit(:image, :should_remove_image, :name, :email, :time_zone, :cache_enabled, :cache_duration)
+      params.expect(client: %i[image should_remove_image name email time_zone cache_enabled cache_duration])
     end
   end
 end

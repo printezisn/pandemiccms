@@ -125,11 +125,11 @@ module Admin
     end
 
     def tag_params
-      params.require(:tag).permit(:name, :slug, :description, :body, :template, :visibility)
+      params.expect(tag: %i[name slug description body template visibility])
     end
 
     def translation_params
-      params.require(:tag).permit(Tag::TRANSLATABLE_FIELDS)
+      params.expect(tag: [Tag::TRANSLATABLE_FIELDS])
     end
   end
 end

@@ -23,7 +23,7 @@ module Admin
     # POST /admin/media.json
     def create
       media = ActiveRecord::Base.transaction do
-        media_files.select(&:present?).map do |file|
+        media_files.compact_blank.map do |file|
           medium = Medium.new({ file: })
           medium.client_id = current_client.id
 
@@ -76,7 +76,7 @@ module Admin
     end
 
     def media_files
-      params.require(:medium).permit(file: []).fetch(:file, [])
+      params.expect(medium: [file: []]).fetch(:file, [])
     end
   end
 end

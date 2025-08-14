@@ -65,11 +65,11 @@ module Admin
     end
 
     def email_template_params
-      params.require(:email_template).permit(:subject, :body)
+      params.expect(email_template: %i[subject body])
     end
 
     def translation_params
-      params.require(:email_template).permit(EmailTemplate::TRANSLATABLE_FIELDS)
+      params.expect(email_template: [EmailTemplate::TRANSLATABLE_FIELDS])
     end
   end
 end

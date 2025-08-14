@@ -69,14 +69,14 @@ module SuperAdmin
     private
 
     def new_client_params
-      params.require(:form_client).permit(
-        :client_name, :client_template, :admin_email, :admin_username, :admin_password,
-        :admin_password_confirmation, domains: [], ports: [], language_ids: []
+      params.expect(
+        form_client: [:client_name, :client_template, :admin_email, :admin_username, :admin_password,
+                      :admin_password_confirmation, { domains: [], ports: [], language_ids: [] }]
       )
     end
 
     def update_client_params
-      params.require(:form_client).permit(:client_id, :client_name, domains: [], ports: [], language_ids: [])
+      params.expect(form_client: [:client_id, :client_name, { domains: [], ports: [], language_ids: [] }])
     end
 
     def initialize_languages

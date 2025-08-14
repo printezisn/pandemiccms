@@ -17,7 +17,7 @@ module Categorizable
   private
 
   def save_categories
-    new_categories = category_names.select(&:present?).map do |category_name|
+    new_categories = category_names.compact_blank.map do |category_name|
       Category.find_or_initialize_by(name: category_name, client_id:)
     end
     category_categorizables.each do |category_categorizable|

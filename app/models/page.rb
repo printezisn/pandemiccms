@@ -21,10 +21,10 @@ class Page < ApplicationRecord
   has_many :children, inverse_of: :parent, class_name: 'Page', foreign_key: :parent_id, dependent: :destroy
   has_many :menu_items, as: :linkable, dependent: :destroy, inverse_of: :linkable
 
-  enum visibility: {
+  enum :visibility, {
     public: 0,
     private: 1
-  }, _suffix: :visibility
+  }, suffix: :visibility
 
   validates :name, presence: true,
                    length: { maximum: 255 },

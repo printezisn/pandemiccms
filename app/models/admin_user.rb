@@ -30,7 +30,7 @@ class AdminUser < ApplicationRecord
          :trackable, :recoverable, :password_expirable, :password_archivable,
          :session_limitable
 
-  enum status: {
+  enum :status, {
     active: 0,
     inactive: 1
   }

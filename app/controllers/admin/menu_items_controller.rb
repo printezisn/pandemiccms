@@ -113,15 +113,15 @@ module Admin
     end
 
     def menu_item_params
-      params.require(:menu_item).permit(:name, :external_url, :parent_id, :sort_order, :css_class, :open_in_new_window)
+      params.expect(menu_item: %i[name external_url parent_id sort_order css_class open_in_new_window])
     end
 
     def linkable_params
-      params.require(:menu_item).permit(:linkable_id, :linkable_type)
+      params.expect(menu_item: %i[linkable_id linkable_type])
     end
 
     def translation_params
-      params.require(:menu_item).permit(MenuItem::TRANSLATABLE_FIELDS)
+      params.expect(menu_item: [MenuItem::TRANSLATABLE_FIELDS])
     end
   end
 end

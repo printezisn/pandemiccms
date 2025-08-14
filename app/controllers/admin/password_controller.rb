@@ -25,7 +25,7 @@ module Admin
     end
 
     def user_params
-      params.require(:admin_user).permit(:current_password, :password, :password_confirmation)
+      params.expect(admin_user: %i[current_password password password_confirmation])
     end
   end
 end

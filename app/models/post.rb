@@ -21,10 +21,10 @@ class Post < ApplicationRecord
   has_many :menu_items, as: :linkable, dependent: :destroy, inverse_of: :linkable
   has_many :indexed_entities, as: :indexable, dependent: :destroy, inverse_of: :indexable
 
-  enum visibility: {
+  enum :visibility, {
     public: 0,
     private: 1
-  }, _suffix: :visibility
+  }, suffix: :visibility
 
   validates :name, presence: true,
                    length: { maximum: 255 },

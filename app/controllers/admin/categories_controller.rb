@@ -143,12 +143,12 @@ module Admin
     end
 
     def category_params
-      params.require(:category).permit(:image, :should_remove_image, :name, :slug, :description, :body,
-                                       :template, :visibility, :parent_id)
+      params.expect(category: %i[image should_remove_image name slug description body
+                                 template visibility parent_id])
     end
 
     def translation_params
-      params.require(:category).permit(Category::TRANSLATABLE_FIELDS)
+      params.expect(category: [Category::TRANSLATABLE_FIELDS])
     end
   end
 end

@@ -13,7 +13,7 @@ module SearchIndex
       end
 
       def initialize(client_id, locale)
-        super(client_id, locale)
+        super
 
         settings number_of_shards: 1 do
           mapping dynamic: 'strict' do

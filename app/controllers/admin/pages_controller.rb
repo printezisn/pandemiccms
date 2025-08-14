@@ -170,12 +170,12 @@ module Admin
     end
 
     def page_params
-      params.require(:page).permit(:image, :should_remove_image, :name, :slug, :description, :body,
-                                   :visibility, :template, :parent_id, tag_names: [])
+      params.expect(page: [:image, :should_remove_image, :name, :slug, :description, :body,
+                           :visibility, :template, :parent_id, { tag_names: [] }])
     end
 
     def translation_params
-      params.require(:page).permit(Page::TRANSLATABLE_FIELDS)
+      params.expect(page: [Page::TRANSLATABLE_FIELDS])
     end
   end
 end

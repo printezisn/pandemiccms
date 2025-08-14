@@ -28,7 +28,7 @@ module Form
                                if: -> { admin_password.present? && client_id.nil? }
 
     def initialize(attributes = {})
-      super(attributes)
+      super
 
       @all_languages = Language.all.to_a
       @templates = fetch_templates

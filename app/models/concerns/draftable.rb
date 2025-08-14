@@ -5,7 +5,7 @@ module Draftable
   extend ActiveSupport::Concern
 
   included do
-    enum status: {
+    enum :status, {
       draft: 0,
       published: 1
     }

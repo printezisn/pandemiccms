@@ -1,4 +1,4 @@
-require:
+plugins:
   - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
@@ -72,4 +72,10 @@ Style/ClassVars:
     - "app/services/asset_path_fetcher.rb"
 
 RSpec/IndexedLet:
+  Enabled: false
+
+Naming/PredicateMethod:
+  Enabled: false
+
+Rails/NotNullColumn:
   Enabled: false

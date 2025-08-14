@@ -4,7 +4,7 @@
 class AdminUserRole < ApplicationRecord
   belongs_to :admin_user
 
-  enum role: {
+  enum :role, {
     supervisor: 0
   }
 end

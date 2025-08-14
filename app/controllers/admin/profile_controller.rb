@@ -52,12 +52,12 @@ module Admin
     end
 
     def user_params
-      params.require(:admin_user).permit(:image, :should_remove_image, :email, :first_name,
-                                         :middle_name, :last_name, :description)
+      params.expect(admin_user: %i[image should_remove_image email first_name
+                                   middle_name last_name description])
     end
 
     def translation_params
-      params.require(:admin_user).permit(AdminUser::TRANSLATABLE_FIELDS)
+      params.expect(admin_user: [AdminUser::TRANSLATABLE_FIELDS])
     end
   end
 end

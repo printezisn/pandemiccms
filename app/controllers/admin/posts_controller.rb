@@ -162,12 +162,12 @@ module Admin
     end
 
     def post_params
-      params.require(:post).permit(:image, :should_remove_image, :name, :slug, :description, :body,
-                                   :visibility, :template, category_names: [], tag_names: [])
+      params.expect(post: [:image, :should_remove_image, :name, :slug, :description, :body,
+                           :visibility, :template, { category_names: [], tag_names: [] }])
     end
 
     def translation_params
-      params.require(:post).permit(Post::TRANSLATABLE_FIELDS)
+      params.expect(post: [Post::TRANSLATABLE_FIELDS])
     end
   end
 end

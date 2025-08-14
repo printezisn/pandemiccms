@@ -99,11 +99,11 @@ module Admin
     end
 
     def menu_params
-      params.require(:menu).permit(:name, :description)
+      params.expect(menu: %i[name description])
     end
 
     def translation_params
-      params.require(:menu).permit(Menu::TRANSLATABLE_FIELDS)
+      params.expect(menu: [Menu::TRANSLATABLE_FIELDS])
     end
   end
 end

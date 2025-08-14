@@ -68,7 +68,7 @@ module Admin
     end
 
     def redirect_params
-      params.require(:redirect).permit(:from, :to)
+      params.expect(redirect: %i[from to])
     end
   end
 end

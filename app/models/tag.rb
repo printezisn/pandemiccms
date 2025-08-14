@@ -20,10 +20,10 @@ class Tag < ApplicationRecord
   has_many :tag_taggables, inverse_of: :tag, dependent: :destroy
   has_many :menu_items, as: :linkable, dependent: :destroy, inverse_of: :linkable
 
-  enum visibility: {
+  enum :visibility, {
     public: 0,
     private: 1
-  }, _suffix: :visibility
+  }, suffix: :visibility
 
   validates :name, presence: true,
                    length: { maximum: 255 },
