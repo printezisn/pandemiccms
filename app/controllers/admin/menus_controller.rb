@@ -103,7 +103,7 @@ module Admin
     end
 
     def translation_params
-      params.expect(menu: [Menu::TRANSLATABLE_FIELDS])
+      params.expect(menu: Menu::TRANSLATABLE_FIELDS)
     end
   end
 end

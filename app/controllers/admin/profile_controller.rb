@@ -57,7 +57,7 @@ module Admin
     end
 
     def translation_params
-      params.expect(admin_user: [AdminUser::TRANSLATABLE_FIELDS])
+      params.expect(admin_user: AdminUser::TRANSLATABLE_FIELDS)
     end
   end
 end

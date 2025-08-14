@@ -175,7 +175,7 @@ module Admin
     end
 
     def translation_params
-      params.expect(page: [Page::TRANSLATABLE_FIELDS])
+      params.expect(page: Page::TRANSLATABLE_FIELDS)
     end
   end
 end

@@ -23,24 +23,30 @@ RSpec.describe 'Pages' do
     context 'when there is no index page' do
       let(:template) { 'default' }
 
-      it 'raises an activerecord not found error' do
-        expect { request }.to raise_error(ActiveRecord::RecordNotFound)
+      it 'redirects to 404' do
+        request
+
+        expect(response).to be_not_found
       end
     end
 
     context 'when the page is private' do
       let(:visibility) { 'private' }
 
-      it 'raises a routing error' do
-        expect { request }.to raise_error(ActiveRecord::RecordNotFound)
+      it 'redirects to 404' do
+        request
+
+        expect(response).to be_not_found
       end
     end
 
     context 'when the page is draft' do
       let(:status) { 'draft' }
 
-      it 'raises a routing error' do
-        expect { request }.to raise_error(ActiveRecord::RecordNotFound)
+      it 'redirects to 404' do
+        request
+
+        expect(response).to be_not_found
       end
     end
 
@@ -60,16 +66,20 @@ RSpec.describe 'Pages' do
     context 'when the page is private' do
       let(:visibility) { 'private' }
 
-      it 'raises a routing error' do
-        expect { request }.to raise_error(ActiveRecord::RecordNotFound)
+      it 'redirects to 404' do
+        request
+
+        expect(response).to be_not_found
       end
     end
 
     context 'when the page is draft' do
       let(:status) { 'draft' }
 
-      it 'raises a routing error' do
-        expect { request }.to raise_error(ActiveRecord::RecordNotFound)
+      it 'redirects to 404' do
+        request
+
+        expect(response).to be_not_found
       end
     end
 

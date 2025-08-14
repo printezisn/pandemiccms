@@ -24,16 +24,20 @@ RSpec.describe 'posts' do
     context 'when the post is private' do
       let(:visibility) { 'private' }
 
-      it 'raises a routing error' do
-        expect { request }.to raise_error(ActiveRecord::RecordNotFound)
+      it 'redirects to 404' do
+        request
+
+        expect(response).to be_not_found
       end
     end
 
     context 'when the post is draft' do
       let(:status) { 'draft' }
 
-      it 'raises a routing error' do
-        expect { request }.to raise_error(ActiveRecord::RecordNotFound)
+      it 'redirects to 404' do
+        request
+
+        expect(response).to be_not_found
       end
     end
 

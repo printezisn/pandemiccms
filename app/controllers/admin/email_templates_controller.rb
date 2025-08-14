@@ -69,7 +69,7 @@ module Admin
     end
 
     def translation_params
-      params.expect(email_template: [EmailTemplate::TRANSLATABLE_FIELDS])
+      params.expect(email_template: EmailTemplate::TRANSLATABLE_FIELDS)
     end
   end
 end

@@ -129,7 +129,7 @@ module Admin
     end
 
     def translation_params
-      params.expect(tag: [Tag::TRANSLATABLE_FIELDS])
+      params.expect(tag: Tag::TRANSLATABLE_FIELDS)
     end
   end
 end

@@ -167,7 +167,7 @@ module Admin
     end
 
     def translation_params
-      params.expect(post: [Post::TRANSLATABLE_FIELDS])
+      params.expect(post: Post::TRANSLATABLE_FIELDS)
     end
   end
 end

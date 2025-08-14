@@ -148,7 +148,7 @@ module Admin
     end
 
     def translation_params
-      params.expect(category: [Category::TRANSLATABLE_FIELDS])
+      params.expect(category: Category::TRANSLATABLE_FIELDS)
     end
   end
 end
