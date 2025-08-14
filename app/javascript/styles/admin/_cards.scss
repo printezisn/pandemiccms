@@ -1,13 +1,13 @@
-@import "bulma/sass/utilities/initial-variables";
+@use "bulma/sass/utilities" as bulmaV;
 
 .card {
   box-shadow: none;
-  border: solid 1px $grey-lighter;
+  border: solid 1px bulmaV.$grey-lighter;
   overflow: initial;
 
   > .card-header {
     box-shadow: none;
-    border-bottom: solid 1px $grey-lighter;
+    border-bottom: solid 1px bulmaV.$grey-lighter;
 
     .dropdown-menu {
       top: calc(100% - 0.75rem);

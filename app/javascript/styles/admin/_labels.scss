@@ -1,6 +1,6 @@
-@import "bulma/sass/utilities/initial-variables";
+@use "bulma/sass/utilities" as bulmaV;
 
 .required-label::after {
-  color: $red;
+  color: bulmaV.$red;
   content: " *";
 }

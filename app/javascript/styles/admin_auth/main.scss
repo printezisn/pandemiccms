@@ -1,12 +1,15 @@
-@import "./variables";
-@import "bulma/bulma";
-@import "@fortawesome/fontawesome-free/scss/fontawesome";
-@import "@fortawesome/fontawesome-free/scss/solid";
-@import "toastr";
-@import "../admin/cards";
-@import "../admin/labels";
-@import "../admin/page_footer";
-@import "../admin/notifications";
+@use "bulma/bulma";
+@use "bulma/sass/utilities" as bulmaV;
+@use '@fortawesome/fontawesome-free/scss/variables' as * with (
+  $font-path: "@fortawesome/fontawesome-free/webfonts",
+);
+@use "@fortawesome/fontawesome-free/scss/fontawesome";
+@use "@fortawesome/fontawesome-free/scss/solid";
+@use "toastr";
+@use "../admin/cards";
+@use "../admin/labels";
+@use "../admin/page_footer";
+@use "../admin/notifications";
 
 html {
   overflow-y: auto;
@@ -14,7 +17,7 @@ html {
 
 html,
 body {
-  background: $white-ter;
+  background: bulmaV.$white-ter;
 }
 
 body {

@@ -1,37 +1,40 @@
-@import "./variables";
-@import "bulma/bulma";
-@import "bulma/sass/utilities/initial-variables";
-@import "bulma/sass/utilities/derived-variables";
-@import "@fortawesome/fontawesome-free/scss/fontawesome";
-@import "@fortawesome/fontawesome-free/scss/solid";
-@import "flag-icons/sass/flag-icons";
+@use "bulma/bulma";
+@use "bulma/sass/utilities" as bulmaV;
+@use '@fortawesome/fontawesome-free/scss/variables' with (
+  $font-path: "@fortawesome/fontawesome-free/webfonts",
+);
+@use "@fortawesome/fontawesome-free/scss/fontawesome";
+@use "@fortawesome/fontawesome-free/scss/solid";
+@use "flag-icons/sass/flag-icons.scss" with (
+  $flag-icons-path: "flag-icons/flags",
+);
 
 html,
 body {
-  background: $dark;
+  background: bulmaV.$dark;
 }
 
 .navbar.is-dark .navbar-dropdown a.navbar-item.is-active {
-  background-color: $white-bis;
-  color: $link;
+  background-color: bulmaV.$white-bis;
+  color: bulmaV.$link;
 }
 
 .hero-body a {
-  color: $white;
+  color: bulmaV.$white;
 }
 
 main {
-  background-color: $grey-lighter;
+  background-color: bulmaV.$grey-lighter;
 
   > .container {
-    background-color: $white-bis;
+    background-color: bulmaV.$white-bis;
     padding: 0 0.75rem;
   }
 }
 
 body > footer {
-  background-color: $dark;
-  color: $white;
+  background-color: bulmaV.$dark;
+  color: bulmaV.$white;
   position: relative;
   font-size: 0.8rem;
   padding: 1.5rem 1.5rem 6rem;
@@ -41,7 +44,7 @@ body > footer {
   a:hover,
   a:focus,
   a:visited {
-    color: $white;
+    color: bulmaV.$white;
   }
 
   a:hover {
@@ -56,7 +59,7 @@ body > footer {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-color: $warning;
+  background-color: bulmaV.$warning;
   font-weight: bold;
   font-size: 3rem;
 }
@@ -103,8 +106,8 @@ body > footer {
   height: 200px;
   font-size: 5rem;
   font-weight: bold;
-  background-color: $grey-lighter;
-  color: $grey-dark;
+  background-color: bulmaV.$grey-lighter;
+  color: bulmaV.$grey-dark;
 
   &::after {
     content: "?";

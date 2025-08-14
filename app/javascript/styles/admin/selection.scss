@@ -1,23 +1,23 @@
-@import "select2/dist/css/select2.css";
-@import "bulma/sass/utilities";
-@import "bulma/sass/form/shared";
+@use "select2/dist/css/select2.css";
+@use "bulma/sass/utilities" as bulmaV;
+@use "bulma/sass/form/shared" as bulmaF;
 
 // https://gist.github.com/n1crack/8f6cd38fa0839dced22e89c5406c680a
 .select2-container {
   max-width: 100%;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: bulmaV.$tablet) {
     min-width: 300px;
   }
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: bulmaV.$tablet) {
     width: 100% !important;
   }
 
   .select2-selection--single,
   .select2-selection--multiple {
-    transition: border-color $speed;
-    font-family: $family-sans-serif;
+    transition: border-color bulmaV.$speed;
+    font-family: bulmaV.$family-sans-serif;
     height: 2.285em;
 
     font-size: 1rem;
@@ -27,10 +27,10 @@
     display: inline-flex;
     align-items: center;
 
-    border-color: $border;
-    border-radius: $radius;
+    border-color: bulmaV.$border;
+    border-radius: bulmaV.$radius;
     &:hover {
-      border-color: $grey-lighter;
+      border-color: bulmaV.$grey-lighter;
     }
   }
 
@@ -55,8 +55,8 @@
 
   .select2-selection--multiple {
     .select2-selection__choice {
-      background-color: $white-ter;
-      border-color: $border;
+      background-color: bulmaV.$white-ter;
+      border-color: bulmaV.$border;
     }
 
     .select2-selection__choice__remove {
@@ -65,13 +65,13 @@
   }
 
   .select2-dropdown {
-    border-color: $link;
+    border-color: bulmaV.$link;
 
     .select2-search {
       margin: 10px;
       .select2-search__field {
         @extend %input;
-        border-radius: $radius !important;
+        border-radius: bulmaV.$radius !important;
       }
     }
 
@@ -80,11 +80,11 @@
 
       .select2-results__option {
         padding: 0.75em;
-        font-family: $family-sans-serif;
+        font-family: bulmaV.$family-sans-serif;
         font-size: 1rem;
 
         &.select2-results__option--highlighted {
-          background: $link;
+          background: bulmaV.$link;
         }
       }
     }
@@ -95,10 +95,10 @@
 .select2-container--focus {
   .select2-selection--single,
   .select2-selection--multiple {
-    border-color: $link !important;
+    border-color: bulmaV.$link !important;
 
     &:hover {
-      border-color: $link;
+      border-color: bulmaV.$link;
     }
   }
 }

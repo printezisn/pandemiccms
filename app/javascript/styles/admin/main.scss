@@ -1,14 +1,19 @@
-@import "./variables";
-@import "bulma/bulma";
-@import "@fortawesome/fontawesome-free/scss/fontawesome";
-@import "@fortawesome/fontawesome-free/scss/solid";
-@import "toastr";
-@import "flag-icons/sass/flag-icons.scss";
-@import "./cards";
-@import "./labels";
-@import "./page_footer";
-@import "./notifications";
-@import "./tables";
+@use "bulma/bulma";
+@use "bulma/sass/utilities" as bulmaV;
+@use '@fortawesome/fontawesome-free/scss/variables' with (
+  $font-path: "@fortawesome/fontawesome-free/webfonts",
+);
+@use "@fortawesome/fontawesome-free/scss/fontawesome";
+@use "@fortawesome/fontawesome-free/scss/solid";
+@use "toastr";
+@use "flag-icons/sass/flag-icons.scss" with (
+  $flag-icons-path: "flag-icons/flags",
+);
+@use "./cards";
+@use "./labels";
+@use "./page_footer";
+@use "./notifications";
+@use "./tables";
 
 html {
   overflow-y: auto;
@@ -16,7 +21,7 @@ html {
 
 html,
 body {
-  background: $white-ter;
+  background: bulmaV.$white-ter;
 }
 
 .navbar-brand {

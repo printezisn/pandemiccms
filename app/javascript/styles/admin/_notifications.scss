@@ -1,4 +1,4 @@
-@import "bulma/sass/utilities/initial-variables";
+@use "bulma/sass/utilities" as bulmaV;
 
 .flash-error,
 .flash-success {
@@ -6,11 +6,11 @@
 }
 
 .toast-error {
-  background-color: $red;
+  background-color: bulmaV.$red;
 }
 
 .toast-success {
-  background-color: $green;
+  background-color: bulmaV.$green;
 }
 
 .notification ul {
