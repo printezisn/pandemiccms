@@ -35,29 +35,24 @@
         <div class="navbar-start">
           <a class="navbar-item<%= ' is-active' if controller_name == 'media' %>" href="<%= admin_media_path %>">
             <i class="fa-solid fa-image"></i>
-            &nbsp;
             <%= _('Media') %>
           </a>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link<%= ' is-active' if %w[posts categories tags].include?(controller_name) %>" href="javascript:void(0)">
               <i class="fa-solid fa-thumbtack"></i>
-              &nbsp;
               <%= _('Posts') %>
             </a>
             <div class="navbar-dropdown">
               <a class="navbar-item<%= ' is-active' if controller_name == 'posts' %>" href="<%= admin_posts_path %>">
                 <i class="fa-solid fa-thumbtack"></i>
-                &nbsp;
                 <%= _('Posts') %>
               </a>
               <a class="navbar-item<%= ' is-active' if controller_name == 'categories' %>" href="<%= admin_categories_path %>">
                 <i class="fa-solid fa-th"></i>
-                &nbsp;
                 <%= _('Categories') %>
               </a>
               <a class="navbar-item<%= ' is-active' if controller_name == 'tags' %>" href="<%= admin_tags_path %>">
                 <i class="fa-solid fa-tag"></i>
-                &nbsp;
                 <%= _('Tags') %>
               </a>
             </div>
@@ -65,23 +60,19 @@
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link<%= ' is-active' if %w[pages menus menu_items redirects].include?(controller_name) %>" href="javascript:void(0)">
               <i class="fa-solid fa-file"></i>
-              &nbsp;
               <%= _('Pages') %>
             </a>
             <div class="navbar-dropdown">
               <a class="navbar-item<%= ' is-active' if controller_name == 'pages' %>" href="<%= admin_pages_path %>">
                 <i class="fa-solid fa-file"></i>
-                &nbsp;
                 <%= _('Pages') %>
               </a>
               <a class="navbar-item<%= ' is-active' if %w[menus menu_items].include?(controller_name) %>" href="<%= admin_menus_path %>">
                 <i class="fa-solid fa-bars"></i>
-                &nbsp;
                 <%= _('Menus') %>
               </a>
               <a class="navbar-item<%= ' is-active' if controller_name == 'redirects' %>" href="<%= admin_redirects_path %>">
                 <i class="fa-solid fa-location-arrow"></i>
-                &nbsp;
                 <%= _('Redirects') %>
               </a>
             </div>
@@ -90,36 +81,30 @@
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link<%= ' is-active' if %w[clients email_templates users].include?(controller_name) %>" href="javascript:void(0)">
               <i class="fa-solid fa-cog"></i>
-              &nbsp;
               <%= _('Settings') %>
             </a>
             <div class="navbar-dropdown">
               <a class="navbar-item<%= ' is-active' if controller_name == 'clients' %>" href="<%= admin_client_edit_path %>">
                 <i class="fa-solid fa-cog"></i>
-                &nbsp;
                 <%= _('Settings') %>
               </a>
               <a class="navbar-item<%= ' is-active' if controller_name == 'email_templates' %>" href="<%= admin_email_templates_path %>">
                 <i class="fa-solid fa-envelope"></i>
-                &nbsp;
                 <%= _('Email Templates') %>
               </a>
               <a class="navbar-item<%= ' is-active' if controller_name == 'users' %>" href="<%= admin_users_path %>">
                 <i class="fa-solid fa-users"></i>
-                &nbsp;
                 <%= _('Users') %>
               </a>
               <%= form_with(url: admin_cache_clear_path, method: :post) do |f| %>
               <a class="navbar-item submit-parent-form" href="javascript:void(0)">
                 <i class="fa-solid fa-database"></i>
-                &nbsp;
                 <%= _('Clear Cache') %>
               </a>
               <% end %>
               <%= form_with(url: admin_index_start_path, method: :post) do |f| %>
               <a class="navbar-item submit-parent-form" href="javascript:void(0)">
                 <i class="fa-solid fa-server"></i>
-                &nbsp;
                 <%= _('Index|Process') %>
               </a>
               <% end %>
@@ -135,14 +120,12 @@
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link" href="javascript:void(0)">
               <span class="fi fi-<%= current_language.flag %>"></span>
-              &nbsp;
               <%= current_language.name %>
             </a>
             <div class="navbar-dropdown is-right">
               <% current_client.enabled_languages.each do |language| %>
               <a class="navbar-item" href="<%= url_for(locale: language.locale) %>">
                 <span class="fi fi-<%= language.flag %>"></span>
-                &nbsp;
                 <%= language.name %>
               </a>
               <% end %>
