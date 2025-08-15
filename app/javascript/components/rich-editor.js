@@ -1,81 +1,62 @@
-import tinymce from 'tinymce';
+import Quill from 'quill';
+import '../styles/admin/rich-editor.scss';
 
-import 'tinymce/icons/default';
-import 'tinymce/themes/silver';
-
-import 'tinymce/skins/ui/oxide/skin.css';
-
-import 'tinymce/plugins/advlist';
-import 'tinymce/plugins/autolink';
-import 'tinymce/plugins/lists';
-import 'tinymce/plugins/link';
-import 'tinymce/plugins/image';
-import 'tinymce/plugins/charmap';
-import 'tinymce/plugins/preview';
-import 'tinymce/plugins/anchor';
-import 'tinymce/plugins/searchreplace';
-import 'tinymce/plugins/visualblocks';
-import 'tinymce/plugins/code';
-import 'tinymce/plugins/fullscreen';
-import 'tinymce/plugins/insertdatetime';
-import 'tinymce/plugins/media';
-import 'tinymce/plugins/table';
-import 'tinymce/plugins/wordcount';
-import 'tinymce/plugins/autoresize';
-
-import 'tinymce/models/dom';
-
-import contentUiCss from 'tinymce/skins/ui/oxide/content.css?raw';
-import contentCss from 'tinymce/skins/content/default/content.css?raw';
+const toolbarOptions = [
+  [{ header: [2, 3, 4, 5, 6, false] }],
+  ['bold', 'italic', 'underline', 'strike'],
+  ['blockquote', 'code-block'],
+  ['link', 'image', 'video'],
+  [{ list: 'ordered' }, { list: 'bullet' }],
+  [{ align: '' }, { align: 'center' }, { align: 'right' }, { align: 'justify' }],
+  ['clean'],
+];
 
 const initRichEditor = (editor) => {
-  tinymce.init({
-    selector: `#${editor.id}`,
-    convert_urls: false,
-    license_key: 'gpl',
-    plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks'
-      + ' code fullscreen insertdatetime media table wordcount autoresize',
-    toolbar: `undo redo | formatselect |
-      bold italic forecolor | alignleft aligncenter
-      alignright alignjustify | link image | bullist numlist outdent indent |
-      code | removeformat fullscreen`,
-    menubar: false,
-    image_caption: true,
-    min_height: 350,
-    readonly: editor.hasAttribute('readonly') ? 1 : 0,
-    skin: false,
-    content_css: false,
-    content_style: `${contentUiCss}\n${contentCss}`,
-    images_upload_handler: (blobInfo, progress) => new Promise((resolve, reject) => {
+  editor.style.display = 'none';
+
+  const id = `${editor.id}-container`;
+  editor.insertAdjacentHTML('afterend', `<div id="${id}"></div>`);
+  const quill = new Quill(`#${id}`, {
+    modules: {
+      toolbar: toolbarOptions,
+    },
+    theme: 'snow',
+    readOnly: editor.hasAttribute('readonly'),
+  });
+
+  quill.clipboard.dangerouslyPasteHTML(editor.value || '');
+
+  quill.getModule('toolbar').addHandler('image', () => {
+    const input = document.createElement('input');
+    input.setAttribute('type', 'file');
+    input.setAttribute('accept', 'image/*');
+
+    input.onchange = () => {
+      const file = input.files[0];
+
       const xhr = new XMLHttpRequest();
       xhr.open('POST', '/admin/media.json');
 
-      xhr.upload.onprogress = (e) => {
-        progress((e.loaded / e.total) * 100);
-      };
-
       xhr.onload = () => {
         if (xhr.status !== 200) {
-          reject(new Error(`HTTP Error: ${xhr.status}`));
-          return;
+          throw new Error(`Cannot upload image. HTTP Error: ${xhr.status}`);
         }
 
         const json = JSON.parse(xhr.responseText);
 
         if (!json) {
-          reject(new Error(`Invalid JSON: ${xhr.responseText}`));
-          return;
+          throw new Error(`Cannot upload image. Invalid JSON: ${xhr.responseText}`);
         }
         if (json.error) {
-          reject(json.error);
-          return;
+          throw new Error(`Cannot upload image. Server Error: ${json.error}`);
         }
 
-        resolve(json.url);
+        const range = quill.getSelection();
+        quill.insertEmbed(range.index, 'image', json.url);
       };
 
       xhr.onerror = () => {
-        reject(new Error(`Image upload failed due to a XHR Transport error. Code: ${xhr.status}`));
+        throw new Error(`Cannot upload image due to a XHR Transport error. Code: ${xhr.status}`);
       };
 
       const formData = new FormData();
@@ -83,10 +64,29 @@ const initRichEditor = (editor) => {
         document.head.querySelector('meta[name="csrf-param"]').content,
         document.head.querySelector('meta[name="csrf-token"]').content,
       );
-      formData.append('medium[file][]', blobInfo.blob(), blobInfo.filename());
+      formData.append('medium[file][]', file, file.name);
 
       xhr.send(formData);
-    }),
+    };
+
+    input.click();
+  });
+
+  quill.clipboard.addMatcher(Node.ELEMENT_NODE, (node, delta) => {
+    delta.ops.forEach(op => {
+      if (op.attributes && op.attributes.background) {
+        delete op.attributes.background;
+      }
+      if (op.attributes && op.attributes.color) {
+        delete op.attributes.color;
+      }
+    });
+
+    return delta;
+  });
+
+  quill.on('text-change', () => {
+    editor.value = quill.root.innerHTML;
   });
 };
 

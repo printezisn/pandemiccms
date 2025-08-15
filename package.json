@@ -7,9 +7,9 @@
     "bulma": "^1.0.0",
     "flag-icons": "^7.2.1",
     "jquery": "^3.6.0",
+    "quill": "^2.0.3",
     "sass": "^1.32.5",
     "select2": "^4.1.0-rc.0",
-    "tinymce": "^8.0.2",
     "toastr": "^2.1.4"
   },
   "version": "1.0.0",

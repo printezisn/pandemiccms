@@ -1,0 +1,9 @@
+@use "quill/dist/quill.snow.css";
+
+.ql-editor {
+  min-height: 350px;
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
