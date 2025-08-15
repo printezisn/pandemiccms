@@ -63,7 +63,7 @@ You need to have the following installed to run the project:
 1. Run `pnpm i` to install the node packages.
 1. Run `EDITOR=<prefered editor (e.g. vim)> rails credentials:edit` to create a credentials file with a `secret_key_base` value.
 1. Run `rails db:migrate` to prepare the database.
-1. Run `./bin/dev`. This will run the rails server, the background job worker and will build the front-end assets. You can then visit the website in `http://localhost:3000`.
+1. Run `rails s`. This will run the rails server, the background job worker and will build the front-end assets. You can then visit the website in `http://localhost:3000`.
 
 ## Configuration
 
