@@ -53,7 +53,7 @@ module Pandemiccms
 
     config.available_languages = [
       { locale: 'en-GB', name: 'English', flag: 'gb' },
-      { locale: 'el-GR', name: 'Ελληνικά', flag: 'gr', transliterations: 'greek' }
+      { locale: 'el-GR', name: 'Ελληνικά', flag: 'gr' }
     ]
   end
 end
