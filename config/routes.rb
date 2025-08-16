@@ -5,9 +5,6 @@ require_relative 'template_constraint'
 Rails.application.routes.draw do
   mount MissionControl::Jobs::Engine, at: '/jobs'
 
-  get '/sitemap.xml', to: 'seo#sitemap', format: 'xml', as: :sitemap
-  get '/robots.txt', to: 'seo#robots', format: 'text', as: :robots
-
   scope '(:locale)', constraints: { locale: Regexp.new(Rails.application.config.available_languages.pluck(:locale).join('|')) } do
     devise_for :admin_users
 

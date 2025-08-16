@@ -33,7 +33,7 @@ RSpec.describe 'seo' do
        </urlset>".gsub(/\s+/, '')
     end
 
-    before { get sitemap_path }
+    before { get sample_sitemap_path }
 
     it { is_expected.to eq(expected_result) }
   end
@@ -52,7 +52,54 @@ RSpec.describe 'seo' do
     before do
       create(:client)
 
-      get robots_path
+      get sample_robots_path
+    end
+
+    it { is_expected.to eq(expected_result) }
+  end
+
+  describe 'GET /manifest.webmanifest' do
+    subject { response.body.gsub(/\s+/, '') }
+
+    let(:expected_result) do
+      '{
+          "theme_color": "#404654",
+          "background_color": "#f9fafb",
+          "display": "standalone",
+          "scope": "/",
+          "start_url": "/",
+          "name": "test_client",
+          "short_name": "test_client",
+          "description": "",
+          "icons": [
+              {
+                "src": "/logo.png",
+                "sizes": "192x192",
+                "type": "image/png"
+              }
+              {
+                "src": "/logo.png",
+                "sizes": "256x256",
+                "type": "image/png"
+              }
+              {
+                "src": "/logo.png",
+                "sizes": "384x384",
+                "type": "image/png"
+              }
+              {
+                "src": "/logo.png",
+                "sizes": "512x512",
+                "type": "image/png"
+              }
+          ]
+        }'.gsub(/\s+/, '')
+    end
+
+    before do
+      create(:client)
+
+      get sample_manifest_path
     end
 
     it { is_expected.to eq(expected_result) }

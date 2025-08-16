@@ -9,6 +9,8 @@
   <% client_cache 'Favicon' do %>
   <link rel="icon" href="<%= current_client.image_path_with_default([32, 32], '/favicon.png') %>" />
   <% end %>
+  <meta name="theme-color" content="#404654" />
+  <link rel="manifest" href="/manifest.webmanifest" />
 
   <%= vite_client_tag %>
   <% ["entrypoints/templates/#{current_client.template}/main.js"].concat(yield(:scripts).split(',')).each do |name| %>
