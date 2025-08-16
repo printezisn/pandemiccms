@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_16_093118) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_16_101646) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -98,6 +98,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_16_093118) do
     t.text "body"
     t.index ["client_id", "name"], name: "index_categories_on_client_id_and_name", unique: true
     t.index ["client_id", "posts_count"], name: "index_categories_on_client_id_and_posts_count"
+    t.index ["client_id", "slug"], name: "index_categories_on_client_id_and_slug"
     t.index ["client_id"], name: "index_categories_on_client_id"
     t.index ["parent_id"], name: "index_categories_on_parent_id"
   end
@@ -245,6 +246,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_16_093118) do
     t.integer "children_count", default: 0
     t.index ["author_id"], name: "index_pages_on_author_id"
     t.index ["client_id", "name"], name: "index_pages_on_client_id_and_name", unique: true
+    t.index ["client_id", "slug"], name: "index_pages_on_client_id_and_slug"
     t.index ["client_id", "status"], name: "index_pages_on_client_id_and_status"
     t.index ["client_id", "template"], name: "index_pages_on_client_id_and_template"
     t.index ["client_id"], name: "index_pages_on_client_id"
@@ -268,6 +270,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_16_093118) do
     t.string "index_version"
     t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["client_id", "name"], name: "index_posts_on_client_id_and_name", unique: true
+    t.index ["client_id", "slug"], name: "index_posts_on_client_id_and_slug"
     t.index ["client_id", "status"], name: "index_posts_on_client_id_and_status"
     t.index ["client_id", "template"], name: "index_posts_on_client_id_and_template"
     t.index ["client_id"], name: "index_posts_on_client_id"
@@ -428,6 +431,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_16_093118) do
     t.text "body"
     t.index ["client_id", "name"], name: "index_tags_on_client_id_and_name", unique: true
     t.index ["client_id", "posts_count"], name: "index_tags_on_client_id_and_posts_count"
+    t.index ["client_id", "slug"], name: "index_tags_on_client_id_and_slug"
     t.index ["client_id"], name: "index_tags_on_client_id"
   end
 
