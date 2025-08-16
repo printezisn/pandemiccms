@@ -6,7 +6,11 @@ class TagsController < ApplicationController
 
   # GET /t/1/slug
   def show
-    @model = @tp.tags.find(params[:id])
+    @model = if params[:id].present?
+               @tp.tags.find(params[:id])
+             else
+               @tp.tags.find_by!(slug: params[:slug])
+             end
 
     slug = @tp.t(@model).slug
     return redirect_to template_entity_path(@model), status: :moved_permanently if slug != params[:slug]

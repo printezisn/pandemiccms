@@ -6,7 +6,11 @@ class PostsController < ApplicationController
 
   # GET /p/1/slug
   def show
-    @model = @tp.posts.find(params[:id])
+    @model = if params[:id].present?
+               @tp.posts.find(params[:id])
+             else
+               @tp.posts.find_by!(slug: params[:slug])
+             end
 
     slug = @tp.t(@model).slug
     return redirect_to template_entity_path(@model), status: :moved_permanently if slug != params[:slug]

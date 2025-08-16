@@ -13,7 +13,11 @@ class PagesController < ApplicationController
 
   # GET /pg/1/slug
   def show
-    @model = @tp.pages.find(params[:id])
+    @model = if params[:id].present?
+               @tp.pages.find(params[:id])
+             else
+               @tp.pages.find_by!(slug: params[:slug])
+             end
 
     slug = @tp.t(@model).slug
     return redirect_to template_entity_path(@model), status: :moved_permanently if slug != params[:slug]
