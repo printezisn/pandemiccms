@@ -49,7 +49,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_client
-    @current_client ||= fetch_current_client
+    @current_client ||= Current.fetch_client(request)
   end
 
   def current_language
@@ -75,14 +75,6 @@ class ApplicationController < ActionController::Base
   end
 
   private
-
-  def fetch_current_client
-    domain = [request.subdomain, request.domain].filter_map(&:presence).join('.')
-
-    Client.joins(:client_domains)
-          .find_by(client_domains: { domain:, port: request.port })
-          &.decorate
-  end
 
   def fetch_current_language
     return unless current_client

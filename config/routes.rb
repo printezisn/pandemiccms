@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'template_constraint'
+
 Rails.application.routes.draw do
   mount MissionControl::Jobs::Engine, at: '/jobs'
 
@@ -118,10 +120,13 @@ Rails.application.routes.draw do
       resources :clients
     end
 
-    get 'pg/:id/:slug', to: 'pages#show', as: :page
-    get 'p/:id/:slug', to: 'posts#show', as: :post
-    get 't/:id/:slug', to: 'tags#show', as: :tag
-    get 'c/:id/:slug', to: 'categories#show', as: :category
+    Rails.root.glob('config/routes/*.rb').each do |file|
+      template = File.basename(file, '.rb')
+
+      constraints(TemplateConstraint.new(template)) do
+        draw(template.to_sym)
+      end
+    end
 
     match '/404', to: 'errors#not_found', via: :all
     match '/500', to: 'errors#internal_server_error', via: :all
