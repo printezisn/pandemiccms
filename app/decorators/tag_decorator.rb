@@ -9,7 +9,7 @@ class TagDecorator < ApplicationDecorator
 
     Rails.application.routes.url_helpers.tag_path(
       id: object.id,
-      slug: object.translate(locale, use_defaults: true).displayed_slug(language&.transliterations),
+      slug: object.translate(locale, use_defaults: true).displayed_slug,
       locale:
     )
   end

@@ -2,9 +2,11 @@
 
 # Module to add functionality around URL slugs
 module Sluggable
-  def displayed_slug(transliterations)
+  def displayed_slug
     return slug if slug.present? || name.blank?
 
-    name.to_slug.normalize(transliterate: transliterations&.to_sym).to_s
+    transliterate = :greek if /[\u0370-\u03FF\u1F00-\u1FFF]/.match?(name)
+
+    name.to_slug.normalize(transliterate:).to_s
   end
 end

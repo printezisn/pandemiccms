@@ -16,7 +16,7 @@ RSpec.describe 'categories' do
 
   describe 'GET /show' do
     let(:request) { get category_path(id: model.id, slug:) }
-    let(:slug) { model.displayed_slug(nil) }
+    let(:slug) { model.displayed_slug }
 
     context 'when the category is private' do
       let(:visibility) { 'private' }

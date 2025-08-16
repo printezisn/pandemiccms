@@ -9,7 +9,7 @@ class CategoryDecorator < ApplicationDecorator
 
     Rails.application.routes.url_helpers.category_path(
       id: object.id,
-      slug: object.translate(locale, use_defaults: true).displayed_slug(language&.transliterations),
+      slug: object.translate(locale, use_defaults: true).displayed_slug,
       locale:
     )
   end

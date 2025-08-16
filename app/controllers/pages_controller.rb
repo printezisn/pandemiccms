@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   def show
     @model = @tp.pages.find(params[:id]).decorate
 
-    slug = @tp.t(@model).displayed_slug(current_language&.transliterations)
+    slug = @tp.t(@model).displayed_slug
     return redirect_to page_path(id: @model.id, slug:), status: :moved_permanently if slug != params[:slug]
 
     render "templates/#{current_client.template}/pages/#{@model.template.presence || 'default'}"

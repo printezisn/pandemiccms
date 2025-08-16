@@ -1,33 +1,33 @@
 <% client_cache ['PostMeta', @model.id] do %>
-  <%
-    url = post_url(id: @model.id, slug: @tp.t(@model).displayed_slug(current_language&.transliterations))
+<%
+    url = post_url(id: @model.id, slug: @tp.t(@model).displayed_slug)
     @post_category = @tp.categories(post_id: @model.id).first
     @post_tags = @tp.tags(post_id: @model.id).to_a
   %>
 
-  <title><%= @tp.t(@model).name %> | <%= current_client.name %></title>
-  <meta name="description" content="<%= @tp.t(@model).description %>" />
-  <meta property="og:title" content="<%= @tp.t(@model).name %>" />
-  <meta property="og:description" content="<%= @tp.t(@model).description %>" />
-  <meta property="og:site_name" content="<%= current_client.name %>" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="<%= url %>" />
-  <% image = @model.image.attached? ? @model.image : current_client.image %>
-  <% if image.attached? %>
-    <meta property="og:image" content="<%= rails_blob_url(image) %>" />
-    <meta property="og:image:type" content="<%= image.blob.content_type %>" />
-    <meta property="og:image:width" content="<%= image.blob.metadata[:width] %>" />
-    <meta property="og:image:height" content="<%= image.blob.metadata[:height] %>" />
-  <% end %>
-  <% if @model.published_at %>
-    <meta property="article:published_time" content="<%= @model.published_at.iso8601 %>" />
-  <% end %>
-  <meta property="article:modified_time" content="<%= @model.updated_at.iso8601 %>" />
-  <% if @post_category %>
-    <meta property="article:section" content="<%= @tp.t(@post_category).name %>" />
-  <% end %>
-  <% @post_tags.each do |tag| %>
-    <meta property="article:tag" content="<%= @tp.t(tag).name %>" />
-  <% end %>
-  <link rel="canonical" href="<%= url %>" />
+<title><%= @tp.t(@model).name %> | <%= current_client.name %></title>
+<meta name="description" content="<%= @tp.t(@model).description %>" />
+<meta property="og:title" content="<%= @tp.t(@model).name %>" />
+<meta property="og:description" content="<%= @tp.t(@model).description %>" />
+<meta property="og:site_name" content="<%= current_client.name %>" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="<%= url %>" />
+<% image = @model.image.attached? ? @model.image : current_client.image %>
+<% if image.attached? %>
+<meta property="og:image" content="<%= rails_blob_url(image) %>" />
+<meta property="og:image:type" content="<%= image.blob.content_type %>" />
+<meta property="og:image:width" content="<%= image.blob.metadata[:width] %>" />
+<meta property="og:image:height" content="<%= image.blob.metadata[:height] %>" />
+<% end %>
+<% if @model.published_at %>
+<meta property="article:published_time" content="<%= @model.published_at.iso8601 %>" />
+<% end %>
+<meta property="article:modified_time" content="<%= @model.updated_at.iso8601 %>" />
+<% if @post_category %>
+<meta property="article:section" content="<%= @tp.t(@post_category).name %>" />
+<% end %>
+<% @post_tags.each do |tag| %>
+<meta property="article:tag" content="<%= @tp.t(tag).name %>" />
+<% end %>
+<link rel="canonical" href="<%= url %>" />
 <% end %>

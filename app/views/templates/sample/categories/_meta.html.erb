@@ -1,19 +1,19 @@
 <% page ||= nil %>
 <% client_cache ['CategoryMeta', @model.id, page] do %>
-  <% url = category_url(id: @model.id, slug: @tp.t(@model).displayed_slug(current_language&.transliterations), page: page) %>
-  <title><%= @tp.t(@model).name %> | <%= current_client.name %></title>
-  <meta name="description" content="<%= @tp.t(@model).description %>" />
-  <meta property="og:title" content="<%= @tp.t(@model).name %>" />
-  <meta property="og:description" content="<%= @tp.t(@model).description %>" />
-  <meta property="og:site_name" content="<%= current_client.name %>" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="<%= url %>" />
-  <% image = @model.image.attached? ? @model.image : current_client.image %>
-  <% if image.attached? %>
-    <meta property="og:image" content="<%= rails_blob_url(image) %>" />
-    <meta property="og:image:type" content="<%= image.blob.content_type %>" />
-    <meta property="og:image:width" content="<%= image.blob.metadata[:width] %>" />
-    <meta property="og:image:height" content="<%= image.blob.metadata[:height] %>" />
-  <% end %>
-  <link rel="canonical" href="<%= url %>" />
+<% url = category_url(id: @model.id, slug: @tp.t(@model).displayed_slug, page: page) %>
+<title><%= @tp.t(@model).name %> | <%= current_client.name %></title>
+<meta name="description" content="<%= @tp.t(@model).description %>" />
+<meta property="og:title" content="<%= @tp.t(@model).name %>" />
+<meta property="og:description" content="<%= @tp.t(@model).description %>" />
+<meta property="og:site_name" content="<%= current_client.name %>" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="<%= url %>" />
+<% image = @model.image.attached? ? @model.image : current_client.image %>
+<% if image.attached? %>
+<meta property="og:image" content="<%= rails_blob_url(image) %>" />
+<meta property="og:image:type" content="<%= image.blob.content_type %>" />
+<meta property="og:image:width" content="<%= image.blob.metadata[:width] %>" />
+<meta property="og:image:height" content="<%= image.blob.metadata[:height] %>" />
+<% end %>
+<link rel="canonical" href="<%= url %>" />
 <% end %>
