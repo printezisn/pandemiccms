@@ -19,7 +19,7 @@ RSpec.describe 'posts' do
 
   describe 'GET /show' do
     let(:request) { get post_path(id: model.id, slug:) }
-    let(:slug) { model.displayed_slug }
+    let(:slug) { model.slug }
 
     context 'when the post is private' do
       let(:visibility) { 'private' }

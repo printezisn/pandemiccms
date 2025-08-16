@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def show
     @model = @tp.posts.find(params[:id]).decorate
 
-    slug = @tp.t(@model).displayed_slug
+    slug = @tp.t(@model).slug
     return redirect_to post_path(id: @model.id, slug:), status: :moved_permanently if slug != params[:slug]
 
     render "templates/#{current_client.template}/posts/#{@model.template.presence || 'default'}"

@@ -61,7 +61,7 @@ RSpec.describe 'Pages' do
 
   describe 'GET /show' do
     let(:request) { get page_path(id: model.id, slug:) }
-    let(:slug) { model.displayed_slug }
+    let(:slug) { model.slug }
 
     context 'when the page is private' do
       let(:visibility) { 'private' }

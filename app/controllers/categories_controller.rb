@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   def show
     @model = @tp.categories.find(params[:id]).decorate
 
-    slug = @tp.t(@model).displayed_slug
+    slug = @tp.t(@model).slug
     return redirect_to category_path(id: @model.id, slug:), status: :moved_permanently if slug != params[:slug]
 
     render "templates/#{current_client.template}/categories/#{@model.template.presence || 'default'}"

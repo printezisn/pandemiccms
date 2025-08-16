@@ -6,7 +6,7 @@ class TagsController < ApplicationController
   def show
     @model = @tp.tags.find(params[:id]).decorate
 
-    slug = @tp.t(@model).displayed_slug
+    slug = @tp.t(@model).slug
     return redirect_to tag_path(id: @model.id, slug:), status: :moved_permanently if slug != params[:slug]
 
     render "templates/#{current_client.template}/tags/#{@model.template.presence || 'default'}"

@@ -10,7 +10,7 @@ class PageDecorator < ApplicationDecorator
 
     Rails.application.routes.url_helpers.page_path(
       id: object.id,
-      slug: object.translate(locale, use_defaults: true).displayed_slug,
+      slug: object.translate(locale, use_defaults: true).slug,
       locale:
     )
   end

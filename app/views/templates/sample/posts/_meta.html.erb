@@ -1,6 +1,6 @@
 <% client_cache ['PostMeta', @model.id] do %>
 <%
-    url = post_url(id: @model.id, slug: @tp.t(@model).displayed_slug)
+    url = post_url(id: @model.id, slug: @tp.t(@model).slug)
     @post_category = @tp.categories(post_id: @model.id).first
     @post_tags = @tp.tags(post_id: @model.id).to_a
   %>
