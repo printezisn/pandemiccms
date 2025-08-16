@@ -1,19 +1,18 @@
 <nav class="breadcrumb has-succeeds-operator is-small">
   <ul>
     <% client_cache ['Breadcrumb', 'Page', @model.parent_id] do %>
-      <%
+    <%
         ancestors = @tp.pages.where(id: @model.ancestor_ids)
                              .sort_by { |page| @model.ancestor_ids.index(page.id) }
-                             .map(&:decorate)
       %>
-      <% ancestors.each do |ancestor| %>
-        <li>
-          <a href="<%= ancestor.path(current_language) %>"><%= @tp.t(ancestor).name %></a>
-        </li>
-      <% end %>
+    <% ancestors.each do |ancestor| %>
+    <li>
+      <a href="<%= template_entity_path(ancestor) %>"><%= @tp.t(ancestor).name %></a>
+    </li>
+    <% end %>
     <% end %>
     <li class="is-active">
-       <% title ||= @tp.t(@model).name %>
+      <% title ||= @tp.t(@model).name %>
       <a href="#"><%= title %></a>
     </li>
   </ul>

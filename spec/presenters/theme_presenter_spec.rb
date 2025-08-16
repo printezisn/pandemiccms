@@ -23,12 +23,12 @@ describe ThemePresenter, type: :presenter do
 
     let(:expected_result) do
       [
-        [parent1.reload.decorate, [
-          [child12.reload.decorate, []],
-          [child11.reload.decorate, []]
+        [parent1.reload, [
+          [child12.reload, []],
+          [child11.reload, []]
         ]],
-        [parent2.reload.decorate, [
-          [child21.reload.decorate, []]
+        [parent2.reload, [
+          [child21.reload, []]
         ]]
       ]
     end

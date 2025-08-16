@@ -1,12 +1,12 @@
 <nav class="breadcrumb has-succeeds-operator is-small">
   <ul>
     <% client_cache ['Breadcrumb', 'RootPage'] do %>
-      <% root_page = @tp.pages.find_by(template: 'index')&.decorate %>
-      <% if root_page %>
-        <li>
-          <a href="<%= root_page.path(current_language) %>"><%= @tp.t(root_page).name %></a>
-        </li>
-      <% end %>
+    <% root_page = @tp.pages.find_by(template: 'index') %>
+    <% if root_page %>
+    <li>
+      <a href="<%= template_entity_path(root_page) %>"><%= @tp.t(root_page).name %></a>
+    </li>
+    <% end %>
     <% end %>
 
     <li class="is-active">

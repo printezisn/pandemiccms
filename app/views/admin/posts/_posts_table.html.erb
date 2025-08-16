@@ -77,12 +77,12 @@
     </tr>
   </thead>
   <tbody>
-    <% if posts.none? %>
+    <% if @posts.none? %>
     <tr>
       <td colspan="5"><%= _('No posts were found.') %></td>
     </tr>
     <% else %>
-    <% posts.each do |post| %>
+    <% @posts.each do |post| %>
     <tr>
       <td>
         <a href="<%= admin_post_path(post) %>"><%= post.name %></a>
@@ -107,7 +107,7 @@
 </table>
 <%= paginate @posts %>
 
-<% posts.each do |post| %>
+<% @posts.each do |post| %>
 <%= render partial: 'admin/posts/delete_modal', locals: { post: post } %>
 <%= render partial: 'admin/posts/publish_modal', locals: { post: post } %>
 <% end %>

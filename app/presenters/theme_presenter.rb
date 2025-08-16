@@ -78,6 +78,6 @@ class ThemePresenter
     all_menu_items
       .select { |menu_item| menu_item.parent_id == parent_id }
       .sort_by(&:sort_order)
-      .map { |menu_item| [menu_item.decorate, fetch_menu_item_children(all_menu_items, menu_item.id)] }
+      .map { |menu_item| [menu_item, fetch_menu_item_children(all_menu_items, menu_item.id)] }
   end
 end

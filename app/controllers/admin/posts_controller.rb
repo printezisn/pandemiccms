@@ -10,8 +10,6 @@ module Admin
     before_action :fetch_templates, only: %i[new edit create update]
     before_action :fetch_visibilities, only: %i[new edit create update]
 
-    decorates_assigned :posts
-
     # GET /posts
     # GET /category/:category_id/posts
     # GET /tag/:tag_id/posts
@@ -143,7 +141,7 @@ module Admin
     private
 
     def fetch_post
-      @post = Post.find_by!(id: params[:id], client_id: current_client.id).decorate
+      @post = Post.find_by!(id: params[:id], client_id: current_client.id)
     end
 
     def fetch_translation

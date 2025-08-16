@@ -1,15 +1,15 @@
 <% client_cache ['PostTags', @model.id] do %>
-  <% @post_tags ||= @tp.tags(post_id: @model.id).to_a %>
-  <% if @post_tags.present? %>
-    <footer class="mb-5">
-      <strong><%= _('Tags:') %></strong>
-      <nav class="tag-list">
-        <ul>
-          <% @post_tags.map(&:decorate).each do |tag| %>
-            <li><a href="<%= tag.path(current_language) %>"><%= @tp.t(tag).name %></a></li>
-          <% end %>
-        </ul>
-      </nav>
-    </footer>
-  <% end %>
+<% @post_tags ||= @tp.tags(post_id: @model.id).to_a %>
+<% if @post_tags.present? %>
+<footer class="mb-5">
+  <strong><%= _('Tags:') %></strong>
+  <nav class="tag-list">
+    <ul>
+      <% @post_tags.each do |tag| %>
+      <li><a href="<%= template_entity_path(tag) %>"><%= @tp.t(tag).name %></a></li>
+      <% end %>
+    </ul>
+  </nav>
+</footer>
+<% end %>
 <% end %>

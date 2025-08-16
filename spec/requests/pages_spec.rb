@@ -60,7 +60,7 @@ RSpec.describe 'Pages' do
   end
 
   describe 'GET /show' do
-    let(:request) { get page_path(id: model.id, slug:) }
+    let(:request) { get sample_page_path(id: model.id, slug:) }
     let(:slug) { model.slug }
 
     context 'when the page is private' do
@@ -92,7 +92,7 @@ RSpec.describe 'Pages' do
     end
 
     context 'when the slug is different' do
-      let(:request) { get page_path(id: model.id, slug: 'different-slug') }
+      let(:request) { get sample_page_path(id: model.id, slug: 'different-slug') }
 
       it 'has a moved_permanently status' do
         request
@@ -103,7 +103,7 @@ RSpec.describe 'Pages' do
       it 'redirects to the correct slug' do
         request
 
-        expect(response).to redirect_to(page_path(id: model.id, slug:))
+        expect(response).to redirect_to sample_page_path(id: model.id, slug:, locale: nil)
       end
     end
   end

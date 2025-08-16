@@ -10,8 +10,6 @@ module Admin
     before_action :fetch_templates, only: %i[new edit create update]
     before_action :fetch_visibilities, only: %i[new edit create update]
 
-    decorates_assigned :pages
-
     # GET /pages
     # GET /tag/:tag_id/pages
     # GET /user/:user_id/pages
@@ -151,7 +149,7 @@ module Admin
     private
 
     def fetch_page
-      @page = Page.find_by!(id: params[:id], client_id: current_client.id).decorate
+      @page = Page.find_by!(id: params[:id], client_id: current_client.id)
     end
 
     def fetch_translation

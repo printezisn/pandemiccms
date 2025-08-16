@@ -35,12 +35,12 @@
         </tr>
       </thead>
       <tbody>
-        <% if pages.none? %>
+        <% if @pages.none? %>
         <tr>
           <td colspan="5"><%= _('No pages were found.') %></td>
         </tr>
         <% else %>
-        <% pages.each do |page| %>
+        <% @pages.each do |page| %>
         <tr>
           <td>
             <a href="<%= admin_page_path(page) %>"><%= page.name_with_depth %></a>

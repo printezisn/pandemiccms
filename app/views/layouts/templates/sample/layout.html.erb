@@ -7,12 +7,12 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <% client_cache 'Favicon' do %>
-    <link rel="icon" href="<%= current_client.image_path_with_default([32, 32], '/favicon.png') %>" />
+  <link rel="icon" href="<%= current_client.image_path_with_default([32, 32], '/favicon.png') %>" />
   <% end %>
 
   <%= vite_client_tag %>
   <% ["entrypoints/templates/#{current_client.template}/main.js"].concat(yield(:scripts).split(',')).each do |name| %>
-    <%= vite_javascript_tag name %>
+  <%= vite_javascript_tag name %>
   <% end %>
 </head>
 
@@ -36,24 +36,24 @@
       </div>
     </nav>
     <% client_cache 'Hero' do %>
-      <% hero_post = @tp.t(@tp.posts(only_visible: false).joins(:categories).find_by(categories: { name: 'Hero' })) %>
-      <% if hero_post %>
-        <div class="hero is-dark">
-          <div class="hero-body">
-            <div class="columns is-centered is-vcentered is-multiline is-tablet has-text-centered-mobile">
-              <a href="<%= root_path %>">
-                <img src="<%= current_client.image_path_with_default([64, 64], '/logo.png') %>" class="pr-3" alt="logo" />
-              </a>
-              <div>
-                <h1 class="title is-2">
-                  <a href="<%= root_path %>"><%= hero_post.name %></a>
-                </h1>
-                <div class="subtitle"><%= hero_post.body&.html_safe %></div>
-              </div>
-            </div>
+    <% hero_post = @tp.t(@tp.posts(only_visible: false).joins(:categories).find_by(categories: { name: 'Hero' })) %>
+    <% if hero_post %>
+    <div class="hero is-dark">
+      <div class="hero-body">
+        <div class="columns is-centered is-vcentered is-multiline is-tablet has-text-centered-mobile">
+          <a href="<%= template_root_path %>">
+            <img src="<%= current_client.image_path_with_default([64, 64], '/logo.png') %>" class="pr-3" alt="logo" />
+          </a>
+          <div>
+            <h1 class="title is-2">
+              <a href="<%= template_root_path %>"><%= hero_post.name %></a>
+            </h1>
+            <div class="subtitle"><%= hero_post.body&.html_safe %></div>
           </div>
         </div>
-      <% end %>
+      </div>
+    </div>
+    <% end %>
     <% end %>
   </header>
 
@@ -69,15 +69,15 @@
   </main>
 
   <% client_cache 'Footer' do %>
-    <footer>
-      <div class="container">
-        <%= render partial: "layouts/templates/#{current_client.template}/footer_menu" %>
-        <% footer_post = @tp.t(@tp.posts(only_visible: false).find_by(name: 'Footer')) %>
-        <% if footer_post %>
-          <div class="content"><%= footer_post.body.gsub('{year}', Time.now.year.to_s).html_safe %></div>
-        <% end %>
-      </div>
-    </footer>
+  <footer>
+    <div class="container">
+      <%= render partial: "layouts/templates/#{current_client.template}/footer_menu" %>
+      <% footer_post = @tp.t(@tp.posts(only_visible: false).find_by(name: 'Footer')) %>
+      <% if footer_post %>
+      <div class="content"><%= footer_post.body.gsub('{year}', Time.now.year.to_s).html_safe %></div>
+      <% end %>
+    </div>
+  </footer>
   <% end %>
 </body>
 

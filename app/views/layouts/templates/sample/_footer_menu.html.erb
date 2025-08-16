@@ -1,16 +1,11 @@
 <% if @tp.menu('Footer Menu').any? %>
-  <nav class="mb-5 footer-menu">
-    <ul>
-      <% @tp.menu('Footer Menu').each do |menu_item, _| %>
-        <li>
-          <a
-            href="<%= menu_item.path(current_language) %>"
-            class="<%= menu_item.css_class %>"
-            target="<%= '_blank' if menu_item.open_in_new_window? %>"
-            rel="<%= 'noopener' if menu_item.open_in_new_window? %>"
-          ><%= @tp.t(menu_item).name %></a>
-        </li>
-      <% end %>
-    </ul>
-  </nav>
+<nav class="mb-5 footer-menu">
+  <ul>
+    <% @tp.menu('Footer Menu').each do |menu_item, _| %>
+    <li>
+      <a href="<%= template_entity_path(menu_item) %>" class="<%= menu_item.css_class %>" target="<%= '_blank' if menu_item.open_in_new_window? %>" rel="<%= 'noopener' if menu_item.open_in_new_window? %>"><%= @tp.t(menu_item).name %></a>
+    </li>
+    <% end %>
+  </ul>
+</nav>
 <% end %>

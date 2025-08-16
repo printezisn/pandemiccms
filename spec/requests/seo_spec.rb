@@ -15,19 +15,19 @@ RSpec.describe 'seo' do
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
        <urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:xhtml=\"http://www.w3.org/1999/xhtml\">
          <url>
-           <loc>http://www.example.com#{page.decorate.path}</loc>
+           <loc>http://www.example.com#{sample_page_path(id: page.id, slug: page.slug, locale: nil)}</loc>
            <lastmod>#{page.reload.updated_at.iso8601}</lastmod>
          </url>
          <url>
-           <loc>http://www.example.com#{category.decorate.path}</loc>
+           <loc>http://www.example.com#{sample_category_path(id: category.id, slug: category.slug, locale: nil)}</loc>
            <lastmod>#{category.reload.updated_at.iso8601}</lastmod>
          </url>
          <url>
-           <loc>http://www.example.com#{post.decorate.path}</loc>
+           <loc>http://www.example.com#{sample_post_path(id: post.id, slug: post.slug, locale: nil)}</loc>
            <lastmod>#{post.reload.updated_at.iso8601}</lastmod>
          </url>
          <url>
-           <loc>http://www.example.com#{tag.decorate.path}</loc>
+           <loc>http://www.example.com#{sample_tag_path(id: tag.id, slug: tag.slug, locale: nil)}</loc>
            <lastmod>#{tag.reload.updated_at.iso8601}</lastmod>
          </url>
        </urlset>".gsub(/\s+/, '')

@@ -10,8 +10,6 @@ module Admin
     before_action :fetch_templates, only: %i[new edit create update]
     before_action :fetch_visibilities, only: %i[new edit create update]
 
-    decorates_assigned :categories
-
     # GET /categories
     # GET /categories.json
     def index
@@ -124,7 +122,7 @@ module Admin
     private
 
     def fetch_category
-      @category = Category.find_by!(id: params[:id], client_id: current_client.id).decorate
+      @category = Category.find_by!(id: params[:id], client_id: current_client.id)
     end
 
     def fetch_translation

@@ -6,16 +6,7 @@
 <% client_cache ['PageMeta', @model.id, page, term] do %>
 <%
     title ||= @tp.t(@model).name
-    url = if @model.template == 'index'
-            root_url(page: page)
-          else
-            page_url(
-              id: @model.id,
-              slug: @tp.t(@model).slug,
-              page: page,
-              term: term
-            )
-          end
+    url = template_entity_url(@model, page:, term:)
   %>
 
 <title><%= title %> | <%= current_client.name %></title>

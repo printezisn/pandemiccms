@@ -1,65 +1,55 @@
 <% client_cache 'HeaderMenu' do %>
-  <% @tp.menu('Header Menu').each do |menu_item, children| %>
-    <% if children.present? %>
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a href="#" class="navbar-link">
-          <% if menu_item.css_class.present? %>
-            <i class="<%= menu_item.css_class %>"></i>
-            &nbsp;
-          <% end %>
-          <%= @tp.t(menu_item).name %>
-        </a>
-        <div class="navbar-dropdown">
-          <% children.map(&:first).each do |child| %>
-            <a
-              href="<%= child.path(current_language) %>"
-              class="navbar-item"
-              target="<%= '_blank' if child.open_in_new_window? %>"
-              rel="<%= 'noopener' if child.open_in_new_window? %>"
-            >
-              <% if child.css_class.present? %>
-                <i class="<%= child.css_class %>"></i>
-                &nbsp;
-              <% end %>
-              <%= @tp.t(child).name %>
-            </a>
-          <% end %>
-        </div>
-      </div>
-    <% else %>
-      <a
-        href="<%= menu_item.path(current_language) %>"
-        class="navbar-item"
-        target="<%= '_blank' if menu_item.open_in_new_window? %>"
-        rel="<%= 'noopener' if menu_item.open_in_new_window? %>"
-      >
-        <% if menu_item.css_class.present? %>
-          <i class="<%= menu_item.css_class %>"></i>
-          &nbsp;
-        <% end %>
-        <%= @tp.t(menu_item).name %>
-      </a>
+<% @tp.menu('Header Menu').each do |menu_item, children| %>
+<% if children.present? %>
+<div class="navbar-item has-dropdown is-hoverable">
+  <a href="#" class="navbar-link">
+    <% if menu_item.css_class.present? %>
+    <i class="<%= menu_item.css_class %>"></i>
+    &nbsp;
     <% end %>
+    <%= @tp.t(menu_item).name %>
+  </a>
+  <div class="navbar-dropdown">
+    <% children.map(&:first).each do |child| %>
+    <a href="<%= template_entity_path(child) %>" class="navbar-item" target="<%= '_blank' if child.open_in_new_window? %>" rel="<%= 'noopener' if child.open_in_new_window? %>">
+      <% if child.css_class.present? %>
+      <i class="<%= child.css_class %>"></i>
+      &nbsp;
+      <% end %>
+      <%= @tp.t(child).name %>
+    </a>
+    <% end %>
+  </div>
+</div>
+<% else %>
+<a href="<%= template_entity_path(menu_item) %>" class="navbar-item" target="<%= '_blank' if menu_item.open_in_new_window? %>" rel="<%= 'noopener' if menu_item.open_in_new_window? %>">
+  <% if menu_item.css_class.present? %>
+  <i class="<%= menu_item.css_class %>"></i>
+  &nbsp;
   <% end %>
+  <%= @tp.t(menu_item).name %>
+</a>
+<% end %>
+<% end %>
 <% end %>
 <% if admin_user_signed_in? %>
-  <%= render partial: 'layouts/shared/admin_profile_menu', locals: { admin_panel: false } %>
+<%= render partial: 'layouts/shared/admin_profile_menu', locals: { admin_panel: false } %>
 <% end %>
 <% if current_client.enabled_languages.size > 1 && controller_name != 'errors' %>
-  <div class="navbar-item has-dropdown is-hoverable">
-    <a href="#" class="navbar-link">
-      <span class="fi fi-<%= current_language.flag %>"></span>
+<div class="navbar-item has-dropdown is-hoverable">
+  <a href="#" class="navbar-link">
+    <span class="fi fi-<%= current_language.flag %>"></span>
+    &nbsp;
+    <%= current_language.name %>
+  </a>
+  <div class="navbar-dropdown">
+    <% current_client.enabled_languages.each do |language| %>
+    <a href="<%= template_entity_path(@model, locale: language.locale) %>" class="navbar-item">
+      <span class="fi fi-<%= language.flag %>"></span>
       &nbsp;
-      <%= current_language.name %>
+      <%= language.name %>
     </a>
-    <div class="navbar-dropdown">
-      <% current_client.enabled_languages.each do |language| %>
-        <a href="<%= @model.path(language) %>" class="navbar-item">
-          <span class="fi fi-<%= language.flag %>"></span>
-          &nbsp;
-          <%= language.name %>
-        </a>
-      <% end %>
-    </div>
+    <% end %>
   </div>
+</div>
 <% end %>

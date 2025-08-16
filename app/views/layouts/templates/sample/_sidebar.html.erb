@@ -1,51 +1,49 @@
 <% client_cache 'Sidebar' do %>
-  <%
-    search_page = @tp.pages.find_by(template: 'search')&.decorate
+<%
+    search_page = @tp.pages.find_by(template: 'search')
     top_categories = @tp.categories.where(posts_count: 1..)
                                    .order(posts_count: :desc)
                                    .limit(5)
-                                   .map(&:decorate)
     top_tags = @tp.tags.where(posts_count: 1..)
                        .order(posts_count: :desc)
                        .limit(5)
-                       .map(&:decorate)
   %>
-  <aside>
-    <% if search_page %>
-      <form method="get" action="<%= search_page.path(current_language) %>" class="mb-5">
-        <div class="field has-addons">
-          <div class="control">
-            <input class="input" type="text" name="term" aria-label="<%= _('Search') %>" placeholder="<%= _('Search...') %>" />
-          </div>
-          <div class="control">
-            <button type="submit" class="button is-link"><%= _('Search') %></button>
-          </div>
-        </div>
-      </form>
-    <% end %>
-    <% if top_categories.any? %>
-      <nav class="mb-5">
-        <h2 class="title is-4 mb-3"><%= _('Top Categories') %></h2>
-        <ol class="pl-5">
-          <% top_categories.each do |category| %>
-            <li>
-              <a href="<%= category.path(current_language) %>"><%= @tp.t(category).name %> (<%= category.posts_count %>)</a>
-            </li>
-          <% end %>
-        </ol>
-      </nav>
-    <% end %>
-    <% if top_tags.any? %>
-      <nav class="mb-5">
-        <h2 class="title is-4 mb-3"><%= _('Top Tags') %></h2>
-        <ol class="pl-5">
-          <% top_tags.each do |tag| %>
-            <li>
-              <a href="<%= tag.path(current_language) %>"><%= @tp.t(tag).name %> (<%= tag.posts_count %>)</a>
-            </li>
-          <% end %>
-        </ol>
-      </nav>
-    <% end %>
-  </aside>
+<aside>
+  <% if search_page %>
+  <form method="get" action="<%= template_entity_path(search_page) %>" class="mb-5">
+    <div class="field has-addons">
+      <div class="control">
+        <input class="input" type="text" name="term" aria-label="<%= _('Search') %>" placeholder="<%= _('Search...') %>" />
+      </div>
+      <div class="control">
+        <button type="submit" class="button is-link"><%= _('Search') %></button>
+      </div>
+    </div>
+  </form>
+  <% end %>
+  <% if top_categories.any? %>
+  <nav class="mb-5">
+    <h2 class="title is-4 mb-3"><%= _('Top Categories') %></h2>
+    <ol class="pl-5">
+      <% top_categories.each do |category| %>
+      <li>
+        <a href="<%= template_entity_path(category) %>"><%= @tp.t(category).name %> (<%= category.posts_count %>)</a>
+      </li>
+      <% end %>
+    </ol>
+  </nav>
+  <% end %>
+  <% if top_tags.any? %>
+  <nav class="mb-5">
+    <h2 class="title is-4 mb-3"><%= _('Top Tags') %></h2>
+    <ol class="pl-5">
+      <% top_tags.each do |tag| %>
+      <li>
+        <a href="<%= template_entity_path(tag) %>"><%= @tp.t(tag).name %> (<%= tag.posts_count %>)</a>
+      </li>
+      <% end %>
+    </ol>
+  </nav>
+  <% end %>
+</aside>
 <% end %>
