@@ -168,3 +168,15 @@
     <div class="smart-table" id="posts-smart-table" data-autoload="<%= admin_category_posts_path(@category, hide_actions: true) %>"></div>
   </div>
 </article>
+<article class="card mt-5">
+  <div class="card-header">
+    <h2 class="card-header-title">
+      <i class="fa-solid fa-folder"></i>
+      &nbsp;
+      <%= _('Contents') %>
+    </h2>
+  </div>
+  <div class="card-content">
+    <div class="smart-table" id="contents-smart-table" data-autoload="<%= admin_category_contents_path(@category, hide_actions: true, show_order: true) %>"></div>
+  </div>
+</article>

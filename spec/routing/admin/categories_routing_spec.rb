@@ -44,6 +44,10 @@ RSpec.describe Admin::CategoriesController do
       expect(get: '/admin/categories/1/posts').to route_to('admin/posts#index', category_id: '1')
     end
 
+    it 'routes to contents #index' do
+      expect(get: '/admin/categories/1/contents').to route_to('admin/contents#index', category_id: '1')
+    end
+
     it 'routes to #translate' do
       expect(get: '/admin/categories/1/translate').to route_to('admin/categories#translate', id: '1')
     end

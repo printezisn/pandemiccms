@@ -13,7 +13,7 @@ module Admin
     def index
       @contents = Content.includes(:translations).where(client_id: current_client.id)
       if params[:category_id].present?
-        @contents = @contents.joins(:content_category_contents).where(content_category_contents: { content_category_id: params[:category_id] })
+        @contents = @contents.joins(:category_categorizables).where(category_categorizables: { category_id: params[:category_id] })
       end
 
       @contents = @contents.simple_text_search(params[:search])

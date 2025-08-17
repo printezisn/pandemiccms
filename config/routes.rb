@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       end
       resources :categories do
         resources :posts, only: :index
+        resources :contents, only: :index
 
         collection do
           get :tree
