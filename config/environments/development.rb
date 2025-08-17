@@ -3,6 +3,26 @@
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.sentry = false
+    Bullet.alert = false
+    Bullet.bullet_logger = true
+    Bullet.console = true
+    Bullet.rails_logger = true
+    Bullet.honeybadger = false
+    Bullet.bugsnag = false
+    Bullet.appsignal = false
+    Bullet.airbrake = false
+    Bullet.rollbar = false
+    Bullet.add_footer = true
+    Bullet.skip_html_injection = false
+    Bullet.skip_http_headers = false
+    Bullet.raise = false
+    Bullet.always_append_html_body = false
+    Bullet.skip_user_in_notification = false
+  end
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Make code changes take effect immediately without server restart.
