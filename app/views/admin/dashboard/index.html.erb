@@ -71,9 +71,18 @@
         </div>
       </article>
     </div>
-    <% if current_admin_user.supervisor? %>
     <div class="column is-one-quarter-widescreen is-half-desktop is-half-tablet is-full-mobile">
       <article class="message is-danger">
+        <div class="message-body">
+          <header>
+            <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} Content', '%{count} Contents', @contents_count) % { count: @contents_count } %></h2>
+          </header>
+        </div>
+      </article>
+    </div>
+    <% if current_admin_user.supervisor? %>
+    <div class="column is-one-quarter-widescreen is-half-desktop is-half-tablet is-full-mobile">
+      <article class="message is-info">
         <div class="message-body">
           <header>
             <h2 class="is-size-4 has-text-weight-bold"><%= n_('%{count} User', '%{count} Users', @users_count) % { count: @users_count } %></h2>

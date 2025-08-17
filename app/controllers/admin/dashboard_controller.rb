@@ -13,6 +13,7 @@ module Admin
       @posts_count = Post.where(client_id: current_client.id).count
       @draft_posts_count = Post.draft.where(author_id: current_admin_user.id).count
       @menus_count = Menu.where(client_id: current_client.id).count
+      @contents_count = Content.where(client_id: current_client.id).count
     end
   end
 end
