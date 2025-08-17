@@ -368,6 +368,27 @@ msgstr "Confirm your new password"
 msgid "Confirmed At"
 msgstr "Confirmed At"
 
+msgid "ContentCategory|Description"
+msgstr "Description"
+
+msgid "ContentCategory|Name"
+msgstr "Name"
+
+msgid "Content|Image"
+msgstr "Image"
+
+msgid "Content|Name"
+msgstr "Name"
+
+msgid "Content|Order"
+msgstr "Order"
+
+msgid "Content|Rich text"
+msgstr "Rich Text"
+
+msgid "Content|Simple text"
+msgstr "Simple Text"
+
 msgid "Copy"
 msgstr "Copy"
 
@@ -1732,6 +1753,30 @@ msgstr "The name may contain up to %{count} characters."
 
 msgid "activerecord.errors.models.client.attributes.time_zone.invalid"
 msgstr "The time zone is invalid."
+
+msgid "activerecord.errors.models.content.attributes.name.blank"
+msgstr "The name is required."
+
+msgid "activerecord.errors.models.content.attributes.name.taken"
+msgstr "The name is already used."
+
+msgid "activerecord.errors.models.content.attributes.name.too_long"
+msgstr "The name may contain up to %{count} characters."
+
+msgid "activerecord.errors.models.content.attributes.order.blank"
+msgstr "The order is required."
+
+msgid "activerecord.errors.models.content_category.attributes.description.too_long"
+msgstr "The description may contain up to %{count} characters."
+
+msgid "activerecord.errors.models.content_category.attributes.name.blank"
+msgstr "The name is required."
+
+msgid "activerecord.errors.models.content_category.attributes.name.taken"
+msgstr "The name is already used."
+
+msgid "activerecord.errors.models.content_category.attributes.name.too_long"
+msgstr "The name may contain up to %{count} characters."
 
 msgid "activerecord.errors.models.email_template.attributes.body.blank"
 msgstr "The body is required."

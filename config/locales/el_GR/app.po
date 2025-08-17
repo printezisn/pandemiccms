@@ -368,6 +368,27 @@ msgstr "Επιβεβαιώστε το νέο σας κωδικό"
 msgid "Confirmed At"
 msgstr "Επιβεβαιώθηκε Στις"
 
+msgid "ContentCategory|Description"
+msgstr "Περιγραφή"
+
+msgid "ContentCategory|Name"
+msgstr "Όνομα"
+
+msgid "Content|Image"
+msgstr "Εικόνα"
+
+msgid "Content|Name"
+msgstr "Όνομα"
+
+msgid "Content|Order"
+msgstr "Σειρά"
+
+msgid "Content|Rich text"
+msgstr "Πλούσιο Κείμενο"
+
+msgid "Content|Simple text"
+msgstr "Απλό Κείμενο"
+
 msgid "Copy"
 msgstr "Αντιγραφή"
 
@@ -1732,6 +1753,30 @@ msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} �
 
 msgid "activerecord.errors.models.client.attributes.time_zone.invalid"
 msgstr "Η ζώνη ώρας δεν είναι έγκυρη."
+
+msgid "activerecord.errors.models.content.attributes.name.blank"
+msgstr "Το όνομα είναι υποχρεωτικό."
+
+msgid "activerecord.errors.models.content.attributes.name.taken"
+msgstr "Το όνομα χρησιμοποιείται ήδη."
+
+msgid "activerecord.errors.models.content.attributes.name.too_long"
+msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.content.attributes.order.blank"
+msgstr "Η σειρά είναι υποχρεωτική."
+
+msgid "activerecord.errors.models.content_category.attributes.description.too_long"
+msgstr "Η περιγραφή μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.content_category.attributes.name.blank"
+msgstr "Το όνομα είναι υποχρεωτικό."
+
+msgid "activerecord.errors.models.content_category.attributes.name.taken"
+msgstr "Το όνομα χρησιμοποιείται ήδη."
+
+msgid "activerecord.errors.models.content_category.attributes.name.too_long"
+msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
 
 msgid "activerecord.errors.models.email_template.attributes.body.blank"
 msgstr "Το κείμενο είναι υποχρεωτικό."

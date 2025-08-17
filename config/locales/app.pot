@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-24 12:33+0000\n"
-"PO-Revision-Date: 2022-04-24 12:33+0000\n"
+"POT-Creation-Date: 2025-08-17 14:30+0300\n"
+"PO-Revision-Date: 2025-08-17 14:30+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -367,6 +367,27 @@ msgid "Confirm your new password"
 msgstr ""
 
 msgid "Confirmed At"
+msgstr ""
+
+msgid "ContentCategory|Description"
+msgstr ""
+
+msgid "ContentCategory|Name"
+msgstr ""
+
+msgid "Content|Image"
+msgstr ""
+
+msgid "Content|Name"
+msgstr ""
+
+msgid "Content|Order"
+msgstr ""
+
+msgid "Content|Rich text"
+msgstr ""
+
+msgid "Content|Simple text"
 msgstr ""
 
 msgid "Copy"
@@ -1732,6 +1753,30 @@ msgid "activerecord.errors.models.client.attributes.name.too_long"
 msgstr ""
 
 msgid "activerecord.errors.models.client.attributes.time_zone.invalid"
+msgstr ""
+
+msgid "activerecord.errors.models.content.attributes.name.blank"
+msgstr ""
+
+msgid "activerecord.errors.models.content.attributes.name.taken"
+msgstr ""
+
+msgid "activerecord.errors.models.content.attributes.name.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.content.attributes.order.blank"
+msgstr ""
+
+msgid "activerecord.errors.models.content_category.attributes.description.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.content_category.attributes.name.blank"
+msgstr ""
+
+msgid "activerecord.errors.models.content_category.attributes.name.taken"
+msgstr ""
+
+msgid "activerecord.errors.models.content_category.attributes.name.too_long"
 msgstr ""
 
 msgid "activerecord.errors.models.email_template.attributes.body.blank"

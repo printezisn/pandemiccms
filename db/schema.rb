@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_16_101646) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_17_105237) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -146,6 +146,38 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_16_101646) do
     t.string "email"
     t.boolean "cache_enabled", default: false, null: false
     t.integer "cache_duration"
+  end
+
+  create_table "content_categories", force: :cascade do |t|
+    t.integer "client_id", null: false
+    t.string "name", null: false
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id", "name"], name: "index_content_categories_on_client_id_and_name", unique: true
+    t.index ["client_id"], name: "index_content_categories_on_client_id"
+  end
+
+  create_table "content_category_contents", force: :cascade do |t|
+    t.integer "content_category_id", null: false
+    t.integer "content_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content_category_id", "content_id"], name: "index_content_category_contents_on_category_and_content", unique: true
+    t.index ["content_category_id"], name: "index_content_category_contents_on_content_category_id"
+    t.index ["content_id"], name: "index_content_category_contents_on_content_id"
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.integer "client_id", null: false
+    t.string "name", null: false
+    t.integer "order", default: 0, null: false
+    t.text "simple_text"
+    t.text "rich_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id", "name"], name: "index_contents_on_client_id_and_name", unique: true
+    t.index ["client_id"], name: "index_contents_on_client_id"
   end
 
   create_table "email_templates", force: :cascade do |t|
@@ -456,6 +488,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_16_101646) do
   add_foreign_key "client_domains", "clients"
   add_foreign_key "client_languages", "clients"
   add_foreign_key "client_languages", "languages"
+  add_foreign_key "content_categories", "clients"
+  add_foreign_key "content_category_contents", "content_categories"
+  add_foreign_key "content_category_contents", "contents"
+  add_foreign_key "contents", "clients"
   add_foreign_key "email_templates", "clients"
   add_foreign_key "indexed_entities", "clients"
   add_foreign_key "media", "clients"
