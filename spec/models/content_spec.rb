@@ -28,4 +28,27 @@ RSpec.describe Content do
     it_behaves_like 'Imageable'
     it_behaves_like 'Categorizable'
   end
+
+  describe '#text' do
+    subject { model.text }
+
+    context 'when rich_text is present' do
+      it { is_expected.to eq(model.rich_text) }
+    end
+
+    context 'when simple_text is present' do
+      before { model.rich_text = nil }
+
+      it { is_expected.to eq(model.simple_text) }
+    end
+
+    context 'when both rich_text and simple_text are absent' do
+      before do
+        model.rich_text = nil
+        model.simple_text = nil
+      end
+
+      it { is_expected.to eq('') }
+    end
+  end
 end

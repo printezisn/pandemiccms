@@ -21,13 +21,9 @@ module ThemeInitializer
                    parent_id: home_page.id, body: 'An unexpected error occurred. Please try again later.',
                    status: :published, published_at: Time.now.utc)
 
-      hero_category = Category.create!(name: 'Hero', template: 'default', visibility: :private, client_id: client.id)
+      Content.create!(name: 'Hero', rich_text: 'Insert subtitle', client_id: client.id)
+      Content.create!(name: 'Footer', rich_text: 'Insert footer text', client_id: client.id)
 
-      Post.create!(name: client.name, categories: [hero_category], template: 'default', visibility: :private,
-                   client_id: client.id, author_id: admin_user.id, body: 'Insert subtitle', status: :published,
-                   published_at: Time.now.utc)
-      Post.create!(name: 'Footer', template: 'default', visibility: :private, client_id: client.id, author_id: admin_user.id,
-                   body: 'Insert footer text', status: :published, published_at: Time.now.utc)
       Post.create!(name: 'My first post', template: 'without_author', client_id: client.id, author_id: admin_user.id,
                    body: 'This is my first post.', status: :published, published_at: Time.now.utc)
 

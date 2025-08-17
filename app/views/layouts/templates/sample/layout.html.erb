@@ -38,8 +38,8 @@
       </div>
     </nav>
     <% client_cache 'Hero' do %>
-    <% hero_post = @tp.t(@tp.posts(only_visible: false).joins(:categories).find_by(categories: { name: 'Hero' })) %>
-    <% if hero_post %>
+    <% hero_content = @tp.t(@tp.contents.find_by(name: 'Hero')) %>
+    <% if hero_content %>
     <div class="hero is-dark">
       <div class="hero-body">
         <div class="columns is-centered is-vcentered is-multiline is-tablet has-text-centered-mobile">
@@ -48,9 +48,9 @@
           </a>
           <div>
             <h1 class="title is-2">
-              <a href="<%= template_root_path %>"><%= hero_post.name %></a>
+              <a href="<%= template_root_path %>"><%= hero_content.name %></a>
             </h1>
-            <div class="subtitle"><%= hero_post.body&.html_safe %></div>
+            <div class="subtitle"><%= hero_content.rich_text&.html_safe %></div>
           </div>
         </div>
       </div>
@@ -74,9 +74,9 @@
   <footer>
     <div class="container">
       <%= render partial: "layouts/templates/#{current_client.template}/footer_menu" %>
-      <% footer_post = @tp.t(@tp.posts(only_visible: false).find_by(name: 'Footer')) %>
-      <% if footer_post %>
-      <div class="content"><%= footer_post.body.gsub('{year}', Time.now.year.to_s).html_safe %></div>
+      <% footer_content = @tp.t(@tp.contents.find_by(name: 'Footer')) %>
+      <% if footer_content %>
+      <div class="content"><%= footer_content.rich_text&.gsub('{year}', Time.now.year.to_s)&.html_safe %></div>
       <% end %>
     </div>
   </footer>

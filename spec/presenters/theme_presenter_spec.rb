@@ -62,6 +62,25 @@ describe ThemePresenter, type: :presenter do
     end
   end
 
+  describe '#contents' do
+    subject { presenter.contents(category_names:).to_a }
+
+    let(:category) { create(:category, client:) }
+    let!(:content_without_category) { create(:content, client:) }
+    let!(:content_with_category) { create(:content, client:, categories: [category]) }
+    let(:category_names) { [] }
+
+    context 'when no category names are provided' do
+      it { is_expected.to contain_exactly(content_without_category, content_with_category) }
+    end
+
+    context 'when category names are provided' do
+      let(:category_names) { [category.name] }
+
+      it { is_expected.to contain_exactly(content_with_category) }
+    end
+  end
+
   describe '#pages' do
     subject { presenter.pages(only_visible:).to_a }
 

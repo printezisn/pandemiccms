@@ -22,6 +22,16 @@ class ThemePresenter
     query
   end
 
+  def contents(category_names: [])
+    query = Content.includes(:translations).where(client_id:)
+    if category_names.any?
+      query = query.joins(:categories)
+                   .where(categories: { name: category_names })
+    end
+
+    query
+  end
+
   def pages(only_visible: true)
     query = Page.includes(:translations).where(client_id:)
     query = query.where(visibility: :public, status: :published) if admin_user.nil? && only_visible

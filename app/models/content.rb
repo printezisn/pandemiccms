@@ -16,4 +16,8 @@ class Content < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false, scope: :client_id }
   validates :order, presence: true, numericality: { only_integer: true }
+
+  def text
+    rich_text.presence || simple_text.presence || ''
+  end
 end
