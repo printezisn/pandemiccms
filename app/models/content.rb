@@ -10,10 +10,9 @@ class Content < ApplicationRecord
   include BoundSortable
   include Translatable
   include Imageable
+  include Categorizable
 
   belongs_to :client, inverse_of: :contents
-  has_many :content_category_contents, inverse_of: :content, dependent: :destroy
-  has_many :content_categories, through: :content_category_contents
 
   validates :name, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false, scope: :client_id }
   validates :order, presence: true, numericality: { only_integer: true }

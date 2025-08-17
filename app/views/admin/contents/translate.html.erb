@@ -1,0 +1,83 @@
+<%
+    content_for :title, _('Translate Content | %{client}') % { client: current_client.name }
+    content_for :description, _('Translate a content of %{client}') % { client: current_client.name }
+%>
+
+<%= render "admin/shared/error_messages", resource: @content %>
+<a class="button" href="<%= admin_content_path(@content) %>">
+  <i class="fa-solid fa-long-arrow-alt-left"></i>
+  &nbsp;
+  <%= _('Back') %>
+</a>
+<div class="columns is-multiline is-mobile mt-3">
+  <div class="column is-full-mobile is-full-tablet is-half-desktop">
+    <article class="card">
+      <header class="card-header">
+        <h1 class="card-header-title">
+          <i class="fa-solid fa-folder"></i>
+          &nbsp;
+          <%= _('Content') %>
+        </h1>
+      </header>
+      <div class="card-content">
+        <div class="field">
+          <span class="label"><%= _('Name') %></span>
+          <div class="control">
+            <input type="text" class="input" value="<%= @content.name %>" readonly />
+          </div>
+        </div>
+        <div class="field">
+          <span class="label"><%= _('Simple Text') %></span>
+          <div class="control">
+            <textarea rows="5" class="textarea" readonly><%= @content.simple_text %></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <span class="label"><%= _('Rich Text') %></span>
+          <div class="control">
+            <textarea id="original-content-body" rows="5" class="textarea rich-editor" readonly><%= @content.rich_text %></textarea>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="column is-full-mobile is-full-tablet is-half-desktop">
+    <article class="card">
+      <header class="card-header">
+        <h1 class="card-header-title">
+          <i class="fa-solid fa-folder"></i>
+          &nbsp;
+          <%= _('Translation') %>
+        </h1>
+        <%= render partial: 'admin/shared/languages_dropdown' %>
+      </header>
+      <div class="card-content">
+        <%= form_with(model: @translation, url: translate_admin_content_path(@content, translation_locale: translation_locale), method: :post) do |f| %>
+        <div class="field">
+          <%= f.label :name, class: 'label' %>
+          <div class="control">
+            <%= f.text_field :name, class: 'input' %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :simple_text, class: 'label' %>
+          <div class="control">
+            <%= f.text_area :simple_text, class: 'textarea', rows: 5 %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :rich_text, class: 'label' %>
+          <div class="control">
+            <%= f.text_area :rich_text, class: 'rich-editor' %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <%= f.submit _('Submit'), class: 'button is-success' %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </article>
+  </div>
+</div>

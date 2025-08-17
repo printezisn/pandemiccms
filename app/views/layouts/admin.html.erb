@@ -71,6 +71,10 @@
                 <i class="fa-solid fa-bars"></i>
                 <%= _('Menus') %>
               </a>
+              <a class="navbar-item<%= ' is-active' if controller_name == 'contents' %>" href="<%= admin_contents_path %>">
+                <i class="fa-solid fa-folder"></i>
+                <%= _('Contents') %>
+              </a>
               <a class="navbar-item<%= ' is-active' if controller_name == 'redirects' %>" href="<%= admin_redirects_path %>">
                 <i class="fa-solid fa-location-arrow"></i>
                 <%= _('Redirects') %>

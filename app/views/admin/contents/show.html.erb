@@ -1,0 +1,118 @@
+<%
+    content_for :title, _('Content Details | %{client}') % { client: current_client.name }
+    content_for :description, _('Details for a content of %{client}') % { client: current_client.name }
+%>
+
+<a class="button" href="<%= admin_contents_path %>">
+  <i class="fa-solid fa-long-arrow-alt-left"></i>
+  &nbsp;
+  <%= _('Back') %>
+</a>
+<div class="dropdown is-togglable">
+  <div class="dropdown-trigger">
+    <a href="javascript:void(0)" aria-haspopup="true" aria-controls="dropdown-menu" class="button">
+      <%= _('Actions') %>
+      &nbsp;
+      <i class="fa-solid fa-angle-down"></i>
+    </a>
+  </div>
+  <%= render partial: 'admin/contents/dropdown_menu', locals: { content: @content } %>
+  <%= render partial: 'admin/contents/delete_modal', locals: { content: @content } %>
+</div>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fa-solid fa-folder"></i>
+      &nbsp;
+      <%= _('Content Details') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label"></div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <% if @content.image.attached? %>
+            <img src="<%= rails_representation_url(@content.image.variant(resize_to_limit: [256, 256]), locale: nil) %>" width="256" height="256" alt="image" />
+            <% else %>
+            <i class="fa-solid fa-8x fa-question-circle"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Name') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @content.name %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Order') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @content.order %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Categories') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= @content.categories.map { |category| link_to category.name, admin_category_path(category) }.join(', ').html_safe %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Simple Text') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @content.simple_text %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Rich Text') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @content.rich_text&.html_safe %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Created At') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @content.created_at.to_fs %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Updated At') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @content.updated_at.to_fs %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

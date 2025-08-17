@@ -5,13 +5,12 @@ require './spec/models/concerns/simple_text_searchable'
 require './spec/models/concerns/bound_sortable'
 require './spec/models/concerns/translatable'
 require './spec/models/concerns/imageable'
+require './spec/models/concerns/categorizable'
 
 RSpec.describe Content do
   subject(:model) { build(:content) }
 
   it { is_expected.to belong_to(:client) }
-  it { is_expected.to have_many(:content_category_contents).dependent(:destroy) }
-  it { is_expected.to have_many(:content_categories).through(:content_category_contents) }
 
   it { is_expected.to validate_presence_of(:name).with_message('The name is required.') }
   it { is_expected.to validate_length_of(:name).is_at_most(255).with_message('The name may contain up to 255 characters.') }
@@ -27,5 +26,6 @@ RSpec.describe Content do
     it_behaves_like 'BoundSortable'
     it_behaves_like 'Translatable'
     it_behaves_like 'Imageable'
+    it_behaves_like 'Categorizable'
   end
 end

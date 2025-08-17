@@ -91,6 +91,12 @@ Rails.application.routes.draw do
         end
       end
       resources :redirects
+      resources :contents do
+        member do
+          get :translate
+          post :translate, to: 'contents#save_translation'
+        end
+      end
 
       get 'client/edit', to: 'clients#edit', as: :client_edit
       put 'client/edit', to: 'clients#update'

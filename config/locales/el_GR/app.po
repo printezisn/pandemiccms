@@ -198,7 +198,10 @@ msgid "Are you sure you want to delete this category ?"
 msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτή την κατηγορία ?"
 
 msgid "Are you sure you want to delete this client ?"
-msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτό το πελάτη ?"
+msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτόν τον πελάτη ?"
+
+msgid "Are you sure you want to delete this content ?"
+msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτό το περιεχόμενο ?"
 
 msgid "Are you sure you want to delete this medium ?"
 msgstr "Είστε σίγουρος/η ότι θέλετε να διαγράψετε αυτό το αρχείο ?"
@@ -368,11 +371,32 @@ msgstr "Επιβεβαιώστε το νέο σας κωδικό"
 msgid "Confirmed At"
 msgstr "Επιβεβαιώθηκε Στις"
 
+msgid "Content"
+msgstr "Περιεχόμενο"
+
+msgid "Content Details"
+msgstr "Λεπτομέρειες Περιεχομένου"
+
+msgid "Content Details | %{client}"
+msgstr "Λεπτομέρειες Περιεχομένου | %{client}"
+
 msgid "ContentCategory|Description"
 msgstr "Περιγραφή"
 
 msgid "ContentCategory|Name"
 msgstr "Όνομα"
+
+msgid "Contents"
+msgstr "Περιεχόμενα"
+
+msgid "Contents of %{client}"
+msgstr "Περιεχόμενα του %{client}"
+
+msgid "Contents | %{client}"
+msgstr "Περιεχόμενα | %{client}"
+
+msgid "Content|Category names"
+msgstr "Κατηγορίες"
 
 msgid "Content|Image"
 msgstr "Εικόνα"
@@ -406,6 +430,12 @@ msgstr "Δημιουργία Πελάτη"
 
 msgid "Create Client | %{client}"
 msgstr "Δημιουργία Πελάτη | %{client}"
+
+msgid "Create Content"
+msgstr "Δημιουργία Περιεχομένου"
+
+msgid "Create Content | %{client}"
+msgstr "Δημιουργία Περιεχομένου | %{client}"
 
 msgid "Create Menu"
 msgstr "Δημιουργία Μενού"
@@ -457,6 +487,9 @@ msgstr "Δημιουργία νέας κατηγορίας για το %{client}
 
 msgid "Create new client for %{client}"
 msgstr "Δημιουργία νέου πελάτη για το %{client}"
+
+msgid "Create new content for %{client}"
+msgstr "Δημιουργία νέου περιεχομένου για το %{client}"
 
 msgid "Create new menu for %{client}"
 msgstr "Δημιουργία νέου μενού για το %{client}"
@@ -512,6 +545,9 @@ msgstr "Λεπτομέρειες για την κατηγορία του %{clien
 msgid "Details for a client of %{client}"
 msgstr "Λεπτομέρειες για τον πελάτη του %{client}"
 
+msgid "Details for a content of %{client}"
+msgstr "Λεπτομέρειες για το περιεχόμενο του %{client}"
+
 msgid "Details for a menu item of %{client}"
 msgstr "Λεπτομέρειες για το στοιχείο μενού του %{client}"
 
@@ -565,6 +601,12 @@ msgstr "Επεξεργασία Κατηγορίας | %{client}"
 
 msgid "Edit Client | %{client}"
 msgstr "Επεξεργασία Πελάτη | %{client}"
+
+msgid "Edit Content"
+msgstr "Επεξεργασία Περιεχομένου"
+
+msgid "Edit Content | %{client}"
+msgstr "Επεξεργασία Περιεχομένου | %{client}"
 
 msgid "Edit Email Template"
 msgstr "Επεξεργασία Προτύπου Email"
@@ -625,6 +667,9 @@ msgstr "Επεξεργασία κατηγορίας του %{client}"
 
 msgid "Edit a client of %{client}"
 msgstr "Επεξεργασία πελάτη του %{client}"
+
+msgid "Edit a content of %{client}"
+msgstr "Επεξεργασία περιεχομένου του %{client}"
 
 msgid "Edit a menu item of %{client}"
 msgstr "Επεξεργασία στοιχείου μενού του %{client}"
@@ -887,6 +932,9 @@ msgstr "Δε βρέθηκαν κατηγορίες."
 msgid "No clients were found."
 msgstr "Δε βρέθηκαν πελάτες."
 
+msgid "No contents were found."
+msgstr "Δε βρέθηκαν περιεχόμενα."
+
 msgid "No email templates were found."
 msgstr "Δε βρέθηκαν πρότυπα email."
 
@@ -952,6 +1000,9 @@ msgstr "Μόνο δημοσιευμένα"
 
 msgid "Open in new window"
 msgstr "Άνοιγμα σε νέο παράθυρο"
+
+msgid "Order"
+msgstr "Σειρά"
 
 msgid "Page"
 msgstr "Σελίδα"
@@ -1145,6 +1196,9 @@ msgstr "Επαναφορά του κωδικού μου"
 msgid "Reset your password in %{client}"
 msgstr "Επαναφέρετε τον κωδικό σας στο %{client}"
 
+msgid "Rich Text"
+msgstr "Πλούσιο Κείμενο"
+
 msgid "Role"
 msgstr "Ρόλος"
 
@@ -1183,6 +1237,9 @@ msgstr "Σύνδεση στο %{client}"
 
 msgid "Sign up"
 msgstr "Εγγραφή"
+
+msgid "Simple Text"
+msgstr "Απλό Κείμενο"
 
 msgid "Slug"
 msgstr "Slug"
@@ -1297,6 +1354,18 @@ msgstr "Ο πελάτης διαγράφτηκε με επιτυχία."
 
 msgid "The client was successfully updated."
 msgstr "Ο πελάτης ανανεώθηκε με επιτυχία."
+
+msgid "The content was successfully created."
+msgstr "Το περιεχόμενο δημιουργήθηκε με επιτυχία."
+
+msgid "The content was successfully deleted."
+msgstr "Το περιεχόμενο διαγράφτηκε με επιτυχία."
+
+msgid "The content was successfully translated."
+msgstr "Το περιεχόμενο μεταφράστηκε με επιτυχία."
+
+msgid "The content was successfully updated."
+msgstr "Το περιεχόμενο ανανεώθηκε με επιτυχία."
 
 msgid "The email template was successfully translated."
 msgstr "Το πρότυπο email μεταφράστηκε με επιτυχία."
@@ -1445,6 +1514,9 @@ msgstr "Μετάφραση"
 msgid "Translate Category | %{client}"
 msgstr "Μετάφραση Κατηγορίας | %{client}"
 
+msgid "Translate Content | %{client}"
+msgstr "Μετάφραση Περιεχομένου | %{client}"
+
 msgid "Translate Email Template | %{client}"
 msgstr "Μετάφραση Προτύπου Email | %{client}"
 
@@ -1471,6 +1543,9 @@ msgstr "Μετάφραση Χρήστη | %{client}"
 
 msgid "Translate a category of %{client}"
 msgstr "Μετάφραση κατηγορίας του %{client}"
+
+msgid "Translate a content of %{client}"
+msgstr "Μετάφραση περιεχομένου του %{client}"
 
 msgid "Translate a menu item of %{client}"
 msgstr "Μετάφραση στοιχείου μενού του %{client}"

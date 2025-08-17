@@ -26,7 +26,6 @@ class Client < ApplicationRecord
   has_many :menus, inverse_of: :client, dependent: :destroy
   has_many :redirects, inverse_of: :client, dependent: :destroy
   has_many :indexed_entities, inverse_of: :client, dependent: :destroy
-  has_many :content_categories, inverse_of: :client, dependent: :destroy
   has_many :contents, inverse_of: :client, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
