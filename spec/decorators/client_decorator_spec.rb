@@ -19,7 +19,7 @@ RSpec.describe ClientDecorator do
       end
       let(:image_variant) { model.image.variant(resize_to_limit: size) }
       let(:expected_result) do
-        Rails.application.routes.url_helpers.rails_representation_url(image_variant, only_path: true)
+        Rails.application.routes.url_helpers.rails_representation_url(image_variant, only_path: true, locale: nil)
       end
 
       before { model.image.attach(file) }

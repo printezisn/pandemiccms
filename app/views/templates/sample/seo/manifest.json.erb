@@ -13,12 +13,12 @@
   "short_name": "<%= current_client.name %>",
   "description": "",
   "icons": [
-    <% icon_sizes.each do |size| %>
+    <% icon_sizes.each_with_index do |size, index| %>
       {
         "src": "<%= current_client.image_path_with_default([size, size]) %>",
         "sizes": "<%= size %>x<%= size %>",
         "type": "image/png"
-      }
+      }<%= ",\n" unless index == icon_sizes.size - 1 %>
     <% end %>
   ]
 }

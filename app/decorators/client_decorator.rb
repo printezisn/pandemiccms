@@ -9,7 +9,8 @@ class ClientDecorator < ApplicationDecorator
 
     Rails.application.routes.url_helpers.rails_representation_url(
       client.image.variant(resize_to_limit: size),
-      only_path: true
+      only_path: true,
+      locale: nil
     )
   end
 end

@@ -1,7 +1,7 @@
 <div class="navbar-item has-dropdown is-hoverable">
   <a class="navbar-link<%= ' is-active' if %w[profile password].include?(controller_name) %>" href="javascript:void(0)">
     <% if current_admin_user.image.attached? %>
-    <img src="<%= rails_representation_url(current_admin_user.image.variant(resize_to_limit: [32, 32])) %>" alt="<%= current_admin_user.username %>" width="32" height="32" />
+    <img src="<%= rails_representation_url(current_admin_user.image.variant(resize_to_limit: [32, 32]), locale: nil) %>" alt="<%= current_admin_user.username %>" width="32" height="32" />
     <% else %>
     <i class="fa-solid fa-user"></i>
     <% end %>

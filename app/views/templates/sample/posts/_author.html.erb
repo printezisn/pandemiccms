@@ -1,20 +1,19 @@
 <% client_cache ['Author', @model.author_id] do %>
-  <hr />
-  <section class="mb-5">
-    <h3 class="title is-4"><%= _('Author') %></h3>
-    <div class="columns">
-      <div class="column is-narrow">
-        <% if @model.author.image.attached? %>
-          <img src="<%= rails_representation_url(@model.author.image.variant(resize_to_limit: [200, 200])) %>" width="200" height="200"
-               alt="<%= @tp.t(@model.author).full_name %>" loading="lazy" />
-        <% else %>
-          <span class="no-image"></span>
-        <% end %>
-      </div>
-      <div class="column">
-        <h4 class="title is-5 mb-3"><%= @tp.t(@model.author).full_name %></h4>
-        <p><%= @tp.t(@model.author).description %></p>
-      </div>
+<hr />
+<section class="mb-5">
+  <h3 class="title is-4"><%= _('Author') %></h3>
+  <div class="columns">
+    <div class="column is-narrow">
+      <% if @model.author.image.attached? %>
+      <img src="<%= rails_representation_url(@model.author.image.variant(resize_to_limit: [200, 200]), locale: nil) %>" width="200" height="200" alt="<%= @tp.t(@model.author).full_name %>" loading="lazy" />
+      <% else %>
+      <span class="no-image"></span>
+      <% end %>
     </div>
-  </section>
+    <div class="column">
+      <h4 class="title is-5 mb-3"><%= @tp.t(@model.author).full_name %></h4>
+      <p><%= @tp.t(@model.author).description %></p>
+    </div>
+  </div>
+</section>
 <% end %>

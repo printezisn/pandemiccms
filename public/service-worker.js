@@ -38,7 +38,6 @@ self.addEventListener('fetch', async (event) => {
     'script',
     'image',
     'font',
-    'manifest',
     'style',
   ];
 

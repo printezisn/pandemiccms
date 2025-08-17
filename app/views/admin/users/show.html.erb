@@ -37,7 +37,7 @@
             <div class="field">
               <div class="control">
                 <% if @user.image.attached? %>
-                <img src="<%= rails_representation_url(@user.image.variant(resize_to_limit: [256, 256])) %>" width="256" height="256" alt="image" />
+                <img src="<%= rails_representation_url(@user.image.variant(resize_to_limit: [256, 256]), locale: nil) %>" width="256" height="256" alt="image" />
                 <% else %>
                 <i class="fa-solid fa-8x fa-user-circle"></i>
                 <% end %>
