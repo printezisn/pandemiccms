@@ -22,4 +22,16 @@ RSpec.describe 'Admin::Dashboard' do
       expect(response).to be_successful
     end
   end
+
+  describe 'GET /admin/dashboard/page_visits' do
+    let(:request) { get admin_dashboard_page_visits_path }
+
+    it_behaves_like 'admin user page'
+
+    it 'is successful' do
+      request
+
+      expect(response).to be_successful
+    end
+  end
 end

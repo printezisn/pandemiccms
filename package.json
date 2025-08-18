@@ -5,6 +5,7 @@
     "@fortawesome/fontawesome-free": "^7.0.0",
     "@rails/actioncable": "^8.0.0",
     "bulma": "^1.0.0",
+    "chart.js": "^4.5.0",
     "flag-icons": "^7.2.1",
     "jquery": "^3.6.0",
     "quill": "^2.0.3",

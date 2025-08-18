@@ -99,3 +99,5 @@ gem 'mission_control-jobs', '~> 1.1'
 gem 'vite_rails', '~> 3.0'
 
 gem 'ahoy_matey', '~> 5.4'
+
+gem 'groupdate', '~> 6.7'

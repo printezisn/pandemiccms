@@ -1,0 +1,41 @@
+<% query_params = request.query_parameters.slice(:search) %>
+<div class="columns is-multiline">
+  <div class="column is-full-tablet is-half-desktop">
+    <%= form_with(method: :get, html: { class: 'smart-table-search field has-addons', 'data-target' => 'page-visits-smart-table' }) do |t| %>
+    <% query_params.except(:search).each do |key, value| %>
+    <input type="hidden" name="<%= key %>" value="<%= value %>" />
+    <% end %>
+    <div class="control is-expanded">
+      <input type="text" name="search" placeholder="<%= _('Search...') %>" class="input" value="<%= params[:search] %>" />
+    </div>
+    <div class="control">
+      <button type="submit" class="button is-success" title="<%= _('Search') %>">
+        <i class="fa-solid fa-search"></i>
+      </button>
+    </div>
+    <% end %>
+  </div>
+</div>
+<table class="table is-striped is-hoverable is-fullwidth mt-2" data-chart-data="<%= @chart_data.to_json %>">
+  <thead>
+    <tr>
+      <th><%= render partial: 'admin/shared/table_header', locals: { field: 'properties', title: _('Page') } %></th>
+      <th><%= render partial: 'admin/shared/table_header', locals: { field: 'count_all', title: _('Visits') } %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @page_visits.none? %>
+    <tr>
+      <td colspan="5"><%= _('No page visits were found.') %></td>
+    </tr>
+    <% else %>
+    <% @page_visits.each do |page_visit| %>
+    <tr>
+      <td><%= page_visit.properties %></td>
+      <td><%= page_visit.count_all %></td>
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @page_visits %>

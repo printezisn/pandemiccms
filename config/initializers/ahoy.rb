@@ -2,8 +2,13 @@
 
 module Ahoy
   # Database store for Ahoy visits and events
-  class Store < Ahoy::DatabaseStore
+  class Store < DatabaseStore
     def authenticate(data); end
+
+    def track_event(data)
+      data[:client_id] = Current.fetch_client(request).id
+      super
+    end
   end
 end
 

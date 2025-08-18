@@ -117,6 +117,8 @@ Rails.application.routes.draw do
       post 'cache/clear', to: 'cache#clear', as: :cache_clear
       post 'index/start', to: 'index#start', as: :index_start
 
+      get 'dashboard/page_visits', to: 'dashboard#page_visits', as: :dashboard_page_visits
+
       root 'dashboard#index'
     end
 

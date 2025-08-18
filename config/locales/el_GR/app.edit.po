@@ -27,6 +27,11 @@ msgid_plural "%{count} Categories"
 msgstr[0] "%{count} Κατηγορία"
 msgstr[1] "%{count} Κατηγορίες"
 
+msgid "%{count} Content"
+msgid_plural "%{count} Contents"
+msgstr[0] "%{count} Περιεχόμενο"
+msgstr[1] "%{count} Περιεχόμενα"
+
 msgid "%{count} Medium"
 msgid_plural "%{count} Media"
 msgstr[0] "%{count} Αρχείο"
@@ -947,6 +952,9 @@ msgstr "Δε βρέθηκαν στοιχεία μενού."
 msgid "No menus were found."
 msgstr "Δε βρέθηκαν μενού."
 
+msgid "No page visits were found."
+msgstr "Δε βρέθηκαν επισκέψεις σελίδων."
+
 msgid "No pages were found."
 msgstr "Δε βρέθηκαν σελίδες."
 
@@ -1012,6 +1020,12 @@ msgstr "Λεπτομέρειες Σελίδας"
 
 msgid "Page Details | %{client}"
 msgstr "Λεπτομέρειες Σελίδας | %{client}"
+
+msgid "Page Visits"
+msgstr "Επισκέψεις Σελίδων"
+
+msgid "Page Visits (Last Month)"
+msgstr "Επισκέψεις Σελίδων (Τελευταίος Μήνας)"
 
 msgid "Pages"
 msgstr "Σελίδες"
@@ -1621,6 +1635,9 @@ msgstr "Χρήστες | %{client}"
 
 msgid "Visibility"
 msgstr "Ορατότητα"
+
+msgid "Visits"
+msgstr "Επισκέψεις"
 
 msgid "We're contacting you to notify you that your email has been changed to %{email}"
 msgstr "Επικοινωνούμε μαζί σας για να σας γνωστοποιήσουμε ότι το email σας έχει αλλάξει σε %{email}"

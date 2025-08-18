@@ -3,6 +3,8 @@
 module Admin
   # Admin dashboard controller
   class DashboardController < BaseController
+    PAGE_SIZE = 10
+
     def index
       @media_count = Medium.where(client_id: current_client.id).count
       @tags_count = Tag.where(client_id: current_client.id).count
@@ -14,6 +16,19 @@ module Admin
       @draft_posts_count = Post.draft.where(author_id: current_admin_user.id).count
       @menus_count = Menu.where(client_id: current_client.id).count
       @contents_count = Content.where(client_id: current_client.id).count
+    end
+
+    def page_visits
+      @page_visits = Ahoy::Event.where(client_id: current_client.id, name: 'Page Visit', time: 1.month.ago.to_date...)
+                                .simple_text_search(params[:search])
+      @chart_data = @page_visits.group_by_day(:time).count
+      @page_visits = @page_visits.group(:properties)
+                                 .bound_sort(params[:sort_by], params[:dir] || 'desc')
+                                 .select(:properties, 'COUNT(*) AS count_all')
+                                 .page(params[:page].to_i)
+                                 .per(PAGE_SIZE)
+
+      render 'page_visits', layout: nil
     end
   end
 end

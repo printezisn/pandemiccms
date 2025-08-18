@@ -1,6 +1,7 @@
 <%
     content_for :title, _('Dashboard | %{client}') % { client: current_client.name }
     content_for :description, _('Admin dashboard of %{client}') % { client: current_client.name }
+    content_for :scripts, 'entrypoints/admin/pages/dashboard/index/main.js'
 %>
 
 <article>
@@ -158,4 +159,19 @@
     </div>
   </article>
   <% end %>
+  <article class="card mt-5">
+    <header class="card-header">
+      <h2 class="card-header-title">
+        <i class="fa-solid fa-file"></i>
+        &nbsp;
+        <%= _('Page Visits (Last Month)') %>
+      </h2>
+    </header>
+    <div class="card-content">
+      <canvas id="page-visits-chart" data-label="<%= _('Page Visits') %>"></canvas>
+      <br />
+      <div class="smart-table" id="page-visits-smart-table" data-autoload="<%= admin_dashboard_page_visits_path %>">
+      </div>
+    </div>
+  </article>
 </article>

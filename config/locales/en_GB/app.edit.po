@@ -27,6 +27,11 @@ msgid_plural "%{count} Categories"
 msgstr[0] "%{count} Category"
 msgstr[1] "%{count} Categories"
 
+msgid "%{count} Content"
+msgid_plural "%{count} Contents"
+msgstr[0] "%{count} Content"
+msgstr[1] "%{count} Contents"
+
 msgid "%{count} Medium"
 msgid_plural "%{count} Media"
 msgstr[0] "%{count} Medium"
@@ -947,6 +952,9 @@ msgstr "No menu items were found."
 msgid "No menus were found."
 msgstr "No menus were found."
 
+msgid "No page visits were found."
+msgstr "No page visits were found."
+
 msgid "No pages were found."
 msgstr "No pages were found."
 
@@ -1012,6 +1020,12 @@ msgstr "Page Details"
 
 msgid "Page Details | %{client}"
 msgstr "Page Details | %{client}"
+
+msgid "Page Visits"
+msgstr "Page Visits"
+
+msgid "Page Visits (Last Month)"
+msgstr "Page Visits (Last Month)"
 
 msgid "Pages"
 msgstr "Pages"
@@ -1621,6 +1635,9 @@ msgstr "Users | %{client}"
 
 msgid "Visibility"
 msgstr "Visibility"
+
+msgid "Visits"
+msgstr "Visits"
 
 msgid "We're contacting you to notify you that your email has been changed to %{email}"
 msgstr "We're contacting you to notify you that your email has been changed to %{email}"

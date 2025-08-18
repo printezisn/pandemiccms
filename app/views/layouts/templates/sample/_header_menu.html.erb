@@ -39,14 +39,12 @@
 <div class="navbar-item has-dropdown is-hoverable">
   <a href="#" class="navbar-link">
     <span class="fi fi-<%= current_language.flag %>"></span>
-    &nbsp;
     <%= current_language.name %>
   </a>
   <div class="navbar-dropdown">
     <% current_client.enabled_languages.each do |language| %>
     <a href="<%= template_entity_path(@model, locale: language.locale) %>" class="navbar-item">
       <span class="fi fi-<%= language.flag %>"></span>
-      &nbsp;
       <%= language.name %>
     </a>
     <% end %>
