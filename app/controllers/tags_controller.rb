@@ -3,6 +3,7 @@
 # Tags controller
 class TagsController < ApplicationController
   include PathHelper
+  include Trackable
 
   # GET /t/1/slug
   def show
@@ -14,6 +15,8 @@ class TagsController < ApplicationController
 
     slug = @tp.t(@model).slug
     return redirect_to template_entity_path(@model), status: :moved_permanently if slug != params[:slug]
+
+    track_page_visit
 
     render "templates/#{current_client.template}/tags/#{@model.template.presence || 'default'}"
   end

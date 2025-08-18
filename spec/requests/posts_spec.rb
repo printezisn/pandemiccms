@@ -47,6 +47,10 @@ RSpec.describe 'posts' do
 
         expect(response).to be_successful
       end
+
+      it 'tracks a new page visit' do
+        expect { request }.to change { Ahoy::Event.where(name: 'Page Visit').count }.by(1)
+      end
     end
 
     context 'when the slug is different' do

@@ -3,6 +3,7 @@
 # Categories controller
 class CategoriesController < ApplicationController
   include PathHelper
+  include Trackable
 
   # GET /c/1/slug
   def show
@@ -14,6 +15,8 @@ class CategoriesController < ApplicationController
 
     slug = @tp.t(@model).slug
     return redirect_to template_entity_path(@model), status: :moved_permanently if slug != params[:slug]
+
+    track_page_visit
 
     render "templates/#{current_client.template}/categories/#{@model.template.presence || 'default'}"
   end

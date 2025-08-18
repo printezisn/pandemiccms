@@ -97,3 +97,5 @@ gem 'solid_queue', '~> 1.2'
 gem 'mission_control-jobs', '~> 1.1'
 
 gem 'vite_rails', '~> 3.0'
+
+gem 'ahoy_matey', '~> 5.4'
