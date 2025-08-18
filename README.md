@@ -10,11 +10,13 @@ A CMS with all the necessary components to help you create fast and amazing webs
   - Tags
   - Pages
   - Menus
+  - Contents
   - Media
   - Settings
   - Email Templates
   - Users
   - Redirects
+  - Page Analytics
 - The majority of web applications need a dashboard to keep track of users, edit settings and handle content. Pandemic CMS is designed to be easily extended and become that dashboard for your web applications, from simple blogs to big SaaS.
 - Many applications need to support multiple languages. This is easy for static content, but what about dynamic content ? Pandemic CMS is designed to support multilingual content.
 - Pandemic CMS is designed to be multi-tenant, meaning that it is possible to support multiple applications/clients on the same instance.
