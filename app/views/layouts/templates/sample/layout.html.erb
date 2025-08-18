@@ -50,7 +50,7 @@
             <h1 class="title is-2">
               <a href="<%= template_root_path %>"><%= hero_content.name %></a>
             </h1>
-            <div class="subtitle"><%= hero_content.rich_text&.html_safe %></div>
+            <div class="subtitle"><%= hero_content.text.html_safe %></div>
           </div>
         </div>
       </div>
@@ -76,7 +76,7 @@
       <%= render partial: "layouts/templates/#{current_client.template}/footer_menu" %>
       <% footer_content = @tp.t(@tp.contents.find_by(name: 'Footer')) %>
       <% if footer_content %>
-      <div class="content"><%= footer_content.rich_text&.gsub('{year}', Time.now.year.to_s)&.html_safe %></div>
+      <div class="content"><%= footer_content.text.gsub('{year}', Time.now.year.to_s).html_safe %></div>
       <% end %>
     </div>
   </footer>
