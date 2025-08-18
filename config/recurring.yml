@@ -16,7 +16,11 @@ default: &default
   index_all:
     class: IndexAllJob
     args: ["", true]
-    schedule: every minute
+    schedule: every 5 minutes
+  delete_old_events:
+    class: DeleteOldEventsJob
+    args: [""]
+    schedule: every 1 hour
 
 development:
   <<: *default

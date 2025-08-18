@@ -22,6 +22,7 @@ RSpec.describe Client do
   it { is_expected.to have_many(:redirects).dependent(:destroy) }
   it { is_expected.to have_many(:indexed_entities).dependent(:destroy) }
   it { is_expected.to have_many(:contents).dependent(:destroy) }
+  it { is_expected.to have_many(:ahoy_events).class_name('::Ahoy::Event').dependent(:destroy) }
 
   it { is_expected.to validate_presence_of(:name).with_message('The name is required.') }
 

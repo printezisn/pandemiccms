@@ -27,6 +27,7 @@ class Client < ApplicationRecord
   has_many :redirects, inverse_of: :client, dependent: :destroy
   has_many :indexed_entities, inverse_of: :client, dependent: :destroy
   has_many :contents, inverse_of: :client, dependent: :destroy
+  has_many :ahoy_events, inverse_of: :client, class_name: '::Ahoy::Event', dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :email, length: { maximum: 255 }
