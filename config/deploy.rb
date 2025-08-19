@@ -15,10 +15,6 @@ set :deploy_to, '/home/myuser/pandemiccms'
 set :rbenv_type, :user
 set :rbenv_ruby, '3.4.5' # your installed version
 
-set :puma_service_unit_name, 'pandemiccms'
-set :puma_systemctl_user, :myuser
-set :puma_enable_socket_service, true
-
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -30,11 +26,12 @@ set :puma_enable_socket_service, true
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, 'config/credentials/production.key'
+append :linked_files, 'config/credentials/production.key', 'config/puma.rb'
+set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "vendor", "storage"
-append :linked_dirs, 'log', 'storage', 'db/storage'
+append :linked_dirs, 'log', 'storage', 'db/storage', 'tmp/sockets', 'tmp/pids', 'tmp/cache', 'public/system', 'vendor'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
