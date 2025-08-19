@@ -52,3 +52,41 @@ set :keep_releases, 5
 # set :ssh_options, verify_host_key: :secure
 
 set :default_env, { path: '$HOME/.nvm/versions/node/v22.18.0/bin:$PATH' }
+
+set :solid_queue_systemd_unit_name, 'pandemiccms_queue_production.service'
+
+namespace :solid_queue do
+  desc 'Kill solid_queue'
+  task :kill do
+    on roles(:app) do
+      execute :systemctl, '--user', 'kill', '-s', 'SIGTERM', fetch(:solid_queue_systemd_unit_name), raise_on_non_zero_exit: false
+    end
+  end
+
+  desc 'Stop solid_queue'
+  task :stop do
+    on roles(:app) do
+      execute :systemctl, '--user', 'kill', '-s', 'SIGQUIT', fetch(:solid_queue_systemd_unit_name), raise_on_non_zero_exit: false
+    end
+  end
+
+  desc 'Start solid_queue'
+  task :start do
+    on roles(:app) do
+      execute :systemctl, '--user', 'start', fetch(:solid_queue_systemd_unit_name)
+    end
+  end
+
+  desc 'Restart solid_queue'
+  task :restart do
+    on roles(:app) do
+      execute :systemctl, '--user', 'restart', fetch(:solid_queue_systemd_unit_name)
+    end
+  end
+end
+
+# SolidQueue hooks
+after 'deploy:starting', 'solid_queue:kill'
+after 'deploy:updated', 'solid_queue:stop'
+after 'deploy:published', 'solid_queue:start'
+after 'deploy:failed', 'solid_queue:restart'
