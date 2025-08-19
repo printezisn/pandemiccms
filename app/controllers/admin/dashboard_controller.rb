@@ -21,7 +21,11 @@ module Admin
     def page_visits
       @page_visits = Ahoy::Event.where(client_id: current_client.id, name: 'Page Visit', time: 1.month.ago.to_date...)
                                 .simple_text_search(params[:search])
-      @chart_data = @page_visits.group_by_day(:time).count
+      @visits_by_date = @page_visits.group_by_day(:time).count
+      @chart_data = {}
+      (1.month.ago.to_date..Time.zone.now.to_date).each do |date|
+        @chart_data[date] = @visits_by_date[date] || 0
+      end
       @page_visits = @page_visits.group(:properties)
                                  .bound_sort(params[:sort_by], params[:dir] || 'desc')
                                  .select(:properties, 'COUNT(*) AS count_all')
