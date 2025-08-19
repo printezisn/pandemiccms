@@ -9,3 +9,7 @@ test:
 
 production:
   <<: *default
+  type: redis
+  host: redis
+  port: 6379
+  password: "1234"

@@ -9,3 +9,7 @@ test:
 
 production:
   <<: *default
+  type: elasticsearch
+  url: http://elasticsearch:9200
+  username: elastic
+  password: "1234"

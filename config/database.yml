@@ -17,4 +17,8 @@ test:
 
 production:
   <<: *default
-  database: db/storage/production.sqlite3
+  adapter: mysql2
+  host: database
+  database: pandemiccms_production
+  username: pandemiccms
+  password: "1234"
