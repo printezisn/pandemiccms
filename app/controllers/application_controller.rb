@@ -74,6 +74,14 @@ class ApplicationController < ActionController::Base
     { locale: current_locale }
   end
 
+  def after_sign_out_path_for(_resource_or_scope)
+    root_path(locale: nil)
+  end
+
+  def after_sign_in_path_for(_resource_or_scope)
+    session[:admin_user_return_to] || admin_root_path
+  end
+
   private
 
   def fetch_current_language

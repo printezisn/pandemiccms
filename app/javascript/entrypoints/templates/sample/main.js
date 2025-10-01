@@ -30,6 +30,20 @@ if (document.readyState === 'complete') {
   });
 }
 
+fetch(
+  '/analytics/track_visit',
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      [document.querySelector('meta[name="csrf-param"]').content]: document.querySelector('meta[name="csrf-token"]').content,
+      path: window.location.pathname + window.location.search,
+    }),
+  }
+);
+
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/service-worker.js');
 }

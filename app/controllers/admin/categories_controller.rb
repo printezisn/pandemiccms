@@ -141,8 +141,8 @@ module Admin
     end
 
     def category_params
-      params.expect(category: %i[image should_remove_image name slug description body
-                                 template visibility parent_id])
+      params.expect(category: %i[image image_description should_remove_image name slug description body
+                                 template visibility parent_id meta_title meta_description])
     end
 
     def translation_params

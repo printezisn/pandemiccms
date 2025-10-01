@@ -1,7 +1,7 @@
 <% page = [params[:page].to_i, 1].max %>
 
 <% content_for :meta do %>
-  <%= render partial: "templates/#{current_client.template}/tags/meta", locals: { page: page } %>
+<%= render partial: "templates/#{current_client.template}/tags/meta", locals: { page: page } %>
 <% end %>
 
 <article>
@@ -11,8 +11,8 @@
   </header>
   <div class="content mb-5"><%= @tp.t(@model).body&.html_safe %></div>
 
-  <% client_cache ['TagPosts', @model.id, page] do %>
-    <%
+  <% client_view_cache ['TagPosts', @model.id, page] do %>
+  <%
       posts = @tp.posts.includes(:image_attachment)
                        .joins(:tag_taggables)
                        .where(tag_taggables: { tag_id: @model.id })
@@ -20,6 +20,6 @@
                        .page(page)
                        .per(10)
     %>
-   <%= render partial: "templates/#{current_client.template}/shared/post_list", locals: { posts: posts } %>
+  <%= render partial: "templates/#{current_client.template}/shared/post_list", locals: { posts: posts } %>
   <% end %>
 </article>

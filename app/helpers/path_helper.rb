@@ -31,7 +31,8 @@ module PathHelper
             else
               "#{current_client.template}_#{entity.class.to_s.downcase}"
             end
-    route_params = Rails.application.routes.routes.find { |r| r.name == route }.path.names
+    route_params = Rails.application.routes.routes.find { |r| r.name == route }&.path&.names
+    return nil if route_params.nil?
 
     all_params = parameters.clone
     locale = parameters[:locale]

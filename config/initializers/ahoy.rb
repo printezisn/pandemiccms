@@ -23,3 +23,4 @@ Ahoy.geocode = false
 Ahoy.mask_ips = true
 Ahoy.cookies = :none
 Ahoy.track_bots = true if Rails.env.test? # always track bots in test environment
+Ahoy.server_side_visits = :when_needed

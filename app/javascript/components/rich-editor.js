@@ -1,8 +1,25 @@
 import Quill from 'quill';
+import Link from 'quill/formats/link';
 import '../styles/admin/rich-editor.scss';
 
+class MyLink extends Link {
+  static create (value) {
+    const node = super.create(value);
+    value = this.sanitize(value);
+    node.setAttribute('href', value);
+    if (!value.startsWith('http://') && !value.startsWith('https://')) {
+      node.removeAttribute('target');
+      node.removeAttribute('rel');
+    }
+
+    return node;
+  }
+}
+
+Quill.register(MyLink);
+
 const toolbarOptions = [
-  [{ header: [2, 3, 4, 5, 6, false] }],
+  [{ header: [1, 2, 3, 4, 5, 6, false] }],
   ['bold', 'italic', 'underline', 'strike'],
   ['blockquote', 'code-block'],
   ['link', 'image', 'video'],
@@ -86,7 +103,9 @@ const initRichEditor = (editor) => {
   });
 
   quill.on('text-change', () => {
-    editor.value = quill.root.innerHTML;
+    editor.value = quill.getText().trim() !== ''
+      ? quill.getSemanticHTML().replace(/&nbsp;/g, ' ')
+      : '';
   });
 };
 

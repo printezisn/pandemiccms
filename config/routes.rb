@@ -126,16 +126,20 @@ Rails.application.routes.draw do
       resources :clients
     end
 
-    Rails.root.glob('config/routes/*.rb').each do |file|
-      template = File.basename(file, '.rb')
-
-      constraints(TemplateConstraint.new(template)) do
-        draw(template.to_sym)
-      end
-    end
-
     match '/404', to: 'errors#not_found', via: :all
     match '/500', to: 'errors#internal_server_error', via: :all
+
+    post '/analytics/track_visit', to: 'analytics#track_visit'
+
+    constraints(TemplateConstraint.new('sample')) do
+      get 'pg/:id/:slug', to: 'pages#show', as: :sample_page
+      get 'p/:id/:slug', to: 'posts#show', as: :sample_post
+      get 't/:id/:slug', to: 'tags#show', as: :sample_tag
+      get 'c/:id/:slug', to: 'categories#show', as: :sample_category
+      get '/sitemap.xml', to: 'seo#sitemap', format: 'xml', as: :sample_sitemap
+      get '/robots.txt', to: 'seo#robots', format: 'text', as: :sample_robots
+      get '/manifest.webmanifest', to: 'seo#manifest', format: 'json', as: :sample_manifest
+    end
 
     root 'pages#index'
   end

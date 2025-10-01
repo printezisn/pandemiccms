@@ -4,7 +4,7 @@
 class Category < ApplicationRecord
   SORTABLE_FIELDS = %i[name created_at updated_at].freeze
   TEXT_SEARCHABLE_FIELDS = %i[name].freeze
-  TRANSLATABLE_FIELDS = %w[name slug description body].freeze
+  TRANSLATABLE_FIELDS = %w[name slug description body image_description meta_title meta_description].freeze
   INDEXABLE_FIELDS_FOR_ASSOCIATIONS = %w[name visibility].freeze
 
   include SimpleTextSearchable
@@ -32,6 +32,9 @@ class Category < ApplicationRecord
                    length: { maximum: 255 },
                    uniqueness: { case_sensitive: false, scope: [:client_id] }
   validates :slug, length: { maximum: 255 }
+  validates :image_description, length: { maximum: 255 }
+  validates :meta_title, length: { maximum: 60 }
+  validates :meta_description, length: { maximum: 160 }
 
   private
 

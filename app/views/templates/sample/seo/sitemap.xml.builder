@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-client_cache 'Sitemap' do
+client_view_cache 'Sitemap' do
   xml.instruct! :xml, version: '1.0'
   xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9', 'xmlns:xhtml' => 'http://www.w3.org/1999/xhtml' do
     @tp.pages.find_each do |page|

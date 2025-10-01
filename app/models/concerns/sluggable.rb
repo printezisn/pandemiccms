@@ -15,7 +15,6 @@ module Sluggable
   end
 
   def generate_slug
-    transliterate = :greek if /[\u0370-\u03FF\u1F00-\u1FFF]/.match?(name)
-    self.slug = name.to_slug.normalize(transliterate:).to_s
+    self.slug = Slugifier.new(name).call
   end
 end

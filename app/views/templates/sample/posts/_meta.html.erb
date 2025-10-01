@@ -1,4 +1,4 @@
-<% client_cache ['PostMeta', @model.id] do %>
+<% client_view_cache ['PostMeta', @model.id] do %>
 <%
     url = template_entity_url(@model)
     @post_category = @tp.categories(post_id: @model.id).first

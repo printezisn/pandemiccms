@@ -160,8 +160,8 @@ module Admin
     end
 
     def post_params
-      params.expect(post: [:image, :should_remove_image, :name, :slug, :description, :body,
-                           :visibility, :template, { category_names: [], tag_names: [] }])
+      params.expect(post: [:image, :image_description, :should_remove_image, :name, :slug, :description, :body,
+                           :visibility, :template, :meta_title, :meta_description, { category_names: [], tag_names: [] }])
     end
 
     def translation_params

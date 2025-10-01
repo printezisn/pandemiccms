@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 15:30+0300\n"
-"PO-Revision-Date: 2025-08-18 15:30+0300\n"
+"POT-Creation-Date: 2025-10-01 17:18+0300\n"
+"PO-Revision-Date: 2025-10-01 17:18+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -296,6 +296,15 @@ msgstr ""
 msgid "Category|Image"
 msgstr ""
 
+msgid "Category|Image description"
+msgstr ""
+
+msgid "Category|Meta description"
+msgstr ""
+
+msgid "Category|Meta title"
+msgstr ""
+
 msgid "Category|Name"
 msgstr ""
 
@@ -407,6 +416,9 @@ msgstr ""
 msgid "Content|Image"
 msgstr ""
 
+msgid "Content|Image description"
+msgstr ""
+
 msgid "Content|Name"
 msgstr ""
 
@@ -417,6 +429,9 @@ msgid "Content|Rich text"
 msgstr ""
 
 msgid "Content|Simple text"
+msgstr ""
+
+msgid "Content|Title"
 msgstr ""
 
 msgid "Copy"
@@ -887,6 +902,9 @@ msgstr ""
 msgid "Menu|Name"
 msgstr ""
 
+msgid "Meta Information"
+msgstr ""
+
 msgid "Middle Name"
 msgstr ""
 
@@ -1049,6 +1067,15 @@ msgstr ""
 msgid "Page|Image"
 msgstr ""
 
+msgid "Page|Image description"
+msgstr ""
+
+msgid "Page|Meta description"
+msgstr ""
+
+msgid "Page|Meta title"
+msgstr ""
+
 msgid "Page|Name"
 msgstr ""
 
@@ -1110,6 +1137,15 @@ msgid "Post|Description"
 msgstr ""
 
 msgid "Post|Image"
+msgstr ""
+
+msgid "Post|Image description"
+msgstr ""
+
+msgid "Post|Meta description"
+msgstr ""
+
+msgid "Post|Meta title"
 msgstr ""
 
 msgid "Post|Name"
@@ -1322,6 +1358,12 @@ msgstr ""
 msgid "Tag|Description"
 msgstr ""
 
+msgid "Tag|Meta description"
+msgstr ""
+
+msgid "Tag|Meta title"
+msgstr ""
+
 msgid "Tag|Name"
 msgstr ""
 
@@ -1515,6 +1557,9 @@ msgid "The user's name."
 msgstr ""
 
 msgid "The user's unconfirmed email address."
+msgstr ""
+
+msgid "Title"
 msgstr ""
 
 msgid "Top Categories"
@@ -1811,6 +1856,15 @@ msgstr ""
 msgid "activerecord.errors.models.admin_user.attributes.username.too_long"
 msgstr ""
 
+msgid "activerecord.errors.models.category.attributes.image_description.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.category.attributes.meta_description.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.category.attributes.meta_title.too_long"
+msgstr ""
+
 msgid "activerecord.errors.models.category.attributes.name.blank"
 msgstr ""
 
@@ -1847,6 +1901,9 @@ msgstr ""
 msgid "activerecord.errors.models.client.attributes.time_zone.invalid"
 msgstr ""
 
+msgid "activerecord.errors.models.content.attributes.image_description.too_long"
+msgstr ""
+
 msgid "activerecord.errors.models.content.attributes.name.blank"
 msgstr ""
 
@@ -1857,6 +1914,9 @@ msgid "activerecord.errors.models.content.attributes.name.too_long"
 msgstr ""
 
 msgid "activerecord.errors.models.content.attributes.order.blank"
+msgstr ""
+
+msgid "activerecord.errors.models.content.attributes.title.too_long"
 msgstr ""
 
 msgid "activerecord.errors.models.content_category.attributes.description.too_long"
@@ -1907,6 +1967,15 @@ msgstr ""
 msgid "activerecord.errors.models.menu_item.attributes.parent_id.circle"
 msgstr ""
 
+msgid "activerecord.errors.models.page.attributes.image_description.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.page.attributes.meta_description.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.page.attributes.meta_title.too_long"
+msgstr ""
+
 msgid "activerecord.errors.models.page.attributes.name.blank"
 msgstr ""
 
@@ -1925,6 +1994,15 @@ msgstr ""
 msgid "activerecord.errors.models.page.attributes.slug.too_long"
 msgstr ""
 
+msgid "activerecord.errors.models.post.attributes.image_description.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.post.attributes.meta_description.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.post.attributes.meta_title.too_long"
+msgstr ""
+
 msgid "activerecord.errors.models.post.attributes.name.blank"
 msgstr ""
 
@@ -1941,6 +2019,12 @@ msgid "activerecord.errors.models.redirect.attributes.from.blank"
 msgstr ""
 
 msgid "activerecord.errors.models.redirect.attributes.to.blank"
+msgstr ""
+
+msgid "activerecord.errors.models.tag.attributes.meta_description.too_long"
+msgstr ""
+
+msgid "activerecord.errors.models.tag.attributes.meta_title.too_long"
 msgstr ""
 
 msgid "activerecord.errors.models.tag.attributes.name.blank"

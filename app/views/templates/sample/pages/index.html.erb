@@ -1,7 +1,7 @@
 <% page = [params[:page].to_i, 1].max %>
 
 <% content_for :meta do %>
-  <%= render partial: "templates/#{current_client.template}/pages/meta", locals: { page: page } %>
+<%= render partial: "templates/#{current_client.template}/pages/meta", locals: { page: page } %>
 <% end %>
 
 <article>
@@ -10,8 +10,8 @@
   </header>
   <div class="content mb-5"><%= @tp.t(@model).body&.html_safe %></div>
 
-  <% client_cache ['IndexPagePosts', page] do %>
-    <% posts = @tp.posts.includes(:image_attachment).order(published_at: :desc, id: :desc).page(page).per(10) %>
-    <%= render partial: "templates/#{current_client.template}/shared/post_list", locals: { posts: posts } %>
+  <% client_view_cache ['IndexPagePosts', page] do %>
+  <% posts = @tp.posts.includes(:image_attachment).order(published_at: :desc, id: :desc).page(page).per(10) %>
+  <%= render partial: "templates/#{current_client.template}/shared/post_list", locals: { posts: posts } %>
   <% end %>
 </article>

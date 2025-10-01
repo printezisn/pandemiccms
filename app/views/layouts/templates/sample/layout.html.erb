@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-  <% client_cache 'Favicon' do %>
+  <% client_view_cache 'Favicon' do %>
   <link rel="icon" href="<%= current_client.image_path_with_default([32, 32], '/favicon.png') %>" />
   <% end %>
   <meta name="theme-color" content="#404654" />
@@ -37,7 +37,7 @@
         </div>
       </div>
     </nav>
-    <% client_cache 'Hero' do %>
+    <% client_view_cache 'Hero' do %>
     <% hero_content = @tp.t(@tp.contents.find_by(name: 'Hero')) %>
     <% if hero_content %>
     <div class="hero is-dark">
@@ -70,7 +70,7 @@
     </div>
   </main>
 
-  <% client_cache 'Footer' do %>
+  <% client_view_cache 'Footer' do %>
   <footer>
     <div class="container">
       <%= render partial: "layouts/templates/#{current_client.template}/footer_menu" %>

@@ -168,8 +168,8 @@ module Admin
     end
 
     def page_params
-      params.expect(page: [:image, :should_remove_image, :name, :slug, :description, :body,
-                           :visibility, :template, :parent_id, { tag_names: [] }])
+      params.expect(page: [:image, :image_description, :should_remove_image, :name, :slug, :description, :body,
+                           :visibility, :template, :parent_id, :meta_title, :meta_description, { tag_names: [] }])
     end
 
     def translation_params

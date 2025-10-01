@@ -1,4 +1,4 @@
-<% client_cache 'Sidebar' do %>
+<% client_view_cache 'Sidebar' do %>
 <%
     search_page = @tp.pages.find_by(template: 'search')
     top_categories = @tp.categories.where(posts_count: 1..)

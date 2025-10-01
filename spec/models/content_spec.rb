@@ -16,6 +16,8 @@ RSpec.describe Content do
   it { is_expected.to validate_length_of(:name).is_at_most(255).with_message('The name may contain up to 255 characters.') }
   it { is_expected.to validate_uniqueness_of(:name).case_insensitive.scoped_to([:client_id]).with_message('The name is already used.') }
   it { is_expected.to validate_presence_of(:order).with_message('The order is required.') }
+  it { is_expected.to validate_length_of(:image_description).is_at_most(255).with_message('The image description may contain up to 255 characters.') }
+  it { is_expected.to validate_length_of(:title).is_at_most(255).with_message('The title may contain up to 255 characters.') }
 
   describe 'concerns' do
     subject(:model) { create(:content) }
@@ -27,6 +29,20 @@ RSpec.describe Content do
     it_behaves_like 'Translatable'
     it_behaves_like 'Imageable'
     it_behaves_like 'Categorizable'
+  end
+
+  describe '#title_or_name' do
+    subject { model.title_or_name }
+
+    context 'when title is present' do
+      it { is_expected.to eq(model.title) }
+    end
+
+    context 'when title is not present' do
+      before { model.title = nil }
+
+      it { is_expected.to eq(model.name) }
+    end
   end
 
   describe '#text' do
@@ -49,6 +65,25 @@ RSpec.describe Content do
       end
 
       it { is_expected.to eq('') }
+    end
+  end
+
+  describe '#to_slug' do
+    subject { model.to_slug }
+
+    context 'when title is present' do
+      before { model.title = 'Test Title' }
+
+      it { is_expected.to eq('test-title') }
+    end
+
+    context 'when title is not present' do
+      before do
+        model.title = nil
+        model.name = 'Test Name'
+      end
+
+      it { is_expected.to eq('test-name') }
     end
   end
 end

@@ -3,13 +3,10 @@
 # Pages controller
 class PagesController < ApplicationController
   include PathHelper
-  include Trackable
 
   # GET /
   def index
     @model = @tp.pages.find_by!(template: 'index')
-
-    track_page_visit
 
     render "templates/#{current_client.template}/pages/#{@model.template}"
   end
@@ -24,8 +21,6 @@ class PagesController < ApplicationController
 
     slug = @tp.t(@model).slug
     return redirect_to template_entity_path(@model), status: :moved_permanently if slug != params[:slug]
-
-    track_page_visit
 
     render "templates/#{current_client.template}/pages/#{@model.template.presence || 'default'}"
   end

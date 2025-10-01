@@ -20,10 +20,24 @@
         </h1>
       </header>
       <div class="card-content">
+        <% if @content.image.attached? %>
+        <div class="field">
+          <span class="label"><%= _('Content|Image description') %></span>
+          <div class="control">
+            <input type="text" class="input" value="<%= @content.image_description %>" readonly />
+          </div>
+        </div>
+        <% end %>
         <div class="field">
           <span class="label"><%= _('Name') %></span>
           <div class="control">
             <input type="text" class="input" value="<%= @content.name %>" readonly />
+          </div>
+        </div>
+        <div class="field">
+          <span class="label"><%= _('Title') %></span>
+          <div class="control">
+            <input type="text" class="input" value="<%= @content.title %>" readonly />
           </div>
         </div>
         <div class="field">
@@ -53,10 +67,24 @@
       </header>
       <div class="card-content">
         <%= form_with(model: @translation, url: translate_admin_content_path(@content, translation_locale: translation_locale), method: :post) do |f| %>
+        <% if @content.image.attached? %>
+        <div class="field">
+          <%= f.label :image_description, class: 'label' %>
+          <div class="control">
+            <%= f.text_field :image_description, class: 'input' %>
+          </div>
+        </div>
+        <% end %>
         <div class="field">
           <%= f.label :name, class: 'label' %>
           <div class="control">
             <%= f.text_field :name, class: 'input' %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :title, class: 'label' %>
+          <div class="control">
+            <%= f.text_field :title, class: 'input' %>
           </div>
         </div>
         <div class="field">

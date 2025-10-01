@@ -24,6 +24,18 @@
         </div>
       </div>
     </div>
+    <div class="field is-horizontal image-description">
+      <div class="field-label is-normal">
+        <%= f.label :image_description, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :image_description, class: 'input' %>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="field is-horizontal">
       <div class="field-label is-normal">
         <%= f.label :name, class: 'label required-label' %>
@@ -32,6 +44,18 @@
         <div class="field">
           <div class="control">
             <%= f.text_field :name, class: 'input', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :title, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :title, class: 'input' %>
           </div>
         </div>
       </div>

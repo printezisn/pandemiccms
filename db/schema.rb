@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_18_094638) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_22_094302) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -141,6 +141,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_18_094638) do
     t.integer "children_count", default: 0
     t.integer "visibility", limit: 1, default: 0, null: false
     t.text "body"
+    t.string "image_description"
+    t.string "meta_title"
+    t.string "meta_description"
     t.index ["client_id", "name"], name: "index_categories_on_client_id_and_name", unique: true
     t.index ["client_id", "posts_count"], name: "index_categories_on_client_id_and_posts_count"
     t.index ["client_id", "slug"], name: "index_categories_on_client_id_and_slug"
@@ -201,6 +204,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_18_094638) do
     t.text "rich_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_description"
+    t.string "title"
     t.index ["client_id", "name"], name: "index_contents_on_client_id_and_name", unique: true
     t.index ["client_id"], name: "index_contents_on_client_id"
   end
@@ -301,6 +306,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_18_094638) do
     t.integer "parent_id"
     t.text "hierarchy_path"
     t.integer "children_count", default: 0
+    t.string "image_description"
+    t.string "meta_title"
+    t.string "meta_description"
     t.index ["author_id"], name: "index_pages_on_author_id"
     t.index ["client_id", "name"], name: "index_pages_on_client_id_and_name", unique: true
     t.index ["client_id", "slug"], name: "index_pages_on_client_id_and_slug"
@@ -325,6 +333,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_18_094638) do
     t.integer "author_id", null: false
     t.datetime "indexed_at", precision: nil
     t.string "index_version"
+    t.string "image_description"
+    t.string "meta_title"
+    t.string "meta_description"
     t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["client_id", "name"], name: "index_posts_on_client_id_and_name", unique: true
     t.index ["client_id", "slug"], name: "index_posts_on_client_id_and_slug"
@@ -486,6 +497,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_18_094638) do
     t.datetime "updated_at", null: false
     t.integer "visibility", limit: 1, default: 0, null: false
     t.text "body"
+    t.string "meta_title"
+    t.string "meta_description"
     t.index ["client_id", "name"], name: "index_tags_on_client_id_and_name", unique: true
     t.index ["client_id", "posts_count"], name: "index_tags_on_client_id_and_posts_count"
     t.index ["client_id", "slug"], name: "index_tags_on_client_id_and_slug"

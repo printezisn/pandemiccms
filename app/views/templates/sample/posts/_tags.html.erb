@@ -1,4 +1,4 @@
-<% client_cache ['PostTags', @model.id] do %>
+<% client_view_cache ['PostTags', @model.id] do %>
 <% @post_tags ||= @tp.tags(post_id: @model.id).to_a %>
 <% if @post_tags.present? %>
 <footer class="mb-5">

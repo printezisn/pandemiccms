@@ -295,6 +295,15 @@ msgstr "Περιγραφή"
 msgid "Category|Image"
 msgstr "Εικόνα"
 
+msgid "Category|Image description"
+msgstr "Περιγραφή Εικόνας"
+
+msgid "Category|Meta description"
+msgstr "Περιγραφή (Meta)"
+
+msgid "Category|Meta title"
+msgstr "Τίτλος (Meta)"
+
 msgid "Category|Name"
 msgstr "Όνομα"
 
@@ -406,6 +415,9 @@ msgstr "Κατηγορίες"
 msgid "Content|Image"
 msgstr "Εικόνα"
 
+msgid "Content|Image description"
+msgstr "Περιγραφή Εικόνας"
+
 msgid "Content|Name"
 msgstr "Όνομα"
 
@@ -417,6 +429,9 @@ msgstr "Πλούσιο Κείμενο"
 
 msgid "Content|Simple text"
 msgstr "Απλό Κείμενο"
+
+msgid "Content|Title"
+msgstr "Τίτλος"
 
 msgid "Copy"
 msgstr "Αντιγραφή"
@@ -886,6 +901,9 @@ msgstr "Περιγραφή"
 msgid "Menu|Name"
 msgstr "Όνομα"
 
+msgid "Meta Information"
+msgstr "Πληροφορίες Meta"
+
 msgid "Middle Name"
 msgstr "Μεσαίο Όνομα"
 
@@ -1048,6 +1066,15 @@ msgstr "Περιγραφή"
 msgid "Page|Image"
 msgstr "Εικόνα"
 
+msgid "Page|Image description"
+msgstr "Περιγραφή Εικόνας"
+
+msgid "Page|Meta description"
+msgstr "Περιγραφή (Meta)"
+
+msgid "Page|Meta title"
+msgstr "Τίτλος (Meta)"
+
 msgid "Page|Name"
 msgstr "Όνομα"
 
@@ -1110,6 +1137,15 @@ msgstr "Περιγραφή"
 
 msgid "Post|Image"
 msgstr "Εικόνα"
+
+msgid "Post|Image description"
+msgstr "Περιγραφή Εικόνας"
+
+msgid "Post|Meta description"
+msgstr "Περιγραφή (Meta)"
+
+msgid "Post|Meta title"
+msgstr "Τίτλος (Meta)"
 
 msgid "Post|Name"
 msgstr "Όνομα"
@@ -1321,6 +1357,12 @@ msgstr "Κείμενο"
 msgid "Tag|Description"
 msgstr "Περιγραφή"
 
+msgid "Tag|Meta description"
+msgstr "Περιγραφή (Meta)"
+
+msgid "Tag|Meta title"
+msgstr "Τίτλος (Meta)"
+
 msgid "Tag|Name"
 msgstr "Όνομα"
 
@@ -1515,6 +1557,9 @@ msgstr "Το όνομα χρήστη."
 
 msgid "The user's unconfirmed email address."
 msgstr "Η μη επιβεβαιωμένη διεύθυνση email του χρήστη."
+
+msgid "Title"
+msgstr "Τίτλος"
 
 msgid "Top Categories"
 msgstr "Κορυφαίες Κατηγορίες"
@@ -1810,6 +1855,15 @@ msgstr "Το όνομα χρήστη χρησιμοποιείται ήδη."
 msgid "activerecord.errors.models.admin_user.attributes.username.too_long"
 msgstr "Το όνομα χρήστη μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
 
+msgid "activerecord.errors.models.category.attributes.image_description.too_long"
+msgstr "Η περιγραφή εικόνας μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.category.attributes.meta_description.too_long"
+msgstr "Η περιγραφή (meta) μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.category.attributes.meta_title.too_long"
+msgstr "Ο τίτλος (meta) μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
 msgid "activerecord.errors.models.category.attributes.name.blank"
 msgstr "Το όνομα είναι υποχρεωτικό."
 
@@ -1846,6 +1900,9 @@ msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} �
 msgid "activerecord.errors.models.client.attributes.time_zone.invalid"
 msgstr "Η ζώνη ώρας δεν είναι έγκυρη."
 
+msgid "activerecord.errors.models.content.attributes.image_description.too_long"
+msgstr "Η περιγραφή εικόνας μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
 msgid "activerecord.errors.models.content.attributes.name.blank"
 msgstr "Το όνομα είναι υποχρεωτικό."
 
@@ -1857,6 +1914,9 @@ msgstr "Το όνομα μπορεί να περιέχει μέχρι %{count} �
 
 msgid "activerecord.errors.models.content.attributes.order.blank"
 msgstr "Η σειρά είναι υποχρεωτική."
+
+msgid "activerecord.errors.models.content.attributes.title.too_long"
+msgstr "Ο τίτλος μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
 
 msgid "activerecord.errors.models.content_category.attributes.description.too_long"
 msgstr "Η περιγραφή μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
@@ -1906,6 +1966,15 @@ msgstr "Ο γονέας δε βρέθηκε."
 msgid "activerecord.errors.models.menu_item.attributes.parent_id.circle"
 msgstr "Ο γονέας δεν είναι έγκυρος. Εντοπίστηκε κύκλος στην ιεραρχία."
 
+msgid "activerecord.errors.models.page.attributes.image_description.too_long"
+msgstr "Η περιγραφή εικόνας μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.page.attributes.meta_description.too_long"
+msgstr "Η περιγραφή (meta) μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.page.attributes.meta_title.too_long"
+msgstr "Ο τίτλος (meta) μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
 msgid "activerecord.errors.models.page.attributes.name.blank"
 msgstr "Το όνομα είναι υποχρεωτικό."
 
@@ -1924,6 +1993,15 @@ msgstr "Ο γονέας δεν είναι έγκυρος. Εντοπίστηκε
 msgid "activerecord.errors.models.page.attributes.slug.too_long"
 msgstr "Το slug μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
 
+msgid "activerecord.errors.models.post.attributes.image_description.too_long"
+msgstr "Η περιγραφή εικόνας μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.post.attributes.meta_description.too_long"
+msgstr "Η περιγραφή (meta) μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.post.attributes.meta_title.too_long"
+msgstr "Ο τίτλος (meta) μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
 msgid "activerecord.errors.models.post.attributes.name.blank"
 msgstr "Το όνομα είναι υποχρεωτικό."
 
@@ -1941,6 +2019,12 @@ msgstr "Η πηγή (απο) είναι υποχρεωτική."
 
 msgid "activerecord.errors.models.redirect.attributes.to.blank"
 msgstr "Ο προορισμός (προς) είναι υποχρεωτικός."
+
+msgid "activerecord.errors.models.tag.attributes.meta_description.too_long"
+msgstr "Η περιγραφή (meta) μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
+
+msgid "activerecord.errors.models.tag.attributes.meta_title.too_long"
+msgstr "Ο τίτλος (meta) μπορεί να περιέχει μέχρι %{count} χαρακτήρες."
 
 msgid "activerecord.errors.models.tag.attributes.name.blank"
 msgstr "Το όνομα είναι υποχρεωτικό."

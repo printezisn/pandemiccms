@@ -56,10 +56,6 @@ RSpec.describe 'Pages' do
 
         expect(response).to be_successful
       end
-
-      it 'tracks a new page visit' do
-        expect { request }.to change { Ahoy::Event.where(name: 'Page Visit').count }.by(1)
-      end
     end
   end
 
@@ -92,10 +88,6 @@ RSpec.describe 'Pages' do
         request
 
         expect(response).to be_successful
-      end
-
-      it 'tracks a new page visit' do
-        expect { request }.to change { Ahoy::Event.where(name: 'Page Visit').count }.by(1)
       end
     end
 

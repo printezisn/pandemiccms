@@ -123,7 +123,7 @@ module Admin
     end
 
     def tag_params
-      params.expect(tag: %i[name slug description body template visibility])
+      params.expect(tag: %i[name slug description body template visibility meta_title meta_description])
     end
 
     def translation_params

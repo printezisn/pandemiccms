@@ -7,6 +7,8 @@ class TemplateConstraint
   end
 
   def matches?(request)
+    return false if request.path.start_with?('/rails')
+
     Current.fetch_client(request)&.template == @template
   end
 end

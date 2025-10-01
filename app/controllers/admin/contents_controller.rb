@@ -105,7 +105,7 @@ module Admin
     end
 
     def content_params
-      params.expect(content: [:image, :should_remove_image, :name, :order, :simple_text, :rich_text,
+      params.expect(content: [:image, :image_description, :should_remove_image, :name, :title, :order, :simple_text, :rich_text,
                               { category_names: [] }])
     end
 

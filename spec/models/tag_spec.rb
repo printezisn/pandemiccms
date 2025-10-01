@@ -19,6 +19,8 @@ RSpec.describe Tag do
   it { is_expected.to validate_length_of(:name).is_at_most(255).with_message('The name may contain up to 255 characters.') }
   it { is_expected.to validate_uniqueness_of(:name).case_insensitive.scoped_to([:client_id]).with_message('The name is already used.') }
   it { is_expected.to validate_length_of(:slug).is_at_most(255).with_message('The slug may contain up to 255 characters.') }
+  it { is_expected.to validate_length_of(:meta_title).is_at_most(60).with_message('The title (meta) may contain up to 60 characters.') }
+  it { is_expected.to validate_length_of(:meta_description).is_at_most(160).with_message('The description (meta) may contain up to 160 characters.') }
 
   describe '#index_associations' do
     subject(:model) { create(:tag) }

@@ -39,6 +39,18 @@
           </div>
         </div>
         <div class="field">
+          <span class="label"><%= _('Tag|Meta title') %></span>
+          <div class="control">
+            <input type="text" class="input" value="<%= @tag.meta_title %>" readonly />
+          </div>
+        </div>
+        <div class="field">
+          <span class="label"><%= _('Tag|Meta description') %></span>
+          <div class="control">
+            <textarea rows="5" class="textarea" readonly><%= @tag.meta_description %></textarea>
+          </div>
+        </div>
+        <div class="field">
           <span class="label"><%= _('Tag|Body') %></span>
           <div class="control">
             <textarea id="original-tag-body" rows="5" class="textarea rich-editor" readonly><%= @tag.body %></textarea>

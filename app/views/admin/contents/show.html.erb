@@ -42,6 +42,18 @@
         </div>
       </div>
     </div>
+    <% if @content.image.attached? %>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Content|Image description') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @content.image_description %></div>
+        </div>
+      </div>
+    </div>
+    <% end %>
     <div class="field is-horizontal">
       <div class="field-label">
         <span class="label"><%= _('Name') %></span>
@@ -49,6 +61,16 @@
       <div class="field-body">
         <div class="field">
           <div class="control"><%= @content.name %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Title') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @content.title %></div>
         </div>
       </div>
     </div>
@@ -88,7 +110,7 @@
       <div class="field-label">
         <span class="label"><%= _('Rich Text') %></span>
       </div>
-      <div class="field-body">
+      <div class="field-body content">
         <div class="field">
           <div class="control"><%= @content.rich_text&.html_safe %></div>
         </div>

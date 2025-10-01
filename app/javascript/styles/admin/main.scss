@@ -46,6 +46,14 @@ main {
   }
 }
 
+.field:has(.image-uploader.with-image) ~ .field.image-description {
+  display: flex;
+}
+
+.field:has(.image-uploader.without-image) ~ .field.image-description {
+  display: none;
+}
+
 .logo-header {
   padding-top: 3rem;
   display: flex;

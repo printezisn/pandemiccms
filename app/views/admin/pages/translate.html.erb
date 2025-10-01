@@ -20,6 +20,14 @@
         </h1>
       </header>
       <div class="card-content">
+        <% if @page.image.attached? %>
+        <div class="field">
+          <span class="label"><%= _('Page|Image description') %></span>
+          <div class="control">
+            <input type="text" class="input" value="<%= @page.image_description %>" readonly />
+          </div>
+        </div>
+        <% end %>
         <div class="field">
           <span class="label"><%= _('Name') %></span>
           <div class="control">
@@ -36,6 +44,18 @@
           <span class="label"><%= _('Description') %></span>
           <div class="control">
             <textarea rows="5" class="textarea" readonly><%= @page.description %></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <span class="label"><%= _('Page|Meta title') %></span>
+          <div class="control">
+            <input type="text" class="input" value="<%= @page.meta_title %>" readonly />
+          </div>
+        </div>
+        <div class="field">
+          <span class="label"><%= _('Page|Meta description') %></span>
+          <div class="control">
+            <textarea rows="5" class="textarea" readonly><%= @page.meta_description %></textarea>
           </div>
         </div>
         <div class="field">
@@ -59,6 +79,14 @@
       </header>
       <div class="card-content">
         <%= form_with(model: @translation, url: translate_admin_page_path(@page, translation_locale: translation_locale), method: :post) do |f| %>
+        <% if @page.image.attached? %>
+        <div class="field">
+          <%= f.label :image_description, class: 'label' %>
+          <div class="control">
+            <%= f.text_field :image_description, class: 'input' %>
+          </div>
+        </div>
+        <% end %>
         <div class="field">
           <%= f.label :name, class: 'label' %>
           <div class="control">

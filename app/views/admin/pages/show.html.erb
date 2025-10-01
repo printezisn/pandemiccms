@@ -43,6 +43,18 @@
         </div>
       </div>
     </div>
+    <% if @page.image.attached? %>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Page|Image description') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @page.image_description %></div>
+        </div>
+      </div>
+    </div>
+    <% end %>
     <div class="field is-horizontal">
       <div class="field-label">
         <span class="label"><%= _('Name') %></span>
@@ -158,6 +170,37 @@
       <div class="field-body">
         <div class="field">
           <div class="control"><%= @page.updated_at.to_fs %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fa-solid fa-file"></i>
+      &nbsp;
+      <%= _('Meta Information') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Page|Meta title') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @page.meta_title %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Page|Meta description') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @page.meta_description %></div>
         </div>
       </div>
     </div>

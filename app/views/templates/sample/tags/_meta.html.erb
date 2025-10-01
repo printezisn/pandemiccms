@@ -1,5 +1,5 @@
 <% page ||= nil %>
-<% client_cache ['TagMeta', @model.id, page] do %>
+<% client_view_cache ['TagMeta', @model.id, page] do %>
 <% url = template_entity_path(@model, page:) %>
 <title><%= @tp.t(@model).name %> | <%= current_client.name %></title>
 <meta name="description" content="<%= @tp.t(@model).description %>" />

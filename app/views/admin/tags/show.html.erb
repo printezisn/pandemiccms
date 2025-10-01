@@ -101,6 +101,37 @@
   </div>
 </article>
 <article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fa-solid fa-tag"></i>
+      &nbsp;
+      <%= _('Meta Information') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Tag|Meta title') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @tag.meta_title %></div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <span class="label"><%= _('Tag|Meta description') %></span>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control"><%= @tag.meta_description %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="card mt-5">
   <div class="card-header">
     <h2 class="card-header-title">
       <i class="fa-solid fa-tag"></i>

@@ -81,6 +81,41 @@
     <h1 class="card-header-title">
       <i class="fa-solid fa-tag"></i>
       &nbsp;
+      <%= _('Meta Information') %>
+    </h1>
+  </header>
+  <div class="card-content">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :meta_title, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_field :meta_title, class: 'input' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :meta_description, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= f.text_area :meta_description, class: 'textarea', rows: 5 %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="card mt-5">
+  <header class="card-header">
+    <h1 class="card-header-title">
+      <i class="fa-solid fa-tag"></i>
+      &nbsp;
       <%= _('Tag|Body') %>
     </h1>
   </header>

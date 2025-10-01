@@ -1,10 +1,15 @@
 <div class="dropdown-menu" role="menu">
   <div class="dropdown-content">
-    <a class="dropdown-item" rel="noopener" target="_blank" href="<%= template_entity_path(category) %>">
+    <%
+      path = template_entity_path(category)
+      if path
+    %>
+    <a class="dropdown-item" rel="noopener" target="_blank" href="<%= path %>">
       <i class="fa-solid fa-external-link-alt"></i>
       &nbsp;
       <%= _('Preview') %>
     </a>
+    <% end %>
     <% if current_client.enabled_languages.size > 1 %>
     <a class="dropdown-item" href="<%= translate_admin_category_path(category) %>">
       <i class="fa-solid fa-globe"></i>
