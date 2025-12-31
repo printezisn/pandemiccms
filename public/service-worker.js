@@ -1,4 +1,4 @@
-const cacheName = 'pandemiccms-v2';
+const cacheName = 'pandemiccms-v3';
 
 const deleteOldCaches = async () => {
   const keys = await caches.keys();
@@ -21,7 +21,7 @@ const cacheFirst = async (event) => {
   if (cachedResponse) return cachedResponse;
 
   const fetchResponse = await fetch(event.request);
-  if (fetchResponse.status < 300) {
+  if (fetchResponse.status >= 200 && fetchResponse.status < 300) {
     cache.put(event.request, fetchResponse.clone());
   }
 
@@ -33,7 +33,7 @@ const networkFirst = async (event) => {
 
   try {
     const fetchResponse = await fetch(event.request);
-    if (fetchResponse.status < 300) {
+    if (fetchResponse.status >= 200 && fetchResponse.status < 300) {
       cache.put(event.request, fetchResponse.clone());
     }
 
