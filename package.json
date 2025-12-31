@@ -3,13 +3,13 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.1.0",
-    "@rails/actioncable": "^8.1.0",
+    "@rails/actioncable": "^8.1.100",
     "bulma": "^1.0.4",
     "chart.js": "^4.5.1",
     "flag-icons": "^7.5.0",
     "jquery": "^3.7.1",
     "quill": "^2.0.3",
-    "sass": "^1.93.2",
+    "sass": "^1.97.1",
     "select2": "4.1.0-rc.0",
     "toastr": "^2.1.4"
   },
@@ -18,15 +18,15 @@
     "node": ">= 22.18.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.38.0",
-    "eslint": "^9.38.0",
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-n": "^17.23.1",
     "eslint-plugin-promise": "^7.2.1",
-    "globals": "^16.4.0",
-    "vite": "^7.1.12",
+    "globals": "^16.5.0",
+    "vite": "^7.3.0",
     "vite-plugin-ruby": "^5.1.1"
   },
   "scripts": {
