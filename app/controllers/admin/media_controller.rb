@@ -76,7 +76,7 @@ module Admin
     end
 
     def media_files
-      params.expect(medium: [file: []]).fetch(:file, [])
+      params.expect(medium: [{ file: [] }]).fetch(:file, [])
     end
   end
 end
