@@ -3,12 +3,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.4.5'
+ruby '4.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 8.0'
 # Use Puma as the app server
-gem 'puma', '~> 6.0'
+gem 'puma', '~> 8.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -24,7 +24,7 @@ gem 'bootsnap', '~> 1.7', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', '~> 12.0', platforms: %i[mri mingw x64_mingw]
+  gem 'byebug', '~> 13.0', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot', '~> 6.1'
   gem 'factory_bot_rails', '~> 6.1'
   gem 'pry', '~> 0.14'
@@ -51,7 +51,7 @@ group :development do
 
   gem 'bcrypt_pbkdf', '~> 1.1', require: false
   gem 'capistrano', '~> 3.19', require: false
-  gem 'capistrano3-puma', '~> 6.2', require: false
+  gem 'capistrano3-puma', '~> 8.0', require: false
   gem 'capistrano-bundler', '~> 2.1', require: false
   gem 'capistrano-rails', '~> 1.7', require: false
   gem 'capistrano-rbenv', '~> 2.2', require: false
@@ -63,7 +63,7 @@ group :test do
   gem 'capybara', '~> 3.35'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'selenium-webdriver', '~> 4.1'
-  gem 'shoulda-matchers', '~> 6.2'
+  gem 'shoulda-matchers', '~> 7.0'
   gem 'timecop', '~> 0.9'
   gem 'webdrivers', '~> 5.0'
 end
@@ -76,7 +76,7 @@ gem 'mysql2', '~> 0.5'
 
 gem 'devise-security', '~> 0.14'
 
-gem 'gettext_i18n_rails', '~> 1.8'
+gem 'gettext_i18n_rails', '~> 2.1'
 
 gem 'gettext', '~> 3.3'
 
@@ -95,8 +95,6 @@ gem 'htmlentities', '~> 4.3'
 gem 'draper', '~> 4.0'
 
 gem 'propshaft', '~> 1.2'
-
-gem 'sqlite3-ruby', '~> 1.3'
 
 gem 'sqlite3', '~> 2.7'
 

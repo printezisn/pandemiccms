@@ -9,7 +9,7 @@ set :repo_url, 'git@github.com:printezisn/pandemiccms.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 set :rbenv_type, :user
-set :rbenv_ruby, '3.4.5' # your installed version
+set :rbenv_ruby, '4.0.3' # your installed version
 
 set :puma_user, fetch(:user)
 set :puma_role, :web
@@ -50,7 +50,7 @@ set :keep_releases, 5
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
-set :default_env, { path: '$HOME/.nvm/versions/node/v22.18.0/bin:$PATH' }
+set :default_env, { path: '$HOME/.nvm/versions/node/v24.14.1/bin:$PATH' }
 
 namespace :solid_queue do
   desc 'Kill solid_queue'

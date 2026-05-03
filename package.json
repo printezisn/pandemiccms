@@ -7,26 +7,26 @@
     "bulma": "^1.0.4",
     "chart.js": "^4.5.1",
     "flag-icons": "^7.5.0",
-    "jquery": "^3.7.1",
+    "jquery": "^4.0.0",
     "quill": "^2.0.3",
-    "sass": "^1.98.0",
+    "sass": "^1.99.0",
     "select2": "4.1.0-rc.0",
     "toastr": "^2.1.4"
   },
   "version": "1.0.0",
   "engines": {
-    "node": ">= 22.18.0"
+    "node": ">= 24.14.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
-    "@eslint/js": "^9.39.4",
-    "eslint": "^9.39.4",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.3.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-n": "^17.24.0",
-    "eslint-plugin-promise": "^7.2.1",
-    "globals": "^16.5.0",
-    "vite": "^7.3.1",
+    "eslint-plugin-promise": "^7.3.0",
+    "globals": "^17.6.0",
+    "vite": "^8.0.10",
     "vite-plugin-ruby": "^5.2.1"
   },
   "scripts": {

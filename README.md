@@ -54,8 +54,8 @@ A CMS with all the necessary components to help you create fast and amazing webs
 
 You need to have the following installed to run the project:
 
-- Ruby (3.4.5)
-- NodeJS (22.18.0)
+- Ruby (4.0.3)
+- NodeJS (24.14.1)
 - pnpm (version 10)
 - libvips
 
