@@ -5,11 +5,11 @@
     "@fortawesome/fontawesome-free": "^7.3.1",
     "@rails/actioncable": "^8.1.400",
     "bulma": "^1.0.4",
-    "chart.js": "^4.5.1",
-    "flag-icons": "^7.5.0",
+    "chart.js": "^4.6.1",
+    "flag-icons": "^7.6.0",
     "jquery": "^4.0.0",
     "quill": "^2.0.3",
-    "sass": "^1.105.0",
+    "sass": "^1.106.1",
     "select2": "4.1.0-rc.0",
     "toastr": "^2.1.4"
   },
@@ -20,14 +20,14 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.7",
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.11.0",
+    "eslint": "^10.13.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-n": "^18.3.0",
+    "eslint-plugin-n": "^18.5.0",
     "eslint-plugin-promise": "^7.3.0",
-    "globals": "^17.12.0",
-    "vite": "^8.3.1",
-    "vite-plugin-ruby": "^5.2.4"
+    "globals": "^17.13.0",
+    "vite": "^8.3.5",
+    "vite-plugin-ruby": "^5.2.6"
   },
   "scripts": {
     "lint": "eslint ./app/javascript ./vite.config.mjs",
