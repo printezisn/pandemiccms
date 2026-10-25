@@ -32,7 +32,7 @@ group :development, :test do
   gem 'rspec', '~> 3.10'
   gem 'rspec-rails', '~> 8.0'
   gem 'rubocop', '~> 1.5', require: false
-  gem 'rubocop-capybara', '~> 2.20', require: false
+  gem 'rubocop-capybara', '~> 3.0', require: false
   gem 'rubocop-factory_bot', '~> 2.25', require: false
   gem 'rubocop-performance', '~> 1.9', require: false
   gem 'rubocop-rails', '~> 2.8', require: false
@@ -63,7 +63,7 @@ group :test do
   gem 'capybara', '~> 3.35'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'selenium-webdriver', '~> 4.1'
-  gem 'shoulda-matchers', '~> 7.0'
+  gem 'shoulda-matchers', '~> 8.0'
   gem 'timecop', '~> 0.9'
   gem 'webdrivers', '~> 5.0'
 end
@@ -84,9 +84,11 @@ gem 'kaminari', '~> 1.2'
 
 gem 'babosa', '~> 2.0'
 
-gem 'image_processing', '~> 1.12'
+gem 'image_processing', '~> 2.1'
 
-gem 'redis', '~> 5.0'
+gem 'ruby-vips', '~> 2.3'
+
+gem 'redis', '~> 6.0'
 
 gem 'elasticsearch-persistence', '~> 8.0'
 
