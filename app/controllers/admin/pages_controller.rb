@@ -41,7 +41,7 @@ module Admin
     def search
       pages = Page.where(client_id: current_client.id)
       if params[:excluded_id].present?
-        excluded_page = Page.find_by!(id: params[:excluded_id], client_id: current_client.id)
+        excluded_page = Page.find_by!(id: params.expect(:excluded_id), client_id: current_client.id)
         pages = pages.where.not(id: excluded_page.id).where.not(id: Page.descendants_of(excluded_page))
       end
 
@@ -149,7 +149,7 @@ module Admin
     private
 
     def fetch_page
-      @page = Page.find_by!(id: params[:id], client_id: current_client.id)
+      @page = Page.find_by!(id: params.expect(:id), client_id: current_client.id)
     end
 
     def fetch_translation

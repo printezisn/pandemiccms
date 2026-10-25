@@ -88,11 +88,11 @@ module Admin
     private
 
     def fetch_menu
-      @menu = Menu.find_by!(id: params[:menu_id], client_id: current_client.id)
+      @menu = Menu.find_by!(id: params.expect(:menu_id), client_id: current_client.id)
     end
 
     def fetch_menu_item
-      @menu_item = @menu.menu_items.find(params[:id])
+      @menu_item = @menu.menu_items.find(params.expect(:id))
     end
 
     def fetch_linkable

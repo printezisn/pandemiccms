@@ -14,9 +14,9 @@ class PagesController < ApplicationController
   # GET /pg/1/slug
   def show
     @model = if params[:id].present?
-               @tp.pages.find(params[:id])
+               @tp.pages.find(params.expect(:id))
              else
-               @tp.pages.find_by!(slug: params[:slug])
+               @tp.pages.find_by!(slug: params.expect(:slug))
              end
 
     slug = @tp.t(@model).slug

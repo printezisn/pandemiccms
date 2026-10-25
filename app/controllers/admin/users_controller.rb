@@ -98,7 +98,7 @@ module Admin
     private
 
     def fetch_user
-      @user = AdminUser.find_by!(id: params[:id], client_id: current_client.id)
+      @user = AdminUser.find_by!(id: params.expect(:id), client_id: current_client.id)
       @user.role = @user.admin_user_roles.first&.role
       @user.should_set_roles = true
     end

@@ -7,9 +7,9 @@ class PostsController < ApplicationController
   # GET /p/1/slug
   def show
     @model = if params[:id].present?
-               @tp.posts.find(params[:id])
+               @tp.posts.find(params.expect(:id))
              else
-               @tp.posts.find_by!(slug: params[:slug])
+               @tp.posts.find_by!(slug: params.expect(:slug))
              end
 
     slug = @tp.t(@model).slug

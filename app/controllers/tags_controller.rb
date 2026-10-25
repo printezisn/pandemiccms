@@ -7,9 +7,9 @@ class TagsController < ApplicationController
   # GET /t/1/slug
   def show
     @model = if params[:id].present?
-               @tp.tags.find(params[:id])
+               @tp.tags.find(params.expect(:id))
              else
-               @tp.tags.find_by!(slug: params[:slug])
+               @tp.tags.find_by!(slug: params.expect(:slug))
              end
 
     slug = @tp.t(@model).slug

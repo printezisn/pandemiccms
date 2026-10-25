@@ -7,9 +7,9 @@ class CategoriesController < ApplicationController
   # GET /c/1/slug
   def show
     @model = if params[:id].present?
-               @tp.categories.find(params[:id])
+               @tp.categories.find(params.expect(:id))
              else
-               @tp.categories.find_by!(slug: params[:slug])
+               @tp.categories.find_by!(slug: params.expect(:slug))
              end
 
     slug = @tp.t(@model).slug

@@ -97,7 +97,7 @@ module Admin
     private
 
     def fetch_content
-      @content = Content.find_by!(id: params[:id], client_id: current_client.id)
+      @content = Content.find_by!(id: params.expect(:id), client_id: current_client.id)
     end
 
     def fetch_translation

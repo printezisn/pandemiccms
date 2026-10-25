@@ -104,7 +104,7 @@ module Admin
     def search
       categories = Category.where(client_id: current_client.id)
       if params[:excluded_id].present?
-        excluded_category = Category.find_by!(id: params[:excluded_id], client_id: current_client.id)
+        excluded_category = Category.find_by!(id: params.expect(:excluded_id), client_id: current_client.id)
         categories = categories.where.not(id: excluded_category.id).where.not(id: Category.descendants_of(excluded_category))
       end
 
@@ -122,7 +122,7 @@ module Admin
     private
 
     def fetch_category
-      @category = Category.find_by!(id: params[:id], client_id: current_client.id)
+      @category = Category.find_by!(id: params.expect(:id), client_id: current_client.id)
     end
 
     def fetch_translation

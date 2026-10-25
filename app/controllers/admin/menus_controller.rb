@@ -87,7 +87,7 @@ module Admin
     private
 
     def fetch_menu
-      @menu = Menu.find_by!(id: params[:id], client_id: current_client.id)
+      @menu = Menu.find_by!(id: params.expect(:id), client_id: current_client.id)
     end
 
     def fetch_translation

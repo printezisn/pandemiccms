@@ -57,7 +57,7 @@ module Admin
     private
 
     def fetch_email_template
-      @email_template = EmailTemplate.find_by!(id: params[:id], client_id: current_client.id)
+      @email_template = EmailTemplate.find_by!(id: params.expect(:id), client_id: current_client.id)
     end
 
     def fetch_translation

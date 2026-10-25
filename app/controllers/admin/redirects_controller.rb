@@ -64,7 +64,7 @@ module Admin
     private
 
     def fetch_redirect
-      @redirect = Redirect.find_by!(id: params[:id], client_id: current_client.id)
+      @redirect = Redirect.find_by!(id: params.expect(:id), client_id: current_client.id)
     end
 
     def redirect_params

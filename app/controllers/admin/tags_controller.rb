@@ -104,7 +104,7 @@ module Admin
     private
 
     def fetch_tag
-      @tag = Tag.find_by!(id: params[:id], client_id: current_client.id)
+      @tag = Tag.find_by!(id: params.expect(:id), client_id: current_client.id)
     end
 
     def fetch_translation

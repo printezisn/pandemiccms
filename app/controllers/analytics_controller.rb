@@ -5,7 +5,7 @@ class AnalyticsController < ApplicationController
   def track_visit
     return if params[:path].blank?
 
-    path = params[:path].strip[0..250]
+    path = params.expect(:path).strip[0..250]
     if current_visit
       event_exists = Ahoy::Event.exists?(client_id: current_client.id, visit_id: current_visit.id,
                                          name: 'Page Visit', properties: path)

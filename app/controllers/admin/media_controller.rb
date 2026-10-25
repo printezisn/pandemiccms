@@ -72,7 +72,7 @@ module Admin
     private
 
     def fetch_medium
-      @medium = Medium.find_by!(id: params[:id], client_id: current_client.id)
+      @medium = Medium.find_by!(id: params.expect(:id), client_id: current_client.id)
     end
 
     def media_files
